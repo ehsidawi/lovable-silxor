@@ -136,8 +136,8 @@ const BookAssessment = () => {
           }}
         >
           {t(
-            "A 30 minute technical discovery session with a senior Silxor engineer. No cost, no obligation.",
-            "جلسة اكتشاف تقني مدتها 30 دقيقة مع مهندس Silxor أقدم. مجانية وبدون التزام."
+            "A 30 minute technical discovery with a senior Silxor engineer. No cost. No obligation.",
+            "اكتشاف تقني مدته 30 دقيقة مع مهندس Silxor أقدم. مجاناً ودون التزام."
           )}
         </p>
       </section>

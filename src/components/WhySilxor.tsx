@@ -22,8 +22,14 @@ const WhySilxor = () => {
         <div style={{ marginBottom: 20 }}>
           <div className="section-eyebrow">{t("WHY SILXOR", "لماذا سيلكسور")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#FFFFFF" }}>
-            {t("One Partner. Full Stack. Zero Handoff.", "شريك واحد. حزمة كاملة.")}
+            {t("One Partner. Full Stack. No Handoffs.", "شريك واحد. حزمة كاملة. بدون تسليمات.")}
           </h2>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: "#B8BCC2", maxWidth: 620, marginTop: 8, lineHeight: 1.7 }}>
+            {t(
+              "Every discipline your program needs, delivered end to end by one accountable team.",
+              "كل تخصص يحتاجه برنامجك، يُسلّم من البداية إلى النهاية بواسطة فريق واحد مسؤول."
+            )}
+          </p>
         </div>
 
         <div className="surface-elevated" style={{ padding: 22 }}>

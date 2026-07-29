@@ -11,7 +11,7 @@ const Solutions = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
-    document.title = "Banking & Government Solutions — Silxor";
+    document.title = "Solutions for Banking, Digital Banking & Government | Silxor";
   }, []);
 
   const cards = [
@@ -69,8 +69,8 @@ const Solutions = () => {
               style={{ fontSize: 40, lineHeight: 1.1, color: "#FFFFFF", maxWidth: 900 }}
             >
               {t(
-                "Enterprise Solutions for Banking, Digital Banking & Government",
-                "حلول مؤسسية للمصارف والحكومة"
+                "Secure Digital Platforms for Banking & Government",
+                "منصات رقمية آمنة للمصارف والحكومة"
               )}
             </h1>
             <p
@@ -78,8 +78,8 @@ const Solutions = () => {
               style={{ fontSize: 16, color: "#B8BCC2", maxWidth: 720, lineHeight: 1.7 }}
             >
               {t(
-                "Designing secure, compliant, AI powered digital ecosystems for financial institutions and public sector organizations.",
-                "تصميم منظومات رقمية آمنة ومتوافقة ومدعومة بالذكاء الاصطناعي للمؤسسات المالية والقطاع العام."
+                "Compliant, AI enabled digital ecosystems engineered for financial institutions and the public sector.",
+                "منظومات رقمية متوافقة ومُمكَّنة بالذكاء الاصطناعي للمؤسسات المالية والقطاع العام."
               )}
             </p>
           </div>

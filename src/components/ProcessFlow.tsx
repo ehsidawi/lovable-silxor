@@ -17,10 +17,10 @@ const ProcessFlow = () => {
         <div className="text-center" style={{ marginBottom: 64 }}>
           <div className="section-eyebrow justify-center">{t("PROCESS", "العملية")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF" }}>
-            {t("Enterprise Delivery Process", "عملية التسليم المؤسسية")}
+            {t("How We Deliver", "كيف نُسلّم")}
           </h2>
           <p className="font-body font-[300] mx-auto" style={{ fontSize: 16, color: "#B8BCC2", maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
-            {t("Whether we're deploying cloud infrastructure, delivering a software platform, or standing up a sovereign AI system our structured delivery process ensures precision at every stage.", "سواء كنا ننشر بنية تحتية سحابية أو نسلم منصة برمجيات أو نقيم نظام ذكاء اصطناعي سيادي عمليتنا المنظمة تضمن الدقة في كل مرحلة.")}
+            {t("A five stage delivery model applied to every engagement, from infrastructure to AI, with clear owners and measurable outcomes at each stage.", "نموذج تسليم من خمس مراحل يُطبَّق على كل تعاون، مع مسؤوليات واضحة ونتائج قابلة للقياس في كل مرحلة.")}
           </p>
         </div>
 

@@ -42,7 +42,7 @@ const Industries = () => {
         <div style={{ marginBottom: 20 }}>
           <div className="section-eyebrow">{t("INDUSTRIES", "القطاعات")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#FFFFFF" }}>
-            {t("Sectors We Serve", "القطاعات التي نخدمها")}
+            {t("Built for Regulated Industries", "مصمم للقطاعات المنظّمة")}
           </h2>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-[2px]">

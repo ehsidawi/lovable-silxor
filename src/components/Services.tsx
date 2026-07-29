@@ -8,7 +8,7 @@ const Services = () => {
     {
       icon: Compass,
       title: t("Advisory & Strategy", "الاستشارات والاستراتيجية"),
-      summary: t("Executive advisory for the transformation agenda.", "استشارات تنفيذية لأجندة التحول."),
+      summary: t("Board level advisory on transformation, architecture, and risk.", "استشارات على مستوى المجلس حول التحول والبنية والمخاطر."),
       items: [
         "Digital Transformation",
         "Enterprise Architecture",
@@ -24,7 +24,7 @@ const Services = () => {
     {
       icon: Server,
       title: t("Infrastructure & Cloud", "البنية التحتية والسحابة"),
-      summary: t("Multi-cloud, hybrid, and data center engineering.", "هندسة سحابية متعددة وبنية هجينة."),
+      summary: t("Sovereign, hybrid, and multi cloud engineering on Tier IV foundations.", "هندسة سحابية سيادية وهجينة ومتعددة على أساس المستوى الرابع."),
       items: [
         "Enterprise Infrastructure",
         "Cloud Architecture",
@@ -40,7 +40,7 @@ const Services = () => {
     {
       icon: ShieldCheck,
       title: t("Cybersecurity & GRC", "الأمن السيبراني والحوكمة"),
-      summary: t("Zero Trust security and regulated compliance programs.", "أمن الثقة الصفرية وبرامج الامتثال."),
+      summary: t("Zero Trust architecture, identity, and audit ready compliance programs.", "هندسة الثقة الصفرية والهوية وبرامج امتثال جاهزة للتدقيق."),
       items: [
         "Security Architecture · Zero Trust",
         "Identity & Access Management",
@@ -56,7 +56,7 @@ const Services = () => {
     {
       icon: Activity,
       title: t("Managed Services", "الخدمات المدارة"),
-      summary: t("Enterprise-grade operations, 24×7.", "عمليات مؤسسية على مدار الساعة."),
+      summary: t("24×7 NOC and SOC operations backed by enforceable SLAs.", "عمليات مركز الشبكة والأمن على مدار الساعة مع اتفاقيات خدمة قابلة للتنفيذ."),
       items: [
         "Managed Infrastructure",
         "Managed Security",
@@ -79,8 +79,14 @@ const Services = () => {
             className="font-display font-[700]"
             style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}
           >
-            {t("Four Executive Practices", "أربع ممارسات تنفيذية")}
+            {t("Four Practices. One Accountable Partner.", "أربع ممارسات. شريك واحد مسؤول.")}
           </h2>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: "#B8BCC2", maxWidth: 620, marginTop: 8, lineHeight: 1.7 }}>
+            {t(
+              "Advisory, infrastructure, security, and managed operations delivered by a single engineering team under one SLA.",
+              "استشارات وبنية تحتية وأمن وعمليات مُدارة يقدمها فريق هندسي واحد تحت اتفاقية مستوى خدمة واحدة."
+            )}
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px]">

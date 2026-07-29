@@ -80,7 +80,7 @@ const identityPackages: IdPkg[] = [
       "Full identity environment discovery and mapping",
       "Risk and gap analysis across all IAM domains",
       "Attack surface assessment (PAM, orphaned accounts, shadow admins, credential exposure)",
-      "Compliance alignment review (ISO 27001, NIST 800 63, CBI)",
+      "Compliance alignment review (ISO 27001, NIST 800 63, FFIEC)",
       "Written Architecture Roadmap with prioritized remediation",
       "Executive and technical findings briefing",
     ],

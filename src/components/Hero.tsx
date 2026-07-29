@@ -83,8 +83,8 @@ const Hero = () => {
               }}
             >
               {t(
-                "Forging high-performance digital infrastructure with surgical precision and industrial durability.",
-                "نصمم بنية تحتية رقمية عالية الأداء بدقة جراحية ومتانة صناعية."
+                "Sovereign cloud, cybersecurity, private AI, and identity systems engineered for institutions that cannot fail.",
+                "بنية سحابية سيادية وأمن سيبراني وذكاء اصطناعي خاص وأنظمة هوية مصممة للمؤسسات التي لا تحتمل الفشل."
               )}
             </p>
             <div className="flex flex-wrap items-center gap-4">

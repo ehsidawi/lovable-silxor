@@ -60,8 +60,8 @@ const Footer = () => {
             </Link>
             <p className="font-body font-[300]" style={{ fontSize: 14, color: "#B8BCC2", lineHeight: 1.7 }}>
               {t(
-                "Silxor Tech and Cyber Global delivers strategy, engineering, security, cloud, AI, and managed services for institutions that cannot fail.",
-                "تقدم سيلكسور تك وسايبر العالمية الاستراتيجية والهندسة والأمن والسحابة والذكاء الاصطناعي والخدمات المدارة."
+                "Sovereign cloud, cybersecurity, private AI, and identity systems engineered for institutions that cannot fail.",
+                "بنية سحابية سيادية وأمن سيبراني وذكاء اصطناعي خاص وأنظمة هوية للمؤسسات التي لا تحتمل الفشل."
               )}
             </p>
           </div>

@@ -99,12 +99,12 @@ const ExecutiveDashboard = () => {
     <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
         <div style={{ marginBottom: 20 }}>
-          <div className="section-eyebrow">{t("EXECUTIVE DASHBOARD", "لوحة تنفيذية")}</div>
+          <div className="section-eyebrow">{t("BY THE NUMBERS", "الأرقام")}</div>
           <h2
             className="font-display font-[700]"
             style={{ fontSize: 32, lineHeight: 1.15, color: "#FFFFFF" }}
           >
-            {t("Enterprise at a Glance", "المؤسسة في لمحة")}
+            {t("Enterprise Delivery at Scale", "تسليم مؤسسي بمقياس واسع")}
           </h2>
         </div>
 

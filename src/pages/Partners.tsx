@@ -14,7 +14,7 @@ const PARTNERS = [
 const Partners = () => {
   const { t } = useLanguage();
   useEffect(() => {
-    document.title = "Technology Partners — Silxor";
+    document.title = "Technology Partners | Silxor";
   }, []);
   return (
     <div className="min-h-screen">
@@ -27,8 +27,8 @@ const Partners = () => {
           </h1>
           <p className="font-body font-[300] mt-3" style={{ fontSize: 15, color: "#B8BCC2", maxWidth: 620 }}>
             {t(
-              "An enterprise ecosystem of hyperscalers, security leaders, and platform vendors integrated across every Silxor engagement.",
-              "منظومة مؤسسية من مزودي السحابة الكبرى وقادة الأمن والمنصات."
+              "Hyperscalers, security leaders, and enterprise platforms integrated across every Silxor engagement.",
+              "مزوّدو السحابة الكبار وقادة الأمن ومنصات المؤسسات مدمجون في كل تعاون مع Silxor."
             )}
           </p>
         </div>

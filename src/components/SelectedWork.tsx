@@ -5,31 +5,31 @@ const projects = [
     tag: "INFRASTRUCTURE",
     title: "Sovereign Cloud Migration",
     titleAr: "ترحيل السحابة السيادية",
-    body: "Full migration from international public cloud to Silxor sovereign infrastructure for a New York based financial institution. Zero downtime cutover.",
-    bodyAr: "ترحيل كامل من السحابة العامة الدولية إلى البنية التحتية السيادية لـ Silxor لمؤسسة مالية في نيويورك. انتقال بدون أي توقف.",
+    body: "Zero downtime cutover from public cloud to a Tier IV sovereign environment for a regulated financial institution.",
+    bodyAr: "انتقال بدون توقف من السحابة العامة إلى بيئة سيادية من المستوى الرابع لمؤسسة مالية منظّمة.",
     sector: "Financial Services",
     sectorAr: "الخدمات المالية",
-    coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
+    coord: { en: "40.7°N · 74.0°W", ar: "٤٠.٧° ش · ٧٤.٠° غ" },
   },
   {
     tag: "IDENTITY",
-    title: "Enterprise Identity Deployment",
-    titleAr: "نشر إدارة الهوية المؤسسية",
-    body: "Greenfield identity and access management architecture for a government ministry SSO, PAM vaulting, and IGA lifecycle management.",
-    bodyAr: "بنية إدارة هوية ووصول جديدة بالكامل لوزارة حكومية تسجيل دخول موحّد، خزنة الحسابات المميزة، وإدارة دورة حياة الهوية.",
+    title: "Enterprise Identity Program",
+    titleAr: "برنامج الهوية المؤسسية",
+    body: "Greenfield IAM for a public sector agency: SSO, PAM vaulting, and full IGA lifecycle governance.",
+    bodyAr: "منظومة إدارة هوية جديدة لجهة حكومية: تسجيل دخول موحّد، وخزنة الحسابات المميزة، وحوكمة دورة حياة الهوية.",
     sector: "Government",
     sectorAr: "الحكومة",
-    coord: { en: "36.2°N · 44.0°E", ar: "٣٦.٢° ش · ٤٤.٠° شر" },
+    coord: { en: "38.9°N · 77.0°W", ar: "٣٨.٩° ش · ٧٧.٠° غ" },
   },
   {
     tag: "SOFTWARE + AI",
-    title: "Sovereign AI Operations Platform",
-    titleAr: "منصة عمليات الذكاء الاصطناعي السيادي",
-    body: "Custom agentic AI platform with private LLM deployment for internal operations automation at an American energy company.",
-    bodyAr: "منصة ذكاء اصطناعي مخصصة مع نشر نموذج لغوي خاص لأتمتة العمليات الداخلية في شركة طاقة أمريكية.",
+    title: "Private AI Operations Platform",
+    titleAr: "منصة عمليات الذكاء الاصطناعي الخاصة",
+    body: "Agentic AI platform on privately hosted LLMs, automating operations for a national energy operator.",
+    bodyAr: "منصة ذكاء اصطناعي مع نماذج لغوية خاصة، تُؤتمت عمليات مشغّل طاقة وطني.",
     sector: "Energy",
     sectorAr: "الطاقة",
-    coord: { en: "30.5°N · 47.8°E", ar: "٣٠.٥° ش · ٤٧.٨° شر" },
+    coord: { en: "29.7°N · 95.3°W", ar: "٢٩.٧° ش · ٩٥.٣° غ" },
   },
 ];
 
@@ -42,10 +42,10 @@ const SelectedWork = () => {
         <div style={{ marginBottom: 40 }}>
           <div className="section-eyebrow">{t("SELECTED WORK", "أعمالنا المختارة")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
-            {t("Engagements We Can Talk About", "مشاريع يمكننا الحديث عنها")}
+            {t("Representative Engagements", "مشاريع تمثيلية")}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 560, marginTop: 6, lineHeight: 1.7 }}>
-            {t("A selection of infrastructure, identity, and software engagements delivered for clients across USA's government, financial, and energy sectors.", "مجموعة مختارة من مشاريع البنية التحتية والهوية والبرمجيات المنجزة لعملاء في القطاعات الحكومية والمالية والطاقة في الولايات المتحدة.")}
+            {t("Infrastructure, identity, and AI programs delivered for institutions across financial services, government, and energy.", "برامج بنية تحتية وهوية وذكاء اصطناعي مُنجزة لمؤسسات في الخدمات المالية والحكومة والطاقة.")}
           </p>
         </div>
 
@@ -155,7 +155,7 @@ const SelectedWork = () => {
             borderTop: "1px solid rgba(255,255,255,0.06)",
           }}
         >
-          {t("Additional case studies and client references available under NDA during assessment engagement.", "دراسات حالة إضافية ومراجع عملاء متاحة بموجب اتفاقية عدم إفشاء خلال التقييم.")}
+          {t("Additional case studies and references available under NDA during assessment.", "دراسات حالة ومراجع إضافية متاحة بموجب اتفاقية عدم إفشاء خلال التقييم.")}
         </p>
       </div>
     </section>

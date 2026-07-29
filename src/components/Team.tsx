@@ -7,20 +7,20 @@ const Team = () => {
   const leaders = [
     {
       name: "Ehsan Nidawi",
-      title: "FOUNDER - SR. PRINCIPAL CYBERSECURITY",
-      bio: t("Sr. Principal Cybersecurity - Identity Ecosystem Architect | Digital Transformation Architect | Ex: CISA, Ally Financial, Meta, Google, Dell, Apple.", "كبير مهندسي الأمن السيبراني - مهندس منظومة الهوية | مهندس التحول الرقمي | سابقاً: CISA، Ally Financial، Meta، Google، Dell، Apple."),
+      title: "FOUNDER & PRINCIPAL, CYBERSECURITY",
+      bio: t("Principal cybersecurity architect and identity ecosystem lead. Prior engineering leadership at CISA, Ally Financial, Meta, Google, Dell, and Apple.", "مهندس رئيسي في الأمن السيبراني وقائد منظومة الهوية. خبرة قيادية سابقة في CISA وAlly Financial وMeta وGoogle وDell وApple."),
       linkedin: "https://www.linkedin.com/in/ehsidawi",
     },
     {
       name: t("To Be Announced", "سيُعلن لاحقاً"),
       title: "CHIEF TECHNOLOGY OFFICER",
-      bio: t("Infrastructure and cloud architect with international Tier IV operations experience and deep expertise in sovereign systems design.", "مهندس بنية تحتية وسحابية ذو خبرة دولية في عمليات المستوى الرابع وخبرة عميقة في تصميم الأنظمة السيادية."),
+      bio: t("Infrastructure and cloud leader with Tier IV operational experience and deep expertise in sovereign systems.", "قائد بنية تحتية وسحابة بخبرة تشغيل من المستوى الرابع وخبرة عميقة في الأنظمة السيادية."),
       linkedin: "",
     },
     {
       name: t("To Be Announced", "سيُعلن لاحقاً"),
       title: "HEAD OF AI & SOFTWARE ENGINEERING",
-      bio: t("AI systems and software engineering leader specializing in sovereign LLM deployments and enterprise platform delivery.", "قائد أنظمة الذكاء الاصطناعي وهندسة البرمجيات متخصص في نشر النماذج اللغوية السيادية وتسليم المنصات المؤسسية."),
+      bio: t("AI and software engineering leader focused on private LLM deployments and enterprise platform delivery.", "قائد ذكاء اصطناعي وهندسة برمجيات متخصص في نشر النماذج اللغوية الخاصة وتسليم المنصات المؤسسية."),
       linkedin: "",
     },
   ];
@@ -31,10 +31,10 @@ const Team = () => {
         <div style={{ marginBottom: 64 }}>
           <div className="section-eyebrow">{t("LEADERSHIP", "الفريق")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF" }}>
-            {t("American Engineers. Global Standards.", "مهندسون أمريكيون. معايير عالمية.")}
+            {t("Senior Engineers. Direct Accountability.", "مهندسون أقدم. مساءلة مباشرة.")}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 16, color: "#B8BCC2", maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
-            {t("Silxor is built and operated by technologists with backgrounds across international infrastructure, cybersecurity, and enterprise software rooted in USA.", "Silxor مبنية ومُدارة من قبل تقنيين ذوي خلفيات عبر البنية التحتية الدولية والأمن السيبراني والبرمجيات المؤسسية متجذرة في الولايات المتحدة.")}
+            {t("Silxor is led by operators with backgrounds spanning hyperscale infrastructure, cybersecurity, and enterprise software delivery.", "تقود Silxor مجموعة من المهنيين ذوي خلفيات تمتد من البنية التحتية فائقة الحجم إلى الأمن السيبراني وتسليم البرمجيات المؤسسية.")}
           </p>
         </div>
 
@@ -93,7 +93,7 @@ const Team = () => {
         </div>
 
         <p className="font-body font-[300] text-center" style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 32 }}>
-          {t("Full leadership profiles and additional team bios available upon request during the assessment engagement.", "ملفات القيادة الكاملة والسير الذاتية الإضافية للفريق متاحة عند الطلب خلال التقييم.")}
+          {t("Full leadership profiles and additional bios available on request during the assessment.", "ملفات القيادة الكاملة والسير الإضافية متاحة عند الطلب خلال التقييم.")}
         </p>
       </div>
     </section>

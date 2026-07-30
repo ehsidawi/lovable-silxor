@@ -39,7 +39,7 @@ const ComplianceDoc = () => {
             Compliance Documentation
           </h1>
           <p className="font-body font-[300]" style={{ fontSize: 16, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 48 }}>
-            Silxor maintains a comprehensive compliance posture across information security, data residency, and operational standards.
+            Independently audited controls across information security, data residency, and operational resilience. Evidence packages are released to enterprise clients under NDA.
           </p>
 
           <div className="space-y-6">

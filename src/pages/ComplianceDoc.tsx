@@ -6,7 +6,7 @@ const blocks = [
     title: "ISO/IEC 27001:2022",
     status: "CERTIFIED",
     statusColor: "#2A9D5C",
-    body: "Silxor Tech and Cyber Global holds ISO/IEC 27001:2022 certification covering information security management across all service delivery operations. Annual third party audit conducted. Certificate available upon request under NDA.",
+    body: "Silxor Group Holding holds ISO/IEC 27001:2022 certification covering information security management across all service delivery operations. Annual third party audit conducted. Certificate available upon request under NDA.",
   },
   {
     title: "SOC 2 Type II",

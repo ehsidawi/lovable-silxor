@@ -6,7 +6,7 @@ const announcements = [
     dateAr: "مارس 2026",
     title: "Silxor Achieves ISO/IEC 27001:2022 Certification",
     titleAr: "Silxor تحصل على شهادة ISO/IEC 27001:2022",
-    body: "Silxor Tech and Cyber Global has completed ISO/IEC 27001:2022 certification, validating our information security management system across all service delivery operations.",
+    body: "Silxor Group Holding has completed ISO/IEC 27001:2022 certification, validating our information security management system across all service delivery operations.",
     bodyAr: "أتمّت سيلكسور تك وسايبر العالمية شهادة ISO/IEC 27001:2022، مما يؤكد نظام إدارة أمن المعلومات عبر جميع عمليات تقديم الخدمات.",
   },
   {

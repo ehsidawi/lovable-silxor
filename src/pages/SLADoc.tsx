@@ -24,7 +24,7 @@ const SLADoc = () => {
             SLA Documentation
           </h1>
           <p className="font-body font-[300]" style={{ fontSize: 16, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 48 }}>
-            Silxor service level commitments by infrastructure tier.
+            Contractual service level commitments by infrastructure tier. Every figure below is written into the master service agreement.
           </p>
 
           <div style={{ backgroundColor: "#25282C", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 4, overflow: "hidden" }}>

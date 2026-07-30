@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 const sections = [
   {
     title: "1. Data Controller",
-    body: "Silxor Tech and Cyber Global, New York, USA.\nContact: privacy@silxor.com",
+    body: "Silxor Group Holding, New York, USA.\nContact: privacy@silxor.com",
   },
   {
     title: "2. Data We Collect",
@@ -28,7 +28,7 @@ const sections = [
   },
   {
     title: "7. Contact",
-    body: "For all privacy inquiries: privacy@silxor.com\nSilxor Tech and Cyber Global New York, USA",
+    body: "For all privacy inquiries: privacy@silxor.com\nSilxor Group Holding, New York, USA",
   },
 ];
 

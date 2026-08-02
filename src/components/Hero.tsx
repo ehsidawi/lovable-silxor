@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
 
 import { useLanguage } from "@/context/LanguageContext";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+
+const MotionCard = motion.create(Card);
 
 const Hero = () => {
   const { t, language } = useLanguage();
   const arFont = language === "ar" ? "'Cairo', sans-serif" : undefined;
+
 
   return (
     <section

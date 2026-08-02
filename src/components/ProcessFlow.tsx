@@ -59,7 +59,7 @@ const ProcessFlow = () => {
                 {index < stages.length - 1 && (
                   <Separator
                     orientation="vertical"
-                    className="flex-1 bg-transparent h-px"
+                    className="flex-1 bg-transparent w-px h-auto"
                     style={{ width: 1, backgroundColor: "rgba(255,255,255,0.08)", marginTop: 4 }}
                   />
                 )}

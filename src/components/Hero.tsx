@@ -190,7 +190,8 @@ const Hero = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </MotionCard>
+
         </div>
       </div>
     </section>

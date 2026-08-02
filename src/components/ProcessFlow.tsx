@@ -1,4 +1,5 @@
 import { useLanguage } from "@/context/LanguageContext";
+import { Separator } from "@/components/ui/separator";
 
 const ProcessFlow = () => {
   const { t } = useLanguage();
@@ -27,7 +28,7 @@ const ProcessFlow = () => {
         {/* Desktop */}
         <div className="hidden lg:block">
           <div className="relative">
-            <div className="absolute top-4 left-0 right-0" style={{ height: 1, backgroundColor: "rgba(255,255,255,0.08)" }} />
+            <Separator className="absolute top-4 left-0 right-0 bg-transparent h-px" style={{ height: 1, backgroundColor: "rgba(255,255,255,0.08)" }} />
             <div className="flex justify-between">
               {stages.map((stage, index) => (
                 <div key={index} className="relative flex flex-col items-center" style={{ flex: 1, maxWidth: 200 }}>
@@ -56,7 +57,11 @@ const ProcessFlow = () => {
                   <div style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: "#F0F1F3" }} />
                 </div>
                 {index < stages.length - 1 && (
-                  <div className="flex-1" style={{ width: 1, backgroundColor: "rgba(255,255,255,0.08)", marginTop: 4 }} />
+                  <Separator
+                    orientation="vertical"
+                    className="flex-1 bg-transparent h-px"
+                    style={{ width: 1, backgroundColor: "rgba(255,255,255,0.08)", marginTop: 4 }}
+                  />
                 )}
               </div>
               <div style={{ paddingBottom: 8 }}>

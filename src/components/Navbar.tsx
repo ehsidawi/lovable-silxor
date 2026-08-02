@@ -247,7 +247,8 @@ const Navbar = () => {
               <span style={{ width: 22, height: 1, backgroundColor: "#F0F1F3", display: "block" }} />
             </div>
           )}
-        </button>
+        </Button>
+
       </div>
 
       {/* Scroll progress */}

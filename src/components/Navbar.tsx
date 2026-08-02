@@ -231,11 +231,13 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <button
-          className="xl:hidden flex items-center justify-center w-10 h-10 z-10"
+        <Button
+          variant="ghost"
+          className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit xl:hidden flex items-center justify-center w-10 h-10 z-10"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
+
           {mobileOpen ? (
             <X className="w-5 h-5" style={{ color: "#F0F1F3" }} />
           ) : (

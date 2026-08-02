@@ -2,6 +2,7 @@ import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
   const location = useLocation();
@@ -23,34 +24,46 @@ const NotFound = () => {
             The address you requested does not exist or has moved. Return to the homepage or contact our team and we will point you to the right resource.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link
-              to="/"
-              className="font-mono font-[400] uppercase transition-all duration-200"
-              style={{
-                fontSize: 11,
-                letterSpacing: "0.12em",
-                backgroundColor: "#F0F1F3",
-                color: "#0B0B0B",
-                padding: "14px 28px",
-                borderRadius: 2,
-              }}
+            <Button
+              asChild
+              variant="ghost"
+              className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit"
             >
-              Back to Home
-            </Link>
-            <a
-              href="mailto:contact@silxor.com?subject=Silxor%20-%20Website%20Inquiry"
-              className="font-mono font-[400] uppercase transition-all duration-200"
-              style={{
-                fontSize: 11,
-                letterSpacing: "0.12em",
-                color: "#F0F1F3",
-                border: "1px solid rgba(255,255,255,0.14)",
-                padding: "14px 28px",
-                borderRadius: 2,
-              }}
+              <Link
+                to="/"
+                className="font-mono font-[400] uppercase transition-all duration-200"
+                style={{
+                  fontSize: 11,
+                  letterSpacing: "0.12em",
+                  backgroundColor: "#F0F1F3",
+                  color: "#0B0B0B",
+                  padding: "14px 28px",
+                  borderRadius: 2,
+                }}
+              >
+                Back to Home
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="ghost"
+              className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit"
             >
-              Contact Silxor
-            </a>
+              <a
+                href="mailto:contact@silxor.com?subject=Silxor%20-%20Website%20Inquiry"
+                className="font-mono font-[400] uppercase transition-all duration-200"
+                style={{
+                  fontSize: 11,
+                  letterSpacing: "0.12em",
+                  color: "#F0F1F3",
+                  border: "1px solid rgba(255,255,255,0.14)",
+                  padding: "14px 28px",
+                  borderRadius: 2,
+                }}
+              >
+                Contact Silxor
+              </a>
+            </Button>
           </div>
         </div>
       </section>

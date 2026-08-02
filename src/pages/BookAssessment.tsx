@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
+import { Card } from "@/components/ui/card";
+
 
 const CAL_LINK = "silxor/assessment";
 const CAL_NAMESPACE = "assessment";
@@ -144,7 +146,8 @@ const BookAssessment = () => {
 
       {/* Cal.com themed frame */}
       <section style={{ padding: "0 clamp(20px, 5vw, 48px) 64px", maxWidth: 1200, margin: "0 auto" }}>
-        <div
+        <Card
+          className="rounded-none border-0 bg-transparent text-inherit shadow-none"
           style={{
             position: "relative",
             border: "1px solid rgba(255,255,255,0.10)",
@@ -152,6 +155,7 @@ const BookAssessment = () => {
             padding: 12,
           }}
         >
+
           {/* Frame chrome */}
           <div
             className="font-mono"
@@ -183,7 +187,8 @@ const BookAssessment = () => {
               backgroundColor: "#141414",
             }}
           />
-        </div>
+        </Card>
+
 
         <p
           className="font-mono"

@@ -1,5 +1,6 @@
 import AnimatedCounter from "./AnimatedCounter";
 import { useLanguage } from "@/context/LanguageContext";
+import { Card } from "@/components/ui/card";
 
 const Ring = ({ pct, label, value }: { pct: number; label: string; value: string }) => {
   const r = 42;
@@ -111,7 +112,7 @@ const ExecutiveDashboard = () => {
         {/* KPI counters */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-[2px]">
           {kpis.map((k, i) => (
-            <div key={i} className="surface-elevated" style={{ padding: "20px 18px" }}>
+            <Card key={i} className="surface-elevated rounded-[4px] border-0 bg-transparent text-inherit shadow-none" style={{ padding: "20px 18px" }}>
               <div
                 className="font-display font-[700]"
                 style={{ fontSize: 34, color: "#FFFFFF", lineHeight: 1.1 }}
@@ -128,13 +129,13 @@ const ExecutiveDashboard = () => {
               >
                 {k.label}
               </div>
-            </div>
+            </Card>
           ))}
         </div>
 
         {/* Rings + practice bars */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[2px] mt-[2px]">
-          <div className="surface-elevated" style={{ padding: 22 }}>
+          <Card className="surface-elevated rounded-[4px] border-0 bg-transparent text-inherit shadow-none" style={{ padding: 22 }}>
             <div
               className="font-mono uppercase mb-4"
               style={{ fontSize: 10, letterSpacing: "0.2em", color: "#F0F1F3" }}
@@ -146,8 +147,8 @@ const ExecutiveDashboard = () => {
                 <Ring key={r.label} {...r} />
               ))}
             </div>
-          </div>
-          <div className="surface-elevated" style={{ padding: 22 }}>
+          </Card>
+          <Card className="surface-elevated rounded-[4px] border-0 bg-transparent text-inherit shadow-none" style={{ padding: 22 }}>
             <div
               className="font-mono uppercase mb-4"
               style={{ fontSize: 10, letterSpacing: "0.2em", color: "#F0F1F3" }}
@@ -159,7 +160,7 @@ const ExecutiveDashboard = () => {
                 <Bar key={b.label} {...b} />
               ))}
             </div>
-          </div>
+          </Card>
         </div>
       </div>
     </section>

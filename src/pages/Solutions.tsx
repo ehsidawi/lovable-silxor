@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import { useLanguage } from "@/context/LanguageContext";
 import { useEffect } from "react";
+import { Card } from "@/components/ui/card";
 import {
   Smartphone, Landmark, ShieldCheck, Cpu, Server, Fingerprint,
 } from "lucide-react";
@@ -90,7 +91,11 @@ const Solutions = () => {
           <div className="container-content">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[2px]">
               {kpis.map((k) => (
-                <div key={k.label} className="surface-elevated" style={{ padding: "18px 16px" }}>
+                <Card
+                  key={k.label}
+                  className="surface-elevated rounded-[4px] border-0 bg-transparent text-inherit shadow-none"
+                  style={{ padding: "18px 16px" }}
+                >
                   <div className="font-display font-[700]" style={{ fontSize: 22, color: "#FFFFFF" }}>
                     {k.value}
                   </div>
@@ -100,7 +105,7 @@ const Solutions = () => {
                   >
                     {k.label}
                   </div>
-                </div>
+                </Card>
               ))}
             </div>
           </div>
@@ -113,7 +118,11 @@ const Solutions = () => {
               {cards.map((c) => {
                 const Icon = c.icon;
                 return (
-                  <div key={c.title} className="surface-elevated" style={{ padding: 20 }}>
+                  <Card
+                    key={c.title}
+                    className="surface-elevated rounded-[4px] border-0 bg-transparent text-inherit shadow-none"
+                    style={{ padding: 20 }}
+                  >
                     <div className="flex items-center gap-3 mb-3">
                       <div
                         style={{
@@ -160,7 +169,7 @@ const Solutions = () => {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </Card>
                 );
               })}
             </div>
@@ -171,7 +180,10 @@ const Solutions = () => {
         <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
           <div className="container-content">
             <div className="section-eyebrow">{t("CAPABILITY RAIL", "خط القدرات")}</div>
-            <div className="surface-elevated" style={{ padding: 22 }}>
+            <Card
+              className="surface-elevated rounded-[4px] border-0 bg-transparent text-inherit shadow-none"
+              style={{ padding: 22 }}
+            >
               <div className="relative" style={{ height: 6, background: "#25282C", borderRadius: 3 }}>
                 <div
                   style={{
@@ -215,7 +227,7 @@ const Solutions = () => {
                   {t("Enterprise Technologies Integrated", "تقنيات مؤسسية مدمجة")}
                 </span>
               </div>
-            </div>
+            </Card>
           </div>
         </section>
       </main>

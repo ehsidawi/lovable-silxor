@@ -3,6 +3,9 @@ import { X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import LanguageToggle from "./LanguageToggle";
 import { useLanguage } from "@/context/LanguageContext";
+import { Button } from "@/components/ui/button";
+
+
 
 const NAV_HEIGHT = 80;
 
@@ -187,12 +190,14 @@ const Navbar = () => {
             <LanguageToggle />
           </div>
 
-          <button
+          <Button
+            variant="ghost"
             type="button"
             data-cal-namespace="assessment"
             data-cal-link="silxor/assessment"
             data-cal-config='{"layout":"month_view"}'
-            className="relative group overflow-hidden transition-all duration-300 active:scale-95 hover:bg-white"
+            className="h-auto p-0 rounded-none font-normal hover:text-inherit relative group overflow-hidden transition-all duration-300 active:scale-95 hover:bg-white"
+
             style={{
               padding: "12px 22px",
               backgroundColor: "#F0F1F3",
@@ -221,15 +226,18 @@ const Navbar = () => {
                 <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
               </svg>
             </span>
-          </button>
+          </Button>
+
         </div>
 
         {/* Mobile toggle */}
-        <button
-          className="xl:hidden flex items-center justify-center w-10 h-10 z-10"
+        <Button
+          variant="ghost"
+          className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit xl:hidden flex items-center justify-center w-10 h-10 z-10"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
+
           {mobileOpen ? (
             <X className="w-5 h-5" style={{ color: "#F0F1F3" }} />
           ) : (
@@ -239,7 +247,8 @@ const Navbar = () => {
               <span style={{ width: 22, height: 1, backgroundColor: "#F0F1F3", display: "block" }} />
             </div>
           )}
-        </button>
+        </Button>
+
       </div>
 
       {/* Scroll progress */}
@@ -313,13 +322,14 @@ const Navbar = () => {
           <div className="flex items-center justify-center py-6">
             <LanguageToggle />
           </div>
-          <button
+          <Button
+            variant="ghost"
             type="button"
             data-cal-namespace="assessment"
             data-cal-link="silxor/assessment"
             data-cal-config='{"layout":"month_view"}'
             onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center gap-2 uppercase w-full"
+            className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit flex items-center justify-center gap-2 uppercase w-full"
             style={{
               fontFamily: "'DM Sans', sans-serif",
               fontSize: 12,
@@ -337,7 +347,8 @@ const Navbar = () => {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
               <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
             </svg>
-          </button>
+          </Button>
+
         </div>
       </div>
     </nav>

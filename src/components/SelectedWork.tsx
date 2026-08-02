@@ -1,4 +1,6 @@
 import { useLanguage } from "@/context/LanguageContext";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const projects = [
   {
@@ -52,9 +54,9 @@ const SelectedWork = () => {
         {/* Map list */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
           {projects.map((project, index) => (
-            <div
+            <Card
               key={index}
-              className="group relative surface-elevated"
+              className="group relative surface-elevated border-0 bg-transparent text-inherit shadow-none"
               style={{
                 borderRadius: 2,
                 padding: "24px 22px",
@@ -107,8 +109,8 @@ const SelectedWork = () => {
                 >
                   {project.tag}
                 </span>
-                <span
-                  className="font-mono font-[400]"
+                <Badge
+                  className="badge-pill rounded-[2px] border-0 bg-transparent p-0 font-normal hover:bg-transparent font-mono font-[400]"
                   style={{
                     fontSize: 9,
                     color: "hsl(var(--primary))",
@@ -119,7 +121,7 @@ const SelectedWork = () => {
                   }}
                 >
                   {t(project.sector, project.sectorAr)}
-                </span>
+                </Badge>
               </div>
 
               {/* Content */}
@@ -140,7 +142,7 @@ const SelectedWork = () => {
                 <div style={{ position: "absolute", top: 6, left: 0, width: 14, height: 1, backgroundColor: "hsl(var(--primary))" }} />
                 <div style={{ position: "absolute", top: 0, left: 6, width: 1, height: 14, backgroundColor: "hsl(var(--primary))" }} />
               </div>
-            </div>
+            </Card>
           ))}
         </div>
 

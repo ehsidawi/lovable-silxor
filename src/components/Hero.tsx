@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
 
 import { useLanguage } from "@/context/LanguageContext";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+
+const MotionCard = motion.create(Card);
 
 const Hero = () => {
   const { t, language } = useLanguage();
   const arFont = language === "ar" ? "'Cairo', sans-serif" : undefined;
+
 
   return (
     <section
@@ -28,7 +34,7 @@ const Hero = () => {
         >
           {t("Status: Operational // Build v4.2", "الحالة: تشغيلية // إصدار 4.2")}
         </span>
-        <div style={{ height: 1, width: 128, backgroundColor: "#25282C" }} />
+        <Separator className="bg-transparent" style={{ height: 1, width: 128, backgroundColor: "#25282C" }} />
       </div>
 
       {/* Diagonal texture */}
@@ -88,12 +94,13 @@ const Hero = () => {
               )}
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <button
+              <Button
+                variant="ghost"
                 type="button"
                 data-cal-namespace="assessment"
                 data-cal-link="silxor/assessment"
                 data-cal-config='{"layout":"month_view"}'
-                className="inline-flex items-center justify-center uppercase transition-colors"
+                className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit inline-flex items-center justify-center uppercase transition-colors"
                 style={{
                   fontSize: 12,
                   letterSpacing: "0.2em",
@@ -109,39 +116,46 @@ const Hero = () => {
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
               >
                 {t("Book an Assessment", "احجز تقييماً")}
-              </button>
-              <a
-                href="#infrastructure"
-                className="inline-flex items-center justify-center uppercase transition-colors"
-                style={{
-                  fontSize: 12,
-                  letterSpacing: "0.2em",
-                  border: "1px solid #25282C",
-                  color: "#FFFFFF",
-                  padding: "16px 32px",
-                  fontWeight: 700,
-                  fontFamily: arFont,
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#25282C")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+              </Button>
+              <Button
+                asChild
+                variant="ghost"
+                className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit inline-flex items-center justify-center uppercase transition-colors"
               >
-                {t("View Spec", "عرض المواصفات")}
-              </a>
+                <a
+                  href="#infrastructure"
+                  style={{
+                    fontSize: 12,
+                    letterSpacing: "0.2em",
+                    border: "1px solid #25282C",
+                    color: "#FFFFFF",
+                    padding: "16px 32px",
+                    fontWeight: 700,
+                    fontFamily: arFont,
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#25282C")}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+                >
+                  {t("View Spec", "عرض المواصفات")}
+                </a>
+              </Button>
+
             </div>
           </motion.div>
 
           {/* Spec Sheet Card */}
-          <motion.div
+          <MotionCard
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-            className="flex flex-col gap-4"
+            className="rounded-none border-0 bg-transparent text-inherit shadow-none flex flex-col gap-4"
             style={{
               backgroundColor: "#25282C",
               padding: 24,
               border: "1px solid rgba(184, 188, 194,0.2)",
             }}
           >
+
             <div className="flex justify-between items-center font-mono" style={{ fontSize: 10, color: "#B8BCC2" }}>
               <span>{t("ENGINEERING LOGS", "سجلات الهندسة")}</span>
               <span className="animate-pulse" style={{ color: "#F0F1F3" }}>REC ●</span>
@@ -176,7 +190,8 @@ const Hero = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </MotionCard>
+
         </div>
       </div>
     </section>

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { Button } from "@/components/ui/button";
+
 
 const serviceOptions = [
   { en: "Infrastructure & Cloud Hosting", ar: "البنية التحتية والاستضافة السحابية" },
@@ -176,10 +178,11 @@ const ContactForm = () => {
           />
         </div>
         <div className="sm:col-span-2">
-          <button
+          <Button
+            variant="ghost"
             type="submit"
             disabled={submitting}
-            className="w-full font-mono font-[400] uppercase transition-all duration-200"
+            className="h-auto p-0 rounded-none hover:bg-transparent hover:text-inherit disabled:opacity-100 w-full font-mono font-[400] uppercase transition-all duration-200"
             style={{
               fontSize: 11,
               letterSpacing: "0.1em",
@@ -201,7 +204,8 @@ const ContactForm = () => {
             }}
           >
             {submitting ? t("Sending...", "جارٍ الإرسال...") : t("Send Message", "إرسال الرسالة")}
-          </button>
+          </Button>
+
         </div>
 
         {status === "success" && (

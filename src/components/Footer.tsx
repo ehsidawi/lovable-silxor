@@ -1,6 +1,7 @@
 import { Shield } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { Link } from "react-router-dom";
+import { Badge } from "@/components/ui/badge";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -94,10 +95,10 @@ const Footer = () => {
 
         <div className="flex flex-wrap gap-3" style={{ marginTop: 48, marginBottom: 12 }}>
           {["ISO/IEC 27001:2022", "SOC 2 Type II", "Tier IV Certified", "GDPR Ready"].map((cert) => (
-            <span key={cert} className="badge-pill">
+            <Badge key={cert} className="badge-pill rounded-[2px] border-0 bg-transparent p-0 font-normal hover:bg-transparent">
               <Shield style={{ width: 10, height: 10 }} />
               {cert}
-            </span>
+            </Badge>
           ))}
         </div>
 

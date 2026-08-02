@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { Card } from "@/components/ui/card";
 
 const WhySilxor = () => {
   const { t } = useLanguage();
@@ -32,7 +33,7 @@ const WhySilxor = () => {
           </p>
         </div>
 
-        <div className="surface-elevated" style={{ padding: 22 }}>
+        <Card className="surface-elevated rounded-none border-0 bg-transparent text-inherit shadow-none" style={{ padding: 22 }}>
           <div
             className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-[1px]"
             style={{ background: "rgba(255,255,255,0.06)" }}
@@ -71,7 +72,7 @@ const WhySilxor = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Card>
       </div>
     </section>
   );

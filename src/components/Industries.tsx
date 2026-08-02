@@ -15,6 +15,7 @@ import {
   Cpu,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { Card } from "@/components/ui/card";
 
 const Industries = () => {
   const { t } = useLanguage();
@@ -49,9 +50,9 @@ const Industries = () => {
           {items.map((it) => {
             const Icon = it.icon;
             return (
-              <div
+              <Card
                 key={it.label}
-                className="surface-elevated group"
+                className="surface-elevated rounded-none border-0 bg-transparent text-inherit shadow-none group"
                 style={{ padding: 16, display: "flex", flexDirection: "column", alignItems: "center", gap: 8, textAlign: "center" }}
               >
                 <div
@@ -73,7 +74,7 @@ const Industries = () => {
                 >
                   {it.label}
                 </span>
-              </div>
+              </Card>
             );
           })}
         </div>

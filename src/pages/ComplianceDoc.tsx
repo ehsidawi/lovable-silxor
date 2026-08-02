@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const blocks = [
   {
@@ -44,13 +46,17 @@ const ComplianceDoc = () => {
 
           <div className="space-y-6">
             {blocks.map((block, i) => (
-              <div key={i} className="surface-elevated" style={{ padding: 32 }}>
+              <Card
+                key={i}
+                className="surface-elevated rounded-[4px] border-0 bg-transparent text-inherit shadow-none"
+                style={{ padding: 32 }}
+              >
                 <div className="flex items-center gap-3" style={{ marginBottom: 12 }}>
                   <h2 className="font-body font-[500]" style={{ fontSize: 17, color: "#FFFFFF" }}>
                     {block.title}
                   </h2>
-                  <span
-                    className="font-mono font-[400] uppercase"
+                  <Badge
+                    className="badge-pill rounded-[2px] border-0 bg-transparent p-0 font-normal hover:bg-transparent font-mono font-[400] uppercase"
                     style={{
                       fontSize: 9,
                       letterSpacing: "0.15em",
@@ -61,12 +67,12 @@ const ComplianceDoc = () => {
                     }}
                   >
                     {block.status}
-                  </span>
+                  </Badge>
                 </div>
                 <p className="font-body font-[300]" style={{ fontSize: 15, color: "#B8BCC2", lineHeight: 1.8 }}>
                   {block.body}
                 </p>
-              </div>
+              </Card>
             ))}
           </div>
 

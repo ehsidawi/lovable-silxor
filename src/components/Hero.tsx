@@ -144,17 +144,18 @@ const Hero = () => {
           </motion.div>
 
           {/* Spec Sheet Card */}
-          <motion.div
+          <MotionCard
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-            className="flex flex-col gap-4"
+            className="rounded-none border-0 bg-transparent text-inherit shadow-none flex flex-col gap-4"
             style={{
               backgroundColor: "#25282C",
               padding: 24,
               border: "1px solid rgba(184, 188, 194,0.2)",
             }}
           >
+
             <div className="flex justify-between items-center font-mono" style={{ fontSize: 10, color: "#B8BCC2" }}>
               <span>{t("ENGINEERING LOGS", "سجلات الهندسة")}</span>
               <span className="animate-pulse" style={{ color: "#F0F1F3" }}>REC ●</span>

@@ -1,5 +1,6 @@
 import { Compass, Server, ShieldCheck, Activity } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { Card } from "@/components/ui/card";
 
 const Services = () => {
   const { t } = useLanguage();
@@ -93,7 +94,7 @@ const Services = () => {
           {practices.map((p, index) => {
             const Icon = p.icon;
             return (
-              <div key={p.title} className="surface-elevated relative overflow-hidden" style={{ padding: 22 }}>
+              <Card key={p.title} className="surface-elevated rounded-none border-0 bg-transparent text-inherit shadow-none relative overflow-hidden" style={{ padding: 22 }}>
                 <div
                   className="absolute inset-0 opacity-[0.03] pointer-events-none"
                   style={{
@@ -164,7 +165,7 @@ const Services = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </Card>
             );
           })}
         </div>

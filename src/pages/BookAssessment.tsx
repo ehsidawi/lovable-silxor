@@ -185,7 +185,8 @@ const BookAssessment = () => {
               backgroundColor: "#141414",
             }}
           />
-        </div>
+        </Card>
+
 
         <p
           className="font-mono"

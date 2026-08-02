@@ -322,13 +322,14 @@ const Navbar = () => {
           <div className="flex items-center justify-center py-6">
             <LanguageToggle />
           </div>
-          <button
+          <Button
+            variant="ghost"
             type="button"
             data-cal-namespace="assessment"
             data-cal-link="silxor/assessment"
             data-cal-config='{"layout":"month_view"}'
             onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center gap-2 uppercase w-full"
+            className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit flex items-center justify-center gap-2 uppercase w-full"
             style={{
               fontFamily: "'DM Sans', sans-serif",
               fontSize: 12,
@@ -346,7 +347,8 @@ const Navbar = () => {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
               <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
             </svg>
-          </button>
+          </Button>
+
         </div>
       </div>
     </nav>

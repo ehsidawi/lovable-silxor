@@ -187,12 +187,14 @@ const Navbar = () => {
             <LanguageToggle />
           </div>
 
-          <button
+          <Button
+            variant="ghost"
             type="button"
             data-cal-namespace="assessment"
             data-cal-link="silxor/assessment"
             data-cal-config='{"layout":"month_view"}'
-            className="relative group overflow-hidden transition-all duration-300 active:scale-95 hover:bg-white"
+            className="h-auto p-0 rounded-none font-normal hover:text-inherit relative group overflow-hidden transition-all duration-300 active:scale-95 hover:bg-white"
+
             style={{
               padding: "12px 22px",
               backgroundColor: "#F0F1F3",

@@ -1,5 +1,7 @@
 import { Server, Code, Shield } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 
 const StartEngagement = () => {
@@ -46,7 +48,7 @@ const StartEngagement = () => {
           {paths.map((path, index) => {
             const Icon = path.icon;
             return (
-              <div key={index} className="surface-elevated flex flex-col" style={{ padding: 14 }}>
+              <Card key={index} className="surface-elevated flex flex-col rounded-[4px] border-0 bg-transparent text-inherit shadow-none" style={{ padding: 14 }}>
                 <Icon className="mb-5" style={{ width: 32, height: 32, color: "#F0F1F3" }} strokeWidth={1.5} />
                 <h3 className="font-body font-[500]" style={{ fontSize: 17, color: "#FFFFFF", marginBottom: 10 }}>
                   {path.title}
@@ -54,18 +56,19 @@ const StartEngagement = () => {
                 <p className="font-body font-[300] flex-1" style={{ fontSize: 14, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 10 }}>
                   {path.description}
                 </p>
-              </div>
+              </Card>
             );
           })}
         </div>
 
         <div className="flex justify-center" style={{ marginTop: 48 }}>
-          <button
+          <Button
             type="button"
+            variant="ghost"
             data-cal-namespace="assessment"
             data-cal-link="silxor/assessment"
             data-cal-config='{"layout":"month_view"}'
-            className="font-mono font-[400] uppercase transition-all duration-200 flex items-center gap-2"
+            className="h-auto rounded-none font-mono font-[400] uppercase transition-all duration-200 flex items-center gap-2 hover:bg-[#FFFFFF] hover:text-inherit"
             style={{
               fontSize: 12,
               letterSpacing: "0.12em",
@@ -80,7 +83,7 @@ const StartEngagement = () => {
             onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#F0F1F3")}
           >
             {t("Book an Assessment", "احجز تقييماً")}
-          </button>
+          </Button>
         </div>
         
       </div>

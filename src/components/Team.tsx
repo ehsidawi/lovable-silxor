@@ -1,5 +1,6 @@
 import { User } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { Card } from "@/components/ui/card";
 
 const Team = () => {
   const { t } = useLanguage();
@@ -40,9 +41,9 @@ const Team = () => {
 
         <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-3">
           {leaders.map((leader, index) => (
-            <div
+            <Card
               key={index}
-              className="text-center"
+              className="text-center rounded-[4px] border-0 bg-transparent text-inherit shadow-none"
               style={{
                 backgroundColor: "#25282C",
                 border: "1px solid rgba(255,255,255,0.06)",
@@ -88,7 +89,7 @@ const Team = () => {
               <p className="font-body font-[300]" style={{ fontSize: 14, color: "#B8BCC2", lineHeight: 1.7, marginTop: 12 }}>
                 {leader.bio}
               </p>
-            </div>
+            </Card>
           ))}
         </div>
 

@@ -34,7 +34,7 @@ const Hero = () => {
         >
           {t("Status: Operational // Build v4.2", "الحالة: تشغيلية // إصدار 4.2")}
         </span>
-        <div style={{ height: 1, width: 128, backgroundColor: "#25282C" }} />
+        <Separator className="bg-transparent" style={{ height: 1, width: 128, backgroundColor: "#25282C" }} />
       </div>
 
       {/* Diagonal texture */}

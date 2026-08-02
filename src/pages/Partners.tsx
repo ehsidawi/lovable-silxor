@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
 import { useEffect } from "react";
+import { Card } from "@/components/ui/card";
 
 const PARTNERS = [
   "Microsoft", "AWS", "Google Cloud", "Cisco", "VMware", "Dell Technologies",
@@ -38,9 +39,9 @@ const Partners = () => {
           style={{ background: "rgba(255,255,255,0.06)" }}
         >
           {PARTNERS.map((name) => (
-            <div
+            <Card
               key={name}
-              className="group"
+              className="group rounded-none border-0 text-inherit shadow-none"
               style={{
                 background: "#141414",
                 padding: "28px 16px",
@@ -65,7 +66,7 @@ const Partners = () => {
               >
                 {name}
               </span>
-            </div>
+            </Card>
           ))}
         </div>
       </main>

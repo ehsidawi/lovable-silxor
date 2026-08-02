@@ -3,6 +3,9 @@ import { X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import LanguageToggle from "./LanguageToggle";
 import { useLanguage } from "@/context/LanguageContext";
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+
 
 const NAV_HEIGHT = 80;
 

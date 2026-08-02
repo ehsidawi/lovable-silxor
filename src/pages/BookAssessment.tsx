@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
+import { Card } from "@/components/ui/card";
+
 
 const CAL_LINK = "silxor/assessment";
 const CAL_NAMESPACE = "assessment";

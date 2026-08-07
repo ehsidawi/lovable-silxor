@@ -1,4 +1,4 @@
-import { Shield } from "lucide-react";
+import { Shield, Linkedin } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
@@ -106,17 +106,32 @@ const Footer = () => {
           <p className="font-body font-[300]" style={{ fontSize: 12, color: "#B8BCC2" }}>
             {t("© 2026 Silxor Group Holding.", "© 2026 مجموعة سيلكسور القابضة.")}
           </p>
-          <a
-            href="https://www.linkedin.com/in/ehsidawi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-body font-[300] transition-colors duration-200"
-            style={{ fontSize: 12, color: "#B8BCC2" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#F0F1F3")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#B8BCC2")}
-          >
-            {t("Designed by Ehsan Nidawi", "Designed by Ehsan Nidawi")}
-          </a>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.linkedin.com/company/silxorllc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Silxor on LinkedIn"
+              className="flex items-center gap-2 font-body font-[300] transition-colors duration-200"
+              style={{ fontSize: 12, color: "#B8BCC2" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#F0F1F3")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#B8BCC2")}
+            >
+              <Linkedin style={{ width: 14, height: 14 }} strokeWidth={1.5} />
+              {t("LinkedIn", "لينكدإن")}
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ehsidawi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body font-[300] transition-colors duration-200"
+              style={{ fontSize: 12, color: "#B8BCC2" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#F0F1F3")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#B8BCC2")}
+            >
+              {t("Designed by Ehsan Nidawi", "Designed by Ehsan Nidawi")}
+            </a>
+          </div>
         </div>
       </div>
     </footer>

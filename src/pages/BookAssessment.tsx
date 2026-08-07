@@ -4,7 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { Card } from "@/components/ui/card";
 
 
-const CAL_LINK = "silxor/assessment";
+const CAL_LINK = "ehsidawi/60";
 const CAL_NAMESPACE = "assessment";
 
 const BookAssessment = () => {
@@ -202,8 +202,8 @@ const BookAssessment = () => {
           }}
         >
           {t(
-            "Trouble booking? Email contact@silxor.com",
-            "مشكلة في الحجز؟ راسلنا contact@silxor.com"
+            "Trouble booking? Email hello@silxor.com",
+            "مشكلة في الحجز؟ راسلنا hello@silxor.com"
           )}
         </p>
       </section>

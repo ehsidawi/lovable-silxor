@@ -194,7 +194,7 @@ const Navbar = () => {
             variant="ghost"
             type="button"
             data-cal-namespace="assessment"
-            data-cal-link="silxor/assessment"
+            data-cal-link="ehsidawi/60"
             data-cal-config='{"layout":"month_view"}'
             className="h-auto p-0 rounded-none font-normal hover:text-inherit relative group overflow-hidden transition-all duration-300 active:scale-95 hover:bg-white"
 
@@ -326,7 +326,7 @@ const Navbar = () => {
             variant="ghost"
             type="button"
             data-cal-namespace="assessment"
-            data-cal-link="silxor/assessment"
+            data-cal-link="ehsidawi/60"
             data-cal-config='{"layout":"month_view"}'
             onClick={() => setMobileOpen(false)}
             className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit flex items-center justify-center gap-2 uppercase w-full"

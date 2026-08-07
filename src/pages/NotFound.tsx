@@ -50,7 +50,7 @@ const NotFound = () => {
               className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit"
             >
               <a
-                href="mailto:contact@silxor.com?subject=Silxor%20-%20Website%20Inquiry"
+                href="mailto:hello@silxor.com?subject=Silxor%20-%20Website%20Inquiry"
                 className="font-mono font-[400] uppercase transition-all duration-200"
                 style={{
                   fontSize: 11,

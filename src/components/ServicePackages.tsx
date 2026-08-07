@@ -29,7 +29,7 @@ const allPackages: PackageItem[] = [
     cta: "Get Started", ctaAr: "ابدأ الآن",
     domain: "INFRA", domainAr: "بنية تحتية",
     coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Sovereign%20Starter%20Package%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Sovereign%20Starter%20infrastructure%20package.%0A%0AOrganization%3A%20%0AMessage%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Sovereign%20Starter%20Package%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Sovereign%20Starter%20infrastructure%20package.%0A%0AOrganization%3A%20%0AMessage%3A%20",
   },
   {
     name: "Sovereign Business",
@@ -42,7 +42,7 @@ const allPackages: PackageItem[] = [
     popular: true,
     domain: "INFRA", domainAr: "بنية تحتية",
     coord: { en: "36.2°N · 44.0°E", ar: "٣٦.٢° ش · ٤٤.٠° شر" },
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Sovereign%20Business%20Package%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Sovereign%20Business%20infrastructure%20package.%0A%0AOrganization%3A%20%0AMessage%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Sovereign%20Business%20Package%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Sovereign%20Business%20infrastructure%20package.%0A%0AOrganization%3A%20%0AMessage%3A%20",
   },
   {
     name: "Sovereign Enterprise",
@@ -54,7 +54,7 @@ const allPackages: PackageItem[] = [
     cta: "Request Assessment", ctaAr: "طلب تقييم",
     domain: "INFRA", domainAr: "بنية تحتية",
     coord: { en: "30.5°N · 47.8°E", ar: "٣٠.٥° ش · ٤٧.٨° شر" },
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Sovereign%20Enterprise%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20an%20assessment%20for%20the%20Sovereign%20Enterprise%20package.%0A%0AOrganization%3A%20%0AMessage%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Sovereign%20Enterprise%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20an%20assessment%20for%20the%20Sovereign%20Enterprise%20package.%0A%0AOrganization%3A%20%0AMessage%3A%20",
   },
   // Software
   {
@@ -67,7 +67,7 @@ const allPackages: PackageItem[] = [
     cta: "Start a Project", ctaAr: "ابدأ مشروعاً",
     domain: "SOFTWARE", domainAr: "برمجيات",
     coord: { en: "34.0°N · 43.5°E", ar: "٣٤.٠° ش · ٤٣.٥° شر" },
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Build%20Essentials%20Project%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Build%20Essentials%20software%20package.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Build%20Essentials%20Project%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Build%20Essentials%20software%20package.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
   },
   {
     name: "Build Professional",
@@ -80,7 +80,7 @@ const allPackages: PackageItem[] = [
     popular: true,
     domain: "SOFTWARE", domainAr: "برمجيات",
     coord: { en: "35.5°N · 45.4°E", ar: "٣٥.٥° ش · ٤٥.٤° شر" },
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Build%20Professional%20Project%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Build%20Professional%20software%20package.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Build%20Professional%20Project%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Build%20Professional%20software%20package.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
   },
   {
     name: "Build Enterprise",
@@ -92,7 +92,7 @@ const allPackages: PackageItem[] = [
     cta: "Request Assessment", ctaAr: "طلب تقييم",
     domain: "SOFTWARE", domainAr: "برمجيات",
     coord: { en: "32.6°N · 44.0°E", ar: "٣٢.٦° ش · ٤٤.٠° شر" },
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Build%20Enterprise%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20an%20assessment%20for%20the%20Build%20Enterprise%20package.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Build%20Enterprise%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20an%20assessment%20for%20the%20Build%20Enterprise%20package.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
   },
   // AI
   {
@@ -105,7 +105,7 @@ const allPackages: PackageItem[] = [
     cta: "Get Started", ctaAr: "ابدأ الآن",
     domain: "AI", domainAr: "ذكاء اصطناعي",
     coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20AI%20Foundation%20Package%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20AI%20Foundation%20package.%0A%0AOrganization%3A%20%0AUse%20Case%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20AI%20Foundation%20Package%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20AI%20Foundation%20package.%0A%0AOrganization%3A%20%0AUse%20Case%3A%20",
   },
   {
     name: "AI Professional",
@@ -118,7 +118,7 @@ const allPackages: PackageItem[] = [
     popular: true,
     domain: "AI", domainAr: "ذكاء اصطناعي",
     coord: { en: "36.2°N · 44.0°E", ar: "٣٦.٢° ش · ٤٤.٠° شر" },
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20AI%20Professional%20Package%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20AI%20Professional%20package.%0A%0AOrganization%3A%20%0AUse%20Case%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20AI%20Professional%20Package%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20AI%20Professional%20package.%0A%0AOrganization%3A%20%0AUse%20Case%3A%20",
   },
   {
     name: "AI Sovereign Enterprise",
@@ -130,7 +130,7 @@ const allPackages: PackageItem[] = [
     cta: "Request Assessment", ctaAr: "طلب تقييم",
     domain: "AI", domainAr: "ذكاء اصطناعي",
     coord: { en: "30.5°N · 47.8°E", ar: "٣٠.٥° ش · ٤٧.٨° شر" },
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20AI%20Sovereign%20Enterprise%20Assessment&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20an%20assessment%20for%20the%20AI%20Sovereign%20Enterprise%20package.%0A%0AOrganization%3A%20%0AUse%20Case%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20AI%20Sovereign%20Enterprise%20Assessment&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20an%20assessment%20for%20the%20AI%20Sovereign%20Enterprise%20package.%0A%0AOrganization%3A%20%0AUse%20Case%3A%20",
   },
   // Consulting
   {
@@ -143,7 +143,7 @@ const allPackages: PackageItem[] = [
     cta: "Book a Sprint", ctaAr: "احجز سباقاً",
     domain: "CONSULT", domainAr: "استشارات",
     coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Advisory%20Sprint%20Booking&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20book%20an%20Advisory%20Sprint%20engagement.%0A%0AOrganization%3A%20%0AFocus%20Area%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Advisory%20Sprint%20Booking&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20book%20an%20Advisory%20Sprint%20engagement.%0A%0AOrganization%3A%20%0AFocus%20Area%3A%20",
   },
   {
     name: "Transformation Program",
@@ -155,7 +155,7 @@ const allPackages: PackageItem[] = [
     cta: "Start Program", ctaAr: "ابدأ البرنامج",
     domain: "CONSULT", domainAr: "استشارات",
     coord: { en: "35.5°N · 45.4°E", ar: "٣٥.٥° ش · ٤٥.٤° شر" },
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Transformation%20Program%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Transformation%20Program%20engagement.%0A%0AOrganization%3A%20%0AScope%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Transformation%20Program%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Transformation%20Program%20engagement.%0A%0AOrganization%3A%20%0AScope%3A%20",
   },
   {
     name: "Strategic Partner",
@@ -167,7 +167,7 @@ const allPackages: PackageItem[] = [
     cta: "Become a Partner", ctaAr: "كن شريكاً",
     domain: "CONSULT", domainAr: "استشارات",
     coord: { en: "32.6°N · 44.0°E", ar: "٣٢.٦° ش · ٤٤.٠° شر" },
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Strategic%20Partner%20Retainer%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Strategic%20Partner%20retainer%20engagement.%0A%0AOrganization%3A%20%0AScope%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Strategic%20Partner%20Retainer%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Strategic%20Partner%20retainer%20engagement.%0A%0AOrganization%3A%20%0AScope%3A%20",
   },
 ];
 
@@ -452,7 +452,7 @@ const ServicePackages = () => {
 
         <div className="flex justify-center" style={{ marginTop: 28 }}>
           <a
-            href="mailto:contact@silxor.com?subject=Silxor%20-%20Package%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20discuss%20a%20Silxor%20package.%0A%0AOrganization%3A%20%0APackage%20of%20Interest%3A%20%0AMessage%3A%20"
+            href="mailto:hello@silxor.com?subject=Silxor%20-%20Package%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20discuss%20a%20Silxor%20package.%0A%0AOrganization%3A%20%0APackage%20of%20Interest%3A%20%0AMessage%3A%20"
             className="font-mono font-[400] uppercase transition-all duration-200"
             style={{
               fontSize: 11,

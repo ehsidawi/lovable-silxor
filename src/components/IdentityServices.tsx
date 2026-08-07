@@ -85,7 +85,7 @@ const identityPackages: IdPkg[] = [
       "Executive and technical findings briefing",
     ],
     cta: "Book Assessment",
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Identity%20Assessment%20%26%20Roadmap%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20book%20an%20Identity%20Assessment%20%26%20Roadmap%20engagement.%0A%0AOrganization%3A%20%0AEnvironment%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Identity%20Assessment%20%26%20Roadmap%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20book%20an%20Identity%20Assessment%20%26%20Roadmap%20engagement.%0A%0AOrganization%3A%20%0AEnvironment%3A%20",
   },
   {
     name: "Identity Build & Deploy",
@@ -99,7 +99,7 @@ const identityPackages: IdPkg[] = [
       "Handover documentation and operations runbook",
     ],
     cta: "Start a Project",
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Identity%20Build%20%26%20Deploy%20Project&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Identity%20Build%20%26%20Deploy%20engagement.%0A%0AOrganization%3A%20%0AScope%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Identity%20Build%20%26%20Deploy%20Project&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Identity%20Build%20%26%20Deploy%20engagement.%0A%0AOrganization%3A%20%0AScope%3A%20",
   },
   {
     name: "Managed Identity Operations",
@@ -114,7 +114,7 @@ const identityPackages: IdPkg[] = [
       "Direct access to senior identity architect",
     ],
     cta: "Become a Partner",
-    mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Managed%20Identity%20Operations%20Retainer&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Managed%20Identity%20Operations%20retainer.%0A%0AOrganization%3A%20%0AEnvironment%3A%20",
+    mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Managed%20Identity%20Operations%20Retainer&body=Hello%20Silxor%20Team%2C%0A%0AI%20am%20interested%20in%20the%20Managed%20Identity%20Operations%20retainer.%0A%0AOrganization%3A%20%0AEnvironment%3A%20",
   },
 ];
 
@@ -401,7 +401,7 @@ const IdentityServices = () => {
             </p>
           </div>
           <a
-            href="mailto:contact@silxor.com?subject=Silxor%20-%20Identity%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20an%20identity%20assessment.%0A%0AOrganization%3A%20%0AIdentity%20Environment%3A%20"
+            href="mailto:hello@silxor.com?subject=Silxor%20-%20Identity%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20an%20identity%20assessment.%0A%0AOrganization%3A%20%0AIdentity%20Environment%3A%20"
             className="font-mono font-[400] uppercase whitespace-nowrap transition-all duration-200 flex items-center gap-2"
             style={{
               fontSize: 11,

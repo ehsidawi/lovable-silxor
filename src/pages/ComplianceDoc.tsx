@@ -77,7 +77,7 @@ const ComplianceDoc = () => {
           </div>
 
           <p className="font-body font-[300] text-center" style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 48 }}>
-            For compliance documentation requests, audit support, or to obtain certificates under NDA, contact: compliance@silxor.com
+            For compliance documentation requests, audit support, or to obtain certificates under NDA, contact: hello@silxor.com
           </p>
         </div>
       </section>

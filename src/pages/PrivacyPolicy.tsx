@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 const sections = [
   {
     title: "1. Data Controller",
-    body: "Silxor Group Holding, New York, USA.\nContact: privacy@silxor.com",
+    body: "Silxor Group Holding, 801 Barton Springs Rd, Austin, TX 78704.\nContact: hello@silxor.com",
   },
   {
     title: "2. Data We Collect",
@@ -24,11 +24,11 @@ const sections = [
   },
   {
     title: "6. Your Rights",
-    body: "You have the right to request access to, correction of, or deletion of personal data we hold. Submit requests to privacy@silxor.com. We respond within 30 days.",
+    body: "You have the right to request access to, correction of, or deletion of personal data we hold. Submit requests to hello@silxor.com. We respond within 30 days.",
   },
   {
     title: "7. Contact",
-    body: "For all privacy inquiries: privacy@silxor.com\nSilxor Group Holding, New York, USA",
+    body: "For all privacy inquiries: hello@silxor.com\nSilxor Group Holding, 801 Barton Springs Rd, Austin, TX 78704",
   },
 ];
 

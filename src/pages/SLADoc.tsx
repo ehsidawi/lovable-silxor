@@ -81,7 +81,7 @@ const SLADoc = () => {
           </Card>
 
           <p className="font-body font-[300] text-center" style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 48 }}>
-            SLA credits apply for downtime exceeding committed thresholds. Full SLA terms and credit calculation methodology available upon contract execution. Contact: sla@silxor.com
+            SLA credits apply for downtime exceeding committed thresholds. Full SLA terms and credit calculation methodology available upon contract execution. Contact: hello@silxor.com
           </p>
         </div>
       </section>

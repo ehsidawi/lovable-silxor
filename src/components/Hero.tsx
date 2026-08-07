@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 import { useLanguage } from "@/context/LanguageContext";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,7 @@ const MotionCard = motion.create(Card);
 
 const Hero = () => {
   const { t, language } = useLanguage();
+  const navigate = useNavigate();
   const arFont = language === "ar" ? "'Cairo', sans-serif" : undefined;
 
 
@@ -97,9 +99,7 @@ const Hero = () => {
               <Button
                 variant="ghost"
                 type="button"
-                data-cal-namespace="assessment"
-                data-cal-link="ehsidawi/60"
-                data-cal-config='{"layout":"month_view"}'
+            onClick={() => navigate("/book")}
                 className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit inline-flex items-center justify-center uppercase transition-colors"
                 style={{
                   fontSize: 12,

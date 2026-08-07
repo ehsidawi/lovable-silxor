@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 import { useLanguage } from "@/context/LanguageContext";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,7 @@ const MotionCard = motion.create(Card);
 
 const Hero = () => {
   const { t, language } = useLanguage();
+  const navigate = useNavigate();
   const arFont = language === "ar" ? "'Cairo', sans-serif" : undefined;
 
 

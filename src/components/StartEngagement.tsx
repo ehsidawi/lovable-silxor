@@ -1,4 +1,5 @@
 import { Server, Code, Shield } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -6,28 +7,23 @@ import { Button } from "@/components/ui/button";
 
 const StartEngagement = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
 
   const paths = [
     {
       icon: Server,
       title: t("Infrastructure & Hosting", "البنية التحتية والاستضافة"),
-      description: t("Begin with a sovereignty, resilience, and compliance review of your current hosting footprint.", "ابدأ بمراجعة السيادة والمرونة والامتثال لبيئة الاستضافة الحالية."),
-      cta: t("Request Infrastructure Assessment", "طلب تقييم البنية التحتية"),
-      mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Infrastructure%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20an%20infrastructure%20and%20sovereignty%20assessment.%0A%0AOrganization%3A%20%0ACurrent%20Environment%3A%20",
+      description: t("Begin with a sovereignty, resilience, and compliance review of your current hosting footprint.", "ابدأ بمراجعة السيادة والمرونة والامتثال لبيئة الاستضافة الحالية."),,
     },
     {
       icon: Code,
       title: t("Software or AI Project", "مشروع برمجيات أو ذكاء اصطناعي"),
-      description: t("Share your platform or AI requirements and receive a scoped delivery proposal within 5 business days.", "شارك متطلبات منصتك أو نظام الذكاء الاصطناعي واستلم اقتراحاً محدد النطاق خلال 5 أيام عمل."),
-      cta: t("Start a Project", "ابدأ مشروعاً"),
-      mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Software%20%26%20AI%20Project%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20discuss%20a%20software%20or%20AI%20project.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
+      description: t("Share your platform or AI requirements and receive a scoped delivery proposal within 5 business days.", "شارك متطلبات منصتك أو نظام الذكاء الاصطناعي واستلم اقتراحاً محدد النطاق خلال 5 أيام عمل."),,
     },
     {
       icon: Shield,
       title: t("Strategic Advisory", "استشارات استراتيجية"),
-      description: t("Book a 60 minute architecture or security session with a senior Silxor engineer.", "احجز جلسة 60 دقيقة حول البنية أو الأمن مع مهندس Silxor أقدم."),
-      cta: t("Book Advisory Session", "احجز جلسة استشارية"),
-      mailto: "mailto:hello@silxor.com?subject=Silxor%20-%20Strategic%20Advisory%20Session%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20book%20a%2060-minute%20advisory%20session.%0A%0AOrganization%3A%20%0AFocus%20Area%3A%20",
+      description: t("Book a 60 minute architecture or security session with a senior Silxor engineer.", "احجز جلسة 60 دقيقة حول البنية أو الأمن مع مهندس Silxor أقدم."),,
     },
   ];
 

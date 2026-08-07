@@ -97,9 +97,7 @@ const Hero = () => {
               <Button
                 variant="ghost"
                 type="button"
-                data-cal-namespace="assessment"
-                data-cal-link="ehsidawi/60"
-                data-cal-config='{"layout":"month_view"}'
+            onClick={() => navigate("/book")}
                 className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit inline-flex items-center justify-center uppercase transition-colors"
                 style={{
                   fontSize: 12,

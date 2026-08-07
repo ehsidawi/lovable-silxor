@@ -65,9 +65,7 @@ const StartEngagement = () => {
           <Button
             type="button"
             variant="ghost"
-            data-cal-namespace="assessment"
-            data-cal-link="ehsidawi/60"
-            data-cal-config='{"layout":"month_view"}'
+            onClick={() => navigate("/book")}
             className="h-auto rounded-none font-mono font-[400] uppercase transition-all duration-200 flex items-center gap-2 hover:bg-[#FFFFFF] hover:text-inherit"
             style={{
               fontSize: 12,

@@ -13,17 +13,17 @@ const StartEngagement = () => {
     {
       icon: Server,
       title: t("Infrastructure & Hosting", "البنية التحتية والاستضافة"),
-      description: t("Begin with a sovereignty, resilience, and compliance review of your current hosting footprint.", "ابدأ بمراجعة السيادة والمرونة والامتثال لبيئة الاستضافة الحالية."),,
+      description: t("Begin with a sovereignty, resilience, and compliance review of your current hosting footprint.", "ابدأ بمراجعة السيادة والمرونة والامتثال لبيئة الاستضافة الحالية."),
     },
     {
       icon: Code,
       title: t("Software or AI Project", "مشروع برمجيات أو ذكاء اصطناعي"),
-      description: t("Share your platform or AI requirements and receive a scoped delivery proposal within 5 business days.", "شارك متطلبات منصتك أو نظام الذكاء الاصطناعي واستلم اقتراحاً محدد النطاق خلال 5 أيام عمل."),,
+      description: t("Share your platform or AI requirements and receive a scoped delivery proposal within 5 business days.", "شارك متطلبات منصتك أو نظام الذكاء الاصطناعي واستلم اقتراحاً محدد النطاق خلال 5 أيام عمل."),
     },
     {
       icon: Shield,
       title: t("Strategic Advisory", "استشارات استراتيجية"),
-      description: t("Book a 60 minute architecture or security session with a senior Silxor engineer.", "احجز جلسة 60 دقيقة حول البنية أو الأمن مع مهندس Silxor أقدم."),,
+      description: t("Book a 60 minute architecture or security session with a senior Silxor engineer.", "احجز جلسة 60 دقيقة حول البنية أو الأمن مع مهندس Silxor أقدم."),
     },
   ];
 

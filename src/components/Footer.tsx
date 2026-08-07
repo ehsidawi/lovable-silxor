@@ -1,4 +1,4 @@
-import { Shield } from "lucide-react";
+import { Shield, Linkedin } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";

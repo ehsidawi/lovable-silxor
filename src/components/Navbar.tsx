@@ -323,8 +323,10 @@ const Navbar = () => {
           <Button
             variant="ghost"
             type="button"
-            onClick={() => navigate("/book")}
-            onClick={() => setMobileOpen(false)}
+            onClick={() => {
+              setMobileOpen(false);
+              navigate("/book");
+            }}
             className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit flex items-center justify-center gap-2 uppercase w-full"
             style={{
               fontFamily: "'DM Sans', sans-serif",

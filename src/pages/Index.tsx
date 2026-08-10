@@ -19,7 +19,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <SideRail />
-      <div className="lg:pl-24">
+      <main id="main" tabIndex={-1} className="lg:pl-24 outline-none">
         <div id="home">
           <Hero />
         </div>
@@ -40,29 +40,29 @@ const Index = () => {
         <AnimatedSection>
           <WhySilxor />
         </AnimatedSection>
-        <div id="insights">
+        <AnimatedSection>
+          <SelectedWork />
+        </AnimatedSection>
+        <div id="process">
           <AnimatedSection>
-            <SelectedWork />
+            <ProcessFlow />
           </AnimatedSection>
         </div>
-        <AnimatedSection>
-          <ProcessFlow />
-        </AnimatedSection>
-        <div id="about">
+        <div id="faq">
           <AnimatedSection>
             <FAQ />
           </AnimatedSection>
-          <AnimatedSection>
-            <Team />
-          </AnimatedSection>
         </div>
+        <AnimatedSection>
+          <Team />
+        </AnimatedSection>
         <div id="contact">
           <AnimatedSection>
             <StartEngagement />
           </AnimatedSection>
         </div>
         <Footer />
-      </div>
+      </main>
     </div>
   );
 };

@@ -61,10 +61,24 @@ const Footer = () => {
             </Link>
             <p className="font-body font-[300]" style={{ fontSize: 14, color: "#B8BCC2", lineHeight: 1.7 }}>
               {t(
-                "Sovereign cloud, cybersecurity, private AI, and identity systems engineered for institutions that cannot fail.",
-                "بنية سحابية سيادية وأمن سيبراني وذكاء اصطناعي خاص وأنظمة هوية للمؤسسات التي لا تحتمل الفشل."
+                "Enterprise technology, cybersecurity, cloud, private AI, identity, and managed services.",
+                "خدمات تقنية للمؤسسات وأمن سيبراني وحوسبة سحابية وذكاء اصطناعي خاص وهوية وخدمات مُدارة."
               )}
             </p>
+            <div style={{ marginTop: 16 }}>
+              <p className="font-body font-[300]" style={{ fontSize: 13, color: "#B8BCC2", lineHeight: 1.7 }}>
+                {t("801 Barton Springs Rd, Austin, TX 78704", "801 Barton Springs Rd, Austin, TX 78704")}
+              </p>
+              <a
+                href="mailto:hello@silxor.com"
+                className="font-body font-[300] transition-colors duration-200"
+                style={{ fontSize: 13, color: "#B8BCC2" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#F0F1F3")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#B8BCC2")}
+              >
+                hello@silxor.com
+              </a>
+            </div>
           </div>
 
           {columns.map((col) => (
@@ -93,13 +107,18 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-3" style={{ marginTop: 48, marginBottom: 12 }}>
-          {["ISO/IEC 27001:2022", "SOC 2 Type II", "Tier IV Certified", "GDPR Ready"].map((cert) => (
-            <Badge key={cert} className="badge-pill rounded-[2px] border-0 bg-transparent p-0 font-normal hover:bg-transparent">
-              <Shield style={{ width: 10, height: 10 }} />
-              {cert}
-            </Badge>
-          ))}
+        <div style={{ marginTop: 48, marginBottom: 12 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 12, color: "#B8BCC2", marginBottom: 8 }}>
+            {t("Aligned to:", "متوافق مع:")}
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {["NIST CSF", "ISO 27001", "SOC 2 Practices", "GDPR"].map((framework) => (
+              <Badge key={framework} className="badge-pill rounded-[2px] border-0 bg-transparent p-0 font-normal hover:bg-transparent">
+                <Shield style={{ width: 10, height: 10 }} />
+                {framework}
+              </Badge>
+            ))}
+          </div>
         </div>
 
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2" style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24 }}>

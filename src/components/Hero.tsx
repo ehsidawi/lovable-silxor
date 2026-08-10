@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 import { useLanguage } from "@/context/LanguageContext";
@@ -12,7 +12,17 @@ const Hero = () => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
   const arFont = language === "ar" ? "'Cairo', sans-serif" : undefined;
+  const reduceMotion = useReducedMotion();
 
+  const initial = reduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 };
+  const animate = reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 };
+
+  const practiceIndex = [
+    { k: t("Cloud & Infrastructure", "السحابة والبنية التحتية"), v: t("Hybrid / Multi-cloud", "هجين / متعدد") },
+    { k: t("Cybersecurity", "الأمن السيبراني"), v: t("Zero Trust", "ثقة صفرية") },
+    { k: t("Identity", "الهوية"), v: t("IAM / PAM / IGA", "IAM / PAM / IGA") },
+    { k: t("Private AI", "الذكاء الاصطناعي الخاص"), v: t("Self-hosted models", "نماذج مستضافة ذاتياً") },
+  ];
 
   return (
     <section
@@ -34,7 +44,7 @@ const Hero = () => {
           className="uppercase font-mono"
           style={{ fontSize: 11, letterSpacing: "0.2em", color: "#B8BCC2", fontWeight: 700 }}
         >
-          {t("Status: Operational // Build v4.2", "الحالة: تشغيلية // إصدار 4.2")}
+          {t("Enterprise Technology Partner", "شريك تقني للمؤسسات")}
         </span>
         <Separator className="bg-transparent" style={{ height: 1, width: 128, backgroundColor: "#25282C" }} />
       </div>
@@ -57,8 +67,8 @@ const Hero = () => {
 
       <div className="relative" style={{ maxWidth: 1200, width: "100%", zIndex: 1 }}>
         <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={initial}
+          animate={animate}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="font-mono font-[700]"
           style={{
@@ -74,9 +84,9 @@ const Hero = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-end">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+            initial={initial}
+            animate={animate}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: reduceMotion ? 0 : 0.15 }}
             className="flex flex-col gap-6"
           >
             <p
@@ -91,15 +101,15 @@ const Hero = () => {
               }}
             >
               {t(
-                "Sovereign cloud, cybersecurity, private AI, and identity systems engineered for institutions that cannot fail.",
-                "بنية سحابية سيادية وأمن سيبراني وذكاء اصطناعي خاص وأنظمة هوية مصممة للمؤسسات التي لا تحتمل الفشل."
+                "Enterprise technology, cybersecurity, cloud, private AI, identity, and managed services for organizations that need a single accountable partner.",
+                "خدمات تقنية للمؤسسات وأمن سيبراني وحوسبة سحابية وذكاء اصطناعي خاص وهوية وخدمات مُدارة، مقدَّمة من شريك واحد مسؤول."
               )}
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Button
                 variant="ghost"
                 type="button"
-            onClick={() => navigate("/book")}
+                onClick={() => navigate("/book")}
                 className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit inline-flex items-center justify-center uppercase transition-colors"
                 style={{
                   fontSize: 12,
@@ -107,6 +117,7 @@ const Hero = () => {
                   backgroundColor: "#FFFFFF",
                   color: "#0B0B0B",
                   padding: "16px 32px",
+                  minHeight: 44,
                   fontWeight: 700,
                   fontFamily: arFont,
                   border: "none",
@@ -123,31 +134,31 @@ const Hero = () => {
                 className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit inline-flex items-center justify-center uppercase transition-colors"
               >
                 <a
-                  href="#infrastructure"
+                  href="/solutions"
                   style={{
                     fontSize: 12,
                     letterSpacing: "0.2em",
                     border: "1px solid #25282C",
                     color: "#FFFFFF",
                     padding: "16px 32px",
+                    minHeight: 44,
                     fontWeight: 700,
                     fontFamily: arFont,
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#25282C")}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
                 >
-                  {t("View Spec", "عرض المواصفات")}
+                  {t("Explore Solutions", "استكشف الحلول")}
                 </a>
               </Button>
-
             </div>
           </motion.div>
 
-          {/* Spec Sheet Card */}
+          {/* Practice Index Card */}
           <MotionCard
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            initial={initial}
+            animate={animate}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: reduceMotion ? 0 : 0.3 }}
             className="rounded-none border-0 bg-transparent text-inherit shadow-none flex flex-col gap-4"
             style={{
               backgroundColor: "#25282C",
@@ -155,20 +166,13 @@ const Hero = () => {
               border: "1px solid rgba(184, 188, 194,0.2)",
             }}
           >
-
             <div className="flex justify-between items-center font-mono" style={{ fontSize: 10, color: "#B8BCC2" }}>
-              <span>{t("ENGINEERING LOGS", "سجلات الهندسة")}</span>
-              <span className="animate-pulse" style={{ color: "#F0F1F3" }}>REC ●</span>
+              <span>{t("PRACTICE INDEX", "فهرس الممارسات")}</span>
             </div>
             <div className="flex flex-col gap-3">
-              {[
-                { k: t("Architecture", "الهيكلية"), v: "D-Modular" },
-                { k: t("Integrity", "السلامة"), v: "99.98%" },
-                { k: t("Latency", "زمن الاستجابة"), v: "14ms" },
-                { k: t("Standard", "المعيار"), v: "ISO 27001" },
-              ].map((row) => (
+              {practiceIndex.map((row) => (
                 <div
-                  key={row.v}
+                  key={row.k}
                   className="flex justify-between items-end"
                   style={{ borderBottom: "1px solid rgba(184, 188, 194,0.2)", paddingBottom: 4 }}
                 >
@@ -184,14 +188,13 @@ const Hero = () => {
                   >
                     {row.k}
                   </span>
-                  <span className="font-mono" style={{ fontSize: 13, color: "#FFFFFF" }}>
+                  <span className="font-mono" style={{ fontSize: 13, color: "#FFFFFF", fontFamily: arFont }}>
                     {row.v}
                   </span>
                 </div>
               ))}
             </div>
           </MotionCard>
-
         </div>
       </div>
     </section>

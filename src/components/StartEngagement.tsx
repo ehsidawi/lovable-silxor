@@ -57,7 +57,7 @@ const StartEngagement = () => {
           })}
         </div>
 
-        <div className="flex justify-center" style={{ marginTop: 48 }}>
+        <div className="flex flex-wrap justify-center gap-4" style={{ marginTop: 48 }}>
           <Button
             type="button"
             variant="ghost"
@@ -69,6 +69,7 @@ const StartEngagement = () => {
               backgroundColor: "#F0F1F3",
               color: "#0B0B0B",
               padding: "16px 32px",
+              minHeight: 44,
               borderRadius: 2,
               border: "none",
               cursor: "pointer",
@@ -77,6 +78,28 @@ const StartEngagement = () => {
             onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#F0F1F3")}
           >
             {t("Book an Assessment", "احجز تقييماً")}
+          </Button>
+          <Button
+            asChild
+            variant="ghost"
+            className="h-auto rounded-none font-mono font-[400] uppercase transition-all duration-200 flex items-center gap-2"
+          >
+            <a
+              href="/solutions"
+              style={{
+                fontSize: 12,
+                letterSpacing: "0.12em",
+                border: "1px solid #25282C",
+                color: "#FFFFFF",
+                padding: "16px 32px",
+                minHeight: 44,
+                borderRadius: 2,
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#25282C")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+            >
+              {t("Explore Solutions", "استكشف الحلول")}
+            </a>
           </Button>
         </div>
         

@@ -1,9 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AnimatedCounter from "@/components/AnimatedCounter";
 import { useLanguage } from "@/context/LanguageContext";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import {
   Smartphone, Landmark, ShieldCheck, Cpu, Server, Fingerprint,
 } from "lucide-react";
@@ -48,15 +49,6 @@ const Solutions = () => {
     },
   ];
 
-  const kpis = [
-    { value: "100%", label: t("Digital Operations", "عمليات رقمية") },
-    { value: "99.99%", label: t("Availability", "التوفر") },
-    { value: "24×7", label: t("Operations", "العمليات") },
-    { value: "Zero Trust", label: t("Security First", "الأمن أولاً") },
-    { value: "AI", label: t("Powered Automation", "أتمتة ذكية") },
-    { value: "40+", label: t("Enterprise Technologies", "تقنيات مؤسسية") },
-  ];
-
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -83,31 +75,27 @@ const Solutions = () => {
                 "منظومات رقمية متوافقة ومُمكَّنة بالذكاء الاصطناعي للمؤسسات المالية والقطاع العام."
               )}
             </p>
-          </div>
-        </section>
-
-        {/* KPI counters */}
-        <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-          <div className="container-content">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[2px]">
-              {kpis.map((k) => (
-                <Card
-                  key={k.label}
-                  className="surface-elevated rounded-[4px] border-0 bg-transparent text-inherit shadow-none"
-                  style={{ padding: "18px 16px" }}
-                >
-                  <div className="font-display font-[700]" style={{ fontSize: 22, color: "#FFFFFF" }}>
-                    {k.value}
-                  </div>
-                  <div
-                    className="font-mono uppercase mt-2"
-                    style={{ fontSize: 9, letterSpacing: "0.18em", color: "#B8BCC2" }}
-                  >
-                    {k.label}
-                  </div>
-                </Card>
-              ))}
-            </div>
+            <Button
+              asChild
+              variant="ghost"
+              className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit mt-6"
+            >
+              <Link
+                to="/book"
+                className="font-mono font-[400] uppercase transition-all duration-200 inline-flex items-center"
+                style={{
+                  fontSize: 11,
+                  letterSpacing: "0.12em",
+                  backgroundColor: "#F0F1F3",
+                  color: "#0B0B0B",
+                  padding: "14px 28px",
+                  borderRadius: 2,
+                  minHeight: 44,
+                }}
+              >
+                {t("Book an Assessment", "احجز تقييماً")}
+              </Link>
+            </Button>
           </div>
         </section>
 
@@ -215,17 +203,6 @@ const Solutions = () => {
                     </div>
                   </div>
                 ))}
-              </div>
-              <div className="mt-6 flex items-baseline gap-3">
-                <AnimatedCounter
-                  value={40}
-                  suffix="+"
-                  className="font-display font-[700]"
-                  style={{ fontSize: 36, color: "#FFFFFF" }}
-                />
-                <span className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: "0.2em", color: "#B8BCC2" }}>
-                  {t("Enterprise Technologies Integrated", "تقنيات مؤسسية مدمجة")}
-                </span>
               </div>
             </Card>
           </div>

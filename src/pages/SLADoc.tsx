@@ -4,15 +4,15 @@ import { Card } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const rows = [
-  { metric: "Uptime SLA", starter: "99.9%", business: "99.99%", enterprise: "99.995%" },
-  { metric: "P1 Response", starter: "<4 hours", business: "<1 hour", enterprise: "<15 minutes" },
-  { metric: "P2 Response", starter: "<8 hours", business: "<4 hours", enterprise: "<1 hour" },
-  { metric: "P3 Response", starter: "<24 hours", business: "<8 hours", enterprise: "<4 hours" },
-  { metric: "Backup Frequency", starter: "Weekly", business: "Daily", enterprise: "Continuous" },
-  { metric: "RTO", starter: "<4 hours", business: "<30 minutes", enterprise: "<30 seconds" },
-  { metric: "RPO", starter: "24 hours", business: "1 hour", enterprise: "15 minutes" },
-  { metric: "NOC Coverage", starter: "Business hours", business: "16/5", enterprise: "24/7" },
-  { metric: "Support Channels", starter: "Email", business: "Email + Phone", enterprise: "Email + Phone + Dedicated Slack" },
+  { metric: "Availability target", starter: "Standard business hours", business: "Extended coverage", enterprise: "24/7 coverage" },
+  { metric: "P1 response target", starter: "Defined per contract", business: "Defined per contract", enterprise: "Defined per contract" },
+  { metric: "P2 response target", starter: "Defined per contract", business: "Defined per contract", enterprise: "Defined per contract" },
+  { metric: "P3 response target", starter: "Defined per contract", business: "Defined per contract", enterprise: "Defined per contract" },
+  { metric: "Backup frequency", starter: "Weekly", business: "Daily", enterprise: "Continuous, where supported" },
+  { metric: "Recovery time objective (RTO)", starter: "Defined per contract", business: "Defined per contract", enterprise: "Defined per contract" },
+  { metric: "Recovery point objective (RPO)", starter: "Defined per contract", business: "Defined per contract", enterprise: "Defined per contract" },
+  { metric: "Support coverage", starter: "Business hours", business: "Extended hours", enterprise: "24/7" },
+  { metric: "Support channels", starter: "Email", business: "Email + phone", enterprise: "Email + phone + dedicated channel" },
 ];
 
 const SLADoc = () => {
@@ -21,12 +21,14 @@ const SLADoc = () => {
       <Navbar />
       <section className="section-spacing" style={{ paddingTop: 120 }}>
         <div className="container-content" style={{ maxWidth: 900, margin: "0 auto" }}>
-          <div className="section-eyebrow">SERVICE LEVELS</div>
+          <div className="section-eyebrow">SERVICE LEVEL FRAMEWORK</div>
           <h1 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 8 }}>
-            SLA Documentation
+            Service Level Commitment Framework
           </h1>
-          <p className="font-body font-[300]" style={{ fontSize: 16, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 48 }}>
-            Contractual service level commitments by infrastructure tier. Every figure below is written into the master service agreement.
+          <p className="font-body font-[300]" style={{ fontSize: 16, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 24 }}>
+            This page describes the structure of service level commitments we offer across support tiers. It is a template,
+            not a record of an executed agreement. Exact figures, response times, and recovery objectives are negotiated
+            and confirmed in the master service agreement for each engagement.
           </p>
 
           <Card
@@ -36,7 +38,7 @@ const SLADoc = () => {
             <Table style={{ width: "100%", borderCollapse: "collapse" }}>
               <TableHeader>
                 <TableRow style={{ backgroundColor: "#25282C" }} className="border-0 hover:bg-transparent">
-                  {["Metric", "Sovereign Starter", "Sovereign Business", "Sovereign Enterprise"].map((h) => (
+                  {["Metric", "Starter tier", "Business tier", "Enterprise tier"].map((h) => (
                     <TableHead
                       key={h}
                       className="font-mono font-[400] uppercase text-left h-auto align-top"
@@ -81,7 +83,9 @@ const SLADoc = () => {
           </Card>
 
           <p className="font-body font-[300] text-center" style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 48 }}>
-            SLA credits apply for downtime exceeding committed thresholds. Full SLA terms and credit calculation methodology available upon contract execution. Contact: hello@silxor.com
+            All figures above are illustrative starting points and are subject to change based on scope, infrastructure, and
+            regulatory requirements. Final service levels, credit terms, and measurement methodology are set out in the signed
+            agreement. Questions: hello@silxor.com
           </p>
         </div>
       </section>

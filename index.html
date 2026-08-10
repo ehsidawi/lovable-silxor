@@ -5,20 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta -->
-    <title>Silxor | Sovereign Infrastructure, Cybersecurity & AI</title>
-    <meta name="title" content="Silxor | Sovereign Infrastructure, Cybersecurity & AI" />
-    <meta name="description" content="Silxor engineers sovereign cloud, enterprise cybersecurity, private AI, and identity systems for banks, government, and critical infrastructure. ISO 27001:2022. Tier IV hosted. US operated." />
-    <meta name="keywords" content="sovereign cloud, enterprise cybersecurity, identity and access management, private AI, zero trust, PAM, CIAM, ISO 27001, Tier IV data center, managed security, Silxor" />
+    <title>Silxor | Enterprise Cybersecurity, Cloud, AI & Identity</title>
+    <meta name="title" content="Silxor | Enterprise Cybersecurity, Cloud, AI & Identity" />
+    <meta name="description" content="Silxor designs, builds, and operates enterprise technology: cybersecurity, cloud and infrastructure, private AI, identity and access, and managed services. Book an assessment." />
     <meta name="author" content="Silxor Group Holding" />
     <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
     <link rel="canonical" href="https://silxor.com/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://silxor.com/" />
-    <meta property="og:title" content="Silxor | Sovereign Infrastructure, Cybersecurity & AI" />
-    <meta property="og:description" content="Sovereign cloud, cybersecurity, private AI, and identity systems engineered for institutions that cannot fail. ISO 27001:2022. Tier IV hosted. US operated." />
+    <meta property="og:title" content="Silxor | Enterprise Cybersecurity, Cloud, AI & Identity" />
+    <meta property="og:description" content="Cybersecurity, cloud and infrastructure, private AI, identity, and managed services for institutions with demanding requirements." />
     <meta property="og:image" content="https://silxor.com/og-image.svg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -29,47 +27,76 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://silxor.com/" />
-    <meta name="twitter:title" content="Silxor | Sovereign Infrastructure, Cybersecurity & AI" />
-    <meta name="twitter:description" content="Sovereign cloud, cybersecurity, private AI, and identity systems engineered for institutions that cannot fail." />
+    <meta name="twitter:title" content="Silxor | Enterprise Cybersecurity, Cloud, AI & Identity" />
+    <meta name="twitter:description" content="Cybersecurity, cloud and infrastructure, private AI, identity, and managed services." />
     <meta name="twitter:image" content="https://silxor.com/og-image.svg" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#0B0B0B" />
-    <meta name="msapplication-TileColor" content="#F0F1F3" />
+    <meta name="theme-color" content="#141414" />
 
     <!-- Structured Data / JSON LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Silxor",
-      "legalName": "Silxor Group Holding",
-      "url": "https://silxor.com",
-      "logo": "https://silxor.com/logo.png",
-      "description": "Silxor engineers sovereign cloud, enterprise cybersecurity, private AI, and identity systems for institutions that cannot fail.",
-      "foundingLocation": {
-        "@type": "Place",
-        "name": "801 Barton Springs Rd, Austin, TX 78704"
-      },
-      "areaServed": "US",
-      "serviceType": [
-        "Sovereign Cloud Infrastructure",
-        "Enterprise Software Engineering",
-        "Private AI Systems",
-        "Identity & Access Management",
-        "Cybersecurity & Managed Security"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "sales",
-        "email": "hello@silxor.com",
-        "url": "https://silxor.com/book"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/silxorllc/"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://silxor.com/#organization",
+          "name": "Silxor",
+          "legalName": "Silxor Group Holding",
+          "url": "https://silxor.com",
+          "description": "Silxor designs, builds, and operates enterprise technology across cybersecurity, cloud and infrastructure, private AI, identity and access, and managed services.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "801 Barton Springs Rd",
+            "addressLocality": "Austin",
+            "addressRegion": "TX",
+            "postalCode": "78704",
+            "addressCountry": "US"
+          },
+          "areaServed": "US",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "hello@silxor.com",
+            "url": "https://silxor.com/book"
+          },
+          "sameAs": ["https://www.linkedin.com/company/silxorllc/"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://silxor.com/#website",
+          "url": "https://silxor.com",
+          "name": "Silxor",
+          "inLanguage": ["en", "ar"],
+          "publisher": { "@id": "https://silxor.com/#organization" }
+        },
+        {
+          "@type": "Service",
+          "name": "Enterprise technology engineering and managed services",
+          "provider": { "@id": "https://silxor.com/#organization" },
+          "areaServed": "US",
+          "serviceType": [
+            "Cybersecurity",
+            "Cloud and Infrastructure Engineering",
+            "Private AI Systems",
+            "Identity and Access Management",
+            "Managed Services",
+            "Technology Advisory"
+          ],
+          "url": "https://silxor.com/solutions"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://silxor.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://silxor.com/solutions" },
+            { "@type": "ListItem", "position": 3, "name": "Book an Assessment", "item": "https://silxor.com/book" }
+          ]
+        }
       ]
     }
     </script>

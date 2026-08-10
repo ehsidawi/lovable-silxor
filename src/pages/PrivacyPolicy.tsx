@@ -3,32 +3,32 @@ import Footer from "@/components/Footer";
 
 const sections = [
   {
-    title: "1. Data Controller",
-    body: "Silxor Group Holding, 801 Barton Springs Rd, Austin, TX 78704.\nContact: hello@silxor.com",
+    title: "1. Who We Are",
+    body: "Silxor, 801 Barton Springs Rd, Austin, TX 78704.\nContact: hello@silxor.com",
   },
   {
-    title: "2. Data We Collect",
-    body: "We collect information you provide directly name, organization, email address, and message content submitted through our assessment request and contact forms. We do not collect payment information directly on this site.",
+    title: "2. Information We Collect",
+    body: "When you submit our assessment request or contact form, we collect the information you provide: full name, organization, work email, optional phone number, service interest, timeline, and your project summary. We do not collect payment information on this site.",
   },
   {
-    title: "3. How We Use Your Data",
-    body: "Contact information is used solely to respond to assessment requests and service inquiries. We do not sell, share, or transfer personal data to third parties for marketing purposes.",
+    title: "3. How Submissions Are Handled",
+    body: "Unless a specific backend integration has been configured for this deployment, form submissions are not stored on a server. Instead, the form prepares an email containing your submitted details and asks you to send it to hello@silxor.com from your own email client. If an integration is configured, submissions are sent to that endpoint instead and this policy will be updated accordingly.",
   },
   {
-    title: "4. Data Residency",
-    body: "All data submitted through Silxor systems is processed and stored within our sovereign infrastructure. No personal data is routed through international third party cloud providers without explicit consent.",
+    title: "4. How We Use Your Data",
+    body: "Information you submit is used solely to respond to your assessment request or inquiry. We do not sell or share personal data with third parties for marketing purposes.",
   },
   {
-    title: "5. Cookies",
-    body: "This site uses no advertising or tracking cookies. We may use anonymous analytics to understand site performance. No personally identifiable data is captured through cookies.",
+    title: "5. Analytics and Cookies",
+    body: "This site does not run analytics or tracking cookies by default. If analytics tooling is added in the future, this policy will be updated to describe what is collected and why.",
   },
   {
     title: "6. Your Rights",
-    body: "You have the right to request access to, correction of, or deletion of personal data we hold. Submit requests to hello@silxor.com. We respond within 30 days.",
+    body: "You may request access to, correction of, or deletion of personal data you have shared with us by contacting hello@silxor.com. We aim to respond within 30 days.",
   },
   {
     title: "7. Contact",
-    body: "For all privacy inquiries: hello@silxor.com\nSilxor Group Holding, 801 Barton Springs Rd, Austin, TX 78704",
+    body: "For all privacy inquiries: hello@silxor.com\nSilxor, 801 Barton Springs Rd, Austin, TX 78704",
   },
 ];
 

@@ -5,12 +5,12 @@ const NAV_HEIGHT = 80;
 
 const SideRail = () => {
   const { t } = useLanguage();
-  const [active, setActive] = useState<string>("#infrastructure");
+  const [active, setActive] = useState<string>("#services");
 
   const items = [
-    { i: "01", label: t("Capabilities", "القدرات"), href: "#infrastructure" },
-    { i: "02", label: t("Software", "البرمجيات"), href: "#software" },
-    { i: "03", label: t("Identity", "الهوية"), href: "#identity" },
+    { i: "01", label: t("Services", "الخدمات"), href: "#services" },
+    { i: "02", label: t("Industries", "القطاعات"), href: "#industries" },
+    { i: "03", label: t("Process", "المنهجية"), href: "#process" },
     { i: "04", label: t("Contact", "تواصل"), href: "#contact" },
   ];
 
@@ -55,10 +55,12 @@ const SideRail = () => {
         <div
           className="flex items-center justify-center"
           style={{ width: 36, height: 36, border: "2px solid #F0F1F3" }}
+          aria-hidden
         >
           <div className="animate-pulse" style={{ width: 14, height: 14, backgroundColor: "#FFFFFF" }} />
         </div>
         <nav
+          aria-label={t("Section index", "فهرس الأقسام")}
           className="font-mono uppercase"
           style={{
             writingMode: "vertical-lr",
@@ -79,6 +81,7 @@ const SideRail = () => {
                 href={it.href}
                 onClick={(e) => handle(e, it.href)}
                 className="transition-colors"
+                aria-current={isActive ? "true" : undefined}
                 style={{ color: isActive ? "#FFFFFF" : "#B8BCC2" }}
               >
                 {it.i} / {it.label}
@@ -87,7 +90,7 @@ const SideRail = () => {
           })}
         </nav>
       </div>
-      <div className="font-mono" style={{ fontSize: 10, fontWeight: 700, color: "#B8BCC2" }}>
+      <div className="font-mono" style={{ fontSize: 10, fontWeight: 700, color: "#B8BCC2" }} aria-hidden>
         SLXR // 2026
       </div>
     </aside>

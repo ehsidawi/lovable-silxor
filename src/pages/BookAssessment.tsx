@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
 import { Card } from "@/components/ui/card";
+import AssessmentForm from "@/components/AssessmentForm";
 
 
 const CAL_LINK = "ehsidawi/60";
@@ -111,6 +112,7 @@ const BookAssessment = () => {
         </span>
       </header>
 
+      <main>
       <section style={{ padding: "48px clamp(20px, 5vw, 48px) 24px", maxWidth: 1200, margin: "0 auto" }}>
         <div className="section-eyebrow">{t("SCHEDULE", "جدولة")}</div>
         <h1
@@ -207,6 +209,11 @@ const BookAssessment = () => {
           )}
         </p>
       </section>
+
+      <section style={{ padding: "0 clamp(20px, 5vw, 48px) 64px", maxWidth: 800, margin: "0 auto" }}>
+        <AssessmentForm />
+      </section>
+      </main>
     </div>
   );
 };

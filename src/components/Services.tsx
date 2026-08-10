@@ -25,7 +25,7 @@ const Services = () => {
     {
       icon: Server,
       title: t("Infrastructure & Cloud", "البنية التحتية والسحابة"),
-      summary: t("Sovereign, hybrid, and multi cloud engineering on Tier IV foundations.", "هندسة سحابية سيادية وهجينة ومتعددة على أساس المستوى الرابع."),
+      summary: t("Sovereign, hybrid, and multi cloud engineering built for resilience.", "هندسة سحابية سيادية وهجينة ومتعددة مصممة للمرونة."),
       items: [
         "Enterprise Infrastructure",
         "Cloud Architecture",
@@ -50,14 +50,14 @@ const Services = () => {
         "Threat Hunting · Pen Testing",
         "Vulnerability Management",
         "Governance · Risk · Compliance",
-        "NIST · ISO 27001 · SOC 2",
+        "NIST · ISO 27001 Alignment",
         "PCI DSS · HIPAA · FedRAMP · CMMC",
       ],
     },
     {
       icon: Activity,
       title: t("Managed Services", "الخدمات المدارة"),
-      summary: t("24×7 NOC and SOC operations backed by enforceable SLAs.", "عمليات مركز الشبكة والأمن على مدار الساعة مع اتفاقيات خدمة قابلة للتنفيذ."),
+      summary: t("NOC and SOC operations with SLA tiers scoped to each engagement.", "عمليات مركز الشبكة والأمن مع مستويات اتفاقية خدمة تُحدَّد لكل تعاون."),
       items: [
         "Managed Infrastructure",
         "Managed Security",

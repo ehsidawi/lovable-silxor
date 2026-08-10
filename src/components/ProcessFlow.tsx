@@ -8,8 +8,8 @@ const ProcessFlow = () => {
     { title: t("Request Assessment", "طلب التقييم"), description: t("Technical evaluation and feasibility analysis", "التقييم التقني وتحليل الجدوى") },
     { title: t("Architect & Design", "التصميم والهندسة المعمارية"), description: t("Infrastructure planning and security review", "تخطيط البنية التحتية ومراجعة الأمن") },
     { title: t("Engineer & Build", "البناء والتطوير"), description: t("Development and integration with quality assurance", "التطوير والتكامل مع ضمان الجودة") },
-    { title: t("Deploy & Host", "النشر والاستضافة"), description: t("Production deployment to Tier IV infrastructure", "نشر الإنتاج على بنية تحتية من المستوى الرابع") },
-    { title: t("Manage & Iterate", "الإدارة والتحسين المستمر"), description: t("24/7 monitoring and continuous improvement", "مراقبة على مدار الساعة وتحسين مستمر") },
+    { title: t("Deploy & Host", "النشر والاستضافة"), description: t("Production deployment to resilient, monitored infrastructure", "نشر الإنتاج على بنية تحتية مرنة وخاضعة للمراقبة") },
+    { title: t("Manage & Iterate", "الإدارة والتحسين المستمر"), description: t("Continuous monitoring and improvement", "مراقبة مستمرة وتحسين متواصل") },
   ];
 
   return (

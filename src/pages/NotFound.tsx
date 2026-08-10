@@ -1,16 +1,9 @@
-import { useLocation, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error("404: route not found:", location.pathname);
-  }, [location.pathname]);
-
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -21,9 +14,10 @@ const NotFound = () => {
             This page is not available
           </h1>
           <p className="font-body font-[300]" style={{ fontSize: 16, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 32 }}>
-            The address you requested does not exist or has moved. Return to the homepage or contact our team and we will point you to the right resource.
+            The address you requested does not exist or has moved. Try one of the links below, or contact our team and we
+            will point you to the right resource.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <nav aria-label="Helpful links" className="flex flex-wrap gap-3">
             <Button
               asChild
               variant="ghost"
@@ -39,6 +33,9 @@ const NotFound = () => {
                   color: "#0B0B0B",
                   padding: "14px 28px",
                   borderRadius: 2,
+                  minHeight: 44,
+                  display: "inline-flex",
+                  alignItems: "center",
                 }}
               >
                 Back to Home
@@ -49,8 +46,8 @@ const NotFound = () => {
               variant="ghost"
               className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit"
             >
-              <a
-                href="mailto:hello@silxor.com?subject=Silxor%20-%20Website%20Inquiry"
+              <Link
+                to="/solutions"
                 className="font-mono font-[400] uppercase transition-all duration-200"
                 style={{
                   fontSize: 11,
@@ -59,12 +56,38 @@ const NotFound = () => {
                   border: "1px solid rgba(255,255,255,0.14)",
                   padding: "14px 28px",
                   borderRadius: 2,
+                  minHeight: 44,
+                  display: "inline-flex",
+                  alignItems: "center",
                 }}
               >
-                Contact Silxor
-              </a>
+                Explore Solutions
+              </Link>
             </Button>
-          </div>
+            <Button
+              asChild
+              variant="ghost"
+              className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit"
+            >
+              <Link
+                to="/book"
+                className="font-mono font-[400] uppercase transition-all duration-200"
+                style={{
+                  fontSize: 11,
+                  letterSpacing: "0.12em",
+                  color: "#F0F1F3",
+                  border: "1px solid rgba(255,255,255,0.14)",
+                  padding: "14px 28px",
+                  borderRadius: 2,
+                  minHeight: 44,
+                  display: "inline-flex",
+                  alignItems: "center",
+                }}
+              >
+                Book an Assessment
+              </Link>
+            </Button>
+          </nav>
         </div>
       </section>
       <Footer />

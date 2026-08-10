@@ -126,6 +126,9 @@ const Navbar = () => {
 
   return (
     <header>
+      <a href="#main" className="skip-link">
+        {t("Skip to content", "تخطَّ إلى المحتوى")}
+      </a>
       <nav
         aria-label="Primary"
         className="sticky top-0 z-[100] transition-colors duration-500"

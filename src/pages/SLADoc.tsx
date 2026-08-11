@@ -144,7 +144,7 @@ const SLADoc = () => {
       <Navbar />
       <section className="section-spacing" style={{ paddingTop: 120 }}>
         <div className="container-content" style={{ maxWidth: 900, margin: "0 auto" }}>
-          <div className="section-eyebrow" style={{ fontFamily: localeFont }}>
+          <div className="section-eyebrow">
             {"SERVICE LEVEL FRAMEWORK"}
           </div>
           <h1

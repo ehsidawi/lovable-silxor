@@ -16,10 +16,10 @@ const NotFound = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main id="main">
-        <section className="section-spacing" style={{ paddingTop: 140, paddingBottom: 120 }}>
+      <main id="main" className="flex-1">
+        <section className="section-spacing" style={{ paddingTop: 104, paddingBottom: 64 }}>
           <div className="container-content" style={{ maxWidth: 640, margin: "0 auto" }}>
             <div className="section-eyebrow">{"ERROR 404"}</div>
             <h1

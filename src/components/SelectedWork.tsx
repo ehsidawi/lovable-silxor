@@ -114,7 +114,7 @@ const SelectedWork = () => {
             fontSize: 13,
             color: "hsl(var(--muted-foreground))",
             fontStyle: "italic",
-            marginTop: 40,
+            marginTop: 28,
             paddingTop: 24,
             borderTop: "1px solid rgba(255,255,255,0.06)",
           }}

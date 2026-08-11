@@ -67,7 +67,7 @@ const BookAssessment = () => {
   }, []);
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#141414", color: "#FFFFFF" }}>
+    <div className="flex flex-col" style={{ minHeight: "100vh", backgroundColor: "#141414", color: "#FFFFFF" }}>
       {/* Header bar */}
       <header
         className="functional-glass"
@@ -108,8 +108,8 @@ const BookAssessment = () => {
         </span>
       </header>
 
-      <main>
-      <section style={{ padding: "48px clamp(20px, 5vw, 48px) 24px", maxWidth: 1200, margin: "0 auto" }}>
+      <main className="flex-1">
+      <section style={{ padding: "40px clamp(20px, 5vw, 48px) 20px", maxWidth: 1200, margin: "0 auto" }}>
         <div className="section-eyebrow">{"SCHEDULE"}</div>
         <h1
           className="font-mono font-[700]"
@@ -138,7 +138,7 @@ const BookAssessment = () => {
       </section>
 
       {/* Cal.com themed frame */}
-      <section style={{ padding: "0 clamp(20px, 5vw, 48px) 64px", maxWidth: 1200, margin: "0 auto" }}>
+      <section style={{ padding: "0 clamp(20px, 5vw, 48px) 44px", maxWidth: 1200, margin: "0 auto" }}>
         <Card
           className="rounded-none border-0 bg-transparent text-inherit shadow-none"
           style={{
@@ -175,7 +175,7 @@ const BookAssessment = () => {
             id="silxor-cal-inline"
             style={{
               width: "100%",
-              minHeight: 720,
+              minHeight: 640,
               overflow: "auto",
               backgroundColor: "#141414",
             }}
@@ -198,7 +198,7 @@ const BookAssessment = () => {
         </p>
       </section>
 
-      <section style={{ padding: "0 clamp(20px, 5vw, 48px) 64px", maxWidth: 800, margin: "0 auto" }}>
+      <section style={{ padding: "0 clamp(20px, 5vw, 48px) 44px", maxWidth: 800, margin: "0 auto" }}>
         <AssessmentForm />
       </section>
       </main>

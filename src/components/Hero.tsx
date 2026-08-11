@@ -20,7 +20,6 @@ const Hero = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
-        padding: "clamp(24px, 5vw, 80px)",
         paddingTop: "clamp(110px, 14vh, 140px)",
         paddingBottom: "clamp(48px, 7vw, 96px)",
       }}

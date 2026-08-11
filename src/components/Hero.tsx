@@ -22,12 +22,12 @@ const Hero = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
-        paddingTop: "clamp(110px, 14vh, 140px)",
-        paddingBottom: "clamp(48px, 7vw, 96px)",
+        paddingTop: "clamp(104px, 11vh, 124px)",
+        paddingBottom: "clamp(32px, 4vw, 56px)",
       }}
     >
       {/* Technical Header */}
-      <div className="absolute container-content flex flex-col gap-2" style={{ top: 40, insetInline: 0 }}>
+      <div className="absolute container-content flex flex-col gap-2" style={{ top: 36, insetInline: 0 }}>
         <span
           className="uppercase font-mono"
           style={{ fontSize: 11, letterSpacing: "0.2em", color: "#B8BCC2", fontWeight: 700 }}
@@ -63,8 +63,8 @@ const Hero = () => {
             color: "#F0F1F3",
             lineHeight: 0.85,
             letterSpacing: "-0.04em",
-            fontSize: "clamp(4.5rem, 14vw, 10rem)",
-            marginBottom: 32,
+            fontSize: "clamp(4rem, 12vw, 8.5rem)",
+            marginBottom: 20,
           }}
         >
           SIL<span style={{ color: "#FFFFFF" }}>XOR</span>
@@ -74,8 +74,8 @@ const Hero = () => {
           initial={initial}
           animate={animate}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: reduceMotion ? 0 : 0.15 }}
-          className="flex flex-col gap-6"
-          style={{ maxWidth: 640 }}
+          className="flex flex-col gap-5"
+          style={{ maxWidth: 820 }}
         >
           <p
             className="font-body"
@@ -83,7 +83,7 @@ const Hero = () => {
               fontSize: "clamp(16px, 1.6vw, 22px)",
               lineHeight: 1.55,
               color: "#F0F1F3",
-              maxWidth: 460,
+              maxWidth: 720,
               fontWeight: 300,
             }}
           >

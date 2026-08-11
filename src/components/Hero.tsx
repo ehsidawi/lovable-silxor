@@ -78,113 +78,71 @@ const Hero = () => {
           SIL<span style={{ color: "#FFFFFF" }}>XOR</span>
         </motion.h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-end">
-          <motion.div
-            initial={initial}
-            animate={animate}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: reduceMotion ? 0 : 0.15 }}
-            className="flex flex-col gap-6"
+        <motion.div
+          initial={initial}
+          animate={animate}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: reduceMotion ? 0 : 0.15 }}
+          className="flex flex-col gap-6"
+          style={{ maxWidth: 640 }}
+        >
+          <p
+            className="font-body"
+            style={{
+              fontSize: "clamp(16px, 1.6vw, 22px)",
+              lineHeight: 1.55,
+              color: "#F0F1F3",
+              maxWidth: 460,
+              fontWeight: 300,
+            }}
           >
-            <p
-              className="font-body"
+            {"Enterprise technology, cybersecurity, cloud, private AI, identity, and managed services for organizations that need a single accountable partner."}
+          </p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Button
+              variant="ghost"
+              type="button"
+              onClick={() => navigate("/book")}
+              className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit inline-flex items-center justify-center uppercase transition-colors"
               style={{
-                fontSize: "clamp(16px, 1.6vw, 22px)",
-                lineHeight: 1.55,
-                color: "#F0F1F3",
-                maxWidth: 460,
-                fontWeight: 300,
+                fontSize: 12,
+                letterSpacing: "0.2em",
+                backgroundColor: "#FFFFFF",
+                color: "#0B0B0B",
+                padding: "16px 32px",
+                minHeight: 44,
+                fontWeight: 700,
+                border: "none",
+                cursor: "pointer",
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#F0F1F3")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
             >
-              {"Enterprise technology, cybersecurity, cloud, private AI, identity, and managed services for organizations that need a single accountable partner."}
-            </p>
-            <div className="flex flex-wrap items-center gap-4">
-              <Button
-                variant="ghost"
-                type="button"
-                onClick={() => navigate("/book")}
-                className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit inline-flex items-center justify-center uppercase transition-colors"
+              {"Book an Assessment"}
+            </Button>
+            <Button
+              asChild
+              variant="ghost"
+              className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit inline-flex items-center justify-center uppercase transition-colors"
+            >
+              <a
+                href="/solutions"
                 style={{
                   fontSize: 12,
                   letterSpacing: "0.2em",
-                  backgroundColor: "#FFFFFF",
-                  color: "#0B0B0B",
+                  border: "1px solid #25282C",
+                  color: "#FFFFFF",
                   padding: "16px 32px",
                   minHeight: 44,
                   fontWeight: 700,
-                  border: "none",
-                  cursor: "pointer",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#F0F1F3")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#25282C")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
               >
-                {"Book an Assessment"}
-              </Button>
-              <Button
-                asChild
-                variant="ghost"
-                className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit inline-flex items-center justify-center uppercase transition-colors"
-              >
-                <a
-                  href="/solutions"
-                  style={{
-                    fontSize: 12,
-                    letterSpacing: "0.2em",
-                    border: "1px solid #25282C",
-                    color: "#FFFFFF",
-                    padding: "16px 32px",
-                    minHeight: 44,
-                    fontWeight: 700,
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#25282C")}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
-                >
-                  {"Explore Solutions"}
-                </a>
-              </Button>
-            </div>
-          </motion.div>
-
-          {/* Practice Index Card */}
-          <MotionCard
-            initial={initial}
-            animate={animate}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: reduceMotion ? 0 : 0.3 }}
-            className="rounded-none border-0 bg-transparent text-inherit shadow-none flex flex-col gap-4"
-            style={{
-              backgroundColor: "#25282C",
-              padding: 24,
-              border: "1px solid rgba(184, 188, 194,0.2)",
-            }}
-          >
-            <div className="flex justify-between items-center font-mono" style={{ fontSize: 10, color: "#B8BCC2" }}>
-              <span>{"PRACTICE INDEX"}</span>
-            </div>
-            <div className="flex flex-col gap-3">
-              {practiceIndex.map((row) => (
-                <div
-                  key={row.k}
-                  className="flex justify-between items-end"
-                  style={{ borderBottom: "1px solid rgba(184, 188, 194,0.2)", paddingBottom: 4 }}
-                >
-                  <span
-                    className="uppercase"
-                    style={{
-                      fontSize: 11,
-                      color: "#B8BCC2",
-                      fontWeight: 700,
-                      letterSpacing: "0.1em",
-                    }}
-                  >
-                    {row.k}
-                  </span>
-                  <span className="font-mono" style={{ fontSize: 13, color: "#FFFFFF" }}>
-                    {row.v}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </MotionCard>
-        </div>
+                {"Explore Solutions"}
+              </a>
+            </Button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

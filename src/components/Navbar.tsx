@@ -18,7 +18,7 @@ const Navbar = () => {
   const mobilePanelRef = useRef<HTMLDivElement>(null);
 
   const navLinks: NavItem[] = [
-    { label: "Solutions", to: "/solutions" },
+    { label: "Solutions", to: "/", hash: "#solutions" },
     { label: "Services", to: "/", hash: "#services" },
     { label: "Industries", to: "/", hash: "#industries" },
     { label: "Process", to: "/", hash: "#process" },
@@ -220,9 +220,18 @@ const Navbar = () => {
 
           {/* Right */}
           <div className="hidden xl:flex items-center gap-5 shrink-0 z-10">
-            <Link
-              to="/solutions"
-              className="uppercase transition-colors duration-300 hover:text-white"
+            <a
+              href="#solutions"
+              onClick={(e) => {
+                e.preventDefault();
+                if (location.pathname !== "/") { navigate("/#solutions"); return; }
+                const el = document.querySelector("#solutions");
+                if (el) {
+                  const top = el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
+                  window.scrollTo({ top, behavior: "smooth" });
+                }
+              }}
+              className="uppercase transition-colors duration-300 hover:text-white cursor-pointer"
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: 11,
@@ -232,7 +241,7 @@ const Navbar = () => {
               }}
             >
               {"Explore Solutions"}
-            </Link>
+            </a>
 
             <Button
               variant="ghost"

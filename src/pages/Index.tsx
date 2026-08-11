@@ -28,6 +28,11 @@ const Index = () => {
         <AnimatedSection>
           <ExecutiveDashboard />
         </AnimatedSection>
+        <div id="solutions">
+          <AnimatedSection>
+            <SolutionsSection />
+          </AnimatedSection>
+        </div>
         <div id="services">
           <AnimatedSection>
             <Services />

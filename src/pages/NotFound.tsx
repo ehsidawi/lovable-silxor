@@ -24,7 +24,7 @@ const NotFound = () => {
             <div className="section-eyebrow">{"ERROR 404"}</div>
             <h1
               className="font-display font-[700]"
-              style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 12 }}
+              style={{ fontSize: 36, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 12 }}
             >
               {"This page is not available"}
             </h1>
@@ -34,11 +34,11 @@ const NotFound = () => {
                 fontSize: 16,
                 color: "#B8BCC2",
                 lineHeight: 1.7,
-                marginBottom: 32,
+                marginBottom: 24,
                 textAlign: "start",
               }}
             >
-              {"The address you requested does not exist or has moved. Try one of the links below, or contact our team and we will point you to the right resource."}
+              {"This address does not exist or has moved."}
             </p>
             <nav
               aria-label={"Helpful links"}
@@ -71,7 +71,7 @@ const NotFound = () => {
                     border: "1px solid rgba(255,255,255,0.14)",
                   }}
                 >
-                  {"Explore Capabilities"}
+                  {"Capabilities"}
                 </Link>
               </Button>
               <Button

@@ -11,27 +11,27 @@ import {
 const faqs = [
   {
     q: "How do we start an engagement?",
-    a: "Every engagement begins with a no cost technical assessment: a discovery session to understand environment, objectives, and constraints. A scoped proposal follows.",
+    a: "With a no cost technical assessment. A discovery session, then a scoped proposal.",
   },
   {
-    q: "Can Silxor handle infrastructure, software, and security in one contract?",
-    a: "Yes. Silxor operates as a single technology partner across infrastructure, software, AI, and cybersecurity: one contract, one SLA, one accountable team. Multi domain scope is defined during the assessment.",
+    q: "Can one contract cover infrastructure, software, and security?",
+    a: "Yes. One contract, one SLA, one team across infrastructure, software, AI, and security. Scope is set during the assessment.",
   },
   {
     q: "Where does our data live?",
-    a: "Hosting location and jurisdiction are agreed with each client during the assessment. We support US jurisdiction hosting, private deployments, and fully air gapped environments for sensitive workloads.",
+    a: "Location and jurisdiction are agreed per client. US hosting, private deployments, and air gapped environments are supported.",
   },
   {
-    q: "How does Silxor's AI differ from public AI providers?",
-    a: "Silxor can host models on private, client dedicated infrastructure so data is not sent to third party model providers.",
+    q: "How is your AI different from public providers?",
+    a: "Models can run on private, client dedicated infrastructure, so data never reaches third party providers.",
   },
   {
-    q: "Is Silxor aligned with US regulatory requirements?",
-    a: "Silxor's compliance architecture supports programs operating under frameworks including FFIEC, GLBA, SOX, PCI DSS, and the NIST 800 series. We work directly with client compliance and audit teams to document and evidence controls.",
+    q: "Which regulatory frameworks are supported?",
+    a: "FFIEC, GLBA, SOX, PCI DSS, and the NIST 800 series. Controls are evidenced with your compliance and audit teams.",
   },
   {
     q: "What does incident response look like?",
-    a: "Severity levels, escalation paths, and response time targets are defined per contract and documented in the SLA agreed with each client.",
+    a: "Severity levels, escalation paths, and response targets are defined in each client SLA.",
   },
 ];
 
@@ -44,7 +44,7 @@ const Engage = () => {
       index={7}
       eyebrow="Next Step"
       title="Start with a technical assessment."
-      lede="Tell us what you are building and we will scope exactly how to deliver it. The assessment is no cost and led by a senior engineer."
+      lede="No cost. Led by a senior engineer. Ends in a scoped proposal."
     >
       <div className="lg:grid lg:grid-cols-12 lg:gap-12" style={{ borderTop: RULE, paddingTop: 24 }}>
         <div className="lg:col-span-5">

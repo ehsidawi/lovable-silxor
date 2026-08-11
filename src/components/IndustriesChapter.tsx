@@ -1,4 +1,4 @@
-import { Chapter, MUTED, INK, RULE } from "@/components/journey";
+import { Chapter, INK, RULE } from "@/components/journey";
 
 const industries = [
   "Government", "Defense", "Banking", "Digital Banking", "Financial Services",

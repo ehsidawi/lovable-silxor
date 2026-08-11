@@ -313,8 +313,8 @@
 /* ===== Rounded system (below-hero sections) ===== */
 @layer utilities {
   .r-section {
-    padding-top: clamp(56px, 7vw, 96px);
-    padding-bottom: clamp(56px, 7vw, 96px);
+    padding-top: clamp(40px, 5vw, 68px);
+    padding-bottom: clamp(40px, 5vw, 68px);
   }
 
   .r-panel {
@@ -335,6 +335,7 @@
     background: #24272C;
   }
 
+  /* pill */
   .r-pill {
     display: inline-flex;
     align-items: center;

@@ -275,7 +275,7 @@ const Navbar = () => {
               />
               <span className="relative z-10 flex items-center gap-2">
                 {"Book an Assessment"}
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="rtl-flip transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
                   <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
                 </svg>
               </span>
@@ -417,7 +417,7 @@ const Navbar = () => {
               }}
             >
               {"Book an Assessment"}
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="rtl-flip" aria-hidden>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                 <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
               </svg>
             </Button>

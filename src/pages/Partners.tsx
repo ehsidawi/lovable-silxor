@@ -1,107 +1,54 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
-import { Card } from "@/components/ui/card";
-import {
-  Cloud, ShieldCheck, Fingerprint, Cpu, Server, Network,
-} from "lucide-react";
+
+const categories = [
+  { title: "Cloud & Hyperscale", body: "Public and hybrid platforms, mix selected per engagement." },
+  { title: "Security & Threat Defense", body: "Endpoint, network, and detection tooling integrated per environment." },
+  { title: "Identity & Access", body: "Identity, governance, and privileged access platforms at client scale." },
+  { title: "Private & Enterprise AI", body: "Open and commercial models chosen on residency and governance needs." },
+  { title: "Infrastructure & Data Center", body: "Virtualization, compute, and storage for on premises to cloud native." },
+  { title: "Automation & DevOps", body: "Infrastructure as code, CI/CD, and observability in every pipeline." },
+];
+
+const RULE = "1px solid rgba(255,255,255,0.08)";
 
 const Partners = () => {
-
   useEffect(() => {
     document.title = "Partnership Approach | Silxor";
   }, []);
-
-  const categories = [
-    {
-      icon: Cloud,
-      title: "Cloud & Hyperscale Platforms",
-      body: "We design and operate on major public and hybrid cloud platforms, selecting the right provider mix per engagement rather than a single fixed stack.",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Security & Threat Defense",
-      body: "Our security architecture draws on established endpoint, network, and threat-detection tooling categories, integrated to fit each client's environment.",
-    },
-    {
-      icon: Fingerprint,
-      title: "Identity & Access Management",
-      body: "We implement identity, access governance, and privileged access solutions using vetted platforms suited to each organization's scale and regulatory context.",
-    },
-    {
-      icon: Cpu,
-      title: "Private & Enterprise AI",
-      body: "Our AI engagements are built on a mix of open and commercial model and infrastructure options, chosen based on data residency and governance requirements.",
-    },
-    {
-      icon: Server,
-      title: "Infrastructure & Data Center",
-      body: "We work with infrastructure, virtualization, and storage technologies appropriate to on-premises, hybrid, and cloud-native deployments.",
-    },
-    {
-      icon: Network,
-      title: "Automation & DevOps Tooling",
-      body: "Delivery pipelines are built with widely adopted infrastructure-as-code, CI/CD, and observability tooling categories.",
-    },
-  ];
 
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="container-content flex-1" style={{ paddingTop: 40, paddingBottom: 48 }}>
-        <div style={{ marginBottom: 24 }}>
+        <div style={{ marginBottom: 20 }}>
           <div className="section-eyebrow">{"PARTNERSHIP APPROACH"}</div>
           <h1
             className="font-display font-[700]"
-            style={{ fontSize: 40, color: "#FFFFFF", lineHeight: 1.1 }}
+            style={{ fontSize: 34, color: "#FFFFFF", lineHeight: 1.1 }}
           >
-            {"How We Build Our Technology Ecosystem"}
+            {"Platform agnostic by design."}
           </h1>
           <p
             className="font-body font-[300] mt-3"
-            style={{ fontSize: 15, color: "#B8BCC2", maxWidth: 640, lineHeight: 1.7 }}
+            style={{ fontSize: 15, color: "#B8BCC2", maxWidth: 560, lineHeight: 1.6 }}
           >
-            {"Silxor is platform-agnostic. We select technologies from mature, well-supported categories based on each client's requirements rather than committing to a single fixed vendor stack. Specific vendor relationships for a given engagement are confirmed during scoping."}
+            {"Technology is chosen per client requirement. Vendor relationships are confirmed during scoping."}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2px]">
-          {categories.map((c) => {
-            const Icon = c.icon;
-            return (
-              <Card
-                key={c.title}
-                className="surface-elevated rounded-[4px] border-0 bg-transparent text-inherit shadow-none"
-                style={{ padding: 24 }}
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <div
-                    style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 4,
-                      border: "1px solid rgba(240, 241, 243,0.25)",
-                      background: "rgba(240, 241, 243,0.06)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Icon style={{ width: 16, height: 16, color: "#F0F1F3" }} strokeWidth={1.5} />
-                  </div>
-                  <h2 className="font-display font-[600]" style={{ fontSize: 15, color: "#FFFFFF" }}>
-                    {c.title}
-                  </h2>
-                </div>
-                <p
-                  className="font-body font-[300]"
-                  style={{ fontSize: 13, color: "#B8BCC2", lineHeight: 1.7 }}
-                >
-                  {c.body}
-                </p>
-              </Card>
-            );
-          })}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-10" style={{ borderTop: RULE }}>
+          {categories.map((c) => (
+            <article key={c.title} style={{ borderBottom: RULE, padding: "14px 0" }}>
+              <h2 className="font-display font-[600]" style={{ fontSize: 16, color: "#FFFFFF", marginBottom: 4 }}>
+                {c.title}
+              </h2>
+              <p className="font-body font-[300]" style={{ fontSize: 13, color: "#B8BCC2", lineHeight: 1.55 }}>
+                {c.body}
+              </p>
+            </article>
+          ))}
         </div>
       </main>
       <Footer />

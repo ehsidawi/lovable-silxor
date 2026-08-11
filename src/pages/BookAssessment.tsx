@@ -114,11 +114,11 @@ const BookAssessment = () => {
         <h1
           className="font-mono font-[700]"
           style={{
-            fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
+            fontSize: "clamp(2rem, 4vw, 3rem)",
             lineHeight: 1,
             letterSpacing: "-0.03em",
             color: "#FFFFFF",
-            marginBottom: 16,
+            marginBottom: 12,
           }}
         >
           {"Book an Assessment"}
@@ -133,7 +133,7 @@ const BookAssessment = () => {
             marginBottom: 8,
           }}
         >
-          {"A 30 minute technical discovery with a senior Silxor engineer. No cost. No obligation."}
+          {"30 minutes with a senior Silxor engineer. No cost, no obligation."}
         </p>
       </section>
 

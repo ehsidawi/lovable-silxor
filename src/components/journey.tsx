@@ -57,7 +57,7 @@ export const Chapter = ({ id, index, eyebrow, title, lede, children }: ChapterPr
               id={`${id}-title`}
               className="font-display font-[700]"
               style={{
-                fontSize: "clamp(26px, 3.4vw, 40px)",
+                fontSize: "clamp(24px, 2.8vw, 34px)",
                 lineHeight: 1.08,
                 letterSpacing: "-0.025em",
                 color: INK,

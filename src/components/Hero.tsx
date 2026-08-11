@@ -46,13 +46,13 @@ const Hero = () => {
             className="font-display font-[700]"
             style={{
               color: "#FFFFFF",
-              fontSize: "clamp(2.6rem, 7vw, 5.5rem)",
+              fontSize: "clamp(2.1rem, 4.6vw, 3.7rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.04em",
-              maxWidth: 1000,
+              maxWidth: 880,
             }}
           >
-            Enterprise technology, engineered to be accountable.
+            Enterprise technology, accountable end to end.
           </h1>
         </motion.div>
 
@@ -67,8 +67,7 @@ const Hero = () => {
             className="font-body font-[300] lg:col-span-7"
             style={{ fontSize: "clamp(15px, 1.35vw, 19px)", lineHeight: 1.6, color: "#F0F1F3", maxWidth: 680 }}
           >
-            Cybersecurity, cloud, private AI, identity, and managed services for institutions that need a single
-            accountable partner.
+            Cybersecurity, cloud, private AI, identity, and managed services under one accountable partner.
           </p>
 
           <div className="lg:col-span-5 flex flex-wrap items-center gap-5" style={{ marginTop: 24 }}>
@@ -107,7 +106,7 @@ const Hero = () => {
                 borderBottom: "1px solid rgba(255,255,255,0.25)",
               }}
             >
-              Start the tour
+              Capabilities
               <span aria-hidden>↓</span>
             </a>
           </div>

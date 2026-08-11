@@ -5,19 +5,19 @@ const patterns = [
     tag: "Infrastructure",
     sector: "Financial Services",
     title: "Cloud Migration & Modernization",
-    body: "A phased migration pattern for moving regulated workloads from legacy or public cloud environments into a resilient, access controlled environment with minimal downtime.",
+    body: "Phased migration of regulated workloads into a resilient, access controlled environment with minimal downtime.",
   },
   {
     tag: "Identity",
     sector: "Public Sector",
     title: "Enterprise Identity Program",
-    body: "A greenfield IAM pattern covering single sign on, privileged access vaulting, and identity governance lifecycle for large organizations.",
+    body: "Greenfield IAM covering single sign on, privileged access vaulting, and identity governance.",
   },
   {
     tag: "Software + AI",
     sector: "Energy",
     title: "Private AI Operations Platform",
-    body: "A pattern for deploying self hosted models to automate internal operations while keeping data inside the client's own environment.",
+    body: "Self hosted models automating internal operations, with data kept inside the client environment.",
   },
 ];
 
@@ -27,12 +27,12 @@ const Patterns = () => (
     index={4}
     eyebrow="Solution Patterns"
     title="Representative ways we deliver."
-    lede="Illustrative patterns across infrastructure, identity, and AI. References and detailed case discussions are available on request during the assessment."
+    lede="Illustrative patterns. References available on request during the assessment."
   >
     <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10" style={{ borderTop: RULE }}>
       {patterns.map((p) => (
-        <article key={p.title} style={{ borderBottom: RULE, padding: "22px 0" }}>
-          <div className="flex flex-wrap items-center gap-3" style={{ marginBottom: 12 }}>
+        <article key={p.title} style={{ borderBottom: RULE, padding: "18px 0" }}>
+          <div className="flex flex-wrap items-center gap-3" style={{ marginBottom: 8 }}>
             <span className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: "0.16em", color: "#F0F1F3" }}>
               {p.tag}
             </span>
@@ -41,10 +41,10 @@ const Patterns = () => (
               {p.sector}
             </span>
           </div>
-          <h3 className="font-display font-[600]" style={{ fontSize: 19, lineHeight: 1.2, color: INK, marginBottom: 8 }}>
+          <h3 className="font-display font-[600]" style={{ fontSize: 18, lineHeight: 1.2, color: INK, marginBottom: 6 }}>
             {p.title}
           </h3>
-          <p className="font-body font-[300]" style={{ fontSize: 13.5, color: MUTED, lineHeight: 1.65 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 13.5, color: MUTED, lineHeight: 1.55 }}>
             {p.body}
           </p>
         </article>

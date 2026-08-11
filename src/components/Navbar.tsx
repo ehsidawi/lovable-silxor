@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import LanguageToggle from "./LanguageToggle";
 import { Button } from "@/components/ui/button";
 
 const NAV_HEIGHT = 80;
@@ -232,17 +231,6 @@ const Navbar = () => {
 
           {/* Right */}
           <div className="hidden xl:flex items-center gap-5 shrink-0 z-10">
-            <div
-              className="flex items-center"
-              style={{
-                borderLeft: "1px solid #25282C",
-                borderRight: "1px solid #25282C",
-                padding: "4px 12px",
-              }}
-            >
-              <LanguageToggle />
-            </div>
-
             <Link
               to="/solutions"
               className="uppercase transition-colors duration-300 hover:text-white"
@@ -407,9 +395,6 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <div className="flex items-center justify-center py-6">
-              <LanguageToggle />
-            </div>
             <Button
               variant="ghost"
               type="button"

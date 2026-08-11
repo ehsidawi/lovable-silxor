@@ -219,7 +219,7 @@ const AssessmentForm = () => {
       )}
 
       {/* Honeypot */}
-      <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+      <div aria-hidden="true" style={{ position: "absolute", insetInlineStart: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
         <Label htmlFor="company_website">Company website</Label>
         <Input
           id="company_website"

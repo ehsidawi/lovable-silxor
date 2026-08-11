@@ -1,4 +1,3 @@
-import { useLanguage } from "@/context/LanguageContext";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -33,21 +32,17 @@ const patterns = [
 ];
 
 const SelectedWork = () => {
-  const { t } = useLanguage();
 
   return (
     <section id="work" className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
         <div style={{ marginBottom: 24 }}>
-          <div className="section-eyebrow">{t("ENGAGEMENT MODELS", "نماذج التعاون")}</div>
+          <div className="section-eyebrow">{"ENGAGEMENT MODELS"}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
-            {t("Example Solution Patterns", "أنماط حلول توضيحية")}
+            {"Example Solution Patterns"}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 620, marginTop: 6, lineHeight: 1.7 }}>
-            {t(
-              "Illustrative solution patterns across infrastructure, identity, and AI. These describe how we approach common problems, not specific verified client work.",
-              "أنماط حلول توضيحية عبر البنية التحتية والهوية والذكاء الاصطناعي. تصف طريقة تعاملنا مع مشكلات شائعة، وليست أعمالاً محددة موثّقة لعملاء."
-            )}
+            {"Illustrative solution patterns across infrastructure, identity, and AI. These describe how we approach common problems, not specific verified client work."}
           </p>
         </div>
 
@@ -89,16 +84,16 @@ const SelectedWork = () => {
                     borderRadius: 2,
                   }}
                 >
-                  {t(pattern.sector, pattern.sectorAr)}
+                  {pattern.sector}
                 </Badge>
               </div>
 
               <div className="relative z-10">
                 <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "hsl(var(--foreground))", marginBottom: 6 }}>
-                  {t(pattern.title, pattern.titleAr)}
+                  {pattern.title}
                 </h3>
                 <p className="font-body font-[300]" style={{ fontSize: 13, color: "hsl(var(--muted-foreground))", lineHeight: 1.65 }}>
-                  {t(pattern.body, pattern.bodyAr)}
+                  {pattern.body}
                 </p>
               </div>
 
@@ -124,7 +119,7 @@ const SelectedWork = () => {
             borderTop: "1px solid rgba(255,255,255,0.06)",
           }}
         >
-          {t("References and detailed case discussions available on request during the assessment.", "المراجع ومناقشات الحالات التفصيلية متاحة عند الطلب خلال التقييم.")}
+          {"References and detailed case discussions available on request during the assessment."}
         </p>
       </div>
     </section>

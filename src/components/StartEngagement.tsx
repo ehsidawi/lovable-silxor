@@ -1,29 +1,27 @@
 import { Server, Code, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useLanguage } from "@/context/LanguageContext";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 
 const StartEngagement = () => {
-  const { t } = useLanguage();
   const navigate = useNavigate();
 
   const paths = [
     {
       icon: Server,
-      title: t("Infrastructure & Hosting", "البنية التحتية والاستضافة"),
-      description: t("Begin with a sovereignty, resilience, and compliance review of your current hosting footprint.", "ابدأ بمراجعة السيادة والمرونة والامتثال لبيئة الاستضافة الحالية."),
+      title: "Infrastructure & Hosting",
+      description: "Begin with a sovereignty, resilience, and compliance review of your current hosting footprint.",
     },
     {
       icon: Code,
-      title: t("Software or AI Project", "مشروع برمجيات أو ذكاء اصطناعي"),
-      description: t("Share your platform or AI requirements and receive a scoped delivery proposal within 5 business days.", "شارك متطلبات منصتك أو نظام الذكاء الاصطناعي واستلم اقتراحاً محدد النطاق خلال 5 أيام عمل."),
+      title: "Software or AI Project",
+      description: "Share your platform or AI requirements and receive a scoped delivery proposal within 5 business days.",
     },
     {
       icon: Shield,
-      title: t("Strategic Advisory", "استشارات استراتيجية"),
-      description: t("Book a 60 minute architecture or security session with a senior Silxor engineer.", "احجز جلسة 60 دقيقة حول البنية أو الأمن مع مهندس Silxor أقدم."),
+      title: "Strategic Advisory",
+      description: "Book a 60 minute architecture or security session with a senior Silxor engineer.",
     },
   ];
 
@@ -31,12 +29,12 @@ const StartEngagement = () => {
     <section id="contact" className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
         <div className="text-center" style={{ marginBottom: 64 }}>
-          <div className="section-eyebrow justify-center">{t("ENGAGE", "تعاون")}</div>
+          <div className="section-eyebrow justify-center">{"ENGAGE"}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF" }}>
-            {t("Start With a Technical Assessment", "ابدأ بتقييم تقني")}
+            {"Start With a Technical Assessment"}
           </h2>
           <p className="font-body font-[300] mx-auto" style={{ fontSize: 16, color: "#B8BCC2", maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
-            {t("Every Silxor engagement starts with a no cost technical assessment. Tell us what you are building and we will scope exactly how to deliver it.", "يبدأ كل تعاون مع Silxor بتقييم تقني مجاني. أخبرنا بما تبنيه وسنُحدد نطاق تسليمه بدقة.")}
+            {"Every Silxor engagement starts with a no cost technical assessment. Tell us what you are building and we will scope exactly how to deliver it."}
           </p>
         </div>
 
@@ -77,7 +75,7 @@ const StartEngagement = () => {
             onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
             onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#F0F1F3")}
           >
-            {t("Book an Assessment", "احجز تقييماً")}
+            {"Book an Assessment"}
           </Button>
           <Button
             asChild
@@ -98,7 +96,7 @@ const StartEngagement = () => {
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#25282C")}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
             >
-              {t("Explore Solutions", "استكشف الحلول")}
+              {"Explore Solutions"}
             </a>
           </Button>
         </div>

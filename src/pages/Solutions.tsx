@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { useLanguage } from "@/context/LanguageContext";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
@@ -10,7 +9,6 @@ import {
 } from "lucide-react";
 
 const Solutions = () => {
-  const { t } = useLanguage();
 
   useEffect(() => {
     document.title = "Solutions for Banking, Digital Banking & Government | Silxor";
@@ -19,32 +17,32 @@ const Solutions = () => {
   const cards = [
     {
       icon: Smartphone,
-      title: t("Digital Banking", "الخدمات المصرفية الرقمية"),
+      title: "Digital Banking",
       items: ["Core Banking", "Identity Platform", "Fraud Detection", "Cyber Defense", "Cloud Modernization"],
     },
     {
       icon: Landmark,
-      title: t("Government", "الحكومة"),
+      title: "Government",
       items: ["Citizen Identity", "National Digital Identity", "Zero Trust", "Sovereign Cloud", "FedRAMP", "Mission Critical Systems"],
     },
     {
       icon: ShieldCheck,
-      title: t("Financial Compliance", "الامتثال المالي"),
+      title: "Financial Compliance",
       items: ["PCI DSS", "GLBA", "SOX", "AML", "KYC", "Risk", "Audit"],
     },
     {
       icon: Cpu,
-      title: t("AI Platform", "منصة الذكاء الاصطناعي"),
+      title: "AI Platform",
       items: ["Enterprise AI", "Private AI", "AI Governance", "LLM Security", "Agentic AI", "Automation"],
     },
     {
       icon: Server,
-      title: t("Infrastructure", "البنية التحتية"),
+      title: "Infrastructure",
       items: ["Data Centers", "Hybrid Cloud", "Networking", "Storage", "Disaster Recovery", "Business Continuity"],
     },
     {
       icon: Fingerprint,
-      title: t("Identity", "الهوية"),
+      title: "Identity",
       items: ["CIAM", "IAM", "IGA", "PAM", "SSO", "MFA", "Passwordless"],
     },
   ];
@@ -56,24 +54,18 @@ const Solutions = () => {
         {/* Hero */}
         <section className="section-spacing" style={{ paddingTop: 56 }}>
           <div className="container-content">
-            <div className="section-eyebrow">{t("SOLUTIONS", "الحلول")}</div>
+            <div className="section-eyebrow">{"SOLUTIONS"}</div>
             <h1
               className="font-display font-[700]"
               style={{ fontSize: 40, lineHeight: 1.1, color: "#FFFFFF", maxWidth: 900 }}
             >
-              {t(
-                "Secure Digital Platforms for Banking & Government",
-                "منصات رقمية آمنة للمصارف والحكومة"
-              )}
+              {"Secure Digital Platforms for Banking & Government"}
             </h1>
             <p
               className="font-body font-[300] mt-4"
               style={{ fontSize: 16, color: "#B8BCC2", maxWidth: 720, lineHeight: 1.7 }}
             >
-              {t(
-                "Compliant, AI enabled digital ecosystems engineered for financial institutions and the public sector.",
-                "منظومات رقمية متوافقة ومُمكَّنة بالذكاء الاصطناعي للمؤسسات المالية والقطاع العام."
-              )}
+              {"Compliant, AI enabled digital ecosystems engineered for financial institutions and the public sector."}
             </p>
             <Button
               asChild
@@ -93,7 +85,7 @@ const Solutions = () => {
                   minHeight: 44,
                 }}
               >
-                {t("Book an Assessment", "احجز تقييماً")}
+                {"Book an Assessment"}
               </Link>
             </Button>
           </div>
@@ -167,7 +159,7 @@ const Solutions = () => {
         {/* Horizontal capability rail */}
         <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
           <div className="container-content">
-            <div className="section-eyebrow">{t("CAPABILITY RAIL", "خط القدرات")}</div>
+            <div className="section-eyebrow">{"CAPABILITY RAIL"}</div>
             <Card
               className="surface-elevated rounded-[4px] border-0 bg-transparent text-inherit shadow-none"
               style={{ padding: 22 }}
@@ -184,12 +176,12 @@ const Solutions = () => {
               </div>
               <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mt-6">
                 {[
-                  { n: 1, k: t("Advise", "استشارة") },
-                  { n: 2, k: t("Architect", "تصميم") },
-                  { n: 3, k: t("Engineer", "هندسة") },
-                  { n: 4, k: t("Secure", "تأمين") },
-                  { n: 5, k: t("Operate", "تشغيل") },
-                  { n: 6, k: t("Optimize", "تحسين") },
+                  { n: 1, k: "Advise" },
+                  { n: 2, k: "Architect" },
+                  { n: 3, k: "Engineer" },
+                  { n: 4, k: "Secure" },
+                  { n: 5, k: "Operate" },
+                  { n: 6, k: "Optimize" },
                 ].map((s) => (
                   <div key={s.n} className="flex flex-col items-start">
                     <div

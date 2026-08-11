@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useLanguage } from "@/context/LanguageContext";
 import { Card } from "@/components/ui/card";
 import AssessmentForm from "@/components/AssessmentForm";
 
@@ -9,7 +8,6 @@ const CAL_LINK = "ehsidawi/60";
 const CAL_NAMESPACE = "assessment";
 
 const BookAssessment = () => {
-  const { t, language, localeFont } = useLanguage();
 
   useEffect(() => {
     // Load Cal.com embed script once
@@ -93,10 +91,9 @@ const BookAssessment = () => {
             color: "#F0F1F3",
             textTransform: "uppercase",
             fontWeight: 700,
-            fontFamily: localeFont,
           }}
         >
-          ← {t("Back to Silxor", "العودة إلى Silxor")}
+          ← {"Back to Silxor"}
         </Link>
         <span
           className="font-mono"
@@ -107,13 +104,13 @@ const BookAssessment = () => {
             textTransform: "uppercase",
           }}
         >
-          {t("SILXOR // BOOKING", "Silxor // الحجز")}
+          {"SILXOR // BOOKING"}
         </span>
       </header>
 
       <main>
       <section style={{ padding: "48px clamp(20px, 5vw, 48px) 24px", maxWidth: 1200, margin: "0 auto" }}>
-        <div className="section-eyebrow">{t("SCHEDULE", "جدولة")}</div>
+        <div className="section-eyebrow">{"SCHEDULE"}</div>
         <h1
           className="font-mono font-[700]"
           style={{
@@ -122,10 +119,9 @@ const BookAssessment = () => {
             letterSpacing: "-0.03em",
             color: "#FFFFFF",
             marginBottom: 16,
-            fontFamily: localeFont,
           }}
         >
-          {t("Book an Assessment", "احجز تقييماً")}
+          {"Book an Assessment"}
         </h1>
         <p
           className="font-body font-[300]"
@@ -135,13 +131,9 @@ const BookAssessment = () => {
             color: "#F0F1F3",
             maxWidth: 640,
             marginBottom: 8,
-            fontFamily: localeFont,
           }}
         >
-          {t(
-            "A 30 minute technical discovery with a senior Silxor engineer. No cost. No obligation.",
-            "اكتشاف تقني مدته 30 دقيقة مع مهندس Silxor أقدم. مجاناً ودون التزام."
-          )}
+          {"A 30 minute technical discovery with a senior Silxor engineer. No cost. No obligation."}
         </p>
       </section>
 
@@ -173,7 +165,7 @@ const BookAssessment = () => {
               marginBottom: 12,
             }}
           >
-            <span>{t("CAL // ASSESSMENT", "CAL // تقييم")}</span>
+            <span>{"CAL // ASSESSMENT"}</span>
             <span style={{ color: "#F0F1F3" }} className="animate-pulse">
               LIVE ●
             </span>
@@ -202,10 +194,7 @@ const BookAssessment = () => {
             textAlign: "center",
           }}
         >
-          {t(
-            "Trouble booking? Email hello@silxor.com",
-            "مشكلة في الحجز؟ راسلنا hello@silxor.com"
-          )}
+          {"Trouble booking? Email hello@silxor.com"}
         </p>
       </section>
 

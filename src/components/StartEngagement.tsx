@@ -83,7 +83,7 @@ const StartEngagement = () => {
             className="h-auto rounded-none font-mono font-[400] uppercase transition-all duration-200 flex items-center gap-2"
           >
             <a
-              href="/solutions"
+              href="/#solutions"
               style={{
                 fontSize: 12,
                 letterSpacing: "0.12em",

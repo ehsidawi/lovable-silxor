@@ -114,7 +114,7 @@ const Hero = () => {
               className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit inline-flex items-center justify-center uppercase transition-colors"
             >
               <a
-                href="/solutions"
+                href="/#solutions"
                 style={{
                   fontSize: 12,
                   letterSpacing: "0.2em",

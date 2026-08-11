@@ -8,7 +8,7 @@ const Footer = () => {
     { label: "Capabilities", to: "/#capabilities" },
     { label: "Process", to: "/#process" },
     { label: "Partners", to: "/#partners" },
-    { label: "Book an Assessment", to: "/book" },
+    { label: "Assessment", to: "/book" },
     { label: "Privacy", to: "/privacy" },
     { label: "Compliance", to: "/compliance" },
     { label: "SLA", to: "/sla" },

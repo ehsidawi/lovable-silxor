@@ -167,17 +167,6 @@ const Navbar = () => {
               const content = (
                 <>
                   <span
-                    className="transition-all duration-300"
-                    style={{
-                      fontSize: 8,
-                      letterSpacing: "0.15em",
-                      color: active ? "#F0F1F3" : "#B8BCC2",
-                      marginBottom: 3,
-                    }}
-                  >
-                    {String(i + 1).padStart(2, "0")}.
-                  </span>
-                  <span
                     className="uppercase whitespace-nowrap transition-colors duration-300 group-hover:text-white"
                     style={{
                       fontSize: 11,
@@ -379,7 +368,6 @@ const Navbar = () => {
                   aria-current={active ? "page" : undefined}
                 >
                   {inner}
-                  <span style={{ fontSize: 9, color: "#B8BCC2" }}>{String(i + 1).padStart(2, "0")}</span>
                 </a>
               ) : (
                 <Link
@@ -391,7 +379,6 @@ const Navbar = () => {
                   aria-current={active ? "page" : undefined}
                 >
                   {inner}
-                  <span style={{ fontSize: 9, color: "#B8BCC2" }}>{String(i + 1).padStart(2, "0")}</span>
                 </Link>
               );
             })}

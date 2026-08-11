@@ -1,7 +1,7 @@
 # Silxor — Original Design Website Template
 
 The Silxor marketing site: a premium monochrome, industrial/technical React
-template with full English, Arabic (RTL) and Kurdish Sorani (RTL) support.
+template. English only (LTR).
 
 Repository: https://github.com/ehsidawi/silxor-og-wbs
 
@@ -26,9 +26,8 @@ Repository: https://github.com/ehsidawi/silxor-og-wbs
 | Muted text (titanium) | `#B8BCC2` |
 | Radius | 2–4px (near square) |
 
-Typography: **Work Sans** (body), **JetBrains Mono** (labels, data, display),
-**Noto Sans Arabic** with **Cairo** fallback (Arabic and Kurdish Sorani
-script, including Sorani-specific glyphs ڕ ڵ ۆ ێ ڤ). Motion: framer-motion, always gated on
+Typography: **Work Sans** (body), **JetBrains Mono** (labels, data, display).
+Motion: framer-motion, always gated on
 `prefers-reduced-motion`.
 
 ---

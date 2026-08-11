@@ -9,8 +9,7 @@ const CAL_LINK = "ehsidawi/60";
 const CAL_NAMESPACE = "assessment";
 
 const BookAssessment = () => {
-  const { t, language } = useLanguage();
-  const arFont = language === "ar" ? "'Cairo', sans-serif" : undefined;
+  const { t, language, localeFont } = useLanguage();
 
   useEffect(() => {
     // Load Cal.com embed script once
@@ -94,7 +93,7 @@ const BookAssessment = () => {
             color: "#F0F1F3",
             textTransform: "uppercase",
             fontWeight: 700,
-            fontFamily: arFont,
+            fontFamily: localeFont,
           }}
         >
           ← {t("Back to Silxor", "العودة إلى Silxor")}
@@ -123,7 +122,7 @@ const BookAssessment = () => {
             letterSpacing: "-0.03em",
             color: "#FFFFFF",
             marginBottom: 16,
-            fontFamily: arFont,
+            fontFamily: localeFont,
           }}
         >
           {t("Book an Assessment", "احجز تقييماً")}
@@ -136,7 +135,7 @@ const BookAssessment = () => {
             color: "#F0F1F3",
             maxWidth: 640,
             marginBottom: 8,
-            fontFamily: arFont,
+            fontFamily: localeFont,
           }}
         >
           {t(

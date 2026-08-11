@@ -16,8 +16,7 @@ const domains = [
 ];
 
 const StatsBar = () => {
-  const { language, t } = useLanguage();
-  const arFont = language === "ar" ? "'Cairo', sans-serif" : undefined;
+  const { language, t, localeFont } = useLanguage();
 
   return (
     <section
@@ -45,7 +44,7 @@ const StatsBar = () => {
                   fontSize: 15,
                   letterSpacing: "0.12em",
                   color: "#B8BCC2",
-                  fontFamily: arFont,
+                  fontFamily: localeFont,
                   padding: "0 40px",
                 }}
               >

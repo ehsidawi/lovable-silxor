@@ -68,8 +68,7 @@ const initialValues: FormValues = {
 type Status = "idle" | "submitting" | "ok" | "fallback" | "error";
 
 const AssessmentForm = () => {
-  const { t, language } = useLanguage();
-  const arFont = language === "ar" ? "'Cairo', sans-serif" : undefined;
+  const { t, language, localeFont } = useLanguage();
   const [values, setValues] = useState<FormValues>(initialValues);
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<Status>("idle");
@@ -156,7 +155,7 @@ const AssessmentForm = () => {
           backgroundColor: "#14171F",
           padding: 24,
           color: "#F0F1F3",
-          fontFamily: arFont,
+          fontFamily: localeFont,
         }}
       >
         <p className="font-body" style={{ fontSize: 15, lineHeight: 1.7 }}>
@@ -181,7 +180,7 @@ const AssessmentForm = () => {
         display: "flex",
         flexDirection: "column",
         gap: 20,
-        fontFamily: arFont,
+        fontFamily: localeFont,
       }}
     >
       <h2

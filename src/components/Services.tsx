@@ -1,166 +1,80 @@
 import { Compass, Server, ShieldCheck, Activity } from "lucide-react";
-import { Card } from "@/components/ui/card";
+
+const practices = [
+  {
+    icon: Compass,
+    title: "Advisory & Strategy",
+    line: "Board level guidance on transformation, architecture, and risk.",
+    tags: ["Digital Transformation", "Enterprise Architecture", "AI Strategy", "CIO / CISO Advisory"],
+  },
+  {
+    icon: Server,
+    title: "Infrastructure & Cloud",
+    line: "Sovereign, hybrid, and multi cloud engineering built for resilience.",
+    tags: ["Azure · AWS · GCP", "Kubernetes · VMware", "Data Center", "High Availability · DR"],
+  },
+  {
+    icon: ShieldCheck,
+    title: "Cybersecurity & GRC",
+    line: "Zero Trust architecture, identity, and audit ready compliance.",
+    tags: ["Zero Trust", "IAM · PAM · IGA", "SOC · MDR · IR", "NIST · ISO 27001"],
+  },
+  {
+    icon: Activity,
+    title: "Managed Services",
+    line: "NOC and SOC operations under SLA tiers scoped per engagement.",
+    tags: ["Managed Security", "Managed Cloud", "Observability", "Backup · Recovery"],
+  },
+];
 
 const Services = () => {
-
-  const practices = [
-    {
-      icon: Compass,
-      title: "Advisory & Strategy",
-      summary: "Board level advisory on transformation, architecture, and risk.",
-      items: [
-        "Digital Transformation",
-        "Enterprise Architecture",
-        "AI Strategy",
-        "CIO Advisory",
-        "CISO Advisory",
-        "Technology Roadmaps",
-        "Operating Model",
-        "Business Continuity",
-        "Enterprise Assessment",
-      ],
-    },
-    {
-      icon: Server,
-      title: "Infrastructure & Cloud",
-      summary: "Sovereign, hybrid, and multi cloud engineering built for resilience.",
-      items: [
-        "Enterprise Infrastructure",
-        "Cloud Architecture",
-        "Azure · AWS · Google Cloud",
-        "Hybrid Cloud",
-        "Data Center Modernization",
-        "Kubernetes · VMware",
-        "Networking · Storage",
-        "High Availability · DR",
-        "DevSecOps",
-      ],
-    },
-    {
-      icon: ShieldCheck,
-      title: "Cybersecurity & GRC",
-      summary: "Zero Trust architecture, identity, and audit ready compliance programs.",
-      items: [
-        "Security Architecture · Zero Trust",
-        "Identity & Access Management",
-        "PAM · IGA · PKI",
-        "SOC · MDR · Incident Response",
-        "Threat Hunting · Pen Testing",
-        "Vulnerability Management",
-        "Governance · Risk · Compliance",
-        "NIST · ISO 27001 Alignment",
-        "PCI DSS · HIPAA · FedRAMP · CMMC",
-      ],
-    },
-    {
-      icon: Activity,
-      title: "Managed Services",
-      summary: "NOC and SOC operations with SLA tiers scoped to each engagement.",
-      items: [
-        "Managed Infrastructure",
-        "Managed Security",
-        "Managed Cloud",
-        "SOC as a Service",
-        "NOC · Service Desk",
-        "Monitoring · Observability",
-        "Backup · Disaster Recovery",
-        "Continuous Optimization",
-      ],
-    },
-  ];
-
   return (
-    <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+    <section className="r-section">
       <div className="container-content">
-        <div style={{ marginBottom: 20 }}>
-          <div className="section-eyebrow">{"SERVICES"}</div>
-          <h2
-            className="font-display font-[700]"
-            style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}
-          >
-            {"Four Practices. One Accountable Partner."}
-          </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: "#B8BCC2", maxWidth: 620, marginTop: 8, lineHeight: 1.7 }}>
-            {"Advisory, infrastructure, security, and managed operations delivered by a single engineering team under one SLA."}
-          </p>
+        <div className="flex flex-col items-start gap-4" style={{ marginBottom: 32 }}>
+          <span className="r-eyebrow">Services</span>
+          <h2 className="r-title">Four Practices. One Partner.</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {practices.map((p, index) => {
             const Icon = p.icon;
             return (
-              <Card key={p.title} className="surface-elevated rounded-none border-0 bg-transparent text-inherit shadow-none relative overflow-hidden" style={{ padding: 22 }}>
-                <div
-                  className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
-                    backgroundSize: "40px 40px",
-                  }}
-                />
-                <div className="flex items-center justify-between mb-3 relative z-10">
-                  <div className="flex items-center gap-3">
-                    <div
+              <div key={p.title} className="r-card" style={{ padding: "26px 24px", borderRadius: 28 }}>
+                <div className="flex items-start gap-4">
+                  <div className="r-node relative" style={{ width: 54, height: 54 }}>
+                    <Icon style={{ width: 22, height: 22, color: "#F0F1F3" }} strokeWidth={1.5} />
+                    <span
+                      className="r-node font-mono"
                       style={{
-                        width: 36,
-                        height: 36,
-                        borderRadius: 4,
-                        border: "1px solid rgba(240, 241, 243,0.25)",
-                        background: "rgba(240, 241, 243,0.06)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
+                        position: "absolute",
+                        top: -6,
+                        insetInlineEnd: -6,
+                        width: 22,
+                        height: 22,
+                        fontSize: 9,
+                        color: "#C6CAD0",
+                        background: "#141414",
                       }}
                     >
-                      <Icon style={{ width: 16, height: 16, color: "#F0F1F3" }} strokeWidth={1.5} />
-                    </div>
-                    <div>
-                      <div
-                        className="font-mono uppercase"
-                        style={{ fontSize: 9, letterSpacing: "0.2em", color: "#B8BCC2" }}
-                      >
-                        {"PRACTICE"} {String(index + 1).padStart(2, "0")}
-                      </div>
-                      <h3 className="font-display font-[600]" style={{ fontSize: 18, color: "#FFFFFF" }}>
-                        {p.title}
-                      </h3>
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-display font-[600]" style={{ fontSize: 18, color: "#FFFFFF" }}>
+                      {p.title}
+                    </h3>
+                    <p className="font-body font-[300]" style={{ fontSize: 13.5, color: "#C6CAD0", lineHeight: 1.6, marginTop: 6 }}>
+                      {p.line}
+                    </p>
+                    <div className="flex flex-wrap gap-2" style={{ marginTop: 14 }}>
+                      {p.tags.map((t) => (
+                        <span key={t} className="r-pill">{t}</span>
+                      ))}
                     </div>
                   </div>
                 </div>
-                <p
-                  className="font-body font-[300] relative z-10"
-                  style={{ fontSize: 13, color: "#F0F1F3", marginBottom: 14, lineHeight: 1.6 }}
-                >
-                  {p.summary}
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 relative z-10">
-                  {p.items.map((it) => (
-                    <div
-                      key={it}
-                      className="font-mono"
-                      style={{
-                        fontSize: 11,
-                        color: "#F0F1F3",
-                        letterSpacing: "0.03em",
-                        paddingInlineStart: 12,
-                        position: "relative",
-                      }}
-                    >
-                      <span
-                        style={{
-                          position: "absolute",
-                          insetInlineStart: 0,
-                          top: 8,
-                          width: 6,
-                          height: 1,
-                          background: "#B8BCC2",
-                        }}
-                      />
-                      {it}
-                    </div>
-                  ))}
-                </div>
-              </Card>
+              </div>
             );
           })}
         </div>

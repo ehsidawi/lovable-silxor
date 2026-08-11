@@ -1,4 +1,3 @@
-import { useLanguage } from "@/context/LanguageContext";
 
 const domains = [
   "Cloud Architecture",
@@ -16,11 +15,10 @@ const domains = [
 ];
 
 const StatsBar = () => {
-  const { language, t, localeFont } = useLanguage();
 
   return (
     <section
-      aria-label={t("Technology domains we work in", "المجالات التقنية التي نعمل بها")}
+      aria-label={"Technology domains we work in"}
       style={{
         backgroundColor: "#25282C",
         borderTop: "1px solid rgba(255,255,255,0.06)",
@@ -44,7 +42,6 @@ const StatsBar = () => {
                   fontSize: 15,
                   letterSpacing: "0.12em",
                   color: "#B8BCC2",
-                  fontFamily: localeFont,
                   padding: "0 40px",
                 }}
               >

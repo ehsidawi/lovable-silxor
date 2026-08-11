@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { useLanguage } from "@/context/LanguageContext";
 
 const sections = [
   {
@@ -62,7 +61,6 @@ const sections = [
 ];
 
 const PrivacyPolicy = () => {
-  const { t, localeFont } = useLanguage();
 
   return (
     <div className="min-h-screen">
@@ -70,27 +68,27 @@ const PrivacyPolicy = () => {
       <main id="main">
         <section className="section-spacing" style={{ paddingTop: 120 }}>
           <div className="container-content" style={{ maxWidth: 720, margin: "0 auto" }}>
-            <div className="section-eyebrow">{t("LEGAL", "قانوني", "یاسایی")}</div>
+            <div className="section-eyebrow">{"LEGAL"}</div>
             <h1
               className="font-display font-[700]"
-              style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 8, fontFamily: localeFont }}
+              style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 8 }}
             >
-              {t("Privacy Policy", "سياسة الخصوصية", "سیاسەتی تایبەتمەندێتی")}
+              {"Privacy Policy"}
             </h1>
             <p
               className="font-body font-[300]"
-              style={{ fontSize: 13, color: "#B8BCC2", marginBottom: 48, fontFamily: localeFont }}
+              style={{ fontSize: 13, color: "#B8BCC2", marginBottom: 48 }}
             >
-              {t("Last updated: March 2026", "آخر تحديث: آذار 2026", "دوایین نوێکردنەوە: ئازاری ٢٠٢٦")}
+              {"Last updated: March 2026"}
             </p>
 
             {sections.map((section, i) => (
               <div key={i} style={{ marginBottom: 40 }}>
                 <h2
                   className="font-body font-[500]"
-                  style={{ fontSize: 17, color: "#FFFFFF", marginBottom: 12, fontFamily: localeFont }}
+                  style={{ fontSize: 17, color: "#FFFFFF", marginBottom: 12 }}
                 >
-                  {t(section.title, section.titleAr, section.titleKu)}
+                  {section.title}
                 </h2>
                 <p
                   className="font-body font-[300]"
@@ -99,11 +97,10 @@ const PrivacyPolicy = () => {
                     color: "#B8BCC2",
                     lineHeight: 1.8,
                     whiteSpace: "pre-line",
-                    fontFamily: localeFont,
                     textAlign: "start",
                   }}
                 >
-                  {t(section.body, section.bodyAr, section.bodyKu)}
+                  {section.body}
                 </p>
               </div>
             ))}

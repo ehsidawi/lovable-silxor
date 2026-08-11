@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useLanguage } from "@/context/LanguageContext";
 
 const blocks = [
   {
@@ -56,34 +55,25 @@ const blocks = [
 ];
 
 const ComplianceDoc = () => {
-  const { t, localeFont } = useLanguage();
   return (
     <div className="min-h-screen">
       <Navbar />
       <section className="section-spacing" style={{ paddingTop: 120 }}>
         <div className="container-content" style={{ maxWidth: 800, margin: "0 auto" }}>
-          <div className="section-eyebrow" style={{ fontFamily: localeFont }}>
-            {t("COMPLIANCE APPROACH", "نهج الامتثال", "ڕووکاری گونجاندن")}
+          <div className="section-eyebrow">
+            {"COMPLIANCE APPROACH"}
           </div>
           <h1
             className="font-display font-[700]"
-            style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 8, fontFamily: localeFont }}
+            style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 8 }}
           >
-            {t(
-              "Compliance & Control Alignment Framework",
-              "إطار الامتثال ومواءمة الضوابط",
-              "چوارچێوەی گونجاندن و هاوسانی کۆنترۆڵ"
-            )}
+            {"Compliance & Control Alignment Framework"}
           </h1>
           <p
             className="font-body font-[300]"
-            style={{ fontSize: 16, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 48, fontFamily: localeFont, textAlign: "start" }}
+            style={{ fontSize: 16, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 48, textAlign: "start" }}
           >
-            {t(
-              "This page describes how we design and align our controls with recognized industry frameworks. It is not a certification, audit report, or attestation. Any specific compliance claim relevant to a project is confirmed in writing during scoping and contracting.",
-              "توضح هذه الصفحة كيفية تصميم ضوابطنا ومواءمتها مع أطر العمل المعترف بها في الصناعة. وهي ليست شهادة، أو تقرير تدقيق، أو اعتمادًا. يتم تأكيد أي ادعاء امتثال محدد يتعلق بمشروع ما كتابيًا أثناء تحديد النطاق والتعاقد.",
-              "ئەم لاپەڕەیە باسی ئەوە دەکات کە چۆن کۆنترۆڵەکانمان داڕشتووە و لەگەڵ چوارچێوە ناسراوەکانی پیشەسازی هاوسان کردووە. ئەمە بڕوانامە، ڕاپۆرتی پشکنین، یان پشتڕاستکردنەوە نییە. هەر بانگەشەیەکی گونجاندنی تایبەت بە پرۆژەیەک لە کاتی دیاریکردنی ڕووبەر و گرێبەستکردندا بە نووسراوی پشتڕاست دەکرێتەوە."
-            )}
+            {"This page describes how we design and align our controls with recognized industry frameworks. It is not a certification, audit report, or attestation. Any specific compliance claim relevant to a project is confirmed in writing during scoping and contracting."}
           </p>
 
           <div className="space-y-6">
@@ -94,8 +84,8 @@ const ComplianceDoc = () => {
                 style={{ padding: 32 }}
               >
                 <div className="flex items-center gap-3" style={{ marginBottom: 12 }}>
-                  <h2 className="font-body font-[500]" style={{ fontSize: 17, color: "#FFFFFF", fontFamily: localeFont }}>
-                    {t(block.title, block.titleAr, block.titleKu)}
+                  <h2 className="font-body font-[500]" style={{ fontSize: 17, color: "#FFFFFF" }}>
+                    {block.title}
                   </h2>
                   <Badge
                     className="badge-pill rounded-[2px] border-0 bg-transparent p-0 font-normal hover:bg-transparent font-mono font-[400] uppercase"
@@ -106,17 +96,16 @@ const ComplianceDoc = () => {
                       border: `1px solid ${block.statusColor}40`,
                       padding: "3px 10px",
                       borderRadius: 2,
-                      fontFamily: localeFont,
                     }}
                   >
-                    {t(block.status, block.statusAr, block.statusKu)}
+                    {block.status}
                   </Badge>
                 </div>
                 <p
                   className="font-body font-[300]"
-                  style={{ fontSize: 15, color: "#B8BCC2", lineHeight: 1.8, fontFamily: localeFont, textAlign: "start" }}
+                  style={{ fontSize: 15, color: "#B8BCC2", lineHeight: 1.8, textAlign: "start" }}
                 >
-                  {t(block.body, block.bodyAr, block.bodyKu)}
+                  {block.body}
                 </p>
               </Card>
             ))}
@@ -124,13 +113,9 @@ const ComplianceDoc = () => {
 
           <p
             className="font-body font-[300] text-center"
-            style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 48, fontFamily: localeFont }}
+            style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 48 }}
           >
-            {t(
-              "For questions about our current compliance posture or documentation needs for a specific engagement, contact: ",
-              "لأي أسئلة حول وضع الامتثال الحالي لدينا أو احتياجات التوثيق لمشروع معين، تواصل معنا عبر: ",
-              "بۆ هەر پرسیارێک دەربارەی دۆخی گونجاندنی ئێستامان یان پێویستیەکانی بەڵگەنامە بۆ پرۆژەیەکی دیاریکراو، پەیوەندیمان پێوە بکە: "
-            )}
+            {"For questions about our current compliance posture or documentation needs for a specific engagement, contact: "}
             <bdi>hello@silxor.com</bdi>
           </p>
         </div>

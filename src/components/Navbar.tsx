@@ -1,8 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import LanguageToggle from "./LanguageToggle";
-import { useLanguage } from "@/context/LanguageContext";
 import { Button } from "@/components/ui/button";
 
 const NAV_HEIGHT = 80;
@@ -14,19 +12,18 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [scrollPct, setScrollPct] = useState(0);
   const [activeKey, setActiveKey] = useState<string>("");
-  const { t } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const mobilePanelRef = useRef<HTMLDivElement>(null);
 
   const navLinks: NavItem[] = [
-    { label: t("Solutions", "الحلول"), to: "/solutions" },
-    { label: t("Services", "الخدمات"), to: "/", hash: "#services" },
-    { label: t("Industries", "القطاعات"), to: "/", hash: "#industries" },
-    { label: t("Process", "المنهجية"), to: "/", hash: "#process" },
-    { label: t("FAQ", "الأسئلة الشائعة"), to: "/", hash: "#faq" },
-    { label: t("Contact", "تواصل"), to: "/", hash: "#contact" },
+    { label: "Solutions", to: "/solutions" },
+    { label: "Services", to: "/", hash: "#services" },
+    { label: "Industries", to: "/", hash: "#industries" },
+    { label: "Process", to: "/", hash: "#process" },
+    { label: "FAQ", to: "/", hash: "#faq" },
+    { label: "Contact", to: "/", hash: "#contact" },
   ];
 
   useEffect(() => {
@@ -127,7 +124,7 @@ const Navbar = () => {
   return (
     <header>
       <a href="#main" className="skip-link">
-        {t("Skip to content", "تخطَّ إلى المحتوى")}
+        {"Skip to content"}
       </a>
       <nav
         aria-label="Primary"
@@ -234,17 +231,6 @@ const Navbar = () => {
 
           {/* Right */}
           <div className="hidden xl:flex items-center gap-5 shrink-0 z-10">
-            <div
-              className="flex items-center"
-              style={{
-                borderLeft: "1px solid #25282C",
-                borderRight: "1px solid #25282C",
-                padding: "4px 12px",
-              }}
-            >
-              <LanguageToggle />
-            </div>
-
             <Link
               to="/solutions"
               className="uppercase transition-colors duration-300 hover:text-white"
@@ -256,7 +242,7 @@ const Navbar = () => {
                 fontWeight: 500,
               }}
             >
-              {t("Explore Solutions", "استكشف الحلول")}
+              {"Explore Solutions"}
             </Link>
 
             <Button
@@ -288,8 +274,8 @@ const Navbar = () => {
                 aria-hidden
               />
               <span className="relative z-10 flex items-center gap-2">
-                {t("Book an Assessment", "احجز تقييماً")}
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="rtl-flip transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
+                {"Book an Assessment"}
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
                   <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
                 </svg>
               </span>
@@ -303,7 +289,7 @@ const Navbar = () => {
             variant="ghost"
             className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit xl:hidden flex items-center justify-center w-11 h-11 z-10 touch-target"
             onClick={() => setMobileOpen((o) => !o)}
-            aria-label={mobileOpen ? t("Close menu", "إغلاق القائمة") : t("Open menu", "فتح القائمة")}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav-panel"
           >
@@ -345,7 +331,7 @@ const Navbar = () => {
           className="xl:hidden transition-all duration-500"
           role="dialog"
           aria-modal="true"
-          aria-label={t("Primary navigation", "القائمة الرئيسية")}
+          aria-label={"Primary navigation"}
           hidden={!mobileOpen}
           style={{
             maxHeight: mobileOpen ? `calc(100vh - ${NAV_HEIGHT}px)` : 0,
@@ -409,9 +395,6 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <div className="flex items-center justify-center py-6">
-              <LanguageToggle />
-            </div>
             <Button
               variant="ghost"
               type="button"
@@ -433,8 +416,8 @@ const Navbar = () => {
                 cursor: "pointer",
               }}
             >
-              {t("Book an Assessment", "احجز تقييماً")}
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="rtl-flip" aria-hidden>
+              {"Book an Assessment"}
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                 <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
               </svg>
             </Button>

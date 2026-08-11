@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { useLanguage } from "@/context/LanguageContext";
 
 const rows = [
   {
@@ -134,7 +133,6 @@ const rows = [
 ];
 
 const SLADoc = () => {
-  const { t, localeFont } = useLanguage();
   const headers = [
     { en: "Metric", ar: "المقياس", ku: "پێوانە" },
     { en: "Starter tier", ar: "المستوى الأساسي", ku: "ئاستی سەرەتایی" },
@@ -146,28 +144,20 @@ const SLADoc = () => {
       <Navbar />
       <section className="section-spacing" style={{ paddingTop: 120 }}>
         <div className="container-content" style={{ maxWidth: 900, margin: "0 auto" }}>
-          <div className="section-eyebrow" style={{ fontFamily: localeFont }}>
-            {t("SERVICE LEVEL FRAMEWORK", "إطار مستوى الخدمة", "چوارچێوەی ئاستی خزمەتگوزاری")}
+          <div className="section-eyebrow">
+            {"SERVICE LEVEL FRAMEWORK"}
           </div>
           <h1
             className="font-display font-[700]"
-            style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 8, fontFamily: localeFont }}
+            style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 8 }}
           >
-            {t(
-              "Service Level Commitment Framework",
-              "إطار الالتزام بمستوى الخدمة",
-              "چوارچێوەی پابەندبوون بە ئاستی خزمەتگوزاری"
-            )}
+            {"Service Level Commitment Framework"}
           </h1>
           <p
             className="font-body font-[300]"
-            style={{ fontSize: 16, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 24, fontFamily: localeFont, textAlign: "start" }}
+            style={{ fontSize: 16, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 24, textAlign: "start" }}
           >
-            {t(
-              "This page describes the structure of service level commitments we offer across support tiers. It is a template, not a record of an executed agreement. Exact figures, response times, and recovery objectives are negotiated and confirmed in the master service agreement for each engagement.",
-              "توضح هذه الصفحة هيكل التزامات مستوى الخدمة التي نقدمها عبر مستويات الدعم. وهي نموذج وليست سجلاً لاتفاقية منفذة. يتم التفاوض على الأرقام الدقيقة وأوقات الاستجابة وأهداف الاسترداد وتأكيدها في اتفاقية الخدمة الرئيسية لكل مشروع.",
-              "ئەم لاپەڕەیە پێکهاتەی پابەندبوونەکانی ئاستی خزمەتگوزاری کە بەپێی ئاستەکانی پشتگیری پێشکەشیان دەکەین باس دەکات. ئەمە نموونەیەکە، نەک تۆمارێکی ڕێکەوتنامەیەکی جێبەجێکراو. ژمارە ورد، کاتی وەڵامدانەوە، و ئامانجەکانی گەڕاندنەوە بۆ هەر پرۆژەیەک لە ڕێکەوتنامەی سەرەکی خزمەتگوزاریدا دانوستان و پشتڕاست دەکرێنەوە."
-            )}
+            {"This page describes the structure of service level commitments we offer across support tiers. It is a template, not a record of an executed agreement. Exact figures, response times, and recovery objectives are negotiated and confirmed in the master service agreement for each engagement."}
           </p>
 
           <Card
@@ -187,11 +177,10 @@ const SLADoc = () => {
                         color: "#F0F1F3",
                         padding: "14px 20px",
                         borderBottom: "1px solid rgba(255,255,255,0.06)",
-                        fontFamily: localeFont,
                         textAlign: "start",
                       }}
                     >
-                      {t(h.en, h.ar, h.ku)}
+                      {h.en}
                     </TableHead>
                   ))}
                 </TableRow>
@@ -207,27 +196,27 @@ const SLADoc = () => {
                   >
                     <TableCell
                       className="font-body font-[400] align-top"
-                      style={{ fontSize: 14, color: "#FFFFFF", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)", fontFamily: localeFont, textAlign: "start" }}
+                      style={{ fontSize: 14, color: "#FFFFFF", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)", textAlign: "start" }}
                     >
-                      {t(row.metric, row.metricAr, row.metricKu)}
+                      {row.metric}
                     </TableCell>
                     <TableCell
                       className="font-body font-[300] align-top"
-                      style={{ fontSize: 14, color: "#B8BCC2", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)", fontFamily: localeFont, textAlign: "start" }}
+                      style={{ fontSize: 14, color: "#B8BCC2", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)", textAlign: "start" }}
                     >
-                      {t(row.starter, row.starterAr, row.starterKu)}
+                      {row.starter}
                     </TableCell>
                     <TableCell
                       className="font-body font-[300] align-top"
-                      style={{ fontSize: 14, color: "#B8BCC2", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)", fontFamily: localeFont, textAlign: "start" }}
+                      style={{ fontSize: 14, color: "#B8BCC2", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)", textAlign: "start" }}
                     >
-                      {t(row.business, row.businessAr, row.businessKu)}
+                      {row.business}
                     </TableCell>
                     <TableCell
                       className="font-body font-[300] align-top"
-                      style={{ fontSize: 14, color: "#B8BCC2", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)", fontFamily: localeFont, textAlign: "start" }}
+                      style={{ fontSize: 14, color: "#B8BCC2", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)", textAlign: "start" }}
                     >
-                      {t(row.enterprise, row.enterpriseAr, row.enterpriseKu)}
+                      {row.enterprise}
                     </TableCell>
                   </TableRow>
                 ))}
@@ -237,13 +226,9 @@ const SLADoc = () => {
 
           <p
             className="font-body font-[300] text-center"
-            style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 48, fontFamily: localeFont }}
+            style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 48 }}
           >
-            {t(
-              "All figures above are illustrative starting points and are subject to change based on scope, infrastructure, and regulatory requirements. Final service levels, credit terms, and measurement methodology are set out in the signed agreement. Questions: ",
-              "جميع الأرقام أعلاه هي نقاط بداية توضيحية وقابلة للتغيير بناءً على النطاق والبنية التحتية والمتطلبات التنظيمية. يتم تحديد مستويات الخدمة النهائية وشروط الائتمان ومنهجية القياس في الاتفاقية الموقعة. للاستفسارات: ",
-              "هەموو ژمارە سەرەوەکان خاڵی سەرەتایی نموونەییین و لەگەڵ گۆڕانی ڕووبەر، تەکنەلۆژیا، و پێداویستییە یاساییەکان دەگۆڕدرێن. ئاستی کۆتایی خزمەتگوزاری، مەرجەکانی قەرز، و شێوازی پێوانە لە ڕێکەوتنامەی واژووکراودا دیاری دەکرێن. پرسیار: "
-            )}
+            {"All figures above are illustrative starting points and are subject to change based on scope, infrastructure, and regulatory requirements. Final service levels, credit terms, and measurement methodology are set out in the signed agreement. Questions: "}
             <bdi>hello@silxor.com</bdi>
           </p>
         </div>

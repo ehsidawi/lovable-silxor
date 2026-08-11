@@ -1,7 +1,6 @@
 import { useState, useId } from "react";
 import { Link } from "react-router-dom";
 import { z } from "zod";
-import { useLanguage } from "@/context/LanguageContext";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -68,7 +67,6 @@ const initialValues: FormValues = {
 type Status = "idle" | "submitting" | "ok" | "fallback" | "error";
 
 const AssessmentForm = () => {
-  const { t, language, localeFont } = useLanguage();
   const [values, setValues] = useState<FormValues>(initialValues);
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<Status>("idle");
@@ -86,7 +84,7 @@ const AssessmentForm = () => {
     const code = errors[key];
     if (!code) return undefined;
     const msg = messages[code] ?? messages.required;
-    return t(msg.en, msg.ar);
+    return msg.en;
   };
 
   const setField = <K extends keyof FormValues>(key: K, value: FormValues[K]) => {
@@ -122,7 +120,7 @@ const AssessmentForm = () => {
       timeline: result.data.timeline,
       consent: result.data.consent,
       company_website: result.data.company_website || undefined,
-      locale: language,
+      locale: "en",
       submittedAt: new Date().toISOString(),
     };
 
@@ -139,7 +137,7 @@ const AssessmentForm = () => {
       }
     } catch {
       setMailtoHref(buildMailtoHref(payload));
-      setErrorMessage(t("Something went wrong sending your request.", "حدث خطأ أثناء إرسال طلبك."));
+      setErrorMessage("Something went wrong sending your request.");
       setStatus("error");
     }
   };
@@ -155,14 +153,10 @@ const AssessmentForm = () => {
           backgroundColor: "#14171F",
           padding: 24,
           color: "#F0F1F3",
-          fontFamily: localeFont,
         }}
       >
         <p className="font-body" style={{ fontSize: 15, lineHeight: 1.7 }}>
-          {t(
-            "Thank you. Your assessment request has been submitted. Our team will follow up shortly.",
-            "شكراً لك. تم إرسال طلب التقييم الخاص بك. سيتواصل معك فريقنا قريباً."
-          )}
+          {"Thank you. Your assessment request has been submitted. Our team will follow up shortly."}
         </p>
       </div>
     );
@@ -180,7 +174,6 @@ const AssessmentForm = () => {
         display: "flex",
         flexDirection: "column",
         gap: 20,
-        fontFamily: localeFont,
       }}
     >
       <h2
@@ -188,7 +181,7 @@ const AssessmentForm = () => {
         className="font-mono uppercase"
         style={{ fontSize: 13, letterSpacing: "0.15em", color: "#F0F1F3" }}
       >
-        {t("Or tell us about your project", "أو أخبرنا عن مشروعك")}
+        {"Or tell us about your project"}
       </h2>
 
       {errorEntries.length > 0 && (
@@ -204,7 +197,7 @@ const AssessmentForm = () => {
           }}
         >
           <p className="font-mono uppercase" style={{ fontSize: 11, letterSpacing: "0.1em", marginBottom: 8 }}>
-            {t("Please fix the following:", "يرجى تصحيح ما يلي:")}
+            {"Please fix the following:"}
           </p>
           <ul style={{ paddingInlineStart: 18, listStyle: "disc" }}>
             {errorEntries.map(([key]) => (
@@ -234,7 +227,7 @@ const AssessmentForm = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div className="flex flex-col gap-2">
           <Label htmlFor="field-name" style={{ color: "#B8BCC2", fontSize: 13 }}>
-            {t("Full name", "الاسم الكامل")} *
+            {"Full name"} *
           </Label>
           <Input
             id="field-name"
@@ -255,7 +248,7 @@ const AssessmentForm = () => {
 
         <div className="flex flex-col gap-2">
           <Label htmlFor="field-organization" style={{ color: "#B8BCC2", fontSize: 13 }}>
-            {t("Organization", "المؤسسة")} *
+            {"Organization"} *
           </Label>
           <Input
             id="field-organization"
@@ -276,7 +269,7 @@ const AssessmentForm = () => {
 
         <div className="flex flex-col gap-2">
           <Label htmlFor="field-email" style={{ color: "#B8BCC2", fontSize: 13 }}>
-            {t("Work email", "البريد الإلكتروني للعمل")} *
+            {"Work email"} *
           </Label>
           <Input
             id="field-email"
@@ -299,7 +292,7 @@ const AssessmentForm = () => {
 
         <div className="flex flex-col gap-2">
           <Label htmlFor="field-phone" style={{ color: "#B8BCC2", fontSize: 13 }}>
-            {t("Phone (optional)", "الهاتف (اختياري)")}
+            {"Phone (optional)"}
           </Label>
           <Input
             id="field-phone"
@@ -322,7 +315,7 @@ const AssessmentForm = () => {
 
         <div className="flex flex-col gap-2">
           <Label htmlFor="field-interest" style={{ color: "#B8BCC2", fontSize: 13 }}>
-            {t("Service interest", "الخدمة المطلوبة")} *
+            {"Service interest"} *
           </Label>
           <Select value={values.interest} onValueChange={(v) => setField("interest", v)}>
             <SelectTrigger
@@ -330,12 +323,12 @@ const AssessmentForm = () => {
               aria-invalid={Boolean(errors.interest)}
               aria-describedby={errors.interest ? "error-interest" : undefined}
             >
-              <SelectValue placeholder={t("Select a service", "اختر خدمة")} />
+              <SelectValue placeholder={"Select a service"} />
             </SelectTrigger>
             <SelectContent>
               {INTERESTS.map((i) => (
                 <SelectItem key={i.value} value={i.value}>
-                  {t(i.en, i.ar)}
+                  {i.en}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -349,7 +342,7 @@ const AssessmentForm = () => {
 
         <div className="flex flex-col gap-2">
           <Label htmlFor="field-timeline" style={{ color: "#B8BCC2", fontSize: 13 }}>
-            {t("Timeline", "الجدول الزمني")} *
+            {"Timeline"} *
           </Label>
           <Select value={values.timeline} onValueChange={(v) => setField("timeline", v)}>
             <SelectTrigger
@@ -357,12 +350,12 @@ const AssessmentForm = () => {
               aria-invalid={Boolean(errors.timeline)}
               aria-describedby={errors.timeline ? "error-timeline" : undefined}
             >
-              <SelectValue placeholder={t("Select a timeline", "اختر الجدول الزمني")} />
+              <SelectValue placeholder={"Select a timeline"} />
             </SelectTrigger>
             <SelectContent>
               {TIMELINES.map((i) => (
                 <SelectItem key={i.value} value={i.value}>
-                  {t(i.en, i.ar)}
+                  {i.en}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -377,7 +370,7 @@ const AssessmentForm = () => {
 
       <div className="flex flex-col gap-2">
         <Label htmlFor="field-summary" style={{ color: "#B8BCC2", fontSize: 13 }}>
-          {t("Project summary", "ملخص المشروع")} *
+          {"Project summary"} *
         </Label>
         <Textarea
           id="field-summary"
@@ -406,11 +399,11 @@ const AssessmentForm = () => {
           className="mt-1"
         />
         <Label htmlFor="field-consent" style={{ color: "#B8BCC2", fontSize: 13, lineHeight: 1.6 }}>
-          {t("I agree to Silxor's ", "أوافق على ")}
+          {"I agree to Silxor's "}
           <Link to="/privacy" style={{ color: "#F0F1F3", textDecoration: "underline" }}>
-            {t("privacy policy", "سياسة الخصوصية")}
+            {"privacy policy"}
           </Link>
-          {t(" and consent to being contacted about this request.", " وأوافق على التواصل معي بخصوص هذا الطلب.")}
+          {" and consent to being contacted about this request."}
         </Label>
       </div>
       {errors.consent && (
@@ -422,16 +415,13 @@ const AssessmentForm = () => {
       {status === "fallback" && (
         <div role="status" style={{ border: "1px solid rgba(240,241,243,0.2)", padding: 16, color: "#F0F1F3" }}>
           <p style={{ fontSize: 13, lineHeight: 1.7, marginBottom: 8 }}>
-            {t(
-              "No submission backend is configured yet, so this request was not sent automatically. Please send it by email instead:",
-              "لم يتم تهيئة نظام استلام الطلبات بعد، لذا لم يتم إرسال هذا الطلب تلقائياً. يرجى إرساله عبر البريد الإلكتروني بدلاً من ذلك:"
-            )}
+            {"No submission backend is configured yet, so this request was not sent automatically. Please send it by email instead:"}
           </p>
           <a
             href={mailtoHref}
             style={{ color: "#F0F1F3", textDecoration: "underline", fontSize: 13 }}
           >
-            {t("Send prepared email to hello@silxor.com", "إرسال البريد الإلكتروني الجاهز إلى hello@silxor.com")}
+            {"Send prepared email to hello@silxor.com"}
           </a>
         </div>
       )}
@@ -439,11 +429,11 @@ const AssessmentForm = () => {
       {status === "error" && (
         <div role="alert" style={{ border: "1px solid rgba(230,80,80,0.5)", padding: 16, color: "#F5B5B5" }}>
           <p style={{ fontSize: 13, lineHeight: 1.7, marginBottom: 8 }}>
-            {errorMessage || t("Your request could not be submitted.", "تعذر إرسال طلبك.")}
+            {errorMessage || "Your request could not be submitted."}
           </p>
           {mailtoHref && (
             <a href={mailtoHref} style={{ color: "#F5B5B5", textDecoration: "underline", fontSize: 13 }}>
-              {t("Send prepared email instead", "إرسال البريد الإلكتروني الجاهز بدلاً من ذلك")}
+              {"Send prepared email instead"}
             </a>
           )}
         </div>
@@ -464,8 +454,8 @@ const AssessmentForm = () => {
           }}
         >
           {status === "submitting"
-            ? t("Sending…", "جارٍ الإرسال…")
-            : t("Submit request", "إرسال الطلب")}
+            ? "Sending…"
+            : "Submit request"}
         </Button>
         {status === "error" && (
           <Button
@@ -475,7 +465,7 @@ const AssessmentForm = () => {
             className="h-auto rounded-none font-mono font-[400] uppercase hover:bg-transparent hover:text-inherit"
             style={{ fontSize: 11, letterSpacing: "0.12em", color: "#F0F1F3", padding: "14px 20px", minHeight: 44 }}
           >
-            {t("Retry", "إعادة المحاولة")}
+            {"Retry"}
           </Button>
         )}
       </div>

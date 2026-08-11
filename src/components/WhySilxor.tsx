@@ -1,35 +1,30 @@
 import { Check } from "lucide-react";
-import { useLanguage } from "@/context/LanguageContext";
 import { Card } from "@/components/ui/card";
 
 const WhySilxor = () => {
-  const { t } = useLanguage();
 
   const rows = [
-    { label: t("Strategy", "الاستراتيجية") },
-    { label: t("Engineering", "الهندسة") },
-    { label: t("Security", "الأمن") },
-    { label: t("Cloud", "السحابة") },
-    { label: t("AI", "الذكاء الاصطناعي") },
-    { label: t("Managed Services", "الخدمات المدارة") },
-    { label: t("24×7 Operations", "عمليات ٢٤×٧") },
-    { label: t("End to End", "من البداية للنهاية") },
-    { label: t("One Partner", "شريك واحد") },
+    { label: "Strategy" },
+    { label: "Engineering" },
+    { label: "Security" },
+    { label: "Cloud" },
+    { label: "AI" },
+    { label: "Managed Services" },
+    { label: "24×7 Operations" },
+    { label: "End to End" },
+    { label: "One Partner" },
   ];
 
   return (
     <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
         <div style={{ marginBottom: 20 }}>
-          <div className="section-eyebrow">{t("WHY SILXOR", "لماذا سيلكسور")}</div>
+          <div className="section-eyebrow">{"WHY SILXOR"}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#FFFFFF" }}>
-            {t("One Partner. Full Stack. No Handoffs.", "شريك واحد. حزمة كاملة. بدون تسليمات.")}
+            {"One Partner. Full Stack. No Handoffs."}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: "#B8BCC2", maxWidth: 620, marginTop: 8, lineHeight: 1.7 }}>
-            {t(
-              "Every discipline your program needs, delivered end to end by one accountable team.",
-              "كل تخصص يحتاجه برنامجك، يُسلّم من البداية إلى النهاية بواسطة فريق واحد مسؤول."
-            )}
+            {"Every discipline your program needs, delivered end to end by one accountable team."}
           </p>
         </div>
 

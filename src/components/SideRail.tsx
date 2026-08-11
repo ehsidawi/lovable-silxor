@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
-import { useLanguage } from "@/context/LanguageContext";
 
 const NAV_HEIGHT = 80;
 
 const SideRail = () => {
-  const { t } = useLanguage();
   const [active, setActive] = useState<string>("#services");
 
   const items = [
-    { i: "01", label: t("Services", "الخدمات"), href: "#services" },
-    { i: "02", label: t("Industries", "القطاعات"), href: "#industries" },
-    { i: "03", label: t("Process", "المنهجية"), href: "#process" },
-    { i: "04", label: t("Contact", "تواصل"), href: "#contact" },
+    { i: "01", label: "Services", href: "#services" },
+    { i: "02", label: "Industries", href: "#industries" },
+    { i: "03", label: "Process", href: "#process" },
+    { i: "04", label: "Contact", href: "#contact" },
   ];
 
   useEffect(() => {
@@ -60,7 +58,7 @@ const SideRail = () => {
           <div className="animate-pulse" style={{ width: 14, height: 14, backgroundColor: "#FFFFFF" }} />
         </div>
         <nav
-          aria-label={t("Section index", "فهرس الأقسام")}
+          aria-label={"Section index"}
           className="font-mono uppercase"
           style={{
             writingMode: "vertical-lr",

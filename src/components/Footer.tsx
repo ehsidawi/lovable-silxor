@@ -1,49 +1,47 @@
 import { Shield, Linkedin } from "lucide-react";
-import { useLanguage } from "@/context/LanguageContext";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 
 const Footer = () => {
-  const { t } = useLanguage();
 
   const columns: { title: string; links: { label: string; to: string; external?: boolean }[] }[] = [
     {
-      title: t("Services", "الخدمات"),
+      title: "Services",
       links: [
-        { label: t("Advisory & Strategy", "الاستشارات"), to: "/#services" },
-        { label: t("Infrastructure & Cloud", "البنية والسحابة"), to: "/#services" },
-        { label: t("Cybersecurity & GRC", "الأمن والحوكمة"), to: "/#services" },
-        { label: t("Managed Services", "الخدمات المدارة"), to: "/#services" },
+        { label: "Advisory & Strategy", to: "/#services" },
+        { label: "Infrastructure & Cloud", to: "/#services" },
+        { label: "Cybersecurity & GRC", to: "/#services" },
+        { label: "Managed Services", to: "/#services" },
       ],
     },
     {
-      title: t("Industries", "القطاعات"),
+      title: "Industries",
       links: [
-        { label: t("Banking", "المصارف"), to: "/solutions" },
-        { label: t("Government", "الحكومة"), to: "/solutions" },
-        { label: t("Healthcare", "الرعاية الصحية"), to: "/#industries" },
-        { label: t("Critical Infrastructure", "بنية حيوية"), to: "/#industries" },
+        { label: "Banking", to: "/solutions" },
+        { label: "Government", to: "/solutions" },
+        { label: "Healthcare", to: "/#industries" },
+        { label: "Critical Infrastructure", to: "/#industries" },
       ],
     },
     {
-      title: t("Company", "الشركة"),
+      title: "Company",
       links: [
-        { label: t("Partners", "الشركاء"), to: "/partners" },
+        { label: "Partners", to: "/partners" },
         
-        { label: t("Insights", "الرؤى"), to: "/#insights" },
-        { label: t("Careers", "الوظائف"), to: "/#contact" },
-        { label: t("About", "من نحن"), to: "/#about" },
-        { label: t("Contact", "تواصل"), to: "/#contact" },
+        { label: "Insights", to: "/#insights" },
+        { label: "Careers", to: "/#contact" },
+        { label: "About", to: "/#about" },
+        { label: "Contact", to: "/#contact" },
       ],
     },
     {
-      title: t("Compliance", "الامتثال"),
+      title: "Compliance",
       links: [
-        { label: t("Privacy", "الخصوصية"), to: "/privacy" },
-        { label: t("Compliance Documentation", "وثائق الامتثال"), to: "/compliance" },
-        { label: t("Security Practices", "ممارسات الأمن"), to: "/compliance" },
-        { label: t("SLA", "اتفاقية مستوى الخدمة"), to: "/sla" },
-        { label: t("Accessibility", "إمكانية الوصول"), to: "/compliance" },
+        { label: "Privacy", to: "/privacy" },
+        { label: "Compliance Documentation", to: "/compliance" },
+        { label: "Security Practices", to: "/compliance" },
+        { label: "SLA", to: "/sla" },
+        { label: "Accessibility", to: "/compliance" },
       ],
     },
   ];
@@ -60,14 +58,11 @@ const Footer = () => {
               </span>
             </Link>
             <p className="font-body font-[300]" style={{ fontSize: 14, color: "#B8BCC2", lineHeight: 1.7 }}>
-              {t(
-                "Enterprise technology, cybersecurity, cloud, private AI, identity, and managed services.",
-                "خدمات تقنية للمؤسسات وأمن سيبراني وحوسبة سحابية وذكاء اصطناعي خاص وهوية وخدمات مُدارة."
-              )}
+              {"Enterprise technology, cybersecurity, cloud, private AI, identity, and managed services."}
             </p>
             <div style={{ marginTop: 16 }}>
               <p className="font-body font-[300]" style={{ fontSize: 13, color: "#B8BCC2", lineHeight: 1.7 }}>
-                <bdi dir="ltr">{t("801 Barton Springs Rd, Austin, TX 78704", "801 Barton Springs Rd, Austin, TX 78704")}</bdi>
+                <bdi dir="ltr">{"801 Barton Springs Rd, Austin, TX 78704"}</bdi>
               </p>
               <a
                 href="mailto:hello@silxor.com"
@@ -109,7 +104,7 @@ const Footer = () => {
 
         <div style={{ marginTop: 48, marginBottom: 12 }}>
           <p className="font-body font-[300]" style={{ fontSize: 12, color: "#B8BCC2", marginBottom: 8 }}>
-            {t("Aligned to:", "متوافق مع:")}
+            {"Aligned to:"}
           </p>
           <div className="flex flex-wrap gap-3">
             {["NIST CSF", "ISO 27001", "SOC 2 Practices", "GDPR"].map((framework) => (
@@ -123,7 +118,7 @@ const Footer = () => {
 
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2" style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24 }}>
           <p className="font-body font-[300]" style={{ fontSize: 12, color: "#B8BCC2" }}>
-            {t("© 2026 Silxor Group Holding.", "© 2026 مجموعة سيلكسور القابضة.")}
+            {"© 2026 Silxor Group Holding."}
           </p>
           <div className="flex items-center gap-4">
             <a
@@ -137,7 +132,7 @@ const Footer = () => {
               onMouseLeave={(e) => (e.currentTarget.style.color = "#B8BCC2")}
             >
               <Linkedin style={{ width: 14, height: 14 }} strokeWidth={1.5} />
-              {t("LinkedIn", "لينكدإن")}
+              {"LinkedIn"}
             </a>
             <a
               href="https://www.linkedin.com/in/ehsidawi"
@@ -148,7 +143,7 @@ const Footer = () => {
               onMouseEnter={(e) => (e.currentTarget.style.color = "#F0F1F3")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "#B8BCC2")}
             >
-              {t("Designed by Ehsan Nidawi", "Designed by Ehsan Nidawi")}
+              {"Designed by Ehsan Nidawi"}
             </a>
           </div>
         </div>

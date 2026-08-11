@@ -14,36 +14,34 @@ import {
   Radio,
   Cpu,
 } from "lucide-react";
-import { useLanguage } from "@/context/LanguageContext";
 import { Card } from "@/components/ui/card";
 
 const Industries = () => {
-  const { t } = useLanguage();
 
   const items = [
-    { icon: Landmark, label: t("Government", "الحكومة") },
-    { icon: Shield, label: t("Defense", "الدفاع") },
-    { icon: Banknote, label: t("Banking", "المصارف") },
-    { icon: Smartphone, label: t("Digital Banking", "الخدمات الرقمية") },
-    { icon: LineChart, label: t("Financial Services", "الخدمات المالية") },
-    { icon: HeartPulse, label: t("Healthcare", "الرعاية الصحية") },
-    { icon: Zap, label: t("Energy", "الطاقة") },
-    { icon: Factory, label: t("Manufacturing", "التصنيع") },
-    { icon: Truck, label: t("Transportation", "النقل") },
-    { icon: Plane, label: t("Airports", "المطارات") },
-    { icon: ShoppingBag, label: t("Retail", "التجزئة") },
-    { icon: GraduationCap, label: t("Education", "التعليم") },
-    { icon: Radio, label: t("Telecommunications", "الاتصالات") },
-    { icon: Cpu, label: t("Critical Infrastructure", "بنية حيوية") },
+    { icon: Landmark, label: "Government" },
+    { icon: Shield, label: "Defense" },
+    { icon: Banknote, label: "Banking" },
+    { icon: Smartphone, label: "Digital Banking" },
+    { icon: LineChart, label: "Financial Services" },
+    { icon: HeartPulse, label: "Healthcare" },
+    { icon: Zap, label: "Energy" },
+    { icon: Factory, label: "Manufacturing" },
+    { icon: Truck, label: "Transportation" },
+    { icon: Plane, label: "Airports" },
+    { icon: ShoppingBag, label: "Retail" },
+    { icon: GraduationCap, label: "Education" },
+    { icon: Radio, label: "Telecommunications" },
+    { icon: Cpu, label: "Critical Infrastructure" },
   ];
 
   return (
     <section id="industries" className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
         <div style={{ marginBottom: 20 }}>
-          <div className="section-eyebrow">{t("INDUSTRIES", "القطاعات")}</div>
+          <div className="section-eyebrow">{"INDUSTRIES"}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#FFFFFF" }}>
-            {t("Built for Regulated Industries", "مصمم للقطاعات المنظّمة")}
+            {"Built for Regulated Industries"}
           </h2>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-[2px]">

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Work+Sans:wght@300;400;500;600;700&family=Cairo:wght@300;400;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Work+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -246,31 +246,6 @@
   }
 
   /* Gold badge pill */
-  /* RTL support (Arabic + Kurdish Sorani) */
-  [dir="rtl"] .section-eyebrow { flex-direction: row-reverse; }
-  [dir="rtl"] .section-eyebrow::before { order: 1; }
-
-  /* Arabic-script locales: font with full Sorani glyph coverage */
-  html[lang="ar"] body,
-  html[lang="ku"] body {
-    font-family: 'Noto Sans Arabic', 'Cairo', sans-serif;
-  }
-
-  /* Keep RTL pages from overflowing horizontally */
-  [dir="rtl"] body { overflow-x: hidden; }
-
-  /* Directional arrows/chevrons mirror in RTL */
-  [dir="rtl"] .rtl-flip { transform: scaleX(-1); }
-
-  /* Technical inputs stay LTR inside RTL pages */
-  [dir="rtl"] input[type="email"],
-  [dir="rtl"] input[type="tel"],
-  [dir="rtl"] input[type="url"],
-  [dir="rtl"] .force-ltr {
-    direction: ltr;
-    text-align: start;
-  }
-
   bdi { unicode-bidi: isolate; }
 
   .badge-pill {

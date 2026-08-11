@@ -1,7 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-
-import { useLanguage } from "@/context/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -9,7 +7,6 @@ import { Separator } from "@/components/ui/separator";
 const MotionCard = motion.create(Card);
 
 const Hero = () => {
-  const { t, language, localeFont } = useLanguage();
   const navigate = useNavigate();
   const reduceMotion = useReducedMotion();
 
@@ -17,10 +14,10 @@ const Hero = () => {
   const animate = reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 };
 
   const practiceIndex = [
-    { k: t("Cloud & Infrastructure", "السحابة والبنية التحتية"), v: t("Hybrid / Multi-cloud", "هجين / متعدد") },
-    { k: t("Cybersecurity", "الأمن السيبراني"), v: t("Zero Trust", "ثقة صفرية") },
-    { k: t("Identity", "الهوية"), v: t("IAM / PAM / IGA", "IAM / PAM / IGA") },
-    { k: t("Private AI", "الذكاء الاصطناعي الخاص"), v: t("Self-hosted models", "نماذج مستضافة ذاتياً") },
+    { k: "Cloud & Infrastructure", v: "Hybrid / Multi-cloud" },
+    { k: "Cybersecurity", v: "Zero Trust" },
+    { k: "Identity", v: "IAM / PAM / IGA" },
+    { k: "Private AI", v: "Self-hosted models" },
   ];
 
   return (
@@ -43,7 +40,7 @@ const Hero = () => {
           className="uppercase font-mono"
           style={{ fontSize: 11, letterSpacing: "0.2em", color: "#B8BCC2", fontWeight: 700 }}
         >
-          {t("Enterprise Technology Partner", "شريك تقني للمؤسسات")}
+          {"Enterprise Technology Partner"}
         </span>
         <Separator className="bg-transparent" style={{ height: 1, width: 128, backgroundColor: "#25282C" }} />
       </div>
@@ -96,13 +93,9 @@ const Hero = () => {
                 color: "#F0F1F3",
                 maxWidth: 460,
                 fontWeight: 300,
-                fontFamily: localeFont,
               }}
             >
-              {t(
-                "Enterprise technology, cybersecurity, cloud, private AI, identity, and managed services for organizations that need a single accountable partner.",
-                "خدمات تقنية للمؤسسات وأمن سيبراني وحوسبة سحابية وذكاء اصطناعي خاص وهوية وخدمات مُدارة، مقدَّمة من شريك واحد مسؤول."
-              )}
+              {"Enterprise technology, cybersecurity, cloud, private AI, identity, and managed services for organizations that need a single accountable partner."}
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <Button
@@ -118,14 +111,13 @@ const Hero = () => {
                   padding: "16px 32px",
                   minHeight: 44,
                   fontWeight: 700,
-                  fontFamily: localeFont,
                   border: "none",
                   cursor: "pointer",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#F0F1F3")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
               >
-                {t("Book an Assessment", "احجز تقييماً")}
+                {"Book an Assessment"}
               </Button>
               <Button
                 asChild
@@ -142,12 +134,11 @@ const Hero = () => {
                     padding: "16px 32px",
                     minHeight: 44,
                     fontWeight: 700,
-                    fontFamily: localeFont,
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#25282C")}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
                 >
-                  {t("Explore Solutions", "استكشف الحلول")}
+                  {"Explore Solutions"}
                 </a>
               </Button>
             </div>
@@ -166,7 +157,7 @@ const Hero = () => {
             }}
           >
             <div className="flex justify-between items-center font-mono" style={{ fontSize: 10, color: "#B8BCC2" }}>
-              <span>{t("PRACTICE INDEX", "فهرس الممارسات")}</span>
+              <span>{"PRACTICE INDEX"}</span>
             </div>
             <div className="flex flex-col gap-3">
               {practiceIndex.map((row) => (
@@ -182,12 +173,11 @@ const Hero = () => {
                       color: "#B8BCC2",
                       fontWeight: 700,
                       letterSpacing: "0.1em",
-                      fontFamily: localeFont,
                     }}
                   >
                     {row.k}
                   </span>
-                  <span className="font-mono" style={{ fontSize: 13, color: "#FFFFFF", fontFamily: localeFont }}>
+                  <span className="font-mono" style={{ fontSize: 13, color: "#FFFFFF" }}>
                     {row.v}
                   </span>
                 </div>

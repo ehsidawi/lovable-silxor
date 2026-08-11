@@ -63,7 +63,7 @@ const NotFound = () => {
                 className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit"
               >
                 <Link
-                  to="/#solutions"
+                  to="/#capabilities"
                   className="font-mono font-[400] uppercase transition-all duration-200"
                   style={{
                     ...linkBase,
@@ -71,7 +71,7 @@ const NotFound = () => {
                     border: "1px solid rgba(255,255,255,0.14)",
                   }}
                 >
-                  {"Explore Solutions"}
+                  {"Explore Capabilities"}
                 </Link>
               </Button>
               <Button

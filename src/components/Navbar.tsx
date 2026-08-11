@@ -2,69 +2,47 @@ import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { NAV_OFFSET, scrollToHash } from "@/lib/hashNav";
 
-const NAV_HEIGHT = 80;
+const NAV_HEIGHT = NAV_OFFSET;
 
-type NavItem = { label: string; to: string; hash?: string };
+const NAV_LINKS = [
+  { label: "Capabilities", hash: "#capabilities" },
+  { label: "Industries", hash: "#industries" },
+  { label: "Process", hash: "#process" },
+  { label: "Contact", hash: "#contact" },
+];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [scrollPct, setScrollPct] = useState(0);
-  const [activeKey, setActiveKey] = useState<string>("");
   const location = useLocation();
   const navigate = useNavigate();
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const mobilePanelRef = useRef<HTMLDivElement>(null);
 
-  const navLinks: NavItem[] = [
-    { label: "Solutions", to: "/", hash: "#solutions" },
-    { label: "Services", to: "/", hash: "#services" },
-    { label: "Industries", to: "/", hash: "#industries" },
-    { label: "Process", to: "/", hash: "#process" },
-    { label: "FAQ", to: "/", hash: "#faq" },
-    { label: "Contact", to: "/", hash: "#contact" },
-  ];
-
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      setScrolled(y > 20);
+      setScrolled(y > 16);
       const h = document.documentElement.scrollHeight - window.innerHeight;
       setScrollPct(h > 0 ? Math.min(100, (y / h) * 100) : 0);
-
-      if (location.pathname !== "/") return;
-      let current = "";
-      for (const link of navLinks) {
-        if (!link.hash) continue;
-        const el = document.querySelector(link.hash) as HTMLElement | null;
-        if (!el) continue;
-        const top = el.getBoundingClientRect().top;
-        if (top - NAV_HEIGHT - 24 <= 0) current = link.hash;
-      }
-      setActiveKey(current);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.pathname]);
+  }, []);
 
-  // Escape to close + focus management + body scroll lock
   useEffect(() => {
     if (!mobileOpen) return;
-
     const previouslyFocused = document.activeElement as HTMLElement | null;
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
-    const focusFirst = () => {
-      const focusable = mobilePanelRef.current?.querySelector<HTMLElement>(
-        'a[href], button:not([disabled])'
-      );
-      focusable?.focus();
-    };
-    focusFirst();
+    mobilePanelRef.current
+      ?.querySelector<HTMLElement>('a[href], button:not([disabled])')
+      ?.focus();
 
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -74,9 +52,7 @@ const Navbar = () => {
       }
       if (e.key === "Tab" && mobilePanelRef.current) {
         const focusables = Array.from(
-          mobilePanelRef.current.querySelectorAll<HTMLElement>(
-            'a[href], button:not([disabled])'
-          )
+          mobilePanelRef.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')
         );
         if (focusables.length === 0) return;
         const first = focusables[0];
@@ -91,7 +67,6 @@ const Navbar = () => {
       }
     };
     document.addEventListener("keydown", onKeyDown);
-
     return () => {
       document.body.style.overflow = originalOverflow;
       document.removeEventListener("keydown", onKeyDown);
@@ -99,32 +74,20 @@ const Navbar = () => {
     };
   }, [mobileOpen]);
 
-  const handleNavClick = (e: React.MouseEvent, item: NavItem) => {
+  const handleNavClick = (e: React.MouseEvent, hash: string) => {
+    e.preventDefault();
     setMobileOpen(false);
-    if (item.hash) {
-      if (location.pathname !== "/") {
-        e.preventDefault();
-        navigate("/" + item.hash);
-        return;
-      }
-      e.preventDefault();
-      const el = document.querySelector(item.hash);
-      if (el) {
-        const top = el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
-        window.scrollTo({ top, behavior: "smooth" });
-      }
+    if (location.pathname !== "/") {
+      navigate("/" + hash);
+      return;
     }
-  };
-
-  const isActive = (item: NavItem) => {
-    if (item.hash) return location.pathname === "/" && activeKey === item.hash;
-    return location.pathname === item.to;
+    scrollToHash(hash);
   };
 
   return (
     <header>
       <a href="#main" className="skip-link">
-        {"Skip to content"}
+        Skip to content
       </a>
       <nav
         aria-label="Primary"
@@ -134,121 +97,38 @@ const Navbar = () => {
           backgroundColor: scrolled ? "rgba(20,20,20,0.94)" : "#141414",
           backdropFilter: scrolled ? "blur(20px) saturate(160%)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(20px) saturate(160%)" : "none",
-          borderTop: "1px solid #25282C",
-          borderBottom: "1px solid #25282C",
+          borderBottom: "1px solid rgba(255,255,255,0.08)",
         }}
       >
         <div className="relative h-full flex items-center justify-between px-6 lg:px-8">
-          {/* Brand */}
-          <Link to="/" className="flex items-center gap-3 shrink-0 z-10 group">
-            <div
-              className="relative transition-transform duration-500 group-hover:rotate-45"
-              style={{
-                width: 28,
-                height: 28,
-                background: "linear-gradient(135deg, #F0F1F3 0%, #B8BCC2 55%, #25282C 100%)",
-              }}
-            >
-              <div className="absolute" style={{ inset: 1, backgroundColor: "#141414" }} />
-              <div className="absolute" style={{ inset: 6, backgroundColor: "#F0F1F3" }} />
-            </div>
-            <span
-              className="font-display font-[800] text-white tracking-tight"
-              style={{ fontSize: 22, letterSpacing: "-0.02em" }}
-            >
-              SILXOR
-            </span>
+          <Link
+            to="/"
+            className="font-display font-[800] shrink-0"
+            style={{ fontSize: 20, letterSpacing: "-0.02em", color: "#FFFFFF" }}
+          >
+            SILXOR
           </Link>
 
-          {/* Center nav */}
-          <div className="hidden xl:flex items-center gap-6 h-full z-10">
-            {navLinks.map((link, i) => {
-              const active = isActive(link);
-              const content = (
-                <>
-                  <span
-                    className="uppercase whitespace-nowrap transition-colors duration-300 group-hover:text-white"
-                    style={{
-                      fontSize: 11,
-                      letterSpacing: "0.2em",
-                      color: "#FFFFFF",
-                      fontWeight: 500,
-                    }}
-                  >
-                    {link.label}
-                  </span>
-                  <span
-                    className="transition-all duration-300 group-hover:w-full"
-                    style={{
-                      height: 2,
-                      marginTop: 4,
-                      width: active ? "100%" : 0,
-                      backgroundColor: "#F0F1F3",
-                      boxShadow: active ? "0 0 8px rgba(240, 241, 243,0.5)" : "none",
-                    }}
-                    aria-hidden
-                  />
-                </>
-              );
-              const cls = "group flex flex-col items-center justify-center h-full";
-              const st: React.CSSProperties = { fontFamily: "'JetBrains Mono', monospace" };
-              return link.hash ? (
-                <a
-                  key={i}
-                  href={link.hash}
-                  onClick={(e) => handleNavClick(e, link)}
-                  className={cls}
-                  style={st}
-                  aria-current={active ? "page" : undefined}
-                >
-                  {content}
-                </a>
-              ) : (
-                <Link
-                  key={i}
-                  to={link.to}
-                  onClick={(e) => handleNavClick(e, link)}
-                  className={cls}
-                  style={st}
-                  aria-current={active ? "page" : undefined}
-                >
-                  {content}
-                </Link>
-              );
-            })}
+          <div className="hidden lg:flex items-center gap-8">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.hash}
+                href={link.hash}
+                onClick={(e) => handleNavClick(e, link.hash)}
+                className="font-mono uppercase transition-colors duration-200 hover:text-white"
+                style={{ fontSize: 11, letterSpacing: "0.18em", color: "#B8BCC2" }}
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
-          {/* Right */}
-          <div className="hidden xl:flex items-center gap-5 shrink-0 z-10">
-            <a
-              href="#solutions"
-              onClick={(e) => {
-                e.preventDefault();
-                if (location.pathname !== "/") { navigate("/#solutions"); return; }
-                const el = document.querySelector("#solutions");
-                if (el) {
-                  const top = el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
-                  window.scrollTo({ top, behavior: "smooth" });
-                }
-              }}
-              className="uppercase transition-colors duration-300 hover:text-white cursor-pointer"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 11,
-                letterSpacing: "0.15em",
-                color: "#B8BCC2",
-                fontWeight: 500,
-              }}
-            >
-              {"Explore Solutions"}
-            </a>
-
+          <div className="hidden lg:flex items-center shrink-0">
             <Button
               variant="ghost"
               type="button"
               onClick={() => navigate("/book")}
-              className="h-auto p-0 rounded-none font-normal hover:text-inherit relative group overflow-hidden transition-all duration-300 active:scale-95 hover:bg-white"
-
+              className="h-auto rounded-none font-mono uppercase hover:bg-white hover:text-inherit transition-colors"
               style={{
                 padding: "12px 22px",
                 backgroundColor: "#F0F1F3",
@@ -256,153 +136,91 @@ const Navbar = () => {
                 fontSize: 11,
                 letterSpacing: "0.15em",
                 fontWeight: 700,
-                textTransform: "uppercase",
-                fontFamily: "'DM Sans', sans-serif",
-                borderRadius: 2,
                 border: "none",
                 cursor: "pointer",
               }}
             >
-              <span
-                className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.6) 50%, transparent 100%)",
-                }}
-                aria-hidden
-              />
-              <span className="relative z-10 flex items-center gap-2">
-                {"Book an Assessment"}
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
-                  <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
-                </svg>
-              </span>
+              Book an Assessment
             </Button>
-
           </div>
 
-          {/* Mobile toggle */}
           <Button
             ref={mobileToggleRef}
             variant="ghost"
-            className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit xl:hidden flex items-center justify-center w-11 h-11 z-10 touch-target"
+            className="h-auto p-0 rounded-none hover:bg-transparent hover:text-inherit lg:hidden flex items-center justify-center w-11 h-11 touch-target"
             onClick={() => setMobileOpen((o) => !o)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav-panel"
           >
-
             {mobileOpen ? (
               <X className="w-5 h-5" style={{ color: "#F0F1F3" }} />
             ) : (
-              <div className="flex flex-col items-end gap-[4px]">
+              <div className="flex flex-col items-end gap-[4px]" aria-hidden>
                 <span style={{ width: 22, height: 1, backgroundColor: "#F0F1F3", display: "block" }} />
                 <span style={{ width: 14, height: 1, backgroundColor: "#F0F1F3", display: "block" }} />
                 <span style={{ width: 22, height: 1, backgroundColor: "#F0F1F3", display: "block" }} />
               </div>
             )}
           </Button>
-
         </div>
 
-        {/* Scroll progress */}
         <div
           className="absolute left-0 right-0 pointer-events-none"
-          style={{ bottom: -1, height: 1, backgroundColor: "transparent" }}
+          style={{ bottom: -1, height: 1 }}
           aria-hidden
         >
           <div
             style={{
               height: "100%",
               width: `${scrollPct}%`,
-              background: "linear-gradient(90deg, transparent 0%, #F0F1F3 50%, transparent 100%)",
-              boxShadow: "0 0 8px rgba(240, 241, 243,0.5)",
+              background: "#F0F1F3",
               transition: "width 120ms linear",
             }}
           />
         </div>
 
-        {/* Mobile panel */}
         <div
           id="mobile-nav-panel"
           ref={mobilePanelRef}
-          className="xl:hidden"
+          className="lg:hidden"
           role="dialog"
           aria-modal="true"
-          aria-label={"Primary navigation"}
+          aria-label="Primary navigation"
           aria-hidden={!mobileOpen}
           style={{
             maxHeight: mobileOpen ? `calc(100vh - ${NAV_HEIGHT}px)` : 0,
             overflowY: "auto",
             opacity: mobileOpen ? 1 : 0,
-            transform: mobileOpen ? "translateY(0)" : "translateY(-8px)",
             pointerEvents: mobileOpen ? "auto" : "none",
             visibility: mobileOpen ? "visible" : "hidden",
             transition:
-              "max-height 420ms cubic-bezier(0.22,1,0.36,1), opacity 280ms ease, transform 280ms ease, visibility 0s linear " +
-              (mobileOpen ? "0s" : "280ms"),
+              "max-height 380ms cubic-bezier(0.22,1,0.36,1), opacity 240ms ease, visibility 0s linear " +
+              (mobileOpen ? "0s" : "240ms"),
             backgroundColor: "rgba(11,11,11,0.98)",
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
-            WebkitOverflowScrolling: "touch",
-            borderTop: "1px solid #25282C",
+            borderTop: "1px solid rgba(255,255,255,0.08)",
           }}
         >
-          <div className="px-6 py-6">
-            {navLinks.map((link, i) => {
-              const active = isActive(link);
-              const inner = (
-                <span className="flex items-center gap-3">
-                  <span
-                    style={{
-                      display: "inline-block",
-                      width: 6,
-                      height: 6,
-                      backgroundColor: active ? "#F0F1F3" : "transparent",
-                      border: "1px solid #F0F1F3",
-                    }}
-                  />
-                  {link.label}
-                </span>
-              );
-              const cls =
-                "flex items-center justify-between py-4 uppercase transition-colors duration-200 touch-target";
-              const st: React.CSSProperties = {
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 12,
-                letterSpacing: "0.15em",
-                color: active ? "#FFFFFF" : "#F0F1F3",
-                borderBottom: "1px solid #25282C",
-                opacity: mobileOpen ? 1 : 0,
-                transform: mobileOpen ? "translateX(0)" : "translateX(-12px)",
-                transition: `opacity 260ms ease ${i * 45}ms, transform 260ms ease ${i * 45}ms, color 200ms ease`,
-              };
-              return link.hash ? (
-                <a
-                  key={i}
-                  href={link.hash}
-                  onClick={(e) => handleNavClick(e, link)}
-                  className={cls}
-                  style={st}
-                  aria-current={active ? "page" : undefined}
-                  tabIndex={mobileOpen ? 0 : -1}
-                >
-                  {inner}
-                </a>
-              ) : (
-                <Link
-                  key={i}
-                  to={link.to}
-                  onClick={(e) => handleNavClick(e, link)}
-                  className={cls}
-                  style={st}
-                  aria-current={active ? "page" : undefined}
-                  tabIndex={mobileOpen ? 0 : -1}
-                >
-                  {inner}
-                </Link>
-              );
-            })}
+          <div className="px-6 py-5">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.hash}
+                href={link.hash}
+                onClick={(e) => handleNavClick(e, link.hash)}
+                className="flex items-center py-4 font-mono uppercase touch-target"
+                style={{
+                  fontSize: 12,
+                  letterSpacing: "0.15em",
+                  color: "#F0F1F3",
+                  borderBottom: "1px solid rgba(255,255,255,0.08)",
+                }}
+                tabIndex={mobileOpen ? 0 : -1}
+              >
+                {link.label}
+              </a>
+            ))}
             <Button
               variant="ghost"
               type="button"
@@ -410,30 +228,22 @@ const Navbar = () => {
                 setMobileOpen(false);
                 navigate("/book");
               }}
-              className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit flex items-center justify-center gap-2 uppercase w-full touch-target"
+              className="h-auto rounded-none font-mono uppercase w-full touch-target hover:bg-white hover:text-inherit"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
                 fontSize: 12,
                 letterSpacing: "0.15em",
                 fontWeight: 700,
                 backgroundColor: "#F0F1F3",
                 color: "#0B0B0B",
                 padding: "14px 20px",
-                borderRadius: 2,
                 border: "none",
                 cursor: "pointer",
-                marginTop: 16,
-                opacity: mobileOpen ? 1 : 0,
-                transform: mobileOpen ? "translateY(0)" : "translateY(8px)",
-                transition: `opacity 260ms ease ${navLinks.length * 45}ms, transform 260ms ease ${navLinks.length * 45}ms`,
+                marginTop: 18,
               }}
+              tabIndex={mobileOpen ? 0 : -1}
             >
-              {"Book an Assessment"}
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
-              </svg>
+              Book an Assessment
             </Button>
-
           </div>
         </div>
       </nav>

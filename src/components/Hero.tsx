@@ -20,13 +20,12 @@ const Hero = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-start",
-        padding: "clamp(24px, 5vw, 80px)",
         paddingTop: "clamp(110px, 14vh, 140px)",
         paddingBottom: "clamp(48px, 7vw, 96px)",
       }}
     >
       {/* Technical Header */}
-      <div className="absolute flex flex-col gap-2" style={{ top: 40, insetInlineStart: "clamp(24px, 5vw, 80px)" }}>
+      <div className="absolute container-content flex flex-col gap-2" style={{ top: 40, insetInline: 0 }}>
         <span
           className="uppercase font-mono"
           style={{ fontSize: 11, letterSpacing: "0.2em", color: "#B8BCC2", fontWeight: 700 }}
@@ -52,7 +51,7 @@ const Hero = () => {
         }}
       />
 
-      <div className="relative" style={{ maxWidth: 1200, width: "100%", zIndex: 1 }}>
+      <div className="relative container-content" style={{ width: "100%", zIndex: 1 }}>
         <motion.h1
           initial={initial}
           animate={animate}

@@ -19,8 +19,9 @@ const Hero = () => {
         borderColor: "#25282C",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "flex-end",
+        justifyContent: "flex-start",
         padding: "clamp(24px, 5vw, 80px)",
+        paddingTop: "clamp(140px, 18vh, 200px)",
       }}
     >
       {/* Technical Header */}

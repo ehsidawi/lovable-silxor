@@ -67,7 +67,7 @@ const Footer = () => {
             </p>
             <div style={{ marginTop: 16 }}>
               <p className="font-body font-[300]" style={{ fontSize: 13, color: "#B8BCC2", lineHeight: 1.7 }}>
-                {t("801 Barton Springs Rd, Austin, TX 78704", "801 Barton Springs Rd, Austin, TX 78704")}
+                <bdi dir="ltr">{t("801 Barton Springs Rd, Austin, TX 78704", "801 Barton Springs Rd, Austin, TX 78704")}</bdi>
               </p>
               <a
                 href="mailto:hello@silxor.com"
@@ -76,7 +76,7 @@ const Footer = () => {
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#F0F1F3")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#B8BCC2")}
               >
-                hello@silxor.com
+                <bdi dir="ltr">hello@silxor.com</bdi>
               </a>
             </div>
           </div>

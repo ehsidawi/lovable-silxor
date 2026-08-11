@@ -142,7 +142,7 @@ const SLADoc = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <section className="section-spacing" style={{ paddingTop: 104 }}>
+      <section className="section-spacing flex-1" style={{ paddingTop: 104, paddingBottom: 48 }}>
         <div className="container-content" style={{ maxWidth: 900, margin: "0 auto" }}>
           <div className="section-eyebrow">
             {"SERVICE LEVEL FRAMEWORK"}

@@ -46,7 +46,7 @@ const Hero = () => {
             className="font-display font-[700]"
             style={{
               color: "#FFFFFF",
-              fontSize: "clamp(2.3rem, 5.6vw, 4.4rem)",
+              fontSize: "clamp(2.1rem, 4.6vw, 3.7rem)",
               lineHeight: 0.95,
               letterSpacing: "-0.04em",
               maxWidth: 880,

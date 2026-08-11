@@ -282,6 +282,7 @@ const AssessmentForm = () => {
             id="field-email"
             name="email"
             type="email"
+            dir="ltr"
             value={values.email}
             maxLength={LEAD_LIMITS.email}
             onChange={(e) => setField("email", e.target.value)}
@@ -304,6 +305,7 @@ const AssessmentForm = () => {
             id="field-phone"
             name="phone"
             type="tel"
+            dir="ltr"
             value={values.phone}
             maxLength={LEAD_LIMITS.phone}
             onChange={(e) => setField("phone", e.target.value)}

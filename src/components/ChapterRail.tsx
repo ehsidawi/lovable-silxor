@@ -4,7 +4,7 @@ import { scrollToHash } from "@/lib/hashNav";
 
 /** Subtle guided-journey progress indicator (desktop only). */
 const ChapterRail = () => {
-  const [active, setActive] = useState<string>(CHAPTERS[0].id);
+  const [active, setActive] = useState<string>(CHAPTERS[0].id as string);
 
   useEffect(() => {
     const onScroll = () => {

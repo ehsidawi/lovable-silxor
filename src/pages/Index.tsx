@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import SideRail from "@/components/SideRail";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
 import ExecutiveDashboard from "@/components/ExecutiveDashboard";
@@ -18,8 +17,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <SideRail />
-      <main id="main" tabIndex={-1} className="lg:pl-24 outline-none">
+      <main id="main" tabIndex={-1} className="outline-none">
         <div id="home">
           <Hero />
         </div>

@@ -1,11 +1,13 @@
 import { Server, Code, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useHashNav } from "@/lib/hashNav";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 
 const StartEngagement = () => {
   const navigate = useNavigate();
+  const hashNav = useHashNav();
 
   const paths = [
     {
@@ -84,6 +86,7 @@ const StartEngagement = () => {
           >
             <a
               href="/#solutions"
+                onClick={(e) => hashNav(e, "/#solutions")}
               style={{
                 fontSize: 12,
                 letterSpacing: "0.12em",

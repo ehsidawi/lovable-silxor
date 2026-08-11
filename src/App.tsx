@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import { trackPageView } from "@/lib/analytics";
+import { scrollToHash } from "@/lib/hashNav";
 
 // Noncritical routes are split out of the initial bundle.
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -18,12 +19,19 @@ const Partners = lazy(() => import("./pages/Partners"));
 const queryClient = new QueryClient();
 
 const RouteEffects = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
     trackPageView(pathname);
+    if (hash) {
+      // Wait a frame so the target section is mounted before scrolling.
+      const id = window.setTimeout(() => {
+        if (!scrollToHash(hash, "auto")) window.scrollTo({ top: 0, behavior: "auto" });
+      }, 60);
+      return () => window.clearTimeout(id);
+    }
     window.scrollTo({ top: 0, behavior: "auto" });
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return null;
 };

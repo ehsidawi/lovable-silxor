@@ -1,9 +1,11 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useHashNav } from "@/lib/hashNav";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const navigate = useNavigate();
+  const hashNav = useHashNav();
   const reduceMotion = useReducedMotion();
 
   const initial = reduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 };
@@ -116,6 +118,7 @@ const Hero = () => {
             >
               <a
                 href="/#solutions"
+                onClick={(e) => hashNav(e, "/#solutions")}
                 style={{
                   fontSize: 12,
                   letterSpacing: "0.2em",

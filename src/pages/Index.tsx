@@ -60,11 +60,9 @@ const Index = () => {
         <AnimatedSection>
           <Team />
         </AnimatedSection>
-        <div id="contact">
-          <AnimatedSection>
-            <StartEngagement />
-          </AnimatedSection>
-        </div>
+        <AnimatedSection>
+          <StartEngagement />
+        </AnimatedSection>
         <Footer />
       </main>
     </div>

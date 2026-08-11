@@ -38,8 +38,6 @@ script, including Sorani-specific glyphs ڕ ڵ ۆ ێ ڤ). Motion: framer-motion,
 ```
 src/
   components/        section components + shadcn/ui primitives (ui/)
-  context/           LanguageContext (EN/AR/KU + RTL switching)
-  i18n/ku.ts         Kurdish Sorani dictionary keyed by English source string
   lib/
     analytics.ts     privacy-conscious analytics hook (disabled by default)
     submitLead.ts    integration-ready form submission adapter
@@ -53,51 +51,6 @@ framer-motion, react-hook-form + zod.
 
 ---
 
-## Localization (en / ar / ku)
-
-| Locale | Code | Label | Direction |
-| --- | --- | --- | --- |
-| English | `en` | EN | ltr |
-| Arabic | `ar` | ع | rtl |
-| Kurdish Sorani | `ku` | کوردی | rtl |
-
-- `src/context/LanguageContext.tsx` owns the `Language = "en" | "ar" | "ku"`
-  union, persists the choice in `localStorage` (`silxor.locale`), restores it on
-  reload, and sets `document.documentElement.lang` and `dir`
-  (`rtl` for `ar` and `ku`, `ltr` for `en`).
-- `useLanguage()` exposes `{ language, setLanguage, t, isRTL, dir, localeFont }`.
-  Apply `localeFont` to any text block with custom inline typography.
-
-### Adding new strings
-
-```tsx
-const { t } = useLanguage();
-t("Book an Assessment", "احجز تقييماً");            // ku from the dictionary
-t("Book an Assessment", "احجز تقييماً", "هەڵسەنگاندنێک بگرە"); // explicit ku
-```
-
-Every new visible string must either pass an explicit third (Kurdish) argument
-or get an entry in `src/i18n/ku.ts`, keyed by the exact English source string.
-Content arrays should carry `xAr` / `xKu` sibling fields. Accessibility text
-(aria-labels, skip link, status messages, alt text) is translated the same way.
-
-### RTL rules
-
-- Use CSS logical properties (`inset-inline-start`, `margin-inline`,
-  `padding-inline`, `border-inline-*`, `text-align: start`) instead of
-  left/right anywhere direction matters.
-- Add `.rtl-flip` to directional arrows and chevrons.
-- Wrap emails, URLs, addresses and acronym-heavy fragments in
-  `<bdi dir="ltr">`; `input[type=email|tel|url]` and `.force-ltr` stay LTR
-  inside RTL pages.
-- Do not translate brand names, email addresses, URLs, code identifiers or
-  technical standards (ISO 27001, NIST, SLA, IAM/PAM/IGA, CI/CD, ...).
-
-SEO: metadata and JSON-LD stay in English and language-neutral. The app is a
-single-URL SPA with client-side locale switching, so no per-locale URLs or
-`hreflang` alternates are declared (declaring them would be inaccurate).
-
----
 
 ## Local setup
 

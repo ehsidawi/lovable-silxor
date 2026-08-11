@@ -13,7 +13,6 @@ const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const ComplianceDoc = lazy(() => import("./pages/ComplianceDoc"));
 const SLADoc = lazy(() => import("./pages/SLADoc"));
 const BookAssessment = lazy(() => import("./pages/BookAssessment"));
-const Solutions = lazy(() => import("./pages/Solutions"));
 const Partners = lazy(() => import("./pages/Partners"));
 
 const queryClient = new QueryClient();
@@ -51,7 +50,6 @@ const App = () => (
         <Suspense fallback={<RouteFallback />}>
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/solutions" element={<Solutions />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/compliance" element={<ComplianceDoc />} />

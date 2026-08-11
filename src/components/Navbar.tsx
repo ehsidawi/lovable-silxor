@@ -379,7 +379,6 @@ const Navbar = () => {
                   aria-current={active ? "page" : undefined}
                 >
                   {inner}
-                  <span style={{ fontSize: 9, color: "#B8BCC2" }}>{String(i + 1).padStart(2, "0")}</span>
                 </Link>
               );
             })}

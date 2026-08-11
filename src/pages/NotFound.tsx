@@ -16,15 +16,15 @@ const NotFound = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen">
       <Navbar />
-      <main id="main" className="flex-1">
-        <section className="section-spacing" style={{ paddingTop: 104, paddingBottom: 64 }}>
+      <main id="main">
+        <section className="section-spacing" style={{ paddingTop: 140, paddingBottom: 120 }}>
           <div className="container-content" style={{ maxWidth: 640, margin: "0 auto" }}>
             <div className="section-eyebrow">{"ERROR 404"}</div>
             <h1
               className="font-display font-[700]"
-              style={{ fontSize: 36, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 12 }}
+              style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 12 }}
             >
               {"This page is not available"}
             </h1>
@@ -34,11 +34,11 @@ const NotFound = () => {
                 fontSize: 16,
                 color: "#B8BCC2",
                 lineHeight: 1.7,
-                marginBottom: 24,
+                marginBottom: 32,
                 textAlign: "start",
               }}
             >
-              {"This address does not exist or has moved."}
+              {"The address you requested does not exist or has moved. Try one of the links below, or contact our team and we will point you to the right resource."}
             </p>
             <nav
               aria-label={"Helpful links"}
@@ -63,7 +63,7 @@ const NotFound = () => {
                 className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit"
               >
                 <Link
-                  to="/#capabilities"
+                  to="/#solutions"
                   className="font-mono font-[400] uppercase transition-all duration-200"
                   style={{
                     ...linkBase,
@@ -71,7 +71,7 @@ const NotFound = () => {
                     border: "1px solid rgba(255,255,255,0.14)",
                   }}
                 >
-                  {"Capabilities"}
+                  {"Explore Solutions"}
                 </Link>
               </Button>
               <Button

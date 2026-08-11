@@ -56,9 +56,9 @@ const blocks = [
 
 const ComplianceDoc = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen">
       <Navbar />
-      <section className="section-spacing flex-1" style={{ paddingTop: 104, paddingBottom: 48 }}>
+      <section className="section-spacing" style={{ paddingTop: 120 }}>
         <div className="container-content" style={{ maxWidth: 800, margin: "0 auto" }}>
           <div className="section-eyebrow">
             {"COMPLIANCE APPROACH"}
@@ -71,7 +71,7 @@ const ComplianceDoc = () => {
           </h1>
           <p
             className="font-body font-[300]"
-            style={{ fontSize: 16, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 32, textAlign: "start" }}
+            style={{ fontSize: 16, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 48, textAlign: "start" }}
           >
             {"This page describes how we design and align our controls with recognized industry frameworks. It is not a certification, audit report, or attestation. Any specific compliance claim relevant to a project is confirmed in writing during scoping and contracting."}
           </p>
@@ -81,7 +81,7 @@ const ComplianceDoc = () => {
               <Card
                 key={i}
                 className="surface-elevated rounded-[4px] border-0 bg-transparent text-inherit shadow-none"
-                style={{ padding: 24 }}
+                style={{ padding: 32 }}
               >
                 <div className="flex items-center gap-3" style={{ marginBottom: 12 }}>
                   <h2 className="font-body font-[500]" style={{ fontSize: 17, color: "#FFFFFF" }}>
@@ -113,7 +113,7 @@ const ComplianceDoc = () => {
 
           <p
             className="font-body font-[300] text-center"
-            style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 32 }}
+            style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 48 }}
           >
             {"For questions about our current compliance posture or documentation needs for a specific engagement, contact: "}
             <bdi>hello@silxor.com</bdi>

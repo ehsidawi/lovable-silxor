@@ -63,10 +63,10 @@ const sections = [
 const PrivacyPolicy = () => {
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen">
       <Navbar />
-      <main id="main" className="flex-1">
-        <section className="section-spacing" style={{ paddingTop: 104 }}>
+      <main id="main">
+        <section className="section-spacing" style={{ paddingTop: 120 }}>
           <div className="container-content" style={{ maxWidth: 720, margin: "0 auto" }}>
             <div className="section-eyebrow">{"LEGAL"}</div>
             <h1
@@ -77,13 +77,13 @@ const PrivacyPolicy = () => {
             </h1>
             <p
               className="font-body font-[300]"
-              style={{ fontSize: 13, color: "#B8BCC2", marginBottom: 32 }}
+              style={{ fontSize: 13, color: "#B8BCC2", marginBottom: 48 }}
             >
               {"Last updated: March 2026"}
             </p>
 
             {sections.map((section, i) => (
-              <div key={i} style={{ marginBottom: 28 }}>
+              <div key={i} style={{ marginBottom: 40 }}>
                 <h2
                   className="font-body font-[500]"
                   style={{ fontSize: 17, color: "#FFFFFF", marginBottom: 12 }}

@@ -1,107 +1,51 @@
-import { Server, Code, Shield } from "lucide-react";
+import { Server, Code, Shield, Mail } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useHashNav } from "@/lib/hashNav";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 
+const paths = [
+  { icon: Server, label: "Infrastructure & Hosting" },
+  { icon: Code, label: "Software or AI Project" },
+  { icon: Shield, label: "Strategic Advisory" },
+];
 
 const StartEngagement = () => {
   const navigate = useNavigate();
-  const hashNav = useHashNav();
-
-  const paths = [
-    {
-      icon: Server,
-      title: "Infrastructure & Hosting",
-      description: "Begin with a sovereignty, resilience, and compliance review of your current hosting footprint.",
-    },
-    {
-      icon: Code,
-      title: "Software or AI Project",
-      description: "Share your platform or AI requirements and receive a scoped delivery proposal within 5 business days.",
-    },
-    {
-      icon: Shield,
-      title: "Strategic Advisory",
-      description: "Book a 60 minute architecture or security session with a senior Silxor engineer.",
-    },
-  ];
 
   return (
-    <section id="contact" className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+    <section id="contact" className="r-section">
       <div className="container-content">
-        <div className="text-center" style={{ marginBottom: 64 }}>
-          <div className="section-eyebrow justify-center">{"ENGAGE"}</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF" }}>
-            {"Start With a Technical Assessment"}
+        <div className="r-panel flex flex-col items-center text-center" style={{ borderRadius: 40 }}>
+          <span className="r-eyebrow">Engage</span>
+          <h2 className="r-title" style={{ marginTop: 16, maxWidth: 620 }}>
+            Start With a Technical Assessment
           </h2>
-          <p className="font-body font-[300] mx-auto" style={{ fontSize: 16, color: "#B8BCC2", maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
-            {"Every Silxor engagement starts with a no cost technical assessment. Tell us what you are building and we will scope exactly how to deliver it."}
+          <p className="r-lead" style={{ marginTop: 12, maxWidth: 520 }}>
+            No cost. Tell us what you are building and we scope how to deliver it.
           </p>
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-          {paths.map((path, index) => {
-            const Icon = path.icon;
-            return (
-              <Card key={index} className="surface-elevated flex items-center gap-3 rounded-[4px] border-0 bg-transparent text-inherit shadow-none" style={{ padding: 12 }}>
-                <Icon style={{ width: 18, height: 18, color: "#F0F1F3", flexShrink: 0 }} strokeWidth={1.5} />
-                <h3 className="font-body font-[500]" style={{ fontSize: 14, color: "#FFFFFF" }}>
-                  {path.title}
-                </h3>
-              </Card>
-            );
-          })}
-        </div>
+          <div className="flex flex-wrap justify-center gap-2.5" style={{ marginTop: 24 }}>
+            {paths.map((p) => {
+              const Icon = p.icon;
+              return (
+                <span key={p.label} className="r-pill" style={{ padding: "9px 16px 9px 9px", fontSize: 12 }}>
+                  <span className="r-node" style={{ width: 24, height: 24 }}>
+                    <Icon style={{ width: 12, height: 12, color: "#F0F1F3" }} strokeWidth={1.6} />
+                  </span>
+                  {p.label}
+                </span>
+              );
+            })}
+          </div>
 
-
-        <div className="flex flex-wrap justify-center gap-4" style={{ marginTop: 48 }}>
-          <Button
-            type="button"
-            variant="ghost"
-            onClick={() => navigate("/book")}
-            className="h-auto rounded-none font-mono font-[400] uppercase transition-all duration-200 flex items-center gap-2 hover:bg-[#FFFFFF] hover:text-inherit"
-            style={{
-              fontSize: 12,
-              letterSpacing: "0.12em",
-              backgroundColor: "#F0F1F3",
-              color: "#0B0B0B",
-              padding: "16px 32px",
-              minHeight: 44,
-              borderRadius: 2,
-              border: "none",
-              cursor: "pointer",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#F0F1F3")}
-          >
-            {"Book an Assessment"}
-          </Button>
-          <Button
-            asChild
-            variant="ghost"
-            className="h-auto rounded-none font-mono font-[400] uppercase transition-all duration-200 flex items-center gap-2"
-          >
-            <a
-              href="/#solutions"
-                onClick={(e) => hashNav(e, "/#solutions")}
-              style={{
-                fontSize: 12,
-                letterSpacing: "0.12em",
-                border: "1px solid #25282C",
-                color: "#FFFFFF",
-                padding: "16px 32px",
-                minHeight: 44,
-                borderRadius: 2,
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#25282C")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
-            >
-              {"Explore Solutions"}
+          <div className="flex flex-wrap justify-center items-center gap-4" style={{ marginTop: 32 }}>
+            <button type="button" className="r-cta" onClick={() => navigate("/book")}>
+              Book an Assessment
+            </button>
+            <a href="mailto:hello@silxor.com" className="r-cta-ghost">
+              <Mail style={{ width: 14, height: 14, marginInlineEnd: 8 }} strokeWidth={1.6} />
+              hello@silxor.com
             </a>
-          </Button>
+          </div>
         </div>
-        
       </div>
     </section>
   );

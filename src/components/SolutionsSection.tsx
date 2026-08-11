@@ -40,7 +40,7 @@ const cards = [
 
 const SolutionsSection = () => {
   return (
-    <section className="section-spacing" id="solutions" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+    <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
         <div className="section-eyebrow">{"SOLUTIONS"}</div>
         <h2

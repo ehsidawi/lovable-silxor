@@ -8,7 +8,7 @@ const ChapterRail = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      let current = CHAPTERS[0].id;
+      let current: string = CHAPTERS[0].id;
       for (const c of CHAPTERS) {
         const el = document.getElementById(c.id);
         if (!el) continue;

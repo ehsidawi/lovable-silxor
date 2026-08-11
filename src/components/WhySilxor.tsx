@@ -1,76 +1,57 @@
-import { Check } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { Chapter, MUTED, INK, RULE } from "@/components/journey";
 
-const WhySilxor = () => {
+const points = [
+  {
+    title: "One accountable team",
+    desc: "A single named engineering team owns advisory, build, and operations end to end, without handoffs between vendors.",
+  },
+  {
+    title: "Security by design",
+    desc: "Security and identity controls are built into architecture decisions from day one, not retrofitted after delivery.",
+  },
+  {
+    title: "Framework aligned",
+    desc: "Programs are aligned to NIST CSF and ISO 27001 control families; documentation is evidenced during delivery.",
+  },
+  {
+    title: "Senior by default",
+    desc: "Every engagement is led by a founder or senior practice lead, with staffing, seniority, and reporting cadence scoped in the proposal.",
+  },
+];
 
-  const rows = [
-    { label: "Strategy" },
-    { label: "Engineering" },
-    { label: "Security" },
-    { label: "Cloud" },
-    { label: "AI" },
-    { label: "Managed Services" },
-    { label: "24×7 Operations" },
-    { label: "End to End" },
-    { label: "One Partner" },
-  ];
-
-  return (
-    <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-      <div className="container-content">
-        <div style={{ marginBottom: 20 }}>
-          <div className="section-eyebrow">{"WHY SILXOR"}</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#FFFFFF" }}>
-            {"One Partner. Full Stack. No Handoffs."}
-          </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: "#B8BCC2", maxWidth: 620, marginTop: 8, lineHeight: 1.7 }}>
-            {"Every discipline your program needs, delivered end to end by one accountable team."}
+const WhySilxor = () => (
+  <Chapter
+    id="why"
+    index={5}
+    eyebrow="Why Silxor"
+    title="One partner. Full stack. No handoffs."
+    lede="Strategy, engineering, security, cloud, AI, and 24×7 managed operations, delivered end to end by one accountable team."
+  >
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-10" style={{ borderTop: RULE }}>
+      {points.map((p) => (
+        <article key={p.title} style={{ borderBottom: RULE, padding: "20px 0" }}>
+          <h3 className="font-display font-[600]" style={{ fontSize: 17, color: INK, marginBottom: 8 }}>
+            {p.title}
+          </h3>
+          <p className="font-body font-[300]" style={{ fontSize: 13.5, color: MUTED, lineHeight: 1.65 }}>
+            {p.desc}
           </p>
-        </div>
-
-        <Card className="surface-elevated rounded-none border-0 bg-transparent text-inherit shadow-none" style={{ padding: 22 }}>
-          <div
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-[1px]"
-            style={{ background: "rgba(255,255,255,0.06)" }}
-          >
-            {rows.map((r) => (
-              <div
-                key={r.label}
-                style={{
-                  background: "#141414",
-                  padding: "16px 18px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  gap: 10,
-                }}
-              >
-                <span
-                  className="font-mono uppercase"
-                  style={{ fontSize: 11, letterSpacing: "0.15em", color: "#F0F1F3" }}
-                >
-                  {r.label}
-                </span>
-                <div
-                  style={{
-                    width: 22,
-                    height: 22,
-                    borderRadius: 2,
-                    background: "#F0F1F3",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <Check style={{ width: 12, height: 12, color: "#0B0B0B" }} strokeWidth={3} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </Card>
-      </div>
-    </section>
-  );
-};
+        </article>
+      ))}
+    </div>
+    <p className="font-body font-[300]" style={{ fontSize: 13, color: MUTED, marginTop: 14 }}>
+      {"Founded and led by "}
+      <a
+        href="https://www.linkedin.com/in/ehsidawi"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ color: "#FFFFFF", textDecoration: "underline", textUnderlineOffset: 3 }}
+      >
+        Ehsan Nidawi
+      </a>
+      {"."}
+    </p>
+  </Chapter>
+);
 
 export default WhySilxor;

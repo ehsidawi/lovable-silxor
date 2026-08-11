@@ -17,8 +17,8 @@ const Footer = () => {
     {
       title: "Industries",
       links: [
-        { label: "Banking", to: "/solutions" },
-        { label: "Government", to: "/solutions" },
+        { label: "Banking", to: "/#solutions" },
+        { label: "Government", to: "/#solutions" },
         { label: "Healthcare", to: "/#industries" },
         { label: "Critical Infrastructure", to: "/#industries" },
       ],

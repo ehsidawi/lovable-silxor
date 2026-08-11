@@ -63,7 +63,7 @@ const NotFound = () => {
                 className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit"
               >
                 <Link
-                  to="/solutions"
+                  to="/#solutions"
                   className="font-mono font-[400] uppercase transition-all duration-200"
                   style={{
                     ...linkBase,

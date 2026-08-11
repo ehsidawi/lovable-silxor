@@ -31,7 +31,7 @@ const Hero = () => {
         >
           {"Enterprise Technology Partner"}
         </span>
-        <Separator className="bg-transparent" style={{ height: 1, width: 128, backgroundColor: "#25282C" }} />
+        <div aria-hidden style={{ height: 1, width: 128, backgroundColor: "#25282C" }} />
       </div>
 
       {/* Diagonal texture */}

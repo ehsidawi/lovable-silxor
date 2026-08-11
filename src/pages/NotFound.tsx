@@ -71,7 +71,7 @@ const NotFound = () => {
                     border: "1px solid rgba(255,255,255,0.14)",
                   }}
                 >
-                  {"Explore Solutions"}
+                  {"Explore Capabilities"}
                 </Link>
               </Button>
               <Button

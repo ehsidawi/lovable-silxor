@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
 import ExecutiveDashboard from "@/components/ExecutiveDashboard";
+import SolutionsSection from "@/components/SolutionsSection";
 import Services from "@/components/Services";
 import Industries from "@/components/Industries";
 import WhySilxor from "@/components/WhySilxor";

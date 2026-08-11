@@ -40,22 +40,20 @@ const StartEngagement = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
           {paths.map((path, index) => {
             const Icon = path.icon;
             return (
-              <Card key={index} className="surface-elevated flex flex-col rounded-[4px] border-0 bg-transparent text-inherit shadow-none" style={{ padding: 14 }}>
-                <Icon className="mb-5" style={{ width: 32, height: 32, color: "#F0F1F3" }} strokeWidth={1.5} />
-                <h3 className="font-body font-[500]" style={{ fontSize: 17, color: "#FFFFFF", marginBottom: 10 }}>
+              <Card key={index} className="surface-elevated flex items-center gap-3 rounded-[4px] border-0 bg-transparent text-inherit shadow-none" style={{ padding: 12 }}>
+                <Icon style={{ width: 18, height: 18, color: "#F0F1F3", flexShrink: 0 }} strokeWidth={1.5} />
+                <h3 className="font-body font-[500]" style={{ fontSize: 14, color: "#FFFFFF" }}>
                   {path.title}
                 </h3>
-                <p className="font-body font-[300] flex-1" style={{ fontSize: 14, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 10 }}>
-                  {path.description}
-                </p>
               </Card>
             );
           })}
         </div>
+
 
         <div className="flex flex-wrap justify-center gap-4" style={{ marginTop: 48 }}>
           <Button

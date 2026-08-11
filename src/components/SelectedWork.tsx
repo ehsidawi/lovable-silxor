@@ -1,126 +1,56 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-
 const patterns = [
   {
-    tag: "INFRASTRUCTURE",
+    tag: "Infrastructure",
     title: "Cloud Migration & Modernization",
-    titleAr: "ترحيل السحابة وتحديثها",
-    body: "A phased migration pattern for moving regulated workloads from legacy or public cloud environments into a resilient, access-controlled environment with minimal downtime.",
-    bodyAr: "نمط ترحيل متدرج لنقل الأحمال المنظمة من بيئات قديمة أو سحابية عامة إلى بيئة مرنة ومتحكم بالوصول إليها مع أقل توقف ممكن.",
+    line: "Phased moves of regulated workloads with minimal downtime.",
     sector: "Financial Services",
-    sectorAr: "الخدمات المالية",
   },
   {
-    tag: "IDENTITY",
+    tag: "Identity",
     title: "Enterprise Identity Program",
-    titleAr: "برنامج الهوية المؤسسية",
-    body: "A greenfield IAM pattern covering single sign-on, privileged access vaulting, and identity governance lifecycle for large organizations.",
-    bodyAr: "نمط منظومة هوية جديدة يشمل تسجيل الدخول الموحّد وخزنة الحسابات المميزة وحوكمة دورة حياة الهوية للمؤسسات الكبيرة.",
+    line: "SSO, privileged access vaulting, and identity governance.",
     sector: "Public Sector",
-    sectorAr: "القطاع العام",
   },
   {
-    tag: "SOFTWARE + AI",
-    title: "Private AI Operations Platform",
-    titleAr: "منصة عمليات الذكاء الاصطناعي الخاصة",
-    body: "A pattern for deploying self-hosted models to automate internal operations while keeping data inside the client's own environment.",
-    bodyAr: "نمط لنشر نماذج مستضافة ذاتياً لأتمتة العمليات الداخلية مع إبقاء البيانات داخل بيئة العميل.",
+    tag: "Software + AI",
+    title: "Private AI Operations",
+    line: "Self hosted models with data kept inside your environment.",
     sector: "Energy",
-    sectorAr: "الطاقة",
   },
 ];
 
 const SelectedWork = () => {
-
   return (
-    <section id="work" className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+    <section id="work" className="r-section">
       <div className="container-content">
-        <div style={{ marginBottom: 24 }}>
-          <div className="section-eyebrow">{"ENGAGEMENT MODELS"}</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
-            {"Example Solution Patterns"}
-          </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 620, marginTop: 6, lineHeight: 1.7 }}>
-            {"Illustrative solution patterns across infrastructure, identity, and AI. These describe how we approach common problems, not specific verified client work."}
+        <div className="flex flex-col items-start gap-4" style={{ marginBottom: 32 }}>
+          <span className="r-eyebrow">Solution Patterns</span>
+          <h2 className="r-title">How We Approach Problems</h2>
+          <p className="r-lead" style={{ maxWidth: 560 }}>
+            Illustrative patterns, not specific client work.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
-          {patterns.map((pattern, index) => (
-            <Card
-              key={index}
-              className="group relative surface-elevated border-0 bg-transparent text-inherit shadow-none"
-              style={{
-                borderRadius: 2,
-                padding: "24px 22px",
-                overflow: "hidden",
-              }}
-            >
-              <div
-                className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
-                  backgroundSize: "40px 40px",
-                }}
-              />
-
-              <div className="flex flex-wrap items-center gap-2 mb-3 relative z-10">
-                <span
-                  className="font-mono font-[400] uppercase"
-                  style={{ fontSize: 9, letterSpacing: "0.12em", color: "hsl(var(--primary))" }}
-                >
-                  {pattern.tag}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {patterns.map((p) => (
+            <article key={p.title} className="r-card" style={{ padding: 24, borderRadius: 28 }}>
+              <div className="flex flex-wrap items-center gap-2" style={{ marginBottom: 14 }}>
+                <span className="r-pill" style={{ fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase" }}>
+                  {p.tag}
                 </span>
-                <Badge
-                  className="badge-pill rounded-[2px] border-0 bg-transparent p-0 font-normal hover:bg-transparent font-mono font-[400]"
-                  style={{
-                    fontSize: 9,
-                    color: "hsl(var(--primary))",
-                    backgroundColor: "hsl(var(--primary) / 0.06)",
-                    border: "1px solid hsl(var(--primary) / 0.2)",
-                    padding: "2px 8px",
-                    borderRadius: 2,
-                  }}
-                >
-                  {pattern.sector}
-                </Badge>
+                <span className="r-pill" style={{ fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase" }}>
+                  {p.sector}
+                </span>
               </div>
-
-              <div className="relative z-10">
-                <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "hsl(var(--foreground))", marginBottom: 6 }}>
-                  {pattern.title}
-                </h3>
-                <p className="font-body font-[300]" style={{ fontSize: 13, color: "hsl(var(--muted-foreground))", lineHeight: 1.65 }}>
-                  {pattern.body}
-                </p>
-              </div>
-
-              <div
-                className="absolute pointer-events-none"
-                style={{ top: 10, insetInlineEnd: 10, width: 14, height: 14, opacity: 0.15 }}
-              >
-                <div style={{ position: "absolute", top: 6, insetInlineStart: 0, width: 14, height: 1, backgroundColor: "hsl(var(--primary))" }} />
-                <div style={{ position: "absolute", top: 0, insetInlineStart: 6, width: 1, height: 14, backgroundColor: "hsl(var(--primary))" }} />
-              </div>
-            </Card>
+              <h3 className="font-display font-[600]" style={{ fontSize: 17, color: "#FFFFFF", marginBottom: 8 }}>
+                {p.title}
+              </h3>
+              <p className="font-body font-[300]" style={{ fontSize: 13.5, color: "#C6CAD0", lineHeight: 1.65 }}>
+                {p.line}
+              </p>
+            </article>
           ))}
         </div>
-
-        <p
-          className="font-body font-[300] text-center"
-          style={{
-            fontSize: 13,
-            color: "hsl(var(--muted-foreground))",
-            fontStyle: "italic",
-            marginTop: 40,
-            paddingTop: 24,
-            borderTop: "1px solid rgba(255,255,255,0.06)",
-          }}
-        >
-          {"References and detailed case discussions available on request during the assessment."}
-        </p>
       </div>
     </section>
   );

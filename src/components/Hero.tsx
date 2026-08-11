@@ -25,7 +25,7 @@ const Hero = () => {
       }}
     >
       {/* Technical Header */}
-      <div className="absolute flex flex-col gap-2" style={{ top: 40, insetInlineStart: "clamp(24px, 5vw, 80px)" }}>
+      <div className="absolute container-content flex flex-col gap-2" style={{ top: 40, insetInline: 0 }}>
         <span
           className="uppercase font-mono"
           style={{ fontSize: 11, letterSpacing: "0.2em", color: "#B8BCC2", fontWeight: 700 }}

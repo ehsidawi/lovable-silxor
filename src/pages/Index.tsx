@@ -22,12 +22,10 @@ const Index = () => {
         <div id="home">
           <Hero />
         </div>
-        <AnimatedSection delay={0.1}>
-          <StatsBar />
-        </AnimatedSection>
         <AnimatedSection>
           <ExecutiveDashboard />
         </AnimatedSection>
+
         <div id="solutions">
           <AnimatedSection>
             <SolutionsSection />

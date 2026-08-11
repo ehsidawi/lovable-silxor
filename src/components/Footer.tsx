@@ -91,6 +91,7 @@ const Footer = () => {
                   <Link
                     key={l.label}
                     to={l.to}
+                    onClick={(e) => hashNav(e, l.to)}
                     className="block font-body font-[300] transition-colors duration-200"
                     style={{ fontSize: 14, color: "#B8BCC2" }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = "#F0F1F3")}

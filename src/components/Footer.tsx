@@ -1,10 +1,12 @@
 import { Shield, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
+import { useHashNav } from "@/lib/hashNav";
 
 const Footer = () => {
+  const hashNav = useHashNav();
 
-  const columns: { title: string; links: { label: string; to: string; external?: boolean }[] }[] = [
+  const columns: { title: string; links: { label: string; to: string }[] }[] = [
     {
       title: "Services",
       links: [
@@ -17,8 +19,8 @@ const Footer = () => {
     {
       title: "Industries",
       links: [
-        { label: "Banking", to: "/#solutions" },
-        { label: "Government", to: "/#solutions" },
+        { label: "Banking", to: "/#industries" },
+        { label: "Government", to: "/#industries" },
         { label: "Healthcare", to: "/#industries" },
         { label: "Critical Infrastructure", to: "/#industries" },
       ],
@@ -26,11 +28,11 @@ const Footer = () => {
     {
       title: "Company",
       links: [
-        { label: "Partners", to: "/partners" },
-        
-        { label: "Insights", to: "/#insights" },
-        { label: "Careers", to: "/#contact" },
+        { label: "Solutions", to: "/#solutions" },
+        { label: "Selected Work", to: "/#work" },
+        { label: "Process", to: "/#process" },
         { label: "About", to: "/#about" },
+        { label: "Partners", to: "/partners" },
         { label: "Contact", to: "/#contact" },
       ],
     },
@@ -39,12 +41,12 @@ const Footer = () => {
       links: [
         { label: "Privacy", to: "/privacy" },
         { label: "Compliance Documentation", to: "/compliance" },
-        { label: "Security Practices", to: "/compliance" },
         { label: "SLA", to: "/sla" },
-        { label: "Accessibility", to: "/compliance" },
+        { label: "Book an Assessment", to: "/book" },
       ],
     },
   ];
+
 
   return (
     <footer style={{ backgroundColor: "#141414", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "40px 0 24px" }}>

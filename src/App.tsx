@@ -18,12 +18,19 @@ const Partners = lazy(() => import("./pages/Partners"));
 const queryClient = new QueryClient();
 
 const RouteEffects = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
     trackPageView(pathname);
+    if (hash) {
+      // Wait a frame so the target section is mounted before scrolling.
+      const id = window.setTimeout(() => {
+        if (!scrollToHash(hash, "auto")) window.scrollTo({ top: 0, behavior: "auto" });
+      }, 60);
+      return () => window.clearTimeout(id);
+    }
     window.scrollTo({ top: 0, behavior: "auto" });
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return null;
 };

@@ -5,12 +5,7 @@ const NAV_HEIGHT = 80;
 const SideRail = () => {
   const [active, setActive] = useState<string>("#services");
 
-  const items = [
-    { i: "01", label: "Services", href: "#services" },
-    { i: "02", label: "Industries", href: "#industries" },
-    { i: "03", label: "Process", href: "#process" },
-    { i: "04", label: "Contact", href: "#contact" },
-  ];
+  const items = [{ i: "04", label: "Contact", href: "#contact" }];
 
   useEffect(() => {
     const onScroll = () => {

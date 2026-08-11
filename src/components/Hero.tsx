@@ -1,10 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-
-const MotionCard = motion.create(Card);
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -12,13 +8,6 @@ const Hero = () => {
 
   const initial = reduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 };
   const animate = reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 };
-
-  const practiceIndex = [
-    { k: "Cloud & Infrastructure", v: "Hybrid / Multi-cloud" },
-    { k: "Cybersecurity", v: "Zero Trust" },
-    { k: "Identity", v: "IAM / PAM / IGA" },
-    { k: "Private AI", v: "Self-hosted models" },
-  ];
 
   return (
     <section

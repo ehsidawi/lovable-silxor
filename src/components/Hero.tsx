@@ -51,7 +51,7 @@ const Hero = () => {
         }}
       />
 
-      <div className="relative" style={{ maxWidth: 1200, width: "100%", zIndex: 1 }}>
+      <div className="relative container-content" style={{ width: "100%", zIndex: 1 }}>
         <motion.h1
           initial={initial}
           animate={animate}

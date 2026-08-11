@@ -139,14 +139,14 @@ const Solutions = () => {
                             fontSize: 11,
                             color: "#F0F1F3",
                             letterSpacing: "0.05em",
-                            paddingLeft: 12,
+                            paddingInlineStart: 12,
                             position: "relative",
                           }}
                         >
                           <span
                             style={{
                               position: "absolute",
-                              left: 0,
+                              insetInlineStart: 0,
                               top: 8,
                               width: 6,
                               height: 1,

@@ -68,8 +68,7 @@ const initialValues: FormValues = {
 type Status = "idle" | "submitting" | "ok" | "fallback" | "error";
 
 const AssessmentForm = () => {
-  const { t, language } = useLanguage();
-  const arFont = language === "ar" ? "'Cairo', sans-serif" : undefined;
+  const { t, language, localeFont } = useLanguage();
   const [values, setValues] = useState<FormValues>(initialValues);
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<Status>("idle");
@@ -156,7 +155,7 @@ const AssessmentForm = () => {
           backgroundColor: "#14171F",
           padding: 24,
           color: "#F0F1F3",
-          fontFamily: arFont,
+          fontFamily: localeFont,
         }}
       >
         <p className="font-body" style={{ fontSize: 15, lineHeight: 1.7 }}>
@@ -181,7 +180,7 @@ const AssessmentForm = () => {
         display: "flex",
         flexDirection: "column",
         gap: 20,
-        fontFamily: arFont,
+        fontFamily: localeFont,
       }}
     >
       <h2
@@ -220,7 +219,7 @@ const AssessmentForm = () => {
       )}
 
       {/* Honeypot */}
-      <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+      <div aria-hidden="true" style={{ position: "absolute", insetInlineStart: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
         <Label htmlFor="company_website">Company website</Label>
         <Input
           id="company_website"
@@ -283,6 +282,7 @@ const AssessmentForm = () => {
             id="field-email"
             name="email"
             type="email"
+            dir="ltr"
             value={values.email}
             maxLength={LEAD_LIMITS.email}
             onChange={(e) => setField("email", e.target.value)}
@@ -305,6 +305,7 @@ const AssessmentForm = () => {
             id="field-phone"
             name="phone"
             type="tel"
+            dir="ltr"
             value={values.phone}
             maxLength={LEAD_LIMITS.phone}
             onChange={(e) => setField("phone", e.target.value)}

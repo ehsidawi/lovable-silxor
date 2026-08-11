@@ -9,9 +9,8 @@ import { Separator } from "@/components/ui/separator";
 const MotionCard = motion.create(Card);
 
 const Hero = () => {
-  const { t, language } = useLanguage();
+  const { t, language, localeFont } = useLanguage();
   const navigate = useNavigate();
-  const arFont = language === "ar" ? "'Cairo', sans-serif" : undefined;
   const reduceMotion = useReducedMotion();
 
   const initial = reduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 };
@@ -39,7 +38,7 @@ const Hero = () => {
       }}
     >
       {/* Technical Header */}
-      <div className="absolute flex flex-col gap-2" style={{ top: 40, left: "clamp(24px, 5vw, 80px)" }}>
+      <div className="absolute flex flex-col gap-2" style={{ top: 40, insetInlineStart: "clamp(24px, 5vw, 80px)" }}>
         <span
           className="uppercase font-mono"
           style={{ fontSize: 11, letterSpacing: "0.2em", color: "#B8BCC2", fontWeight: 700 }}
@@ -55,7 +54,7 @@ const Hero = () => {
         className="absolute pointer-events-none"
         style={{
           bottom: 0,
-          right: 0,
+          insetInlineEnd: 0,
           width: "33%",
           height: "50%",
           opacity: 0.1,
@@ -97,7 +96,7 @@ const Hero = () => {
                 color: "#F0F1F3",
                 maxWidth: 460,
                 fontWeight: 300,
-                fontFamily: arFont,
+                fontFamily: localeFont,
               }}
             >
               {t(
@@ -119,7 +118,7 @@ const Hero = () => {
                   padding: "16px 32px",
                   minHeight: 44,
                   fontWeight: 700,
-                  fontFamily: arFont,
+                  fontFamily: localeFont,
                   border: "none",
                   cursor: "pointer",
                 }}
@@ -143,7 +142,7 @@ const Hero = () => {
                     padding: "16px 32px",
                     minHeight: 44,
                     fontWeight: 700,
-                    fontFamily: arFont,
+                    fontFamily: localeFont,
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#25282C")}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
@@ -183,12 +182,12 @@ const Hero = () => {
                       color: "#B8BCC2",
                       fontWeight: 700,
                       letterSpacing: "0.1em",
-                      fontFamily: arFont,
+                      fontFamily: localeFont,
                     }}
                   >
                     {row.k}
                   </span>
-                  <span className="font-mono" style={{ fontSize: 13, color: "#FFFFFF", fontFamily: arFont }}>
+                  <span className="font-mono" style={{ fontSize: 13, color: "#FFFFFF", fontFamily: localeFont }}>
                     {row.v}
                   </span>
                 </div>

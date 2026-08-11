@@ -8,8 +8,7 @@ import {
 } from "lucide-react";
 
 const Partners = () => {
-  const { t, language } = useLanguage();
-  const arFont = language === "ar" ? "'Cairo', sans-serif" : undefined;
+  const { t, language, localeFont } = useLanguage();
 
   useEffect(() => {
     document.title = "Partnership Approach | Silxor";
@@ -74,13 +73,13 @@ const Partners = () => {
           <div className="section-eyebrow">{t("PARTNERSHIP APPROACH", "نهج الشراكة")}</div>
           <h1
             className="font-display font-[700]"
-            style={{ fontSize: 40, color: "#FFFFFF", lineHeight: 1.1, fontFamily: arFont }}
+            style={{ fontSize: 40, color: "#FFFFFF", lineHeight: 1.1, fontFamily: localeFont }}
           >
             {t("How We Build Our Technology Ecosystem", "كيف نبني منظومتنا التقنية")}
           </h1>
           <p
             className="font-body font-[300] mt-3"
-            style={{ fontSize: 15, color: "#B8BCC2", maxWidth: 640, lineHeight: 1.7, fontFamily: arFont }}
+            style={{ fontSize: 15, color: "#B8BCC2", maxWidth: 640, lineHeight: 1.7, fontFamily: localeFont }}
           >
             {t(
               "Silxor is platform-agnostic. We select technologies from mature, well-supported categories based on each client's requirements rather than committing to a single fixed vendor stack. Specific vendor relationships for a given engagement are confirmed during scoping.",
@@ -113,13 +112,13 @@ const Partners = () => {
                   >
                     <Icon style={{ width: 16, height: 16, color: "#F0F1F3" }} strokeWidth={1.5} />
                   </div>
-                  <h2 className="font-display font-[600]" style={{ fontSize: 15, color: "#FFFFFF", fontFamily: arFont }}>
+                  <h2 className="font-display font-[600]" style={{ fontSize: 15, color: "#FFFFFF", fontFamily: localeFont }}>
                     {c.title}
                   </h2>
                 </div>
                 <p
                   className="font-body font-[300]"
-                  style={{ fontSize: 13, color: "#B8BCC2", lineHeight: 1.7, fontFamily: arFont }}
+                  style={{ fontSize: 13, color: "#B8BCC2", lineHeight: 1.7, fontFamily: localeFont }}
                 >
                   {c.body}
                 </p>

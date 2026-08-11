@@ -44,9 +44,9 @@ const SideRail = () => {
       style={{
         top: NAV_HEIGHT,
         bottom: 0,
-        left: 0,
+        insetInlineStart: 0,
         width: 96,
-        borderRight: "1px solid #25282C",
+        borderInlineEnd: "1px solid #25282C",
         backgroundColor: "#141414",
         padding: "40px 0",
       }}

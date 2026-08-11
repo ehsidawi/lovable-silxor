@@ -104,10 +104,10 @@ const SelectedWork = () => {
 
               <div
                 className="absolute pointer-events-none"
-                style={{ top: 10, right: 10, width: 14, height: 14, opacity: 0.15 }}
+                style={{ top: 10, insetInlineEnd: 10, width: 14, height: 14, opacity: 0.15 }}
               >
-                <div style={{ position: "absolute", top: 6, left: 0, width: 14, height: 1, backgroundColor: "hsl(var(--primary))" }} />
-                <div style={{ position: "absolute", top: 0, left: 6, width: 1, height: 14, backgroundColor: "hsl(var(--primary))" }} />
+                <div style={{ position: "absolute", top: 6, insetInlineStart: 0, width: 14, height: 1, backgroundColor: "hsl(var(--primary))" }} />
+                <div style={{ position: "absolute", top: 0, insetInlineStart: 6, width: 1, height: 14, backgroundColor: "hsl(var(--primary))" }} />
               </div>
             </Card>
           ))}

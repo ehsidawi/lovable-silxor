@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import StatsBar from "@/components/StatsBar";
 import ExecutiveDashboard from "@/components/ExecutiveDashboard";
 import SolutionsSection from "@/components/SolutionsSection";
 import Services from "@/components/Services";
@@ -14,6 +13,7 @@ import StartEngagement from "@/components/StartEngagement";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 
+
 const Index = () => {
   return (
     <div className="min-h-screen">
@@ -22,12 +22,10 @@ const Index = () => {
         <div id="home">
           <Hero />
         </div>
-        <AnimatedSection delay={0.1}>
-          <StatsBar />
-        </AnimatedSection>
         <AnimatedSection>
           <ExecutiveDashboard />
         </AnimatedSection>
+
         <div id="solutions">
           <AnimatedSection>
             <SolutionsSection />

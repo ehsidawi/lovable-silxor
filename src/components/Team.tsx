@@ -24,7 +24,7 @@ const Team = () => {
   return (
     <section id="about" className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
-        <div style={{ marginBottom: 48 }}>
+        <div style={{ marginBottom: 28 }}>
           <div className="section-eyebrow">{"HOW WE STAFF ENGAGEMENTS"}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF" }}>
             {"Senior Engineers. Direct Accountability."}

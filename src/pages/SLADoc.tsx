@@ -140,9 +140,9 @@ const SLADoc = () => {
     { en: "Enterprise tier", ar: "مستوى المؤسسات", ku: "ئاستی گەورە" },
   ];
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <section className="section-spacing" style={{ paddingTop: 120 }}>
+      <section className="section-spacing" style={{ paddingTop: 104 }}>
         <div className="container-content" style={{ maxWidth: 900, margin: "0 auto" }}>
           <div className="section-eyebrow">
             {"SERVICE LEVEL FRAMEWORK"}
@@ -226,7 +226,7 @@ const SLADoc = () => {
 
           <p
             className="font-body font-[300] text-center"
-            style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 48 }}
+            style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 32 }}
           >
             {"All figures above are illustrative starting points and are subject to change based on scope, infrastructure, and regulatory requirements. Final service levels, credit terms, and measurement methodology are set out in the signed agreement. Questions: "}
             <bdi>hello@silxor.com</bdi>

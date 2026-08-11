@@ -13,7 +13,7 @@ const ProcessFlow = () => {
   return (
     <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
-        <div className="text-center" style={{ marginBottom: 64 }}>
+        <div className="text-center" style={{ marginBottom: 32 }}>
           <div className="section-eyebrow justify-center">{"PROCESS"}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF" }}>
             {"How We Deliver"}

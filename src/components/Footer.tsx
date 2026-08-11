@@ -49,9 +49,9 @@ const Footer = () => {
 
 
   return (
-    <footer style={{ backgroundColor: "#141414", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "40px 0 24px" }}>
+    <footer style={{ backgroundColor: "#141414", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "32px 0 20px" }}>
       <div className="container-content">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-12" style={{ marginBottom: 48 }}>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-10" style={{ marginBottom: 0 }}>
           <div className="sm:col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-3">
               <span className="font-display font-[800]" style={{ fontSize: 24, color: "#FFFFFF" }}>
@@ -105,7 +105,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div style={{ marginTop: 48, marginBottom: 12 }}>
+        <div style={{ marginTop: 32, marginBottom: 20 }}>
           <p className="font-body font-[300]" style={{ fontSize: 12, color: "#B8BCC2", marginBottom: 8 }}>
             {"Aligned to:"}
           </p>
@@ -119,7 +119,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2" style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24 }}>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2" style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 18 }}>
           <p className="font-body font-[300]" style={{ fontSize: 12, color: "#B8BCC2" }}>
             {"© 2026 Silxor Group Holding."}
           </p>

@@ -46,9 +46,9 @@ const Partners = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="container-content" style={{ paddingTop: 48, paddingBottom: 64 }}>
+      <main className="container-content flex-1" style={{ paddingTop: 40, paddingBottom: 48 }}>
         <div style={{ marginBottom: 24 }}>
           <div className="section-eyebrow">{"PARTNERSHIP APPROACH"}</div>
           <h1

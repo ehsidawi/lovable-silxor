@@ -317,20 +317,26 @@ const Navbar = () => {
         <div
           id="mobile-nav-panel"
           ref={mobilePanelRef}
-          className="xl:hidden transition-all duration-500"
+          className="xl:hidden"
           role="dialog"
           aria-modal="true"
           aria-label={"Primary navigation"}
-          hidden={!mobileOpen}
+          aria-hidden={!mobileOpen}
           style={{
             maxHeight: mobileOpen ? `calc(100vh - ${NAV_HEIGHT}px)` : 0,
-            overflowY: mobileOpen ? "auto" : "hidden",
+            overflowY: "auto",
             opacity: mobileOpen ? 1 : 0,
+            transform: mobileOpen ? "translateY(0)" : "translateY(-8px)",
             pointerEvents: mobileOpen ? "auto" : "none",
+            visibility: mobileOpen ? "visible" : "hidden",
+            transition:
+              "max-height 420ms cubic-bezier(0.22,1,0.36,1), opacity 280ms ease, transform 280ms ease, visibility 0s linear " +
+              (mobileOpen ? "0s" : "280ms"),
             backgroundColor: "rgba(11,11,11,0.98)",
             backdropFilter: "blur(24px)",
+            WebkitBackdropFilter: "blur(24px)",
             WebkitOverflowScrolling: "touch",
-            borderTop: mobileOpen ? "1px solid #25282C" : "none",
+            borderTop: "1px solid #25282C",
           }}
         >
           <div className="px-6 py-6">
@@ -350,13 +356,17 @@ const Navbar = () => {
                   {link.label}
                 </span>
               );
-              const cls = "flex items-center justify-between py-4 uppercase transition-colors duration-200 touch-target";
+              const cls =
+                "flex items-center justify-between py-4 uppercase transition-colors duration-200 touch-target";
               const st: React.CSSProperties = {
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: 12,
                 letterSpacing: "0.15em",
                 color: active ? "#FFFFFF" : "#F0F1F3",
                 borderBottom: "1px solid #25282C",
+                opacity: mobileOpen ? 1 : 0,
+                transform: mobileOpen ? "translateX(0)" : "translateX(-12px)",
+                transition: `opacity 260ms ease ${i * 45}ms, transform 260ms ease ${i * 45}ms, color 200ms ease`,
               };
               return link.hash ? (
                 <a
@@ -366,6 +376,7 @@ const Navbar = () => {
                   className={cls}
                   style={st}
                   aria-current={active ? "page" : undefined}
+                  tabIndex={mobileOpen ? 0 : -1}
                 >
                   {inner}
                 </a>
@@ -377,6 +388,7 @@ const Navbar = () => {
                   className={cls}
                   style={st}
                   aria-current={active ? "page" : undefined}
+                  tabIndex={mobileOpen ? 0 : -1}
                 >
                   {inner}
                 </Link>
@@ -401,6 +413,10 @@ const Navbar = () => {
                 borderRadius: 2,
                 border: "none",
                 cursor: "pointer",
+                marginTop: 16,
+                opacity: mobileOpen ? 1 : 0,
+                transform: mobileOpen ? "translateY(0)" : "translateY(8px)",
+                transition: `opacity 260ms ease ${navLinks.length * 45}ms, transform 260ms ease ${navLinks.length * 45}ms`,
               }}
             >
               {"Book an Assessment"}

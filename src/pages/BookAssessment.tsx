@@ -1,207 +1,69 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Card } from "@/components/ui/card";
-import AssessmentForm from "@/components/AssessmentForm";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { CAL_LINK, getCalNamespace } from "@/lib/cal";
 
-
-const CAL_LINK = "ehsidawi/60";
-const CAL_NAMESPACE = "assessment";
+const ELEMENT_ID = "silxor-cal-assessment";
 
 const BookAssessment = () => {
-
   useEffect(() => {
-    // Load Cal.com embed script once
-    (function (C: any, A: string, L: string) {
-      const p = function (a: any, ar: any) {
-        a.q.push(ar);
-      };
-      const d = C.document;
-      C.Cal =
-        C.Cal ||
-        function () {
-          const cal = C.Cal;
-          const ar = arguments;
-          if (!cal.loaded) {
-            cal.ns = {};
-            cal.q = cal.q || [];
-            d.head.appendChild(d.createElement("script")).src = A;
-            cal.loaded = true;
-          }
-          if (ar[0] === L) {
-            const api: any = function () {
-              p(api, arguments);
-            };
-            const namespace = ar[1];
-            api.q = api.q || [];
-            if (typeof namespace === "string") {
-              cal.ns[namespace] = cal.ns[namespace] || api;
-              p(cal.ns[namespace], ar);
-              p(cal, ["initNamespace", namespace]);
-            } else p(cal, ar);
-            return;
-          }
-          p(cal, ar);
-        };
-    })(window as any, "https://app.cal.com/embed/embed.js", "init");
-
-    const Cal = (window as any).Cal;
-    Cal("init", CAL_NAMESPACE, { origin: "https://app.cal.com" });
-
-    Cal.config = Cal.config || {};
-    Cal.config.forwardQueryParams = true;
-
-    Cal.ns[CAL_NAMESPACE]("inline", {
-      elementOrSelector: "#silxor-cal-inline",
+    const cal = getCalNamespace();
+    cal("inline", {
+      elementOrSelector: `#${ELEMENT_ID}`,
       config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
       calLink: CAL_LINK,
     });
 
-    Cal.ns[CAL_NAMESPACE]("ui", {
-      cssVarsPerTheme: {
-        light: { "cal-brand": "#000000" },
-        dark: { "cal-brand": "#ffffff" },
-      },
-      hideEventTypeDetails: false,
-      layout: "month_view",
-    });
+    const host = document.getElementById(ELEMENT_ID);
+    return () => {
+      // Remove the injected iframe so a remount re-embeds cleanly.
+      if (host) host.innerHTML = "";
+    };
   }, []);
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#141414", color: "#FFFFFF" }}>
-      {/* Header bar */}
-      <header
-        className="functional-glass"
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 50,
-          padding: "16px clamp(20px, 5vw, 48px)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
-        }}
-      >
-        <Link
-          to="/"
-          className="font-mono"
-          style={{
-            fontSize: 12,
-            letterSpacing: "0.2em",
-            color: "#F0F1F3",
-            textTransform: "uppercase",
-            fontWeight: 700,
-          }}
-        >
-          ← {"Back to Silxor"}
-        </Link>
-        <span
-          className="font-mono"
-          style={{
-            fontSize: 11,
-            letterSpacing: "0.2em",
-            color: "#B8BCC2",
-            textTransform: "uppercase",
-          }}
-        >
-          {"SILXOR // BOOKING"}
-        </span>
-      </header>
+    <div className="min-h-screen">
+      <Navbar />
+      <main id="main" tabIndex={-1} className="outline-none">
+        <section className="r-section">
+          <div className="container-content">
+            <span className="r-eyebrow">Schedule</span>
+            <h1 className="r-title" style={{ marginTop: 16 }}>
+              Book an Assessment
+            </h1>
+            <p className="r-lead" style={{ marginTop: 12, maxWidth: 620 }}>
+              A short technical discovery with a senior Silxor engineer. No cost. No obligation.
+            </p>
 
-      <main>
-      <section style={{ padding: "48px clamp(20px, 5vw, 48px) 24px", maxWidth: 1200, margin: "0 auto" }}>
-        <div className="section-eyebrow">{"SCHEDULE"}</div>
-        <h1
-          className="font-mono font-[700]"
-          style={{
-            fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
-            lineHeight: 1,
-            letterSpacing: "-0.03em",
-            color: "#FFFFFF",
-            marginBottom: 16,
-          }}
-        >
-          {"Book an Assessment"}
-        </h1>
-        <p
-          className="font-body font-[300]"
-          style={{
-            fontSize: 16,
-            lineHeight: 1.7,
-            color: "#F0F1F3",
-            maxWidth: 640,
-            marginBottom: 8,
-          }}
-        >
-          {"A 30 minute technical discovery with a senior Silxor engineer. No cost. No obligation."}
-        </p>
-      </section>
+            <div
+              className="r-panel"
+              style={{ marginTop: 32, padding: "clamp(8px, 2vw, 20px)", overflow: "hidden" }}
+            >
+              <div
+                id={ELEMENT_ID}
+                style={{ width: "100%", minHeight: "clamp(600px, 85vh, 900px)", overflow: "auto" }}
+              />
+            </div>
 
-      {/* Cal.com themed frame */}
-      <section style={{ padding: "0 clamp(20px, 5vw, 48px) 64px", maxWidth: 1200, margin: "0 auto" }}>
-        <Card
-          className="rounded-none border-0 bg-transparent text-inherit shadow-none"
-          style={{
-            position: "relative",
-            border: "1px solid rgba(255,255,255,0.10)",
-            backgroundColor: "#14171F",
-            padding: 12,
-          }}
-        >
-
-          {/* Frame chrome */}
-          <div
-            className="font-mono"
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              fontSize: 10,
-              letterSpacing: "0.2em",
-              color: "#B8BCC2",
-              textTransform: "uppercase",
-              padding: "4px 8px 12px",
-              borderBottom: "1px solid rgba(255,255,255,0.06)",
-              marginBottom: 12,
-            }}
-          >
-            <span>{"CAL // ASSESSMENT"}</span>
-            <span style={{ color: "#F0F1F3" }} className="animate-pulse">
-              LIVE ●
-            </span>
+            <p
+              className="font-mono"
+              style={{
+                fontSize: 10,
+                letterSpacing: "0.2em",
+                color: "#B8BCC2",
+                textTransform: "uppercase",
+                marginTop: 16,
+              }}
+            >
+              Trouble booking? Email{" "}
+              <a href="mailto:hello@silxor.com" style={{ color: "#F0F1F3" }}>
+                hello@silxor.com
+              </a>
+            </p>
           </div>
-
-          <div
-            id="silxor-cal-inline"
-            style={{
-              width: "100%",
-              minHeight: 720,
-              overflow: "auto",
-              backgroundColor: "#141414",
-            }}
-          />
-        </Card>
-
-
-        <p
-          className="font-mono"
-          style={{
-            fontSize: 10,
-            letterSpacing: "0.2em",
-            color: "#B8BCC2",
-            textTransform: "uppercase",
-            marginTop: 16,
-            textAlign: "center",
-          }}
-        >
-          {"Trouble booking? Email hello@silxor.com"}
-        </p>
-      </section>
-
-      <section style={{ padding: "0 clamp(20px, 5vw, 48px) 64px", maxWidth: 800, margin: "0 auto" }}>
-        <AssessmentForm />
-      </section>
+        </section>
       </main>
+      <Footer />
     </div>
   );
 };

@@ -86,6 +86,8 @@ const ServicesIndex = () => {
         </div>
       </section>
 
+      <SolutionsSection />
+
       <CtaBand />
     </PageShell>
   );

@@ -90,51 +90,14 @@ const Hero = () => {
             {"Enterprise technology, cybersecurity, cloud, private AI, identity, and managed services for organizations that need a single accountable partner."}
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            <Button
-              variant="ghost"
-              type="button"
-              onClick={() => navigate("/book")}
-              className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit inline-flex items-center justify-center uppercase transition-colors"
-              style={{
-                fontSize: 12,
-                letterSpacing: "0.2em",
-                backgroundColor: "#FFFFFF",
-                color: "#0B0B0B",
-                padding: "16px 32px",
-                minHeight: 44,
-                fontWeight: 700,
-                border: "none",
-                cursor: "pointer",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#F0F1F3")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
-            >
+            <button type="button" className="r-cta" onClick={() => navigate("/book")}>
               {"Book an Assessment"}
-            </Button>
-            <Button
-              asChild
-              variant="ghost"
-              className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit inline-flex items-center justify-center uppercase transition-colors"
-            >
-              <a
-                href="/#solutions"
-                onClick={(e) => hashNav(e, "/#solutions")}
-                style={{
-                  fontSize: 12,
-                  letterSpacing: "0.2em",
-                  border: "1px solid #25282C",
-                  color: "#FFFFFF",
-                  padding: "16px 32px",
-                  minHeight: 44,
-                  fontWeight: 700,
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#25282C")}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
-              >
-                {"Explore Solutions"}
-              </a>
-            </Button>
+            </button>
+            <a href="/#solutions" onClick={(e) => hashNav(e, "/#solutions")} className="r-cta-ghost">
+              {"Explore Solutions"}
+            </a>
           </div>
+
         </motion.div>
       </div>
     </section>

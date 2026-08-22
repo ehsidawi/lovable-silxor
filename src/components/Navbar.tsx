@@ -381,36 +381,27 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <Button
-              variant="ghost"
+            <button
               type="button"
               onClick={() => {
                 setMobileOpen(false);
                 navigate("/book");
               }}
-              className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit flex items-center justify-center gap-2 uppercase w-full touch-target"
+              className="r-cta r-cta--block gap-2 touch-target"
               style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: 12,
-                letterSpacing: "0.15em",
-                fontWeight: 700,
-                backgroundColor: "#F0F1F3",
-                color: "#0B0B0B",
-                padding: "14px 20px",
-                borderRadius: 2,
-                border: "none",
-                cursor: "pointer",
                 marginTop: 16,
                 opacity: mobileOpen ? 1 : 0,
                 transform: mobileOpen ? "translateY(0)" : "translateY(8px)",
-                transition: `opacity 260ms ease ${navLinks.length * 45}ms, transform 260ms ease ${navLinks.length * 45}ms`,
+                transition: `opacity 260ms ease ${navLinks.length * 45}ms, transform 260ms ease ${navLinks.length * 45}ms, background 200ms ease`,
               }}
+              tabIndex={mobileOpen ? 0 : -1}
             >
               {"Book an Assessment"}
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
+                <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" />
               </svg>
-            </Button>
+            </button>
+
 
           </div>
         </div>

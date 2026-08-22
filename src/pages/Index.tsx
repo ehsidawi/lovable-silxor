@@ -35,6 +35,12 @@ const Index = () => {
             <SolutionsSection />
           </AnimatedSection>
         </div>
+        <AnimatedSection>
+          <ProductTeam />
+        </AnimatedSection>
+        <AnimatedSection>
+          <ClientProof />
+        </AnimatedSection>
         <div id="services">
           <AnimatedSection>
             <Services />

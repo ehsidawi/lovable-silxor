@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import PageShell from "@/components/layout/PageShell";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
+import SolutionsSection from "@/components/SolutionsSection";
 import { services } from "@/data/services";
 
 const ServicesIndex = () => {

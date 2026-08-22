@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Helmet } from "react-helmet-async";
 
 const NotFound = () => {
 
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Page Not Found | Silxor</title>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <Navbar />
       <main id="main">
         <section className="section-spacing" style={{ paddingTop: 140, paddingBottom: 120 }}>

@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { X, ChevronDown } from "lucide-react";
-import { Link, useLocation, useNavigate, NavLink } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import SmartLink, { SmartNavLink } from "@/components/SmartLink";
+import { prefetchHandlers } from "@/lib/routePrefetch";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
 
@@ -133,7 +135,7 @@ const Navbar = () => {
       >
         <div className="relative h-full flex items-center justify-between gap-6 px-6 lg:px-8">
           {/* Brand */}
-          <Link to="/" className="flex items-center gap-3 shrink-0 z-10 group" aria-label="Silxor home">
+          <SmartLink to="/" className="flex items-center gap-3 shrink-0 z-10 group" aria-label="Silxor home">
             <div
               className="relative transition-transform duration-500 group-hover:rotate-45"
               style={{
@@ -151,7 +153,7 @@ const Navbar = () => {
             >
               SILXOR
             </span>
-          </Link>
+          </SmartLink>
 
           {/* Desktop links */}
           <div className="hidden lg:flex items-center gap-7 z-10">
@@ -161,7 +163,7 @@ const Navbar = () => {
               onMouseLeave={scheduleClose}
               ref={megaRef}
             >
-              <Link
+              <SmartLink
                 to="/services"
                 className="font-body font-[400] inline-flex items-center gap-1.5 transition-colors duration-200 hover:text-white"
                 style={linkStyle(servicesActive)}
@@ -180,7 +182,7 @@ const Navbar = () => {
                   }}
                   strokeWidth={1.8}
                 />
-              </Link>
+              </SmartLink>
               <span
                 aria-hidden
                 style={{
@@ -221,7 +223,7 @@ const Navbar = () => {
                   {services.map((s) => {
                     const Icon = s.icon;
                     return (
-                      <Link
+                      <SmartLink
                         key={s.slug}
                         to={s.path}
                         className="flex items-start gap-3 transition-colors duration-200"
@@ -239,11 +241,11 @@ const Navbar = () => {
                             {s.outcome}
                           </span>
                         </span>
-                      </Link>
+                      </SmartLink>
                     );
                   })}
                 </div>
-                <Link
+                <SmartLink
                   to="/services"
                   className="font-mono uppercase block"
                   style={{
@@ -257,12 +259,12 @@ const Navbar = () => {
                   tabIndex={megaOpen ? 0 : -1}
                 >
                   View all services →
-                </Link>
+                </SmartLink>
               </div>
             </div>
 
             {primaryLinks.map((l) => (
-              <NavLink
+              <SmartNavLink
                 key={l.to}
                 to={l.to}
                 className="relative font-body font-[400] transition-colors duration-200 hover:text-white"
@@ -287,13 +289,13 @@ const Navbar = () => {
                     />
                   </>
                 )}
-              </NavLink>
+              </SmartNavLink>
             ))}
           </div>
 
           {/* Right CTA */}
           <div className="hidden lg:flex items-center shrink-0 z-10">
-            <button type="button" onClick={() => navigate("/book")} className="r-cta r-cta--sm group">
+            <button type="button" onClick={() => navigate("/book")} {...prefetchHandlers("/book")} className="r-cta r-cta--sm group">
               <span className="flex items-center gap-2">
                 Book an Assessment
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
@@ -402,16 +404,16 @@ const Navbar = () => {
                 transition: "max-height 360ms cubic-bezier(0.22,1,0.36,1)",
               }}
             >
-              <Link
+              <SmartLink
                 to="/services"
                 className="block font-body font-[300] touch-target"
                 style={{ fontSize: 14, color: "#C6CAD0", padding: "12px 0 12px 14px" }}
                 tabIndex={mobileOpen && mobileServicesOpen ? 0 : -1}
               >
                 All Services
-              </Link>
+              </SmartLink>
               {services.map((s) => (
-                <Link
+                <SmartLink
                   key={s.slug}
                   to={s.path}
                   className="block font-body font-[300] touch-target"
@@ -419,12 +421,12 @@ const Navbar = () => {
                   tabIndex={mobileOpen && mobileServicesOpen ? 0 : -1}
                 >
                   {s.navLabel}
-                </Link>
+                </SmartLink>
               ))}
             </div>
 
             {primaryLinks.map((l) => (
-              <Link
+              <SmartLink
                 key={l.to}
                 to={l.to}
                 className="font-body font-[500] touch-target"
@@ -437,7 +439,7 @@ const Navbar = () => {
                 tabIndex={mobileOpen ? 0 : -1}
               >
                 {l.label}
-              </Link>
+              </SmartLink>
             ))}
 
             <button

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import SmartLink from "@/components/SmartLink";
 import { prefetchHandlers } from "@/lib/routePrefetch";
 import TopologyDiagram from "@/components/home/TopologyDiagram";
-import SpecSheetCard from "@/components/home/SpecSheetCard";
 
 
 const facts = [
@@ -135,7 +134,6 @@ const HomeHero = () => {
             <div className="hidden sm:block">
               <TopologyDiagram />
             </div>
-            <SpecSheetCard />
           </motion.div>
 
         </div>

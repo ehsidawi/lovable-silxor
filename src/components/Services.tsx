@@ -34,6 +34,16 @@ const Services = () => {
         <div className="flex flex-col items-start gap-4" style={{ marginBottom: 32 }}>
           <span className="r-eyebrow">Services</span>
           <h2 className="r-title">Four Practices. One Partner.</h2>
+          <p className="r-lead" style={{ maxWidth: 560 }}>
+            Delivered alongside our flagship{" "}
+            <a
+              href="#product-team"
+              style={{ color: "#FFFFFF", textDecoration: "underline", textUnderlineOffset: 4 }}
+            >
+              Full Product Team as a Service
+            </a>
+            .
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

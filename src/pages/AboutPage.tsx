@@ -124,7 +124,11 @@ const AboutPage = () => (
       </div>
     </section>
 
+    <WhySilxor />
+    <Team />
+
     <CtaBand />
+
   </PageShell>
 );
 

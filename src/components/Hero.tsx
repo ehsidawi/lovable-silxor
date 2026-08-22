@@ -1,7 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useHashNav } from "@/lib/hashNav";
-import { Button } from "@/components/ui/button";
+
 
 const Hero = () => {
   const navigate = useNavigate();

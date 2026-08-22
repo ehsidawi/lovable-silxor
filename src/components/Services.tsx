@@ -1,4 +1,5 @@
 import { Compass, Server, ShieldCheck, Activity } from "lucide-react";
+import { useHashNav } from "@/lib/hashNav";
 
 const practices = [
   {
@@ -28,6 +29,8 @@ const practices = [
 ];
 
 const Services = () => {
+  const hashNav = useHashNav();
+
   return (
     <section className="r-section">
       <div className="container-content">
@@ -37,7 +40,8 @@ const Services = () => {
           <p className="r-lead" style={{ maxWidth: 560 }}>
             Delivered alongside our flagship{" "}
             <a
-              href="#product-team"
+              href="/#product-team"
+              onClick={(e) => hashNav(e, "/#product-team")}
               style={{ color: "#FFFFFF", textDecoration: "underline", textUnderlineOffset: 4 }}
             >
               Full Product Team as a Service

@@ -134,7 +134,6 @@ const HomeHero = () => {
             <div className="hidden sm:block">
               <TopologyDiagram />
             </div>
-            <SpecSheetCard />
           </motion.div>
 
         </div>

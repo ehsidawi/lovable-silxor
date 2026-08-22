@@ -12,13 +12,16 @@ import Team from "@/components/Team";
 import StartEngagement from "@/components/StartEngagement";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import SideNavRail from "@/components/SideNavRail";
 
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
+      <SideNavRail />
       <main id="main" tabIndex={-1} className="outline-none">
+
         <div id="home">
           <Hero />
         </div>

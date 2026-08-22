@@ -15,6 +15,13 @@ const ComplianceDoc = lazy(() => import("./pages/ComplianceDoc"));
 const SLADoc = lazy(() => import("./pages/SLADoc"));
 const BookAssessment = lazy(() => import("./pages/BookAssessment"));
 const Partners = lazy(() => import("./pages/Partners"));
+const ServicesIndex = lazy(() => import("./pages/ServicesIndex"));
+const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
+const IndustriesPage = lazy(() => import("./pages/IndustriesPage"));
+const DeliveryPage = lazy(() => import("./pages/DeliveryPage"));
+const ClientsPage = lazy(() => import("./pages/ClientsPage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
 
 const queryClient = new QueryClient();
 
@@ -58,6 +65,13 @@ const App = () => (
         <Suspense fallback={<RouteFallback />}>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/services" element={<ServicesIndex />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/industries" element={<IndustriesPage />} />
+            <Route path="/delivery" element={<DeliveryPage />} />
+            <Route path="/clients" element={<ClientsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/compliance" element={<ComplianceDoc />} />

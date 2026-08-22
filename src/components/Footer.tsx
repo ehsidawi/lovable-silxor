@@ -4,22 +4,26 @@ import { useHashNav } from "@/lib/hashNav";
 
 const columns: { title: string; links: { label: string; to: string }[] }[] = [
   {
-    title: "Explore",
+    title: "Services",
     links: [
-      { label: "Solutions", to: "/#solutions" },
-      { label: "Full Product Team", to: "/#product-team" },
-      { label: "Services", to: "/#services" },
-      { label: "Industries", to: "/#industries" },
-      { label: "Process", to: "/#process" },
+      { label: "Full Product Team", to: "/services/product-team" },
+      { label: "Advisory & Strategy", to: "/services/advisory" },
+      { label: "Infrastructure & Cloud", to: "/services/cloud" },
+      { label: "Cybersecurity & GRC", to: "/services/cybersecurity" },
+      { label: "Private AI", to: "/services/private-ai" },
+      { label: "Identity & Access", to: "/services/identity" },
+      { label: "Managed Services", to: "/services/managed-services" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "Solution Patterns", to: "/#work" },
-      { label: "About", to: "/#about" },
+      { label: "Industries", to: "/industries" },
+      { label: "Delivery Model", to: "/delivery" },
+      { label: "Clients", to: "/clients" },
+      { label: "About", to: "/about" },
       { label: "Partners", to: "/partners" },
-      { label: "Contact", to: "/#contact" },
+      { label: "Contact", to: "/contact" },
     ],
   },
   {
@@ -28,6 +32,7 @@ const columns: { title: string; links: { label: string; to: string }[] }[] = [
       { label: "Privacy", to: "/privacy" },
       { label: "Compliance Documentation", to: "/compliance" },
       { label: "SLA", to: "/sla" },
+      { label: "Book an Assessment", to: "/book" },
     ],
   },
 ];

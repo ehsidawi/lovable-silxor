@@ -1,12 +1,11 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
-import { useHashNav } from "@/lib/hashNav";
+import { useNavigate, Link } from "react-router-dom";
 
 
 const Hero = () => {
   const navigate = useNavigate();
-  const hashNav = useHashNav();
   const reduceMotion = useReducedMotion();
+
 
   const initial = reduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 };
   const animate = reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 };
@@ -93,9 +92,10 @@ const Hero = () => {
             <button type="button" className="r-cta" onClick={() => navigate("/book")}>
               {"Book an Assessment"}
             </button>
-            <a href="/#solutions" onClick={(e) => hashNav(e, "/#solutions")} className="r-cta-ghost">
-              {"Explore Solutions"}
-            </a>
+            <Link to="/services" className="r-cta-ghost">
+              {"Explore Services"}
+            </Link>
+
           </div>
 
         </motion.div>

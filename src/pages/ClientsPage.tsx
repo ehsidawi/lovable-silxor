@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import PageShell from "@/components/layout/PageShell";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
+import SelectedWork from "@/components/SelectedWork";
+
 
 const trust = [
   { icon: Lock, title: "Confidentiality First", line: "Client names, logos, and program details stay private unless a client asks us to publish them." },

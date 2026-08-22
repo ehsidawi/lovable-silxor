@@ -425,6 +425,18 @@
   }
   .r-cta-ghost:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.35); }
 
+  /* Compact variant (navbar, tight rows) */
+  .r-cta--sm {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    padding: 11px 22px;
+    min-height: 40px;
+  }
+
+  /* Full width on narrow layouts */
+  .r-cta--block { width: 100%; }
+
+
   .r-divider {
     height: 1px;
     background: rgba(255, 255, 255, 0.07);

@@ -54,9 +54,9 @@ const HomeHero = () => {
                 color: "#FFFFFF",
                 letterSpacing: "-0.03em",
                 lineHeight: 1.03,
-                fontSize: "clamp(34px, 5.6vw, 66px)",
+                fontSize: "clamp(31px, 4.1vw, 52px)",
                 marginTop: 20,
-                maxWidth: 720,
+                maxWidth: 640,
               }}
             >
               We architect, build, secure, and operate the systems your business runs on.

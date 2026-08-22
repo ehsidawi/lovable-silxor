@@ -86,6 +86,8 @@ const ClientsPage = () => (
       </div>
     </section>
 
+    <SelectedWork />
+
     <CtaBand
       eyebrow="References"
       title="References Available Under NDA"

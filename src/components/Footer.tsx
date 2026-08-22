@@ -1,5 +1,5 @@
 import { Shield, Linkedin } from "lucide-react";
-import { Link } from "react-router-dom";
+import SmartLink from "@/components/SmartLink";
 import { useHashNav } from "@/lib/hashNav";
 
 const columns: { title: string; links: { label: string; to: string }[] }[] = [
@@ -46,10 +46,10 @@ const Footer = () => {
         <div className="r-panel" style={{ borderRadius: 40 }}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))] gap-8">
             <div>
-              <Link to="/" className="inline-flex items-center gap-2" style={{ marginBottom: 12 }}>
+              <SmartLink to="/" className="inline-flex items-center gap-2" style={{ marginBottom: 12 }}>
                 <span className="font-display font-[800]" style={{ fontSize: 22, color: "#FFFFFF" }}>Silxor</span>
                 <span style={{ width: 7, height: 7, borderRadius: 999, backgroundColor: "#F0F1F3" }} />
-              </Link>
+              </SmartLink>
               <p className="font-body font-[300]" style={{ fontSize: 13.5, color: "#C6CAD0", lineHeight: 1.65, maxWidth: 300 }}>
                 Enterprise technology, cybersecurity, cloud, private AI, identity, and managed services.
               </p>
@@ -70,7 +70,7 @@ const Footer = () => {
                 </h4>
                 <nav className="flex flex-col gap-2.5">
                   {col.links.map((l) => (
-                    <Link
+                    <SmartLink
                       key={l.label}
                       to={l.to}
                       onClick={(e) => hashNav(e, l.to)}
@@ -78,7 +78,7 @@ const Footer = () => {
                       style={{ fontSize: 13.5, color: "#C6CAD0" }}
                     >
                       {l.label}
-                    </Link>
+                    </SmartLink>
                   ))}
                 </nav>
               </div>

@@ -53,7 +53,7 @@ const SideNavRail = () => {
             top: 5,
             bottom: 5,
             width: 1,
-            backgroundColor: "#25282C",
+            backgroundColor: "rgba(240, 241, 243, 0.22)",
           }}
         />
         {items.map((item) => {
@@ -74,8 +74,8 @@ const SideNavRail = () => {
                   fontSize: 10,
                   letterSpacing: "0.22em",
                   fontWeight: 500,
-                  color: isActive ? "#FFFFFF" : "#B8BCC2",
-                  opacity: isActive ? 1 : 0.55,
+                  color: isActive ? "#FFFFFF" : "#F0F1F3",
+                  opacity: isActive ? 1 : 0.72,
                 }}
               >
                 {item.label}
@@ -86,9 +86,9 @@ const SideNavRail = () => {
                 style={{
                   width: 11,
                   height: 11,
-                  border: "1px solid #B8BCC2",
-                  backgroundColor: isActive ? "#F0F1F3" : "#141414",
-                  boxShadow: isActive ? "0 0 10px rgba(240,241,243,0.45)" : "none",
+                  border: isActive ? "1px solid #FFFFFF" : "1px solid rgba(240, 241, 243, 0.65)",
+                  backgroundColor: isActive ? "#FFFFFF" : "transparent",
+                  boxShadow: isActive ? "0 0 12px rgba(255,255,255,0.55)" : "none",
                 }}
               />
             </a>

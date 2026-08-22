@@ -65,6 +65,13 @@ const App = () => (
         <Suspense fallback={<RouteFallback />}>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/services" element={<ServicesIndex />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/industries" element={<IndustriesPage />} />
+            <Route path="/delivery" element={<DeliveryPage />} />
+            <Route path="/clients" element={<ClientsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/compliance" element={<ComplianceDoc />} />

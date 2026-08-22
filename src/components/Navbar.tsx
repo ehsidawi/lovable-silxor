@@ -5,19 +5,19 @@ import { Button } from "@/components/ui/button";
 
 const NAV_HEIGHT = 80;
 
-type NavItem = { label: string; to: string; hash?: string };
+
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [scrollPct, setScrollPct] = useState(0);
-  const [activeKey, setActiveKey] = useState<string>("");
+  
   const location = useLocation();
   const navigate = useNavigate();
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const mobilePanelRef = useRef<HTMLDivElement>(null);
 
-  const navLinks: NavItem[] = [];
+  
 
   useEffect(() => {
     const onScroll = () => {
@@ -25,17 +25,6 @@ const Navbar = () => {
       setScrolled(y > 20);
       const h = document.documentElement.scrollHeight - window.innerHeight;
       setScrollPct(h > 0 ? Math.min(100, (y / h) * 100) : 0);
-
-      if (location.pathname !== "/") return;
-      let current = "";
-      for (const link of navLinks) {
-        if (!link.hash) continue;
-        const el = document.querySelector(link.hash) as HTMLElement | null;
-        if (!el) continue;
-        const top = el.getBoundingClientRect().top;
-        if (top - NAV_HEIGHT - 24 <= 0) current = link.hash;
-      }
-      setActiveKey(current);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -91,28 +80,6 @@ const Navbar = () => {
       previouslyFocused?.focus();
     };
   }, [mobileOpen]);
-
-  const handleNavClick = (e: React.MouseEvent, item: NavItem) => {
-    setMobileOpen(false);
-    if (item.hash) {
-      if (location.pathname !== "/") {
-        e.preventDefault();
-        navigate("/" + item.hash);
-        return;
-      }
-      e.preventDefault();
-      const el = document.querySelector(item.hash);
-      if (el) {
-        const top = el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
-        window.scrollTo({ top, behavior: "smooth" });
-      }
-    }
-  };
-
-  const isActive = (item: NavItem) => {
-    if (item.hash) return location.pathname === "/" && activeKey === item.hash;
-    return location.pathname === item.to;
-  };
 
   return (
     <header>
@@ -251,7 +218,7 @@ const Navbar = () => {
                 marginTop: 16,
                 opacity: mobileOpen ? 1 : 0,
                 transform: mobileOpen ? "translateY(0)" : "translateY(8px)",
-                transition: `opacity 260ms ease ${navLinks.length * 45}ms, transform 260ms ease ${navLinks.length * 45}ms, background 200ms ease`,
+                transition: `opacity 260ms ease 0ms, transform 260ms ease 0ms, background 200ms ease`,
               }}
               tabIndex={mobileOpen ? 0 : -1}
             >

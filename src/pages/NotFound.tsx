@@ -37,9 +37,10 @@ const NotFound = () => {
               <Link to="/" className="r-cta">
                 {"Back to Home"}
               </Link>
-              <Link to="/#solutions" className="r-cta-ghost">
-                {"Explore Solutions"}
+              <Link to="/services" className="r-cta-ghost">
+                {"Explore Services"}
               </Link>
+
               <Link to="/book" className="r-cta-ghost">
                 {"Book an Assessment"}
               </Link>

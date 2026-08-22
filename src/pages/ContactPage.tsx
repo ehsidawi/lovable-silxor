@@ -2,6 +2,8 @@ import { Mail, MapPin, Linkedin, CalendarCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageShell from "@/components/layout/PageShell";
 import PageHero from "@/components/PageHero";
+import FAQ from "@/components/FAQ";
+
 
 const ContactPage = () => (
   <PageShell

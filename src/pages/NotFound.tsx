@@ -1,19 +1,9 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
 
-  const linkBase: React.CSSProperties = {
-    fontSize: 11,
-    letterSpacing: "0.12em",
-    padding: "14px 28px",
-    borderRadius: 2,
-    minHeight: 44,
-    display: "inline-flex",
-    alignItems: "center",
-  };
 
   return (
     <div className="min-h-screen">

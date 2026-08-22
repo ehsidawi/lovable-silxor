@@ -1,51 +1,51 @@
+import { useEffect } from "react";
 import PageShell from "@/components/layout/PageShell";
-import Hero from "@/components/Hero";
-import ExecutiveDashboard from "@/components/ExecutiveDashboard";
-import Services from "@/components/Services";
-import ProductTeam from "@/components/ProductTeam";
-import ClientProof from "@/components/ClientProof";
-import Industries from "@/components/Industries";
-import ProcessFlow from "@/components/ProcessFlow";
-import StartEngagement from "@/components/StartEngagement";
+import HomeHero from "@/components/home/HomeHero";
+import SystemMap from "@/components/home/SystemMap";
+import FlagshipTeam from "@/components/home/FlagshipTeam";
+import ServiceRail from "@/components/home/ServiceRail";
+import IndustryMatrix from "@/components/home/IndustryMatrix";
+import DeliveryTrack from "@/components/home/DeliveryTrack";
+import ProofQuote from "@/components/home/ProofQuote";
+import HomeCta from "@/components/home/HomeCta";
 import AnimatedSection from "@/components/AnimatedSection";
+import { prefetchPrimaryRoutes } from "@/lib/routePrefetch";
 
-const Index = () => (
-  <PageShell
-    title="Silxor | Sovereign Cloud, Cybersecurity, Private AI, and Product Delivery"
-    description="Silxor architects, builds, secures, and operates critical platforms for institutions and founders: full product teams, sovereign cloud, cybersecurity, private AI, identity, and managed services."
-    path="/"
-  >
-    <div id="home">
-      <Hero />
-    </div>
-    <AnimatedSection>
-      <ExecutiveDashboard />
-    </AnimatedSection>
-    <AnimatedSection>
-      <ProductTeam />
-    </AnimatedSection>
-    <div id="services">
+const Index = () => {
+  useEffect(() => {
+    prefetchPrimaryRoutes();
+  }, []);
+
+  return (
+    <PageShell
+      title="Silxor | Enterprise Cloud, Cybersecurity, Private AI, and Product Delivery"
+      description="Silxor architects, builds, secures, and operates critical platforms for institutions and founders: full product teams, cloud and infrastructure, cybersecurity, identity, private AI, and managed services."
+      path="/"
+    >
+      <HomeHero />
       <AnimatedSection>
-        <Services />
+        <SystemMap />
       </AnimatedSection>
-    </div>
-    <div id="industries">
       <AnimatedSection>
-        <Industries />
+        <FlagshipTeam />
       </AnimatedSection>
-    </div>
-    <div id="process">
       <AnimatedSection>
-        <ProcessFlow />
+        <ServiceRail />
       </AnimatedSection>
-    </div>
-    <AnimatedSection>
-      <ClientProof />
-    </AnimatedSection>
-    <AnimatedSection>
-      <StartEngagement />
-    </AnimatedSection>
-  </PageShell>
-);
+      <AnimatedSection>
+        <IndustryMatrix />
+      </AnimatedSection>
+      <AnimatedSection>
+        <DeliveryTrack />
+      </AnimatedSection>
+      <AnimatedSection>
+        <ProofQuote />
+      </AnimatedSection>
+      <AnimatedSection>
+        <HomeCta />
+      </AnimatedSection>
+    </PageShell>
+  );
+};
 
 export default Index;

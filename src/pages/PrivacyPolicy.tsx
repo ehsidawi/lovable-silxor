@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 
 const sections = [
   {
@@ -64,6 +65,7 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="min-h-screen">
+      <Seo title={"Privacy Policy | Silxor"} description={"How Silxor collects, uses, and protects information submitted through this site, including form handling and analytics."} path="/privacy" />
       <Navbar />
       <main id="main">
         <section className="section-spacing" style={{ paddingTop: 120 }}>

@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import {
@@ -47,6 +48,7 @@ const Partners = () => {
 
   return (
     <div className="min-h-screen">
+      <Seo title={"Technology Partners & Platforms | Silxor"} description={"How Silxor selects cloud, security, identity, AI, and infrastructure platforms per engagement instead of a single fixed vendor stack."} path="/partners" />
       <Navbar />
       <main className="container-content" style={{ paddingTop: 48, paddingBottom: 64 }}>
         <div style={{ marginBottom: 24 }}>

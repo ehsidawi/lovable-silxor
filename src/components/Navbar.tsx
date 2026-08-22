@@ -160,63 +160,8 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Center nav */}
-          <div className="hidden xl:flex items-center gap-6 h-full z-10">
-            {navLinks.map((link, i) => {
-              const active = isActive(link);
-              const content = (
-                <>
-                  <span
-                    className="uppercase whitespace-nowrap transition-colors duration-300 group-hover:text-white"
-                    style={{
-                      fontSize: 11,
-                      letterSpacing: "0.2em",
-                      color: "#FFFFFF",
-                      fontWeight: 500,
-                    }}
-                  >
-                    {link.label}
-                  </span>
-                  <span
-                    className="transition-all duration-300 group-hover:w-full"
-                    style={{
-                      height: 2,
-                      marginTop: 4,
-                      width: active ? "100%" : 0,
-                      backgroundColor: "#F0F1F3",
-                      boxShadow: active ? "0 0 8px rgba(240, 241, 243,0.5)" : "none",
-                    }}
-                    aria-hidden
-                  />
-                </>
-              );
-              const cls = "group flex flex-col items-center justify-center h-full";
-              const st: React.CSSProperties = { fontFamily: "'JetBrains Mono', monospace" };
-              return link.hash ? (
-                <a
-                  key={i}
-                  href={link.hash}
-                  onClick={(e) => handleNavClick(e, link)}
-                  className={cls}
-                  style={st}
-                  aria-current={active ? "page" : undefined}
-                >
-                  {content}
-                </a>
-              ) : (
-                <Link
-                  key={i}
-                  to={link.to}
-                  onClick={(e) => handleNavClick(e, link)}
-                  className={cls}
-                  style={st}
-                  aria-current={active ? "page" : undefined}
-                >
-                  {content}
-                </Link>
-              );
-            })}
-          </div>
+          {/* Section links moved to the vertical side rail */}
+
 
           {/* Right */}
           <div className="hidden xl:flex items-center gap-5 shrink-0 z-10">

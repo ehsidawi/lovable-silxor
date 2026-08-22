@@ -45,7 +45,64 @@ const HomeHero = () => {
       />
 
       <div className="relative container-content" style={{ zIndex: 1 }}>
+        {/* Oversized monochrome wordmark card */}
+        <motion.div
+          initial={initial}
+          animate={animate}
+          transition={{ duration: 0.7, ease }}
+          className="w-full overflow-hidden"
+          style={{
+            backgroundColor: "#1A1D21",
+            border: "1px solid #25282C",
+            borderRadius: 24,
+            padding: "clamp(18px, 3.2vw, 40px) clamp(16px, 3vw, 40px)",
+            marginBottom: "clamp(28px, 4vw, 52px)",
+            position: "relative",
+          }}
+        >
+          <div
+            aria-hidden
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
+              backgroundSize: "48px 48px",
+            }}
+          />
+          <div
+            className="relative flex items-center justify-between font-mono"
+            style={{ fontSize: 10.5, letterSpacing: "0.24em", color: "#8E949B" }}
+          >
+            <span>SLXR // 2026</span>
+            <span className="hidden sm:inline">TECH · CYBER · GLOBAL</span>
+          </div>
+
+          <h1
+            className="relative font-display font-[800] text-center w-full"
+            style={{
+              color: "#F0F1F3",
+              textTransform: "uppercase",
+              letterSpacing: "-0.045em",
+              lineHeight: 0.86,
+              fontSize: "clamp(64px, 19vw, 300px)",
+              margin: "clamp(6px, 1.4vw, 16px) 0",
+              whiteSpace: "nowrap",
+            }}
+          >
+            SILXOR
+          </h1>
+
+          <div
+            className="relative flex items-center justify-between font-mono"
+            style={{ fontSize: 10.5, letterSpacing: "0.24em", color: "#8E949B" }}
+          >
+            <span>ARCHITECT · BUILD · SECURE</span>
+            <span className="hidden sm:inline">OPERATIONAL</span>
+          </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,470px)] gap-10 lg:gap-14 items-center">
+
           <motion.div initial={initial} animate={animate} transition={{ duration: 0.7, ease }}>
             <span className="r-eyebrow">Enterprise Technology Partner</span>
 

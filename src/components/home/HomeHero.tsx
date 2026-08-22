@@ -128,10 +128,14 @@ const HomeHero = () => {
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 24 }}
             animate={animate}
             transition={{ duration: 0.8, ease, delay: reduce ? 0 : 0.12 }}
-            className="hidden sm:block"
+            className="flex flex-col gap-4 w-full min-w-0"
           >
-            <TopologyDiagram />
+            <div className="hidden sm:block">
+              <TopologyDiagram />
+            </div>
+            <SpecSheetCard />
           </motion.div>
+
         </div>
       </div>
     </section>

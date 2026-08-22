@@ -160,7 +160,44 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Section links moved to the vertical side rail */}
+          {/* Desktop section links */}
+          <div className="hidden xl:flex items-center gap-7 absolute left-1/2 -translate-x-1/2">
+            {navLinks.map((link) => {
+              const active = isActive(link);
+              return (
+                <a
+                  key={link.label}
+                  href={link.hash ?? link.to}
+                  onClick={(e) => handleNavClick(e, link)}
+                  className="relative uppercase transition-colors duration-300 hover:text-white cursor-pointer"
+                  style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontSize: 11,
+                    letterSpacing: "0.15em",
+                    color: active ? "#FFFFFF" : "#B8BCC2",
+                    fontWeight: 500,
+                  }}
+                >
+                  {link.label}
+                  <span
+                    aria-hidden
+                    style={{
+                      position: "absolute",
+                      left: 0,
+                      right: 0,
+                      bottom: -6,
+                      height: 1,
+                      backgroundColor: "#FFFFFF",
+                      transform: active ? "scaleX(1)" : "scaleX(0)",
+                      transformOrigin: "left",
+                      transition: "transform 300ms cubic-bezier(0.22,1,0.36,1)",
+                    }}
+                  />
+                </a>
+              );
+            })}
+          </div>
+
 
 
           {/* Right */}

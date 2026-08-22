@@ -79,6 +79,9 @@ const ContactPage = () => (
         </div>
       </div>
     </section>
+
+    <FAQ />
+
   </PageShell>
 );
 

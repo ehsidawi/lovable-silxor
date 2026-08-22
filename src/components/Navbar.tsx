@@ -17,14 +17,7 @@ const Navbar = () => {
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const mobilePanelRef = useRef<HTMLDivElement>(null);
 
-  const navLinks: NavItem[] = [
-    { label: "Solutions", to: "/", hash: "#solutions" },
-    { label: "Services", to: "/", hash: "#services" },
-    { label: "Industries", to: "/", hash: "#industries" },
-    { label: "Process", to: "/", hash: "#process" },
-    { label: "FAQ", to: "/", hash: "#faq" },
-    { label: "Contact", to: "/", hash: "#contact" },
-  ];
+  const navLinks: NavItem[] = [];
 
   useEffect(() => {
     const onScroll = () => {
@@ -160,71 +153,11 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Desktop section links */}
-          <div className="hidden xl:flex items-center gap-7 absolute left-1/2 -translate-x-1/2">
-            {navLinks.map((link) => {
-              const active = isActive(link);
-              return (
-                <a
-                  key={link.label}
-                  href={link.hash ?? link.to}
-                  onClick={(e) => handleNavClick(e, link)}
-                  className="relative uppercase transition-colors duration-300 hover:text-white cursor-pointer"
-                  style={{
-                    fontFamily: "'JetBrains Mono', monospace",
-                    fontSize: 11,
-                    letterSpacing: "0.15em",
-                    color: active ? "#FFFFFF" : "#B8BCC2",
-                    fontWeight: 500,
-                  }}
-                >
-                  {link.label}
-                  <span
-                    aria-hidden
-                    style={{
-                      position: "absolute",
-                      left: 0,
-                      right: 0,
-                      bottom: -6,
-                      height: 1,
-                      backgroundColor: "#FFFFFF",
-                      transform: active ? "scaleX(1)" : "scaleX(0)",
-                      transformOrigin: "left",
-                      transition: "transform 300ms cubic-bezier(0.22,1,0.36,1)",
-                    }}
-                  />
-                </a>
-              );
-            })}
-          </div>
 
 
 
           {/* Right */}
           <div className="hidden xl:flex items-center gap-5 shrink-0 z-10">
-            <a
-              href="#solutions"
-              onClick={(e) => {
-                e.preventDefault();
-                if (location.pathname !== "/") { navigate("/#solutions"); return; }
-                const el = document.querySelector("#solutions");
-                if (el) {
-                  const top = el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
-                  window.scrollTo({ top, behavior: "smooth" });
-                }
-              }}
-              className="uppercase transition-colors duration-300 hover:text-white cursor-pointer"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 11,
-                letterSpacing: "0.15em",
-                color: "#B8BCC2",
-                fontWeight: 500,
-              }}
-            >
-              {"Explore Solutions"}
-            </a>
-
             <button
               type="button"
               onClick={() => navigate("/book")}
@@ -237,8 +170,6 @@ const Navbar = () => {
                 </svg>
               </span>
             </button>
-
-
           </div>
 
           {/* Mobile toggle */}
@@ -309,60 +240,6 @@ const Navbar = () => {
           }}
         >
           <div className="px-6 py-6">
-            {navLinks.map((link, i) => {
-              const active = isActive(link);
-              const inner = (
-                <span className="flex items-center gap-3">
-                  <span
-                    style={{
-                      display: "inline-block",
-                      width: 6,
-                      height: 6,
-                      backgroundColor: active ? "#F0F1F3" : "transparent",
-                      border: "1px solid #F0F1F3",
-                    }}
-                  />
-                  {link.label}
-                </span>
-              );
-              const cls =
-                "flex items-center justify-between py-4 uppercase transition-colors duration-200 touch-target";
-              const st: React.CSSProperties = {
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 12,
-                letterSpacing: "0.15em",
-                color: active ? "#FFFFFF" : "#F0F1F3",
-                borderBottom: "1px solid #25282C",
-                opacity: mobileOpen ? 1 : 0,
-                transform: mobileOpen ? "translateX(0)" : "translateX(-12px)",
-                transition: `opacity 260ms ease ${i * 45}ms, transform 260ms ease ${i * 45}ms, color 200ms ease`,
-              };
-              return link.hash ? (
-                <a
-                  key={i}
-                  href={link.hash}
-                  onClick={(e) => handleNavClick(e, link)}
-                  className={cls}
-                  style={st}
-                  aria-current={active ? "page" : undefined}
-                  tabIndex={mobileOpen ? 0 : -1}
-                >
-                  {inner}
-                </a>
-              ) : (
-                <Link
-                  key={i}
-                  to={link.to}
-                  onClick={(e) => handleNavClick(e, link)}
-                  className={cls}
-                  style={st}
-                  aria-current={active ? "page" : undefined}
-                  tabIndex={mobileOpen ? 0 : -1}
-                >
-                  {inner}
-                </Link>
-              );
-            })}
             <button
               type="button"
               onClick={() => {

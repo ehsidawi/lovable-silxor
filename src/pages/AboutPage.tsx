@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import PageShell from "@/components/layout/PageShell";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
+import WhySilxor from "@/components/WhySilxor";
+import Team from "@/components/Team";
+
 
 const posture = [
   { icon: Users, title: "One Accountable Team", line: "Advisory, build, and operations under one owner." },

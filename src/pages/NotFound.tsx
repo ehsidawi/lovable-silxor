@@ -1,19 +1,9 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
 
-  const linkBase: React.CSSProperties = {
-    fontSize: 11,
-    letterSpacing: "0.12em",
-    padding: "14px 28px",
-    borderRadius: 2,
-    minHeight: 44,
-    display: "inline-flex",
-    alignItems: "center",
-  };
 
   return (
     <div className="min-h-screen">
@@ -44,53 +34,16 @@ const NotFound = () => {
               aria-label={"Helpful links"}
               className="flex flex-wrap gap-3"
             >
-              <Button
-                asChild
-                variant="ghost"
-                className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit"
-              >
-                <Link
-                  to="/"
-                  className="font-mono font-[400] uppercase transition-all duration-200"
-                  style={{ ...linkBase, backgroundColor: "#F0F1F3", color: "#0B0B0B" }}
-                >
-                  {"Back to Home"}
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="ghost"
-                className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit"
-              >
-                <Link
-                  to="/#solutions"
-                  className="font-mono font-[400] uppercase transition-all duration-200"
-                  style={{
-                    ...linkBase,
-                    color: "#F0F1F3",
-                    border: "1px solid rgba(255,255,255,0.14)",
-                  }}
-                >
-                  {"Explore Solutions"}
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="ghost"
-                className="h-auto p-0 rounded-none font-normal hover:bg-transparent hover:text-inherit"
-              >
-                <Link
-                  to="/book"
-                  className="font-mono font-[400] uppercase transition-all duration-200"
-                  style={{
-                    ...linkBase,
-                    color: "#F0F1F3",
-                    border: "1px solid rgba(255,255,255,0.14)",
-                  }}
-                >
-                  {"Book an Assessment"}
-                </Link>
-              </Button>
+              <Link to="/" className="r-cta">
+                {"Back to Home"}
+              </Link>
+              <Link to="/#solutions" className="r-cta-ghost">
+                {"Explore Solutions"}
+              </Link>
+              <Link to="/book" className="r-cta-ghost">
+                {"Book an Assessment"}
+              </Link>
+
             </nav>
           </div>
         </section>

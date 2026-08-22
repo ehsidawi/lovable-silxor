@@ -106,19 +106,20 @@ const HomeHero = () => {
           <motion.div initial={initial} animate={animate} transition={{ duration: 0.7, ease }}>
             <span className="r-eyebrow">Enterprise Technology Partner</span>
 
-            <h1
+            <h2
               className="font-display font-[700]"
               style={{
                 color: "#FFFFFF",
                 letterSpacing: "-0.03em",
-                lineHeight: 1.03,
-                fontSize: "clamp(31px, 4.1vw, 52px)",
+                lineHeight: 1.05,
+                fontSize: "clamp(26px, 3.1vw, 40px)",
                 marginTop: 20,
                 maxWidth: 640,
               }}
             >
               We architect, build, secure, and operate the systems your business runs on.
-            </h1>
+            </h2>
+
 
             <p
               className="r-lead"

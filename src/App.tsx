@@ -7,21 +7,23 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import { trackPageView } from "@/lib/analytics";
 import { scrollToHash } from "@/lib/hashNav";
+import { routeLoaders } from "@/lib/routePrefetch";
 
-// Noncritical routes are split out of the initial bundle.
-const NotFound = lazy(() => import("./pages/NotFound"));
-const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
-const ComplianceDoc = lazy(() => import("./pages/ComplianceDoc"));
-const SLADoc = lazy(() => import("./pages/SLADoc"));
-const BookAssessment = lazy(() => import("./pages/BookAssessment"));
-const Partners = lazy(() => import("./pages/Partners"));
-const ServicesIndex = lazy(() => import("./pages/ServicesIndex"));
-const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
-const IndustriesPage = lazy(() => import("./pages/IndustriesPage"));
-const DeliveryPage = lazy(() => import("./pages/DeliveryPage"));
-const ClientsPage = lazy(() => import("./pages/ClientsPage"));
-const AboutPage = lazy(() => import("./pages/AboutPage"));
-const ContactPage = lazy(() => import("./pages/ContactPage"));
+// Noncritical routes are split out of the initial bundle. Loaders are shared
+// with the prefetcher so hovered routes are already resolved on navigation.
+const NotFound = lazy(routeLoaders["*"]);
+const PrivacyPolicy = lazy(routeLoaders["/privacy"]);
+const ComplianceDoc = lazy(routeLoaders["/compliance"]);
+const SLADoc = lazy(routeLoaders["/sla"]);
+const BookAssessment = lazy(routeLoaders["/book"]);
+const Partners = lazy(routeLoaders["/partners"]);
+const ServicesIndex = lazy(routeLoaders["/services"]);
+const ServiceDetail = lazy(routeLoaders["/services/:slug"]);
+const IndustriesPage = lazy(routeLoaders["/industries"]);
+const DeliveryPage = lazy(routeLoaders["/delivery"]);
+const ClientsPage = lazy(routeLoaders["/clients"]);
+const AboutPage = lazy(routeLoaders["/about"]);
+const ContactPage = lazy(routeLoaders["/contact"]);
 
 const queryClient = new QueryClient();
 
@@ -47,12 +49,9 @@ const RouteFallback = () => (
   <div
     role="status"
     aria-live="polite"
-    style={{ minHeight: "60vh", display: "grid", placeItems: "center", color: "#B8BCC2" }}
-  >
-    <span className="font-mono" style={{ fontSize: 11, letterSpacing: "0.2em" }}>
-      LOADING…
-    </span>
-  </div>
+    aria-label="Loading page"
+    style={{ minHeight: "70vh" }}
+  />
 );
 
 const App = () => (

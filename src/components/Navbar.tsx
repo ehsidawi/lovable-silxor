@@ -243,41 +243,19 @@ const Navbar = () => {
               {"Explore Solutions"}
             </a>
 
-            <Button
-              variant="ghost"
+            <button
               type="button"
               onClick={() => navigate("/book")}
-              className="h-auto p-0 rounded-none font-normal hover:text-inherit relative group overflow-hidden transition-all duration-300 active:scale-95 hover:bg-white"
-
-              style={{
-                padding: "12px 22px",
-                backgroundColor: "#F0F1F3",
-                color: "#0B0B0B",
-                fontSize: 11,
-                letterSpacing: "0.15em",
-                fontWeight: 700,
-                textTransform: "uppercase",
-                fontFamily: "'DM Sans', sans-serif",
-                borderRadius: 2,
-                border: "none",
-                cursor: "pointer",
-              }}
+              className="r-cta r-cta--sm group"
             >
-              <span
-                className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.6) 50%, transparent 100%)",
-                }}
-                aria-hidden
-              />
-              <span className="relative z-10 flex items-center gap-2">
+              <span className="flex items-center gap-2">
                 {"Book an Assessment"}
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
-                  <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
+                  <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="round" />
                 </svg>
               </span>
-            </Button>
+            </button>
+
 
           </div>
 

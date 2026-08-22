@@ -1,17 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
-import { useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import {
   Cloud, ShieldCheck, Fingerprint, Cpu, Server, Network,
 } from "lucide-react";
 
 const Partners = () => {
-
-  useEffect(() => {
-    document.title = "Partnership Approach | Silxor";
-  }, []);
 
   const categories = [
     {

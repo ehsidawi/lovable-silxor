@@ -17,7 +17,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Navbar />      <main id="main" tabIndex={-1} className="outline-none">
+      <Navbar />
+      <main id="main" tabIndex={-1} className="outline-none">
+
 
         <div id="home">
           <Hero />

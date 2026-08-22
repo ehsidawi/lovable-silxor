@@ -40,20 +40,20 @@ const SideNavRail = () => {
   return (
     <nav
       aria-label="Section navigation"
-      className="hidden xl:flex fixed left-6 top-1/2 -translate-y-1/2 z-[90] flex-col"
+      className="hidden xl:flex fixed right-6 top-1/2 -translate-y-1/2 z-[90] flex-col"
       style={{ fontFamily: "'JetBrains Mono', monospace" }}
     >
-      {/* connecting line */}
-      <div className="relative flex flex-col gap-7 py-2">
+      <div className="relative flex flex-col items-end gap-7">
+        {/* one continuous line from the first dot to the last */}
         <span
           aria-hidden
           className="absolute"
           style={{
-            left: 5,
-            top: 12,
-            bottom: 12,
+            right: 5,
+            top: 5,
+            bottom: 5,
             width: 1,
-            background: "linear-gradient(180deg, transparent 0%, #25282C 12%, #25282C 88%, transparent 100%)",
+            backgroundColor: "#25282C",
           }}
         />
         {items.map((item) => {
@@ -63,20 +63,11 @@ const SideNavRail = () => {
               key={item.hash}
               href={item.hash}
               onClick={(e) => go(e, item.hash)}
-              className="group relative flex items-center gap-3"
+              className="group relative flex items-center justify-end gap-3"
               aria-current={isActive ? "true" : undefined}
+              title={`Go to ${item.label}`}
+              aria-label={`Go to ${item.label} section`}
             >
-              <span
-                aria-hidden
-                className="relative shrink-0 rounded-full transition-all duration-300"
-                style={{
-                  width: 11,
-                  height: 11,
-                  border: "1px solid #B8BCC2",
-                  backgroundColor: isActive ? "#F0F1F3" : "#141414",
-                  boxShadow: isActive ? "0 0 10px rgba(240,241,243,0.45)" : "none",
-                }}
-              />
               <span
                 className="uppercase whitespace-nowrap transition-all duration-300 group-hover:text-white group-hover:opacity-100"
                 style={{
@@ -89,12 +80,24 @@ const SideNavRail = () => {
               >
                 {item.label}
               </span>
+              <span
+                aria-hidden
+                className="relative shrink-0 rounded-full transition-all duration-300 group-hover:scale-125"
+                style={{
+                  width: 11,
+                  height: 11,
+                  border: "1px solid #B8BCC2",
+                  backgroundColor: isActive ? "#F0F1F3" : "#141414",
+                  boxShadow: isActive ? "0 0 10px rgba(240,241,243,0.45)" : "none",
+                }}
+              />
             </a>
           );
         })}
       </div>
     </nav>
   );
+
 };
 
 export default SideNavRail;

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { CAL_LINK, getCalNamespace } from "@/lib/cal";
 
 const ELEMENT_ID = "silxor-cal-assessment";
@@ -23,6 +24,7 @@ const BookAssessment = () => {
 
   return (
     <div className="min-h-screen">
+      <Seo title={"Book an Assessment | Silxor"} description={"Schedule a technical assessment with Silxor to scope architecture, cloud, security, identity, or product delivery work."} path="/book" />
       <Navbar />
       <main id="main" tabIndex={-1} className="outline-none">
         <section className="r-section">

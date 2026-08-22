@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -57,6 +58,7 @@ const blocks = [
 const ComplianceDoc = () => {
   return (
     <div className="min-h-screen">
+      <Seo title={"Compliance Documentation | Silxor"} description={"Silxor security and compliance posture: ISO/IEC 27001 and NIST CSF alignment, controls, and documentation available on request."} path="/compliance" />
       <Navbar />
       <section className="section-spacing" style={{ paddingTop: 120 }}>
         <div className="container-content" style={{ maxWidth: 800, margin: "0 auto" }}>

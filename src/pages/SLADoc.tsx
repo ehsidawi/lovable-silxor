@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Seo from "@/components/Seo";
 import { Card } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
@@ -141,6 +142,7 @@ const SLADoc = () => {
   ];
   return (
     <div className="min-h-screen">
+      <Seo title={"Service Level Agreement | Silxor"} description={"Silxor service level framework: availability targets, priority response tiers, and coverage defined per contract."} path="/sla" />
       <Navbar />
       <section className="section-spacing" style={{ paddingTop: 120 }}>
         <div className="container-content" style={{ maxWidth: 900, margin: "0 auto" }}>

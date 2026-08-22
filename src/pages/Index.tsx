@@ -3,6 +3,8 @@ import Hero from "@/components/Hero";
 import ExecutiveDashboard from "@/components/ExecutiveDashboard";
 import SolutionsSection from "@/components/SolutionsSection";
 import Services from "@/components/Services";
+import ProductTeam from "@/components/ProductTeam";
+import ClientProof from "@/components/ClientProof";
 import Industries from "@/components/Industries";
 import WhySilxor from "@/components/WhySilxor";
 import SelectedWork from "@/components/SelectedWork";
@@ -33,6 +35,12 @@ const Index = () => {
             <SolutionsSection />
           </AnimatedSection>
         </div>
+        <AnimatedSection>
+          <ProductTeam />
+        </AnimatedSection>
+        <AnimatedSection>
+          <ClientProof />
+        </AnimatedSection>
         <div id="services">
           <AnimatedSection>
             <Services />

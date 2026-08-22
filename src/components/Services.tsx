@@ -1,27 +1,31 @@
 import { Compass, Server, ShieldCheck, Activity } from "lucide-react";
-import { useHashNav } from "@/lib/hashNav";
+import { Link } from "react-router-dom";
 
 const practices = [
   {
     icon: Compass,
+    to: "/services/advisory",
     title: "Advisory & Strategy",
     line: "Board level guidance on transformation, architecture, and risk.",
     tags: ["Digital Transformation", "Enterprise Architecture", "AI Strategy", "CIO / CISO Advisory"],
   },
   {
     icon: Server,
+    to: "/services/cloud",
     title: "Infrastructure & Cloud",
     line: "Sovereign, hybrid, and multi cloud engineering built for resilience.",
     tags: ["Azure · AWS · GCP", "Kubernetes · VMware", "Data Center", "High Availability · DR"],
   },
   {
     icon: ShieldCheck,
+    to: "/services/cybersecurity",
     title: "Cybersecurity & GRC",
     line: "Zero Trust architecture, identity, and audit ready compliance.",
     tags: ["Zero Trust", "IAM · PAM · IGA", "SOC · MDR · IR", "NIST · ISO 27001"],
   },
   {
     icon: Activity,
+    to: "/services/managed-services",
     title: "Managed Services",
     line: "NOC and SOC operations under SLA tiers scoped per engagement.",
     tags: ["Managed Security", "Managed Cloud", "Observability", "Backup · Recovery"],
@@ -29,8 +33,6 @@ const practices = [
 ];
 
 const Services = () => {
-  const hashNav = useHashNav();
-
   return (
     <section className="r-section">
       <div className="container-content">
@@ -39,13 +41,12 @@ const Services = () => {
           <h2 className="r-title">Four Practices. One Partner.</h2>
           <p className="r-lead" style={{ maxWidth: 560 }}>
             Delivered alongside our flagship{" "}
-            <a
-              href="/#product-team"
-              onClick={(e) => hashNav(e, "/#product-team")}
+            <Link
+              to="/services/product-team"
               style={{ color: "#FFFFFF", textDecoration: "underline", textUnderlineOffset: 4 }}
             >
               Full Product Team as a Service
-            </a>
+            </Link>
             .
           </p>
         </div>
@@ -54,7 +55,8 @@ const Services = () => {
           {practices.map((p, index) => {
             const Icon = p.icon;
             return (
-              <div key={p.title} className="r-card" style={{ padding: "26px 24px", borderRadius: 28 }}>
+              <Link key={p.title} to={p.to} className="r-card block" style={{ padding: "26px 24px", borderRadius: 28 }}>
+
                 <div className="flex items-start gap-4">
                   <div className="r-node relative" style={{ width: 54, height: 54 }}>
                     <Icon style={{ width: 22, height: 22, color: "#F0F1F3" }} strokeWidth={1.5} />

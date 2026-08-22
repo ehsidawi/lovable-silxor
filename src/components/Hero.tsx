@@ -93,9 +93,10 @@ const Hero = () => {
             <button type="button" className="r-cta" onClick={() => navigate("/book")}>
               {"Book an Assessment"}
             </button>
-            <a href="/#solutions" onClick={(e) => hashNav(e, "/#solutions")} className="r-cta-ghost">
-              {"Explore Solutions"}
-            </a>
+            <Link to="/services" className="r-cta-ghost">
+              {"Explore Services"}
+            </Link>
+
           </div>
 
         </motion.div>

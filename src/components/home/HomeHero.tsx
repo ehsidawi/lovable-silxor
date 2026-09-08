@@ -2,7 +2,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import SmartLink from "@/components/SmartLink";
 import { prefetchHandlers } from "@/lib/routePrefetch";
-import LiquidGlassSilxor from "@/components/home/LiquidGlassSilxor";
 
 
 const facts = [
@@ -45,7 +44,7 @@ const HomeHero = () => {
       />
 
       <div className="relative container-content" style={{ zIndex: 1 }}>
-        {/* Interactive liquid glass wordmark */}
+        {/* Static SILXOR wordmark card */}
         <motion.div
           initial={initial}
           animate={animate}
@@ -53,7 +52,49 @@ const HomeHero = () => {
           className="w-full"
           style={{ marginBottom: "clamp(28px, 4vw, 52px)" }}
         >
-          <LiquidGlassSilxor />
+          <div
+            className="relative isolate flex w-full items-center justify-center overflow-hidden"
+            style={{
+              height: "clamp(220px, 32vw, 420px)",
+              background:
+                "linear-gradient(115deg, #25282C 0%, #141414 52%, #1A1D21 100%)",
+              border: "1px solid rgba(255,255,255,0.10)",
+              borderRadius: 8,
+            }}
+          >
+            <div
+              aria-hidden
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                opacity: 0.5,
+                backgroundImage:
+                  "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
+                backgroundSize: "48px 48px",
+                maskImage: "linear-gradient(to bottom, black, transparent 88%)",
+                WebkitMaskImage: "linear-gradient(to bottom, black, transparent 88%)",
+              }}
+            />
+            <div className="absolute inset-x-0 top-5 z-10 flex items-center justify-between px-5 sm:px-8">
+              <span className="font-mono text-[10px] uppercase text-muted-foreground">SLXR // 2026</span>
+              <span className="font-mono text-[10px] uppercase text-muted-foreground">Operational</span>
+            </div>
+            <h1
+              className="relative z-10 flex h-full items-center justify-center font-display font-[800] text-foreground"
+              style={{
+                fontSize: "clamp(64px, 19vw, 300px)",
+                lineHeight: 0.85,
+                letterSpacing: "-0.02em",
+                whiteSpace: "nowrap",
+                textShadow: "0 12px 50px rgba(0,0,0,0.42)",
+              }}
+            >
+              SILXOR
+            </h1>
+            <div className="absolute inset-x-0 bottom-5 z-10 flex items-center justify-between px-5 sm:px-8">
+              <span className="font-mono text-[10px] uppercase text-muted-foreground">Architect · Build · Secure</span>
+              <span className="hidden font-mono text-[10px] uppercase text-muted-foreground sm:inline">Enterprise Systems</span>
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 items-center">

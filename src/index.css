@@ -115,6 +115,37 @@
 }
 
 @layer utilities {
+  .liquid-silxor {
+    height: clamp(300px, 45vw, 560px);
+    background:
+      linear-gradient(115deg, hsl(var(--card)) 0%, hsl(var(--background)) 52%, hsl(var(--secondary)) 100%);
+    border: 1px solid hsl(var(--border));
+    border-radius: 8px;
+  }
+
+  .liquid-silxor::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(hsl(var(--foreground) / 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--foreground) / 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to bottom, black, transparent 88%);
+  }
+
+  .liquid-silxor-word {
+    font-size: clamp(62px, 18vw, 250px);
+    line-height: 0.8;
+    letter-spacing: 0;
+    white-space: nowrap;
+    text-shadow: 0 12px 50px hsl(var(--background) / 0.42);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
   .surface-elevated {
     background: #25282C;
     border: 1px solid rgba(255, 255, 255, 0.06);

@@ -8,6 +8,8 @@ import heroWebm from "@/assets/silxor-hero.webm.asset.json";
 import heroPoster from "@/assets/silxor-hero-poster.jpg.asset.json";
 
 
+const headline = "Systems built to perform. Teams built to deliver.";
+
 /** Adapted from the supplied Prisma hero: moving backdrop, oversized wordmark, compact editorial copy. */
 export const PrismaHero = () => {
   const reduceMotion = useReducedMotion();
@@ -62,8 +64,19 @@ export const PrismaHero = () => {
           <div className="mt-5 grid gap-6 border-t border-foreground/30 pt-5 md:mt-7 md:grid-cols-[minmax(0,1fr)_minmax(280px,420px)] md:items-end md:gap-12 md:pt-7">
             <div>
               <p className="font-mono text-[10px] uppercase text-foreground/80 sm:text-xs">Enterprise Technology Partner</p>
-              <h2 className="mt-3 max-w-xl font-display text-2xl font-bold leading-tight text-foreground sm:text-3xl lg:text-4xl">
-                Systems built to perform. Teams built to deliver.
+              <h2 className="mt-3 max-w-xl font-display text-2xl font-bold leading-tight text-foreground sm:text-3xl lg:text-4xl" aria-label={headline}>
+                {headline.split(" ").map((word, index) => (
+                  <motion.span
+                    key={`${word}-${index}`}
+                    aria-hidden="true"
+                    className="inline-block"
+                    initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.55, delay: reduceMotion ? 0 : 0.25 + index * 0.045, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    {word}{"\u00a0"}
+                  </motion.span>
+                ))}
               </h2>
             </div>
             <div>

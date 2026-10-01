@@ -6,6 +6,12 @@ import { Button } from "@/components/ui/button";
 import heroVideo from "@/assets/silxor-hero.mp4.asset.json";
 import heroPoster from "@/assets/silxor-hero-poster.jpg.asset.json";
 
+// Local Vite does not proxy project asset pointers; use the project's public asset host there.
+const assetUrl = (path: string) =>
+  typeof window !== "undefined" && window.location.hostname === "localhost"
+    ? `https://silxor.lovable.app${path}`
+    : path;
+
 /** Adapted from the supplied Prisma hero: moving backdrop, oversized wordmark, compact editorial copy. */
 export const PrismaHero = () => {
   const reduceMotion = useReducedMotion();
@@ -21,17 +27,17 @@ export const PrismaHero = () => {
   return (
     <section aria-labelledby="home-title" className="silxor-hero relative isolate overflow-hidden border-b border-border bg-background">
       <div className="absolute inset-0" aria-hidden="true">
-        <img src={heroPoster.url} alt="" className="h-full w-full object-cover" />
+        <img src={assetUrl(heroPoster.url)} alt="" className="h-full w-full object-cover" />
         {!reduceMotion && !videoFailed && (
           <video
             className="silxor-hero-video absolute inset-0 h-full w-full object-cover"
-            src={heroVideo.url}
+            src={assetUrl(heroVideo.url)}
             autoPlay
             muted
             loop
             playsInline
             preload="metadata"
-            poster={heroPoster.url}
+            poster={assetUrl(heroPoster.url)}
             onError={() => setVideoFailed(true)}
           />
         )}

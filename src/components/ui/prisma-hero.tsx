@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import SmartLink from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
 import heroVideo from "@/assets/silxor-hero.mp4.asset.json";
+import heroWebm from "@/assets/silxor-hero.webm.asset.json";
 import heroPoster from "@/assets/silxor-hero-poster.jpg.asset.json";
 
 
@@ -26,7 +27,6 @@ export const PrismaHero = () => {
         {!reduceMotion && !videoFailed && (
           <video
             className="silxor-hero-video absolute inset-0 h-full w-full object-cover"
-            src={heroVideo.url}
             autoPlay
             muted
             loop
@@ -34,7 +34,10 @@ export const PrismaHero = () => {
             preload="metadata"
             poster={heroPoster.url}
             onError={() => setVideoFailed(true)}
-          />
+          >
+            <source src={heroWebm.url} type="video/webm" />
+            <source src={heroVideo.url} type="video/mp4" />
+          </video>
         )}
         <div className="silxor-hero-shade absolute inset-0" />
       </div>

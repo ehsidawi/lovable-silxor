@@ -9,7 +9,7 @@ import heroPoster from "@/assets/silxor-hero-poster.jpg.asset.json";
 // Local Vite does not proxy project asset pointers; use the project's public asset host there.
 const assetUrl = (path: string) =>
   typeof window !== "undefined" && window.location.hostname === "localhost"
-    ? `https://silxor.lovable.app${path}`
+    ? `https://silxor.com${path}`
     : path;
 
 /** Adapted from the supplied Prisma hero: moving backdrop, oversized wordmark, compact editorial copy. */

@@ -8,7 +8,6 @@ import heroWebm from "@/assets/silxor-hero.webm.asset.json";
 import heroPoster from "@/assets/silxor-hero-poster.jpg.asset.json";
 
 
-const headline = "Systems built to perform. Teams built to deliver.";
 
 /** Adapted from the supplied Prisma hero: moving backdrop, oversized wordmark, compact editorial copy. */
 export const PrismaHero = () => {
@@ -23,7 +22,7 @@ export const PrismaHero = () => {
   }, [reduceMotion, videoFailed]);
 
   return (
-    <section aria-labelledby="home-title" className="silxor-hero relative isolate overflow-hidden border-b border-border bg-background">
+    <section className="silxor-hero relative isolate overflow-hidden border-b border-border bg-background">
       <div className="absolute inset-0" aria-hidden="true">
         <img src={heroPoster.url} alt="" className="h-full w-full object-cover" />
         {!reduceMotion && !videoFailed && (
@@ -50,49 +49,13 @@ export const PrismaHero = () => {
           <span>Architect · Build · Secure</span>
         </div>
 
-        <div>
-          <motion.h1
-            id="home-title"
-            initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="silxor-hero-wordmark font-display font-extrabold uppercase text-foreground"
-          >
-            SILXOR
-          </motion.h1>
-
-          <div className="mt-5 grid gap-6 border-t border-foreground/30 pt-5 md:mt-7 md:grid-cols-[minmax(0,1fr)_minmax(280px,420px)] md:items-end md:gap-12 md:pt-7">
-            <div>
-              <p className="font-mono text-[10px] uppercase text-foreground/80 sm:text-xs">Enterprise Technology Partner</p>
-              <h2 className="mt-3 max-w-xl font-display text-2xl font-bold leading-tight text-foreground sm:text-3xl lg:text-4xl" aria-label={headline}>
-                {headline.split(" ").map((word, index) => (
-                  <motion.span
-                    key={`${word}-${index}`}
-                    aria-hidden="true"
-                    className="inline-block"
-                    initial={reduceMotion ? false : { opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.55, delay: reduceMotion ? 0 : 0.25 + index * 0.045, ease: [0.16, 1, 0.3, 1] }}
-                  >
-                    {word}{"\u00a0"}
-                  </motion.span>
-                ))}
-              </h2>
-            </div>
-            <div>
-              <p className="max-w-md text-sm leading-relaxed text-foreground/90 sm:text-base">
-                We architect, build, secure, and operate the systems your business runs on. One accountable senior team from architecture to operations.
-              </p>
-              <div className="mt-5 flex flex-wrap items-center gap-3">
-                <Button asChild className="h-12 rounded-sm px-5 font-mono text-xs uppercase sm:px-6">
-                  <SmartLink to="/book">Book an Assessment <ArrowUpRight aria-hidden="true" /></SmartLink>
-                </Button>
-                <Button asChild variant="outline" className="h-12 rounded-sm border-foreground/50 bg-background/20 px-5 font-mono text-xs uppercase text-foreground hover:bg-background/50 sm:px-6">
-                  <SmartLink to="/services">Explore Services <ArrowUpRight aria-hidden="true" /></SmartLink>
-                </Button>
-              </div>
-            </div>
-          </div>
+        <div className="flex flex-wrap items-center gap-3">
+          <Button asChild className="h-12 rounded-sm px-5 font-mono text-xs uppercase sm:px-6">
+            <SmartLink to="/book">Book an Assessment <ArrowUpRight aria-hidden="true" /></SmartLink>
+          </Button>
+          <Button asChild variant="outline" className="h-12 rounded-sm border-foreground/50 bg-background/20 px-5 font-mono text-xs uppercase text-foreground hover:bg-background/50 sm:px-6">
+            <SmartLink to="/services">Explore Services <ArrowUpRight aria-hidden="true" /></SmartLink>
+          </Button>
         </div>
       </div>
     </section>

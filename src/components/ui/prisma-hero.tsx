@@ -8,7 +8,6 @@ import heroWebm from "@/assets/silxor-hero.webm.asset.json";
 import heroPoster from "@/assets/silxor-hero-poster.jpg.asset.json";
 
 
-const headline = "Systems built to perform. Teams built to deliver.";
 
 /** Adapted from the supplied Prisma hero: moving backdrop, oversized wordmark, compact editorial copy. */
 export const PrismaHero = () => {

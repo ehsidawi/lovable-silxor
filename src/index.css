@@ -447,7 +447,7 @@
 
 /* Full-width moving hero adapted from the supplied reference. */
 .silxor-hero {
-  min-height: min(760px, calc(100svh - 80px));
+  min-height: calc(100svh - 80px);
 }
 .silxor-hero-shade {
   background: linear-gradient(to bottom, hsl(var(--background) / 0.28), hsl(var(--background) / 0.4) 38%, hsl(var(--background) / 0.96));

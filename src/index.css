@@ -459,6 +459,6 @@
   white-space: nowrap;
 }
 @media (max-width: 640px) {
-  .silxor-hero { min-height: min(720px, calc(100svh - 80px)); }
+  .silxor-hero { min-height: calc(100svh - 72px); }
   .silxor-hero-wordmark { font-size: clamp(3.2rem, 17.2vw, 7rem); }
 }

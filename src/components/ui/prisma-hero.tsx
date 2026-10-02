@@ -1,61 +1,73 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import SmartLink from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
-import heroVideo from "@/assets/silxor-hero.mp4.asset.json";
-import heroWebm from "@/assets/silxor-hero.webm.asset.json";
-import heroPoster from "@/assets/silxor-hero-poster.jpg.asset.json";
+import heroVideo from "@/assets/silxor-hero-color.mp4.asset.json";
+import heroWebm from "@/assets/silxor-hero-color.webm.asset.json";
+import heroPoster from "@/assets/silxor-hero-color-poster.jpg.asset.json";
 
-
-
-/** Adapted from the supplied Prisma hero: moving backdrop, oversized wordmark, compact editorial copy. */
+/** Supplied Prisma hero: full-color looping video backdrop with the original gradient overlay. */
 export const PrismaHero = () => {
-  const reduceMotion = useReducedMotion();
-  const [videoFailed, setVideoFailed] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (reduceMotion || videoFailed) return;
-    const video = document.querySelector<HTMLVideoElement>(".silxor-hero-video");
+    const video = videoRef.current;
     if (!video) return;
-    video.play().catch(() => setVideoFailed(true));
-  }, [reduceMotion, videoFailed]);
+    video.muted = true;
+    const tryPlay = () => {
+      video.play().catch(() => undefined);
+    };
+    tryPlay();
+    // Some phones block autoplay until the first touch; resume on any interaction.
+    const events = ["touchstart", "pointerdown", "scroll", "visibilitychange"] as const;
+    events.forEach((e) => window.addEventListener(e, tryPlay, { passive: true }));
+    video.addEventListener("canplay", tryPlay);
+    return () => {
+      events.forEach((e) => window.removeEventListener(e, tryPlay));
+      video.removeEventListener("canplay", tryPlay);
+    };
+  }, []);
 
   return (
-    <section className="silxor-hero relative isolate overflow-hidden border-b border-border bg-background">
-      <div className="absolute inset-0" aria-hidden="true">
-        <img src={heroPoster.url} alt="" className="h-full w-full object-cover" />
-        {!reduceMotion && !videoFailed && (
-          <video
-            className="silxor-hero-video absolute inset-0 h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster={heroPoster.url}
-            onError={() => setVideoFailed(true)}
+    <section className="silxor-hero w-full px-2 pb-2 sm:px-3 sm:pb-3">
+      <div className="relative h-full min-h-[inherit] w-full overflow-hidden rounded-2xl md:rounded-[2rem]">
+        <video
+          ref={videoRef}
+          className="absolute inset-0 h-full w-full object-cover"
+          poster={heroPoster.url}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+        >
+          <source src={heroVideo.url} type='video/mp4; codecs="avc1.4D4028"' />
+          <source src={heroWebm.url} type='video/webm; codecs="vp9"' />
+        </video>
+
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/60" />
+
+        <div className="relative z-10 flex h-full min-h-[inherit] flex-col justify-between px-4 py-6 sm:px-6 md:px-10 md:py-10">
+          <div className="flex items-start justify-between gap-4 font-mono text-[10px] uppercase text-foreground/90 sm:text-xs">
+            <span>SLXR // 2026</span>
+            <span>Architect · Build · Secure</span>
+          </div>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-wrap items-center gap-3"
           >
-            <source src={heroWebm.url} type="video/webm" />
-            <source src={heroVideo.url} type="video/mp4" />
-          </video>
-        )}
-        <div className="silxor-hero-shade absolute inset-0" />
-      </div>
-
-      <div className="container-content relative z-10 flex h-full min-h-[inherit] flex-col justify-between py-8 md:py-10">
-        <div className="flex items-start justify-between gap-4 font-mono text-[10px] uppercase text-foreground/80 sm:text-xs">
-          <span>SLXR // 2026</span>
-          <span>Architect · Build · Secure</span>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-3">
-          <Button asChild className="h-12 rounded-sm px-5 font-mono text-xs uppercase sm:px-6">
-            <SmartLink to="/book">Book an Assessment <ArrowUpRight aria-hidden="true" /></SmartLink>
-          </Button>
-          <Button asChild variant="outline" className="h-12 rounded-sm border-foreground/50 bg-background/20 px-5 font-mono text-xs uppercase text-foreground hover:bg-background/50 sm:px-6">
-            <SmartLink to="/services">Explore Services <ArrowUpRight aria-hidden="true" /></SmartLink>
-          </Button>
+            <Button asChild className="h-12 rounded-full px-5 font-mono text-xs uppercase sm:px-6">
+              <SmartLink to="/book">Book an Assessment <ArrowUpRight aria-hidden="true" /></SmartLink>
+            </Button>
+            <Button asChild variant="outline" className="h-12 rounded-full border-foreground/50 bg-background/20 px-5 font-mono text-xs uppercase text-foreground hover:bg-background/50 sm:px-6">
+              <SmartLink to="/services">Explore Services <ArrowUpRight aria-hidden="true" /></SmartLink>
+            </Button>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -24,6 +24,7 @@ const Index = () => {
       path="/"
     >
       <HomeHero />
+      <WordmarkStatement />
       <AnimatedSection>
         <SystemMap />
       </AnimatedSection>

@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import SmartLink from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
 import heroVideo from "@/assets/silxor-hero-color.mp4.asset.json";
+import heroWebm from "@/assets/silxor-hero-color.webm.asset.json";
 import heroPoster from "@/assets/silxor-hero-color-poster.jpg.asset.json";
 
 /** Supplied Prisma hero: full-color looping video backdrop with the original gradient overlay. */
@@ -34,7 +35,6 @@ export const PrismaHero = () => {
         <video
           ref={videoRef}
           className="absolute inset-0 h-full w-full object-cover"
-          src={heroVideo.url}
           poster={heroPoster.url}
           autoPlay
           loop
@@ -42,7 +42,10 @@ export const PrismaHero = () => {
           playsInline
           preload="auto"
           aria-hidden="true"
-        />
+        >
+          <source src={heroVideo.url} type='video/mp4; codecs="avc1.4D4028"' />
+          <source src={heroWebm.url} type='video/webm; codecs="vp9"' />
+        </video>
 
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/60" />
 

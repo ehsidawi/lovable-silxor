@@ -449,6 +449,17 @@
 .silxor-hero {
   min-height: calc(100svh - 80px);
 }
+/* Never show native play buttons or controls on the hero video. */
+.silxor-hero-video::-webkit-media-controls,
+.silxor-hero-video::-webkit-media-controls-panel,
+.silxor-hero-video::-webkit-media-controls-play-button,
+.silxor-hero-video::-webkit-media-controls-start-playback-button,
+.silxor-hero-video::-webkit-media-controls-overlay-play-button,
+.silxor-hero-video::-webkit-media-controls-enclosure {
+  display: none !important;
+  -webkit-appearance: none;
+  opacity: 0 !important;
+}
 .silxor-hero-shade {
   background: linear-gradient(to bottom, hsl(var(--background) / 0.28), hsl(var(--background) / 0.4) 38%, hsl(var(--background) / 0.96));
 }

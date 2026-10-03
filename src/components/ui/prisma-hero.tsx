@@ -50,8 +50,8 @@ export const PrismaHero = () => {
           preload="auto"
           aria-hidden="true"
         >
-          <source src={heroVideo.url} type='video/mp4; codecs="avc1.4D4028"' />
-          <source src={heroWebm.url} type='video/webm; codecs="vp9"' />
+          <source src={heroVideo.url} type="video/mp4" />
+          <source src={heroWebm.url} type="video/webm" />
         </video>
 
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/60" />

@@ -16,16 +16,23 @@ export const PrismaHero = () => {
     if (!video) return;
     video.muted = true;
     const tryPlay = () => {
-      video.play().catch(() => undefined);
+      if (video.paused) video.play().catch(() => undefined);
     };
     tryPlay();
+    // Keep retrying so the video always plays, even if a browser blocks the first attempt.
+    const interval = window.setInterval(tryPlay, 1000);
     // Some phones block autoplay until the first touch; resume on any interaction.
-    const events = ["touchstart", "pointerdown", "scroll", "visibilitychange"] as const;
+    const events = ["touchstart", "pointerdown", "scroll", "visibilitychange", "focus"] as const;
     events.forEach((e) => window.addEventListener(e, tryPlay, { passive: true }));
     video.addEventListener("canplay", tryPlay);
+    video.addEventListener("loadeddata", tryPlay);
+    video.addEventListener("pause", tryPlay);
     return () => {
+      window.clearInterval(interval);
       events.forEach((e) => window.removeEventListener(e, tryPlay));
       video.removeEventListener("canplay", tryPlay);
+      video.removeEventListener("loadeddata", tryPlay);
+      video.removeEventListener("pause", tryPlay);
     };
   }, []);
 

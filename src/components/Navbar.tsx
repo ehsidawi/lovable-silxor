@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import SmartLink, { SmartNavLink } from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetDescription, SheetTrigger } from "@/components/ui/sheet";
-import { services } from "@/data/services";
+import { services, servicePillars } from "@/data/services";
 
 const links = [
   { label: "Industries", to: "/industries" }, { label: "Delivery", to: "/delivery" },
@@ -36,11 +36,12 @@ const Navbar = () => {
             </Button>
             {megaOpen && <div id="services-menu" className="nav-shadow absolute -left-16 top-full w-[560px] border border-border bg-card p-5">
               <div className="grid grid-cols-2 gap-1">
-                {services.map((s) => <SmartLink key={s.slug} to={s.path} className="flex gap-3 rounded-sm p-3 hover:bg-muted focus-visible:bg-muted">
+                {servicePillars.map((s) => <SmartLink key={s.slug} to={s.path} className="flex gap-3 rounded-sm p-3 hover:bg-muted focus-visible:bg-muted">
                   <s.icon className="mt-0.5 h-4 w-4 shrink-0 text-forest" aria-hidden="true" />
                   <span className="text-sm font-medium">{s.navLabel}</span>
                 </SmartLink>)}
               </div>
+              <div className="mt-3 flex flex-wrap gap-4 border-t border-border pt-3">{services.filter(s => s.flagship || s.slug === "private-ai").map(s => <SmartLink key={s.slug} to={s.path} className="text-sm hover:underline">{s.navLabel}</SmartLink>)}</div>
               <SmartLink to="/services" className="mt-3 flex items-center justify-between border-t border-border pt-4 text-sm font-semibold">All services <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></SmartLink>
             </div>}
           </div>
@@ -53,7 +54,8 @@ const Navbar = () => {
             <SheetTitle className="font-display text-2xl font-extrabold">SILXOR</SheetTitle><SheetDescription className="sr-only">Primary navigation</SheetDescription>
             <nav aria-label="Mobile" className="mt-8 flex flex-col gap-1">
               <SmartLink to="/services" className="border-b border-border py-3 font-semibold">All services</SmartLink>
-              {services.map(s => <SmartLink key={s.slug} to={s.path} className="flex min-h-11 items-center gap-3 py-2 text-sm"><s.icon className="h-4 w-4 text-forest" aria-hidden="true" />{s.navLabel}</SmartLink>)}
+              {servicePillars.map(s => <SmartLink key={s.slug} to={s.path} className="flex min-h-11 items-center gap-3 py-2 text-sm"><s.icon className="h-4 w-4 text-forest" aria-hidden="true" />{s.navLabel}</SmartLink>)}
+              {services.filter(s => s.flagship || s.slug === "private-ai").map(s => <SmartLink key={s.slug} to={s.path} className="min-h-11 py-3 text-sm">{s.navLabel}</SmartLink>)}
               {links.map(l => <SmartLink key={l.to} to={l.to} className="border-t border-border py-3 font-medium">{l.label}</SmartLink>)}
               <Button asChild className="mt-5 h-12"><SmartLink to="/book">Book an Assessment <ArrowUpRight aria-hidden="true" /></SmartLink></Button>
             </nav>

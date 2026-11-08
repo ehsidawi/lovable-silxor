@@ -13,8 +13,8 @@ const steps = [
 
 const principles = [
   { title: "One Partner", line: "Advisory, build, and operations under one contract and one owner." },
-  { title: "Full Stack", line: "Architecture, product, design, engineering, security, and operations in house." },
-  { title: "No Handoffs", line: "The team that designs it builds it and keeps running it." },
+  { title: "Full Stack", line: "Architecture, product, engineering, security and operations coordinated within the agreed scope." },
+  { title: "No Handoffs", line: "Delivery, handover and ongoing ownership are planned together." },
 ];
 
 const DeliveryPage = () => (
@@ -76,6 +76,7 @@ const DeliveryPage = () => (
       </div>
     </section>
 
+    <section className="r-section"><nav aria-label="Delivery guidance" className="container-content flex flex-wrap gap-6"><a href="/engagement" className="font-medium underline underline-offset-4">Compare engagement models</a><a href="/process" className="font-medium underline underline-offset-4">Review our methodology</a><a href="/faq" className="font-medium underline underline-offset-4">Frequently asked questions</a></nav></section>
     <CtaBand />
   </PageShell>
 );

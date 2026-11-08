@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import "./index.css";
+import { ThemeProvider } from "next-themes";
 
 /**
  * The static index.html head carries sitewide metadata for non JS crawlers.
@@ -17,14 +18,19 @@ const staticHeadDuplicates = [
   'meta[name="twitter:title"]',
   'meta[name="twitter:description"]',
   'meta[name="twitter:url"]',
+  'meta[name="twitter:card"]',
+  'meta[property="og:type"]',
+  'link[rel="canonical"]',
+  'script[type="application/ld+json"]',
 ];
 
 for (const selector of staticHeadDuplicates) {
-  document.head.querySelector(selector)?.remove();
+  document.head.querySelectorAll(selector).forEach(node => node.remove());
 }
 
-createRoot(document.getElementById("root")!).render(
+const root = document.getElementById("root");
+if (root) createRoot(root).render(
   <HelmetProvider>
-    <App />
+    <ThemeProvider attribute="class" defaultTheme="light" storageKey="silxor-theme" enableSystem disableTransitionOnChange><App /></ThemeProvider>
   </HelmetProvider>
 );

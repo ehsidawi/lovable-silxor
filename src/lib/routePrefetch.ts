@@ -18,6 +18,13 @@ export const routeLoaders = {
   "/privacy": () => import("@/pages/PrivacyPolicy"),
   "/compliance": () => import("@/pages/ComplianceDoc"),
   "/sla": () => import("@/pages/SLADoc"),
+  "/engagement": () => import("@/pages/ResourcePage"),
+  "/process": () => import("@/pages/ResourcePage"),
+  "/careers": () => import("@/pages/ResourcePage"),
+  "/terms": () => import("@/pages/ResourcePage"),
+  "/cookies": () => import("@/pages/ResourcePage"),
+  "/security": () => import("@/pages/ResourcePage"),
+  "/faq": () => import("@/pages/FaqPage"),
   "*": () => import("@/pages/NotFound"),
 } as const;
 

@@ -7,7 +7,7 @@ const SystemMap = () => (
     <div className="container-content">
       <div className="mb-9 flex flex-col justify-between gap-5 md:flex-row md:items-end">
         <div><span className="r-eyebrow">01 / Capabilities</span><h2 className="r-title mt-4 max-w-xl">Every layer.<br />One accountable partner.</h2></div>
-        <p className="r-lead max-w-sm">Each layer is owned by the same team, so handoffs, gaps, and finger pointing disappear.</p>
+        <p className="r-lead max-w-sm">A coordinated approach to the disciplines you need, with ownership and handover responsibilities agreed from the start.</p>
       </div>
       <div className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
         {pillars.map((p,i) => <SmartLink key={p.label} to={p.to} className="service-pillar group flex flex-col bg-card p-7 transition-colors hover:bg-secondary">

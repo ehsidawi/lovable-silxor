@@ -72,7 +72,7 @@ const ContactPage = () => (
             </div>
             <h2 className="r-title" style={{ marginTop: 18 }}>Book an Assessment</h2>
             <p className="font-body font-[400]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", lineHeight: 1.7, marginTop: 12 }}>
-              A 60 minute technical session with a senior engineer. No sales script, no obligation.
+              Start a conversation with our team about your environment, goals and constraints. Choose Telegram or WhatsApp to arrange the next step.
             </p>
             <Link to="/book" className="r-cta" style={{ marginTop: 22, alignSelf: "flex-start" }}>
               Book an Assessment

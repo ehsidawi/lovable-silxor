@@ -16,7 +16,7 @@ const posture = [
 
 const staffing = [
   { icon: Layers, title: "Matched to Scope", line: "Engineers matched to the practices your program actually involves." },
-  { icon: Users, title: "Senior by Default", line: "A single named senior team, no vendor handoffs and no hidden subcontracting." },
+  { icon: Users, title: "Senior by Default", line: "Roles, expertise, reporting and any external contributions are agreed in the engagement scope." },
   { icon: ClipboardCheck, title: "Scoped at Assessment", line: "Seniority, cadence, and reporting are defined in the proposal before work starts." },
 ];
 
@@ -56,8 +56,8 @@ const AboutPage = () => (
                 of accountability across on premises, hybrid and cloud environments.
               </p>
               <p className="font-body font-[400]" style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", lineHeight: 1.75 }}>
-                That structure removes the most common cause of failure we see: work passed between a strategy firm,
-                a development shop, a security vendor, and a managed provider, with no one owning the outcome.
+                That structure helps clarify responsibility when work spans a strategy firm,
+                a development shop, a security vendor, and a managed provider, with an agreed engagement lead coordinating the outcome.
               </p>
             </div>
           </div>

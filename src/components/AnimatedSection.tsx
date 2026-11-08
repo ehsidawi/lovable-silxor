@@ -9,7 +9,7 @@ interface AnimatedSectionProps {
 
 const AnimatedSection = ({ children, className = "", delay = 0 }: AnimatedSectionProps) => {
   const reduceMotion = useReducedMotion();
-  const initial = reduceMotion ? false : { opacity: 0, y: 24 };
+  const initial = reduceMotion ? false : { y: 12 };
   const whileInView = reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 };
 
   return (

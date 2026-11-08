@@ -33,6 +33,13 @@ Silxor helps organizations plan, build, migrate, secure and operate technology a
 - [cookies](/cookies): Public information about Silxor cookies.
 - [security](/security): Public information about Silxor security.
 - [faq](/faq): Public information about Silxor faq.
+- [insights](/insights): Public information about Silxor insights.
+- [insights/non human identity governance](/insights/non-human-identity-governance): Public information about Silxor insights/non human identity governance.
+- [insights/pam vs pim](/insights/pam-vs-pim): Public information about Silxor insights/pam vs pim.
+- [insights/iam vs ciam](/insights/iam-vs-ciam): Public information about Silxor insights/iam vs ciam.
+- [insights/practical zero trust roadmap](/insights/practical-zero-trust-roadmap): Public information about Silxor insights/practical zero trust roadmap.
+- [insights/on premises hybrid multi cloud](/insights/on-premises-hybrid-multi-cloud): Public information about Silxor insights/on premises hybrid multi cloud.
+- [insights/identity governance basics](/insights/identity-governance-basics): Public information about Silxor insights/identity governance basics.
 
 ## Contact
 - [Book a Consultation](/book): Submit service interests, company context and contact preferences through a three step consultation form. We reply by email; meeting details are confirmed separately.

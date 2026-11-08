@@ -9,7 +9,7 @@
 - Server consultation controls reserve hourly buckets atomically: five submissions per connection bucket, three per normalized email and sixty sitewide. Records hold keyed HMAC hashes. Failures return a friendly wait message and Retry-After. Reservations count attempts accepted by validation even if subsequent storage fails.
 - Admin role storage, restricted inquiry read policies and status-only update privileges are installed. No user or admin grant was created.
 - Consultation started/completed/submitted milestones are registered with only step numbers. Built-in page views are not duplicated. Removed the inactive external analytics loader. Privacy and storage notices now distinguish conversion properties from hosting connection metadata.
-- New 1200 by 630 brand social preview is about 81 KB and served through an asset pointer. Its live metadata changes only after a future publish.
+- New 1200 by 630 brand social preview is about 90 KB and served through an asset pointer. Its live metadata changes only after a future publish.
 - Hero files reduced from about 99/26 KB to 62/17 KB. English font subsets reduce combined font payload from 102972 to 90096 bytes; variable weights retained. Removed four unused 3D dependencies, removed automatic background route warming, retained intent prefetch and below-fold content visibility.
 
 ## Verified

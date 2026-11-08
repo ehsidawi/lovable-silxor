@@ -1,10 +1,10 @@
 # Silxor redesign
 
 ## Consultation and contact correction
-- [ ] Remove the unconfirmed street address and obsolete messaging channels from site, discovery and memory.
-- [ ] Build and validate the accessible three step consultation form with private Cloud storage and honeypot protection.
-- [ ] Update privacy, cookies, FAQ, metadata and discovery files.
-- [ ] Verify submission storage, public access restrictions and desktop/mobile light/dark flows; do not publish.
+- [x] Remove the unconfirmed street address and obsolete messaging channels from site, discovery and memory.
+- [x] Build and validate the accessible three step consultation form with private Cloud storage and honeypot protection.
+- [x] Update privacy, cookies, FAQ, metadata and discovery files.
+- [x] Verify submission storage, public access restrictions and desktop/mobile light/dark flows; do not publish.
 - [ ] Owner email notifications need a verified sender domain.
 - [ ] Rate limiting waits for confirmation of the ad hoc tradeoff because no standard primitive exists.
 

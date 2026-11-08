@@ -13,7 +13,7 @@ const ServiceCards = () => (
     <ul className="mt-14 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">{featured.map(s => <li key={s.slug} className="r-card flex flex-col p-8 lg:p-10">
       <span className="r-node h-14 w-14"><s.icon className="h-6 w-6" strokeWidth={1.25} aria-hidden="true" /></span>
       <h3 className="mt-8 text-[22px] font-medium leading-snug">{s.navLabel}</h3>
-      <p className="r-lead mt-3 line-clamp-2 flex-1">{s.outcome}</p>
+      <p className="r-lead mt-3 line-clamp-3 flex-1">{s.outcome}</p>
       <SmartLink to={s.path} className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-medium" aria-label={`Learn more about ${s.navLabel}`}>Learn More <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></SmartLink>
     </li>)}</ul>
   </div></section>

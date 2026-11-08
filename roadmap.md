@@ -5,8 +5,6 @@
 - [x] Clean About and simplify Home to seven distinct sections.
 - [x] Add six educational insights and empty data driven case studies.
 - [x] Add engagement pricing explanations without figures.
-- [ ] Add protected admin bookings, status workflow and CSV export. Blocked until profile-data question is answered.
-- [x] Instrument anonymous consultation conversions and update storage notice.
 - [x] Optimize hero/fonts/dependencies and measure performance without invented scores; further mobile performance work remains unproven.
 - [x] Generate brand OG image, metadata and verify tests, links, accessibility and themes. Do not publish.
 

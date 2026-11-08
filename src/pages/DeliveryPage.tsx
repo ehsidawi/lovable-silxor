@@ -41,7 +41,7 @@ const DeliveryPage = () => (
                   <div className="flex items-center gap-3">
                     <span
                       className="font-mono font-[700]"
-                      style={{ fontSize: 44, color: "hsl(var(--border-highlight))", lineHeight: 1 }}
+                      style={{ fontSize: 44, color: "hsl(var(--forest))", lineHeight: 1 }}
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>

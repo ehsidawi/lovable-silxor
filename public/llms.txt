@@ -35,13 +35,10 @@ Silxor helps organizations plan, build, migrate, secure and operate technology a
 - [faq](/faq): Public information about Silxor faq.
 
 ## Contact
-- [Book an Assessment](/book): Choose Telegram or WhatsApp to arrange a conversation with +1 979 500 3390.
+- [Book a Consultation](/book): Submit service interests, company context and contact preferences through a three step consultation form. We reply by email; meeting details are confirmed separately.
 - [Email](mailto:hello@silxor.com): hello@silxor.com.
-- [Telegram](https://t.me/+19795003390): Direct contact.
-- [WhatsApp](https://wa.me/19795003390): Direct contact.
+- Telephone: +1 979 500 3390.
 - [LinkedIn](https://www.linkedin.com/company/silxorllc/): Existing company profile.
-
-801 Barton Springs Rd, Austin, TX 78704, US.
 
 ## Optional
 - [Full service reference](/llms-full.txt): Detailed service capabilities and FAQs.

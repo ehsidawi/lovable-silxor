@@ -1,0 +1,9 @@
+import { expect, it } from 'bun:test';
+const url=process.env.VITE_SUPABASE_URL;
+const key=process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+const headers={'Content-Type':'application/json',apikey:key ?? ''};
+const valid={service_areas:['cybersecurity'],company:'Automated validation test',role:'IT lead',company_size:'51 to 200',environment:'Hybrid',timeline:'1 to 3 months',description:'Server validation test only, must not be stored.',name:'QA',work_email:'consultation-validation@example.com',phone:'',preferred_contact:'Email',meeting_windows:'Tuesday morning',time_zone:'UTC',website:''};
+it('server rejects an invalid email before storing a request',async()=>{expect(Boolean(url && key)).toBe(true);const r=await fetch(`${url}/functions/v1/submit-consultation`,{method:'POST',headers,body:JSON.stringify({...valid,work_email:'invalid'})});expect(r.status).toBe(400);expect((await r.json()).fields.work_email.length).toBeGreaterThan(0);});
+it('server rejects honeypot submissions',async()=>{const r=await fetch(`${url}/functions/v1/submit-consultation`,{method:'POST',headers,body:JSON.stringify({...valid,website:'spam.example'})});expect(r.status).toBe(400);expect((await r.json()).success).toBeUndefined();});
+it('public cannot read consultation requests',async()=>{const r=await fetch(`${url}/rest/v1/consultation_requests?select=id`,{headers});expect([401,403]).toContain(r.status);});
+it('public cannot bypass the validated form by inserting directly',async()=>{const {website,...request}=valid;const r=await fetch(`${url}/rest/v1/consultation_requests`,{method:'POST',headers,body:JSON.stringify(request)});expect([401,403]).toContain(r.status);});

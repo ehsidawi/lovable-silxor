@@ -49,6 +49,7 @@
     --muted: 150 8% 17%; --muted-foreground: 145 8% 72%;
     --border: 145 7% 29%; --border-highlight: 145 8% 48%;
     --input: 145 7% 38%; --ring: 78 87% 63%; --forest: 78 87% 63%;
+    --destructive: 0 85% 72%;
   }
   * { @apply border-border; letter-spacing: 0 !important; }
   html { scroll-behavior: smooth; }

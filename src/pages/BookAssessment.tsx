@@ -26,7 +26,7 @@ const BookAssessment = () => {
  const moved = useRef(false);
  useEffect(()=>{setValues(v=>({...v,time_zone:Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'}));},[]);
  useEffect(()=>{ if(moved.current) heading.current?.focus(); },[step,saved]);
- const update = (key:Field,value:string|string[]) => {setValues(v=>({...v,[key]:value}));setErrors(e=>{const next={...e};delete next[key];return next;});setFailure('');};
+ const update = (key:Field,value:string|string[]) => {setValues(v=>({...v,[key]:value}));setErrors(e=>{const next={...e};delete next[key];if(key==='preferred_contact')delete next.phone;return next;});setFailure('');};
  const validate = () => {
   const result = [needSchema,contextSchema,contactSchema][step].safeParse(values);
   if(result.success) {setErrors({});return true;}

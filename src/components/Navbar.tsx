@@ -49,7 +49,7 @@ const Navbar = () => {
           </div>
           {links.map((l) => <SmartNavLink key={l.to} to={l.to} className={({isActive}) => `text-sm font-medium transition-colors hover:text-forest ${isActive ? "text-forest underline underline-offset-8" : "text-foreground"}`}>{l.label}</SmartNavLink>)}
         </div>
-        <div className="ml-auto flex items-center gap-2"><ThemeToggle /><Button asChild className="hidden h-11 rounded-sm px-5 xl:inline-flex"><SmartLink to="/book">Book an Assessment <ArrowUpRight aria-hidden="true" /></SmartLink></Button></div>
+        <div className="ml-auto flex items-center gap-2"><ThemeToggle /><Button asChild className="hidden h-11 rounded-sm px-5 xl:inline-flex"><SmartLink to="/book">Book a Consultation <ArrowUpRight aria-hidden="true" /></SmartLink></Button></div>
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger asChild><Button variant="outline" size="icon" aria-label="Open menu" className="min-h-11 min-w-11 lg:hidden"><Menu aria-hidden="true" /></Button></SheetTrigger>
           <SheetContent className="w-full overflow-y-auto sm:max-w-md">
@@ -61,7 +61,7 @@ const Navbar = () => {
               {links.map(l => <SmartLink key={l.to} to={l.to} className="border-t border-border py-3 font-medium">{l.label}</SmartLink>)}
                <span className="mt-4 font-mono text-xs uppercase text-muted-foreground">Resources</span>
                {resourceLinks.map(l => <SmartLink key={l.to} to={l.to} className="min-h-11 py-3 text-sm">{l.label}</SmartLink>)}
-              <Button asChild className="mt-5 h-12"><SmartLink to="/book">Book an Assessment <ArrowUpRight aria-hidden="true" /></SmartLink></Button>
+              <Button asChild className="mt-5 h-12"><SmartLink to="/book">Book a Consultation <ArrowUpRight aria-hidden="true" /></SmartLink></Button>
             </nav>
           </SheetContent>
         </Sheet>

@@ -3,7 +3,7 @@ import { getService } from "../data/services";
 export function structuredData(path: string, title: string, description: string) {
  const id = `${SITE}/#organization`; const service = path.startsWith("/services/") ? getService(path.split("/")[2]) : undefined;
  const graph: Record<string, unknown>[] = [
-  { "@type": ["Organization", "ProfessionalService", "LocalBusiness"], "@id": id, ...business, legalName: business.name, description: "Enterprise technology consultancy covering IT strategy, infrastructure, cybersecurity, identity, managed IT, software, private AI and hardware engineering.", address: { "@type": "PostalAddress", streetAddress: "801 Barton Springs Rd", addressLocality: "Austin", addressRegion: "TX", postalCode: "78704", addressCountry: "US" } },
+  { "@type": ["Organization", "ProfessionalService", "LocalBusiness"], "@id": id, ...business, legalName: business.name, description: "Enterprise technology consultancy covering IT strategy, infrastructure, cybersecurity, identity, managed IT, software, private AI and hardware engineering." },
   { "@type": "WebSite", "@id": `${SITE}/#website`, url: `${SITE}/`, name: business.name, inLanguage: "en", publisher: { "@id": id } },
   { "@type": "WebPage", "@id": `${SITE}${path}#webpage`, url: `${SITE}${path}`, name: title, description, isPartOf: { "@id": `${SITE}/#website` } },
  ];

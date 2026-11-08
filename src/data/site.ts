@@ -3,7 +3,7 @@ export const business = { name: "Silxor Group Holding", email: "hello@silxor.com
 export type Question = { q: string; a: string };
 export const faqs: Question[] = [
   { q: "What does Silxor help with?", a: "Silxor helps organizations plan, build, secure and operate enterprise technology. Scope can include IT strategy, infrastructure, networking, managed IT, cybersecurity, identity, custom software, private AI and hardware engineering." },
-  { q: "How do we start?", a: "Book an Assessment and choose Telegram or WhatsApp to contact our team. Share your goals, current environment and constraints. We agree the next steps with you before work begins." },
+  { q: "How do we start?", a: "Use Book a Consultation to share your service interests, company context and contact preferences. We review your request and reply by email. Meeting details and next steps are confirmed separately." },
   { q: "Can you work with our existing IT team?", a: "Yes. An engagement can complement your team through a scoped project, staff augmentation, advisory retainer or managed service. Responsibilities and access are agreed in writing." },
   { q: "Where is project data hosted?", a: "Data location, access and hosting requirements are defined during assessment and recorded in the agreement. On premises, hybrid and private environments can be included in scope. Private AI is designed to keep sensitive data away from third party model providers." },
   { q: "Do you provide certified compliance?", a: "We help map controls and prepare evidence against agreed frameworks. Framework references describe capabilities, not a claim of certification or an audit opinion. Required attestations and certification status must be confirmed during contracting." },
@@ -32,6 +32,6 @@ export function serviceFaqs(service: { name: string; intro: string; capabilities
   return [
     { q: `What is ${service.name.toLowerCase()} and how does Silxor help?`, a: service.intro },
     { q: "What can an engagement include?", a: `Depending on your requirements, the scope can include ${service.capabilities.join(", ")}. Deliverables, responsibilities and acceptance criteria are agreed before work begins.` },
-    { q: "How do we discuss requirements?", a: "Use Book an Assessment to choose Telegram or WhatsApp. Share your environment and goals without sending passwords, private keys or sensitive production data. We agree a suitable review and next steps." },
+    { q: "How do we discuss requirements?", a: "Use Book a Consultation to submit your requirements and contact preferences. Do not include passwords, private keys or sensitive production data. We reply by email and agree the next steps." },
   ];
 }

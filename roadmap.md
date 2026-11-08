@@ -1,5 +1,13 @@
 # Silxor redesign
 
+## Consultation and contact correction
+- [ ] Remove the unconfirmed street address and obsolete messaging channels from site, discovery and memory.
+- [ ] Build and validate the accessible three step consultation form with private Cloud storage and honeypot protection.
+- [ ] Update privacy, cookies, FAQ, metadata and discovery files.
+- [ ] Verify submission storage, public access restrictions and desktop/mobile light/dark flows; do not publish.
+- [ ] Owner email notifications need a verified sender domain.
+- [ ] Rate limiting waits for confirmation of the ad hoc tradeoff because no standard primitive exists.
+
 ## Visual capability add-on
 - [x] Add seven accessible inline SVG architecture and flow diagrams.
 - [x] Add linked service/IAM and categorized technology capability maps.
@@ -16,7 +24,7 @@
 - [x] Establish the new site-wide palette, typography and component system.
 - [x] Redesign homepage, navigation, footer and shared page sections.
 - [x] Restyle every existing page while retaining content, destinations and SEO.
-- [x] Verify desktop/mobile, keyboard, reduced motion and Telegram/WhatsApp booking.
+- [x] Verify desktop/mobile, keyboard and reduced motion.
 - [x] Leave changes in preview and summarize palette, fonts and page changes.
 
 ## Expanded enterprise IT scope

@@ -1,11 +1,11 @@
 # Silxor redesign
 
 ## Human, search and AI readiness
-- [ ] Audit and repair all page content, navigation and service consistency.
-- [ ] Add engagement, process, FAQ, careers, terms, cookies and disclosure essentials.
-- [ ] Refine shared tokens, theme toggle, accessibility and image performance.
-- [ ] Add route schemas, static route HTML and machine readable discovery files.
-- [ ] Verify every route, booking, links, accessibility and discovery files; do not publish.
+- [x] Audit and repair all page content, navigation and service consistency.
+- [x] Add engagement, process, FAQ, careers, terms, cookies and disclosure essentials.
+- [x] Refine shared tokens, theme toggle, accessibility and image performance.
+- [x] Add route schemas, static route HTML and machine readable discovery files.
+- [x] Verify every route, booking, links, accessibility and discovery files; do not publish.
 
 - [x] Establish the new site-wide palette, typography and component system.
 - [x] Redesign homepage, navigation, footer and shared page sections.

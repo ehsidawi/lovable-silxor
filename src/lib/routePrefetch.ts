@@ -53,20 +53,6 @@ export function prefetchRoute(path: string) {
   routeLoaders[key]().catch(() => started.delete(key));
 }
 
-/** Warm the routes users reach most often, once the browser is idle. */
-export function prefetchPrimaryRoutes() {
-  const run = () => {
-    ["/services", "/services/:slug", "/contact", "/book"].forEach((p) =>
-      prefetchRoute(p === "/services/:slug" ? "/services/product-team" : p)
-    );
-  };
-  if (typeof window === "undefined") return;
-  const ric = (window as unknown as { requestIdleCallback?: (cb: () => void) => number })
-    .requestIdleCallback;
-  if (ric) ric(run);
-  else window.setTimeout(run, 1200);
-}
-
 /** Props to spread on any element that should prefetch on user intent. */
 export function prefetchHandlers(to: string) {
   const warm = () => prefetchRoute(to);

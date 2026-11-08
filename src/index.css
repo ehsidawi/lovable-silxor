@@ -131,3 +131,5 @@
 .diagram-detail { fill: hsl(var(--muted-foreground)); font-family: 'DM Sans', sans-serif; font-size: 12px; }
 .capability-link:focus-visible { position: relative; z-index: 1; }
 .platform-tile:target { outline: 2px solid hsl(var(--forest)); outline-offset: -2px; }
+footer nav a { display: inline-flex; align-items: center; min-height: 44px; }
+footer a { min-height: 24px; }

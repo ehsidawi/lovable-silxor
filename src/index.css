@@ -67,12 +67,6 @@
   .r-cta:hover { background:hsl(var(--primary) / .8); }
   .r-cta-ghost { background:transparent; color:hsl(var(--foreground)); border:1px solid hsl(var(--border-highlight)); }
   .r-cta-ghost:hover { background:hsl(var(--muted)); border-color:hsl(var(--foreground)); }
-  .r-cta--sm { min-height:44px; padding:10px 18px; font-size:13px; }
-  .r-cta--block { width:100%; }
-  .r-divider { height:1px; background:hsl(var(--border)); }
-  .text-institutional { color:hsl(var(--muted-foreground)); font-size:15px; line-height:1.7; }
-  .accent-border { border-inline-start:2px solid hsl(var(--forest)); }
-  .touch-target { min-width:44px; min-height:44px; }
   .skip-link { position:fixed; top:-100px; left:16px; z-index:200; padding:14px 20px; color:hsl(var(--primary-foreground)); background:hsl(var(--primary)); }
   .skip-link:focus { top:12px; }
   .hero-shade { background:var(--hero-shade); }
@@ -98,7 +92,6 @@
   .home-hero-title { font-size:48px; }
   .page-hero { padding-block:44px; }
   .page-hero h1 { font-size:38px; }
-  .home-wordmark { font-size:52px; }
   main h1 { overflow-wrap:break-word; }
   main h1[style] { font-size:34px !important; }
   .surface-elevated > .flex { flex-wrap:wrap; }

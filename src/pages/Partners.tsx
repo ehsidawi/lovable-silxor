@@ -18,7 +18,7 @@ const Partners = () => {
     {
       icon: ShieldCheck,
       title: "Security & Threat Defense",
-      body: "Our security architecture draws on established endpoint, network, and threat-detection tooling categories, integrated to fit each client's environment.",
+      body: "Our security architecture draws on established endpoint, network, and threat detection tooling categories, integrated to fit each client's environment.",
     },
     {
       icon: Fingerprint,
@@ -33,12 +33,12 @@ const Partners = () => {
     {
       icon: Server,
       title: "Infrastructure & Data Center",
-      body: "We work with infrastructure, virtualization, and storage technologies appropriate to on-premises, hybrid, and cloud-native deployments.",
+      body: "We work with infrastructure, virtualization, and storage technologies appropriate to on premises, hybrid, and cloud native deployments.",
     },
     {
       icon: Network,
       title: "Automation & DevOps Tooling",
-      body: "Delivery pipelines are built with widely adopted infrastructure-as-code, CI/CD, and observability tooling categories.",
+      body: "Delivery pipelines are built with widely adopted infrastructure as code, CI/CD, and observability tooling categories.",
     },
   ];
 

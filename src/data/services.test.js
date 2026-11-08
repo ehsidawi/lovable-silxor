@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { getService, servicePillars, services } from "./services";
+import { getService, servicePillars, services } from "./services.ts";
 
 describe("enterprise service destinations", () => {
   it("preserves all existing service destinations", () => {

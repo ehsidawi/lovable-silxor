@@ -13,6 +13,7 @@
 - Hero files reduced from about 99/26 KB to 62/17 KB. English font subsets reduce combined font payload from 102972 to 90096 bytes; variable weights retained. Removed four unused 3D dependencies, removed automatic background route warming, retained intent prefetch and below-fold content visibility.
 
 ## Verified
+- 39 tests passed across seven files with 213 assertions. Live email testing accepted three requests then rejected the fourth with HTTP 429. Connection testing accepted five distinct-email requests then rejected the sixth. Test inquiries were removed individually by their verified IDs; limiter buckets were not cleared.
 - Local mobile Lighthouse, same development environment: performance 53 to 54; accessibility 96 to 100; best practices 100 to 100; SEO 100 to 100. These are development measurements, not production scores or a significant proven speed improvement.
 - All public sitemap routes checked for one heading, browser errors and internal destinations. No broken internal links found across 35 routes.
 - Full static rendering verified for 36 routes including the empty case study page; case studies and admin excluded from sitemap.

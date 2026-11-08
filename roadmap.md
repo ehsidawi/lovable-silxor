@@ -1,14 +1,14 @@
 # Silxor redesign
 
 ## Completion pass
-- [ ] Add atomic server side IP and email consultation limits and tests.
-- [ ] Clean About and simplify Home to seven distinct sections.
-- [ ] Add six educational insights and empty data driven case studies.
-- [ ] Add engagement pricing explanations without figures.
+- [x] Add atomic server side connection and email limits; strict trustworthy IP enforcement remains blocked on a documented ingress header.
+- [x] Clean About and simplify Home to seven distinct sections.
+- [x] Add six educational insights and empty data driven case studies.
+- [x] Add engagement pricing explanations without figures.
 - [ ] Add protected admin bookings, status workflow and CSV export. Blocked until profile-data question is answered.
-- [ ] Instrument anonymous consultation conversions and update storage notice.
-- [ ] Optimize hero/fonts/dependencies and measure performance without invented scores.
-- [ ] Generate brand OG image, metadata and verify tests, links, accessibility and themes. Do not publish.
+- [x] Instrument anonymous consultation conversions and update storage notice.
+- [x] Optimize hero/fonts/dependencies and measure performance without invented scores; further mobile performance work remains unproven.
+- [x] Generate brand OG image, metadata and verify tests, links, accessibility and themes. Do not publish.
 
 ## Consultation and contact correction
 - [x] Remove the unconfirmed street address and obsolete messaging channels from site, discovery and memory.

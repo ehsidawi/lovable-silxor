@@ -1,5 +1,4 @@
 - Keep the homepage hero isolated in `src/components/ui/prisma-hero.tsx` and render it through `HomeHero`; this preserves the existing multi-page shell and navigation while allowing the hero to change independently.
-- Serve transformed video media through Lovable asset pointers, not external hotlinks or checked-in video files; this keeps the site self-contained and lightweight.
 - Proxy asset pointers to the public asset endpoint only during local development; Vite otherwise treats those paths as HTML fallback instead of media.
 - Express all page visual roles through the global semantic theme tokens; this keeps the enterprise identity consistent across existing routes.
 - Keep the homepage media lightweight and static in the critical path; this avoids autoplay failures and GPU-heavy first loads.
@@ -19,3 +18,7 @@
 - Add approved case studies to `src/data/caseStudies.ts` with a unique slug, title, summary, sections and service slugs only after the owner supplies facts and confirms publication permission; empty data hides navigation and discovery while preserving an honest noindex route.
 - Keep founder biography in approved leadership data and render nothing for empty text; this prevents invented leadership claims.
 - Reserve consultation limits atomically in a service-only RPC using keyed hashes, fixed hourly windows and a global safety bucket; forwarding IP metadata is supplementary because managed ingress sanitation is not documented.
+
+- Render the home process summary from shared methodology data; this prevents duplicate delivery descriptions.
+- Keep only reachable website UI modules and required tooling; this avoids unused application dependencies.
+- Use subset display font assets and shared semantic bohemian surfaces; this keeps public pages consistent without heavy rendering libraries.

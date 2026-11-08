@@ -30,9 +30,9 @@ const SolutionsSection = () => {
               <div key={c.title} className="r-card" style={{ padding: 22 }}>
                 <div className="flex items-center gap-3" style={{ marginBottom: 14 }}>
                   <div className="r-node" style={{ width: 42, height: 42 }}>
-                    <Icon style={{ width: 18, height: 18, color: "#F0F1F3" }} strokeWidth={1.5} />
+                    <Icon style={{ width: 18, height: 18, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-display font-[600]" style={{ fontSize: 16, color: "#FFFFFF" }}>
+                  <h3 className="font-display font-[600]" style={{ fontSize: 16, color: "hsl(var(--foreground))" }}>
                     {c.title}
                   </h3>
                 </div>

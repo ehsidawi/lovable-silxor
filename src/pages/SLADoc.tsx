@@ -144,41 +144,41 @@ const SLADoc = () => {
     <div className="min-h-screen">
       <Seo title={"Service Level Agreement | Silxor"} description={"Silxor service level framework: availability targets, priority response tiers, and coverage defined per contract."} path="/sla" />
       <Navbar />
-      <section className="section-spacing" style={{ paddingTop: 120 }}>
+      <main id="main"><section className="section-spacing" style={{ paddingTop: 120 }}>
         <div className="container-content" style={{ maxWidth: 900, margin: "0 auto" }}>
           <div className="section-eyebrow">
             {"SERVICE LEVEL FRAMEWORK"}
           </div>
           <h1
             className="font-display font-[700]"
-            style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 8 }}
+            style={{ fontSize: 42, lineHeight: 1.15, color: "hsl(var(--foreground))", marginBottom: 8 }}
           >
             {"Service Level Commitment Framework"}
           </h1>
           <p
-            className="font-body font-[300]"
-            style={{ fontSize: 16, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 24, textAlign: "start" }}
+            className="font-body font-[400]"
+            style={{ fontSize: 16, color: "hsl(var(--muted-foreground))", lineHeight: 1.7, marginBottom: 24, textAlign: "start" }}
           >
             {"This page describes the structure of service level commitments we offer across support tiers. It is a template, not a record of an executed agreement. Exact figures, response times, and recovery objectives are negotiated and confirmed in the master service agreement for each engagement."}
           </p>
 
           <Card
-            className="rounded-[4px] border-0 shadow-none text-inherit"
-            style={{ backgroundColor: "#25282C", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 4, overflow: "hidden" }}
+            className="hidden rounded-[4px] border-0 shadow-none text-inherit md:block"
+            style={{ backgroundColor: "hsl(var(--muted))", border: "1px solid hsl(var(--border))", borderRadius: 4, overflow: "hidden" }}
           >
             <Table style={{ width: "100%", borderCollapse: "collapse" }}>
               <TableHeader>
-                <TableRow style={{ backgroundColor: "#25282C" }} className="border-0 hover:bg-transparent">
+                <TableRow style={{ backgroundColor: "hsl(var(--muted))" }} className="border-0 hover:bg-transparent">
                   {headers.map((h) => (
                     <TableHead
                       key={h.en}
                       className="font-mono font-[400] uppercase h-auto align-top"
                       style={{
                         fontSize: 11,
-                        letterSpacing: "0.1em",
-                        color: "#F0F1F3",
+                        letterSpacing: 0,
+                        color: "hsl(var(--foreground))",
                         padding: "14px 20px",
-                        borderBottom: "1px solid rgba(255,255,255,0.06)",
+                        borderBottom: "1px solid hsl(var(--border))",
                         textAlign: "start",
                       }}
                     >
@@ -191,32 +191,29 @@ const SLADoc = () => {
                 {rows.map((row, i) => (
                   <TableRow
                     key={i}
-                    className="border-0 hover:bg-transparent"
-                    style={{ transition: "background 200ms" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.02)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+                    className="border-0 hover:bg-secondary"
                   >
                     <TableCell
                       className="font-body font-[400] align-top"
-                      style={{ fontSize: 14, color: "#FFFFFF", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)", textAlign: "start" }}
+                      style={{ fontSize: 14, color: "hsl(var(--foreground))", padding: "12px 20px", borderBottom: "1px solid hsl(var(--border))", textAlign: "start" }}
                     >
                       {row.metric}
                     </TableCell>
                     <TableCell
-                      className="font-body font-[300] align-top"
-                      style={{ fontSize: 14, color: "#B8BCC2", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)", textAlign: "start" }}
+                      className="font-body font-[400] align-top"
+                      style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", padding: "12px 20px", borderBottom: "1px solid hsl(var(--border))", textAlign: "start" }}
                     >
                       {row.starter}
                     </TableCell>
                     <TableCell
-                      className="font-body font-[300] align-top"
-                      style={{ fontSize: 14, color: "#B8BCC2", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)", textAlign: "start" }}
+                      className="font-body font-[400] align-top"
+                      style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", padding: "12px 20px", borderBottom: "1px solid hsl(var(--border))", textAlign: "start" }}
                     >
                       {row.business}
                     </TableCell>
                     <TableCell
-                      className="font-body font-[300] align-top"
-                      style={{ fontSize: 14, color: "#B8BCC2", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)", textAlign: "start" }}
+                      className="font-body font-[400] align-top"
+                      style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", padding: "12px 20px", borderBottom: "1px solid hsl(var(--border))", textAlign: "start" }}
                     >
                       {row.enterprise}
                     </TableCell>
@@ -226,15 +223,26 @@ const SLADoc = () => {
             </Table>
           </Card>
 
+          <div className="space-y-5 md:hidden">
+            {(["starter", "business", "enterprise"] as const).map((tier, index) => (
+              <section key={tier} className="border border-border bg-card p-5">
+                <h2 className="mb-5 font-display text-xl font-bold">{headers[index + 1].en}</h2>
+                <dl>{rows.map(row => <div key={row.metric} className="grid grid-cols-2 gap-4 border-t border-border py-3 text-sm">
+                  <dt className="font-medium">{row.metric}</dt><dd className="text-muted-foreground">{row[tier]}</dd>
+                </div>)}</dl>
+              </section>
+            ))}
+          </div>
+
           <p
-            className="font-body font-[300] text-center"
-            style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 48 }}
+            className="font-body font-[400] text-center"
+            style={{ fontSize: 13, color: "hsl(var(--muted-foreground))", fontStyle: "italic", marginTop: 48 }}
           >
             {"All figures above are illustrative starting points and are subject to change based on scope, infrastructure, and regulatory requirements. Final service levels, credit terms, and measurement methodology are set out in the signed agreement. Questions: "}
             <bdi>hello@silxor.com</bdi>
           </p>
         </div>
-      </section>
+      </section></main>
       <Footer />
     </div>
   );

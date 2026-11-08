@@ -2,13 +2,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import PageShell from "@/components/layout/PageShell";
 import PageHero from "@/components/PageHero";
+import { Button } from "@/components/ui/button";
 import CtaBand from "@/components/CtaBand";
 import SolutionsSection from "@/components/SolutionsSection";
 import { services } from "@/data/services";
 
 const ServicesIndex = () => {
   const navigate = useNavigate();
-  const flagship = services.find((s) => s.flagship)!;
+  const flagship = services.find((s) => s.flagship) ?? services[0];
   const rest = services.filter((s) => !s.flagship);
 
   return (
@@ -27,7 +28,7 @@ const ServicesIndex = () => {
       <section className="r-section">
         <div className="container-content">
           {/* Flagship */}
-          <div className="r-panel" style={{ borderRadius: 40 }}>
+          <div className="r-panel" style={{ borderRadius: 4 }}>
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,320px)] gap-8 items-center">
               <div>
                 <span className="r-eyebrow">Flagship Service</span>
@@ -41,9 +42,9 @@ const ServicesIndex = () => {
               </div>
               <div className="flex flex-col gap-3 lg:items-end">
                 <Link to={flagship.path} className="r-cta">Explore the Service</Link>
-                <button type="button" className="r-cta-ghost" onClick={() => navigate("/book")}>
+                <Button variant="outline" className="r-cta-ghost" onClick={() => navigate("/book")}>
                   Book an Assessment
-                </button>
+                </Button>
               </div>
             </div>
           </div>
@@ -57,20 +58,20 @@ const ServicesIndex = () => {
                   key={s.slug}
                   to={s.path}
                   className="r-card group flex flex-col"
-                  style={{ padding: 24, borderRadius: 28 }}
+                  style={{ padding: 24, borderRadius: 4 }}
                 >
                   <div className="r-node" style={{ width: 46, height: 46 }}>
-                    <Icon style={{ width: 19, height: 19, color: "#F0F1F3" }} strokeWidth={1.5} />
+                    <Icon style={{ width: 19, height: 19, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-display font-[600]" style={{ fontSize: 17, color: "#FFFFFF", marginTop: 16 }}>
+                  <h3 className="font-display font-[600]" style={{ fontSize: 17, color: "hsl(var(--foreground))", marginTop: 16 }}>
                     {s.name}
                   </h3>
-                  <p className="font-body font-[300]" style={{ fontSize: 13.5, color: "#C6CAD0", lineHeight: 1.6, marginTop: 8 }}>
+                  <p className="font-body font-[400]" style={{ fontSize: 13.5, color: "hsl(var(--muted-foreground))", lineHeight: 1.6, marginTop: 8 }}>
                     {s.outcome}
                   </p>
                   <span
                     className="font-mono inline-flex items-center gap-2"
-                    style={{ fontSize: 10.5, letterSpacing: "0.16em", textTransform: "uppercase", color: "#FFFFFF", marginTop: "auto", paddingTop: 18 }}
+                    style={{ fontSize: 10.5, letterSpacing: 0, textTransform: "uppercase", color: "hsl(var(--foreground))", marginTop: "auto", paddingTop: 18 }}
                   >
                     Learn more
                     <ArrowRight

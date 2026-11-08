@@ -1,0 +1,7 @@
+# Silxor redesign
+
+- [x] Establish the new site-wide palette, typography and component system.
+- [x] Redesign homepage, navigation, footer and shared page sections.
+- [x] Restyle every existing page while retaining content, destinations and SEO.
+- [x] Verify desktop/mobile, keyboard, reduced motion and Telegram/WhatsApp booking.
+- [x] Leave changes in preview and summarize palette, fonts and page changes.

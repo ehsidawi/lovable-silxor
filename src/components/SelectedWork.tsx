@@ -33,19 +33,19 @@ const SelectedWork = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {patterns.map((p) => (
-            <article key={p.title} className="r-card" style={{ padding: 24, borderRadius: 28 }}>
+            <article key={p.title} className="r-card" style={{ padding: 24, borderRadius: 4 }}>
               <div className="flex flex-wrap items-center gap-2" style={{ marginBottom: 14 }}>
-                <span className="r-pill" style={{ fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase" }}>
+                <span className="r-pill" style={{ fontSize: 10, letterSpacing: 0, textTransform: "uppercase" }}>
                   {p.tag}
                 </span>
-                <span className="r-pill" style={{ fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase" }}>
+                <span className="r-pill" style={{ fontSize: 10, letterSpacing: 0, textTransform: "uppercase" }}>
                   {p.sector}
                 </span>
               </div>
-              <h3 className="font-display font-[600]" style={{ fontSize: 17, color: "#FFFFFF", marginBottom: 8 }}>
+              <h3 className="font-display font-[600]" style={{ fontSize: 17, color: "hsl(var(--foreground))", marginBottom: 8 }}>
                 {p.title}
               </h3>
-              <p className="font-body font-[300]" style={{ fontSize: 13.5, color: "#C6CAD0", lineHeight: 1.65 }}>
+              <p className="font-body font-[400]" style={{ fontSize: 13.5, color: "hsl(var(--muted-foreground))", lineHeight: 1.65 }}>
                 {p.line}
               </p>
             </article>

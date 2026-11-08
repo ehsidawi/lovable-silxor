@@ -1,56 +1,9 @@
-import { Quote } from "lucide-react";
+import { ArrowUpRight, Quote } from "lucide-react";
 import SmartLink from "@/components/SmartLink";
-
-/** Single high impact proof excerpt; the full testimonial lives on /clients. */
 const ProofQuote = () => (
-  <section className="r-section">
-    <div className="container-content">
-      <div
-        style={{
-          border: "1px solid rgba(255,255,255,0.08)",
-          borderRadius: 40,
-          background: "#191B1F",
-          padding: "clamp(24px, 3.4vw, 48px)",
-        }}
-      >
-        <div className="r-node" style={{ width: 44, height: 44 }}>
-          <Quote style={{ width: 18, height: 18, color: "#F0F1F3" }} strokeWidth={1.5} />
-        </div>
-        <blockquote
-          className="font-display font-[500]"
-          style={{
-            fontSize: "clamp(19px, 2.6vw, 30px)",
-            color: "#FFFFFF",
-            lineHeight: 1.4,
-            letterSpacing: "-0.015em",
-            margin: "20px 0 0",
-            maxWidth: 860,
-          }}
-        >
-          “They are built to support non technical founders and give you a full team of experts
-          without you having to find, vet, and hire them.”
-        </blockquote>
-        <div
-          className="flex flex-wrap items-center justify-between gap-4"
-          style={{ marginTop: 26 }}
-        >
-          <span
-            className="font-mono uppercase"
-            style={{ fontSize: 11, letterSpacing: "0.14em", color: "#8E949B" }}
-          >
-            Founder · Private Client · Identity withheld by agreement
-          </span>
-          <SmartLink
-            to="/clients"
-            className="font-mono uppercase"
-            style={{ fontSize: 11, letterSpacing: "0.16em", color: "#FFFFFF" }}
-          >
-            Client proof →
-          </SmartLink>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section className="r-section bg-secondary"><div className="container-content grid gap-8 md:grid-cols-[80px_1fr]">
+    <Quote className="h-12 w-12 text-forest" strokeWidth={1} aria-hidden="true" />
+    <figure><blockquote className="max-w-4xl font-display text-2xl font-semibold leading-snug md:text-3xl">“They are built to support non technical founders and give you a full team of experts without you having to find, vet, and hire them.”</blockquote><div className="mt-7 flex flex-wrap justify-between gap-5"><figcaption className="font-mono text-[10px] uppercase text-muted-foreground">Founder · Private Client · Identity withheld by agreement</figcaption><SmartLink to="/clients" className="inline-flex items-center gap-2 text-sm font-semibold">Client proof <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></SmartLink></div></figure>
+  </div></section>
 );
-
 export default ProofQuote;

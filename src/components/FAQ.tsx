@@ -42,7 +42,7 @@ const FAQ = () => {
             <h2 className="r-title">Answers Before You Sign</h2>
           </div>
 
-          <div className="r-panel" style={{ borderRadius: 28, paddingTop: 8, paddingBottom: 8 }}>
+          <div className="r-panel" style={{ borderRadius: 4, paddingTop: 8, paddingBottom: 8 }}>
             <Accordion type="single" collapsible>
               {faqs.map((faq, index) => (
                 <AccordionItem
@@ -50,19 +50,19 @@ const FAQ = () => {
                   value={`faq-${index}`}
                   className="border-none"
                   style={{
-                    borderBottom: index < faqs.length - 1 ? "1px solid rgba(255,255,255,0.07)" : "none",
+                    borderBottom: index < faqs.length - 1 ? "1px solid hsl(var(--border))" : "none",
                     padding: "14px 0",
                   }}
                 >
                   <AccordionTrigger
                     className="hover:no-underline text-left py-0 font-body font-[500]"
-                    style={{ fontSize: 15, color: "#FFFFFF" }}
+                    style={{ fontSize: 15, color: "hsl(var(--foreground))" }}
                   >
                     {faq.q}
                   </AccordionTrigger>
                   <AccordionContent
-                    className="font-body font-[300] pb-0"
-                    style={{ fontSize: 13.5, color: "#C6CAD0", lineHeight: 1.7, paddingTop: 10 }}
+                    className="font-body font-[400] pb-0"
+                    style={{ fontSize: 13.5, color: "hsl(var(--muted-foreground))", lineHeight: 1.7, paddingTop: 10 }}
                   >
                     {faq.a}
                   </AccordionContent>

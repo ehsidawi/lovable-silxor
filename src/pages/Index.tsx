@@ -8,6 +8,7 @@ import ServiceRail from "@/components/home/ServiceRail";
 import IndustryMatrix from "@/components/home/IndustryMatrix";
 import DeliveryTrack from "@/components/home/DeliveryTrack";
 import ProofQuote from "@/components/home/ProofQuote";
+import WhySilxor from "@/components/WhySilxor";
 import HomeCta from "@/components/home/HomeCta";
 import AnimatedSection from "@/components/AnimatedSection";
 import { prefetchPrimaryRoutes } from "@/lib/routePrefetch";
@@ -39,6 +40,9 @@ const Index = () => {
       </AnimatedSection>
       <AnimatedSection>
         <DeliveryTrack />
+      </AnimatedSection>
+      <AnimatedSection>
+        <WhySilxor />
       </AnimatedSection>
       <AnimatedSection>
         <ProofQuote />

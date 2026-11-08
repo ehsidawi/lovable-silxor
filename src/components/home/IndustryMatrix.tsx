@@ -23,7 +23,7 @@ const IndustryMatrix = () => (
         <SmartLink
           to="/industries"
           className="font-mono uppercase"
-          style={{ fontSize: 11, letterSpacing: "0.16em", color: "#FFFFFF" }}
+          style={{ fontSize: 11, letterSpacing: 0, color: "hsl(var(--foreground))" }}
         >
           Industries →
         </SmartLink>
@@ -36,10 +36,10 @@ const IndustryMatrix = () => (
             listStyle: "none",
             margin: 0,
             padding: 0,
-            border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 28,
+            border: "1px solid hsl(var(--border))",
+            borderRadius: 4,
             overflow: "hidden",
-            background: "#191B1F",
+            background: "hsl(var(--background))",
           }}
         >
           {sectors.map((s) => (
@@ -48,10 +48,10 @@ const IndustryMatrix = () => (
               className="font-body font-[400] flex items-center"
               style={{
                 fontSize: 12.5,
-                color: "#E4E6E9",
+                color: "hsl(var(--foreground))",
                 padding: "16px 14px",
                 minHeight: 62,
-                boxShadow: "inset -1px -1px 0 rgba(255,255,255,0.06)",
+                boxShadow: "inset -1px -1px 0 hsl(var(--border))",
                 lineHeight: 1.35,
               }}
             >

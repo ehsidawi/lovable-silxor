@@ -1,5 +1,4 @@
 import PageShell from "@/components/layout/PageShell";
-import Seo from "@/components/Seo";
 
 const PHONE_DISPLAY = "+1 (979) 500-3390";
 const TELEGRAM_URL = "https://t.me/+19795003390";
@@ -62,7 +61,7 @@ const BookAssessment = () => (
     description="Book a technical assessment with Silxor. Choose Telegram or WhatsApp and chat directly with our team."
     path="/book"
   >
-    <main id="main" tabIndex={-1} className="outline-none">
+    <div>
       <section className="r-section">
         <div className="container-content">
           <span className="r-eyebrow">Schedule</span>
@@ -82,20 +81,20 @@ const BookAssessment = () => (
                 target="_blank"
                 rel="noopener noreferrer"
                 className="r-card group flex flex-col"
-                style={{ padding: 28, borderRadius: 28 }}
+                style={{ padding: 28, borderRadius: 4 }}
               >
                 <div className="r-node" style={{ width: 48, height: 48 }}>
                   <Icon size={22} />
                 </div>
                 <h2
                   className="font-display font-[600]"
-                  style={{ fontSize: 20, color: "#FFFFFF", marginTop: 18 }}
+                  style={{ fontSize: 20, color: "hsl(var(--foreground))", marginTop: 18 }}
                 >
                   {name}
                 </h2>
                 <p
-                  className="font-body font-[300]"
-                  style={{ fontSize: 14, color: "#C6CAD0", lineHeight: 1.7, marginTop: 8 }}
+                  className="font-body font-[400]"
+                  style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", lineHeight: 1.7, marginTop: 8 }}
                 >
                   {description}
                 </p>
@@ -103,9 +102,9 @@ const BookAssessment = () => (
                   className="font-mono inline-flex items-center gap-2"
                   style={{
                     fontSize: 10.5,
-                    letterSpacing: "0.16em",
+                    letterSpacing: 0,
                     textTransform: "uppercase",
-                    color: "#FFFFFF",
+                    color: "hsl(var(--foreground))",
                     marginTop: "auto",
                     paddingTop: 20,
                   }}
@@ -135,8 +134,8 @@ const BookAssessment = () => (
             className="font-mono"
             style={{
               fontSize: 10,
-              letterSpacing: "0.2em",
-              color: "#B8BCC2",
+              letterSpacing: 0,
+              color: "hsl(var(--muted-foreground))",
               textTransform: "uppercase",
               marginTop: 20,
             }}
@@ -145,7 +144,7 @@ const BookAssessment = () => (
           </p>
         </div>
       </section>
-    </main>
+    </div>
   </PageShell>
 );
 

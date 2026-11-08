@@ -3,9 +3,10 @@ import { services } from "@/data/services";
 import SmartLink from "@/components/SmartLink";
 import { resourceLinks } from "@/data/site";
 import BackToTop from "@/components/BackToTop";
+import { caseStudies } from "@/data/caseStudies";
 const columns = [
   {title:"Expertise", links:services.map(s => ({label:s.navLabel,to:s.path}))},
-  {title:"Company",links:[{label:"Industries",to:"/industries"},{label:"Delivery Model",to:"/delivery"},{label:"Clients",to:"/clients"},{label:"About",to:"/about"},{label:"Technologies & Platforms",to:"/partners"},{label:"Contact",to:"/contact"}]},
+  {title:"Company",links:[{label:"Industries",to:"/industries"},{label:"Delivery Model",to:"/delivery"},{label:"Clients",to:"/clients"},{label:"About",to:"/about"},{label:"Insights",to:"/insights"},...(caseStudies.length?[{label:"Case studies",to:"/case-studies"}]:[]),{label:"Technologies & Platforms",to:"/partners"},{label:"Contact",to:"/contact"}]},
   {title:"Resources",links:[...resourceLinks,{label:"Compliance Documentation",to:"/compliance"},{label:"SLA",to:"/sla"},{label:"Book a Consultation",to:"/book"}]},
 ];
 const Footer = () => (

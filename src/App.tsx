@@ -27,6 +27,8 @@ const ContactPage = lazy(routeLoaders["/contact"]);
 
 const ResourcePage = lazy(routeLoaders["/engagement"]);
 const FaqPage = lazy(routeLoaders["/faq"]);
+const InsightsPage = lazy(routeLoaders["/insights"]);
+const CaseStudiesPage = lazy(routeLoaders["/case-studies"]);
 
 const queryClient = new QueryClient();
 
@@ -83,6 +85,10 @@ const App = () => (
             <Route path="/book" element={<BookAssessment />} />
             {["/engagement", "/process", "/careers", "/terms", "/cookies", "/security"].map(path => <Route key={path} path={path} element={<ResourcePage />} />)}
             <Route path="/faq" element={<FaqPage />} />
+            <Route path="/insights" element={<InsightsPage />} />
+            <Route path="/insights/:slug" element={<InsightsPage />} />
+            <Route path="/case-studies" element={<CaseStudiesPage />} />
+            <Route path="/case-studies/:slug" element={<CaseStudiesPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

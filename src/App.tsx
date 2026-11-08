@@ -5,7 +5,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
-import { trackPageView } from "@/lib/analytics";
 import { scrollToHash } from "@/lib/hashNav";
 import { routeLoaders } from "@/lib/routePrefetch";
 
@@ -36,7 +35,6 @@ const RouteEffects = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    trackPageView(pathname);
     if (hash) {
       // Wait a frame so the target section is mounted before scrolling.
       const id = window.setTimeout(() => {

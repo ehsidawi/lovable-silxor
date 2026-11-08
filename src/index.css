@@ -1,6 +1,6 @@
-@font-face { font-family: 'Syne'; font-style: normal; font-weight: 400 800; font-display: swap; src: url('/__l5e/assets-v1/f6a7201e-5cd1-4039-887f-784c0be8a8d4/silxor-syne-variable.woff2') format('woff2'); }
-@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 300 700; font-display: swap; src: url('/__l5e/assets-v1/244bfbcf-5f73-4932-8d8b-ecd008b44f41/silxor-dm-sans-variable.woff2') format('woff2'); }
-@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('/__l5e/assets-v1/d6e156fe-f75b-46cd-b938-843e4be75260/silxor-jetbrains-mono-variable.woff2') format('woff2'); }
+@font-face { font-family: 'Syne'; font-style: normal; font-weight: 400 800; font-display: swap; src: url('/__l5e/assets-v1/e4135f8a-bd08-4a16-91d2-bc86fe5342df/silxor-syne-english.woff2') format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 300 700; font-display: swap; src: url('/__l5e/assets-v1/a93c27ab-1a83-4a9e-b87c-9211f374b32c/silxor-body-english.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400 700; font-display: swap; src: url('/__l5e/assets-v1/838504e9-66a0-4ffc-8941-598f477b0d6c/silxor-mono-english.woff2') format('woff2'); }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

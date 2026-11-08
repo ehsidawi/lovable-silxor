@@ -20,7 +20,7 @@ const Seo = ({ title, description, path }: SeoProps) => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={path.startsWith('/insights/') ? 'article' : 'website'} />
       <meta property="og:image" content="https://silxor.com/__l5e/assets-v1/fd167cfb-102a-4ded-af05-c12655880a4b/silxor-social-preview.jpg" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />

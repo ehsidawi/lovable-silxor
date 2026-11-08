@@ -1,132 +1,17 @@
-import { Shield, Linkedin } from "lucide-react";
+import { ArrowUpRight, Linkedin } from "lucide-react";
 import SmartLink from "@/components/SmartLink";
-import { useHashNav } from "@/lib/hashNav";
-
-const columns: { title: string; links: { label: string; to: string }[] }[] = [
-  {
-    title: "Services",
-    links: [
-      { label: "Full Product Team", to: "/services/product-team" },
-      { label: "Advisory & Strategy", to: "/services/advisory" },
-      { label: "Infrastructure & Cloud", to: "/services/cloud" },
-      { label: "Cybersecurity & GRC", to: "/services/cybersecurity" },
-      { label: "Private AI", to: "/services/private-ai" },
-      { label: "Identity & Access", to: "/services/identity" },
-      { label: "Managed Services", to: "/services/managed-services" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "Industries", to: "/industries" },
-      { label: "Delivery Model", to: "/delivery" },
-      { label: "Clients", to: "/clients" },
-      { label: "About", to: "/about" },
-      { label: "Partners", to: "/partners" },
-      { label: "Contact", to: "/contact" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy", to: "/privacy" },
-      { label: "Compliance Documentation", to: "/compliance" },
-      { label: "SLA", to: "/sla" },
-      { label: "Book an Assessment", to: "/book" },
-    ],
-  },
+const columns = [
+  {title:"Expertise", links:[{label:"Full Product Team",to:"/services/product-team"},{label:"Advisory & Strategy",to:"/services/advisory"},{label:"Infrastructure & Cloud",to:"/services/cloud"},{label:"Cybersecurity & GRC",to:"/services/cybersecurity"},{label:"Private AI",to:"/services/private-ai"},{label:"Identity & Access",to:"/services/identity"},{label:"Managed Services",to:"/services/managed-services"}]},
+  {title:"Company",links:[{label:"Industries",to:"/industries"},{label:"Delivery Model",to:"/delivery"},{label:"Clients",to:"/clients"},{label:"About",to:"/about"},{label:"Partners",to:"/partners"},{label:"Contact",to:"/contact"}]},
+  {title:"Resources",links:[{label:"Privacy",to:"/privacy"},{label:"Compliance Documentation",to:"/compliance"},{label:"SLA",to:"/sla"},{label:"Book an Assessment",to:"/book"}]},
 ];
-
-const Footer = () => {
-  const hashNav = useHashNav();
-
-  return (
-    <footer style={{ padding: "0 0 32px" }}>
-      <div className="container-content">
-        <div className="r-panel" style={{ borderRadius: 40 }}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[minmax(0,1.4fr)_repeat(3,minmax(0,1fr))] gap-8">
-            <div>
-              <SmartLink to="/" className="inline-flex items-center gap-2" style={{ marginBottom: 12 }}>
-                <span className="font-display font-[800]" style={{ fontSize: 22, color: "#FFFFFF" }}>Silxor</span>
-                <span style={{ width: 7, height: 7, borderRadius: 999, backgroundColor: "#F0F1F3" }} />
-              </SmartLink>
-              <p className="font-body font-[300]" style={{ fontSize: 13.5, color: "#C6CAD0", lineHeight: 1.65, maxWidth: 300 }}>
-                Enterprise technology, cybersecurity, cloud, private AI, identity, and managed services.
-              </p>
-              <div className="flex flex-wrap gap-2" style={{ marginTop: 16 }}>
-                <span className="r-pill">
-                  <bdi dir="ltr">801 Barton Springs Rd, Austin, TX 78704</bdi>
-                </span>
-                <a href="mailto:hello@silxor.com" className="r-pill" style={{ color: "#FFFFFF" }}>
-                  <bdi dir="ltr">hello@silxor.com</bdi>
-                </a>
-              </div>
-            </div>
-
-            {columns.map((col) => (
-              <div key={col.title}>
-                <h4 className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: "0.2em", color: "#FFFFFF", marginBottom: 12 }}>
-                  {col.title}
-                </h4>
-                <nav className="flex flex-col gap-2.5">
-                  {col.links.map((l) => (
-                    <SmartLink
-                      key={l.label}
-                      to={l.to}
-                      onClick={(e) => hashNav(e, l.to)}
-                      className="font-body font-[300] transition-colors duration-200 hover:text-[#FFFFFF]"
-                      style={{ fontSize: 13.5, color: "#C6CAD0" }}
-                    >
-                      {l.label}
-                    </SmartLink>
-                  ))}
-                </nav>
-              </div>
-            ))}
-          </div>
-
-          <div
-            className="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
-            style={{ borderTop: "1px solid rgba(255,255,255,0.07)", marginTop: 28, paddingTop: 20 }}
-          >
-            <div className="flex flex-wrap gap-2">
-              {["NIST CSF", "ISO 27001", "SOC 2 Practices", "GDPR"].map((f) => (
-                <span key={f} className="r-pill" style={{ fontSize: 10 }}>
-                  <Shield style={{ width: 11, height: 11 }} strokeWidth={1.6} />
-                  {f}
-                </span>
-              ))}
-            </div>
-            <div className="flex flex-wrap items-center gap-4">
-              <a
-                href="https://www.linkedin.com/company/silxorllc/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Silxor on LinkedIn"
-                className="flex items-center gap-2 font-body font-[300] transition-colors duration-200 hover:text-[#FFFFFF]"
-                style={{ fontSize: 12, color: "#C6CAD0" }}
-              >
-                <Linkedin style={{ width: 14, height: 14 }} strokeWidth={1.5} />
-                LinkedIn
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ehsidawi"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-body font-[300] transition-colors duration-200 hover:text-[#FFFFFF]"
-                style={{ fontSize: 12, color: "#C6CAD0" }}
-              >
-                Designed by Ehsan Nidawi
-              </a>
-              <p className="font-body font-[300]" style={{ fontSize: 12, color: "#C6CAD0" }}>
-                © 2026 Silxor Group Holding.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
+const Footer = () => (
+  <footer className="bg-secondary pb-7 pt-14"><div className="container-content">
+    <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+      <div><SmartLink to="/" className="flex items-center gap-2.5 font-display text-3xl font-extrabold"><span className="h-3 w-3 bg-forest" aria-hidden="true" />SILXOR</SmartLink><p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">Enterprise technology, cybersecurity, cloud, private AI, identity, and managed services.</p><a href="mailto:hello@silxor.com" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold">hello@silxor.com <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a><address className="mt-3 max-w-xs text-sm not-italic leading-relaxed text-muted-foreground">801 Barton Springs Rd<br />Austin, TX 78704</address></div>
+      {columns.map(c => <div key={c.title}><h2 className="mb-5 font-mono text-xs uppercase text-muted-foreground">{c.title}</h2><nav aria-label={c.title} className="flex flex-col gap-3">{c.links.map(l => <SmartLink key={l.to} to={l.to} className="text-sm hover:text-forest hover:underline underline-offset-4">{l.label}</SmartLink>)}</nav></div>)}
+    </div>
+    <div className="mt-12 flex flex-wrap items-center justify-between gap-5 border-t border-border pt-6 text-xs text-muted-foreground"><p>© 2026 Silxor Group Holding.</p><div className="flex flex-wrap gap-5"><a href="https://www.linkedin.com/company/silxorllc/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-forest"><Linkedin className="h-4 w-4" aria-hidden="true" />LinkedIn</a><a href="https://www.linkedin.com/in/ehsidawi" target="_blank" rel="noopener noreferrer" className="hover:text-forest">Designed by Ehsan Nidawi</a></div></div>
+  </div></footer>
+);
 export default Footer;

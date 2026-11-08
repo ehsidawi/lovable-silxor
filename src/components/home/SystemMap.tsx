@@ -1,89 +1,28 @@
-import { Compass, Users, Server, ShieldCheck, Cpu, Activity } from "lucide-react";
+import { ArrowUpRight, Compass, Users, Server, ShieldCheck, Cpu, Activity, Fingerprint } from "lucide-react";
 import SmartLink from "@/components/SmartLink";
-
-const layers = [
-  { icon: Compass, label: "Strategy / Architecture", to: "/services/advisory", line: "Decide before you spend." },
-  { icon: Users, label: "Product / Engineering", to: "/services/product-team", line: "Concept to production." },
-  { icon: Server, label: "Cloud / Infrastructure", to: "/services/cloud", line: "Platforms that stay up." },
-  { icon: ShieldCheck, label: "Security / Identity", to: "/services/cybersecurity", line: "Controls and evidence." },
-  { icon: Cpu, label: "Private AI", to: "/services/private-ai", line: "Your data stays yours." },
-  { icon: Activity, label: "Managed Operations", to: "/services/managed-services", line: "Ownership after go live." },
+const pillars = [
+  {icon:ShieldCheck, label:"Cybersecurity", to:"/services/cybersecurity", line:"Controls, risk and resilience built into your platform."},
+  {icon:Server, label:"Cloud & Infrastructure", to:"/services/cloud", line:"Architecture for availability, performance and control."},
+  {icon:Cpu, label:"Private AI", to:"/services/private-ai", line:"Intelligence inside your environment. Your data stays yours."},
+  {icon:Fingerprint, label:"Identity & Access", to:"/services/identity", line:"The right access. The right controls. Clear accountability."},
+  {icon:Activity, label:"Managed Services", to:"/services/managed-services", line:"The team that builds it keeps it running."},
+  {icon:Users, label:"Product Delivery", to:"/services/product-team", line:"A complete senior team from concept to production."},
 ];
-
-/** One connected delivery system rather than six separate vendors. */
 const SystemMap = () => (
-  <section className="r-section">
+  <section id="capabilities" className="r-section scroll-mt-20">
     <div className="container-content">
-      <div
-        className="flex flex-col md:flex-row md:items-end md:justify-between gap-4"
-        style={{ marginBottom: 26 }}
-      >
-        <div className="flex flex-col items-start gap-4">
-          <span className="r-eyebrow">What Silxor Is</span>
-          <h2 className="r-title" style={{ maxWidth: 560 }}>
-            Six capabilities. One delivery system.
-          </h2>
-        </div>
-        <p className="r-lead" style={{ maxWidth: 340 }}>
-          Each layer is owned by the same team, so handoffs, gaps, and finger pointing disappear.
-        </p>
+      <div className="mb-9 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+        <div><span className="r-eyebrow">01 / Capabilities</span><h2 className="r-title mt-4 max-w-xl">Every layer.<br />One accountable partner.</h2></div>
+        <p className="r-lead max-w-sm">Each layer is owned by the same team, so handoffs, gaps, and finger pointing disappear.</p>
       </div>
-
-      <div className="relative">
-        <div
-          aria-hidden
-          className="hidden lg:block absolute"
-          style={{
-            top: 44,
-            left: "8%",
-            right: "8%",
-            height: 1,
-            background:
-              "linear-gradient(90deg, transparent, rgba(240,241,243,0.22) 12%, rgba(240,241,243,0.22) 88%, transparent)",
-          }}
-        />
-        <ul
-          className="grid grid-cols-2 lg:grid-cols-6 gap-3 relative"
-          style={{ listStyle: "none", margin: 0, padding: 0 }}
-        >
-          {layers.map((l, i) => {
-            const Icon = l.icon;
-            return (
-              <li key={l.label}>
-                <SmartLink
-                  to={l.to}
-                  className="r-card flex flex-col items-start h-full"
-                  style={{ padding: "18px 16px", borderRadius: 22 }}
-                >
-                  <div className="r-node" style={{ width: 44, height: 44, background: "#141414" }}>
-                    <Icon style={{ width: 18, height: 18, color: "#F0F1F3" }} strokeWidth={1.5} />
-                  </div>
-                  <span
-                    className="font-mono block"
-                    style={{ fontSize: 10, color: "#8E949B", letterSpacing: "0.14em", marginTop: 14 }}
-                  >
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3
-                    className="font-body font-[600]"
-                    style={{ fontSize: 14, color: "#FFFFFF", marginTop: 4, lineHeight: 1.3 }}
-                  >
-                    {l.label}
-                  </h3>
-                  <p
-                    className="font-body font-[300]"
-                    style={{ fontSize: 12.5, color: "#C6CAD0", lineHeight: 1.5, marginTop: 6 }}
-                  >
-                    {l.line}
-                  </p>
-                </SmartLink>
-              </li>
-            );
-          })}
-        </ul>
+      <div className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+        {pillars.map((p,i) => <SmartLink key={p.label} to={p.to} className="service-pillar group flex flex-col bg-card p-7 transition-colors hover:bg-secondary">
+          <div className="flex items-center justify-between"><p.icon className="h-7 w-7 text-forest" strokeWidth={1.5} aria-hidden="true" /><span className="font-mono text-xs text-muted-foreground">0{i+1}</span></div>
+          <h3 className="mt-8 font-display text-xl font-bold">{p.label}</h3><p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">{p.line}</p><ArrowUpRight className="ml-auto mt-4 h-5 w-5 text-forest transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" aria-hidden="true" />
+        </SmartLink>)}
       </div>
+      <SmartLink to="/services/advisory" className="mt-5 flex items-center gap-3 text-sm font-medium"><Compass className="h-4 w-4 text-forest" aria-hidden="true" />Strategy before spend. Explore Advisory & Strategy.<ArrowUpRight className="h-4 w-4" aria-hidden="true" /></SmartLink>
     </div>
   </section>
 );
-
 export default SystemMap;

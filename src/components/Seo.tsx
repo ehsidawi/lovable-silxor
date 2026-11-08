@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import socialArtwork from "@/assets/silxor-bohemian-social.jpg.asset.json";
+import socialArtwork from "@/assets/silxor-norch-social.jpg.asset.json";
 import { structuredData } from "@/lib/structuredData";
 
 const SITE = "https://silxor.com";

@@ -99,7 +99,7 @@
 .capability-link:hover { background: hsl(0 0% 100% / .05); }
 .capability-link:focus-visible { position: relative; z-index: 1; }
 .platform-tile:target { outline: 2px solid hsl(0 0% 100%); outline-offset: -2px; }
-.platform-tile img, .platform-tile svg { opacity: .6; filter: grayscale(1) brightness(0) invert(1); }
+.platform-tile svg { opacity: .6; }
 footer nav a { display: inline-flex; align-items: center; min-height: 44px; }
 footer a { min-height: 24px; }
 a.r-cta,a.r-cta-ghost,button:not([role="checkbox"]):not([aria-label="Close"]),a[data-slot="button"] { border-radius: 41px; }

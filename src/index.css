@@ -122,3 +122,14 @@
 @keyframes section-arrival { from { transform: translateY(10px); } to { transform: translateY(0); } }
 .below-fold-section { content-visibility: auto; contain-intrinsic-size: auto 640px; }
 .section-arrived { animation: section-arrival .35s ease-out; }
+.diagram-node { fill: hsl(var(--card)); stroke: hsl(var(--border-highlight)); stroke-width: 1.5; }
+.diagram-node-accent { fill: hsl(var(--secondary)); stroke: hsl(var(--forest)); stroke-width: 2; }
+.diagram-connector { fill: none; stroke: hsl(var(--forest)); stroke-width: 1.5; }
+.diagram-arrow { fill: hsl(var(--forest)); }
+.diagram-index { fill: hsl(var(--muted-foreground)); font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+.diagram-label { fill: hsl(var(--foreground)); font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 600; }
+.diagram-detail { fill: hsl(var(--muted-foreground)); font-family: 'DM Sans', sans-serif; font-size: 12px; }
+.capability-link:focus-visible { position: relative; z-index: 1; }
+.platform-tile:target { outline: 2px solid hsl(var(--forest)); outline-offset: -2px; }
+footer nav a { display: inline-flex; align-items: center; min-height: 44px; }
+footer a { min-height: 24px; }

@@ -5,8 +5,9 @@
 - Keep the homepage media lightweight and static in the critical path; this avoids autoplay failures and GPU-heavy first loads.
 
 - Keep service content and the primary navigation pillar taxonomy in shared service data; this preserves legacy detail routes while expanding enterprise IT coverage.
-- Reuse the text-only technology list across home, services and the existing platforms route; this prevents inconsistent vendor relationship claims.
+- Reuse the shared technology list, categories and official monochrome icon paths across home, services and the existing platforms route, with text fallback and trademark disclaimer; this prevents inconsistent vendor relationship claims.
 - Keep public guidance and FAQs in shared data and render new informational routes through a common resource page; this prevents duplicated policy facts and engagement descriptions.
 - Generate full route HTML, head metadata and machine-readable discovery files with the build-only Vite prerender plugin, capped at 100 pages; this makes public content readable without JavaScript while preserving the SPA experience.
 - Keep sitemap lastmod values only when backed by significant page-specific edits recorded in content data; omit them otherwise rather than using build or generation time.
 - Use next-themes with the silxor-theme preference key and global semantic light/dark tokens; this keeps appearance accessible and persistent without a tracking identifier.
+- Keep architecture diagrams data driven with inline SVG, unique title/description IDs, responsive desktop/mobile layouts and visible text summaries; this preserves accessibility without adding rendering libraries.

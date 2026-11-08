@@ -1,5 +1,11 @@
 # Silxor redesign
 
+## Visual capability add-on
+- [x] Add seven accessible inline SVG architecture and flow diagrams.
+- [x] Add linked service/IAM and categorized technology capability maps.
+- [x] Add monochrome official vendor marks with fallbacks and trademark note.
+- [x] Verify light/dark contrast, mobile layouts, text alternatives and destinations; do not publish.
+
 ## Human, search and AI readiness
 - [x] Audit and repair all page content, navigation and service consistency.
 - [x] Add engagement, process, FAQ, careers, terms, cookies and disclosure essentials.

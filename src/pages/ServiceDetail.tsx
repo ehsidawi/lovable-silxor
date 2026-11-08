@@ -7,6 +7,8 @@ import { getService, services } from "@/data/services";
 import NotFound from "./NotFound";
 import QuestionList from "@/components/QuestionList";
 import { serviceFaqs } from "@/data/site";
+import ArchitectureDiagram from "@/components/diagrams/ArchitectureDiagram";
+import { diagrams } from "@/data/diagrams";
 
 const ServiceDetail = () => {
   const { slug } = useParams();
@@ -28,6 +30,7 @@ const ServiceDetail = () => {
       />
 
       <section className="border-b border-border py-8"><div className="container-content"><h2 className="font-display text-2xl font-bold">What is {service.name.toLowerCase()}?</h2><p className="mt-4 max-w-4xl text-base leading-relaxed text-muted-foreground">{service.intro}</p></div></section>
+      {diagrams[service.slug] && <ArchitectureDiagram data={diagrams[service.slug]} />}
       {/* Outcome + capabilities */}
       <section className="r-section">
         <div className="container-content">

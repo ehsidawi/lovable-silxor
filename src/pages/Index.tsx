@@ -13,6 +13,9 @@ import WhySilxor from "@/components/WhySilxor";
 import HomeCta from "@/components/home/HomeCta";
 import AnimatedSection from "@/components/AnimatedSection";
 import { prefetchPrimaryRoutes } from "@/lib/routePrefetch";
+import ArchitectureDiagram from "@/components/diagrams/ArchitectureDiagram";
+import CapabilityMap from "@/components/CapabilityMap";
+import { diagrams } from "@/data/diagrams";
 
 const Index = () => {
   useEffect(() => {
@@ -27,6 +30,8 @@ const Index = () => {
     >
       <HomeHero />
       <WordmarkStatement />
+      <AnimatedSection><ArchitectureDiagram data={diagrams.estate} /></AnimatedSection>
+      <AnimatedSection><CapabilityMap /></AnimatedSection>
       <AnimatedSection>
         <SystemMap />
       </AnimatedSection>

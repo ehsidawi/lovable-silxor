@@ -1,8 +1,5 @@
 import { Suspense, lazy, useEffect } from "react";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import { scrollToHash } from "@/lib/hashNav";
@@ -14,8 +11,8 @@ const NotFound = lazy(routeLoaders["*"]);
 const PrivacyPolicy = lazy(routeLoaders["/privacy"]);
 const ComplianceDoc = lazy(routeLoaders["/compliance"]);
 const SLADoc = lazy(routeLoaders["/sla"]);
-const BookAssessment = lazy(routeLoaders["/book"]);
-const Partners = lazy(routeLoaders["/partners"]);
+const ConsultationPage = lazy(routeLoaders["/book"]);
+const TechnologiesPage = lazy(routeLoaders["/technologies"]);
 const ServicesIndex = lazy(routeLoaders["/services"]);
 const ServiceDetail = lazy(routeLoaders["/services/:slug"]);
 const IndustriesPage = lazy(routeLoaders["/industries"]);
@@ -29,7 +26,6 @@ const FaqPage = lazy(routeLoaders["/faq"]);
 const InsightsPage = lazy(routeLoaders["/insights"]);
 const CaseStudiesPage = lazy(routeLoaders["/case-studies"]);
 
-const queryClient = new QueryClient();
 
 const RouteEffects = () => {
   const { pathname, hash } = useLocation();
@@ -60,10 +56,7 @@ const RouteFallback = () => (
 );
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
       <BrowserRouter>
         <RouteEffects />
         <Suspense fallback={<RouteFallback />}>
@@ -76,11 +69,11 @@ const App = () => (
             <Route path="/clients" element={<ClientsPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/partners" element={<Partners />} />
+            <Route path="/technologies" element={<TechnologiesPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/compliance" element={<ComplianceDoc />} />
             <Route path="/sla" element={<SLADoc />} />
-            <Route path="/book" element={<BookAssessment />} />
+            <Route path="/book" element={<ConsultationPage />} />
             {["/engagement", "/process", "/careers", "/terms", "/cookies", "/security"].map(path => <Route key={path} path={path} element={<ResourcePage />} />)}
             <Route path="/faq" element={<FaqPage />} />
             <Route path="/insights" element={<InsightsPage />} />
@@ -92,7 +85,6 @@ const App = () => (
         </Suspense>
       </BrowserRouter>
     </TooltipProvider>
-  </QueryClientProvider>
 );
 
 export default App;

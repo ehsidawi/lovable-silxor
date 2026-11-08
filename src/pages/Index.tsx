@@ -1,7 +1,7 @@
 import PageShell from "@/components/layout/PageShell";
 import HomeHero from "@/components/home/HomeHero";
 import IndustryMatrix from "@/components/home/IndustryMatrix";
-import DeliveryTrack from "@/components/home/DeliveryTrack";
+import ProcessOverview from "@/components/home/ProcessOverview";
 import TechnologyPlatforms from "@/components/TechnologyPlatforms";
 import HomeCta from "@/components/home/HomeCta";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -23,7 +23,7 @@ const Index = () => {
         <IndustryMatrix />
       </AnimatedSection>
       <AnimatedSection>
-        <DeliveryTrack />
+        <ProcessOverview />
       </AnimatedSection>
       <AnimatedSection>
         <TechnologyPlatforms />

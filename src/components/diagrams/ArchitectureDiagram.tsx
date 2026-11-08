@@ -15,7 +15,7 @@ function DiagramDrawing({ data, compact, id }: {data:DiagramData;compact:boolean
    else {const down=b.y>a.y; const sy=a.y+(down?nodeHeight:0);const ey=b.y+(down?-6:nodeHeight+6);const mid=(sy+ey)/2;d=`M ${a.x+cellWidth/2} ${sy} V ${mid} H ${b.x+cellWidth/2} V ${ey}`;}
    return <path key={`${from}-${to}`} d={d} className="diagram-connector" markerEnd={`url(#${id}-arrow)`} />;
   })}
-  {ordered.map((n,i)=>{const p=positions.get(n.id);if(!p)return null;return <g key={n.id}><rect x={p.x} y={p.y} width={cellWidth} height={nodeHeight} rx="4" className={n.accent?"diagram-node diagram-node-accent":"diagram-node"}/><text x={p.x+16} y={p.y+23} className="diagram-index">{String(i+1).padStart(2,"0")}</text><text x={p.x+16} y={p.y+47} className="diagram-label">{n.label}</text><text x={p.x+16} y={p.y+70} className="diagram-detail">{n.detail}</text></g>;})}
+  {ordered.map((n,i)=>{const p=positions.get(n.id);if(!p)return null;return <g key={n.id}><rect x={p.x} y={p.y} width={cellWidth} height={nodeHeight} rx="22" className={n.accent?"diagram-node diagram-node-accent":"diagram-node"}/><text x={p.x+16} y={p.y+23} className="diagram-index">{String(i+1).padStart(2,"0")}</text><text x={p.x+16} y={p.y+47} className="diagram-label">{n.label}</text><text x={p.x+16} y={p.y+70} className="diagram-detail">{n.detail}</text></g>;})}
  </svg>;
 }
 export default function ArchitectureDiagram({data}:{data:DiagramData}) {

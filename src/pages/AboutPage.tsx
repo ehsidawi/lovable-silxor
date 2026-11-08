@@ -11,13 +11,13 @@ const posture = [
   { icon: Users, title: "One Accountable Team", line: "Advisory, build, and operations under one owner." },
   { icon: ShieldCheck, title: "Security by Design", line: "Identity and controls built in from day one." },
   { icon: FileCheck, title: "Framework Aligned", line: "NIST CSF and ISO 27001 control families, evidenced." },
-  { icon: GaugeCircle, title: "Scoped per Engagement", line: "SLA tiers and reporting defined at assessment." },
+  { icon: GaugeCircle, title: "Scoped per Engagement", line: "SLA tiers and reporting defined at review." },
 ];
 
 const staffing = [
   { icon: Layers, title: "Matched to Scope", line: "Engineers matched to the practices your program actually involves." },
   { icon: Users, title: "Senior by Default", line: "Roles, expertise, reporting and any external contributions are agreed in the engagement scope." },
-  { icon: ClipboardCheck, title: "Scoped at Assessment", line: "Seniority, cadence, and reporting are defined in the proposal before work starts." },
+  { icon: ClipboardCheck, title: "Scoped at Review", line: "Seniority, cadence, and reporting are defined in the proposal before work starts." },
 ];
 
 const serves = [
@@ -46,7 +46,7 @@ const AboutPage = () => (
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,380px)_1fr] gap-8 lg:gap-12">
             <div>
               <span className="r-eyebrow">Who We Are</span>
-              <h2 className="r-title" style={{ marginTop: 16 }}>One Partner. Full Stack.</h2>
+              <h2 className="r-title" style={{ marginTop: 16 }}>Coordinated Delivery. Full Stack.</h2>
             </div>
             <div className="flex flex-col gap-4">
               <p className="font-body font-[400]" style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", lineHeight: 1.75 }}>

@@ -12,8 +12,8 @@ import DeliveryPage from "@/pages/DeliveryPage";
 import ClientsPage from "@/pages/ClientsPage";
 import AboutPage from "@/pages/AboutPage";
 import ContactPage from "@/pages/ContactPage";
-import BookAssessment from "@/pages/BookAssessment";
-import Partners from "@/pages/Partners";
+import ConsultationPage from "@/pages/ConsultationPage";
+import TechnologiesPage from "@/pages/TechnologiesPage";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import ComplianceDoc from "@/pages/ComplianceDoc";
 import SLADoc from "@/pages/SLADoc";
@@ -27,13 +27,13 @@ import InsightsPage from "@/pages/InsightsPage";
 import CaseStudiesPage from "@/pages/CaseStudiesPage";
 import { insights, insightPath } from "@/data/insights";
 import { caseStudies } from "@/data/caseStudies";
-export const pages = ["/", "/services", ...services.map(s=>s.path), "/industries", "/delivery", "/clients", "/about", "/contact", "/book", "/partners", "/privacy", "/compliance", "/sla", ...resourcePages.map(p=>p.path), "/faq", '/insights', ...insights.map(insightPath), ...(caseStudies.length ? ['/case-studies',...caseStudies.map(s=>`/case-studies/${s.slug}`)] : [])];
+export const pages = ["/", "/services", ...services.map(s=>s.path), "/industries", "/delivery", "/clients", "/about", "/contact", "/book", "/technologies", "/privacy", "/compliance", "/sla", ...resourcePages.map(p=>p.path), "/faq", '/insights', ...insights.map(insightPath), ...(caseStudies.length ? ['/case-studies',...caseStudies.map(s=>`/case-studies/${s.slug}`)] : [])];
 export const extraPrerenderPages = ['/case-studies'];
 // Editorial timestamps for significant content authored in this pass, not build time.
 export const contentModifiedAt: Record<string, string> = Object.fromEntries([
  ...resourcePages.map(p=>p.path), "/faq", "/privacy", "/book", "/contact", "/industries", "/", "/about", '/insights', ...insights.map(insightPath), ...services.map(s=>s.path),
 ].map(p=>[p,"2026-11-08"]));
-const routes = [{path:"/",component:Index},{path:"/services",component:ServicesIndex},{path:"/services/:slug",component:ServiceDetail},{path:"/industries",component:IndustriesPage},{path:"/delivery",component:DeliveryPage},{path:"/clients",component:ClientsPage},{path:"/about",component:AboutPage},{path:"/contact",component:ContactPage},{path:"/book",component:BookAssessment},{path:"/partners",component:Partners},{path:"/privacy",component:PrivacyPolicy},{path:"/compliance",component:ComplianceDoc},{path:"/sla",component:SLADoc},{path:"/faq",component:FaqPage},...resourcePages.map(p=>({path:p.path,component:ResourcePage})),{path:"*",component:NotFound}];
+const routes = [{path:"/",component:Index},{path:"/services",component:ServicesIndex},{path:"/services/:slug",component:ServiceDetail},{path:"/industries",component:IndustriesPage},{path:"/delivery",component:DeliveryPage},{path:"/clients",component:ClientsPage},{path:"/about",component:AboutPage},{path:"/contact",component:ContactPage},{path:"/book",component:ConsultationPage},{path:"/technologies",component:TechnologiesPage},{path:"/privacy",component:PrivacyPolicy},{path:"/compliance",component:ComplianceDoc},{path:"/sla",component:SLADoc},{path:"/faq",component:FaqPage},...resourcePages.map(p=>({path:p.path,component:ResourcePage})),{path:"*",component:NotFound}];
 export function renderPage(path: string) {
  const context: Record<string, any> = {};
  const body = renderToString(<HelmetProvider context={context}><ThemeProvider attribute="class" defaultTheme="light" storageKey="silxor-theme"><TooltipProvider><StaticRouter location={path}><Routes><Route path="/insights" element={<InsightsPage />} /><Route path="/insights/:slug" element={<InsightsPage />} /><Route path="/case-studies" element={<CaseStudiesPage />} /><Route path="/case-studies/:slug" element={<CaseStudiesPage />} />{routes.map(r=><Route key={r.path} path={r.path} element={<r.component />} />)}</Routes></StaticRouter></TooltipProvider></ThemeProvider></HelmetProvider>);

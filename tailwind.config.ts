@@ -14,18 +14,20 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Syne', 'sans-serif'],
+        display: ['Fraunces', 'serif'],
         body: ['DM Sans', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        mono: ['DM Sans', 'sans-serif'],
       },
       fontSize: {
-        'display-xl': ['72px', { lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '800' }],
-        'display-lg': ['42px', { lineHeight: '1.15', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'display-xl': ['72px', { lineHeight: '1.05', letterSpacing: '0', fontWeight: '800' }],
+        'display-lg': ['42px', { lineHeight: '1.15', letterSpacing: '0', fontWeight: '700' }],
       },
       colors: {
         ink: "hsl(var(--ink))",
         "on-ink": "hsl(var(--on-ink))",
         "on-ink-muted": "hsl(var(--on-ink-muted))",
+        ochre: "hsl(var(--ochre))",
+        rose: "hsl(var(--rose))",
         forest: "hsl(var(--forest))",
         border: "hsl(var(--border))",
         "border-highlight": "hsl(var(--border-highlight))",
@@ -72,8 +74,8 @@ export default {
           "text-primary": "hsl(var(--foreground))",
           "text-secondary": "hsl(var(--muted-foreground))",
           "text-muted": "hsl(var(--muted-foreground))",
-          success: "#2A9D5C",
-          alert: "#C94C4C",
+          success: "hsl(var(--forest))",
+          alert: "hsl(var(--destructive))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

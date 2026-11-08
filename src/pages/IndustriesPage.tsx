@@ -98,11 +98,11 @@ const IndustriesPage = () => (
       </div>
     </section>
 
-    <section className="border-b border-border py-8"><div className="container-content"><p className="text-sm leading-relaxed text-muted-foreground">These are capability areas, not a list of clients or completed projects. Sector requirements and applicable controls are confirmed during assessment.</p><nav aria-label="Related services" className="mt-5 flex flex-wrap gap-6"><a href="/services/cybersecurity" className="underline underline-offset-4">Cybersecurity and control alignment</a><a href="/services/identity" className="underline underline-offset-4">Enterprise identity services</a><a href="/services/cloud" className="underline underline-offset-4">Infrastructure and cloud design</a><a href="/faq" className="underline underline-offset-4">Engagement questions</a></nav></div></section>
+    <section className="border-b border-border py-8"><div className="container-content"><p className="text-sm leading-relaxed text-muted-foreground">These are capability areas, not a list of clients or completed projects. Sector requirements and applicable controls are confirmed during review.</p><nav aria-label="Related services" className="mt-5 flex flex-wrap gap-6"><a href="/services/cybersecurity" className="underline underline-offset-4">Cybersecurity and control alignment</a><a href="/services/identity" className="underline underline-offset-4">Enterprise identity services</a><a href="/services/cloud" className="underline underline-offset-4">Infrastructure and cloud design</a><a href="/faq" className="underline underline-offset-4">Engagement questions</a></nav></div></section>
     <CtaBand
       eyebrow="Sector Fit"
       title="Tell Us What You Must Comply With"
-      lead="We map obligations to architecture during the assessment, before any build decision."
+      lead="We map obligations to architecture during the review, before any build decision."
     />
   </PageShell>
 );

@@ -6,7 +6,7 @@ export type Crumb = { label: string; to?: string };
 const Breadcrumbs = ({ items }: { items: Crumb[] }) => (
   <nav
     aria-label="Breadcrumb"
-    className="font-mono flex flex-wrap items-center gap-1.5 text-xs uppercase text-muted-foreground"
+    className="font-body flex flex-wrap items-center gap-1.5 text-xs uppercase text-muted-foreground"
   >
     {items.map((c, i) => (
       <span key={c.label} className="inline-flex items-center gap-1.5">

@@ -58,14 +58,14 @@ export const services: Service[] = [
     outcome: "Decisions on architecture, platforms, and risk made with senior engineering judgment.",
     seoTitle: "Advisory & Strategy | Silxor",
     seoDescription:
-      "Architecture and cloud strategy, digital transformation, technical assessments, modernization roadmaps, governance, and vendor selection from senior Silxor engineers.",
+      "Architecture and cloud strategy, digital transformation, technical reviews, modernization roadmaps, governance, and vendor selection from senior Silxor engineers.",
     heroLead: "Strategy written by the people who will build it.",
     intro:
       "We help enterprise and corporate leadership teams plan their entire IT estate, from business strategy and governance to infrastructure, networking, end user services, security and applications. Every recommendation is grounded in what we can design, build, migrate and operate.",
     blocks: [
       { title: "Architecture Strategy", line: "Target state architecture aligned to business goals and constraints." },
       { title: "Cloud Strategy", line: "Public, private, hybrid, and sovereign positioning with cost modeling." },
-      { title: "Technical Assessments", line: "Independent review of current systems, risk, and readiness." },
+      { title: "Technical Reviews", line: "Independent review of current systems, risk, and readiness." },
       { title: "Modernization Roadmaps", line: "Phased plans that sequence value, risk, and downtime." },
       { title: "Enterprise IT Planning", line: "Operating models, end user technology, networking and data center roadmaps aligned to business needs." },
       { title: "Governance", line: "Standards, review gates, and decision records that outlast the project." },
@@ -114,18 +114,18 @@ export const services: Service[] = [
     outcome: "Security architecture and evidence that hold up to auditors and attackers.",
     seoTitle: "Cybersecurity & GRC | Silxor",
     seoDescription:
-      "Security architecture, assessments, Zero Trust, governance risk and compliance, hardening, security operations strategy, and compliance readiness from Silxor.",
+      "Security architecture, reviews, Zero Trust, governance risk and compliance, hardening, security operations strategy, and compliance readiness from Silxor.",
     heroLead: "Security designed in, not bolted on.",
     intro:
       "We build security architecture around identity, segmentation, and evidence, then align the program to the control frameworks your regulators and customers expect.",
     blocks: [
       { title: "Security Architecture", line: "Controls designed into the platform from the first diagram." },
-      { title: "Security Assessments", line: "Gap analysis against your threat model and control baseline." },
+      { title: "Security Reviews", line: "Gap analysis against your threat model and control baseline." },
       { title: "Zero Trust", line: "Identity centric access, segmentation, and continuous verification." },
       { title: "Governance, Risk & Compliance", line: "Policy, risk register, and control ownership that stay current." },
       { title: "Hardening", line: "Baselines for endpoints, servers, cloud, and pipelines." },
       { title: "SOC & Security Monitoring", line: "Detection engineering, log integration, alert triage and security operations tailored to your environment." },
-      { title: "Vulnerability Management", line: "Asset discovery, vulnerability assessment, prioritization, remediation tracking and validation." },
+      { title: "Vulnerability Management", line: "Asset discovery, vulnerability review, prioritization, remediation tracking and validation." },
       { title: "Penetration Testing", line: "Authorized testing of networks, applications and APIs against an agreed scope, with findings and remediation guidance." },
       { title: "Incident Response", line: "Preparation, investigation, containment and recovery with defined escalation paths and engagement scope." },
     ],

@@ -41,7 +41,7 @@ const ClientsPage = () => (
               you a full team of experts without you having to find, vet, and hire them.
             </blockquote>
             <figcaption
-              className="font-mono"
+              className="font-body"
               style={{ fontSize: 11, letterSpacing: 0, textTransform: "uppercase", color: "hsl(var(--muted-foreground))", marginTop: 24 }}
             >
               Founder · Private Client
@@ -58,7 +58,7 @@ const ClientsPage = () => (
                 <span key={t} className="r-pill">{t}</span>
               ))}
             </div>
-            <p className="font-mono" style={{ fontSize: 10.5, letterSpacing: 0, color: "hsl(var(--muted-foreground))", marginTop: 18 }}>
+            <p className="font-body" style={{ fontSize: 10.5, letterSpacing: 0, color: "hsl(var(--muted-foreground))", marginTop: 18 }}>
               CLIENT IDENTITY WITHHELD BY AGREEMENT
             </p>
             <Link to="/services/product-team" className="r-cta-ghost" style={{ marginTop: 20 }}>

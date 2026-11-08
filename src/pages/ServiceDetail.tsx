@@ -1,18 +1,22 @@
-import { Navigate, useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Check, Quote } from "lucide-react";
 import PageShell from "@/components/layout/PageShell";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import { getService, services } from "@/data/services";
+import NotFound from "./NotFound";
+import QuestionList from "@/components/QuestionList";
+import { serviceFaqs } from "@/data/site";
 
 const ServiceDetail = () => {
   const { slug } = useParams();
   const service = getService(slug);
 
-  if (!service) return <Navigate to="/services" replace />;
+  if (!service) return <NotFound />;
 
   const Icon = service.icon;
-  const related = services.filter((s) => s.slug !== service.slug).slice(0, 3);
+  const relatedSlugs: Record<string, string[]> = { identity: ["cybersecurity", "managed-services", "software-engineering"], cybersecurity: ["identity", "cloud", "managed-services"], cloud: ["managed-services", "cybersecurity", "advisory"], "private-ai": ["software-engineering", "cloud", "identity"], "hardware-engineering": ["software-engineering", "cloud", "cybersecurity"], "software-engineering": ["product-team", "identity", "private-ai"], "product-team": ["software-engineering", "advisory", "cloud"], advisory: ["cloud", "cybersecurity", "identity"], "managed-services": ["cloud", "cybersecurity", "identity"] };
+  const related = services.filter(s => relatedSlugs[service.slug]?.includes(s.slug));
 
   return (
     <PageShell title={service.seoTitle} description={service.seoDescription} path={service.path}>
@@ -23,6 +27,7 @@ const ServiceDetail = () => {
         crumbs={[{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, { label: service.navLabel }]}
       />
 
+      <section className="border-b border-border py-8"><div className="container-content"><h2 className="font-display text-2xl font-bold">What is {service.name.toLowerCase()}?</h2><p className="mt-4 max-w-4xl text-base leading-relaxed text-muted-foreground">{service.intro}</p></div></section>
       {/* Outcome + capabilities */}
       <section className="r-section">
         <div className="container-content">
@@ -37,7 +42,7 @@ const ServiceDetail = () => {
                   className="font-body font-[400]"
                   style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", lineHeight: 1.75, marginTop: 16, maxWidth: 620 }}
                 >
-                  {service.intro}
+                  Deliverables, responsibilities, access requirements and acceptance criteria are agreed during assessment. Work is scoped around your environment, not a fixed package.
                 </p>
               </div>
               <div>
@@ -47,7 +52,7 @@ const ServiceDetail = () => {
                 <div className="flex flex-wrap gap-2">
                   {service.capabilities.map((c) => (
                     <span key={c} className="r-pill" style={{ padding: "9px 15px 9px 9px", fontSize: 11.5 }}>
-                      <span className="r-node" style={{ width: 20, height: 20, background: "hsl(var(--foreground))", border: "none" }}>
+                      <span className="r-node" style={{ width: 20, height: 20, background: "hsl(var(--primary))", border: "none" }}>
                         <Check style={{ width: 11, height: 11, color: "hsl(var(--primary-foreground))" }} strokeWidth={3} />
                       </span>
                       {c}
@@ -142,6 +147,8 @@ const ServiceDetail = () => {
         </div>
       </section>
 
+      {service.slug === "identity" && <section className="r-section"><div className="container-content"><h2 className="r-title">Identity terms</h2><dl className="mt-8 grid gap-6 sm:grid-cols-2">{service.blocks.slice(0,6).map(b => <div key={b.id} className="border-t border-border pt-4"><dt className="font-semibold">{b.title}</dt><dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{b.line}</dd></div>)}</dl></div></section>}
+      <section className="r-section"><div className="container-content"><h2 className="r-title">Questions about this service</h2><div className="mt-7"><QuestionList questions={serviceFaqs(service)} /></div><nav aria-label="Related guidance" className="mt-7 flex flex-wrap gap-6 text-sm font-medium"><Link to="/industries" className="underline underline-offset-4">Industry requirements</Link><Link to="/engagement" className="underline underline-offset-4">Engagement models</Link><Link to="/faq" className="underline underline-offset-4">All frequently asked questions</Link></nav></div></section>
       <CtaBand />
     </PageShell>
   );

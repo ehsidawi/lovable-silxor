@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { structuredData } from "@/lib/structuredData";
 
 const SITE = "https://silxor.com";
 
@@ -22,6 +23,9 @@ const Seo = ({ title, description, path }: SeoProps) => {
       <meta property="og:type" content="website" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={url} />
+      <script type="application/ld+json">{JSON.stringify(structuredData(path, title, description)).replace(/</g, "\\u003c")}</script>
     </Helmet>
   );
 };

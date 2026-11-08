@@ -26,7 +26,7 @@ function ensureLoaded() {
   const script = document.createElement("script");
   script.defer = true;
   script.src = ANALYTICS_SRC;
-  script.setAttribute("data-domain", ANALYTICS_ID!);
+  if (ANALYTICS_ID) script.setAttribute("data-domain", ANALYTICS_ID);
   document.head.appendChild(script);
 }
 

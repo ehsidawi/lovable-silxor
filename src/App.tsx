@@ -25,6 +25,9 @@ const ClientsPage = lazy(routeLoaders["/clients"]);
 const AboutPage = lazy(routeLoaders["/about"]);
 const ContactPage = lazy(routeLoaders["/contact"]);
 
+const ResourcePage = lazy(routeLoaders["/engagement"]);
+const FaqPage = lazy(routeLoaders["/faq"]);
+
 const queryClient = new QueryClient();
 
 const RouteEffects = () => {
@@ -40,6 +43,8 @@ const RouteEffects = () => {
       return () => window.clearTimeout(id);
     }
     window.scrollTo({ top: 0, behavior: "auto" });
+    const focusTimer = window.setTimeout(() => document.getElementById("main")?.focus({ preventScroll: true }), 100);
+    return () => window.clearTimeout(focusTimer);
   }, [pathname, hash]);
 
   return null;
@@ -76,6 +81,8 @@ const App = () => (
             <Route path="/compliance" element={<ComplianceDoc />} />
             <Route path="/sla" element={<SLADoc />} />
             <Route path="/book" element={<BookAssessment />} />
+            {["/engagement", "/process", "/careers", "/terms", "/cookies", "/security"].map(path => <Route key={path} path={path} element={<ResourcePage />} />)}
+            <Route path="/faq" element={<FaqPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

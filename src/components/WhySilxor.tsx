@@ -14,7 +14,7 @@ const WhySilxor = () => {
             <div className="flex flex-col items-start gap-4">
               <span className="r-eyebrow">Why Silxor</span>
               <h2 className="r-title">One Partner. Full Stack.</h2>
-              <p className="r-lead">Every discipline your program needs, no handoffs.</p>
+              <p className="r-lead">Coordinate the disciplines in your scope through one engagement lead, with clear responsibilities.</p>
             </div>
 
             <div className="flex flex-wrap gap-2.5 lg:justify-end">
@@ -22,7 +22,7 @@ const WhySilxor = () => {
                 <span key={c} className="r-pill" style={{ padding: "9px 16px 9px 9px", fontSize: 12 }}>
                   <span
                     className="r-node"
-                    style={{ width: 22, height: 22, background: "hsl(var(--foreground))", border: "none" }}
+                    style={{ width: 22, height: 22, background: "hsl(var(--primary))", border: "none" }}
                   >
                     <Check style={{ width: 12, height: 12, color: "hsl(var(--primary-foreground))" }} strokeWidth={3} />
                   </span>

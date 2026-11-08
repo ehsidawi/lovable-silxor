@@ -6,7 +6,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 
 const rows = [
   {
-    metric: "Availability target",
+    metric: "Illustrative coverage window",
     metricAr: "هدف التوفر",
     metricKu: "ئامانجی بەردەستبوون",
     starter: "Standard business hours",

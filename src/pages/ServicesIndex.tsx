@@ -16,13 +16,13 @@ const ServicesIndex = () => {
   return (
     <PageShell
       title="Services | Silxor"
-      description="Silxor services: full product team as a service, advisory and strategy, infrastructure and cloud, cybersecurity and GRC, managed services, private AI, and identity and access."
+      description="Enterprise IT strategy, infrastructure, networking, cybersecurity, identity, managed IT, custom software, private AI, hardware and product delivery from Silxor."
       path="/services"
     >
       <PageHero
         eyebrow="Services"
         title="Enterprise Technology Across Your Entire IT Estate"
-        lead="IT strategy, infrastructure, networking, managed IT, cybersecurity, identity, custom software and hardware. Design, build, migration and operations across on premises, hybrid and cloud environments."
+        lead="IT strategy, infrastructure, networking, managed IT, cybersecurity, identity, custom software and hardware. Design, build, migration and operations across on premises, hybrid and cloud environments. Each engagement is scoped to your needs."
         crumbs={[{ label: "Home", to: "/" }, { label: "Services" }]}
       />
 
@@ -64,9 +64,9 @@ const ServicesIndex = () => {
                   <div className="r-node" style={{ width: 46, height: 46 }}>
                     <Icon style={{ width: 19, height: 19, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-display font-[600]" style={{ fontSize: 17, color: "hsl(var(--foreground))", marginTop: 16 }}>
+                  <h2 className="font-display font-[600]" style={{ fontSize: 17, color: "hsl(var(--foreground))", marginTop: 16 }}>
                     {s.name}
-                  </h3>
+                  </h2>
                   <p className="font-body font-[400]" style={{ fontSize: 13.5, color: "hsl(var(--muted-foreground))", lineHeight: 1.6, marginTop: 8 }}>
                     {s.outcome}
                   </p>

@@ -44,16 +44,16 @@ const Partners = () => {
 
   return (
     <div className="min-h-screen">
-      <Seo title={"Technology Partners & Platforms | Silxor"} description={"How Silxor selects cloud, security, identity, AI, and infrastructure platforms per engagement instead of a single fixed vendor stack."} path="/partners" />
+      <Seo title={"Technologies & Platforms | Silxor"} description={"How Silxor selects cloud, security, identity, AI, and infrastructure platforms per engagement instead of a single fixed vendor stack."} path="/partners" />
       <Navbar />
-      <main className="container-content" style={{ paddingTop: 48, paddingBottom: 64 }}>
+      <main id="main" tabIndex={-1} className="container-content" style={{ paddingTop: 48, paddingBottom: 64 }}>
         <div style={{ marginBottom: 24 }}>
           <div className="section-eyebrow">{"PLATFORM APPROACH"}</div>
           <h1
             className="font-display font-[700]"
             style={{ fontSize: 40, color: "hsl(var(--foreground))", lineHeight: 1.1 }}
           >
-            {"How We Build Our Technology Ecosystem"}
+            {"Technologies and platform selection"}
           </h1>
           <p
             className="font-body font-[400] mt-3"

@@ -75,14 +75,14 @@ const IndustriesPage = () => (
           {industries.map((it) => {
             const Icon = it.icon;
             return (
-              <article key={it.title} className="r-card" style={{ padding: 24, borderRadius: 28 }}>
+              <article key={it.title} className="r-card" style={{ padding: 24, borderRadius: 4 }}>
                 <div className="r-node" style={{ width: 46, height: 46 }}>
-                  <Icon style={{ width: 19, height: 19, color: "#F0F1F3" }} strokeWidth={1.5} />
+                  <Icon style={{ width: 19, height: 19, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
                 </div>
-                <h2 className="font-display font-[600]" style={{ fontSize: 17, color: "#FFFFFF", marginTop: 16 }}>
+                <h2 className="font-display font-[600]" style={{ fontSize: 17, color: "hsl(var(--foreground))", marginTop: 16 }}>
                   {it.title}
                 </h2>
-                <p className="font-body font-[300]" style={{ fontSize: 13.5, color: "#C6CAD0", lineHeight: 1.65, marginTop: 8 }}>
+                <p className="font-body font-[400]" style={{ fontSize: 13.5, color: "hsl(var(--muted-foreground))", lineHeight: 1.65, marginTop: 8 }}>
                   {it.line}
                 </p>
                 <div className="flex flex-wrap gap-2" style={{ marginTop: 14 }}>

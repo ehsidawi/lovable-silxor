@@ -36,22 +36,22 @@ const DeliveryPage = () => (
           {steps.map((s, i) => {
             const Icon = s.icon;
             return (
-              <li key={s.title} className="r-card" style={{ padding: "24px 22px", borderRadius: 28 }}>
+              <li key={s.title} className="r-card" style={{ padding: "24px 22px", borderRadius: 4 }}>
                 <div className="grid grid-cols-1 sm:grid-cols-[auto_minmax(0,1fr)] gap-4 sm:gap-6 items-start">
                   <div className="flex items-center gap-3">
                     <span
                       className="font-mono font-[700]"
-                      style={{ fontSize: "clamp(28px, 4vw, 44px)", color: "rgba(240,241,243,0.22)", lineHeight: 1 }}
+                      style={{ fontSize: 44, color: "hsl(var(--border-highlight))", lineHeight: 1 }}
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="r-node" style={{ width: 46, height: 46 }}>
-                      <Icon style={{ width: 19, height: 19, color: "#F0F1F3" }} strokeWidth={1.5} />
+                      <Icon style={{ width: 19, height: 19, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
                     </span>
                   </div>
                   <div>
-                    <h2 className="font-display font-[600]" style={{ fontSize: 19, color: "#FFFFFF" }}>{s.title}</h2>
-                    <p className="font-body font-[300]" style={{ fontSize: 14, color: "#C6CAD0", lineHeight: 1.7, marginTop: 8, maxWidth: 720 }}>
+                    <h2 className="font-display font-[600]" style={{ fontSize: 19, color: "hsl(var(--foreground))" }}>{s.title}</h2>
+                    <p className="font-body font-[400]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", lineHeight: 1.7, marginTop: 8, maxWidth: 720 }}>
                       {s.line}
                     </p>
                   </div>
@@ -61,12 +61,12 @@ const DeliveryPage = () => (
           })}
         </ol>
 
-        <div className="r-panel" style={{ borderRadius: 40, marginTop: 20 }}>
+        <div className="r-panel" style={{ borderRadius: 4, marginTop: 20 }}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {principles.map((p) => (
               <div key={p.title}>
-                <h3 className="font-display font-[600]" style={{ fontSize: 17, color: "#FFFFFF" }}>{p.title}</h3>
-                <p className="font-body font-[300]" style={{ fontSize: 13.5, color: "#C6CAD0", lineHeight: 1.65, marginTop: 8 }}>
+                <h3 className="font-display font-[600]" style={{ fontSize: 17, color: "hsl(var(--foreground))" }}>{p.title}</h3>
+                <p className="font-body font-[400]" style={{ fontSize: 13.5, color: "hsl(var(--muted-foreground))", lineHeight: 1.65, marginTop: 8 }}>
                   {p.line}
                 </p>
               </div>

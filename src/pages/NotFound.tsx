@@ -19,15 +19,15 @@ const NotFound = () => {
             <div className="section-eyebrow">{"ERROR 404"}</div>
             <h1
               className="font-display font-[700]"
-              style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 12 }}
+              style={{ fontSize: 42, lineHeight: 1.15, color: "hsl(var(--foreground))", marginBottom: 12 }}
             >
               {"This page is not available"}
             </h1>
             <p
-              className="font-body font-[300]"
+              className="font-body font-[400]"
               style={{
                 fontSize: 16,
-                color: "#B8BCC2",
+                color: "hsl(var(--muted-foreground))",
                 lineHeight: 1.7,
                 marginBottom: 32,
                 textAlign: "start",

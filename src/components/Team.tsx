@@ -19,13 +19,13 @@ const Team = () => {
           {staffing.map((s) => {
             const Icon = s.icon;
             return (
-              <div key={s.title} className="r-card flex items-start gap-4" style={{ padding: 22, borderRadius: 24 }}>
+              <div key={s.title} className="r-card flex items-start gap-4" style={{ padding: 22, borderRadius: 4 }}>
                 <div className="r-node" style={{ width: 44, height: 44 }}>
-                  <Icon style={{ width: 18, height: 18, color: "#F0F1F3" }} strokeWidth={1.5} />
+                  <Icon style={{ width: 18, height: 18, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
                 </div>
                 <div className="min-w-0">
-                  <h3 className="font-body font-[600]" style={{ fontSize: 15, color: "#FFFFFF" }}>{s.title}</h3>
-                  <p className="font-body font-[300]" style={{ fontSize: 13.5, color: "#C6CAD0", lineHeight: 1.6, marginTop: 4 }}>
+                  <h3 className="font-body font-[600]" style={{ fontSize: 15, color: "hsl(var(--foreground))" }}>{s.title}</h3>
+                  <p className="font-body font-[400]" style={{ fontSize: 13.5, color: "hsl(var(--muted-foreground))", lineHeight: 1.6, marginTop: 4 }}>
                     {s.line}
                   </p>
                 </div>
@@ -36,21 +36,21 @@ const Team = () => {
 
         <div
           className="r-card flex items-center gap-4"
-          style={{ padding: 20, borderRadius: 999, marginTop: 16, maxWidth: 420 }}
+          style={{ padding: 20, borderRadius: 4, marginTop: 16, maxWidth: 420 }}
         >
           <div className="r-node" style={{ width: 52, height: 52 }}>
-            <User style={{ width: 22, height: 22, color: "#F0F1F3" }} strokeWidth={1.5} />
+            <User style={{ width: 22, height: 22, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
           </div>
           <div>
-            <div className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: "0.2em", color: "#C6CAD0" }}>
+            <div className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--muted-foreground))" }}>
               Founder
             </div>
             <a
               href="https://www.linkedin.com/in/ehsidawi"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body font-[500] transition-colors duration-200 hover:text-[#C6CAD0]"
-              style={{ fontSize: 16, color: "#FFFFFF" }}
+              className="font-body font-[500] transition-colors duration-200 hover:text-forest"
+              style={{ fontSize: 16, color: "hsl(var(--foreground))" }}
             >
               Ehsan Nidawi
             </a>

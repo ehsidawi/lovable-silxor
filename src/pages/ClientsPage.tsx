@@ -28,13 +28,13 @@ const ClientsPage = () => (
     <section className="r-section">
       <div className="container-content">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,340px)] gap-4">
-          <figure className="r-panel" style={{ borderRadius: 40, margin: 0 }}>
+          <figure className="r-panel" style={{ borderRadius: 4, margin: 0 }}>
             <div className="r-node" style={{ width: 48, height: 48 }}>
-              <Quote style={{ width: 20, height: 20, color: "#F0F1F3" }} strokeWidth={1.5} />
+              <Quote style={{ width: 20, height: 20, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
             </div>
             <blockquote
               className="font-display font-[500]"
-              style={{ fontSize: "clamp(19px, 2.4vw, 27px)", color: "#FFFFFF", lineHeight: 1.45, marginTop: 20, maxWidth: 760 }}
+              style={{ fontSize: 27, color: "hsl(var(--foreground))", lineHeight: 1.45, marginTop: 20, maxWidth: 760 }}
             >
               After going through a lot of development vendors, we hired Silxor, and this is exactly what they are
               about. We are still working with them today. They are built to support non technical founders and give
@@ -42,14 +42,14 @@ const ClientsPage = () => (
             </blockquote>
             <figcaption
               className="font-mono"
-              style={{ fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "#8E949B", marginTop: 24 }}
+              style={{ fontSize: 11, letterSpacing: 0, textTransform: "uppercase", color: "hsl(var(--muted-foreground))", marginTop: 24 }}
             >
               Founder · Private Client
             </figcaption>
           </figure>
 
-          <div className="r-card flex flex-col justify-center" style={{ padding: "28px 24px", borderRadius: 32 }}>
-            <p className="font-body font-[300]" style={{ fontSize: 15, color: "#F0F1F3", lineHeight: 1.65 }}>
+          <div className="r-card flex flex-col justify-center" style={{ padding: "28px 24px", borderRadius: 4 }}>
+            <p className="font-body font-[400]" style={{ fontSize: 15, color: "hsl(var(--foreground))", lineHeight: 1.65 }}>
               A great product needs more than engineers. It needs senior architecture, product management, design,
               engineering, and testing working as one team.
             </p>
@@ -58,7 +58,7 @@ const ClientsPage = () => (
                 <span key={t} className="r-pill">{t}</span>
               ))}
             </div>
-            <p className="font-mono" style={{ fontSize: 10.5, letterSpacing: "0.12em", color: "#8E949B", marginTop: 18 }}>
+            <p className="font-mono" style={{ fontSize: 10.5, letterSpacing: 0, color: "hsl(var(--muted-foreground))", marginTop: 18 }}>
               CLIENT IDENTITY WITHHELD BY AGREEMENT
             </p>
             <Link to="/services/product-team" className="r-cta-ghost" style={{ marginTop: 20 }}>
@@ -71,12 +71,12 @@ const ClientsPage = () => (
           {trust.map((t) => {
             const Icon = t.icon;
             return (
-              <div key={t.title} className="r-card" style={{ padding: 24, borderRadius: 28 }}>
+              <div key={t.title} className="r-card" style={{ padding: 24, borderRadius: 4 }}>
                 <div className="r-node" style={{ width: 44, height: 44 }}>
-                  <Icon style={{ width: 18, height: 18, color: "#F0F1F3" }} strokeWidth={1.5} />
+                  <Icon style={{ width: 18, height: 18, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
                 </div>
-                <h2 className="font-display font-[600]" style={{ fontSize: 16.5, color: "#FFFFFF", marginTop: 14 }}>{t.title}</h2>
-                <p className="font-body font-[300]" style={{ fontSize: 13.5, color: "#C6CAD0", lineHeight: 1.65, marginTop: 8 }}>
+                <h2 className="font-display font-[600]" style={{ fontSize: 16.5, color: "hsl(var(--foreground))", marginTop: 14 }}>{t.title}</h2>
+                <p className="font-body font-[400]" style={{ fontSize: 13.5, color: "hsl(var(--muted-foreground))", lineHeight: 1.65, marginTop: 8 }}>
                   {t.line}
                 </p>
               </div>

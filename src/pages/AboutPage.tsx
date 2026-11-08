@@ -42,19 +42,19 @@ const AboutPage = () => (
 
     <section className="r-section">
       <div className="container-content">
-        <div className="r-panel" style={{ borderRadius: 40 }}>
+        <div className="r-panel" style={{ borderRadius: 4 }}>
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,380px)_1fr] gap-8 lg:gap-12">
             <div>
               <span className="r-eyebrow">Who We Are</span>
               <h2 className="r-title" style={{ marginTop: 16 }}>One Partner. Full Stack.</h2>
             </div>
             <div className="flex flex-col gap-4">
-              <p className="font-body font-[300]" style={{ fontSize: 15, color: "#C6CAD0", lineHeight: 1.75 }}>
+              <p className="font-body font-[400]" style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", lineHeight: 1.75 }}>
                 We architect, build, secure, host, and operate platforms for institutions and founders who cannot
                 afford a failed program. Advisory, product delivery, cloud, cybersecurity, private AI, identity, and
                 managed services sit under one contract and one line of accountability.
               </p>
-              <p className="font-body font-[300]" style={{ fontSize: 15, color: "#C6CAD0", lineHeight: 1.75 }}>
+              <p className="font-body font-[400]" style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", lineHeight: 1.75 }}>
                 That structure removes the most common cause of failure we see: work passed between a strategy firm,
                 a development shop, a security vendor, and a managed provider, with no one owning the outcome.
               </p>
@@ -66,12 +66,12 @@ const AboutPage = () => (
           {posture.map((p) => {
             const Icon = p.icon;
             return (
-              <div key={p.title} className="r-card" style={{ padding: 22, borderRadius: 26 }}>
+              <div key={p.title} className="r-card" style={{ padding: 22, borderRadius: 4 }}>
                 <div className="r-node" style={{ width: 44, height: 44 }}>
-                  <Icon style={{ width: 18, height: 18, color: "#F0F1F3" }} strokeWidth={1.5} />
+                  <Icon style={{ width: 18, height: 18, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
                 </div>
-                <h3 className="font-body font-[600]" style={{ fontSize: 15, color: "#FFFFFF", marginTop: 14 }}>{p.title}</h3>
-                <p className="font-body font-[300]" style={{ fontSize: 13.5, color: "#C6CAD0", lineHeight: 1.6, marginTop: 6 }}>
+                <h3 className="font-body font-[600]" style={{ fontSize: 15, color: "hsl(var(--foreground))", marginTop: 14 }}>{p.title}</h3>
+                <p className="font-body font-[400]" style={{ fontSize: 13.5, color: "hsl(var(--muted-foreground))", lineHeight: 1.6, marginTop: 6 }}>
                   {p.line}
                 </p>
               </div>
@@ -84,7 +84,7 @@ const AboutPage = () => (
     <section className="r-section" style={{ paddingTop: 0 }}>
       <div className="container-content">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <div className="r-panel" style={{ borderRadius: 36 }}>
+          <div className="r-panel" style={{ borderRadius: 4 }}>
             <span className="r-eyebrow">How We Staff</span>
             <div className="flex flex-col gap-5" style={{ marginTop: 20 }}>
               {staffing.map((s) => {
@@ -92,11 +92,11 @@ const AboutPage = () => (
                 return (
                   <div key={s.title} className="flex items-start gap-4">
                     <div className="r-node" style={{ width: 42, height: 42 }}>
-                      <Icon style={{ width: 17, height: 17, color: "#F0F1F3" }} strokeWidth={1.5} />
+                      <Icon style={{ width: 17, height: 17, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
                     </div>
                     <div>
-                      <h3 className="font-display font-[600]" style={{ fontSize: 15.5, color: "#FFFFFF" }}>{s.title}</h3>
-                      <p className="font-body font-[300]" style={{ fontSize: 13.5, color: "#C6CAD0", lineHeight: 1.6, marginTop: 5 }}>
+                      <h3 className="font-display font-[600]" style={{ fontSize: 15.5, color: "hsl(var(--foreground))" }}>{s.title}</h3>
+                      <p className="font-body font-[400]" style={{ fontSize: 13.5, color: "hsl(var(--muted-foreground))", lineHeight: 1.6, marginTop: 5 }}>
                         {s.line}
                       </p>
                     </div>
@@ -106,13 +106,13 @@ const AboutPage = () => (
             </div>
           </div>
 
-          <div className="r-panel" style={{ borderRadius: 36 }}>
+          <div className="r-panel" style={{ borderRadius: 4 }}>
             <span className="r-eyebrow">Who We Serve</span>
             <ul className="flex flex-col gap-3" style={{ marginTop: 20, listStyle: "none", padding: 0 }}>
               {serves.map((s) => (
                 <li key={s} className="flex items-start gap-3">
-                  <span style={{ width: 6, height: 6, borderRadius: 999, background: "#F0F1F3", marginTop: 8, flexShrink: 0 }} />
-                  <span className="font-body font-[300]" style={{ fontSize: 14, color: "#C6CAD0", lineHeight: 1.65 }}>{s}</span>
+                  <span style={{ width: 6, height: 6, borderRadius: 4, background: "hsl(var(--foreground))", marginTop: 8, flexShrink: 0 }} />
+                  <span className="font-body font-[400]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", lineHeight: 1.65 }}>{s}</span>
                 </li>
               ))}
             </ul>

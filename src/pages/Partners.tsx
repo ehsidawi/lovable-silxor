@@ -50,13 +50,13 @@ const Partners = () => {
           <div className="section-eyebrow">{"PARTNERSHIP APPROACH"}</div>
           <h1
             className="font-display font-[700]"
-            style={{ fontSize: 40, color: "#FFFFFF", lineHeight: 1.1 }}
+            style={{ fontSize: 40, color: "hsl(var(--foreground))", lineHeight: 1.1 }}
           >
             {"How We Build Our Technology Ecosystem"}
           </h1>
           <p
-            className="font-body font-[300] mt-3"
-            style={{ fontSize: 15, color: "#B8BCC2", maxWidth: 640, lineHeight: 1.7 }}
+            className="font-body font-[400] mt-3"
+            style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", maxWidth: 640, lineHeight: 1.7 }}
           >
             {"Silxor is platform-agnostic. We select technologies from mature, well-supported categories based on each client's requirements rather than committing to a single fixed vendor stack. Specific vendor relationships for a given engagement are confirmed during scoping."}
           </p>
@@ -77,22 +77,22 @@ const Partners = () => {
                       width: 36,
                       height: 36,
                       borderRadius: 4,
-                      border: "1px solid rgba(240, 241, 243,0.25)",
-                      background: "rgba(240, 241, 243,0.06)",
+                      border: "1px solid hsl(var(--border-highlight))",
+                      background: "hsl(var(--border-highlight))",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
                   >
-                    <Icon style={{ width: 16, height: 16, color: "#F0F1F3" }} strokeWidth={1.5} />
+                    <Icon style={{ width: 16, height: 16, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
                   </div>
-                  <h2 className="font-display font-[600]" style={{ fontSize: 15, color: "#FFFFFF" }}>
+                  <h2 className="font-display font-[600]" style={{ fontSize: 15, color: "hsl(var(--foreground))" }}>
                     {c.title}
                   </h2>
                 </div>
                 <p
-                  className="font-body font-[300]"
-                  style={{ fontSize: 13, color: "#B8BCC2", lineHeight: 1.7 }}
+                  className="font-body font-[400]"
+                  style={{ fontSize: 13, color: "hsl(var(--muted-foreground))", lineHeight: 1.7 }}
                 >
                   {c.body}
                 </p>

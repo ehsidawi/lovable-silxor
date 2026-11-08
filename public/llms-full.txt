@@ -105,8 +105,8 @@ We design, implement, migrate and operate identity services across workforce, cu
 
 - IAM / Workforce Identity: Workforce IAM architecture, provisioning, authentication and authorization for employees and contractors. Directory services, role and attribute based access, and lifecycle automation aligned to least privilege.
 - CIAM / Customer Identity: Customer registration, sign in, account recovery, consent and secure access for web, mobile and API experiences. Customer identity journeys designed for usability and controlled data handling.
-- PAM / Privileged Access Management: Privileged credential vaulting, session controls, credential rotation and administrative access for teams, vendors and emergency access paths.
-- PIM / Privileged Identity Management: Time limited role activation, approvals, eligibility reviews and audit trails for privileged identities, reducing persistent administrative access.
+- PAM / Privileged Access Management: Privileged credential vaulting, session controls, credential rotation and elevated access for teams, vendors and emergency access paths.
+- PIM / Privileged Identity Management: Time limited role activation, approvals, eligibility reviews and audit trails for privileged identities, reducing persistent elevated access.
 - NHI / Non Human Identity: Inventory, ownership and lifecycle controls for service accounts, machine identities, workloads, secrets and certificates. Credential rotation and workload authentication across applications and infrastructure.
 - IGA / Identity Governance & Administration: Joiner, mover and leaver processes, access requests, access reviews, separation of duties and entitlement governance with evidence for audit teams.
 - SSO & Federation: Single sign on and federation using SAML, OIDC and OAuth 2.0, with application integration and trust configuration across the enterprise.

@@ -22,7 +22,7 @@ const industries = [
   {
     icon: HeartPulse,
     title: "Healthcare",
-    line: "Clinical and administrative systems where privacy and uptime are patient safety issues.",
+    line: "Clinical and operational systems where privacy and uptime are patient safety issues.",
     tags: ["PHI Handling", "Access Governance", "Continuity"],
   },
   {

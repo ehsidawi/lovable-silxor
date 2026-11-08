@@ -204,8 +204,8 @@ export const services: Service[] = [
     blocks: [
       { id: "iam", title: "IAM / Workforce Identity", line: "Workforce IAM architecture, provisioning, authentication and authorization for employees and contractors. Directory services, role and attribute based access, and lifecycle automation aligned to least privilege." },
       { id: "ciam", title: "CIAM / Customer Identity", line: "Customer registration, sign in, account recovery, consent and secure access for web, mobile and API experiences. Customer identity journeys designed for usability and controlled data handling." },
-      { id: "pam", title: "PAM / Privileged Access Management", line: "Privileged credential vaulting, session controls, credential rotation and administrative access for teams, vendors and emergency access paths." },
-      { id: "pim", title: "PIM / Privileged Identity Management", line: "Time limited role activation, approvals, eligibility reviews and audit trails for privileged identities, reducing persistent administrative access." },
+      { id: "pam", title: "PAM / Privileged Access Management", line: "Privileged credential vaulting, session controls, credential rotation and elevated access for teams, vendors and emergency access paths." },
+      { id: "pim", title: "PIM / Privileged Identity Management", line: "Time limited role activation, approvals, eligibility reviews and audit trails for privileged identities, reducing persistent elevated access." },
       { id: "nhi", title: "NHI / Non Human Identity", line: "Inventory, ownership and lifecycle controls for service accounts, machine identities, workloads, secrets and certificates. Credential rotation and workload authentication across applications and infrastructure." },
       { id: "iga", title: "IGA / Identity Governance & Administration", line: "Joiner, mover and leaver processes, access requests, access reviews, separation of duties and entitlement governance with evidence for audit teams." },
       { id: "federation", title: "SSO & Federation", line: "Single sign on and federation using SAML, OIDC and OAuth 2.0, with application integration and trust configuration across the enterprise." },

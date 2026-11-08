@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "events": {
+    "project.consultation_step_completed": {
+      "event_schema_version": 1,
+      "description": "A consultation step passes validation and the visitor advances, or the final request is stored.",
+      "privacy": {
+        "contains_pii": false,
+        "purpose": "product_analytics"
+      },
+      "properties_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "step"
+        ],
+        "properties": {
+          "step": {
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3
+            ]
+          }
+        }
+      }
+    },
+    "project.consultation_step_started": {
+      "event_schema_version": 1,
+      "description": "A visitor begins interacting with one consultation form step.",
+      "privacy": {
+        "contains_pii": false,
+        "purpose": "product_analytics"
+      },
+      "properties_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "step"
+        ],
+        "properties": {
+          "step": {
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3
+            ]
+          }
+        }
+      }
+    },
+    "project.consultation_submitted": {
+      "event_schema_version": 1,
+      "description": "The server confirms a consultation request was stored successfully.",
+      "privacy": {
+        "contains_pii": false,
+        "purpose": "product_analytics"
+      },
+      "properties_schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {}
+      }
+    }
+  }
+}

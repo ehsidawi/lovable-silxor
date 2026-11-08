@@ -4,7 +4,7 @@ import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 
 const steps = [
-  { icon: ClipboardList, title: "Request Assessment", line: "A no cost technical discovery covering environment, objectives, constraints, and risk. You leave with a scoped view of the work." },
+  { icon: ClipboardList, title: "Assess", line: "Review the environment, objectives, constraints and risks. Scope and commercial terms are agreed before the assessment begins." },
   { icon: PencilRuler, title: "Architect & Design", line: "Target architecture, security model, product requirements, and user experience designed and reviewed before build starts." },
   { icon: Code2, title: "Engineer & Build", line: "Senior engineers build in reviewed increments, with testing, quality gates, and demos on a fixed cadence." },
   { icon: Rocket, title: "Deploy & Host", line: "Production release on monitored infrastructure, in the hosting model and jurisdiction agreed at assessment." },
@@ -14,19 +14,19 @@ const steps = [
 const principles = [
   { title: "One Partner", line: "Advisory, build, and operations under one contract and one owner." },
   { title: "Full Stack", line: "Architecture, product, engineering, security and operations coordinated within the agreed scope." },
-  { title: "No Handoffs", line: "Delivery, handover and ongoing ownership are planned together." },
+  { title: "Planned Handover", line: "Delivery, handover and ongoing ownership are planned together." },
 ];
 
 const DeliveryPage = () => (
   <PageShell
     title="Delivery Model | Silxor"
-    description="Silxor delivery model: request assessment, architect and design, engineer and build, deploy and host, manage and iterate. One partner, full stack, no handoffs."
+    description="Silxor coordinates assessment, architecture, engineering, deployment and operations with scope, responsibilities and handover agreed for each engagement."
     path="/delivery"
   >
     <PageHero
       eyebrow="Delivery Model"
-      title="One Partner. Full Stack. No Handoffs."
-      lead="Five stages from first conversation to long term ownership, with the same accountable team throughout."
+      title="From assessment to operations."
+      lead="Five stages with responsibilities, review points and handover defined for your engagement."
       crumbs={[{ label: "Home", to: "/" }, { label: "Delivery" }]}
     />
 

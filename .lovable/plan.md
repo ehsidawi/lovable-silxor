@@ -11,7 +11,7 @@ Replace the current 5 links with 7 executive practices:
 
 - Desktop: keep the segmented monospaced style with numeric indices and scroll-spy where sections exist on `/`, and route links for new pages.
 - Mobile: same panel, updated items.
-- Keep `Book an Assessment` CTA, EN/AR toggle, and scroll progress hairline unchanged.
+- Keep the consultation CTA and scroll progress hairline.
 
 ## 2. Services — restructure into 4 Executive Practices
 

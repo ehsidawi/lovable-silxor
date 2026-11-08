@@ -6,4 +6,4 @@ Institutions and founders get their critical systems built, secured and running 
 
 ## Metric
 
-Prospects who open a WhatsApp or Telegram chat from the Book an Assessment page each month
+Prospects who submit a consultation request from the Book a Consultation page each month

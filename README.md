@@ -12,7 +12,6 @@ Repository: https://github.com/ehsidawi/silxor-og-wbs
 - **Name:** Silxor (legal entity: Silxor Group Holding)
 - **Positioning:** enterprise technology, cybersecurity, cloud and
   infrastructure, private AI, identity and access, managed services
-- **Address:** 801 Barton Springs Rd, Austin, TX 78704
 - **Contact:** hello@silxor.com
 - **LinkedIn:** https://www.linkedin.com/company/silxorllc/
 
@@ -85,20 +84,7 @@ server-side secrets only — never in `.env` or any `VITE_` variable.
 
 ## Form / CRM / email integration
 
-`src/lib/submitLead.ts` is the single submission adapter. With no configuration
-it returns `{ status: "fallback" }` and the UI honestly tells the visitor that
-no submission backend is connected, offering a prepared email instead. It never
-fakes a success.
-
-To connect it:
-
-1. **HTTP endpoint** — set `VITE_LEAD_ENDPOINT` to a CRM webhook or your own
-   API. The JSON body is the `LeadPayload` interface.
-2. **Lovable Cloud edge function** — replace `postToEndpoint` with
-   `supabase.functions.invoke("submit-lead", { body: payload })` and keep the
-   CRM/email credentials in server-side secrets.
-
-Booking is handled by the Cal.com embed on `/book` (`ehsidawi/60`).
+Consultation requests at `/book` are validated client side and by `submit-consultation`, then stored privately in `consultation_requests`. Public visitors cannot read, update or delete requests. Owner emails require a verified sender domain and are not enabled yet.
 
 ## Analytics
 

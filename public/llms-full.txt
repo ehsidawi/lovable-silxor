@@ -5,9 +5,8 @@
 Website: https://silxor.com/
 Email: hello@silxor.com
 Telephone: +1 979 500 3390
-Assessment: https://silxor.com/book
-Telegram: https://t.me/+19795003390
-WhatsApp: https://wa.me/19795003390
+Consultation: https://silxor.com/book
+Requests collect service interests, company context, contact details and meeting preferences. Requests are privately stored in Lovable Cloud. We reply by email. Deletion requests: hello@silxor.com.
 
 Capabilities are scoped per agreement, not blanket guarantees. Vendor names do not establish affiliations. Private AI is designed for dedicated environments without sending sensitive data to third party model providers.
 
@@ -158,7 +157,7 @@ We scope, design and build custom hardware, embedded systems and IoT solutions w
 
 ## Frequently asked questions
 - What does Silxor help with? Silxor helps organizations plan, build, secure and operate enterprise technology. Scope can include IT strategy, infrastructure, networking, managed IT, cybersecurity, identity, custom software, private AI and hardware engineering.
-- How do we start? Book an Assessment and choose Telegram or WhatsApp to contact our team. Share your goals, current environment and constraints. We agree the next steps with you before work begins.
+- How do we start? Use Book a Consultation to share your service interests, company context and contact preferences. We review your request and reply by email. Meeting details and next steps are confirmed separately.
 - Can you work with our existing IT team? Yes. An engagement can complement your team through a scoped project, staff augmentation, advisory retainer or managed service. Responsibilities and access are agreed in writing.
 - Where is project data hosted? Data location, access and hosting requirements are defined during assessment and recorded in the agreement. On premises, hybrid and private environments can be included in scope. Private AI is designed to keep sensitive data away from third party model providers.
 - Do you provide certified compliance? We help map controls and prepare evidence against agreed frameworks. Framework references describe capabilities, not a claim of certification or an audit opinion. Required attestations and certification status must be confirmed during contracting.

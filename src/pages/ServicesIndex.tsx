@@ -44,7 +44,7 @@ const ServicesIndex = () => {
               <div className="flex flex-col gap-3 lg:items-end">
                 <Link to={flagship.path} className="r-cta">Explore the Service</Link>
                 <Button variant="outline" className="r-cta-ghost" onClick={() => navigate("/book")}>
-                  Book an Assessment
+                  Book a Consultation
                 </Button>
               </div>
             </div>

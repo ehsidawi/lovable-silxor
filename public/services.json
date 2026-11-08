@@ -1,6 +1,11 @@
 {
   "name": "Silxor Group Holding",
   "url": "https://silxor.com",
+  "contact": {
+    "email": "hello@silxor.com",
+    "telephone": "+1 979 500 3390",
+    "consultationUrl": "https://silxor.com/book"
+  },
   "services": [
     {
       "name": "Full Product Team as a Service",

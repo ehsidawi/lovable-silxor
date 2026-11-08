@@ -1,0 +1,20 @@
+import { describe, expect, it } from 'bun:test';
+import { readFileSync } from 'node:fs';
+import { consultationSchema, needSchema, contextSchema, contactSchema } from './consultation.ts';
+import { services } from '../data/services.ts';
+import { serviceAreaIds } from '../../supabase/functions/submit-consultation/options.ts';
+import { structuredData } from './structuredData.ts';
+const valid = {service_areas:['cybersecurity','iam'],company:'Test Company',role:'IT lead',company_size:'51 to 200',environment:'Hybrid',timeline:'1 to 3 months',description:'Review access management for our enterprise.',name:'Test Person',work_email:'consultation-test@example.com',phone:'',preferred_contact:'Email',meeting_windows:'Tuesday 09:00 to 12:00',time_zone:'UTC',website:''};
+describe('consultation input and privacy rules',()=>{
+ it('accepts a complete request with optional phone omitted',()=>expect(consultationSchema.safeParse(valid).success).toBe(true));
+ it('requires at least one selected service',()=>expect(needSchema.safeParse({service_areas:[]}).success).toBe(false));
+ it('matches all services and nine identity disciplines',()=>expect([...serviceAreaIds]).toEqual([...services.map(s=>s.slug),...services.find(s=>s.slug==='identity').blocks.map(b=>b.id)]));
+ it('rejects unknown service interests',()=>expect(needSchema.safeParse({service_areas:['unknown']}).success).toBe(false));
+ it('rejects invalid work email',()=>expect(contactSchema.safeParse({...valid,work_email:'invalid'}).success).toBe(false));
+ it('requires a phone for preferred phone contact',()=>expect(contactSchema.safeParse({...valid,preferred_contact:'Phone',phone:''}).success).toBe(false));
+ it('accepts phone preference with an actual phone',()=>expect(contactSchema.safeParse({...valid,preferred_contact:'Phone',phone:'+1 979 500 3390'}).success).toBe(true));
+ it('limits description to 2000 characters',()=>{expect(contextSchema.safeParse({...valid,description:'a'.repeat(2000)}).success).toBe(true);expect(contextSchema.safeParse({...valid,description:'a'.repeat(2001)}).success).toBe(false);});
+ it('rejects invalid timezone',()=>expect(contactSchema.safeParse({...valid,time_zone:'not-a-timezone'}).success).toBe(false));
+ it('keeps server validation identical to browser validation',()=>{const client=readFileSync(new URL('./consultation.ts',import.meta.url),'utf8');const server=readFileSync(new URL('../../supabase/functions/submit-consultation/schema.ts',import.meta.url),'utf8');expect(server).toBe(client.replace("from 'zod'","from 'npm:zod@3.25.76'").replace("from '../../supabase/functions/submit-consultation/options'","from './options.ts'"));});
+ it('omits any unconfirmed address from organization data',()=>{const graph=structuredData('/','Home','Description')['@graph'];expect(graph.find(n=>Array.isArray(n['@type']) && n['@type'].includes('Organization'))?.address).toBeUndefined();expect(JSON.stringify(graph).includes('PostalAddress')).toBe(false);});
+});

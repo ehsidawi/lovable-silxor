@@ -226,7 +226,7 @@ const SLADoc = () => {
           <div className="space-y-5 md:hidden">
             {(["starter", "business", "enterprise"] as const).map((tier, index) => (
               <section key={tier} className="border border-border bg-card p-5">
-                <h2 className="mb-5 font-display text-xl font-bold">{headers[index + 1].en}</h2>
+                <h2 className="mb-5 font-display text-xl font-medium">{headers[index + 1].en}</h2>
                 <dl>{rows.map(row => <div key={row.metric} className="grid grid-cols-2 gap-4 border-t border-border py-3 text-sm">
                   <dt className="font-medium">{row.metric}</dt><dd className="text-muted-foreground">{row[tier]}</dd>
                 </div>)}</dl>

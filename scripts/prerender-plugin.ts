@@ -9,10 +9,10 @@ export function prerenderPlugin(): Plugin {
   const server = await createServer({configFile:false,root:process.cwd(),resolve:{alias:{"@":path.resolve(process.cwd(),"src")}},server:{middlewareMode:true,watch:null,hmr:false},appType:"custom"});
   try {
    const renderer=await server.ssrLoadModule("/src/prerender.tsx");
-   const pages: string[]=renderer.pages;
+   const pages: string[]=[...new Set([...renderer.pages,...(renderer.extraPrerenderPages ?? [])])] as string[];
    if(pages.length>MAX_PRERENDER_PAGES)throw new Error("Prerender page cap exceeded");
    let template=await readFile(path.join(output,"index.html"),"utf8");
-   template=template.replace(/<title>[\s\S]*?<\/title>/g,"").replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g,"").replace(/<meta\s+(?:name|property)="(?:title|description|robots|og:title|og:description|og:url|og:type|twitter:title|twitter:description|twitter:url|twitter:card)"[^>]*>/g,"").replace(/<link rel="canonical"[^>]*>/g,"");
+   template=template.replace(/<title>[\s\S]*?<\/title>/g,"").replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g,"").replace(/<meta\s+(?:name|property)="(?:title|description|robots|og:title|og:description|og:url|og:type|og:image|twitter:image|twitter:title|twitter:description|twitter:url|twitter:card)"[^>]*>/g,"").replace(/<link rel="canonical"[^>]*>/g,"");
    for(const route of [...pages,"/404"]) {
     const rendered=renderer.renderPage(route);
     if(!rendered.body.includes("<h1")||rendered.body.includes("Loading page"))throw new Error(`Incomplete prerender for ${route}`);

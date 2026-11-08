@@ -1,6 +1,7 @@
 import { createClient } from 'npm:@supabase/supabase-js@2';
 import { corsHeaders } from 'npm:@supabase/supabase-js@2/cors';
 import { consultationSchema } from './schema.ts';
+import { connectionBucket, limiterHash } from './rate-limit.ts';
 
 const reply = (status: number, data: unknown) => new Response(JSON.stringify(data), {status, headers:{...corsHeaders, 'Content-Type':'application/json','Cache-Control':'no-store'}});
 Deno.serve(async req => {
@@ -16,8 +17,13 @@ Deno.serve(async req => {
   if(website) return reply(400,{error:'The request could not be accepted. Please email hello@silxor.com.'});
   const url = Deno.env.get('SUPABASE_URL');
   const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
-  if(!url || !key) return reply(503,{error:'The form is temporarily unavailable. Please email hello@silxor.com.'});
+  const limitSecret = Deno.env.get('CONSULTATION_LIMIT_HMAC_KEY');
+  if(!url || !key || !limitSecret) return reply(503,{error:'The form is temporarily unavailable. Please email hello@silxor.com.'});
   const client = createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}});
+  const [ip_key,email_key] = await Promise.all([limiterHash(limitSecret,'ip',connectionBucket(req.headers)),limiterHash(limitSecret,'email',request.work_email)]);
+  const reservation = await client.rpc('reserve_consultation_submission',{ip_key,email_key});
+  if(reservation.error) return reply(503,{error:'The form is temporarily unavailable. Please email hello@silxor.com.'});
+  if(Number(reservation.data)>0) return new Response(JSON.stringify({error:'We have received several requests recently. Please try again in about an hour, or email hello@silxor.com.'}),{status:429,headers:{...corsHeaders,'Content-Type':'application/json','Cache-Control':'no-store','Retry-After':String(reservation.data)}});
   const {error} = await client.from('consultation_requests').insert(request);
   if(error) return reply(503,{error:'We could not save your request. Please retry or email hello@silxor.com.'});
   return reply(201,{success:true});

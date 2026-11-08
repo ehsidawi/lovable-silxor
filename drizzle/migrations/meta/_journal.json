@@ -8,6 +8,13 @@
       "when": 1794155864595,
       "tag": "0000_create_consultation_requests",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794172729355,
+      "tag": "0001_consultation_atomic_rate_limits",
+      "breakpoints": true
     }
   ]
 }

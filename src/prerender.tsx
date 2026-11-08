@@ -23,15 +23,20 @@ import NotFound from "@/pages/NotFound";
 import { services } from "@/data/services";
 import { resourcePages } from "@/data/resources";
 import { SITE, business, faqs } from "@/data/site";
-export const pages = ["/", "/services", ...services.map(s=>s.path), "/industries", "/delivery", "/clients", "/about", "/contact", "/book", "/partners", "/privacy", "/compliance", "/sla", ...resourcePages.map(p=>p.path), "/faq"];
+import InsightsPage from "@/pages/InsightsPage";
+import CaseStudiesPage from "@/pages/CaseStudiesPage";
+import { insights, insightPath } from "@/data/insights";
+import { caseStudies } from "@/data/caseStudies";
+export const pages = ["/", "/services", ...services.map(s=>s.path), "/industries", "/delivery", "/clients", "/about", "/contact", "/book", "/partners", "/privacy", "/compliance", "/sla", ...resourcePages.map(p=>p.path), "/faq", '/insights', ...insights.map(insightPath), ...(caseStudies.length ? ['/case-studies',...caseStudies.map(s=>`/case-studies/${s.slug}`)] : [])];
+export const extraPrerenderPages = ['/case-studies'];
 // Editorial timestamps for significant content authored in this pass, not build time.
 export const contentModifiedAt: Record<string, string> = Object.fromEntries([
- ...resourcePages.map(p=>p.path), "/faq", "/privacy", "/book", "/contact", "/industries", ...services.map(s=>s.path),
+ ...resourcePages.map(p=>p.path), "/faq", "/privacy", "/book", "/contact", "/industries", "/", "/about", '/insights', ...insights.map(insightPath), ...services.map(s=>s.path),
 ].map(p=>[p,"2026-11-08"]));
 const routes = [{path:"/",component:Index},{path:"/services",component:ServicesIndex},{path:"/services/:slug",component:ServiceDetail},{path:"/industries",component:IndustriesPage},{path:"/delivery",component:DeliveryPage},{path:"/clients",component:ClientsPage},{path:"/about",component:AboutPage},{path:"/contact",component:ContactPage},{path:"/book",component:BookAssessment},{path:"/partners",component:Partners},{path:"/privacy",component:PrivacyPolicy},{path:"/compliance",component:ComplianceDoc},{path:"/sla",component:SLADoc},{path:"/faq",component:FaqPage},...resourcePages.map(p=>({path:p.path,component:ResourcePage})),{path:"*",component:NotFound}];
 export function renderPage(path: string) {
  const context: Record<string, any> = {};
- const body = renderToString(<HelmetProvider context={context}><ThemeProvider attribute="class" defaultTheme="light" storageKey="silxor-theme"><TooltipProvider><StaticRouter location={path}><Routes>{routes.map(r=><Route key={r.path} path={r.path} element={<r.component />} />)}</Routes></StaticRouter></TooltipProvider></ThemeProvider></HelmetProvider>);
+ const body = renderToString(<HelmetProvider context={context}><ThemeProvider attribute="class" defaultTheme="light" storageKey="silxor-theme"><TooltipProvider><StaticRouter location={path}><Routes><Route path="/insights" element={<InsightsPage />} /><Route path="/insights/:slug" element={<InsightsPage />} /><Route path="/case-studies" element={<CaseStudiesPage />} /><Route path="/case-studies/:slug" element={<CaseStudiesPage />} />{routes.map(r=><Route key={r.path} path={r.path} element={<r.component />} />)}</Routes></StaticRouter></TooltipProvider></ThemeProvider></HelmetProvider>);
  const h=context.helmet;
  return {body,head:[h.title,h.meta,h.link,h.script].map(x=>x.toString()).join("\n")};
 }

@@ -14,6 +14,24 @@ export type Database = {
   }
   public: {
     Tables: {
+      consultation_rate_limits: {
+        Row: {
+          attempts: number
+          bucket_key: string
+          window_start: string
+        }
+        Insert: {
+          attempts?: number
+          bucket_key: string
+          window_start?: string
+        }
+        Update: {
+          attempts?: number
+          bucket_key?: string
+          window_start?: string
+        }
+        Relationships: []
+      }
       consultation_requests: {
         Row: {
           company: string
@@ -73,7 +91,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      reserve_consultation_submission: {
+        Args: { email_key: string; ip_key: string }
+        Returns: number
+      }
     }
     Enums: {
       [_ in never]: never

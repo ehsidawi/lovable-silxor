@@ -14,7 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      consultation_requests: {
+        Row: {
+          company: string
+          company_size: string
+          created_at: string
+          description: string
+          environment: string
+          id: string
+          meeting_windows: string
+          name: string
+          phone: string
+          preferred_contact: string
+          role: string
+          service_areas: string[]
+          time_zone: string
+          timeline: string
+          work_email: string
+        }
+        Insert: {
+          company: string
+          company_size: string
+          created_at?: string
+          description: string
+          environment: string
+          id?: string
+          meeting_windows: string
+          name: string
+          phone?: string
+          preferred_contact: string
+          role: string
+          service_areas: string[]
+          time_zone: string
+          timeline: string
+          work_email: string
+        }
+        Update: {
+          company?: string
+          company_size?: string
+          created_at?: string
+          description?: string
+          environment?: string
+          id?: string
+          meeting_windows?: string
+          name?: string
+          phone?: string
+          preferred_contact?: string
+          role?: string
+          service_areas?: string[]
+          time_zone?: string
+          timeline?: string
+          work_email?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

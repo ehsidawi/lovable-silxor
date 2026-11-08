@@ -29,6 +29,13 @@
       "when": 1794173094338,
       "tag": "0003_restrict_admin_role_check",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1794173753613,
+      "tag": "0004_remove_admin_access",
+      "breakpoints": true
     }
   ]
 }

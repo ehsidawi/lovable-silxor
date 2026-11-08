@@ -27,7 +27,7 @@ const BookAssessment = () => {
   const started = useRef(new Set<number>());
  useEffect(()=>{setValues(v=>({...v,time_zone:Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC'}));},[]);
  useEffect(()=>{ if(moved.current) heading.current?.focus(); },[step,saved]);
-  const update = (key:Field,value:string|string[]) => {if(key!=='website' && !started.current.has(step)){started.current.add(step);window.__lovableEvents?.track?.('project.consultation_step_started',{step:step+1});}setValues(v=>({...v,[key]:value}));setErrors(e=>{const next={...e};delete next[key];if(key==='preferred_contact')delete next.phone;return next;});setFailure('');};
+  const update = (key:Field,value:string|string[]) => {if(key!=='website' && !started.current.has(step)){started.current.add(step);}setValues(v=>({...v,[key]:value}));setErrors(e=>{const next={...e};delete next[key];if(key==='preferred_contact')delete next.phone;return next;});setFailure('');};
  const validate = () => {
   const result = [needSchema,contextSchema,contactSchema][step].safeParse(values);
   if(result.success) {setErrors({});return true;}
@@ -46,7 +46,7 @@ const BookAssessment = () => {
  </div>;
  const submit = async (event:React.FormEvent) => {
   event.preventDefault();if(pending || !validate())return;
-  if(step<2){window.__lovableEvents?.track?.('project.consultation_step_completed',{step:step+1});moved.current=true;setStep(step+1);return;}
+  if(step<2){moved.current=true;setStep(step+1);return;}
   const parsed = consultationSchema.safeParse(values);
   if(!parsed.success){setFailure('Review your details before sending.');return;}
   setPending(true);setFailure('');
@@ -55,8 +55,6 @@ const BookAssessment = () => {
    const {supabase} = await import('@/integrations/supabase/client');
    const {data,error} = await supabase.functions.invoke('submit-consultation',{body:parsed.data});
    if(error || !data?.success) {let message=data?.error; if(!message && error && 'context' in error && error.context instanceof Response){const body=await error.context.clone().json().catch(()=>null);message=body?.error;}setFailure(message || 'We could not save your request. Please try again or email hello@silxor.com.');return;}
-   window.__lovableEvents?.track?.('project.consultation_step_completed',{step:3});
-   window.__lovableEvents?.track?.('project.consultation_submitted');
    moved.current=true;setSaved(true);setValues(initial);
   } catch {setFailure('We could not save your request. Please try again or email hello@silxor.com.');}
   finally {setPending(false);}

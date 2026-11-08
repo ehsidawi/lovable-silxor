@@ -2,7 +2,7 @@
 
 > Enterprise technology consultancy for enterprise and corporate clients.
 
-Silxor helps organizations plan, build, migrate, secure and operate technology across on premises, hybrid and cloud environments. Offerings describe capabilities; scope is agreed per engagement. Technology names do not imply vendor affiliation or certification. No public client results or statistics are asserted by this directory.
+Silxor helps organizations plan, build, migrate, secure and operate technology across on premises, hybrid and cloud environments. Offerings describe capabilities; scope is agreed per engagement. Technology names do not imply vendor affiliation or certification. This directory makes no client or performance claims.
 
 ## Services
 - [Full Product Team as a Service](/services/product-team): A complete senior product team behind your idea, not just developers.

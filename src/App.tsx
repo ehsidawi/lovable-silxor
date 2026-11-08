@@ -43,6 +43,8 @@ const RouteEffects = () => {
       return () => window.clearTimeout(id);
     }
     window.scrollTo({ top: 0, behavior: "auto" });
+    const focusTimer = window.setTimeout(() => document.getElementById("main")?.focus({ preventScroll: true }), 100);
+    return () => window.clearTimeout(focusTimer);
   }, [pathname, hash]);
 
   return null;

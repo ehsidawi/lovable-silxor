@@ -6,7 +6,7 @@ const MAX_PRERENDER_PAGES = 100;
 export function prerenderPlugin(): Plugin {
  let output = "dist";
  return {name:"silxor-static-pages",apply:"build",configResolved(config){output=config.build.outDir;},async closeBundle(){
-  const server = await createServer({configFile:false,root:process.cwd(),resolve:{alias:{"@":path.resolve(process.cwd(),"src")}},server:{middlewareMode:true,watch:null},appType:"custom"});
+  const server = await createServer({configFile:false,root:process.cwd(),resolve:{alias:{"@":path.resolve(process.cwd(),"src")}},server:{middlewareMode:true,watch:null,hmr:false},appType:"custom"});
   try {
    const renderer=await server.ssrLoadModule("/src/prerender.tsx");
    const pages: string[]=renderer.pages;

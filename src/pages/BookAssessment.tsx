@@ -1,6 +1,6 @@
 import PageShell from "@/components/layout/PageShell";
 
-const PHONE_DISPLAY = "+1 (979) 500-3390";
+const PHONE_DISPLAY = "+1 979 500 3390";
 const TELEGRAM_URL = "https://t.me/+19795003390";
 const WHATSAPP_URL = `https://wa.me/19795003390?text=${encodeURIComponent(
   "Hello Silxor Team, I would like to book a technical assessment."
@@ -50,7 +50,7 @@ const channels = [
   {
     name: "WhatsApp",
     href: WHATSAPP_URL,
-    description: "Opens a WhatsApp chat with Silxor with your message pre-filled.",
+    description: "Opens a WhatsApp chat with Silxor with your message prepared.",
     Icon: WhatsAppIcon,
   },
 ];

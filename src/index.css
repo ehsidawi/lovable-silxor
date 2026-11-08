@@ -118,3 +118,7 @@
   .service-pillar { min-height:210px; }
 }
 @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; } }
+
+@keyframes section-arrival { from { transform: translateY(10px); } to { transform: translateY(0); } }
+.below-fold-section { content-visibility: auto; contain-intrinsic-size: auto 640px; }
+.section-arrived { animation: section-arrival .35s ease-out; }

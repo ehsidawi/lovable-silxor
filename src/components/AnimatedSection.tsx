@@ -1,28 +1,9 @@
-import { motion, useReducedMotion } from "framer-motion";
-import { ReactNode } from "react";
-
-interface AnimatedSectionProps {
-  children: ReactNode;
-  className?: string;
-  delay?: number;
-}
-
-const AnimatedSection = ({ children, className = "", delay = 0 }: AnimatedSectionProps) => {
-  const reduceMotion = useReducedMotion();
-  const initial = reduceMotion ? false : { y: 12 };
-  const whileInView = reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 };
-
-  return (
-    <motion.div
-      initial={initial}
-      whileInView={whileInView}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: reduceMotion ? 0 : 0.45, ease: [0.16, 1, 0.3, 1], delay: reduceMotion ? 0 : delay }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
+import { useEffect, useRef, ReactNode } from "react";
+interface AnimatedSectionProps { children: ReactNode; className?: string; delay?: number; }
+/** Visible static content; only animate after browser intersection, never hide SSR text. */
+const AnimatedSection = ({children,className=""}:AnimatedSectionProps)=>{
+ const ref=useRef<HTMLDivElement>(null);
+ useEffect(()=>{const node=ref.current;if(!node||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){node.classList.add("section-arrived");observer.disconnect();}},{threshold:.08});observer.observe(node);return()=>observer.disconnect();},[]);
+ return <div ref={ref} className={`below-fold-section ${className}`}>{children}</div>;
 };
-
 export default AnimatedSection;

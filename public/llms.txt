@@ -1,0 +1,48 @@
+# Silxor Group Holding
+
+> Enterprise technology consultancy for enterprise and corporate clients.
+
+Silxor helps organizations plan, build, migrate, secure and operate technology across on premises, hybrid and cloud environments. Offerings describe capabilities; scope is agreed per engagement. Technology names do not imply vendor affiliation or certification. No public client results or statistics are asserted by this directory.
+
+## Services
+- [Full Product Team as a Service](/services/product-team): A complete senior product team behind your idea, not just developers.
+- [IT Strategy & Advisory](/services/advisory): Decisions on architecture, platforms, and risk made with senior engineering judgment.
+- [Infrastructure, Networking & Cloud](/services/cloud): Resilient sovereign, private, and hybrid platforms engineered to stay up.
+- [Cybersecurity](/services/cybersecurity): Security architecture and evidence that hold up to auditors and attackers.
+- [Managed IT & End User Services](/services/managed-services): Senior ownership of your platform after go live, under agreed SLA tiers.
+- [Private AI & AI Platforms](/services/private-ai): AI capability inside your own environment, with your data staying there.
+- [Identity & Access Management](/services/identity): Govern human, customer, privileged and machine identities across your enterprise.
+- [Custom Software Engineering](/services/software-engineering): Custom applications, platforms and integrations built around your business.
+- [Custom Hardware, Embedded & IoT](/services/hardware-engineering): Connected hardware and embedded systems engineered alongside your software.
+
+## Pages
+- [industries](/industries): Public information about Silxor industries.
+- [delivery](/delivery): Public information about Silxor delivery.
+- [clients](/clients): Public information about Silxor clients.
+- [about](/about): Public information about Silxor about.
+- [contact](/contact): Public information about Silxor contact.
+- [book](/book): Public information about Silxor book.
+- [partners](/partners): Public information about Silxor partners.
+- [privacy](/privacy): Public information about Silxor privacy.
+- [compliance](/compliance): Public information about Silxor compliance.
+- [sla](/sla): Public information about Silxor sla.
+- [engagement](/engagement): Public information about Silxor engagement.
+- [process](/process): Public information about Silxor process.
+- [careers](/careers): Public information about Silxor careers.
+- [terms](/terms): Public information about Silxor terms.
+- [cookies](/cookies): Public information about Silxor cookies.
+- [security](/security): Public information about Silxor security.
+- [faq](/faq): Public information about Silxor faq.
+
+## Contact
+- [Book an Assessment](/book): Choose Telegram or WhatsApp to arrange a conversation with +1 979 500 3390.
+- [Email](mailto:hello@silxor.com): hello@silxor.com.
+- [Telegram](https://t.me/+19795003390): Direct contact.
+- [WhatsApp](https://wa.me/19795003390): Direct contact.
+- [LinkedIn](https://www.linkedin.com/company/silxorllc/): Existing company profile.
+
+801 Barton Springs Rd, Austin, TX 78704, US.
+
+## Optional
+- [Full service reference](/llms-full.txt): Detailed service capabilities and FAQs.
+- [Machine readable services](/services.json): Service URLs, descriptions and capabilities.

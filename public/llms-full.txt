@@ -1,0 +1,197 @@
+# Silxor Group Holding
+
+> Enterprise technology consultancy. Detailed public service reference.
+
+Website: https://silxor.com/
+Email: hello@silxor.com
+Telephone: +1 979 500 3390
+Assessment: https://silxor.com/book
+Telegram: https://t.me/+19795003390
+WhatsApp: https://wa.me/19795003390
+
+Capabilities are scoped per agreement, not blanket guarantees. Vendor names do not establish affiliations. Private AI is designed for dedicated environments without sending sensitive data to third party model providers.
+
+## Full Product Team as a Service
+
+[Service page](/services/product-team)
+
+Silxor becomes the senior product organization behind founders and companies who need to move from concept to production and scale. One accountable partner covers architecture, product, design, engineering, and testing, so you never have to find, vet, hire, and manage separate specialists.
+
+- Senior Software Architect: Secure, scalable architecture designed with operating cost under control.
+- Product Manager: Business goals turned into requirements, roadmap, priorities, and buildable specifications.
+- Product & UX Designer: The full experience and interface designed around your customer and product goals.
+- Software Engineers: The product built end to end, from first release to production scale.
+- QA & Testing: Every flow, device, edge case, and release tested before customers meet a problem.
+- Delivery Leadership: We coordinate the entire team so you keep one point of accountability.
+
+## IT Strategy & Advisory
+
+[Service page](/services/advisory)
+
+We help enterprise and corporate leadership teams plan their entire IT estate, from business strategy and governance to infrastructure, networking, end user services, security and applications. Every recommendation is grounded in what we can design, build, migrate and operate.
+
+- Architecture Strategy: Target state architecture aligned to business goals and constraints.
+- Cloud Strategy: Public, private, hybrid, and sovereign positioning with cost modeling.
+- Technical Assessments: Independent review of current systems, risk, and readiness.
+- Modernization Roadmaps: Phased plans that sequence value, risk, and downtime.
+- Enterprise IT Planning: Operating models, end user technology, networking and data center roadmaps aligned to business needs.
+- Governance: Standards, review gates, and decision records that outlast the project.
+- Vendor & Platform Selection: Objective evaluation, scoring, and negotiation support.
+
+## Infrastructure, Networking & Cloud
+
+[Service page](/services/cloud)
+
+We design, build, migrate and operate on premises, hybrid and cloud environments for enterprise and corporate clients. Data center, compute, storage, networking, virtualization and cloud platforms are designed as one coherent estate, with security and recovery considered from the start.
+
+- Sovereign & Private Cloud: Deployments where data location and control are contractual requirements.
+- Hybrid Infrastructure: On premises and cloud estates operated as one platform.
+- Enterprise Networking: LAN, WAN, wireless, routing, switching and secure connectivity across offices, data centers and cloud environments.
+- Data Center Engineering: Compute, storage, virtualization and capacity planning for on premises and hybrid workloads.
+- Solution Design & Build: Requirements, detailed design, implementation and validation across on premises, hybrid and cloud estates.
+- Migration: Phased moves of regulated workloads with minimal downtime.
+- Platform Engineering: Kubernetes, automation, and internal platforms teams can self serve.
+- Resilience & DR: High availability design, failover testing, and recovery objectives.
+- Observability: Metrics, logs, and tracing that make incidents short.
+
+## Cybersecurity
+
+[Service page](/services/cybersecurity)
+
+We build security architecture around identity, segmentation, and evidence, then align the program to the control frameworks your regulators and customers expect.
+
+- Security Architecture: Controls designed into the platform from the first diagram.
+- Security Assessments: Gap analysis against your threat model and control baseline.
+- Zero Trust: Identity centric access, segmentation, and continuous verification.
+- Governance, Risk & Compliance: Policy, risk register, and control ownership that stay current.
+- Hardening: Baselines for endpoints, servers, cloud, and pipelines.
+- SOC & Security Monitoring: Detection engineering, log integration, alert triage and security operations tailored to your environment.
+- Vulnerability Management: Asset discovery, vulnerability assessment, prioritization, remediation tracking and validation.
+- Penetration Testing: Authorized testing of networks, applications and APIs against an agreed scope, with findings and remediation guidance.
+- Incident Response: Preparation, investigation, containment and recovery with defined escalation paths and engagement scope.
+
+## Managed IT & End User Services
+
+[Service page](/services/managed-services)
+
+We operate and support enterprise IT across end user devices, workplace platforms, networks, data centers, cloud and applications. Monitoring, service management, patching and lifecycle planning sit under one accountable team. Coverage, response targets and escalation paths are agreed per engagement.
+
+- Operate & Monitor: Continuous monitoring with defined alerting and escalation.
+- Maintain & Patch: Scheduled patching and lifecycle management with change control.
+- End User Computing: Device provisioning, endpoint management, workplace applications and employee technology support.
+- IT Service Management: Service desk workflows, incident and request handling, asset records and change governance.
+- Support: Named senior engineers, severity levels, and agreed response targets.
+- Optimize: Performance and cost tuning reviewed on a recurring cadence.
+- Secure: Ongoing hardening, vulnerability handling, and control validation.
+- Improve: A backlog of platform improvements owned with you, not handed off.
+
+## Private AI & AI Platforms
+
+[Service page](/services/private-ai)
+
+We build AI platforms that run on client dedicated infrastructure, so sensitive data is not sent to third party model providers. Governance, access, and auditability are part of the design.
+
+- Private & Local AI: Models hosted inside your environment or dedicated infrastructure.
+- Enterprise AI Platforms: Shared internal platforms with access control and usage governance.
+- AI Infrastructure: GPU, storage, and networking sized for training and inference.
+- Secure Model Hosting: Isolation, secrets handling, and logging built into the serving layer.
+- AI Integrations: Retrieval, workflow, and system integrations against your real data.
+- Agent Systems: Task automation with human review points and audit trails.
+
+## Identity & Access Management
+
+[Service page](/services/identity)
+
+We design, implement, migrate and operate identity services across workforce, customer, privileged and machine access. Identity architecture, lifecycle governance, directories, federation and strong authentication span on premises, hybrid and cloud environments.
+
+- IAM / Workforce Identity: Workforce IAM architecture, provisioning, authentication and authorization for employees and contractors. Directory services, role and attribute based access, and lifecycle automation aligned to least privilege.
+- CIAM / Customer Identity: Customer registration, sign in, account recovery, consent and secure access for web, mobile and API experiences. Customer identity journeys designed for usability and controlled data handling.
+- PAM / Privileged Access Management: Privileged credential vaulting, session controls, credential rotation and administrative access for teams, vendors and emergency access paths.
+- PIM / Privileged Identity Management: Time limited role activation, approvals, eligibility reviews and audit trails for privileged identities, reducing persistent administrative access.
+- NHI / Non Human Identity: Inventory, ownership and lifecycle controls for service accounts, machine identities, workloads, secrets and certificates. Credential rotation and workload authentication across applications and infrastructure.
+- IGA / Identity Governance & Administration: Joiner, mover and leaver processes, access requests, access reviews, separation of duties and entitlement governance with evidence for audit teams.
+- SSO & Federation: Single sign on and federation using SAML, OIDC and OAuth 2.0, with application integration and trust configuration across the enterprise.
+- MFA & Passwordless: Multifactor authentication, passwordless and FIDO2 deployment, enrollment, recovery and conditional access designed around user needs and risk.
+- Zero Trust & Directory Services: Identity driven Zero Trust, continuous verification, directory consolidation and integration across on premises and cloud identity estates.
+
+## Custom Software Engineering
+
+[Service page](/services/software-engineering)
+
+We design, build, integrate and operate custom software for enterprise and corporate clients. Architecture, user experience, engineering, quality assurance and delivery cover web, mobile, internal platforms, APIs and private AI integrations.
+
+- Web Applications: Business applications and customer experiences with secure architecture and accessible interfaces.
+- Mobile Applications: Mobile products and enterprise workflows with device aware design, integration and testing.
+- Enterprise Platforms: Internal tools and custom platforms aligned to operating processes, identity and governance.
+- APIs & Integrations: API design, system integration and controlled data exchange across enterprise applications.
+- Private AI Integration: AI enabled workflows and application capabilities on dedicated infrastructure with access and audit controls.
+- Testing & Operations: Automated testing, reviewed releases, observability and ongoing application maintenance.
+
+## Custom Hardware, Embedded & IoT
+
+[Service page](/services/hardware-engineering)
+
+We scope, design and build custom hardware, embedded systems and IoT solutions with the software and infrastructure they depend on. Electronics, firmware, connectivity and enterprise integration are considered together from prototype through deployment and operations.
+
+- Hardware Design: Requirements, component selection and electronics design matched to the intended environment and use.
+- Embedded Systems: Firmware and device software for reliable operation, interfaces and lifecycle management.
+- Prototyping & Validation: Iterative prototypes, integration testing and validation against agreed engineering requirements.
+- IoT Connectivity: Device connectivity, gateways, telemetry and secure data exchange with enterprise systems.
+- Device Security: Device identity, secure provisioning, credential handling and controlled firmware updates.
+- Integration & Operations: APIs, monitoring and device management connected to on premises, hybrid or cloud environments.
+
+## Engagement and process
+
+[Engagement models](/engagement): Choose the right level of ownership for your team and your goals. Scope, responsibilities and commercial terms are agreed before work begins.
+- Assessment: Understand the current environment, goals and risks before selecting a solution. Agree the review boundary, gather relevant information and discuss priorities. The next engagement and any deliverables are scoped together.
+- Project delivery: A defined outcome with an agreed scope, milestones and acceptance criteria. Specify dependencies, responsibilities, testing, change control and handover in a statement of work. Review progress at agreed milestones.
+- Staff augmentation: Add specific expertise to your existing team for an agreed period. Agree the skills needed, reporting line, access, capacity and working cadence. Your team retains its defined decision and delivery responsibilities.
+- Managed service: Ongoing operation and support for a clearly defined environment. Document the service boundary, coverage, escalation paths, maintenance windows, reporting and recovery requirements before transition.
+- Advisory retainer: Recurring access to technology guidance and reviews. Agree the advisory areas, availability, review cadence and outputs. Delivery and operational work are scoped separately when needed.
+
+[Our process](/process): A clear path from the first question to an operational system. Reviews and acceptance criteria keep decisions visible throughout the work.
+- Discover: Understand goals, people, systems and constraints. Review the current estate and identify dependencies, data handling needs and risks. Agree the problem to solve and how progress will be measured.
+- Design: Turn requirements into a reviewed plan. Document architecture, responsibilities, security controls, acceptance criteria and migration or release plans. Record key tradeoffs before implementation.
+- Build and validate: Implement in reviewable increments. Use code and configuration reviews, testing and demonstrations appropriate to the work. Track changes, risks and open decisions with your team.
+- Release and hand over: Move into use with an agreed transition plan. Validate readiness, recovery steps and access controls. Deliver the agreed documentation, training and ownership handover.
+- Operate and improve: Keep the environment maintained and review what comes next. Where included in scope, monitor services, manage changes and review incidents and improvements against agreed service levels.
+
+## Frequently asked questions
+- What does Silxor help with? Silxor helps organizations plan, build, secure and operate enterprise technology. Scope can include IT strategy, infrastructure, networking, managed IT, cybersecurity, identity, custom software, private AI and hardware engineering.
+- How do we start? Book an Assessment and choose Telegram or WhatsApp to contact our team. Share your goals, current environment and constraints. We agree the next steps with you before work begins.
+- Can you work with our existing IT team? Yes. An engagement can complement your team through a scoped project, staff augmentation, advisory retainer or managed service. Responsibilities and access are agreed in writing.
+- Where is project data hosted? Data location, access and hosting requirements are defined during assessment and recorded in the agreement. On premises, hybrid and private environments can be included in scope. Private AI is designed to keep sensitive data away from third party model providers.
+- Do you provide certified compliance? We help map controls and prepare evidence against agreed frameworks. Framework references describe capabilities, not a claim of certification or an audit opinion. Required attestations and certification status must be confirmed during contracting.
+- What service levels are available? Coverage hours, severity levels, response targets, backup frequency and recovery objectives depend on the agreed environment and service scope. Only the signed agreement establishes service commitments.
+- Who owns the deliverables? Ownership, licensing, source code access and handover requirements are specified in the agreement. Raise these requirements during assessment so the proposal addresses them.
+- Can you share client references? Public content does not identify clients without permission. Ask about evaluation materials during assessment; availability and disclosure depend on client consent and confidentiality obligations.
+
+## Public pages
+- [Home](/): Public Silxor page.
+- [services](/services): Public Silxor page.
+- [services/product-team](/services/product-team): Public Silxor page.
+- [services/advisory](/services/advisory): Public Silxor page.
+- [services/cloud](/services/cloud): Public Silxor page.
+- [services/cybersecurity](/services/cybersecurity): Public Silxor page.
+- [services/managed-services](/services/managed-services): Public Silxor page.
+- [services/private-ai](/services/private-ai): Public Silxor page.
+- [services/identity](/services/identity): Public Silxor page.
+- [services/software-engineering](/services/software-engineering): Public Silxor page.
+- [services/hardware-engineering](/services/hardware-engineering): Public Silxor page.
+- [industries](/industries): Public Silxor page.
+- [delivery](/delivery): Public Silxor page.
+- [clients](/clients): Public Silxor page.
+- [about](/about): Public Silxor page.
+- [contact](/contact): Public Silxor page.
+- [book](/book): Public Silxor page.
+- [partners](/partners): Public Silxor page.
+- [privacy](/privacy): Public Silxor page.
+- [compliance](/compliance): Public Silxor page.
+- [sla](/sla): Public Silxor page.
+- [engagement](/engagement): Public Silxor page.
+- [process](/process): Public Silxor page.
+- [careers](/careers): Public Silxor page.
+- [terms](/terms): Public Silxor page.
+- [cookies](/cookies): Public Silxor page.
+- [security](/security): Public Silxor page.
+- [faq](/faq): Public Silxor page.

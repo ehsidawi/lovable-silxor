@@ -13,7 +13,7 @@ const WhySilxor = () => {
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,340px)_1fr] gap-8 lg:gap-12 items-center">
             <div className="flex flex-col items-start gap-4">
               <span className="r-eyebrow">Why Silxor</span>
-              <h2 className="r-title">One Partner. Full Stack.</h2>
+              <h2 className="r-title">Coordinated expertise. Full Stack.</h2>
               <p className="r-lead">Coordinate the disciplines in your scope through one engagement lead, with clear responsibilities.</p>
             </div>
 

@@ -172,7 +172,7 @@ const SLADoc = () => {
                   {headers.map((h) => (
                     <TableHead
                       key={h.en}
-                      className="font-mono font-[400] uppercase h-auto align-top"
+                      className="font-body font-[400] uppercase h-auto align-top"
                       style={{
                         fontSize: 11,
                         letterSpacing: 0,

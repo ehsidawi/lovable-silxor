@@ -1,21 +1,16 @@
-- Keep the homepage hero isolated in `src/components/ui/prisma-hero.tsx` and render it through `HomeHero`; this preserves the existing multi-page shell and navigation while allowing the hero to change independently.
-- Serve transformed video media through Lovable asset pointers, not external hotlinks or checked-in video files; this keeps the site self-contained and lightweight.
-- Proxy asset pointers to the public asset endpoint only during local development; Vite otherwise treats those paths as HTML fallback instead of media.
-- Express all page visual roles through the global semantic theme tokens; this keeps the enterprise identity consistent across existing routes.
-- Keep the homepage media lightweight and static in the critical path; this avoids autoplay failures and GPU-heavy first loads.
+# Website conventions
 
-- Keep service content and the primary navigation pillar taxonomy in shared service data; this preserves legacy detail routes while expanding enterprise IT coverage.
-- Reuse the shared technology list, categories and official monochrome icon paths across home, services and the existing platforms route, with text fallback and trademark disclaimer; this prevents inconsistent vendor relationship claims.
-- Keep public guidance and FAQs in shared data and render new informational routes through a common resource page; this prevents duplicated policy facts and engagement descriptions.
-- Generate full route HTML, head metadata and machine-readable discovery files with the build-only Vite prerender plugin, capped at 100 pages; this makes public content readable without JavaScript while preserving the SPA experience.
-- Keep sitemap lastmod values only when backed by significant page-specific edits recorded in content data; omit them otherwise rather than using build or generation time.
-- Use next-themes with the silxor-theme preference key and global semantic light/dark tokens; this keeps appearance accessible and persistent without a tracking identifier.
-- Keep architecture diagrams data driven with inline SVG, unique title/description IDs, responsive desktop/mobile layouts and visible text summaries; this preserves accessibility without adding rendering libraries.
-
-- Submit consultations only through the public validated Edge Function using server credentials, with no browser table privileges; this prevents bypassing honeypot and server validation or exposing inquiries.
-- Keep consultation option identifiers shared between browser and server, with matching schema parity tests; this keeps accepted fields and length rules consistent across runtimes.
-- Lazy import the Cloud client only on consultation submission; this preserves full build-time prerendering without browser auth storage.
-- Keep insights in shared typed article data and render index/detail through one template; this keeps article content, reading time and structured data consistent.
-- Add approved case studies to `src/data/caseStudies.ts` with a unique slug, title, summary, sections and service slugs only after the owner supplies facts and confirms publication permission; empty data hides navigation and discovery while preserving an honest noindex route.
-- Keep founder biography in approved leadership data and render nothing for empty text; this prevents invented leadership claims.
-- Reserve consultation limits atomically in a service-only RPC using keyed hashes, fixed hourly windows and a global safety bucket; forwarding IP metadata is supplementary because managed ingress sanitation is not documented.
+- Keep the homepage hero isolated in prisma-hero and rendered through HomeHero; preserve the multi-page shell.
+- Use global semantic theme tokens and subset display/body fonts; keep public pages consistent without heavy graphics libraries.
+- Serve media and fonts through asset pointers, proxied only in local development; avoid checked-in large binaries and hotlinks.
+- Keep services, navigation pillars, methodology, FAQs and technology categories in shared data; avoid duplicated facts.
+- Use official monochrome vendor marks with labels, fallbacks and the approved trademark disclaimer; never imply affiliation.
+- Keep data-driven SVG diagrams accessible with unique title/description IDs, mobile layouts and visible summaries.
+- Use next-themes with silxor-theme; respect reduced motion and avoid tracking identifiers.
+- Prerender public HTML and generate discovery files through the build-only plugin, capped at 100 pages; use lastmod only for documented significant page edits.
+- Submit consultations only through the validated public function; no browser table privileges. Lazy-load the Cloud client only on submission.
+- Keep browser/server consultation option IDs and schema limits aligned, with parity tests. Reserve hourly limits atomically with keyed hashes; forwarded connection metadata is supplementary.
+- Keep Insights in shared typed article data with one index/detail template.
+- Add case studies to src/data/caseStudies.ts only after owner facts and publication permission, with unique slug, title, summary, sections and service slugs; empty data hides discovery and navigation.
+- Render founder biography only when approved text is supplied.
+- Keep only reachable website UI and required tooling; no accounts, roles, login or custom conversion tracking.

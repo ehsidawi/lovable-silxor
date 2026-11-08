@@ -45,11 +45,11 @@ const ServiceDetail = () => {
                   className="font-body font-[400]"
                   style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", lineHeight: 1.75, marginTop: 16, maxWidth: 620 }}
                 >
-                  Deliverables, responsibilities, access requirements and acceptance criteria are agreed during assessment. Work is scoped around your environment, not a fixed package.
+                  Deliverables, responsibilities, access requirements and acceptance criteria are agreed during review. Work is scoped around your environment, not a fixed package.
                 </p>
               </div>
               <div>
-                <h3 className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--foreground))", marginBottom: 14 }}>
+                <h3 className="font-body uppercase" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--foreground))", marginBottom: 14 }}>
                   Capabilities
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -86,7 +86,7 @@ const ServiceDetail = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
             {service.blocks.map((b, i) => (
               <section id={b.id} key={b.title} className="r-card scroll-mt-28" style={{ padding: 24, borderRadius: 4 }}>
-                <span className="font-mono" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--muted-foreground))" }}>
+                <span className="font-body" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--muted-foreground))" }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="font-display font-[600]" style={{ fontSize: 16.5, color: "hsl(var(--foreground))", marginTop: 6 }}>
@@ -118,7 +118,7 @@ const ServiceDetail = () => {
                 you a full team of experts without you having to find, vet, and hire them.
               </blockquote>
               <figcaption
-                className="font-mono"
+                className="font-body"
                 style={{ fontSize: 11, letterSpacing: 0, textTransform: "uppercase", color: "hsl(var(--muted-foreground))", marginTop: 20 }}
               >
                 Founder · Private Client · Identity withheld by agreement
@@ -134,7 +134,7 @@ const ServiceDetail = () => {
       {/* Related services */}
       <section className="r-section" style={{ paddingTop: 0 }}>
         <div className="container-content">
-          <h2 className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--foreground))", marginBottom: 14 }}>
+          <h2 className="font-body uppercase" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--foreground))", marginBottom: 14 }}>
             Related Services
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

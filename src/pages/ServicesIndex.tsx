@@ -71,7 +71,7 @@ const ServicesIndex = () => {
                     {s.outcome}
                   </p>
                   <span
-                    className="font-mono inline-flex items-center gap-2"
+                    className="font-body inline-flex items-center gap-2"
                     style={{ fontSize: 10.5, letterSpacing: 0, textTransform: "uppercase", color: "hsl(var(--foreground))", marginTop: "auto", paddingTop: 18 }}
                   >
                     Learn more

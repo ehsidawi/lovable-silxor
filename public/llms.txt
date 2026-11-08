@@ -22,7 +22,7 @@ Silxor helps organizations plan, build, migrate, secure and operate technology a
 - [about](/about): Public information about Silxor about.
 - [contact](/contact): Public information about Silxor contact.
 - [book](/book): Public information about Silxor book.
-- [partners](/partners): Public information about Silxor partners.
+- [technologies](/technologies): Public information about Silxor technologies.
 - [privacy](/privacy): Public information about Silxor privacy.
 - [compliance](/compliance): Public information about Silxor compliance.
 - [sla](/sla): Public information about Silxor sla.

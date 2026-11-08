@@ -31,7 +31,7 @@ We help enterprise and corporate leadership teams plan their entire IT estate, f
 
 - Architecture Strategy: Target state architecture aligned to business goals and constraints.
 - Cloud Strategy: Public, private, hybrid, and sovereign positioning with cost modeling.
-- Technical Assessments: Independent review of current systems, risk, and readiness.
+- Technical Reviews: Independent review of current systems, risk, and readiness.
 - Modernization Roadmaps: Phased plans that sequence value, risk, and downtime.
 - Enterprise IT Planning: Operating models, end user technology, networking and data center roadmaps aligned to business needs.
 - Governance: Standards, review gates, and decision records that outlast the project.
@@ -60,12 +60,12 @@ We design, build, migrate and operate on premises, hybrid and cloud environments
 We build security architecture around identity, segmentation, and evidence, then align the program to the control frameworks your regulators and customers expect.
 
 - Security Architecture: Controls designed into the platform from the first diagram.
-- Security Assessments: Gap analysis against your threat model and control baseline.
+- Security Reviews: Gap analysis against your threat model and control baseline.
 - Zero Trust: Identity centric access, segmentation, and continuous verification.
 - Governance, Risk & Compliance: Policy, risk register, and control ownership that stay current.
 - Hardening: Baselines for endpoints, servers, cloud, and pipelines.
 - SOC & Security Monitoring: Detection engineering, log integration, alert triage and security operations tailored to your environment.
-- Vulnerability Management: Asset discovery, vulnerability assessment, prioritization, remediation tracking and validation.
+- Vulnerability Management: Asset discovery, vulnerability review, prioritization, remediation tracking and validation.
 - Penetration Testing: Authorized testing of networks, applications and APIs against an agreed scope, with findings and remediation guidance.
 - Incident Response: Preparation, investigation, containment and recovery with defined escalation paths and engagement scope.
 
@@ -105,8 +105,8 @@ We design, implement, migrate and operate identity services across workforce, cu
 
 - IAM / Workforce Identity: Workforce IAM architecture, provisioning, authentication and authorization for employees and contractors. Directory services, role and attribute based access, and lifecycle automation aligned to least privilege.
 - CIAM / Customer Identity: Customer registration, sign in, account recovery, consent and secure access for web, mobile and API experiences. Customer identity journeys designed for usability and controlled data handling.
-- PAM / Privileged Access Management: Privileged credential vaulting, session controls, credential rotation and administrative access for teams, vendors and emergency access paths.
-- PIM / Privileged Identity Management: Time limited role activation, approvals, eligibility reviews and audit trails for privileged identities, reducing persistent administrative access.
+- PAM / Privileged Access Management: Privileged credential vaulting, session controls, credential rotation and elevated access for teams, vendors and emergency access paths.
+- PIM / Privileged Identity Management: Time limited role activation, approvals, eligibility reviews and audit trails for privileged identities, reducing persistent elevated access.
 - NHI / Non Human Identity: Inventory, ownership and lifecycle controls for service accounts, machine identities, workloads, secrets and certificates. Credential rotation and workload authentication across applications and infrastructure.
 - IGA / Identity Governance & Administration: Joiner, mover and leaver processes, access requests, access reviews, separation of duties and entitlement governance with evidence for audit teams.
 - SSO & Federation: Single sign on and federation using SAML, OIDC and OAuth 2.0, with application integration and trust configuration across the enterprise.
@@ -142,12 +142,12 @@ We scope, design and build custom hardware, embedded systems and IoT solutions w
 ## Engagement and process
 
 [Engagement models](/engagement): Choose the right level of ownership for your team and your goals. Scope, responsibilities and commercial terms are agreed before work begins.
-- Assessment: Understand the current environment, goals and risks before selecting a solution. Agree the review boundary, gather relevant information and discuss priorities. The next engagement and any deliverables are scoped together.
+- Review: Understand the current environment, goals and risks before selecting a solution. Agree the review boundary, gather relevant information and discuss priorities. The next engagement and any deliverables are scoped together.
 - Project delivery: A defined outcome with an agreed scope, milestones and acceptance criteria. Specify dependencies, responsibilities, testing, change control and handover in a statement of work. Review progress at agreed milestones.
 - Staff augmentation: Add specific expertise to your existing team for an agreed period. Agree the skills needed, reporting line, access, capacity and working cadence. Your team retains its defined decision and delivery responsibilities.
 - Managed service: Ongoing operation and support for a clearly defined environment. Document the service boundary, coverage, escalation paths, maintenance windows, reporting and recovery requirements before transition.
 - Advisory retainer: Recurring access to technology guidance and reviews. Agree the advisory areas, availability, review cadence and outputs. Delivery and operational work are scoped separately when needed.
-- How pricing works: Commercial models are agreed in the proposal. Assessments can use a fixed fee for a defined review. Scoped projects can use a fixed price with milestones and change control. Time and materials work is based on agreed capacity and work performed. Managed services can use a monthly fee for an agreed service boundary. Retainers reserve an agreed level of advisory availability. Cost is shaped by the environment, scope, complexity, integrations, migration needs, security and governance requirements, delivery capacity, support coverage and third party licenses or infrastructure. Assumptions, exclusions, expenses and the approach to changes are documented before work starts. No website figure replaces a written proposal.
+- How pricing works: Commercial models are agreed in the proposal. Reviews can use a fixed fee for a defined review. Scoped projects can use a fixed price with milestones and change control. Time and materials work is based on agreed capacity and work performed. Managed services can use a monthly fee for an agreed service boundary. Retainers reserve an agreed level of advisory availability. Cost is shaped by the environment, scope, complexity, integrations, migration needs, security and governance requirements, delivery capacity, support coverage and third party licenses or infrastructure. Assumptions, exclusions, expenses and the approach to changes are documented before work starts. No website figure replaces a written proposal.
 
 [Our process](/process): A clear path from the first question to an operational system. Reviews and acceptance criteria keep decisions visible throughout the work.
 - Discover: Understand goals, people, systems and constraints. Review the current estate and identify dependencies, data handling needs and risks. Agree the problem to solve and how progress will be measured.
@@ -160,11 +160,11 @@ We scope, design and build custom hardware, embedded systems and IoT solutions w
 - What does Silxor help with? Silxor helps organizations plan, build, secure and operate enterprise technology. Scope can include IT strategy, infrastructure, networking, managed IT, cybersecurity, identity, custom software, private AI and hardware engineering.
 - How do we start? Use Book a Consultation to share your service interests, company context and contact preferences. We review your request and reply by email. Meeting details and next steps are confirmed separately.
 - Can you work with our existing IT team? Yes. An engagement can complement your team through a scoped project, staff augmentation, advisory retainer or managed service. Responsibilities and access are agreed in writing.
-- Where is project data hosted? Data location, access and hosting requirements are defined during assessment and recorded in the agreement. On premises, hybrid and private environments can be included in scope. Private AI is designed to keep sensitive data away from third party model providers.
+- Where is project data hosted? Data location, access and hosting requirements are defined during review and recorded in the agreement. On premises, hybrid and private environments can be included in scope. Private AI is designed to keep sensitive data away from third party model providers.
 - Do you provide certified compliance? We help map controls and prepare evidence against agreed frameworks. Framework references describe capabilities, not a claim of certification or an audit opinion. Required attestations and certification status must be confirmed during contracting.
 - What service levels are available? Coverage hours, severity levels, response targets, backup frequency and recovery objectives depend on the agreed environment and service scope. Only the signed agreement establishes service commitments.
-- Who owns the deliverables? Ownership, licensing, source code access and handover requirements are specified in the agreement. Raise these requirements during assessment so the proposal addresses them.
-- Can you share client references? Public content does not identify clients without permission. Ask about evaluation materials during assessment; availability and disclosure depend on client consent and confidentiality obligations.
+- Who owns the deliverables? Ownership, licensing, source code access and handover requirements are specified in the agreement. Raise these requirements during review so the proposal addresses them.
+- Can you share client references? Public content does not identify clients without permission. Ask about evaluation materials during review; availability and disclosure depend on client consent and confidentiality obligations.
 
 ## Public pages
 - [Home](/): Public Silxor page.
@@ -184,7 +184,7 @@ We scope, design and build custom hardware, embedded systems and IoT solutions w
 - [about](/about): Public Silxor page.
 - [contact](/contact): Public Silxor page.
 - [book](/book): Public Silxor page.
-- [partners](/partners): Public Silxor page.
+- [technologies](/technologies): Public Silxor page.
 - [privacy](/privacy): Public Silxor page.
 - [compliance](/compliance): Public Silxor page.
 - [sla](/sla): Public Silxor page.

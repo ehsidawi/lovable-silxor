@@ -17,8 +17,8 @@ export const routeLoaders = {
   "/clients": () => import("@/pages/ClientsPage"),
   "/about": () => import("@/pages/AboutPage"),
   "/contact": () => import("@/pages/ContactPage"),
-  "/book": () => import("@/pages/BookAssessment"),
-  "/partners": () => import("@/pages/Partners"),
+  "/book": () => import("@/pages/ConsultationPage"),
+  "/technologies": () => import("@/pages/TechnologiesPage"),
   "/privacy": () => import("@/pages/PrivacyPolicy"),
   "/compliance": () => import("@/pages/ComplianceDoc"),
   "/sla": () => import("@/pages/SLADoc"),
@@ -51,20 +51,6 @@ export function prefetchRoute(path: string) {
   started.add(key);
   // Never let a prefetch failure surface as an unhandled rejection.
   routeLoaders[key]().catch(() => started.delete(key));
-}
-
-/** Warm the routes users reach most often, once the browser is idle. */
-export function prefetchPrimaryRoutes() {
-  const run = () => {
-    ["/services", "/services/:slug", "/contact", "/book"].forEach((p) =>
-      prefetchRoute(p === "/services/:slug" ? "/services/product-team" : p)
-    );
-  };
-  if (typeof window === "undefined") return;
-  const ric = (window as unknown as { requestIdleCallback?: (cb: () => void) => number })
-    .requestIdleCallback;
-  if (ric) ric(run);
-  else window.setTimeout(run, 1200);
 }
 
 /** Props to spread on any element that should prefetch on user intent. */

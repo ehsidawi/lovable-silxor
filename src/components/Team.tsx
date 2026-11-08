@@ -18,7 +18,7 @@ const Team = () => {
             <User style={{ width: 22, height: 22, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
           </div>
           <div>
-            <div className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--muted-foreground))" }}>
+            <div className="font-body uppercase" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--muted-foreground))" }}>
               Founder
             </div>
             <a

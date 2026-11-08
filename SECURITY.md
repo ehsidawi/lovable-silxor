@@ -1,41 +1,13 @@
-# Security Policy
+# Security policy
 
-## Reporting a Vulnerability
+Report suspected vulnerabilities privately to **hello@silxor.com**, with the affected URL, impact and reproduction steps. Redact credentials and personal information. Do not open public issues containing sensitive details.
 
-If you discover a security vulnerability in this template, please email
-**contact@silxor.com** with a description and reproduction steps.
+The public reporting policy is at https://silxor.com/security and the machine readable contact is at https://silxor.com/.well-known/security.txt. No response deadline, reward or permission for intrusive testing is promised.
 
-Please do **not** open a public GitHub issue for security problems.
+## Consultation protection
 
-We aim to acknowledge reports within 72 hours and to publish a fix or
-mitigation within 30 days of confirming a valid report.
+The public submission function validates input, rejects honeypot submissions and reserves hourly rate limits atomically. Visitors cannot directly read or write consultation tables. Keyed hashes protect limiter metadata; hosted connection-header sanitation is not documented, so strict trustworthy IP enforcement is not established.
 
-## Frontend security scope
+## Credentials
 
-This is a static, client-rendered marketing site. It provides **no** server-side
-security guarantees. Any endpoint connected via `VITE_LEAD_ENDPOINT` or an edge
-function must implement its own authentication, authorization, rate limiting,
-spam protection, and server-side validation.
-
-Client-side measures in this repo are UX hygiene only:
-
-- Length limits and control-character stripping on form input
-- A honeypot field on the assessment form
-- No logging of form contents to the console or analytics
-- `rel="noopener noreferrer"` on all external links
-- Analytics fully disabled unless an analytics id is configured
-
-## Secrets & Credentials
-
-This repository must never contain:
-
-- Private API keys, secret tokens, or passwords
-- `.env` files with real credentials (only `.env.example` is tracked)
-- Customer data, contracts, or internal documentation
-
-Every `VITE_*` variable is bundled into the browser build and is therefore
-public. Only **publishable / anon** keys may appear in committed configuration.
-
-## Supported Versions
-
-Only the `main` branch receives security updates.
+Never commit private keys, tokens, passwords, customer data or internal contracts. Browser configuration is public; private credentials must remain in server secrets. Never log form contents.

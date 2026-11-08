@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Fraunces', 'serif'],
-        body: ['DM Sans', 'sans-serif'],
-        mono: ['DM Sans', 'sans-serif'],
+        display: ['Montserrat', 'sans-serif'],
+        body: ['Montserrat', 'sans-serif'],
+        mono: ['Montserrat', 'sans-serif'],
       },
       fontSize: {
         'display-xl': ['72px', { lineHeight: '1.05', letterSpacing: '0', fontWeight: '800' }],

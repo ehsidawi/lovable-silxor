@@ -6,7 +6,7 @@
 - Keep services, navigation pillars, methodology, FAQs and technology categories in shared data; avoid duplicated facts.
 - Use official monochrome vendor marks with labels, fallbacks and the approved trademark disclaimer; never imply affiliation.
 - Keep data-driven SVG diagrams accessible with unique title/description IDs, mobile layouts and visible summaries.
-- Use next-themes with silxor-theme; respect reduced motion and avoid tracking identifiers.
+- Site is dark only with no theme toggle or theme storage; respect reduced motion and avoid tracking identifiers.
 - Prerender public HTML and generate discovery files through the build-only plugin, capped at 100 pages; use lastmod only for documented significant page edits.
 - Submit consultations only through the validated public function; no browser table privileges. Lazy-load the Cloud client only on submission.
 - Keep browser/server consultation option IDs and schema limits aligned, with parity tests. Reserve hourly limits atomically with keyed hashes; forwarded connection metadata is supplementary.

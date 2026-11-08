@@ -29,7 +29,7 @@ const ServiceDetail = () => {
         crumbs={[{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, { label: service.navLabel }]}
       />
 
-      <section className="border-b border-border py-8"><div className="container-content"><h2 className="font-display text-2xl font-bold">What is {service.name.toLowerCase()}?</h2><p className="mt-4 max-w-4xl text-base leading-relaxed text-muted-foreground">{service.intro}</p></div></section>
+      <section className="border-b border-border py-8"><div className="container-content"><h2 className="font-display text-2xl font-medium">What is {service.name.toLowerCase()}?</h2><p className="mt-4 max-w-4xl text-base leading-relaxed text-muted-foreground">{service.intro}</p></div></section>
       {diagrams[service.slug] && <ArchitectureDiagram data={diagrams[service.slug]} />}
       {/* Outcome + capabilities */}
       <section className="r-section">
@@ -71,7 +71,7 @@ const ServiceDetail = () => {
       {service.slug === "identity" && (
         <section className="border-y border-border bg-secondary py-5">
           <nav aria-label="Identity disciplines" className="container-content flex flex-wrap gap-3">
-            {service.blocks.map(block => <a key={block.id} href={`#${block.id}`} className="inline-flex min-h-11 items-center rounded-sm border border-border bg-card px-4 text-sm font-medium hover:border-forest">{block.title.split(" / ")[0]}</a>)}
+            {service.blocks.map(block => <a key={block.id} href={`#${block.id}`} className="inline-flex min-h-11 items-center rounded-2xl border border-border bg-card px-4 text-sm font-medium hover:border-forest">{block.title.split(" / ")[0]}</a>)}
           </nav>
         </section>
       )}

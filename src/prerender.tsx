@@ -2,7 +2,6 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { ThemeProvider } from "next-themes";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "@/pages/Index";
 import ServicesIndex from "@/pages/ServicesIndex";
@@ -36,7 +35,7 @@ export const contentModifiedAt: Record<string, string> = Object.fromEntries([
 const routes = [{path:"/",component:Index},{path:"/services",component:ServicesIndex},{path:"/services/:slug",component:ServiceDetail},{path:"/industries",component:IndustriesPage},{path:"/delivery",component:DeliveryPage},{path:"/clients",component:ClientsPage},{path:"/about",component:AboutPage},{path:"/contact",component:ContactPage},{path:"/book",component:ConsultationPage},{path:"/technologies",component:TechnologiesPage},{path:"/privacy",component:PrivacyPolicy},{path:"/compliance",component:ComplianceDoc},{path:"/sla",component:SLADoc},{path:"/faq",component:FaqPage},...resourcePages.map(p=>({path:p.path,component:ResourcePage})),{path:"*",component:NotFound}];
 export function renderPage(path: string) {
  const context: Record<string, any> = {};
- const body = renderToString(<HelmetProvider context={context}><ThemeProvider attribute="class" defaultTheme="light" storageKey="silxor-theme"><TooltipProvider><StaticRouter location={path}><Routes><Route path="/insights" element={<InsightsPage />} /><Route path="/insights/:slug" element={<InsightsPage />} /><Route path="/case-studies" element={<CaseStudiesPage />} /><Route path="/case-studies/:slug" element={<CaseStudiesPage />} />{routes.map(r=><Route key={r.path} path={r.path} element={<r.component />} />)}</Routes></StaticRouter></TooltipProvider></ThemeProvider></HelmetProvider>);
+ const body = renderToString(<HelmetProvider context={context}><TooltipProvider><StaticRouter location={path}><Routes><Route path="/insights" element={<InsightsPage />} /><Route path="/insights/:slug" element={<InsightsPage />} /><Route path="/case-studies" element={<CaseStudiesPage />} /><Route path="/case-studies/:slug" element={<CaseStudiesPage />} />{routes.map(r=><Route key={r.path} path={r.path} element={<r.component />} />)}</Routes></StaticRouter></TooltipProvider></HelmetProvider>);
  const h=context.helmet;
  return {body,head:[h.title,h.meta,h.link,h.script].map(x=>x.toString()).join("\n")};
 }

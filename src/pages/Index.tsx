@@ -4,6 +4,8 @@ import IndustryMatrix from "@/components/home/IndustryMatrix";
 import ProcessOverview from "@/components/home/ProcessOverview";
 import TechnologyPlatforms from "@/components/TechnologyPlatforms";
 import HomeCta from "@/components/home/HomeCta";
+import ServiceCards from "@/components/home/ServiceCards";
+import HomeFaq from "@/components/home/HomeFaq";
 import AnimatedSection from "@/components/AnimatedSection";
 import ArchitectureDiagram from "@/components/diagrams/ArchitectureDiagram";
 import CapabilityMap from "@/components/CapabilityMap";
@@ -17,6 +19,7 @@ const Index = () => {
       path="/"
     >
       <HomeHero />
+      <ServiceCards />
       <AnimatedSection><ArchitectureDiagram data={diagrams.estate} /></AnimatedSection>
       <AnimatedSection><CapabilityMap /></AnimatedSection>
       <AnimatedSection>
@@ -27,6 +30,9 @@ const Index = () => {
       </AnimatedSection>
       <AnimatedSection>
         <TechnologyPlatforms />
+      </AnimatedSection>
+      <AnimatedSection>
+        <HomeFaq />
       </AnimatedSection>
       <AnimatedSection>
         <HomeCta />

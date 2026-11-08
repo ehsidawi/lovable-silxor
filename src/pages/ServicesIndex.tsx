@@ -4,6 +4,7 @@ import PageShell from "@/components/layout/PageShell";
 import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import CtaBand from "@/components/CtaBand";
+import TechnologyPlatforms from "@/components/TechnologyPlatforms";
 import SolutionsSection from "@/components/SolutionsSection";
 import { services } from "@/data/services";
 
@@ -20,8 +21,8 @@ const ServicesIndex = () => {
     >
       <PageHero
         eyebrow="Services"
-        title="One Partner Across Every Layer of Your Platform"
-        lead="Seven practices, delivered by senior engineers under a single line of accountability."
+        title="Enterprise Technology Across Your Entire IT Estate"
+        lead="IT strategy, infrastructure, networking, managed IT, cybersecurity, identity, custom software and hardware. Design, build, migration and operations across on premises, hybrid and cloud environments."
         crumbs={[{ label: "Home", to: "/" }, { label: "Services" }]}
       />
 
@@ -89,6 +90,8 @@ const ServicesIndex = () => {
       </section>
 
       <SolutionsSection />
+
+      <TechnologyPlatforms />
 
       <CtaBand />
     </PageShell>

@@ -8,6 +8,7 @@ import ServiceRail from "@/components/home/ServiceRail";
 import IndustryMatrix from "@/components/home/IndustryMatrix";
 import DeliveryTrack from "@/components/home/DeliveryTrack";
 import ProofQuote from "@/components/home/ProofQuote";
+import TechnologyPlatforms from "@/components/TechnologyPlatforms";
 import WhySilxor from "@/components/WhySilxor";
 import HomeCta from "@/components/home/HomeCta";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -46,6 +47,9 @@ const Index = () => {
       </AnimatedSection>
       <AnimatedSection>
         <ProofQuote />
+      </AnimatedSection>
+      <AnimatedSection>
+        <TechnologyPlatforms />
       </AnimatedSection>
       <AnimatedSection>
         <HomeCta />

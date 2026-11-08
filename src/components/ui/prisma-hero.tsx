@@ -11,7 +11,7 @@ export const PrismaHero = () => (
     <div className="container-content pb-7 pt-12 md:pt-20">
       <div className="mb-8 flex items-center gap-3 font-mono text-xs uppercase text-on-ink-muted"><span className="h-2 w-2 bg-primary" />Silxor Group Holding</div>
       <h1 id="home-title" className="home-hero-title max-w-3xl font-display font-bold text-on-ink">SILXOR.<br />Built for the<br /><span className="text-primary">critical.</span></h1>
-      <p className="mt-7 max-w-lg text-base leading-relaxed text-on-ink-muted md:text-lg">Enterprise cloud, cybersecurity and private AI. We architect, build, secure and operate your critical systems. One accountable senior team.</p>
+      <p className="mt-7 max-w-lg text-base leading-relaxed text-on-ink-muted md:text-lg">Enterprise technology consulting across IT strategy, infrastructure, cybersecurity, identity, software and hardware. We design, build, migrate and operate on premises, hybrid and cloud systems.</p>
       <div className="mt-8 flex flex-wrap gap-3">
         <Button asChild className="h-12 rounded-sm px-6"><SmartLink to="/book">Book an Assessment <ArrowUpRight aria-hidden="true" /></SmartLink></Button>
         <Button asChild variant="outline" className="h-12 rounded-sm border-on-ink/40 bg-transparent px-6 text-on-ink hover:border-primary hover:bg-forest"><SmartLink to="/services">Explore Services <ArrowUpRight aria-hidden="true" /></SmartLink></Button>

@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Seo from "@/components/Seo";
+import TechnologyPlatforms from "@/components/TechnologyPlatforms";
 import { Card } from "@/components/ui/card";
 import {
   Cloud, ShieldCheck, Fingerprint, Cpu, Server, Network,
@@ -17,7 +18,7 @@ const Partners = () => {
     {
       icon: ShieldCheck,
       title: "Security & Threat Defense",
-      body: "Our security architecture draws on established endpoint, network, and threat-detection tooling categories, integrated to fit each client's environment.",
+      body: "Our security architecture draws on established endpoint, network, and threat detection tooling categories, integrated to fit each client's environment.",
     },
     {
       icon: Fingerprint,
@@ -32,12 +33,12 @@ const Partners = () => {
     {
       icon: Server,
       title: "Infrastructure & Data Center",
-      body: "We work with infrastructure, virtualization, and storage technologies appropriate to on-premises, hybrid, and cloud-native deployments.",
+      body: "We work with infrastructure, virtualization, and storage technologies appropriate to on premises, hybrid, and cloud native deployments.",
     },
     {
       icon: Network,
       title: "Automation & DevOps Tooling",
-      body: "Delivery pipelines are built with widely adopted infrastructure-as-code, CI/CD, and observability tooling categories.",
+      body: "Delivery pipelines are built with widely adopted infrastructure as code, CI/CD, and observability tooling categories.",
     },
   ];
 
@@ -47,7 +48,7 @@ const Partners = () => {
       <Navbar />
       <main className="container-content" style={{ paddingTop: 48, paddingBottom: 64 }}>
         <div style={{ marginBottom: 24 }}>
-          <div className="section-eyebrow">{"PARTNERSHIP APPROACH"}</div>
+          <div className="section-eyebrow">{"PLATFORM APPROACH"}</div>
           <h1
             className="font-display font-[700]"
             style={{ fontSize: 40, color: "hsl(var(--foreground))", lineHeight: 1.1 }}
@@ -58,7 +59,7 @@ const Partners = () => {
             className="font-body font-[400] mt-3"
             style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", maxWidth: 640, lineHeight: 1.7 }}
           >
-            {"Silxor is platform-agnostic. We select technologies from mature, well-supported categories based on each client's requirements rather than committing to a single fixed vendor stack. Specific vendor relationships for a given engagement are confirmed during scoping."}
+            {"Silxor is platform agnostic. We select technologies from mature, well supported categories based on each client's requirements rather than committing to a single fixed vendor stack. Platform selection and implementation scope are confirmed during assessment."}
           </p>
         </div>
 
@@ -101,6 +102,7 @@ const Partners = () => {
           })}
         </div>
       </main>
+      <TechnologyPlatforms />
       <Footer />
     </div>
   );

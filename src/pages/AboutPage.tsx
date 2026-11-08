@@ -36,7 +36,7 @@ const AboutPage = () => (
     <PageHero
       eyebrow="About"
       title="Senior Engineers. Direct Accountability."
-      lead="Silxor is an engineering and technology partner built around one idea: the people who design your platform should be the people who build and run it."
+      lead="Silxor Group Holding is an enterprise technology consultancy covering your entire IT estate. The people who design your systems also build, secure and operate them."
       crumbs={[{ label: "Home", to: "/" }, { label: "About" }]}
     />
 
@@ -50,9 +50,10 @@ const AboutPage = () => (
             </div>
             <div className="flex flex-col gap-4">
               <p className="font-body font-[400]" style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", lineHeight: 1.75 }}>
-                We architect, build, secure, host, and operate platforms for institutions and founders who cannot
-                afford a failed program. Advisory, product delivery, cloud, cybersecurity, private AI, identity, and
-                managed services sit under one contract and one line of accountability.
+                We design, build, migrate, secure and operate technology for enterprise and corporate clients,
+                institutions and founders. IT strategy, infrastructure, networking, data center, end user and managed
+                IT, cybersecurity, identity, software, private AI and custom hardware engineering sit under one line
+                of accountability across on premises, hybrid and cloud environments.
               </p>
               <p className="font-body font-[400]" style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", lineHeight: 1.75 }}>
                 That structure removes the most common cause of failure we see: work passed between a strategy firm,

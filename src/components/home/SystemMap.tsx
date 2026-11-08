@@ -1,13 +1,7 @@
-import { ArrowUpRight, Compass, Users, Server, ShieldCheck, Cpu, Activity, Fingerprint } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import SmartLink from "@/components/SmartLink";
-const pillars = [
-  {icon:ShieldCheck, label:"Cybersecurity", to:"/services/cybersecurity", line:"Controls, risk and resilience built into your platform."},
-  {icon:Server, label:"Cloud & Infrastructure", to:"/services/cloud", line:"Architecture for availability, performance and control."},
-  {icon:Cpu, label:"Private AI", to:"/services/private-ai", line:"Intelligence inside your environment. Your data stays yours."},
-  {icon:Fingerprint, label:"Identity & Access", to:"/services/identity", line:"The right access. The right controls. Clear accountability."},
-  {icon:Activity, label:"Managed Services", to:"/services/managed-services", line:"The team that builds it keeps it running."},
-  {icon:Users, label:"Product Delivery", to:"/services/product-team", line:"A complete senior team from concept to production."},
-];
+import { servicePillars } from "@/data/services";
+const pillars = servicePillars.map(s => ({icon: s.icon, label: s.name, to: s.path, line: s.outcome}));
 const SystemMap = () => (
   <section id="capabilities" className="r-section scroll-mt-20">
     <div className="container-content">
@@ -21,7 +15,10 @@ const SystemMap = () => (
           <h3 className="mt-8 font-display text-xl font-bold">{p.label}</h3><p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">{p.line}</p><ArrowUpRight className="ml-auto mt-4 h-5 w-5 text-forest transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" aria-hidden="true" />
         </SmartLink>)}
       </div>
-      <SmartLink to="/services/advisory" className="mt-5 flex items-center gap-3 text-sm font-medium"><Compass className="h-4 w-4 text-forest" aria-hidden="true" />Strategy before spend. Explore Advisory & Strategy.<ArrowUpRight className="h-4 w-4" aria-hidden="true" /></SmartLink>
+      <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium">
+        <SmartLink to="/services/private-ai" className="inline-flex items-center gap-2">Private AI platforms <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></SmartLink>
+        <SmartLink to="/services/product-team" className="inline-flex items-center gap-2">Full product team delivery <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></SmartLink>
+      </div>
     </div>
   </section>
 );

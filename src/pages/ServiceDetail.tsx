@@ -60,6 +60,14 @@ const ServiceDetail = () => {
         </div>
       </section>
 
+      {service.slug === "identity" && (
+        <section className="border-y border-border bg-secondary py-5">
+          <nav aria-label="Identity disciplines" className="container-content flex flex-wrap gap-3">
+            {service.blocks.map(block => <a key={block.id} href={`#${block.id}`} className="inline-flex min-h-11 items-center rounded-sm border border-border bg-card px-4 text-sm font-medium hover:border-forest">{block.title.split(" / ")[0]}</a>)}
+          </nav>
+        </section>
+      )}
+
       {/* What we cover */}
       <section className="r-section" style={{ paddingTop: 0 }}>
         <div className="container-content">
@@ -69,7 +77,7 @@ const ServiceDetail = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
             {service.blocks.map((b, i) => (
-              <div key={b.title} className="r-card" style={{ padding: 24, borderRadius: 4 }}>
+              <section id={b.id} key={b.title} className="r-card scroll-mt-28" style={{ padding: 24, borderRadius: 4 }}>
                 <span className="font-mono" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--muted-foreground))" }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -79,7 +87,7 @@ const ServiceDetail = () => {
                 <p className="font-body font-[400]" style={{ fontSize: 13.5, color: "hsl(var(--muted-foreground))", lineHeight: 1.65, marginTop: 8 }}>
                   {b.line}
                 </p>
-              </div>
+              </section>
             ))}
           </div>
         </div>

@@ -1,8 +1,8 @@
 import { Check } from "lucide-react";
 
 const capabilities = [
-  "Strategy", "Engineering", "Security", "Cloud", "AI",
-  "Managed Services", "24×7 Operations", "End to End", "One Partner",
+  "IT Strategy", "Infrastructure", "Networking", "Cybersecurity", "Identity",
+  "Managed IT", "Software", "Private AI", "Hardware & IoT", "End to End",
 ];
 
 const WhySilxor = () => {

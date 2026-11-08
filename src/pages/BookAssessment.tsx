@@ -11,7 +11,7 @@ import { companySizes, environments, timelines, contactMethods, needSchema, cont
 import SmartLink from '@/components/SmartLink';
 
 const steps = ['What you need','Your context','Contact details'];
-const areas = [...services.map(s => ({id:s.slug,label:s.name})), ...(services.find(s=>s.slug==='identity')?.blocks ?? []).map(b => ({id:b.id ?? '', label:b.title.replaceAll(' / ', ' · ')}))];
+const areas = [...services.map(s => ({id:s.slug,label:s.name})), ...(services.find(s=>s.slug==='identity')?.blocks ?? []).map(b => ({id:b.id ?? '', label:b.title.replace(/ \/ /g, ' · ')}))];
 const initial = {service_areas:[] as string[],company:'',role:'',company_size:'',environment:'',timeline:'',description:'',name:'',work_email:'',phone:'',preferred_contact:'Email',meeting_windows:'',time_zone:'',website:''};
 type Field = keyof typeof initial;
 const BookAssessment = () => {

@@ -95,6 +95,8 @@
   .page-hero h1 { font-size:38px; }
   .home-wordmark { font-size:52px; }
   main h1 { overflow-wrap:break-word; }
+  main h1[style] { font-size:34px !important; }
+  .surface-elevated > .flex { flex-wrap:wrap; }
   .service-pillar { min-height:210px; }
 }
 @media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; } }

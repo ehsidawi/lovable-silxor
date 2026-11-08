@@ -163,7 +163,7 @@ const SLADoc = () => {
           </p>
 
           <Card
-            className="rounded-[4px] border-0 shadow-none text-inherit"
+            className="hidden rounded-[4px] border-0 shadow-none text-inherit md:block"
             style={{ backgroundColor: "hsl(var(--muted))", border: "1px solid hsl(var(--border))", borderRadius: 4, overflow: "hidden" }}
           >
             <Table style={{ width: "100%", borderCollapse: "collapse" }}>
@@ -191,10 +191,7 @@ const SLADoc = () => {
                 {rows.map((row, i) => (
                   <TableRow
                     key={i}
-                    className="border-0 hover:bg-transparent"
-                    style={{ transition: "background 200ms" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "hsl(var(--border))")}
-                    onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+                    className="border-0 hover:bg-secondary"
                   >
                     <TableCell
                       className="font-body font-[400] align-top"
@@ -225,6 +222,17 @@ const SLADoc = () => {
               </TableBody>
             </Table>
           </Card>
+
+          <div className="space-y-5 md:hidden">
+            {(["starter", "business", "enterprise"] as const).map((tier, index) => (
+              <section key={tier} className="border border-border bg-card p-5">
+                <h2 className="mb-5 font-display text-xl font-bold">{headers[index + 1].en}</h2>
+                <dl>{rows.map(row => <div key={row.metric} className="grid grid-cols-2 gap-4 border-t border-border py-3 text-sm">
+                  <dt className="font-medium">{row.metric}</dt><dd className="text-muted-foreground">{row[tier]}</dd>
+                </div>)}</dl>
+              </section>
+            ))}
+          </div>
 
           <p
             className="font-body font-[400] text-center"

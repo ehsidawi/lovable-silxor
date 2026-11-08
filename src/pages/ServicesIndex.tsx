@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import PageShell from "@/components/layout/PageShell";
 import PageHero from "@/components/PageHero";
+import { Button } from "@/components/ui/button";
 import CtaBand from "@/components/CtaBand";
 import SolutionsSection from "@/components/SolutionsSection";
 import { services } from "@/data/services";
@@ -41,9 +42,9 @@ const ServicesIndex = () => {
               </div>
               <div className="flex flex-col gap-3 lg:items-end">
                 <Link to={flagship.path} className="r-cta">Explore the Service</Link>
-                <button type="button" className="r-cta-ghost" onClick={() => navigate("/book")}>
+                <Button variant="outline" className="r-cta-ghost" onClick={() => navigate("/book")}>
                   Book an Assessment
-                </button>
+                </Button>
               </div>
             </div>
           </div>

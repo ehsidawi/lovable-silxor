@@ -1,12 +1,22 @@
 # Silxor redesign
 
+## Completion pass
+- [x] Add atomic server side connection and email limits; strict trustworthy IP enforcement remains blocked on a documented ingress header.
+- [x] Clean About and simplify Home to seven distinct sections.
+- [x] Add six educational insights and empty data driven case studies.
+- [x] Add engagement pricing explanations without figures.
+- [ ] Add protected admin bookings, status workflow and CSV export. Blocked until profile-data question is answered.
+- [x] Instrument anonymous consultation conversions and update storage notice.
+- [x] Optimize hero/fonts/dependencies and measure performance without invented scores; further mobile performance work remains unproven.
+- [x] Generate brand OG image, metadata and verify tests, links, accessibility and themes. Do not publish.
+
 ## Consultation and contact correction
 - [x] Remove the unconfirmed street address and obsolete messaging channels from site, discovery and memory.
 - [x] Build and validate the accessible three step consultation form with private Cloud storage and honeypot protection.
 - [x] Update privacy, cookies, FAQ, metadata and discovery files.
 - [x] Verify submission storage, public access restrictions and desktop/mobile light/dark flows; do not publish.
 - [ ] Owner email notifications need a verified sender domain.
-- [ ] Rate limiting waits for confirmation of the ad hoc tradeoff because no standard primitive exists.
+- [x] Custom server side rate limiting tradeoff approved for the completion pass.
 
 ## Visual capability add-on
 - [x] Add seven accessible inline SVG architecture and flow diagrams.

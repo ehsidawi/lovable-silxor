@@ -14,13 +14,13 @@ Capabilities are scoped per agreement, not blanket guarantees. Vendor names do n
 
 [Service page](/services/product-team)
 
-Silxor becomes the senior product organization behind founders and companies who need to move from concept to production and scale. One accountable partner covers architecture, product, design, engineering, and testing, so you never have to find, vet, hire, and manage separate specialists.
+Silxor coordinates product delivery for founders and companies moving from concept to production. An engagement can cover architecture, product management, design, engineering and testing, with responsibilities and staffing agreed in the proposal.
 
 - Senior Software Architect: Secure, scalable architecture designed with operating cost under control.
 - Product Manager: Business goals turned into requirements, roadmap, priorities, and buildable specifications.
 - Product & UX Designer: The full experience and interface designed around your customer and product goals.
 - Software Engineers: The product built end to end, from first release to production scale.
-- QA & Testing: Every flow, device, edge case, and release tested before customers meet a problem.
+- QA & Testing: Testing of agreed user flows, devices, integrations and release criteria.
 - Delivery Leadership: We coordinate the entire team so you keep one point of accountability.
 
 ## IT Strategy & Advisory
@@ -147,6 +147,7 @@ We scope, design and build custom hardware, embedded systems and IoT solutions w
 - Staff augmentation: Add specific expertise to your existing team for an agreed period. Agree the skills needed, reporting line, access, capacity and working cadence. Your team retains its defined decision and delivery responsibilities.
 - Managed service: Ongoing operation and support for a clearly defined environment. Document the service boundary, coverage, escalation paths, maintenance windows, reporting and recovery requirements before transition.
 - Advisory retainer: Recurring access to technology guidance and reviews. Agree the advisory areas, availability, review cadence and outputs. Delivery and operational work are scoped separately when needed.
+- How pricing works: Commercial models are agreed in the proposal. Assessments can use a fixed fee for a defined review. Scoped projects can use a fixed price with milestones and change control. Time and materials work is based on agreed capacity and work performed. Managed services can use a monthly fee for an agreed service boundary. Retainers reserve an agreed level of advisory availability. Cost is shaped by the environment, scope, complexity, integrations, migration needs, security and governance requirements, delivery capacity, support coverage and third party licenses or infrastructure. Assumptions, exclusions, expenses and the approach to changes are documented before work starts. No website figure replaces a written proposal.
 
 [Our process](/process): A clear path from the first question to an operational system. Reviews and acceptance criteria keep decisions visible throughout the work.
 - Discover: Understand goals, people, systems and constraints. Review the current estate and identify dependencies, data handling needs and risks. Agree the problem to solve and how progress will be measured.
@@ -194,3 +195,10 @@ We scope, design and build custom hardware, embedded systems and IoT solutions w
 - [cookies](/cookies): Public Silxor page.
 - [security](/security): Public Silxor page.
 - [faq](/faq): Public Silxor page.
+- [insights](/insights): Public Silxor page.
+- [insights/non-human-identity-governance](/insights/non-human-identity-governance): Public Silxor page.
+- [insights/pam-vs-pim](/insights/pam-vs-pim): Public Silxor page.
+- [insights/iam-vs-ciam](/insights/iam-vs-ciam): Public Silxor page.
+- [insights/practical-zero-trust-roadmap](/insights/practical-zero-trust-roadmap): Public Silxor page.
+- [insights/on-premises-hybrid-multi-cloud](/insights/on-premises-hybrid-multi-cloud): Public Silxor page.
+- [insights/identity-governance-basics](/insights/identity-governance-basics): Public Silxor page.

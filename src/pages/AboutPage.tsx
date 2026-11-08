@@ -21,21 +21,21 @@ const staffing = [
 ];
 
 const serves = [
-  "Non technical founders taking an idea to production",
-  "Companies without an internal senior engineering leadership layer",
+  "Enterprise and corporate IT leaders planning and operating complex technology estates",
+  "Security and identity leaders strengthening access, controls and governance",
   "Regulated institutions with availability and sovereignty obligations",
-  "Teams replacing multiple vendors with one accountable partner",
+  "Growing companies developing their technology capabilities and delivery capacity",
 ];
 
 const AboutPage = () => (
   <PageShell
-    title="About Silxor | Senior Engineering and Technology Partner"
-    description="Silxor is a senior engineering and technology partner focused on accountable architecture and delivery: one accountable partner, senior engineers, direct accountability, no handoffs."
+    title="About Silxor | Enterprise Technology Consultancy"
+    description="Silxor Group Holding is an enterprise technology consultancy covering IT strategy, infrastructure, cybersecurity, identity, software, hardware and managed operations."
     path="/about"
   >
     <PageHero
       eyebrow="About"
-      title="Senior Engineers. Direct Accountability."
+      title="Enterprise technology. Coordinated delivery."
       lead="Silxor Group Holding is an enterprise technology consultancy covering your entire IT estate. The people who design your systems also build, secure and operate them."
       crumbs={[{ label: "Home", to: "/" }, { label: "About" }]}
     />

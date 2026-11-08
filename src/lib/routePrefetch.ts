@@ -6,6 +6,10 @@
  * imports are cached by the bundler) by the time the user actually navigates.
  */
 export const routeLoaders = {
+  "/insights": () => import("@/pages/InsightsPage"),
+  "/insights/:slug": () => import("@/pages/InsightsPage"),
+  "/case-studies": () => import("@/pages/CaseStudiesPage"),
+  "/case-studies/:slug": () => import("@/pages/CaseStudiesPage"),
   "/services": () => import("@/pages/ServicesIndex"),
   "/services/:slug": () => import("@/pages/ServiceDetail"),
   "/industries": () => import("@/pages/IndustriesPage"),
@@ -35,6 +39,8 @@ function keyFor(path: string): keyof typeof routeLoaders | null {
   const clean = path.split("#")[0].split("?")[0];
   if (clean in routeLoaders) return clean as keyof typeof routeLoaders;
   if (clean.startsWith("/services/")) return "/services/:slug";
+  if (clean.startsWith("/insights/")) return "/insights/:slug";
+  if (clean.startsWith("/case-studies/")) return "/case-studies/:slug";
   return null;
 }
 

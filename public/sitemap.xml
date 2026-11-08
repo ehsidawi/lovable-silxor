@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://silxor.com/</loc></url>
+  <url><loc>https://silxor.com/</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://silxor.com/services</loc></url>
   <url><loc>https://silxor.com/services/product-team</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://silxor.com/services/advisory</loc><lastmod>2026-11-08</lastmod></url>
@@ -14,7 +14,7 @@
   <url><loc>https://silxor.com/industries</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://silxor.com/delivery</loc></url>
   <url><loc>https://silxor.com/clients</loc></url>
-  <url><loc>https://silxor.com/about</loc></url>
+  <url><loc>https://silxor.com/about</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://silxor.com/contact</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://silxor.com/book</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://silxor.com/partners</loc></url>
@@ -28,4 +28,11 @@
   <url><loc>https://silxor.com/cookies</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://silxor.com/security</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://silxor.com/faq</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://silxor.com/insights</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://silxor.com/insights/non-human-identity-governance</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://silxor.com/insights/pam-vs-pim</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://silxor.com/insights/iam-vs-ciam</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://silxor.com/insights/practical-zero-trust-roadmap</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://silxor.com/insights/on-premises-hybrid-multi-cloud</loc><lastmod>2026-11-08</lastmod></url>
+  <url><loc>https://silxor.com/insights/identity-governance-basics</loc><lastmod>2026-11-08</lastmod></url>
 </urlset>

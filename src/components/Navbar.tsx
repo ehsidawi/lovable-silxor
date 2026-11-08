@@ -7,10 +7,13 @@ import { Sheet, SheetContent, SheetTitle, SheetDescription, SheetTrigger } from 
 import { services, servicePillars } from "@/data/services";
 import ThemeToggle from "@/components/ThemeToggle";
 import { resourceLinks } from "@/data/site";
+import { caseStudies } from "@/data/caseStudies";
 
 const links = [
   { label: "Industries", to: "/industries" }, { label: "Delivery", to: "/delivery" },
   { label: "Clients", to: "/clients" }, { label: "About", to: "/about" }, { label: "Contact", to: "/contact" },
+  { label: "Insights", to: "/insights" },
+  ...(caseStudies.length ? [{label:"Case studies",to:"/case-studies"}] : []),
 ];
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -31,7 +34,7 @@ const Navbar = () => {
           <span className="h-3 w-3 bg-forest" aria-hidden="true" />
           <span className="font-display text-2xl font-extrabold">SILXOR</span>
         </SmartLink>
-        <div className="hidden items-center gap-6 lg:flex">
+        <div className="hidden items-center gap-4 xl:flex">
           <div className="relative" onMouseEnter={() => setMegaOpen(true)} onMouseLeave={() => setMegaOpen(false)} onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget)) setMegaOpen(false); }}>
             <Button variant="ghost" className="gap-1 px-0 hover:bg-transparent hover:text-forest" aria-expanded={megaOpen} aria-controls="services-menu" onClick={() => setMegaOpen(!megaOpen)}>
               Services <ChevronDown className="h-3 w-3" aria-hidden="true" />
@@ -51,7 +54,7 @@ const Navbar = () => {
         </div>
         <div className="ml-auto flex items-center gap-2"><ThemeToggle /><Button asChild className="hidden h-11 rounded-sm px-5 xl:inline-flex"><SmartLink to="/book">Book a Consultation <ArrowUpRight aria-hidden="true" /></SmartLink></Button></div>
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-          <SheetTrigger asChild><Button variant="outline" size="icon" aria-label="Open menu" className="min-h-11 min-w-11 lg:hidden"><Menu aria-hidden="true" /></Button></SheetTrigger>
+          <SheetTrigger asChild><Button variant="outline" size="icon" aria-label="Open menu" className="min-h-11 min-w-11 xl:hidden"><Menu aria-hidden="true" /></Button></SheetTrigger>
           <SheetContent className="w-full overflow-y-auto sm:max-w-md">
             <SheetTitle className="font-display text-2xl font-extrabold">SILXOR</SheetTitle><SheetDescription className="sr-only">Primary navigation</SheetDescription>
             <nav aria-label="Mobile" className="mt-8 flex flex-col gap-1">

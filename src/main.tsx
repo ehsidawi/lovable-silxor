@@ -20,6 +20,8 @@ const staticHeadDuplicates = [
   'meta[name="twitter:url"]',
   'meta[name="twitter:card"]',
   'meta[property="og:type"]',
+  'meta[property="og:image"]',
+  'meta[name="twitter:image"]',
   'link[rel="canonical"]',
   'script[type="application/ld+json"]',
 ];

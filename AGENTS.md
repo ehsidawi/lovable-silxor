@@ -15,3 +15,9 @@
 - Submit consultations only through the public validated Edge Function using server credentials, with no browser table privileges; this prevents bypassing honeypot and server validation or exposing inquiries.
 - Keep consultation option identifiers shared between browser and server, with matching schema parity tests; this keeps accepted fields and length rules consistent across runtimes.
 - Lazy import the Cloud client only on consultation submission; this preserves full build-time prerendering without browser auth storage.
+- Keep insights in shared typed article data and render index/detail through one template; this keeps article content, reading time and structured data consistent.
+- Add approved case studies to `src/data/caseStudies.ts` with a unique slug, title, summary, sections and service slugs only after the owner supplies facts and confirms publication permission; empty data hides navigation and discovery while preserving an honest noindex route.
+- Keep founder biography in approved leadership data and render nothing for empty text; this prevents invented leadership claims.
+- Reserve consultation limits atomically in a service-only RPC using keyed hashes, fixed hourly windows and a global safety bucket; forwarding IP metadata is supplementary because managed ingress sanitation is not documented.
+- Store admin privileges exclusively in protected user_roles and grant only consultation SELECT and status-column UPDATE to authenticated admins; this prevents client role escalation and edits to original inquiry details.
+- Emit consultation milestones directly in existing successful handlers through the hosting event global; automatic page views must not be duplicated and properties must not contain form contents.

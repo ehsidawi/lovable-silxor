@@ -34,13 +34,13 @@ export const services: Service[] = [
       "Silxor gives non technical founders and companies a complete senior product team: architecture, product management, design, engineering, QA, and delivery leadership.",
     heroLead: "You do not just need engineers. You need a product team.",
     intro:
-      "Silxor becomes the senior product organization behind founders and companies who need to move from concept to production and scale. One accountable partner covers architecture, product, design, engineering, and testing, so you never have to find, vet, hire, and manage separate specialists.",
+      "Silxor coordinates product delivery for founders and companies moving from concept to production. An engagement can cover architecture, product management, design, engineering and testing, with responsibilities and staffing agreed in the proposal.",
     blocks: [
       { title: "Senior Software Architect", line: "Secure, scalable architecture designed with operating cost under control." },
       { title: "Product Manager", line: "Business goals turned into requirements, roadmap, priorities, and buildable specifications." },
       { title: "Product & UX Designer", line: "The full experience and interface designed around your customer and product goals." },
       { title: "Software Engineers", line: "The product built end to end, from first release to production scale." },
-      { title: "QA & Testing", line: "Every flow, device, edge case, and release tested before customers meet a problem." },
+      { title: "QA & Testing", line: "Testing of agreed user flows, devices, integrations and release criteria." },
       { title: "Delivery Leadership", line: "We coordinate the entire team so you keep one point of accountability." },
     ],
     capabilities: [

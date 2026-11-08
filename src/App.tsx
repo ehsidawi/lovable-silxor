@@ -5,7 +5,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
-import { trackPageView } from "@/lib/analytics";
 import { scrollToHash } from "@/lib/hashNav";
 import { routeLoaders } from "@/lib/routePrefetch";
 
@@ -27,6 +26,8 @@ const ContactPage = lazy(routeLoaders["/contact"]);
 
 const ResourcePage = lazy(routeLoaders["/engagement"]);
 const FaqPage = lazy(routeLoaders["/faq"]);
+const InsightsPage = lazy(routeLoaders["/insights"]);
+const CaseStudiesPage = lazy(routeLoaders["/case-studies"]);
 
 const queryClient = new QueryClient();
 
@@ -34,7 +35,6 @@ const RouteEffects = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    trackPageView(pathname);
     if (hash) {
       // Wait a frame so the target section is mounted before scrolling.
       const id = window.setTimeout(() => {
@@ -83,6 +83,10 @@ const App = () => (
             <Route path="/book" element={<BookAssessment />} />
             {["/engagement", "/process", "/careers", "/terms", "/cookies", "/security"].map(path => <Route key={path} path={path} element={<ResourcePage />} />)}
             <Route path="/faq" element={<FaqPage />} />
+            <Route path="/insights" element={<InsightsPage />} />
+            <Route path="/insights/:slug" element={<InsightsPage />} />
+            <Route path="/case-studies" element={<CaseStudiesPage />} />
+            <Route path="/case-studies/:slug" element={<CaseStudiesPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

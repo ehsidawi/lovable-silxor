@@ -1,14 +1,15 @@
 import {
-  Banknote, Landmark, HeartPulse, Zap, Factory, Truck, GraduationCap, Cpu,
+  Banknote, Landmark, HeartPulse, Zap, Factory, Truck, GraduationCap, Cpu, ShoppingBag,
 } from "lucide-react";
 import PageShell from "@/components/layout/PageShell";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 
 const industries = [
+  { icon: ShoppingBag, title: "Retail & Commerce", line: "Customer platforms, store connectivity, inventory integrations and secure digital transactions designed around business operations.", tags: ["Customer Identity", "Integration", "Payment Security"] },
   {
     icon: Banknote,
-    title: "Banking & Digital Banking",
+    title: "Finance & Banking",
     line: "Core platforms, digital channels, fraud, and identity built to survive audit and peak load.",
     tags: ["PCI DSS", "GLBA", "High Availability"],
   },
@@ -97,6 +98,7 @@ const IndustriesPage = () => (
       </div>
     </section>
 
+    <section className="border-b border-border py-8"><div className="container-content"><p className="text-sm leading-relaxed text-muted-foreground">These are capability areas, not a list of clients or completed projects. Sector requirements and applicable controls are confirmed during assessment.</p><nav aria-label="Related services" className="mt-5 flex flex-wrap gap-6"><a href="/services/cybersecurity" className="underline underline-offset-4">Cybersecurity and control alignment</a><a href="/services/identity" className="underline underline-offset-4">Enterprise identity services</a><a href="/services/cloud" className="underline underline-offset-4">Infrastructure and cloud design</a><a href="/faq" className="underline underline-offset-4">Engagement questions</a></nav></div></section>
     <CtaBand
       eyebrow="Sector Fit"
       title="Tell Us What You Must Comply With"

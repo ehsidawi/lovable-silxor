@@ -1,62 +1,6 @@
-import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-
-const NotFound = () => {
-
-
-  return (
-    <div className="min-h-screen">
-      <Helmet>
-        <title>Page Not Found | Silxor</title>
-        <meta name="robots" content="noindex, follow" />
-      </Helmet>
-      <Navbar />
-      <main id="main">
-        <section className="section-spacing" style={{ paddingTop: 140, paddingBottom: 120 }}>
-          <div className="container-content" style={{ maxWidth: 640, margin: "0 auto" }}>
-            <div className="section-eyebrow">{"ERROR 404"}</div>
-            <h1
-              className="font-display font-[700]"
-              style={{ fontSize: 42, lineHeight: 1.15, color: "hsl(var(--foreground))", marginBottom: 12 }}
-            >
-              {"This page is not available"}
-            </h1>
-            <p
-              className="font-body font-[400]"
-              style={{
-                fontSize: 16,
-                color: "hsl(var(--muted-foreground))",
-                lineHeight: 1.7,
-                marginBottom: 32,
-                textAlign: "start",
-              }}
-            >
-              {"The address you requested does not exist or has moved. Try one of the links below, or contact our team and we will point you to the right resource."}
-            </p>
-            <nav
-              aria-label={"Helpful links"}
-              className="flex flex-wrap gap-3"
-            >
-              <Link to="/" className="r-cta">
-                {"Back to Home"}
-              </Link>
-              <Link to="/services" className="r-cta-ghost">
-                {"Explore Services"}
-              </Link>
-
-              <Link to="/book" className="r-cta-ghost">
-                {"Book an Assessment"}
-              </Link>
-
-            </nav>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
-  );
-};
-
-export default NotFound;
+import PageShell from "@/components/layout/PageShell";
+import SmartLink from "@/components/SmartLink";
+import { Button } from "@/components/ui/button";
+export default function NotFound() { const {pathname}=useLocation(); return <PageShell title="Page Not Found | Silxor" description="This Silxor page is unavailable. Explore enterprise technology services, read frequently asked questions or contact our team." path={pathname}><Helmet><meta name="robots" content="noindex, follow" /></Helmet><section className="r-section"><div className="container-content max-w-4xl"><span className="r-eyebrow">404</span><h1 className="r-title mt-6">This page is not available</h1><p className="r-lead mt-5 max-w-2xl">The address may have changed or the page may not exist. You can continue from our homepage or find the service you need.</p><Button asChild className="mt-8 h-12"><SmartLink to="/">Back to Home</SmartLink></Button><nav aria-label="Helpful destinations" className="mt-8 flex flex-wrap gap-6"><SmartLink to="/services" className="underline underline-offset-4">Explore enterprise services</SmartLink><SmartLink to="/faq" className="underline underline-offset-4">Read frequently asked questions</SmartLink><SmartLink to="/contact" className="underline underline-offset-4">Contact Silxor</SmartLink></nav></div></section></PageShell>; }

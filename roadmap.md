@@ -7,7 +7,7 @@
 - [x] Leave changes in preview and summarize palette, fonts and page changes.
 
 ## Expanded enterprise IT scope
-- [ ] Broaden service pillars across IT strategy, infrastructure/networking, managed IT, cybersecurity, IAM, software/private AI and hardware/embedded/IoT.
-- [ ] Expand the existing IAM route with IAM, CIAM, PAM, PIM, NHI and IGA subsections.
-- [ ] Add text-only technologies/platforms and remove vendor relationship claims from visible navigation/content.
-- [ ] Verify service destinations, identity coverage, mobile/desktop and unchanged booking/SEO; do not publish.
+- [x] Broaden service pillars across IT strategy, infrastructure/networking, managed IT, cybersecurity, IAM, software/private AI and hardware/embedded/IoT.
+- [x] Expand the existing IAM route with IAM, CIAM, PAM, PIM, NHI and IGA subsections.
+- [x] Add text-only technologies/platforms and remove vendor relationship claims from visible navigation/content.
+- [x] Verify service destinations, identity coverage, mobile/desktop and unchanged booking/SEO; do not publish.

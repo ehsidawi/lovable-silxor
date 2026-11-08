@@ -21,8 +21,8 @@ const Index = () => {
 
   return (
     <PageShell
-      title="Silxor | Enterprise Cloud, Cybersecurity, Private AI, and Product Delivery"
-      description="Silxor architects, builds, secures, and operates critical platforms for institutions and founders: full product teams, cloud and infrastructure, cybersecurity, identity, private AI, and managed services."
+      title="Silxor | Enterprise Technology Consultancy"
+      description="Silxor Group Holding plans, builds, secures and operates enterprise IT, infrastructure, cybersecurity, identity, software, private AI and hardware."
       path="/"
     >
       <HomeHero />

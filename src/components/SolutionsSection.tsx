@@ -19,7 +19,7 @@ const SolutionsSection = () => {
             Secure Platforms for Banking and Government
           </h2>
           <p className="r-lead" style={{ maxWidth: 560 }}>
-            Compliant, AI enabled ecosystems for regulated institutions.
+            Illustrative capability areas, not completed client projects or compliance guarantees. Controls and technology choices are agreed for each engagement.
           </p>
         </div>
 

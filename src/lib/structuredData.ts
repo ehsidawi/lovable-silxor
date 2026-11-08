@@ -1,5 +1,5 @@
-import { business, SITE, faqs, serviceFaqs } from "@/data/site";
-import { getService } from "@/data/services";
+import { business, SITE, faqs, serviceFaqs } from "../data/site";
+import { getService } from "../data/services";
 export function structuredData(path: string, title: string, description: string) {
  const id = `${SITE}/#organization`; const service = path.startsWith("/services/") ? getService(path.split("/")[2]) : undefined;
  const graph: Record<string, unknown>[] = [

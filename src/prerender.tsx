@@ -2,7 +2,6 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { ThemeProvider } from "next-themes";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "@/pages/Index";
 import ServicesIndex from "@/pages/ServicesIndex";

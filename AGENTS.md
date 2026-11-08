@@ -11,3 +11,7 @@
 - Keep sitemap lastmod values only when backed by significant page-specific edits recorded in content data; omit them otherwise rather than using build or generation time.
 - Use next-themes with the silxor-theme preference key and global semantic light/dark tokens; this keeps appearance accessible and persistent without a tracking identifier.
 - Keep architecture diagrams data driven with inline SVG, unique title/description IDs, responsive desktop/mobile layouts and visible text summaries; this preserves accessibility without adding rendering libraries.
+
+- Submit consultations only through the public validated Edge Function using server credentials, with no browser table privileges; this prevents bypassing honeypot and server validation or exposing inquiries.
+- Keep consultation option identifiers shared between browser and server, with matching schema parity tests; this keeps accepted fields and length rules consistent across runtimes.
+- Lazy import the Cloud client only on consultation submission; this preserves full build-time prerendering without browser auth storage.

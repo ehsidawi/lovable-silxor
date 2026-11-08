@@ -1,3 +1,6 @@
+@font-face { font-family: 'Syne'; font-style: normal; font-weight: 400 800; font-display: swap; src: url('/__l5e/assets-v1/e0ec353b-2419-4bd3-bb47-a5d8bec64941/silxor-syne.woff2') format('woff2'); }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400 600; font-display: swap; src: url('/__l5e/assets-v1/70793cae-e862-4953-8ecd-2b66ea881940/silxor-dm-sans.woff2') format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400 500; font-display: swap; src: url('/__l5e/assets-v1/639d82ec-84c8-46ab-b49b-8abb59aacc03/silxor-jetbrains-mono.woff2') format('woff2'); }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

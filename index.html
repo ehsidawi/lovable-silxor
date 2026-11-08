@@ -37,11 +37,11 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#141414" />
 
-    <link rel="preload" as="image" href="/silxor-infrastructure-1600.webp" imagesrcset="/silxor-infrastructure-768.webp 768w, /silxor-infrastructure-1600.webp 1600w" imagesizes="100vw" />
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="preload" as="image" fetchpriority="high" href="/silxor-infrastructure-1600.webp" imagesrcset="/silxor-infrastructure-768.webp 768w, /silxor-infrastructure-1600.webp 1600w" imagesizes="100vw" />
+    <!-- Font assets use the same delivery endpoint as other site media. -->
+    <link rel="preload" as="font" type="font/woff2" href="/__l5e/assets-v1/e0ec353b-2419-4bd3-bb47-a5d8bec64941/silxor-syne.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/__l5e/assets-v1/70793cae-e862-4953-8ecd-2b66ea881940/silxor-dm-sans.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/__l5e/assets-v1/639d82ec-84c8-46ab-b49b-8abb59aacc03/silxor-jetbrains-mono.woff2" crossorigin />
   </head>
 
   <body>

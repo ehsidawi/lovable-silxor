@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 /** Lightweight editorial hero, isolated from the multi-page shell. */
 export const PrismaHero = () => (
   <section className="dark-band relative isolate overflow-hidden" aria-labelledby="home-title">
-    <img src="/silxor-infrastructure-1600.webp" srcSet="/silxor-infrastructure-768.webp 768w, /silxor-infrastructure-1600.webp 1600w" sizes="100vw" alt="" aria-hidden="true" width={1920} height={1024} fetchPriority="high" className="absolute inset-0 -z-20 h-full w-full object-cover object-right" />
+    <img src="/silxor-infrastructure-1600.webp" srcSet="/silxor-infrastructure-768.webp 768w, /silxor-infrastructure-1600.webp 1600w" sizes="100vw" alt="" aria-hidden="true" width={1920} height={1024} {...{ fetchpriority: "high" }} className="absolute inset-0 -z-20 h-full w-full object-cover object-right" />
     <div className="hero-shade absolute inset-0 -z-10" aria-hidden="true" />
     <div className="container-content pb-7 pt-12 md:pt-20">
       <div className="mb-8 flex items-center gap-3 font-mono text-xs uppercase text-on-ink-muted"><span className="h-2 w-2 bg-primary" />Silxor Group Holding</div>

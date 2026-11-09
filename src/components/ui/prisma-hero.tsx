@@ -7,7 +7,7 @@ export const PrismaHero = () => (
     <div className="ignite-glow absolute inset-0 -z-10" aria-hidden="true" />
     <p className="font-mono text-xs uppercase tracking-[0.3em] text-on-ink-muted">Silxor Group Holding</p>
 
-    <div className="flex w-full max-w-6xl flex-col items-center gap-8 md:flex-row md:justify-between md:gap-6">
+    <div className="flex w-full max-w-6xl flex-col items-center gap-8 md:flex-row md:justify-center md:gap-16">
       <h1 id="home-title" className="contents">
         <span className="ignite-word">BUILD</span>
         <span className="sr-only">Silxor enterprise technology, from strategy to operations</span>

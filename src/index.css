@@ -200,7 +200,7 @@ a.r-card:hover,.surface-elevated:hover { border-color: hsl(var(--primary) / .7);
 .dark body { background-image: none; }
 .r-section { padding-block: 56px; }
 .r-title { font-size: 44px; line-height: 1.08; letter-spacing: 0 !important; }
-.r-eyebrow,.section-eyebrow { letter-spacing: 0 !important; font-size: 10px; color: hsl(var(--muted-foreground)); }
+.r-eyebrow,.section-eyebrow { letter-spacing: 0 !important; font-size: 11px; color: hsl(var(--foreground) / .85); }
 .r-eyebrow::before,.section-eyebrow::before { width: 7px; height: 7px; box-shadow: none; border-radius: 50%; }
 .r-card,.surface-elevated { clip-path: none; border-radius: 6px; box-shadow: none; }
 a.r-card:hover,.surface-elevated:hover { box-shadow: none; }

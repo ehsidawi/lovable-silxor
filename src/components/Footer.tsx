@@ -10,7 +10,8 @@ const columns = [
   {title:"Resources",links:[...resourceLinks,{label:"Compliance Documentation",to:"/compliance"},{label:"SLA",to:"/sla"},{label:"Book a Consultation",to:"/book"}]},
 ];
 const Footer = () => (
-  <footer className="bg-secondary pb-6 pt-10"><div className="container-content">
+  <footer className="editorial-footer bg-secondary pb-6 pt-10"><div className="container-content">
+    <div className="footer-wordmark mb-8 border-b border-border pb-6" aria-hidden="true">SILXOR<span className="text-primary">.</span></div>
     <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
       <div><SmartLink to="/" className="flex items-center gap-2.5 font-display text-3xl font-extrabold"><span className="h-3 w-3 bg-forest" aria-hidden="true" />SILXOR</SmartLink><p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">Enterprise IT consulting, infrastructure and networking, cybersecurity, identity, managed IT, custom software, private AI and hardware engineering.</p><a href="mailto:hello@silxor.com" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold">hello@silxor.com <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></a><p className="mt-3 text-sm text-muted-foreground">+1 979 500 3390</p></div>
       {columns.map(c => <div key={c.title}><h2 className="mb-5 font-mono text-xs uppercase text-muted-foreground">{c.title}</h2><nav aria-label={c.title} className="flex flex-col gap-0">{c.links.map(l => <SmartLink key={l.to} to={l.to} className="text-sm hover:text-forest hover:underline underline-offset-4">{l.label}</SmartLink>)}</nav></div>)}

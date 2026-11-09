@@ -37,6 +37,7 @@
     --type-page: 42px;
     --container-content: 1240px;
     --gradient-button: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--primary) / .84));
+    --button-shadow: 0 2px 0 hsl(var(--ink) / .12);
     --shadow-menu: 0 18px 48px hsl(var(--ink) / 0.14);
     --hero-shade: linear-gradient(90deg, hsl(var(--ink) / .94), hsl(var(--ink) / .72) 45%, hsl(var(--ink) / .12));
   }
@@ -76,9 +77,9 @@
   .r-eyebrow::before,.section-eyebrow::before { content: ''; width: 8px; height: 8px; background: hsl(var(--forest)); }
   .r-pill,.badge-pill { display: inline-flex; align-items: center; gap: 8px; max-width: 100%; white-space: normal; border: 1px solid hsl(var(--border)); background: hsl(var(--muted)); color: hsl(var(--muted-foreground)); padding: 7px 10px; border-radius: 2px; font-size: 11px; font-family: 'Montserrat',monospace; }
   .r-node { display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:4px; border:1px solid hsl(var(--border)); background:hsl(var(--muted)); color:hsl(var(--forest)); }
-  .r-cta,.r-cta-ghost { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:48px; padding:14px 22px; border-radius:3px; font-family:'Montserrat',sans-serif; font-size:14px; font-weight:600; text-transform:none; transition:background .2s, border-color .2s; }
+  .r-cta,.r-cta-ghost { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:48px; padding:14px 22px; border-radius:8px; font-family:'Montserrat',sans-serif; font-size:14px; font-weight:600; text-transform:none; transition:background .2s, border-color .2s, transform .2s; }
   .r-cta { background:hsl(var(--primary)); color:hsl(var(--primary-foreground)); border:1px solid transparent; }
-  .r-cta:hover { background:hsl(var(--primary) / .8); }
+  .r-cta:hover { background:hsl(var(--primary) / .9); transform:translateY(-1px); }
   .r-cta-ghost { background:transparent; color:hsl(var(--foreground)); border:1px solid hsl(var(--border-highlight)); }
   .r-cta-ghost:hover { background:hsl(var(--muted)); border-color:hsl(var(--foreground)); }
   .r-cta--sm { min-height:44px; padding:10px 18px; font-size:13px; }
@@ -137,14 +138,20 @@
 footer nav a { display: inline-flex; align-items: center; min-height: 44px; }
 footer a { min-height: 24px; }
 
-.button-primary { background: var(--gradient-button); }
-.dark .button-primary { color: hsl(var(--foreground)); border: 1px solid hsl(var(--border-highlight)); }
-.button-primary:hover { filter: brightness(1.15); }
+.site-button { border-radius:8px; min-height:44px; }
+.button-primary { background:hsl(var(--primary)); color:hsl(var(--primary-foreground)); border:1px solid hsl(var(--primary)); box-shadow:var(--button-shadow); }
+.button-primary:hover { background:hsl(var(--primary) / .9); transform:translateY(-1px); }
+.site-button:active,.r-cta:active,.r-cta-ghost:active { transform:translateY(0); }
+.site-button:disabled { transform:none; box-shadow:none; }
+.site-button svg,.r-cta svg,.r-cta-ghost svg { transition:transform .2s; }
+.button-primary:hover svg,.r-cta:hover svg { transform:translate(1px,-1px); }
+.dark-band .button-primary,.page-hero-media .button-primary { color:hsl(var(--ink)); background:hsl(var(--on-ink)); border-color:hsl(var(--on-ink)); }
+.dark-band .button-primary:hover,.page-hero-media .button-primary:hover { background:hsl(var(--on-ink) / .9); }
 .page-hero-media { color: hsl(var(--on-ink)); }
 .page-hero-media h1 { max-width: 740px; }
 .page-hero-media .r-lead, .page-hero-media .r-eyebrow, .page-hero-media nav { color: hsl(var(--on-ink-muted)); }
-.page-hero-media .button-primary { color: hsl(var(--on-ink)); background: linear-gradient(180deg, hsl(var(--on-ink) / .4), hsl(var(--on-ink) / .14)); border: 1px solid hsl(var(--on-ink) / .4); }
-.r-cta,.r-cta-ghost { border-radius: 41px; }
+.dark-band .r-cta-ghost:hover { background:hsl(var(--on-ink) / .1); }
+.r-cta,.r-cta-ghost { border-radius:8px; }
 .r-card,.surface-elevated { border-radius: 8px; }
 footer nav { gap: 0; }
 .architecture-svg { max-width: 960px; margin-inline: auto; }

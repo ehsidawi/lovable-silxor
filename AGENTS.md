@@ -2,6 +2,7 @@
 - Serve transformed video media through Lovable asset pointers, not external hotlinks or checked-in video files; this keeps the site self-contained and lightweight.
 - Proxy asset pointers to the public asset endpoint only during local development; Vite otherwise treats those paths as HTML fallback instead of media.
 - Express all page visual roles through the global semantic theme tokens; this keeps the enterprise identity consistent across existing routes.
+- Deduplicate React and React DOM in both Vite configurations; theme hooks and renderers must share one React instance.
 - Keep the homepage media lightweight and static in the critical path; this avoids autoplay failures and GPU-heavy first loads.
 
 - Keep service content and the primary navigation pillar taxonomy in shared service data; this preserves legacy detail routes while expanding enterprise IT coverage.

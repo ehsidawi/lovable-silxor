@@ -19,6 +19,8 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [react(), prerenderPlugin(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
+    // Hooks and the renderer must share one React instance, including linked dependencies.
+    dedupe: ["react", "react-dom"],
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },

@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Syne', 'sans-serif'],
-        body: ['DM Sans', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        display: ['Montserrat', 'sans-serif'],
+        body: ['Montserrat', 'sans-serif'],
+        mono: ['Montserrat', 'sans-serif'],
       },
       fontSize: {
         'display-xl': ['72px', { lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '800' }],

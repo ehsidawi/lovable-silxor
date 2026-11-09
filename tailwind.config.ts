@@ -23,6 +23,7 @@ export default {
         'display-lg': ['42px', { lineHeight: '1.15', letterSpacing: '-0.02em', fontWeight: '700' }],
       },
       colors: {
+        paper: { DEFAULT: 'hsl(var(--paper))', foreground: 'hsl(var(--paper-foreground))', accent: 'hsl(var(--paper-accent))' },
         ink: "hsl(var(--ink))",
         "on-ink": "hsl(var(--on-ink))",
         "on-ink-muted": "hsl(var(--on-ink-muted))",

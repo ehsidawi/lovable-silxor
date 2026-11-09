@@ -8,11 +8,19 @@ import TechnologyPlatforms from "@/components/TechnologyPlatforms";
 import SolutionsSection from "@/components/SolutionsSection";
 import { services } from "@/data/services";
 import { infrastructureMedia, serviceMedia } from "@/data/serviceMedia";
+import { useWebMCP } from "use-webmcp-tool";
+import { runWebMCPTool } from "@/lib/webmcp-telemetry";
 
 const ServicesIndex = () => {
   const navigate = useNavigate();
   const flagship = services.find((s) => s.flagship) ?? services[0];
   const rest = services.filter((s) => !s.flagship);
+  useWebMCP({
+    name: "read_services",
+    description: "Read the services currently listed on this page and their destinations.",
+    annotations: { readOnlyHint: true },
+    execute: () => runWebMCPTool("read_services", () => services.map(s => `${s.name}: ${s.outcome} (${s.path})`).join("\n")),
+  });
 
   return (
     <PageShell

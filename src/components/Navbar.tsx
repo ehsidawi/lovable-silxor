@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background">
       <a href="#main" className="skip-link">Skip to content</a>
-      <nav aria-label="Primary" className="container-content flex h-20 items-center justify-between gap-5">
+      <nav aria-label="Primary" className="container-content flex h-16 items-center justify-between gap-5">
         <SmartLink to="/" aria-label="Silxor home" className="flex shrink-0 items-center gap-2.5">
           <span className="h-3 w-3 bg-forest" aria-hidden="true" />
           <span className="font-display text-2xl font-extrabold">SILXOR</span>
@@ -52,7 +52,7 @@ const Navbar = () => {
           </div>
           {links.map((l) => <SmartNavLink key={l.to} to={l.to} className={({isActive}) => `text-sm font-medium transition-colors hover:text-forest ${isActive ? "text-forest underline underline-offset-8" : "text-foreground"}`}>{l.label}</SmartNavLink>)}
         </div>
-        <div className="ml-auto flex items-center gap-2"><ThemeToggle /><Button asChild className="hidden h-11 rounded-sm px-5 xl:inline-flex"><SmartLink to="/book">Book a Consultation <ArrowUpRight aria-hidden="true" /></SmartLink></Button></div>
+        <div className="ml-auto flex items-center gap-2"><ThemeToggle /><Button asChild className="hidden h-11 rounded-full px-5 xl:inline-flex"><SmartLink to="/book">Book a Consultation <ArrowUpRight aria-hidden="true" /></SmartLink></Button></div>
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
           <SheetTrigger asChild><Button variant="outline" size="icon" aria-label="Open menu" className="min-h-11 min-w-11 xl:hidden"><Menu aria-hidden="true" /></Button></SheetTrigger>
           <SheetContent className="w-full overflow-y-auto sm:max-w-md">

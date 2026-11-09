@@ -7,6 +7,7 @@ import CtaBand from "@/components/CtaBand";
 import TechnologyPlatforms from "@/components/TechnologyPlatforms";
 import SolutionsSection from "@/components/SolutionsSection";
 import { services } from "@/data/services";
+import { infrastructureMedia, serviceMedia } from "@/data/serviceMedia";
 
 const ServicesIndex = () => {
   const navigate = useNavigate();
@@ -21,8 +22,9 @@ const ServicesIndex = () => {
     >
       <PageHero
         eyebrow="Services"
-        title="Enterprise Technology Across Your Entire IT Estate"
-        lead="IT strategy, infrastructure, networking, managed IT, cybersecurity, identity, custom software and hardware. Design, build, migration and operations across on premises, hybrid and cloud environments. Each engagement is scoped to your needs."
+        title="Your entire IT estate."
+        lead="Strategy, infrastructure, security, identity, software and hardware. Design, build and operations scoped to your needs."
+        media={infrastructureMedia}
         crumbs={[{ label: "Home", to: "/" }, { label: "Services" }]}
       />
 
@@ -61,6 +63,7 @@ const ServicesIndex = () => {
                   className="r-card group flex flex-col"
                   style={{ padding: 24, borderRadius: 4 }}
                 >
+                  {serviceMedia[s.slug] && <img src={serviceMedia[s.slug].small} alt={serviceMedia[s.slug].alt} width={768} height={512} loading="lazy" className="mb-4 aspect-[16/7] w-full rounded-md object-cover object-right" />}
                   <div className="r-node" style={{ width: 46, height: 46 }}>
                     <Icon style={{ width: 19, height: 19, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
                   </div>

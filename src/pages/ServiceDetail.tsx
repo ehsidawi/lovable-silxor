@@ -9,6 +9,7 @@ import QuestionList from "@/components/QuestionList";
 import { serviceFaqs } from "@/data/site";
 import ArchitectureDiagram from "@/components/diagrams/ArchitectureDiagram";
 import { diagrams } from "@/data/diagrams";
+import { serviceMedia } from "@/data/serviceMedia";
 
 const ServiceDetail = () => {
   const { slug } = useParams();
@@ -26,6 +27,7 @@ const ServiceDetail = () => {
         eyebrow={service.flagship ? "Flagship Service" : "Service"}
         title={service.name}
         lead={service.heroLead}
+        media={serviceMedia[service.slug]}
         crumbs={[{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, { label: service.navLabel }]}
       />
 

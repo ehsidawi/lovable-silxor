@@ -2,6 +2,7 @@
 - Serve transformed video media through Lovable asset pointers, not external hotlinks or checked-in video files; this keeps the site self-contained and lightweight.
 - Proxy asset pointers to the public asset endpoint only during local development; Vite otherwise treats those paths as HTML fallback instead of media.
 - Express all page visual roles through the global semantic theme tokens; this keeps the enterprise identity consistent across existing routes.
+- Deduplicate React and React DOM in both Vite configurations; theme hooks and renderers must share one React instance.
 - Keep the homepage media lightweight and static in the critical path; this avoids autoplay failures and GPU-heavy first loads.
 
 - Keep service content and the primary navigation pillar taxonomy in shared service data; this preserves legacy detail routes while expanding enterprise IT coverage.
@@ -10,6 +11,8 @@
 - Generate full route HTML, head metadata and machine-readable discovery files with the build-only Vite prerender plugin, capped at 100 pages; this makes public content readable without JavaScript while preserving the SPA experience.
 - Keep sitemap lastmod values only when backed by significant page-specific edits recorded in content data; omit them otherwise rather than using build or generation time.
 - Use next-themes with the silxor-theme preference key and global semantic light/dark tokens; this keeps appearance accessible and persistent without a tracking identifier.
+- Share the default appearance between browser and prerender through the appearance module; this prevents inconsistent first visits.
+- Keep responsive illustrative technology images in shared service media data; this matches service content without implying real company facilities or staff.
 - Keep architecture diagrams data driven with inline SVG, unique title/description IDs, responsive desktop/mobile layouts and visible text summaries; this preserves accessibility without adding rendering libraries.
 
 - Submit consultations only through the public validated Edge Function using server credentials, with no browser table privileges; this prevents bypassing honeypot and server validation or exposing inquiries.

@@ -3,6 +3,7 @@ import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import "./index.css";
 import { ThemeProvider } from "next-themes";
+import { DEFAULT_THEME } from "@/lib/appearance";
 
 /**
  * The static index.html head carries sitewide metadata for non JS crawlers.
@@ -33,6 +34,6 @@ for (const selector of staticHeadDuplicates) {
 const root = document.getElementById("root");
 if (root) createRoot(root).render(
   <HelmetProvider>
-    <ThemeProvider attribute="class" defaultTheme="light" storageKey="silxor-theme" enableSystem disableTransitionOnChange><App /></ThemeProvider>
+    <ThemeProvider attribute="class" defaultTheme={DEFAULT_THEME} storageKey="silxor-theme" enableSystem disableTransitionOnChange><App /></ThemeProvider>
   </HelmetProvider>
 );

@@ -6,9 +6,20 @@ import CtaBand from '@/components/CtaBand';
 import { insights, insightPath, readingTime } from '@/data/insights';
 import { getService } from '@/data/services';
 import NotFound from './NotFound';
+import { useWebMCP } from 'use-webmcp-tool';
+import { runWebMCPTool } from '@/lib/webmcp-telemetry';
 export default function InsightsPage() {
  const { slug } = useParams();
  const article = slug ? insights.find(a => a.slug === slug) : undefined;
+ useWebMCP({
+  name: 'read_insights',
+  description: 'Read the article currently shown, or the titles and summaries in the visible insights index.',
+  enabled: !slug || Boolean(article),
+  annotations: { readOnlyHint: true },
+  execute: () => runWebMCPTool('read_insights', () => article
+   ? `${article.title}\n${article.description}\n${article.sections.map(s => `${s.title}\n${s.paragraphs.join('\n')}`).join('\n\n')}`
+   : insights.map(a => `${a.title}: ${a.description} (${insightPath(a)})`).join('\n')),
+ });
  if (slug && !article) return <NotFound />;
  return <PageShell title={`${article?.title ?? 'Insights'} | Silxor`} description={article?.description ?? 'Educational guides to enterprise identity, cybersecurity and infrastructure from Silxor.'} path={article ? insightPath(article) : '/insights'}>
   <PageHero eyebrow="Insights" title={article?.title ?? 'Enterprise technology insights'} lead={article?.description ?? 'Clear explanations of identity, security and infrastructure decisions.'} crumbs={article ? [{label:'Home',to:'/'},{label:'Insights',to:'/insights'},{label:article.title}] : [{label:'Home',to:'/'},{label:'Insights'}]} />

@@ -176,3 +176,21 @@ a.r-card:hover,.surface-elevated:hover { border-color: hsl(var(--primary) / .7);
 .dark-band { background: hsl(var(--secondary)); border-block: 1px solid hsl(var(--primary) / .25); }
 .dark-band .button-primary,.page-hero-media .button-primary { color: hsl(var(--primary-foreground)); background: hsl(var(--primary)); border-color: hsl(var(--primary)); }
 .dark-band .r-eyebrow::before { background: hsl(var(--primary)); }
+
+/* Ignition hero */
+.ignite-hero { background: hsl(var(--ink)); }
+.ignite-glow { background:
+  radial-gradient(circle at 50% 50%, hsl(var(--primary) / .55) 0, hsl(var(--primary) / .12) 14%, transparent 30%),
+  repeating-radial-gradient(circle at 50% 50%, hsl(var(--primary) / .10) 0 6%, transparent 10% 16%),
+  conic-gradient(from 0deg at 50% 50%, hsl(212 80% 22% / .5), hsl(184 100% 40% / .12), hsl(250 50% 20% / .4), hsl(212 80% 22% / .5));
+  filter: blur(40px); transform: scale(1.3); animation: ignite-spin 40s linear infinite; }
+@keyframes ignite-spin { to { transform: scale(1.3) rotate(360deg); } }
+.ignite-word { font-family: 'Space Grotesk Variable', sans-serif; font-weight: 700; font-size: clamp(48px, 7.5vw, 120px); line-height: .9; color: hsl(var(--on-ink)); transform: scaleX(1.15); display: inline-block; }
+.ignite-button { display: flex; align-items: center; justify-content: center; text-align: center; width: 190px; height: 190px; flex-shrink: 0; border-radius: 9999px;
+  font-family: 'Space Grotesk Variable', sans-serif; font-weight: 600; font-size: 20px; line-height: 1.15; color: hsl(var(--primary-foreground));
+  background: radial-gradient(circle at 50% 35%, hsl(var(--primary)), hsl(var(--primary) / .75));
+  box-shadow: 0 0 0 8px hsl(var(--on-ink) / .12), 0 0 0 9px hsl(var(--on-ink) / .25), 0 0 60px hsl(var(--primary) / .6), inset 0 -10px 24px hsl(var(--ink) / .3);
+  transition: transform .25s, box-shadow .25s; }
+.ignite-button:hover { transform: scale(1.04); box-shadow: 0 0 0 8px hsl(var(--on-ink) / .16), 0 0 0 9px hsl(var(--on-ink) / .35), 0 0 90px hsl(var(--primary) / .8), inset 0 -10px 24px hsl(var(--ink) / .3); }
+.ignite-button:active { transform: scale(.97); }
+@media(max-width:767px) { .ignite-button { width: 150px; height: 150px; font-size: 17px; } .ignite-word { transform: scaleX(1.1); } }

@@ -29,7 +29,7 @@ const ServiceDetail = () => {
         crumbs={[{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, { label: service.navLabel }]}
       />
 
-      <section className="border-b border-border py-8"><div className="container-content"><h2 className="font-display text-2xl font-medium">What is {service.name.toLowerCase()}?</h2><p className="mt-4 max-w-4xl text-base leading-relaxed text-muted-foreground">{service.intro}</p></div></section>
+      <section className="border-b border-border py-8"><div className="container-content"><h2 className="font-display text-2xl font-bold">What is {service.name.toLowerCase()}?</h2><p className="mt-4 max-w-4xl text-base leading-relaxed text-muted-foreground">{service.intro}</p></div></section>
       {diagrams[service.slug] && <ArchitectureDiagram data={diagrams[service.slug]} />}
       {/* Outcome + capabilities */}
       <section className="r-section">
@@ -45,11 +45,11 @@ const ServiceDetail = () => {
                   className="font-body font-[400]"
                   style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", lineHeight: 1.75, marginTop: 16, maxWidth: 620 }}
                 >
-                  Deliverables, responsibilities, access requirements and acceptance criteria are agreed during review. Work is scoped around your environment, not a fixed package.
+                  Deliverables, responsibilities, access requirements and acceptance criteria are agreed during assessment. Work is scoped around your environment, not a fixed package.
                 </p>
               </div>
               <div>
-                <h3 className="font-body uppercase" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--foreground))", marginBottom: 14 }}>
+                <h3 className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--foreground))", marginBottom: 14 }}>
                   Capabilities
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -71,7 +71,7 @@ const ServiceDetail = () => {
       {service.slug === "identity" && (
         <section className="border-y border-border bg-secondary py-5">
           <nav aria-label="Identity disciplines" className="container-content flex flex-wrap gap-3">
-            {service.blocks.map(block => <a key={block.id} href={`#${block.id}`} className="inline-flex min-h-11 items-center rounded-2xl border border-border bg-card px-4 text-sm font-medium hover:border-forest">{block.title.split(" / ")[0]}</a>)}
+            {service.blocks.map(block => <a key={block.id} href={`#${block.id}`} className="inline-flex min-h-11 items-center rounded-sm border border-border bg-card px-4 text-sm font-medium hover:border-forest">{block.title.split(" / ")[0]}</a>)}
           </nav>
         </section>
       )}
@@ -86,7 +86,7 @@ const ServiceDetail = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
             {service.blocks.map((b, i) => (
               <section id={b.id} key={b.title} className="r-card scroll-mt-28" style={{ padding: 24, borderRadius: 4 }}>
-                <span className="font-body" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--muted-foreground))" }}>
+                <span className="font-mono" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--muted-foreground))" }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="font-display font-[600]" style={{ fontSize: 16.5, color: "hsl(var(--foreground))", marginTop: 6 }}>
@@ -118,7 +118,7 @@ const ServiceDetail = () => {
                 you a full team of experts without you having to find, vet, and hire them.
               </blockquote>
               <figcaption
-                className="font-body"
+                className="font-mono"
                 style={{ fontSize: 11, letterSpacing: 0, textTransform: "uppercase", color: "hsl(var(--muted-foreground))", marginTop: 20 }}
               >
                 Founder · Private Client · Identity withheld by agreement
@@ -134,7 +134,7 @@ const ServiceDetail = () => {
       {/* Related services */}
       <section className="r-section" style={{ paddingTop: 0 }}>
         <div className="container-content">
-          <h2 className="font-body uppercase" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--foreground))", marginBottom: 14 }}>
+          <h2 className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--foreground))", marginBottom: 14 }}>
             Related Services
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

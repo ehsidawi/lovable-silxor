@@ -7,7 +7,7 @@ import {
   Cloud, ShieldCheck, Fingerprint, Cpu, Server, Network,
 } from "lucide-react";
 
-const TechnologiesPage = () => {
+const Partners = () => {
 
   const categories = [
     {
@@ -44,7 +44,7 @@ const TechnologiesPage = () => {
 
   return (
     <div className="min-h-screen">
-      <Seo title={"Technologies & Platforms | Silxor"} description={"How Silxor selects cloud, security, identity, AI, and infrastructure platforms per engagement instead of a single fixed vendor stack."} path="/technologies" />
+      <Seo title={"Technologies & Platforms | Silxor"} description={"How Silxor selects cloud, security, identity, AI, and infrastructure platforms per engagement instead of a single fixed vendor stack."} path="/partners" />
       <Navbar />
       <main id="main" tabIndex={-1} className="container-content" style={{ paddingTop: 48, paddingBottom: 64 }}>
         <div style={{ marginBottom: 24 }}>
@@ -59,7 +59,7 @@ const TechnologiesPage = () => {
             className="font-body font-[400] mt-3"
             style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", maxWidth: 640, lineHeight: 1.7 }}
           >
-            {"Silxor is platform agnostic. We select technologies from mature, well supported categories based on each client's requirements rather than committing to a single fixed vendor stack. Platform selection and implementation scope are confirmed during review."}
+            {"Silxor is platform agnostic. We select technologies from mature, well supported categories based on each client's requirements rather than committing to a single fixed vendor stack. Platform selection and implementation scope are confirmed during assessment."}
           </p>
         </div>
 
@@ -108,4 +108,4 @@ const TechnologiesPage = () => {
   );
 };
 
-export default TechnologiesPage;
+export default Partners;

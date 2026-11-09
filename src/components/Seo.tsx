@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import socialArtwork from "@/assets/silxor-norch-social.jpg.asset.json";
 import { structuredData } from "@/lib/structuredData";
 
 const SITE = "https://silxor.com";
@@ -22,11 +21,11 @@ const Seo = ({ title, description, path }: SeoProps) => {
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content={path.startsWith('/insights/') ? 'article' : 'website'} />
-      <meta property="og:image" content={`${SITE}${socialArtwork.url}`} />
+      <meta property="og:image" content="https://silxor.com/__l5e/assets-v1/8d235b93-d365-45c5-8d33-200c50b17ee4/silxor-social-1200x630.jpg" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content={`${SITE}${socialArtwork.url}`} />
+      <meta name="twitter:image" content="https://silxor.com/__l5e/assets-v1/8d235b93-d365-45c5-8d33-200c50b17ee4/silxor-social-1200x630.jpg" />
       <meta name="twitter:url" content={url} />
       <script type="application/ld+json">{JSON.stringify(structuredData(path, title, description)).replace(/</g, "\\u003c")}</script>
     </Helmet>

@@ -22,7 +22,7 @@ const IndustryMatrix = () => (
         </div>
         <SmartLink
           to="/industries"
-          className="font-body uppercase"
+          className="font-mono uppercase"
           style={{ fontSize: 11, letterSpacing: 0, color: "hsl(var(--foreground))" }}
         >
           Industries →

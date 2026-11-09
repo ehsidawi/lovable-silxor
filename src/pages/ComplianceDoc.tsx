@@ -90,7 +90,7 @@ const ComplianceDoc = () => {
                     {block.title}
                   </h2>
                   <Badge
-                    className="badge-pill rounded-[2px] border-0 bg-transparent p-0 font-normal hover:bg-transparent font-body font-[400] uppercase"
+                    className="badge-pill rounded-[2px] border-0 bg-transparent p-0 font-normal hover:bg-transparent font-mono font-[400] uppercase"
                     style={{
                       fontSize: 9,
                       letterSpacing: 0,

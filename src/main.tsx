@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import "./index.css";
-
+import { ThemeProvider } from "next-themes";
 
 /**
  * The static index.html head carries sitewide metadata for non JS crawlers.
@@ -33,6 +33,6 @@ for (const selector of staticHeadDuplicates) {
 const root = document.getElementById("root");
 if (root) createRoot(root).render(
   <HelmetProvider>
-    <App />
+    <ThemeProvider attribute="class" defaultTheme="light" storageKey="silxor-theme" enableSystem disableTransitionOnChange><App /></ThemeProvider>
   </HelmetProvider>
 );

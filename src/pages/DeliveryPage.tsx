@@ -4,15 +4,15 @@ import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 
 const steps = [
-  { icon: ClipboardList, title: "Review", line: "Review the environment, objectives, constraints and risks. Scope and commercial terms are agreed before the review begins." },
+  { icon: ClipboardList, title: "Assess", line: "Review the environment, objectives, constraints and risks. Scope and commercial terms are agreed before the assessment begins." },
   { icon: PencilRuler, title: "Architect & Design", line: "Target architecture, security model, product requirements, and user experience designed and reviewed before build starts." },
   { icon: Code2, title: "Engineer & Build", line: "Senior engineers build in reviewed increments, with testing, quality gates, and demos on a fixed cadence." },
-  { icon: Rocket, title: "Deploy & Host", line: "Production release on monitored infrastructure, in the hosting model and jurisdiction agreed at review." },
+  { icon: Rocket, title: "Deploy & Host", line: "Production release on monitored infrastructure, in the hosting model and jurisdiction agreed at assessment." },
   { icon: RefreshCw, title: "Manage & Iterate", line: "Ongoing operations, patching, security, optimization, and a shared improvement backlog under agreed SLA tiers." },
 ];
 
 const principles = [
-  { title: "Coordinated Delivery", line: "Advisory, build, and operations under one contract and one owner." },
+  { title: "One Partner", line: "Advisory, build, and operations under one contract and one owner." },
   { title: "Full Stack", line: "Architecture, product, engineering, security and operations coordinated within the agreed scope." },
   { title: "Planned Handover", line: "Delivery, handover and ongoing ownership are planned together." },
 ];
@@ -20,12 +20,12 @@ const principles = [
 const DeliveryPage = () => (
   <PageShell
     title="Delivery Model | Silxor"
-    description="Silxor coordinates review, architecture, engineering, deployment and operations with scope, responsibilities and handover agreed for each engagement."
+    description="Silxor coordinates assessment, architecture, engineering, deployment and operations with scope, responsibilities and handover agreed for each engagement."
     path="/delivery"
   >
     <PageHero
       eyebrow="Delivery Model"
-      title="From review to operations."
+      title="From assessment to operations."
       lead="Five stages with responsibilities, review points and handover defined for your engagement."
       crumbs={[{ label: "Home", to: "/" }, { label: "Delivery" }]}
     />
@@ -40,7 +40,7 @@ const DeliveryPage = () => (
                 <div className="grid grid-cols-1 sm:grid-cols-[auto_minmax(0,1fr)] gap-4 sm:gap-6 items-start">
                   <div className="flex items-center gap-3">
                     <span
-                      className="font-body font-[700]"
+                      className="font-mono font-[700]"
                       style={{ fontSize: 44, color: "hsl(var(--forest))", lineHeight: 1 }}
                     >
                       {String(i + 1).padStart(2, "0")}

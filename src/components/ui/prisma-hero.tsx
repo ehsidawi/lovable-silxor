@@ -1,31 +1,23 @@
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowDown } from "lucide-react";
 import SmartLink from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
-import heroArtwork from "@/assets/silxor-norch-hero.webp.asset.json";
 
+/** Lightweight editorial hero, isolated from the multi-page shell. */
 export const PrismaHero = () => (
-  <section className="relative isolate overflow-hidden pb-20 pt-10 md:pb-28 md:pt-16" aria-labelledby="home-title">
-    <div className="hero-glow pointer-events-none absolute -left-[30%] top-[-10%] -z-10 h-[120%] w-[90%]" aria-hidden="true" />
-    <div className="container-content grid items-center gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
-      <div className="relative order-2 overflow-hidden rounded-[32px] border border-border lg:order-1">
-        <img src={heroArtwork.url} alt="" aria-hidden="true" width={900} height={1056} {...{ fetchpriority: "high" }} className="aspect-[4/3] h-full w-full object-cover lg:aspect-[9/10]" />
+  <section className="dark-band relative isolate overflow-hidden" aria-labelledby="home-title">
+    <img src="/silxor-infrastructure-1600.webp" srcSet="/silxor-infrastructure-768.webp 768w, /silxor-infrastructure-1600.webp 1600w" sizes="100vw" alt="" aria-hidden="true" width={1920} height={1024} {...{ fetchpriority: "high" }} className="absolute inset-0 -z-20 h-full w-full object-cover object-right" />
+    <div className="hero-shade absolute inset-0 -z-10" aria-hidden="true" />
+    <div className="container-content pb-7 pt-12 md:pt-20">
+      <div className="mb-8 flex items-center gap-3 font-mono text-xs uppercase text-on-ink-muted"><span className="h-2 w-2 bg-primary" />Silxor Group Holding</div>
+      <h1 id="home-title" className="home-hero-title max-w-3xl font-display font-bold text-on-ink">SILXOR.<br />Built for the<br /><span className="text-primary">critical.</span></h1>
+      <p className="mt-7 max-w-lg text-base leading-relaxed text-on-ink-muted md:text-lg">Enterprise technology consulting across IT strategy, infrastructure, cybersecurity, identity, software and hardware. We design, build, migrate and operate on premises, hybrid and cloud systems.</p>
+      <div className="mt-8 flex flex-wrap gap-3">
+        <Button asChild className="h-12 rounded-sm px-6"><SmartLink to="/book">Book a Consultation <ArrowUpRight aria-hidden="true" /></SmartLink></Button>
+        <Button asChild variant="outline" className="h-12 rounded-sm border-on-ink/40 bg-transparent px-6 text-on-ink hover:border-primary hover:bg-forest"><SmartLink to="/services">Explore Services <ArrowUpRight aria-hidden="true" /></SmartLink></Button>
       </div>
-      <div className="order-1 lg:order-2">
-        <p className="r-eyebrow">Silxor Group Holding</p>
-        <h1 id="home-title" className="home-hero-title mt-5 font-medium">Enterprise technology, built for the critical.</h1>
-        <p className="r-lead mt-6 max-w-xl">Enterprise technology consulting across IT strategy, infrastructure, cybersecurity, identity, software and hardware. We design, build, migrate and operate on premises, hybrid and cloud systems.</p>
-        <div className="mt-9 flex flex-wrap gap-4">
-          <Button asChild size="lg"><SmartLink to="/book">Book a Consultation <ArrowUpRight aria-hidden="true" /></SmartLink></Button>
-          <Button asChild variant="outline" size="lg"><SmartLink to="/services">Explore Services</SmartLink></Button>
-        </div>
-        <div className="mt-14 flex items-center gap-5 border-t border-border pt-7">
-          <img src={heroArtwork.url} alt="" aria-hidden="true" width={72} height={72} className="h-16 w-16 shrink-0 rounded-2xl object-cover" />
-          <p className="flex-1 text-sm leading-relaxed text-body-soft">Architecture, engineering and operations from one accountable senior team.</p>
-          <div className="flex gap-2">
-            <Button asChild variant="outline" size="icon" className="h-12 w-12"><a href="#capabilities" aria-label="Previous: explore capabilities"><ArrowLeft aria-hidden="true" /></a></Button>
-            <Button asChild variant="outline" size="icon" className="h-12 w-12"><a href="#services-overview" aria-label="Next: service overview"><ArrowRight aria-hidden="true" /></a></Button>
-          </div>
-        </div>
+      <div className="mt-12 flex items-center justify-between gap-5 border-t border-on-ink/20 pt-6 md:mt-16">
+        <span className="font-mono text-[10px] uppercase text-on-ink-muted sm:text-xs">Architecture. Engineering. Accountability.</span>
+        <a href="#capabilities" aria-label="Explore Silxor capabilities" className="flex h-11 w-11 shrink-0 items-center justify-center border border-on-ink/30 text-primary"><ArrowDown className="h-5 w-5" aria-hidden="true" /></a>
       </div>
     </div>
   </section>

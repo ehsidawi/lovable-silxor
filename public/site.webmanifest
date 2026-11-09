@@ -3,9 +3,9 @@
   "short_name": "Silxor",
   "description": "Enterprise technology consultancy",
   "start_url": "/",
-  "display": "browser",
-  "background_color": "#f6efe5",
-  "theme_color": "#8d4930",
+  "display": "standalone",
+  "background_color": "#141414",
+  "theme_color": "#C5C7CB",
   "icons": [
     {
       "src": "/favicon.svg",

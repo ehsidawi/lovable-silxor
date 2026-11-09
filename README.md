@@ -1,21 +1,133 @@
-# Silxor company website
+# Silxor — Original Design Website Template
 
-Public enterprise technology consultancy website with Insights, service guidance and a private consultation form. No accounts or application features.
+The Silxor marketing site: a premium monochrome, industrial/technical React
+template. English only (LTR).
 
-## Development
+Repository: https://github.com/ehsidawi/silxor-og-wbs
 
-React 18, Vite, TypeScript and Tailwind CSS. Install with `bun install`, run `bun run dev`, and run tests with `bun test src/data src/lib`. The production build prerenders public route HTML and generates sitemap and AI discovery files.
+---
 
-## Content and design
+## Brand
 
-Shared service data defines offerings and navigation. Global semantic tokens support light and dark appearance. Subset serif and sans fonts, static original artwork and lightweight SVG diagrams avoid heavy rendering libraries.
+- **Name:** Silxor (legal entity: Silxor Group Holding)
+- **Positioning:** enterprise technology, cybersecurity, cloud and
+  infrastructure, private AI, identity and access, managed services
+- **Contact:** hello@silxor.com
+- **LinkedIn:** https://www.linkedin.com/company/silxorllc/
 
-Only approved facts may be published. Case studies remain empty until the owner supplies facts and publication permission. Founder biography remains hidden until supplied.
+### Design system
 
-## Consultations
+| Token | Value |
+| --- | --- |
+| Background (matte black) | `#141414` |
+| Surface (graphite) | `#25282C` |
+| Primary text (stainless) | `#F0F1F3` / `#FFFFFF` |
+| Muted text (titanium) | `#B8BCC2` |
+| Radius | 2–4px (near square) |
 
-`/book` submits to the validated public function. Requests are stored privately, with server validation, honeypot protection and atomic hourly spam limits. Public visitors have no direct table privileges. Notification emails need a verified sender domain.
+Typography: **Work Sans** (body), **JetBrains Mono** (labels, data, display).
+Motion: framer-motion, always gated on
+`prefers-reduced-motion`.
 
-## Configuration
+---
 
-Only public Cloud configuration belongs in browser variables. Private credentials belong in server secrets, never source code or browser variables. See SECURITY.md.
+## Architecture
+
+```
+src/
+  components/        section components + shadcn/ui primitives (ui/)
+  lib/
+    analytics.ts     privacy-conscious analytics hook (disabled by default)
+    submitLead.ts    integration-ready form submission adapter
+  pages/             Index, Solutions, Partners, BookAssessment, legal, 404
+public/              robots.txt, sitemap.xml, favicon, manifest
+index.html           SEO metadata + JSON-LD (Organization, WebSite, Service, Breadcrumbs)
+```
+
+Stack: React 18, Vite 5, TypeScript, Tailwind CSS 3, shadcn/ui, react-router,
+framer-motion, react-hook-form + zod.
+
+---
+
+
+## Local setup
+
+```bash
+npm install
+cp .env.example .env   # fill in what you need
+npm run dev            # http://localhost:8080
+npm run build          # production build to dist/
+```
+
+## Deployment
+
+Any static host (Lovable publish, Vercel, Netlify, S3+CloudFront). Configure an
+SPA rewrite so all paths serve `index.html`.
+
+---
+
+## Environment variables
+
+All `VITE_*` values are **public** — they ship inside the browser bundle.
+
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `VITE_SUPABASE_URL` / `VITE_SUPABASE_PUBLISHABLE_KEY` / `VITE_SUPABASE_PROJECT_ID` | no | Lovable Cloud client (publishable keys only) |
+| `VITE_LEAD_ENDPOINT` | no | POST URL that receives assessment form submissions |
+| `VITE_ANALYTICS_ID` | no | Enables analytics; unset = no tracking at all |
+| `VITE_ANALYTICS_SRC` | no | Analytics script URL (e.g. Plausible) |
+
+Private keys (CRM tokens, SMTP/Resend keys, service-role keys) must live in
+server-side secrets only — never in `.env` or any `VITE_` variable.
+
+---
+
+## Form / CRM / email integration
+
+Consultation requests at `/book` are validated client side and by `submit-consultation`, then stored privately in `consultation_requests`. Public visitors cannot read, update or delete requests. Owner emails require a verified sender domain and are not enabled yet.
+
+## Analytics
+
+`src/lib/analytics.ts` is inert until `VITE_ANALYTICS_ID` is set. It records
+page views on route change and named events only; it never sends form contents,
+emails, or query strings.
+
+## SEO
+
+Static metadata lives in `index.html` (title, description, canonical, OG,
+Twitter, favicon, JSON-LD). `public/robots.txt` allows all crawlers and points
+at `public/sitemap.xml`, which lists every public route. Update the sitemap when
+routes change. This is a client-rendered SPA, so per-route social previews are
+not visible to non-JS crawlers.
+
+---
+
+## Security notes
+
+- The frontend provides **no** server-side security. Any endpoint you connect
+  must do its own authentication, authorization, rate limiting, and validation.
+- Form input is length-limited and control characters are stripped before use;
+  treat this as UX hygiene, not as sanitization for a backend.
+- Form contents are never logged to the console or to analytics.
+- External links use `rel="noopener noreferrer"`.
+- Only publishable keys are committed. See `SECURITY.md` for reporting.
+
+---
+
+## Content verification checklist
+
+The site deliberately avoids unverifiable claims. Before publishing, the owner
+must supply evidence for anything they want to state as fact:
+
+- [ ] Certifications actually held (ISO 27001, SOC 2, etc.) with dates and auditor
+- [ ] Data center tier / facility and operator, if it should be named
+- [ ] Contractual uptime / latency / response-time figures per service tier
+- [ ] Named clients, logos, case studies, and written permission to use them
+- [ ] Testimonials with attribution and approval
+- [ ] Real team members, titles, and bios
+- [ ] Partner and technology-vendor relationships with permission to display
+- [ ] Company facts: founding year, headcount, coverage hours, jurisdictions
+- [ ] Legal review of the SLA, compliance, and privacy pages
+
+Until provided, the corresponding sections stay capability-oriented or are
+clearly labeled as illustrative.

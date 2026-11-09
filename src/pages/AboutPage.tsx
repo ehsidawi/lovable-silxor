@@ -10,7 +10,7 @@ import Team from "@/components/Team";
 const posture = [
   { icon: Users, title: "One Accountable Team", line: "Advisory, build, and operations under one owner." },
   { icon: ShieldCheck, title: "Security by Design", line: "Identity and controls built in from day one." },
-  { icon: FileCheck, title: "Framework Aligned", line: "NIST CSF and ISO 27001 control families, evidenced." },
+  { icon: FileCheck, title: "Framework Informed", line: "Control frameworks and evidence requirements scoped to the engagement." },
   { icon: GaugeCircle, title: "Scoped per Engagement", line: "SLA tiers and reporting defined at assessment." },
 ];
 

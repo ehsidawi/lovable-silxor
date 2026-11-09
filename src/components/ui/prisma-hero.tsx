@@ -8,7 +8,7 @@ export const PrismaHero = () => (
 
     {/* Build side */}
     <div className="split-paper relative flex flex-col px-6 pb-16 pt-10 md:px-12">
-      <p className="split-word text-right" aria-hidden="true">WE <span className="text-primary">BUILD</span></p>
+      <p className="split-word text-right" aria-hidden="true">WE <span className="text-paper-accent">BUILD</span></p>
       <div className="mx-auto mt-10 w-full max-w-md" aria-hidden="true">
         <div className="split-window">
           <div className="split-window-bar bg-primary"><i /><i /><i /></div>

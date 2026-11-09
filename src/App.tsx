@@ -1,8 +1,5 @@
 import { Suspense, lazy, useEffect } from "react";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import { scrollToHash } from "@/lib/hashNav";
@@ -28,8 +25,6 @@ const ResourcePage = lazy(routeLoaders["/engagement"]);
 const FaqPage = lazy(routeLoaders["/faq"]);
 const InsightsPage = lazy(routeLoaders["/insights"]);
 const CaseStudiesPage = lazy(routeLoaders["/case-studies"]);
-
-const queryClient = new QueryClient();
 
 const RouteEffects = () => {
   const { pathname, hash } = useLocation();
@@ -60,10 +55,7 @@ const RouteFallback = () => (
 );
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
       <BrowserRouter>
         <RouteEffects />
         <Suspense fallback={<RouteFallback />}>
@@ -92,7 +84,6 @@ const App = () => (
         </Suspense>
       </BrowserRouter>
     </TooltipProvider>
-  </QueryClientProvider>
 );
 
 export default App;

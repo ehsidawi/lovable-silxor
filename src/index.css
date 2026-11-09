@@ -19,7 +19,7 @@
     --secondary: 145 13% 91%;
     --secondary-foreground: 150 14% 10%;
     --muted: 145 13% 93%;
-    --muted-foreground: 150 7% 36%;
+    --muted-foreground: 150 9% 26%;
     --accent: 0 0% 88%;
     --accent-foreground: 150 14% 10%;
     --destructive: 0 72% 43%;
@@ -49,13 +49,13 @@
     --card: 214 14% 9%; --card-foreground: 210 20% 96%;
     --popover: 214 14% 9%; --popover-foreground: 210 20% 96%;
     --secondary: 213 13% 6%; --secondary-foreground: 210 20% 96%;
-    --muted: 214 13% 12%; --muted-foreground: 213 10% 68%;
+    --muted: 214 13% 14%; --muted-foreground: 213 14% 82%;
     --primary: 184 100% 50%; --primary-foreground: 210 11% 4%;
     --accent: 214 14% 17%; --accent-foreground: 210 20% 96%;
-    --border: 214 13% 18%; --border-highlight: 184 60% 38%;
+    --border: 214 12% 28%; --border-highlight: 184 60% 45%;
     --input: 214 12% 32%; --ring: 184 100% 50%; --forest: 184 100% 50%;
     --destructive: 0 85% 68%;
-    --ink: 210 11% 4%; --on-ink: 210 20% 96%; --on-ink-muted: 213 10% 70%;
+    --ink: 210 11% 4%; --on-ink: 210 20% 96%; --on-ink-muted: 213 14% 82%;
     --gradient-button: linear-gradient(180deg, hsl(var(--foreground) / .4), hsl(var(--foreground) / .14));
   }
   * { @apply border-border; letter-spacing: 0 !important; }
@@ -212,9 +212,9 @@ a.r-card:hover,.surface-elevated:hover { box-shadow: none; }
 .editorial-heading .r-lead { justify-self: end; }
 .editorial-home > :first-child { background: hsl(var(--paper)); color: hsl(var(--paper-foreground)); }
 .editorial-home > :first-child > section,.editorial-paper {
-  --foreground: var(--paper-foreground); --muted-foreground: 210 8% 35%;
+  --foreground: var(--paper-foreground); --muted-foreground: 210 10% 24%; --card-foreground: var(--paper-foreground); --secondary-foreground: var(--paper-foreground); --muted: 40 15% 90%;
   --primary: var(--paper-accent); --forest: var(--paper-accent); --primary-foreground: 0 0% 100%;
-  --card: 0 0% 100%; --secondary: 40 15% 90%; --border: 40 10% 80%; --border-highlight: 210 8% 50%;
+  --card: 0 0% 100%; --secondary: 40 15% 90%; --border: 40 8% 68%; --border-highlight: 210 8% 40%;
   background: hsl(var(--paper)); color: hsl(var(--paper-foreground));
   background-image: var(--editorial-grid); background-size: 25% 100%;
 }

@@ -1,13 +1,13 @@
 import { ArrowUpRight, ArrowDown } from "lucide-react";
 import SmartLink from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
-import engineeringHero from "@/assets/silxor-integrated-engineering.webp";
-import engineeringHeroSmall from "@/assets/silxor-integrated-engineering-small.webp";
+import engineeringHero from "@/assets/silxor-integrated-engineering.webp.asset.json";
+import engineeringHeroSmall from "@/assets/silxor-integrated-engineering-small.webp.asset.json";
 
 /** Lightweight editorial hero, isolated from the multi-page shell. */
 export const PrismaHero = () => (
   <section className="dark-band relative isolate overflow-hidden" aria-labelledby="home-title">
-    <img src={engineeringHero} srcSet={`${engineeringHeroSmall} 768w, ${engineeringHero} 1536w`} sizes="100vw" alt="Illustrative interconnected titanium modules representing integrated technology, security and engineering" width={1536} height={1024} {...{ fetchpriority: "high" }} className="hero-engineering-image absolute inset-0 -z-20 h-full w-full object-cover object-right" />
+    <img src={engineeringHero.url} srcSet={`${engineeringHeroSmall.url} 768w, ${engineeringHero.url} 1536w`} sizes="100vw" alt="Illustrative interconnected titanium modules representing integrated technology, security and engineering" width={1536} height={1024} {...{ fetchpriority: "high" }} className="hero-engineering-image absolute inset-0 -z-20 h-full w-full object-cover object-right" />
     <div className="hero-shade absolute inset-0 -z-10" aria-hidden="true" />
     <div className="container-content pb-6 pt-10 md:pt-14">
       <div className="mb-5 flex items-center gap-3 text-xs uppercase text-on-ink-muted"><span className="h-2 w-2 bg-primary" />Silxor Group Holding</div>

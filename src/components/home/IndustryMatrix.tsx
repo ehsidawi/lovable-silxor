@@ -1,4 +1,5 @@
 import SmartLink from "@/components/SmartLink";
+import { ArrowUpRight } from "lucide-react";
 
 const sectors = [
   "Government", "Defense", "Banking", "Digital Banking", "Financial Services",
@@ -6,60 +7,12 @@ const sectors = [
   "Retail", "Education", "Telecommunications", "Critical Infrastructure",
 ];
 
-/** Compact sector matrix; scrolls horizontally on mobile, grids on desktop. */
+/** Editorial sector directory with individual accessible destinations. */
 const IndustryMatrix = () => (
-  <section className="r-section">
-    <div className="container-content">
-      <div
-        className="flex flex-col md:flex-row md:items-end md:justify-between gap-4"
-        style={{ marginBottom: 22 }}
-      >
-        <div className="flex flex-col items-start gap-4">
-          <span className="r-eyebrow">Who We Build For</span>
-          <h2 className="r-title" style={{ maxWidth: 520 }}>
-            Regulated and critical environments.
-          </h2>
-        </div>
-        <SmartLink
-          to="/industries"
-          className="font-mono uppercase"
-          style={{ fontSize: 11, letterSpacing: 0, color: "hsl(var(--foreground))" }}
-        >
-          Industries →
-        </SmartLink>
-      </div>
-
-      <SmartLink to="/industries" className="block">
-        <ul
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7"
-          style={{
-            listStyle: "none",
-            margin: 0,
-            padding: 0,
-            border: "1px solid hsl(var(--border))",
-            borderRadius: 4,
-            overflow: "hidden",
-            background: "hsl(var(--background))",
-          }}
-        >
-          {sectors.map((s) => (
-            <li
-              key={s}
-              className="font-body font-[400] flex items-center"
-              style={{
-                fontSize: 12.5,
-                color: "hsl(var(--foreground))",
-                padding: "16px 14px",
-                minHeight: 62,
-                boxShadow: "inset -1px -1px 0 hsl(var(--border))",
-                lineHeight: 1.35,
-              }}
-            >
-              {s}
-            </li>
-          ))}
-        </ul>
-      </SmartLink>
+  <section className="r-section editorial-paper">
+    <div className="container-content grid gap-8 lg:grid-cols-[1fr_1.2fr]">
+      <div><span className="r-eyebrow">03 / Your world</span><h2 className="r-title mt-5">Serious systems.<br />Human impact.</h2><p className="r-lead mt-5 max-w-sm">Enterprise and corporate IT, security and identity leaders. Regulated institutions. Growing companies.</p><SmartLink to="/industries" className="mt-6 inline-flex min-h-11 items-center gap-3 font-mono text-xs uppercase">Explore industries <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></SmartLink></div>
+      <ul className="grid gap-x-8 sm:grid-cols-2">{sectors.map((s,i)=><li key={s}><SmartLink to="/industries" className="flex min-h-14 items-center gap-4 border-b border-border py-3 text-sm font-medium"><span className="font-mono text-xs text-muted-foreground">{String(i+1).padStart(2,"0")}</span>{s}<ArrowUpRight className="ml-auto h-4 w-4 shrink-0" aria-hidden="true" /></SmartLink></li>)}</ul>
     </div>
   </section>
 );

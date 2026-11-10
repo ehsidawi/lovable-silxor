@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import SmartLink from "@/components/SmartLink";
+import { Button } from "@/components/ui/button";
 
 /** Signal hero: one unified command surface built from the existing Silxor wording. */
 export const PrismaHero = () => (
@@ -15,8 +16,8 @@ export const PrismaHero = () => (
           <span className="signal-word signal-word--signal block">Protect</span>
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
-          <SmartLink to="/book" className="r-cta">Book a Consultation <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></SmartLink>
-          <a href="#capabilities" className="r-cta-ghost text-on-ink">Scroll <ArrowDown className="h-4 w-4" aria-hidden="true" /></a>
+          <Button asChild className="r-cta"><SmartLink to="/book">Book a Consultation <ArrowUpRight className="h-4 w-4" aria-hidden="true" /></SmartLink></Button>
+          <Button asChild variant="outline" className="r-cta-ghost"><a href="#capabilities">Scroll <ArrowDown className="h-4 w-4" aria-hidden="true" /></a></Button>
         </div>
       </div>
 

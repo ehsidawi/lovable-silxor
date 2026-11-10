@@ -4,6 +4,7 @@
 - Proxy asset pointers to the public asset endpoint only during local development; Vite otherwise treats those paths as HTML fallback instead of media.
 - Express all page visual roles through the global semantic theme tokens; this keeps the enterprise identity consistent across existing routes.
 - Keep the unified Signal Lattice styling in the final block of `src/index.css`; later blocks override earlier legacy rules, so new visual changes belong there.
+- Give fixed dark mastheads and closing bands their own inverse accent tokens in both themes; light-mode teal must not be inherited on graphite surfaces.
 - Deduplicate React and React DOM in both Vite configurations; theme hooks and renderers must share one React instance.
 - Keep the homepage media lightweight and static in the critical path; this avoids autoplay failures and GPU-heavy first loads.
 

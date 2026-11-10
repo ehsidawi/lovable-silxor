@@ -1,6 +1,5 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Seo from "@/components/Seo";
+import PageShell from "@/components/layout/PageShell";
+import PageHero from "@/components/PageHero";
 import { Card } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
@@ -141,26 +140,10 @@ const SLADoc = () => {
     { en: "Enterprise tier", ar: "مستوى المؤسسات", ku: "ئاستی گەورە" },
   ];
   return (
-    <div className="min-h-screen">
-      <Seo title={"Service Level Agreement | Silxor"} description={"Silxor service level framework: availability targets, priority response tiers, and coverage defined per contract."} path="/sla" />
-      <Navbar />
-      <main id="main"><section className="section-spacing">
+    <PageShell title="Service Level Agreement | Silxor" description="Silxor service level framework: availability targets, priority response tiers, and coverage defined per contract." path="/sla">
+      <PageHero eyebrow="SERVICE LEVEL FRAMEWORK" title="Service Level Commitment Framework" lead="This page describes the structure of service level commitments we offer across support tiers. It is a template, not a record of an executed agreement. Exact figures, response times, and recovery objectives are negotiated and confirmed in the master service agreement for each engagement." crumbs={[{label:"Home",to:"/"},{label:"Service Level Commitment Framework"}]} />
+      <section className="section-spacing">
         <div className="container-content" style={{ maxWidth: 900, margin: "0 auto" }}>
-          <div className="section-eyebrow">
-            {"SERVICE LEVEL FRAMEWORK"}
-          </div>
-          <h1
-            className="font-display font-[700]"
-            style={{ fontSize: 42, lineHeight: 1.15, color: "hsl(var(--foreground))", marginBottom: 8 }}
-          >
-            {"Service Level Commitment Framework"}
-          </h1>
-          <p
-            className="font-body font-[400]"
-            style={{ fontSize: 16, color: "hsl(var(--muted-foreground))", lineHeight: 1.7, marginBottom: 24, textAlign: "start" }}
-          >
-            {"This page describes the structure of service level commitments we offer across support tiers. It is a template, not a record of an executed agreement. Exact figures, response times, and recovery objectives are negotiated and confirmed in the master service agreement for each engagement."}
-          </p>
 
           <Card
             className="hidden rounded-[4px] border-0 shadow-none text-inherit md:block"
@@ -242,9 +225,8 @@ const SLADoc = () => {
             <bdi>hello@silxor.com</bdi>
           </p>
         </div>
-      </section></main>
-      <Footer />
-    </div>
+      </section>
+    </PageShell>
   );
 };
 

@@ -1,3 +1,3 @@
-- [ ] Unify Signal Lattice colors and shared page headers in both themes.
-- [ ] Refine mobile typography, navigation, forms and long content.
-- [ ] Verify all public routes, theme contrast, phone layouts and existing tests.
+- [x] Unify Signal Lattice colors and shared page headers in both themes.
+- [x] Refine mobile typography, navigation, forms and long content.
+- [x] Verify all public routes, theme contrast, phone layouts and existing tests.

@@ -289,3 +289,4 @@ a.r-card:hover, .surface-elevated:hover { border-color: hsl(var(--primary)); tra
 @media (min-width: 1700px) { .bento-hero-title { font-size: 150px; } }
 @media (max-width: 1023px) { .bento-hero-title { font-size: 11vw; } }
 @media (max-width: 767px) { .bento-hero-title { font-size: 15.5vw; } }
+.site-footer { border: 1px solid hsl(240 4% 18%); }

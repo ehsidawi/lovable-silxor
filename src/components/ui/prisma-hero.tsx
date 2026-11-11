@@ -1,24 +1,33 @@
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import SmartLink from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
 import engineeringField from "@/assets/industrial-engineering-field.webp";
+import { servicePillars } from "@/data/services";
 
-/** Full bleed industrial opening using existing website wording. */
+/** Bento opening: headline tile, image tile, booking tile and four service chips. */
 export const PrismaHero = () => (
-  <section className="industrial-hero" aria-labelledby="home-title">
-    <img className="industrial-hero-media" src={engineeringField} alt="Illustrative precision electronics and hardware engineering workbench" width={1536} height={1024} fetchPriority="high" />
-    <div className="industrial-hero-shade" aria-hidden="true" />
-    <div className="container-content industrial-hero-content">
-      <p className="industrial-kicker">Enterprise technology partner <span>Engineer + Defend</span></p>
-      <h1 id="home-title" className="industrial-brand">SILXOR<span>.</span></h1>
-      <div className="industrial-hero-bottom">
-        <h2>We build.<br /><span>We protect.</span></h2>
-        <div className="industrial-hero-actions">
-          <p>From the systems people see to the infrastructure and security behind them.</p>
-          <Button asChild className="r-cta"><SmartLink to="/book">Book a Consultation <ArrowUpRight className="h-5 w-5" aria-hidden="true" /></SmartLink></Button>
-        </div>
+  <section className="bento-hero" aria-labelledby="home-title">
+    <div className="bento-hero-main">
+      <div className="flex flex-wrap items-center justify-between gap-3"><span className="r-eyebrow">Enterprise technology partner</span><span className="font-mono text-[11px] uppercase text-muted-foreground">Engineer + Defend</span></div>
+      <h1 id="home-title" className="bento-hero-title"><small>Silxor</small>We build.<em>We protect.</em></h1>
+      <div className="bento-hero-foot">
+        <p>From the systems people see to the infrastructure and security behind them.</p>
+        <Button asChild variant="outline"><a href="#capabilities">Explore capabilities <ArrowUpRight aria-hidden="true" /></a></Button>
       </div>
-      <a className="industrial-scroll" href="#capabilities">Scroll <ArrowDown className="h-4 w-4" aria-hidden="true" /></a>
     </div>
+    <figure className="bento-hero-media">
+      <img src={engineeringField} alt="Illustrative precision electronics and hardware engineering workbench" width={1536} height={1024} fetchPriority="high" />
+      <figcaption><span>Build</span><span>Protect</span></figcaption>
+    </figure>
+    <SmartLink to="/book" className="bento-hero-book">
+      <span className="flex items-start justify-between gap-4"><span className="font-mono text-[11px] uppercase">Let’s talk</span><span className="book-arrow" aria-hidden="true"><ArrowUpRight className="h-7 w-7" /></span></span>
+      <strong>Book a Consultation</strong>
+    </SmartLink>
+    {servicePillars.slice(0, 4).map((s, i) => (
+      <SmartLink key={s.slug} to={s.path} className="bento-hero-chip">
+        <span><span>{String(i + 1).padStart(2, "0")}</span><ArrowUpRight className="h-4 w-4" aria-hidden="true" /></span>
+        <strong>{s.navLabel}</strong>
+      </SmartLink>
+    ))}
   </section>
 );

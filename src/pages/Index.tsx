@@ -17,9 +17,9 @@ const Index = () => {
       path="/"
     >
       <HomeHero />
-      <div className="editorial-home">
-      <AnimatedSection><ArchitectureDiagram data={diagrams.estate} /></AnimatedSection>
+      <>
       <AnimatedSection><CapabilityMap /></AnimatedSection>
+      <AnimatedSection><ArchitectureDiagram data={diagrams.estate} /></AnimatedSection>
       <AnimatedSection>
         <IndustryMatrix />
       </AnimatedSection>
@@ -32,7 +32,7 @@ const Index = () => {
       <AnimatedSection>
         <HomeCta />
       </AnimatedSection>
-      </div>
+      </>
     </PageShell>
   );
 };

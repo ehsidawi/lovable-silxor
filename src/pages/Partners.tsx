@@ -46,7 +46,8 @@ const Partners = () => {
     <div className="min-h-screen">
       <Seo title={"Technologies & Platforms | Silxor"} description={"How Silxor selects cloud, security, identity, AI, and infrastructure platforms per engagement instead of a single fixed vendor stack."} path="/partners" />
       <Navbar />
-      <main id="main" tabIndex={-1} className="container-content" style={{ paddingTop: 48, paddingBottom: 64 }}>
+      <main id="main" tabIndex={-1} className="outline-none">
+      <section className="r-section"><div className="container-content">
         <div style={{ marginBottom: 24 }}>
           <div className="section-eyebrow">{"PLATFORM APPROACH"}</div>
           <h1
@@ -101,8 +102,9 @@ const Partners = () => {
             );
           })}
         </div>
-      </main>
+      </div></section>
       <TechnologyPlatforms />
+      </main>
       <Footer />
     </div>
   );

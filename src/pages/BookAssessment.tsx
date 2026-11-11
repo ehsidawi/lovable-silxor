@@ -60,7 +60,7 @@ const BookAssessment = () => {
  };
  return <PageShell title="Book a Consultation | Silxor" description="Tell Silxor about your enterprise technology needs. Submit a consultation request with your project context and contact preferences." path="/book">
   <section className="page-hero"><div className="container-content"><Breadcrumbs items={[{label:'Home',to:'/'},{label:'Book a Consultation'}]} /><span className="r-eyebrow mt-7">Let’s talk</span><h1 className="r-title mt-4 max-w-3xl">Book a Consultation</h1><p className="r-lead mt-4 max-w-2xl">Share what you need and where you are today. We will review your request and reply by email.</p></div></section>
-  <section className="container-content py-10 md:py-14"><div className="mx-auto max-w-3xl">
+  <section className="r-section"><div className="container-content"><div className="mx-auto max-w-3xl">
    {saved ? <div role="status" className="py-8"><CheckCircle2 className="mb-6 h-12 w-12 text-forest" aria-hidden="true" /><h2 ref={heading} tabIndex={-1} className="font-display text-3xl font-bold">Your request has been received</h2><p className="r-lead mt-4">Thank you for contacting Silxor. We will review your details and reply by email. Your meeting is not booked until we confirm it with you.</p><Button asChild variant="outline" className="mt-7"><SmartLink to="/services">Explore our services <ArrowRight aria-hidden="true" /></SmartLink></Button></div> : <>
     <ol aria-label="Consultation progress" className="mb-9 grid grid-cols-3 gap-3">{steps.map((label,i)=><li key={label} aria-current={i===step?'step':undefined} className={`border-t-4 pt-3 ${i<=step?'border-forest':'border-border'}`}><span className="font-mono text-xs text-muted-foreground">0{i+1}</span><span className={`mt-2 block text-sm ${i===step?'font-bold':'text-muted-foreground'}`}>{label}</span><span className="sr-only">{i<step?'Completed':i===step?'Current step':'Upcoming'}</span></li>)}</ol>
     <h2 ref={heading} tabIndex={-1} className="font-display text-2xl font-bold">{steps[step]}</h2>
@@ -73,7 +73,7 @@ const BookAssessment = () => {
      <div className="mt-8 flex items-center justify-between gap-3 border-t border-border pt-6">{step>0?<Button type="button" variant="outline" disabled={pending} onClick={()=>{moved.current=true;setErrors({});setStep(step-1);}}><ArrowLeft aria-hidden="true"/>Back</Button>:<span className="text-xs text-muted-foreground">Step {step+1} of 3</span>}<Button type="submit" disabled={pending}>{pending?'Sending…':step===2?'Send request':'Continue'}{step===2?<Send aria-hidden="true"/>:<ArrowRight aria-hidden="true"/>}</Button></div>
     </form></>}
    <div className="mt-9 border-t border-border pt-6 text-sm"><a href="mailto:hello@silxor.com" className="font-semibold underline underline-offset-4">hello@silxor.com</a><p className="mt-3 text-muted-foreground">+1 979 500 3390</p></div>
-  </div></section>
+  </div></div></section>
  </PageShell>;
 };
 export default BookAssessment;

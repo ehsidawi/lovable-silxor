@@ -18,8 +18,8 @@ const Index = () => {
     >
       <HomeHero />
       <>
-      <AnimatedSection><ArchitectureDiagram data={diagrams.estate} /></AnimatedSection>
       <AnimatedSection><CapabilityMap /></AnimatedSection>
+      <AnimatedSection><ArchitectureDiagram data={diagrams.estate} /></AnimatedSection>
       <AnimatedSection>
         <IndustryMatrix />
       </AnimatedSection>

@@ -1,3 +1,3 @@
-- [x] Unify Signal Lattice colors and shared page headers in both themes.
-- [x] Refine mobile typography, navigation, forms and long content.
-- [x] Verify all public routes, theme contrast, phone layouts and existing tests.
+- [ ] Apply Industrial Precision typography, colors and shared page styling.
+- [ ] Recompose the home opening and service directory using existing words.
+- [ ] Verify light/dark desktop/mobile layouts, navigation and existing tests without publishing.

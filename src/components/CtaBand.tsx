@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 type CtaBandProps = {eyebrow?:string;title?:string;lead?:string;};
 /** Signal amber closing tile shared by every page. */
 const CtaBand = ({eyebrow="Engage",title="Start With a Technical Assessment",lead="No cost. Tell us what you are building and we scope how to deliver it."}:CtaBandProps) => (
-  <section className="cta-tile"><span className="cta-tile-word" aria-hidden="true">go</span><div className="container-content relative">
+  <section className="cta-tile"><span className="cta-tile-word" aria-hidden="true">silxor</span><div className="container-content relative">
     <span className="r-eyebrow">{eyebrow}</span>
     <h2 className="r-title mt-6 max-w-3xl" style={{ fontSize: "clamp(40px, 6vw, 84px)" }}>{title}</h2>
     <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">

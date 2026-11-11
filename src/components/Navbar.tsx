@@ -27,7 +27,7 @@ const Navbar = () => {
     return () => document.removeEventListener("keydown", close);
   }, [megaOpen]);
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background">
+    <header className="industrial-nav sticky top-0 z-40 border-b border-border bg-background">
       <a href="#main" className="skip-link">Skip to content</a>
       <nav aria-label="Primary" className="container-content flex h-16 items-center justify-between gap-5">
         <SmartLink to="/" aria-label="Silxor home" className="flex shrink-0 items-center gap-2.5">

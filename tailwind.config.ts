@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Space Grotesk Variable', 'sans-serif'],
-        body: ['DM Sans Variable', 'sans-serif'],
-        mono: ['JetBrains Mono Variable', 'monospace'],
+        display: ['Syne Variable', 'sans-serif'],
+        body: ['Plus Jakarta Sans Variable', 'sans-serif'],
+        mono: ['Plus Jakarta Sans Variable', 'sans-serif'],
       },
       fontSize: {
         'display-xl': ['72px', { lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '800' }],

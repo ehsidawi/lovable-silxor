@@ -407,8 +407,8 @@ a.r-card:hover,.surface-elevated:hover { box-shadow: none; transform: none; }
   .industrial-nav nav { height: 64px; }
   .r-section { padding-block: 40px; }
   .industrial-hero-content { min-height: 590px; padding-block: 26px 16px; }
-  .industrial-kicker { font-size: 10px; flex-wrap: wrap; gap: 8px; }
-  .industrial-brand { font-size: 76px; margin-top: 24px; }
+  .industrial-kicker { font-size: 10px; flex-direction: column; gap: 8px; }
+  .industrial-brand { font-size: 50px; margin-top: 24px; white-space: nowrap; }
   .industrial-hero-media { object-position: 62% center; }
   .industrial-hero-bottom { grid-template-columns: 1fr; gap: 22px; padding-top: 74px; }
   .industrial-hero-bottom h2 { font-size: 40px; }
@@ -425,4 +425,4 @@ a.r-card:hover,.surface-elevated:hover { box-shadow: none; transform: none; }
   .footer-wordmark { font-size: 72px; }
   .page-hero { padding-block: 32px; }
 }
-@media(max-width:359px) { .industrial-brand { font-size: 64px; } .industrial-hero-bottom h2 { font-size: 34px; } .footer-wordmark { font-size: 62px; } }
+@media(max-width:359px) { .industrial-brand { font-size: 42px; } .industrial-hero-bottom h2 { font-size: 34px; } .footer-wordmark { font-size: 62px; } }

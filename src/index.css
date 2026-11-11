@@ -284,3 +284,8 @@ a.r-card:hover, .surface-elevated:hover { border-color: hsl(var(--primary)); tra
   input,textarea,select { font-size: 16px !important; }
 }
 @media (max-width: 359px) { .bento-hero-title { font-size: 54px; } .footer-wordmark { font-size: 84px; } .container-content { padding-inline: 16px; } }
+.bento-hero-title { font-size: calc((100vw - var(--rail) - 24px) * .09); }
+.rail-foot .button-primary { white-space: nowrap; font-size: 13px; padding-left: 18px; }
+@media (min-width: 1700px) { .bento-hero-title { font-size: 150px; } }
+@media (max-width: 1023px) { .bento-hero-title { font-size: 11vw; } }
+@media (max-width: 767px) { .bento-hero-title { font-size: 15.5vw; } }

@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Syne Variable', 'sans-serif'],
-        body: ['Plus Jakarta Sans Variable', 'sans-serif'],
-        mono: ['Plus Jakarta Sans Variable', 'sans-serif'],
+        display: ['Bricolage Grotesque Variable', 'sans-serif'],
+        body: ['Manrope Variable', 'sans-serif'],
+        mono: ['JetBrains Mono Variable', 'monospace'],
       },
       fontSize: {
         'display-xl': ['72px', { lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '800' }],

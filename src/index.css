@@ -54,7 +54,7 @@
 
 /* Frame: fixed index rail on desktop, every section is a rounded tile on the canvas. */
 @media (min-width: 1024px) { body { padding-left: var(--rail); } }
-main#main, body > #root footer, .site-footer { margin: var(--gap); }
+main#main, .site-footer { margin: var(--gap); }
 main#main { margin-bottom: 0; display: flex; flex-direction: column; gap: var(--gap); }
 main#main > * { min-width: 0; }
 .container-content { width: 100%; max-width: var(--container-content); margin-inline: auto; padding-inline: 44px; }
@@ -192,7 +192,7 @@ a.r-card:hover, .surface-elevated:hover { border-color: hsl(var(--primary)); tra
 .capability-link:focus-visible { position: relative; z-index: 1; }
 
 /* Closing tile and page masthead */
-.cta-tile, .editorial-finale, .dark-band { position: relative; overflow: hidden; border-radius: var(--tile-radius); background: hsl(var(--accent)); color: hsl(var(--accent-foreground)); border: 0; padding-block: 64px; --foreground: var(--accent-foreground); --muted-foreground: 240 8% 8% / .78; --border: 240 8% 8% / .25; --primary: 240 8% 8%; --background: 38 100% 64%; --ring: 240 8% 8%; }
+.cta-tile, .editorial-finale, .dark-band { position: relative; overflow: hidden; border-radius: var(--tile-radius); background: hsl(var(--accent)); color: hsl(var(--accent-foreground)); border: 0; padding-block: 64px; --foreground: var(--accent-foreground); --muted-foreground: 240 8% 16%; --border: 36 70% 38%; --primary: 240 8% 8%; --background: 38 100% 64%; --ring: 240 8% 8%; }
 .dark-band .r-lead, .cta-tile .r-lead, .editorial-finale .r-lead { color: hsl(240 8% 8% / .8); }
 .cta-tile .button-primary, .editorial-finale .button-primary, .dark-band .button-primary { background: hsl(var(--ink)); color: hsl(var(--on-ink)); border-color: hsl(var(--ink)); }
 .cta-tile .button-primary svg, .editorial-finale .button-primary svg, .dark-band .button-primary svg { background: hsl(var(--on-ink)); color: hsl(var(--ink)); }

@@ -1,3 +1,3 @@
-- [ ] Apply Industrial Precision typography, colors and shared page styling.
-- [ ] Recompose the home opening and service directory using existing words.
-- [ ] Verify light/dark desktop/mobile layouts, navigation and existing tests without publishing.
+- [x] Apply Industrial Precision typography, colors and shared page styling.
+- [x] Recompose the home opening and service directory using existing words.
+- [x] Verify light/dark desktop/mobile layouts, navigation and existing tests without publishing.

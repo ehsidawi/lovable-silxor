@@ -12,7 +12,7 @@ const columns = [
 ];
 const Footer = () => (
   <footer className="site-footer"><div className="container-content">
-    <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
+    <div className="footer-directory">
       <div>
         <span className="r-eyebrow">Engineer + Defend</span>
         <p className="mt-6 max-w-sm font-display text-3xl font-semibold leading-tight">We build. We protect.</p>
@@ -20,7 +20,7 @@ const Footer = () => (
         <Button asChild className="mt-7"><a href="mailto:hello@silxor.com">hello@silxor.com <ArrowUpRight aria-hidden="true" /></a></Button>
         <p className="mt-4 text-sm text-muted-foreground">+1 979 500 3390</p>
       </div>
-      {columns.map(c => <div key={c.title}><h2 className="mb-4 font-mono text-[11px] uppercase tracking-wider text-muted-foreground">{c.title}</h2><nav aria-label={c.title} className="flex flex-col">{c.links.map(l => <SmartLink key={l.to} to={l.to} className="text-sm text-muted-foreground transition-colors hover:text-foreground">{l.label}</SmartLink>)}</nav></div>)}
+      <div className="footer-navigation">{columns.map(c => <details key={c.title} className="footer-link-group"><summary>{c.title}</summary><nav aria-label={c.title}>{c.links.map(l => <SmartLink key={l.to} to={l.to} className="text-sm text-muted-foreground transition-colors hover:text-foreground">{l.label}<ArrowUpRight aria-hidden="true" className="h-4 w-4" /></SmartLink>)}</nav></details>)}</div>
     </div>
     <div className="mt-12 flex flex-col gap-4 border-t border-border pt-6 text-xs text-muted-foreground lg:flex-row lg:items-start lg:justify-between">
       <p className="max-w-2xl leading-relaxed">Technology names identify platforms we work with, not vendor affiliations. Framework references describe control alignment capabilities, not certification or attestation.</p>

@@ -2,3 +2,5 @@
 - [x] Verify every page on computer and phone, both themes, and run existing checks.
 - [x] Redesign all seven architecture diagrams as compact interactive views with distinct layouts.
 - [x] Check diagram selection, keyboard access, mobile layouts and both themes; run existing tests.
+- [x] Compact the technology map, platform directory, closing section and footer with accessible interactions.
+- [x] Verify category and platform selection, footer links, mobile layouts and both themes.

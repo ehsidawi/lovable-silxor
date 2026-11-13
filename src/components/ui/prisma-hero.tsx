@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import SmartLink from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
-import engineeringField from "@/assets/industrial-engineering-field.webp";
+import engineeringField from "@/assets/hardware-software-hero.webp";
 import { servicePillars } from "@/data/services";
 
 /** Bento opening: headline tile, image tile, booking tile and four service chips. */
@@ -16,7 +16,7 @@ export const PrismaHero = () => (
       </div>
     </div>
     <figure className="bento-hero-media">
-      <img src={engineeringField} alt="Illustrative precision electronics and hardware engineering workbench" width={1536} height={1024} fetchPriority="high" />
+      <img src={engineeringField} alt="Illustrative enterprise hardware components alongside software code and dashboards" width={1536} height={1024} fetchPriority="high" />
       <figcaption><span>Build</span><span>Protect</span></figcaption>
     </figure>
     <SmartLink to="/book" className="bento-hero-book">

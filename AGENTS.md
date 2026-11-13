@@ -17,7 +17,7 @@
 - Use next-themes with the silxor-theme preference key and global semantic light/dark tokens; this keeps appearance accessible and persistent without a tracking identifier.
 - Share the default appearance between browser and prerender through the appearance module; this prevents inconsistent first visits.
 - Keep responsive illustrative technology images in shared service media data; this matches service content without implying real company facilities or staff.
-- Keep architecture diagrams data driven with inline SVG, unique title/description IDs, responsive desktop/mobile layouts and visible text summaries; this preserves accessibility without adding rendering libraries.
+- Keep architecture diagrams data driven with distinct compact SVG layouts, an HTML button directory for selection and connection traversal, unique title/description IDs and expandable text summaries; this preserves keyboard access and readable mobile views without rendering libraries.
 
 - Submit consultations only through the public validated Edge Function using server credentials, with no browser table privileges; this prevents bypassing honeypot and server validation or exposing inquiries.
 - Keep consultation option identifiers shared between browser and server, with matching schema parity tests; this keeps accepted fields and length rules consistent across runtimes.

@@ -290,3 +290,48 @@ a.r-card:hover, .surface-elevated:hover { border-color: hsl(var(--primary)); tra
 @media (max-width: 1023px) { .bento-hero-title { font-size: 11vw; } }
 @media (max-width: 767px) { .bento-hero-title { font-size: 15.5vw; } }
 .site-footer { border: 1px solid hsl(240 4% 18%); }
+
+/* Compact architecture explorers: schematic plus a keyboard accessible directory. */
+.diagram-section { padding-block: 36px; }
+.diagram-heading { display: grid; gap: 18px; }
+.diagram-heading .r-eyebrow { justify-self: start; }
+.diagram-heading .r-title { font-size: 38px; line-height: 1.08; letter-spacing: 0; max-width: 760px; }
+.diagram-explorer { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; margin-top: 24px; }
+.diagram-canvas { min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+.diagram-canvas svg { width: 100%; aspect-ratio: 600 / 330; overflow: visible; }
+.explorer-edge { stroke: hsl(var(--border)); stroke-width: 2; fill: none; transition: stroke .2s; }
+.explorer-edge.is-active { stroke: hsl(var(--primary)); stroke-width: 2.5; }
+.explorer-arrow { fill: hsl(var(--muted-foreground)); }
+.explorer-point circle { fill: hsl(var(--card)); stroke: hsl(var(--muted-foreground)); stroke-width: 1.5; transition: fill .2s, stroke .2s; }
+.explorer-point text { fill: hsl(var(--foreground)); font-family: 'JetBrains Mono Variable', monospace; font-size: 15px; font-weight: 600; }
+.explorer-point.is-active circle { fill: hsl(var(--accent)); stroke: hsl(var(--accent)); stroke-width: 5; }
+.explorer-point.is-active text { fill: hsl(var(--accent-foreground)); }
+.diagram-selection { border-top: 1px solid hsl(var(--border)); display: flex; align-items: center; gap: 16px; padding-top: 16px; min-height: 88px; }
+.diagram-selection-index { font-family: 'JetBrains Mono Variable', monospace; font-size: 28px; color: hsl(var(--primary)); }
+.diagram-selection h3 { font-size: 20px; font-weight: 650; line-height: 1.2; letter-spacing: 0; }
+.diagram-selection p { color: hsl(var(--muted-foreground)); font-size: 13px; margin-top: 4px; line-height: 1.5; }
+.diagram-directory { min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+.diagram-node-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.diagram-choice.site-button { border-radius: 8px !important; min-height: 54px; height: auto; padding: 10px !important; gap: 9px; justify-content: flex-start; text-align: left; font-size: 12px; line-height: 1.4; font-weight: 600; border: 1px solid hsl(var(--border)); background: transparent; color: hsl(var(--foreground)); }
+.diagram-choice-index { flex-shrink: 0; font-family: 'JetBrains Mono Variable', monospace; font-size: 10px; color: hsl(var(--muted-foreground)); }
+.diagram-choice.site-button:hover { border-color: hsl(var(--primary)); background: hsl(var(--muted)); }
+.diagram-choice.site-button[aria-pressed="true"] { background: hsl(var(--accent)); border-color: hsl(var(--accent)); color: hsl(var(--accent-foreground)); }
+.diagram-choice[aria-pressed="true"] .diagram-choice-index { color: inherit; }
+.diagram-connections { display: flex; flex-wrap: wrap; gap: 2px 12px; min-height: 88px; align-content: flex-start; border-top: 1px solid hsl(var(--border)); padding-top: 8px; }
+.diagram-connection.site-button { min-height: 44px; padding: 6px 0 !important; justify-content: flex-start; font-size: 11px; font-weight: 500; gap: 6px; color: hsl(var(--muted-foreground)); }
+.diagram-connection.site-button svg { width: 16px !important; height: 16px !important; padding: 0; background: transparent; color: hsl(var(--primary)); transform: none; }
+.diagram-connection.site-button:hover { color: hsl(var(--foreground)); background: transparent; }
+.diagram-summary { grid-column: 1 / -1; border-top: 1px solid hsl(var(--border)); }
+.diagram-summary summary { cursor: pointer; min-height: 44px; padding-block: 12px; width: fit-content; font-size: 12px; font-weight: 600; }
+.diagram-summary p { margin-top: 4px; font-size: 14px; line-height: 1.65; color: hsl(var(--muted-foreground)); max-width: 900px; }
+.diagram-footnote { font-size: 11px; line-height: 1.6; color: hsl(var(--muted-foreground)); margin-top: 8px; }
+@media (max-width: 767px) {
+  .diagram-section { padding-block: 28px; }
+  .diagram-heading .r-title { font-size: 28px; }
+  .diagram-explorer { grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
+  .diagram-canvas svg { max-height: 195px; }
+  .diagram-selection { min-height: 76px; padding-top: 12px; }
+  .diagram-selection h3 { font-size: 18px; }
+  .diagram-connections { min-height: 44px; }
+  .diagram-choice.site-button { min-height: 48px; }
+}

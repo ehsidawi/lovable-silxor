@@ -1,23 +1,72 @@
-import { useId } from "react";
+import { useId, useState } from "react";
+import { ArrowDownLeft, ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import type { ArchitectureDiagram as DiagramData } from "@/data/diagrams";
-function DiagramDrawing({ data, compact, id }: {data:DiagramData;compact:boolean;id:string}) {
- const width=compact?360:1080; const cellWidth=compact?304:300; const nodeHeight=compact?88:100;
- const flowOrder: Record<string,string[]> = { "software-lifecycle":["discover","design","build","validate","release","improve"], "iot-flow":["device","gateway","ingest","processing","apps","updates"], "engagement-flow":["assess","design","build","migrate","operate","improve"] };
- const ordered = compact && flowOrder[data.id] ? [...data.nodes].sort((a,b)=>flowOrder[data.id].indexOf(a.id)-flowOrder[data.id].indexOf(b.id)) : data.nodes;
- const positions=new Map(ordered.map((n,i)=>[n.id,{x:compact?28:30+n.column*360,y:compact?24+i*124:24+n.row*164}]));
- const height=compact?data.nodes.length*124:Math.max(...data.nodes.map(n=>n.row))*164+148;
- return <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-labelledby={`${id}-title ${id}-desc`} className={`architecture-svg w-full ${compact?"md:hidden":"hidden md:block"}`}>
-  <title id={`${id}-title`}>{data.title}</title><desc id={`${id}-desc`}>{data.description}</desc>
-  <defs><marker id={`${id}-arrow`} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" className="diagram-arrow" /></marker></defs>
-  {data.edges.map(([from,to])=>{const a=positions.get(from);const b=positions.get(to);if(!a||!b)return null;let d:string;
-   if(compact){const start=a.y+nodeHeight;const end=b.y;d=b.y-a.y===124?`M ${a.x+cellWidth/2} ${start} V ${end-8}`:`M ${a.x+cellWidth} ${a.y+nodeHeight/2} H 350 V ${b.y+nodeHeight/2} H ${b.x+cellWidth+6}`;}
-   else if(a.y===b.y){const right=b.x>a.x;d=`M ${a.x+(right?cellWidth:0)} ${a.y+nodeHeight/2} H ${b.x+(right?-6:cellWidth+6)}`;}
-   else {const down=b.y>a.y; const sy=a.y+(down?nodeHeight:0);const ey=b.y+(down?-6:nodeHeight+6);const mid=(sy+ey)/2;d=`M ${a.x+cellWidth/2} ${sy} V ${mid} H ${b.x+cellWidth/2} V ${ey}`;}
-   return <path key={`${from}-${to}`} d={d} className="diagram-connector" markerEnd={`url(#${id}-arrow)`} />;
-  })}
-  {ordered.map((n,i)=>{const p=positions.get(n.id);if(!p)return null;return <g key={n.id}><rect x={p.x} y={p.y} width={cellWidth} height={nodeHeight} rx="4" className={n.accent?"diagram-node diagram-node-accent":"diagram-node"}/><text x={p.x+16} y={p.y+23} className="diagram-index">{String(i+1).padStart(2,"0")}</text><text x={p.x+16} y={p.y+47} className="diagram-label">{n.label}</text><text x={p.x+16} y={p.y+70} className="diagram-detail">{n.detail}</text></g>;})}
- </svg>;
-}
+import { diagramLayout } from "./layouts";
+
 export default function ArchitectureDiagram({data}:{data:DiagramData}) {
- const id=useId().replace(/:/g,"");return <section className="r-section" aria-labelledby={`${id}-heading`}><div className="container-content"><span className="r-eyebrow">Architecture view</span><h2 id={`${id}-heading`} className="r-title mt-4 max-w-4xl">{data.title}</h2><figure className="mt-9"><DiagramDrawing data={data} compact={false} id={`${id}-desktop`}/><DiagramDrawing data={data} compact id={`${id}-mobile`}/><figcaption className="mt-6 max-w-4xl text-base leading-relaxed text-muted-foreground">{data.summary}</figcaption></figure><p className="mt-4 max-w-4xl text-xs leading-relaxed text-muted-foreground">{data.footnote}</p></div></section>;
+  const id = useId().replace(/:/g, "");
+  const { nodes, positions } = diagramLayout(data);
+  const [selectedId, setSelectedId] = useState(data.nodes.find(node => node.accent)?.id ?? data.nodes[0]?.id);
+  const selected = nodes.find(node => node.id === selectedId) ?? nodes[0];
+  if (!selected) return null;
+  const connections = data.edges.flatMap(([from, to]) => {
+    if (from !== selected.id && to !== selected.id) return [];
+    const incoming = to === selected.id;
+    const node = nodes.find(item => item.id === (incoming ? from : to));
+    return node ? [{ node, incoming }] : [];
+  });
+  return <section className="r-section diagram-section" aria-labelledby={`${id}-heading`}>
+    <div className="container-content">
+      <div className="diagram-heading">
+        <span className="r-eyebrow">Architecture view</span>
+        <h2 id={`${id}-heading`} className="r-title">{data.title}</h2>
+      </div>
+      <figure className={`diagram-explorer diagram-explorer--${data.id}`}>
+        <div className="diagram-canvas">
+          <svg viewBox="0 0 600 330" role="img" aria-labelledby={`${id}-title ${id}-desc`}>
+            <title id={`${id}-title`}>{data.title}</title>
+            <desc id={`${id}-desc`}>{data.description}</desc>
+            <defs><marker id={`${id}-arrow`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" className="explorer-arrow" /></marker></defs>
+            {data.edges.map(([from, to]) => {
+              const a = positions.get(from), b = positions.get(to);
+              if (!a || !b) return null;
+              const length = Math.hypot(b.x - a.x, b.y - a.y);
+              if (!length) return null;
+              const dx = (b.x - a.x) / length, dy = (b.y - a.y) / length;
+              const active = from === selected.id || to === selected.id;
+              return <path key={`${from}-${to}`} d={`M ${a.x + dx * 27} ${a.y + dy * 27} L ${b.x - dx * 30} ${b.y - dy * 30}`} className={`explorer-edge ${active ? "is-active" : ""}`} markerEnd={`url(#${id}-arrow)`} />;
+            })}
+            {nodes.map((node, index) => {
+              const point = positions.get(node.id);
+              if (!point) return null;
+              const active = node.id === selected.id;
+              return <g key={node.id} className={`explorer-point ${active ? "is-active" : ""}`}>
+                <circle cx={point.x} cy={point.y} r="25" />
+                <text x={point.x} y={point.y + 5} textAnchor="middle">{String(index + 1).padStart(2, "0")}</text>
+              </g>;
+            })}
+          </svg>
+          <div className="diagram-selection" id={`${id}-selection`} aria-live="polite" aria-atomic="true">
+            <span className="diagram-selection-index">{String(nodes.indexOf(selected) + 1).padStart(2, "0")}</span>
+            <div><h3>{selected.label}</h3><p>{selected.detail}</p></div>
+          </div>
+        </div>
+        <div className="diagram-directory">
+          <div className="diagram-node-list" role="group" aria-labelledby={`${id}-heading`}>
+            {nodes.map((node, index) => <Button key={node.id} variant="ghost" className="diagram-choice" aria-pressed={node.id === selected.id} aria-controls={`${id}-selection`} onClick={() => setSelectedId(node.id)}>
+              <span className="diagram-choice-index">{String(index + 1).padStart(2, "0")}</span><span>{node.label}</span>
+            </Button>)}
+          </div>
+          <div className="diagram-connections" aria-label={`Connections for ${selected.label}`}>
+            {connections.map(({ node, incoming }) => <Button key={`${node.id}-${incoming}`} variant="ghost" className="diagram-connection" aria-label={`${incoming ? "From" : "To"} ${node.label}`} onClick={() => setSelectedId(node.id)}>
+              {incoming ? <ArrowDownLeft aria-hidden="true" /> : <ArrowUpRight aria-hidden="true" />}<span>{node.label}</span>
+            </Button>)}
+          </div>
+        </div>
+        <figcaption className="diagram-summary"><details><summary>Architecture view</summary><p>{data.summary}</p></details></figcaption>
+      </figure>
+      <p className="diagram-footnote">{data.footnote}</p>
+    </div>
+  </section>;
 }

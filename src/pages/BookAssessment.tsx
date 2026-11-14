@@ -21,6 +21,7 @@ const BookAssessment = () => {
  const [pending,setPending] = useState(false);
  const [saved,setSaved] = useState(false);
  const [failure,setFailure] = useState('');
+ const [mailto,setMailto] = useState('');
  const heading = useRef<HTMLHeadingElement>(null);
  const form = useRef<HTMLFormElement>(null);
  const moved = useRef(false);
@@ -48,20 +49,19 @@ const BookAssessment = () => {
   if(step<2){moved.current=true;setStep(step+1);return;}
   const parsed = consultationSchema.safeParse(values);
   if(!parsed.success){setFailure('Review your details before sending.');return;}
-  setPending(true);setFailure('');
-  try {
-   // Lazy import keeps the public static rendering free from browser auth storage.
-   const {supabase} = await import('@/integrations/supabase/client');
-   const {data,error} = await supabase.functions.invoke('submit-consultation',{body:parsed.data});
-   if(error || !data?.success) {let message=data?.error; if(!message && error && 'context' in error && error.context instanceof Response){const body=await error.context.clone().json().catch(()=>null);message=body?.error;}setFailure(message || 'We could not save your request. Please try again or email hello@silxor.com.');return;}
-   moved.current=true;setSaved(true);setValues(initial);
-  } catch {setFailure('We could not save your request. Please try again or email hello@silxor.com.');}
-  finally {setPending(false);}
+  const d = parsed.data;
+  const label = (id:string) => areas.find(a=>a.id===id)?.label ?? id;
+  const body = ['WHAT YOU NEED', ...d.service_areas.map(id=>'  * '+label(id)), '',
+   'YOUR CONTEXT', 'Company: '+d.company, 'Role: '+d.role, 'Company size: '+d.company_size, 'Environment: '+d.environment, 'Timeline: '+d.timeline, 'Goals: '+d.description, '',
+   'CONTACT DETAILS', 'Name: '+d.name, 'Work email: '+d.work_email, 'Phone: '+(d.phone||'Not provided'), 'Preferred contact: '+d.preferred_contact, 'Meeting windows: '+d.meeting_windows, 'Time zone: '+d.time_zone].join('\n');
+  const href = `mailto:hello@silxor.com?subject=${encodeURIComponent(`Consultation Request: ${d.company}, ${d.name}`)}&body=${encodeURIComponent(body)}`;
+  setMailto(href); window.location.href = href;
+  moved.current=true;setSaved(true);setValues(initial);
  };
  return <PageShell title="Book a Consultation | Silxor" description="Tell Silxor about your enterprise technology needs. Submit a consultation request with your project context and contact preferences." path="/book">
   <section className="page-hero"><div className="container-content"><Breadcrumbs items={[{label:'Home',to:'/'},{label:'Book a Consultation'}]} /><span className="r-eyebrow mt-7">Let’s talk</span><h1 className="r-title mt-4 max-w-3xl">Book a Consultation</h1><p className="r-lead mt-4 max-w-2xl">Share what you need and where you are today. We will review your request and reply by email.</p></div></section>
   <section className="r-section"><div className="container-content"><div className="mx-auto max-w-3xl">
-   {saved ? <div role="status" className="py-8"><CheckCircle2 className="mb-6 h-12 w-12 text-forest" aria-hidden="true" /><h2 ref={heading} tabIndex={-1} className="font-display text-3xl font-bold">Your request has been received</h2><p className="r-lead mt-4">Thank you for contacting Silxor. We will review your details and reply by email. Your meeting is not booked until we confirm it with you.</p><Button asChild variant="outline" className="mt-7"><SmartLink to="/services">Explore our services <ArrowRight aria-hidden="true" /></SmartLink></Button></div> : <>
+   {saved ? <div role="status" className="py-8"><CheckCircle2 className="mb-6 h-12 w-12 text-forest" aria-hidden="true" /><h2 ref={heading} tabIndex={-1} className="font-display text-3xl font-bold">Your request is ready to send</h2><p className="r-lead mt-4">Your email app has opened with your request addressed to hello@silxor.com. Press send there to deliver it. We will review your details and reply by email.</p>{mailto && <Button asChild className="mt-7 mr-3"><a href={mailto}>Open the email again <Send aria-hidden="true" /></a></Button>}<Button asChild variant="outline" className="mt-7"><SmartLink to="/services">Explore our services <ArrowRight aria-hidden="true" /></SmartLink></Button></div> : <>
     <ol aria-label="Consultation progress" className="mb-9 grid grid-cols-3 gap-3">{steps.map((label,i)=><li key={label} aria-current={i===step?'step':undefined} className={`border-t-4 pt-3 ${i<=step?'border-forest':'border-border'}`}><span className="font-mono text-xs text-muted-foreground">0{i+1}</span><span className={`mt-2 block text-sm ${i===step?'font-bold':'text-muted-foreground'}`}>{label}</span><span className="sr-only">{i<step?'Completed':i===step?'Current step':'Upcoming'}</span></li>)}</ol>
     <h2 ref={heading} tabIndex={-1} className="font-display text-2xl font-bold">{steps[step]}</h2>
     <form ref={form} onSubmit={submit} noValidate className="mt-6" aria-busy={pending}>

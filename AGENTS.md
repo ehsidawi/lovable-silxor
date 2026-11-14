@@ -20,9 +20,9 @@
 - Keep responsive illustrative technology images in shared service media data; this matches service content without implying real company facilities or staff.
 - Keep architecture diagrams data driven with distinct compact SVG layouts, an HTML button directory for selection and connection traversal, unique title/description IDs and expandable text summaries; this preserves keyboard access and readable mobile views without rendering libraries.
 
-- Submit consultations only through the public validated Edge Function using server credentials, with no browser table privileges; this prevents bypassing honeypot and server validation or exposing inquiries.
+- Deliver consultation requests as a prefilled mailto draft to the owner inbox built from validated form values; the owner chose email delivery without server storage or domain setup.
 - Keep consultation option identifiers shared between browser and server, with matching schema parity tests; this keeps accepted fields and length rules consistent across runtimes.
-- Lazy import the Cloud client only on consultation submission; this preserves full build-time prerendering without browser auth storage.
+
 - Keep insights in shared typed article data and render index/detail through one template; this keeps article content, reading time and structured data consistent.
 - Add approved case studies to `src/data/caseStudies.ts` with a unique slug, title, summary, sections and service slugs only after the owner supplies facts and confirms publication permission; empty data hides navigation and discovery while preserving an honest noindex route.
 - Keep founder biography in approved leadership data and render nothing for empty text; this prevents invented leadership claims.

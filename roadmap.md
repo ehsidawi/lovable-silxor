@@ -6,6 +6,6 @@
 - [x] Verify keyboard interactions, anchor destinations and controlled email handoff; audit mounted legacy visuals.
 
 # Compact typography and density
-- [ ] Replace all inherited visible faces with self-hosted Archivo and IBM Plex Sans.
-- [ ] Compact shared styles, controls, menus and every page family without restoring maps or diagrams.
-- [ ] Verify font loading, computed dimensions, every public route and consultation email handoff; run tests and check build.
+- [x] Replace all inherited visible faces with self-hosted Archivo and IBM Plex Sans.
+- [x] Compact shared styles, controls, menus and every page family without restoring maps or diagrams.
+- [x] Verify font loading, computed dimensions, every public route and consultation email handoff; run tests and check build.

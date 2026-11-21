@@ -1470,7 +1470,7 @@ figure > figcaption {
   .ed-section,
   .r-section,
   .section-spacing {
-    padding-block: 16px;
+    padding-block: var(--section-space);
   }
   .ed-hero,
   .ed-hero-grid {
@@ -1683,7 +1683,7 @@ figure > figcaption {
     font-size: 24px;
   }
   .mx-cta {
-    padding-block: 16px;
+    padding-block: var(--section-space);
   }
   .mx-cta .r-title {
     font-size: 36px;
@@ -1710,14 +1710,14 @@ figure > figcaption {
 }
 @media (max-width: 359px) {
   .ed-hero-title {
-    font-size: 32px;
+    font-size: 36px;
   }
   .ed-hero,
   .ed-hero-grid {
     min-height: 0;
   }
   .ed-page-composition h1 {
-    font-size: 30px;
+    font-size: 36px;
   }
   .ed-row-name {
     font-size: 24px;

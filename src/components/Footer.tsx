@@ -15,7 +15,7 @@ const Footer = () => (
     <div className="footer-directory">
       <div>
         <span className="r-eyebrow">Engineer + Defend</span>
-        <p className="mt-6 max-w-sm font-display text-3xl font-semibold leading-tight">We build. We protect.</p>
+        <p className="mt-6 max-w-sm font-display text-3xl font-semibold leading-tight">We build. We protect. We staff.</p>
         <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">Enterprise IT consulting, infrastructure and networking, cybersecurity, identity, managed IT, custom software, private AI and hardware engineering.</p>
         <Button asChild className="mt-7"><a href="mailto:hello@silxor.com">hello@silxor.com <ArrowUpRight aria-hidden="true" /></a></Button>
         <p className="mt-4 text-sm text-muted-foreground">+1 979 500 3390</p>

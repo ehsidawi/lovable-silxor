@@ -6,7 +6,7 @@ import { serviceMedia } from "@/data/serviceMedia";
 export default function CapabilityMap() {
  const identity = getService("identity");
  return <section id="capabilities" className="r-section capability-gallery scroll-mt-24" aria-labelledby="capability-map-title"><div className="container-content">
-  <div className="tile-head"><span className="r-eyebrow">The expertise</span><h2 id="capability-map-title" className="r-title">Big ideas.<br /><span className="text-primary">Built for the real world.</span></h2><p className="r-lead">From the systems people see to the infrastructure and security behind them.</p></div>
+  <div className="tile-head"><span className="r-eyebrow">The expertise</span><h2 id="capability-map-title" className="r-title">Big ideas.<br /><span className="text-primary">Built for the real world.</span></h2><p className="r-lead">From the systems people see to the infrastructure, security and people behind them.</p></div>
   <nav aria-label="Service capability map" className="service-bento">{services.map((s, i) => {
    const media = serviceMedia[s.slug]; const Icon = s.icon; const feature = i === 0 && media;
    return <SmartLink key={s.slug} to={s.path} className={`capability-link service-tile ${feature ? "service-tile--feature" : ""}`}>

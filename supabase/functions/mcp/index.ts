@@ -11,6 +11,7 @@ import { defineTool } from "npm:@lovable.dev/mcp-js@3.4.0";
 // src/data/services.ts
 import {
   Users,
+  UserSearch,
   Compass,
   Server,
   ShieldCheck,
@@ -289,9 +290,31 @@ var services = [
       { title: "Integration & Operations", line: "APIs, monitoring and device management connected to on premises, hybrid or cloud environments." }
     ],
     capabilities: ["Custom Hardware", "Embedded Systems", "Firmware", "IoT", "Prototyping", "Device Identity", "Enterprise Integration", "Device Management"]
+  },
+  {
+    slug: "talent-acquisition",
+    path: "/services/talent-acquisition",
+    name: "Talent Acquisition",
+    navLabel: "Talent Acquisition",
+    icon: UserSearch,
+    outcome: "Senior technology people found, assessed and placed to run the systems we build.",
+    seoTitle: "Technology Talent Acquisition | Silxor",
+    seoDescription: "International recruiting for technology, cybersecurity, cloud, identity and engineering roles, assessed by engineers who understand the work, from Silxor.",
+    heroLead: "We build systems and the teams that run them.",
+    intro: "We recruit internationally for technology, cybersecurity, cloud, identity and engineering roles. Search, technical assessment and selection are led with engineering judgment, so candidates are evaluated against the systems and responsibilities they will actually own. Role scope, process and terms are agreed per engagement.",
+    blocks: [
+      { title: "Role Definition", line: "Responsibilities, required skills, seniority and success criteria defined with your hiring team before search begins." },
+      { title: "International Search", line: "Targeted sourcing across markets for technology, security, cloud, identity and engineering talent." },
+      { title: "Technical Assessment", line: "Structured evaluation of candidates by engineers who understand the architecture and tooling involved." },
+      { title: "Cybersecurity & Identity Roles", line: "Security architects, engineers, analysts and IAM specialists assessed against practical scenarios." },
+      { title: "Cloud & Engineering Roles", line: "Cloud, platform, software, embedded and infrastructure engineers matched to your environment." },
+      { title: "Selection & Onboarding Support", line: "Shortlists, interview coordination and handover support agreed with your team through the offer stage." }
+    ],
+    capabilities: ["Technology Recruiting", "Cybersecurity Hiring", "Cloud & Platform Roles", "Identity Specialists", "Engineering Leadership", "Technical Assessment", "International Search", "Team Building"]
   }
 ];
 var servicePillars = [
+  "talent-acquisition",
   "advisory",
   "cloud",
   "managed-services",

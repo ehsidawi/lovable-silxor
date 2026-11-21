@@ -4,7 +4,7 @@ import { consultationSchema, needSchema, contextSchema, contactSchema } from './
 import { services } from '../data/services.ts';
 import { serviceAreaIds } from '../../supabase/functions/submit-consultation/options.ts';
 import { structuredData } from './structuredData.ts';
-const valid = {service_areas:['cybersecurity','iam'],company:'Test Company',role:'IT lead',company_size:'51 to 200',environment:'Hybrid',timeline:'1 to 3 months',description:'Review access management for our enterprise.',name:'Test Person',work_email:'consultation-test@example.com',phone:'',preferred_contact:'Email',meeting_windows:'Tuesday 09:00 to 12:00',time_zone:'UTC',website:''};
+const valid = {engagement_type:'Both',service_areas:['cybersecurity','iam'],company:'Test Company',role:'IT lead',company_size:'51 to 200',environment:'Hybrid',timeline:'1 to 3 months',description:'Review access management for our enterprise.',name:'Test Person',work_email:'consultation-test@example.com',phone:'',preferred_contact:'Email',meeting_windows:'Tuesday 09:00 to 12:00',time_zone:'UTC',website:''};
 describe('consultation input and privacy rules',()=>{
  it('accepts a complete request with optional phone omitted',()=>expect(consultationSchema.safeParse(valid).success).toBe(true));
  it('requires at least one selected service',()=>expect(needSchema.safeParse({service_areas:[]}).success).toBe(false));

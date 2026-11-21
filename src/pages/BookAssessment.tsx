@@ -7,12 +7,12 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { services } from '@/data/services';
-import { companySizes, environments, timelines, contactMethods, needSchema, contextSchema, contactSchema, consultationSchema } from '@/lib/consultation';
+import { engagementTypes, companySizes, environments, timelines, contactMethods, needSchema, contextSchema, contactSchema, consultationSchema } from '@/lib/consultation';
 import SmartLink from '@/components/SmartLink';
 
 const steps = ['What you need','Your context','Contact details'];
 const areas = [...services.map(s => ({id:s.slug,label:s.name})), ...(services.find(s=>s.slug==='identity')?.blocks ?? []).map(b => ({id:b.id ?? '', label:b.title.replace(/ \/ /g, ' · ')}))];
-const initial = {service_areas:[] as string[],company:'',role:'',company_size:'',environment:'',timeline:'',description:'',name:'',work_email:'',phone:'',preferred_contact:'Email',meeting_windows:'',time_zone:'',website:''};
+const initial = {engagement_type:'',service_areas:[] as string[],company:'',role:'',company_size:'',environment:'',timeline:'',description:'',name:'',work_email:'',phone:'',preferred_contact:'Email',meeting_windows:'',time_zone:'',website:''};
 type Field = keyof typeof initial;
 const BookAssessment = () => {
  const [step,setStep] = useState(0);
@@ -51,7 +51,7 @@ const BookAssessment = () => {
   if(!parsed.success){setFailure('Review your details before sending.');return;}
   const d = parsed.data;
   const label = (id:string) => areas.find(a=>a.id===id)?.label ?? id;
-  const body = ['WHAT YOU NEED', ...d.service_areas.map(id=>'  * '+label(id)), '',
+  const body = ['WHAT YOU NEED', 'Engagement: '+d.engagement_type, ...d.service_areas.map(id=>'  * '+label(id)), '',
    'YOUR CONTEXT', 'Company: '+d.company, 'Role: '+d.role, 'Company size: '+d.company_size, 'Environment: '+d.environment, 'Timeline: '+d.timeline, 'Goals: '+d.description, '',
    'CONTACT DETAILS', 'Name: '+d.name, 'Work email: '+d.work_email, 'Phone: '+(d.phone||'Not provided'), 'Preferred contact: '+d.preferred_contact, 'Meeting windows: '+d.meeting_windows, 'Time zone: '+d.time_zone].join('\n');
   const href = `mailto:hello@silxor.com?subject=${encodeURIComponent(`Consultation Request: ${d.company}, ${d.name}`)}&body=${encodeURIComponent(body)}`;
@@ -66,7 +66,7 @@ const BookAssessment = () => {
     <h2 ref={heading} tabIndex={-1} className="font-display text-2xl font-bold">{steps[step]}</h2>
     <form ref={form} onSubmit={submit} noValidate className="mt-6" aria-busy={pending}>
      <div hidden aria-hidden="true"><label htmlFor="website">Website</label><input id="website" name="website" tabIndex={-1} autoComplete="off" value={values.website} onChange={e=>update('website',e.target.value)} maxLength={200}/></div>
-     {step===0 && <fieldset><legend className="mb-4 text-sm text-muted-foreground">Select the areas you would like to discuss.</legend><div className="grid gap-2 sm:grid-cols-2">{areas.map(a=><label key={a.id} htmlFor={`area-${a.id}`} className={`flex min-h-14 cursor-pointer items-center gap-3 rounded-sm border p-3 text-sm ${values.service_areas.includes(a.id)?'border-forest bg-secondary':'border-border bg-background'}`}><Checkbox id={`area-${a.id}`} className="h-5 w-5 border-input" checked={values.service_areas.includes(a.id)} aria-invalid={Boolean(errors.service_areas)} aria-describedby={errors.service_areas?'service_areas-error':undefined} onCheckedChange={checked=>update('service_areas',checked?[...values.service_areas,a.id]:values.service_areas.filter(id=>id!==a.id))}/><span>{a.label}</span></label>)}</div>{errors.service_areas && <p id="service_areas-error" role="alert" className="mt-3 text-sm text-destructive">{errors.service_areas}</p>}</fieldset>}
+     {step===0 && <div className="mb-6 max-w-md">{field('engagement_type','What do you need?',engagementTypes)}</div>}{step===0 && <fieldset><legend className="mb-4 text-sm text-muted-foreground">Select the areas you would like to discuss.</legend><div className="grid gap-2 sm:grid-cols-2">{areas.map(a=><label key={a.id} htmlFor={`area-${a.id}`} className={`flex min-h-14 cursor-pointer items-center gap-3 rounded-sm border p-3 text-sm ${values.service_areas.includes(a.id)?'border-forest bg-secondary':'border-border bg-background'}`}><Checkbox id={`area-${a.id}`} className="h-5 w-5 border-input" checked={values.service_areas.includes(a.id)} aria-invalid={Boolean(errors.service_areas)} aria-describedby={errors.service_areas?'service_areas-error':undefined} onCheckedChange={checked=>update('service_areas',checked?[...values.service_areas,a.id]:values.service_areas.filter(id=>id!==a.id))}/><span>{a.label}</span></label>)}</div>{errors.service_areas && <p id="service_areas-error" role="alert" className="mt-3 text-sm text-destructive">{errors.service_areas}</p>}</fieldset>}
      {step===1 && <div className="grid gap-5 sm:grid-cols-2">{field('company','Company',undefined,160)}{field('role','Your role',undefined,100)}{field('company_size','Company size',companySizes)}{field('environment','Environment',environments)}{field('timeline','Timeline',timelines)}{field('description','What would you like to achieve?',undefined,2000)}</div>}
      {step===2 && <><div className="grid gap-5 sm:grid-cols-2">{field('name','Your name')}{field('work_email','Work email',undefined,254,'email')}{field('phone','Phone',undefined,40,'tel',true)}{field('preferred_contact','Preferred contact method',contactMethods)}{field('meeting_windows','Preferred meeting time windows',undefined,300)}{field('time_zone','Time zone',undefined,100)}</div><p className="mt-6 text-sm leading-relaxed text-muted-foreground">We will reply by email first, including when you prefer a phone conversation. Your details are used to review and respond to this request. <SmartLink to="/privacy" className="underline underline-offset-4">Privacy Policy</SmartLink></p></>}
      {failure && <p role="alert" className="mt-5 text-sm text-destructive">{failure}</p>}

@@ -38,7 +38,7 @@ const Navbar = () => {
       <header className="site-rail">
         <div className="site-rail-inner">
           <div className="flex items-center justify-between px-2.5"><Brand /><ThemeToggle /></div>
-          <p className="rail-label mt-2">Enterprise technology partner</p>
+          <p className="rail-label mt-2">Technology & Talent partner</p>
           <nav aria-label="Primary" className="mt-8 flex flex-col gap-1">
             <span className="rail-label mb-2">Index</span>
             <button type="button" className="rail-link w-full text-left" aria-expanded={servicesOpen} aria-controls="rail-services" onClick={() => setServicesOpen(!servicesOpen)}>

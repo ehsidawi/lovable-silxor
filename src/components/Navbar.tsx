@@ -4,7 +4,8 @@ import { useLocation } from "react-router-dom";
 import SmartLink, { SmartNavLink } from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetDescription, SheetTrigger } from "@/components/ui/sheet";
-import { servicePillars } from "@/data/services";
+import { services } from "@/data/services";
+import { practices, inquiryHref } from "@/data/practices";
 import ThemeToggle from "@/components/ThemeToggle";
 import { resourceLinks } from "@/data/site";
 import { caseStudies } from "@/data/caseStudies";
@@ -15,8 +16,7 @@ const links = [
   ...(caseStudies.length ? [{ label: "Case studies", to: "/case-studies" }] : []),
   { label: "Contact", to: "/contact" },
 ];
-const talent = servicePillars.find(s => s.slug === "talent-acquisition");
-const tech = servicePillars.filter(s => s.slug !== "talent-acquisition");
+const practiceServices = (ids: string[]) => services.filter(s => ids.includes(s.slug));
 
 const Brand = () => <SmartLink to="/" aria-label="Silxor home" className="mx-brand">Silxor<i aria-hidden="true" /></SmartLink>;
 
@@ -26,7 +26,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  useEffect(() => { setOpen(false); setMobileOpen(false); }, [location.pathname]);
+  useEffect(() => { setOpen(false); setMobileOpen(false); }, [location.pathname, location.hash]);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
@@ -46,7 +46,7 @@ const Navbar = () => {
           <Brand />
           <nav aria-label="Primary" className="mx-nav">
             <button type="button" className="mx-nav-link" aria-expanded={open} aria-controls="mx-services" onClick={() => setOpen(!open)}>
-              Services <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" />
+              Practices <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" />
             </button>
             {links.map(l => <SmartNavLink key={l.to} to={l.to} className="mx-nav-link">{l.label}</SmartNavLink>)}
           </nav>
@@ -59,10 +59,12 @@ const Navbar = () => {
                 <SheetTitle className="mx-brand">Silxor<i aria-hidden="true" /></SheetTitle>
                 <SheetDescription className="sr-only">Primary navigation</SheetDescription>
                 <nav aria-label="Mobile" className="mt-8 flex flex-col">
-                  <span className="mx-label">Talent</span>
-                  {talent && <SmartLink to={talent.path} className="mx-drawer-link">{talent.navLabel}</SmartLink>}
-                  <span className="mx-label mt-6">Technology</span>
-                  {tech.map(s => <SmartLink key={s.slug} to={s.path} className="mx-drawer-link">{s.navLabel}</SmartLink>)}
+                  {practices.map(p => (
+                    <div key={p.id} className="ed-drawer-group">
+                      <SmartLink to={p.path} className="ed-drawer-practice"><span>{p.code}</span>{p.name}</SmartLink>
+                      {practiceServices(p.services).map(s => <SmartLink key={s.slug} to={s.path} className="mx-drawer-link">{s.navLabel}</SmartLink>)}
+                    </div>
+                  ))}
                   <SmartLink to="/services" className="mx-drawer-link font-semibold">All services</SmartLink>
                   <span className="mx-label mt-6">Company</span>
                   {links.map(l => <SmartLink key={l.to} to={l.to} className="mx-drawer-link">{l.label}</SmartLink>)}
@@ -76,20 +78,15 @@ const Navbar = () => {
         </div>
         {open && (
           <div id="mx-services" className="mx-mega">
-            <div className="mx-mega-inner">
-              {talent && <SmartLink to={talent.path} className="mx-mega-feature">
-                <span className="mx-label">Talent</span>
-                <strong>{talent.navLabel}</strong>
-                <span className="text-sm text-muted-foreground">{talent.outcome}</span>
-                <span className="mx-inline-link">Explore Talent <ArrowRight className="h-4 w-4" aria-hidden="true" /></span>
-              </SmartLink>}
-              <div>
-                <span className="mx-label">Technology</span>
-                <div className="mx-mega-grid">
-                  {tech.map(s => <SmartLink key={s.slug} to={s.path} className="mx-mega-link">{s.navLabel}<ArrowRight className="h-4 w-4" aria-hidden="true" /></SmartLink>)}
+            <div className="mx-mega-inner ed-mega">
+              {practices.map(p => (
+                <div key={p.id} className="ed-mega-col">
+                  <SmartLink to={p.path} className="ed-mega-head"><span>{p.code}</span><strong>{p.name}</strong></SmartLink>
+                  <p>{p.summary}</p>
+                  <ul>{practiceServices(p.services).map(s => <li key={s.slug}><SmartLink to={s.path}>{s.navLabel}</SmartLink></li>)}</ul>
+                  <SmartLink to={inquiryHref(p.id)} className="ed-mega-inquiry">Book a Consultation<span className="sr-only"> about {p.name}</span> <ArrowRight className="h-4 w-4" aria-hidden="true" /></SmartLink>
                 </div>
-                <SmartLink to="/services" className="mx-inline-link mt-5">All services <ArrowRight className="h-4 w-4" aria-hidden="true" /></SmartLink>
-              </div>
+              ))}
             </div>
           </div>
         )}

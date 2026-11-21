@@ -8,7 +8,7 @@ describe("enterprise service destinations", () => {
     }
   });
   it("resolves each primary pillar to its existing or new detail page", () => {
-    expect(servicePillars.map(s => s.slug)).toEqual(["talent-acquisition", "advisory", "cloud", "managed-services", "cybersecurity", "identity", "software-engineering", "hardware-engineering"]);
+    expect(servicePillars.map(s => s.slug)).toEqual(["talent-acquisition", "advisory", "cloud", "managed-services", "cybersecurity", "information-security", "identity", "software-engineering", "hardware-engineering"]);
     for (const pillar of servicePillars) expect(getService(pillar.slug)?.path).toBe(pillar.path);
     expect(new Set(services.map(s => s.path)).size).toBe(services.length);
   });

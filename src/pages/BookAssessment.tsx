@@ -9,14 +9,18 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { services } from '@/data/services';
 import { engagementTypes, companySizes, environments, timelines, contactMethods, needSchema, contextSchema, contactSchema, consultationSchema } from '@/lib/consultation';
 import SmartLink from '@/components/SmartLink';
+import { useSearchParams } from 'react-router-dom';
+import { inquiryPreset, practices } from '@/data/practices';
 
 const steps = ['What you need','Your context','Contact details'];
 const areas = [...services.map(s => ({id:s.slug,label:s.name})), ...(services.find(s=>s.slug==='identity')?.blocks ?? []).map(b => ({id:b.id ?? '', label:b.title.replace(/ \/ /g, ' · ')}))];
 const initial = {engagement_type:'',service_areas:[] as string[],company:'',role:'',company_size:'',environment:'',timeline:'',description:'',name:'',work_email:'',phone:'',preferred_contact:'Email',meeting_windows:'',time_zone:'',website:''};
 type Field = keyof typeof initial;
 const BookAssessment = () => {
+ const [params] = useSearchParams();
+ const preset = inquiryPreset(params.get('practice'), params.get('service'));
  const [step,setStep] = useState(0);
- const [values,setValues] = useState(initial);
+ const [values,setValues] = useState(()=>preset?{...initial,engagement_type:preset.engagement_type,service_areas:preset.service_areas}:initial);
  const [errors,setErrors] = useState<Record<string,string>>({});
  const [pending,setPending] = useState(false);
  const [saved,setSaved] = useState(false);
@@ -51,10 +55,10 @@ const BookAssessment = () => {
   if(!parsed.success){setFailure('Review your details before sending.');return;}
   const d = parsed.data;
   const label = (id:string) => areas.find(a=>a.id===id)?.label ?? id;
-  const body = ['WHAT YOU NEED', 'Engagement: '+d.engagement_type, ...d.service_areas.map(id=>'  * '+label(id)), '',
+  const body = ['WHAT YOU NEED', ...(preset?['Practice: '+preset.practice.inquiryLabel]:[]), 'Engagement: '+d.engagement_type, ...d.service_areas.map(id=>'  * '+label(id)), '',
    'YOUR CONTEXT', 'Company: '+d.company, 'Role: '+d.role, 'Company size: '+d.company_size, 'Environment: '+d.environment, 'Timeline: '+d.timeline, 'Goals: '+d.description, '',
    'CONTACT DETAILS', 'Name: '+d.name, 'Work email: '+d.work_email, 'Phone: '+(d.phone||'Not provided'), 'Preferred contact: '+d.preferred_contact, 'Meeting windows: '+d.meeting_windows, 'Time zone: '+d.time_zone].join('\n');
-  const href = `mailto:hello@silxor.com?subject=${encodeURIComponent(`Consultation Request: ${d.company}, ${d.name}`)}&body=${encodeURIComponent(body)}`;
+  const href = `mailto:hello@silxor.com?subject=${encodeURIComponent(`${preset?preset.practice.name+' ':''}Consultation Request: ${d.company}, ${d.name}`)}&body=${encodeURIComponent(body)}`;
   setMailto(href); window.location.href = href;
   moved.current=true;setSaved(true);setValues(initial);
  };
@@ -63,6 +67,7 @@ const BookAssessment = () => {
   <section className="r-section"><div className="container-content"><div className="mx-auto max-w-3xl">
    {saved ? <div role="status" className="py-8"><CheckCircle2 className="mb-6 h-12 w-12 text-forest" aria-hidden="true" /><h2 ref={heading} tabIndex={-1} className="font-display text-3xl font-bold">Your request is ready to send</h2><p className="r-lead mt-4">Your email app has opened with your request addressed to hello@silxor.com. Press send there to deliver it. We will review your details and reply by email.</p>{mailto && <Button asChild className="mt-7 mr-3"><a href={mailto}>Open the email again <Send aria-hidden="true" /></a></Button>}<Button asChild variant="outline" className="mt-7"><SmartLink to="/services">Explore our services <ArrowRight aria-hidden="true" /></SmartLink></Button></div> : <>
     <ol aria-label="Consultation progress" className="mb-9 grid grid-cols-3 gap-3">{steps.map((label,i)=><li key={label} aria-current={i===step?'step':undefined} className={`border-t-4 pt-3 ${i<=step?'border-forest':'border-border'}`}><span className="font-mono text-xs text-muted-foreground">0{i+1}</span><span className={`mt-2 block text-sm ${i===step?'font-bold':'text-muted-foreground'}`}>{label}</span><span className="sr-only">{i<step?'Completed':i===step?'Current step':'Upcoming'}</span></li>)}</ol>
+    {step===0 && <nav aria-label="Choose a practice" className="ed-book-practices"><p className="ed-mini">Start from a practice</p><ul>{practices.map(p=><li key={p.id}><SmartLink to={`/book?practice=${p.id}`} aria-current={preset?.practice.id===p.id?'true':undefined} onClick={()=>{setValues(v=>({...v,engagement_type:p.engagement,service_areas:[p.services[0]]}));setErrors({});}}><span>{p.code}</span>{p.name}</SmartLink></li>)}</ul>{preset && <p role="status" className="ed-book-note">Set up for <strong>{preset.practice.inquiryLabel}</strong>. You can change any selection below.</p>}</nav>}
     <h2 ref={heading} tabIndex={-1} className="font-display text-2xl font-bold">{steps[step]}</h2>
     <form ref={form} onSubmit={submit} noValidate className="mt-6" aria-busy={pending}>
      <div hidden aria-hidden="true"><label htmlFor="website">Website</label><input id="website" name="website" tabIndex={-1} autoComplete="off" value={values.website} onChange={e=>update('website',e.target.value)} maxLength={200}/></div>

@@ -1,44 +1,32 @@
 import { ArrowRight, ArrowDownRight } from "lucide-react";
 import SmartLink from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
-import SystemBlueprint, { SystemBlueprintCompact } from "@/components/home/SystemBlueprint";
+import { practices } from "@/data/practices";
+import heroImage from "@/assets/hero-four-layers.webp";
+import heroSmall from "@/assets/hero-four-layers-768.webp";
 
-const offers = [
-  { code: "01", label: "Technology", title: "Enterprise Technology Consulting", to: "/services" },
-  { code: "02", label: "Talent", title: "International Recruitment & Staffing", to: "/services/talent-acquisition" },
-  { code: "03", label: "Advisory", title: "C-Level Advisory", to: "/services/advisory" },
-];
-
-/** Precision Future opening: grotesk proposition, three offer index and an engineered blueprint. */
+/** Editorial opening: oversize plain proposition beside a material study of four interlocking layers. */
 export const PrismaHero = () => (
-  <section className="px-hero" aria-labelledby="home-title">
-    <div className="px-hero-grid-lines" aria-hidden="true" />
-    <div className="container-content px-hero-layout">
-      <div className="px-hero-copy">
-        <p className="px-kicker"><span className="px-dot" aria-hidden="true" />We build. We protect. We staff.</p>
-        <h1 id="home-title" className="px-hero-title">Technology. Talent. <span>Senior accountability.</span></h1>
-        <p className="px-hero-lead">Enterprise technology consulting, international recruitment and staffing, and C-level advisory, delivered with discretion and senior accountability.</p>
-        <div className="px-hero-actions">
+  <section className="ed-hero" aria-labelledby="home-title">
+    <div className="container-content ed-hero-grid">
+      <div className="ed-hero-copy">
+        <p className="ed-kicker">Silxor · We build. We protect. We staff.</p>
+        <h1 id="home-title" className="ed-hero-title">We help organizations run, defend, govern and staff their technology<span aria-hidden="true">.</span></h1>
+        <p className="ed-hero-lead">Four practices with equal weight: information technology, cybersecurity, information security and recruitment. One senior team accountable for how they fit together.</p>
+        <div className="ed-hero-actions">
           <Button asChild size="lg"><SmartLink to="/book">Book a Consultation <ArrowRight aria-hidden="true" /></SmartLink></Button>
-          <a href="#capabilities" className="px-ghost-link">View capabilities <ArrowDownRight className="h-4 w-4" aria-hidden="true" /></a>
+          <a href="#capabilities" className="ed-text-link">See the four practices <ArrowDownRight className="h-4 w-4" aria-hidden="true" /></a>
         </div>
       </div>
-      <figure className="px-hero-figure">
-        <SystemBlueprint />
-        <SystemBlueprintCompact />
-        <figcaption><span>FIG. 01</span>Advisory, technology and talent under one accountable lead</figcaption>
+      <figure className="ed-hero-figure">
+        <img src={heroImage} srcSet={`${heroSmall} 768w, ${heroImage} 1536w`} sizes="(min-width: 1024px) 52vw, 100vw" width={1536} height={1152} alt="Four interlocking slabs of travertine, blackened steel, frosted glass and oak, stacked in raking afternoon light." fetchPriority="high" />
+        <figcaption>
+          <ol className="ed-layer-key">
+            {[...practices].reverse().map(p => <li key={p.id}><span>{p.code}</span>{p.name}</li>)}
+          </ol>
+          <p>Four layers, keyed into one structure.</p>
+        </figcaption>
       </figure>
-    </div>
-    <div className="container-content">
-      <nav aria-label="Core offers" className="px-offer-index">
-        {offers.map(o => (
-          <SmartLink key={o.code} to={o.to} className="px-offer-index-item">
-            <span className="px-mono">{o.code} / {o.label}</span>
-            <strong>{o.title}</strong>
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </SmartLink>
-        ))}
-      </nav>
     </div>
   </section>
 );

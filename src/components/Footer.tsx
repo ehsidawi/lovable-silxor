@@ -1,5 +1,6 @@
 import { ArrowRight, Linkedin } from "lucide-react";
 import { services } from "@/data/services";
+import { practices } from "@/data/practices";
 import SmartLink from "@/components/SmartLink";
 import { resourceLinks } from "@/data/site";
 import BackToTop from "@/components/BackToTop";
@@ -7,7 +8,7 @@ import { caseStudies } from "@/data/caseStudies";
 import { Button } from "@/components/ui/button";
 
 const columns = [
-  { title: "Services", links: services.map(s => ({ label: s.navLabel, to: s.path })) },
+  ...practices.map(p => ({ title: p.name, links: services.filter(s => p.services.includes(s.slug)).map(s => ({ label: s.navLabel, to: s.path })) })),
   { title: "Company", links: [{ label: "Industries", to: "/industries" }, { label: "Delivery Model", to: "/delivery" }, { label: "Clients", to: "/clients" }, { label: "About", to: "/about" }, { label: "Insights", to: "/insights" }, ...(caseStudies.length ? [{ label: "Case studies", to: "/case-studies" }] : []), { label: "Technologies & Platforms", to: "/partners" }, { label: "Contact", to: "/contact" }] },
   { title: "Resources", links: [...resourceLinks, { label: "Compliance Documentation", to: "/compliance" }, { label: "SLA", to: "/sla" }] },
 ];
@@ -18,7 +19,7 @@ const Footer = () => (
     <div className="container-content">
       <div className="mx-footer-top">
         <div>
-          <p className="mx-footer-statement">We build systems and the teams that run them.</p>
+          <p className="mx-footer-statement">We build systems, protect them and staff the teams that run them.</p>
           <div className="mt-8 flex flex-wrap items-center gap-6">
             <Button asChild><SmartLink to="/book">Book a Consultation <ArrowRight aria-hidden="true" /></SmartLink></Button>
             <a href="mailto:hello@silxor.com" className="mx-inline-link">hello@silxor.com</a>

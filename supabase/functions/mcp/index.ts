@@ -18,7 +18,8 @@ import {
   Activity,
   Cpu,
   Fingerprint,
-  CircuitBoard
+  CircuitBoard,
+  ScrollText
 } from "npm:lucide-react@^0.462.0";
 var services = [
   {
@@ -124,16 +125,15 @@ var services = [
     name: "Cybersecurity",
     navLabel: "Cybersecurity",
     icon: ShieldCheck,
-    outcome: "Security architecture and evidence that withstand scrutiny from auditors and adversaries.",
-    seoTitle: "Cybersecurity & GRC | Silxor",
-    seoDescription: "Security architecture, assessments, Zero Trust, governance risk and compliance, hardening, security operations strategy, and compliance readiness from Silxor.",
-    heroLead: "Security considered from the first decision.",
-    intro: "We build security architecture around identity, segmentation, and evidence, then align the program to the control frameworks your regulators and customers expect.",
+    outcome: "Operational defense: detecting, containing and recovering from attacks, and being ready before one happens.",
+    seoTitle: "Cybersecurity Defense & Incident Readiness | Silxor",
+    seoDescription: "Operational cyber defense from Silxor: security architecture, hardening, monitoring and detection, vulnerability management, penetration testing and incident response readiness.",
+    heroLead: "Defend the estate. Be ready for the incident.",
+    intro: "Cybersecurity is the operational side of protection: the controls, monitoring and response that stand between your systems and an attacker. We design defenses around identity and segmentation, test them, watch them and prepare your team to act when something goes wrong. Policy, risk and data handling sit with our Information Security practice.",
     blocks: [
       { title: "Security Architecture", line: "Controls designed into the platform from the first diagram." },
       { title: "Security Assessments", line: "Gap analysis against your threat model and control baseline." },
       { title: "Zero Trust", line: "Identity centric access, segmentation, and continuous verification." },
-      { title: "Governance, Risk & Compliance", line: "Policy, risk register, and control ownership that stay current." },
       { title: "Hardening", line: "Baselines for endpoints, servers, cloud, and pipelines." },
       { title: "SOC & Security Monitoring", line: "Detection engineering, log integration, alert triage and security operations tailored to your environment." },
       { title: "Vulnerability Management", line: "Asset discovery, vulnerability assessment, prioritization, remediation tracking and validation." },
@@ -142,15 +142,37 @@ var services = [
     ],
     capabilities: [
       "Zero Trust",
-      "NIST CSF",
-      "ISO 27001 Control Families",
-      "PCI DSS Readiness",
       "Incident Response",
+      "Tabletop Exercises",
       "Cloud Security Posture",
+      "Hardening Baselines",
       "SOC & Monitoring",
       "Vulnerability Management",
       "Penetration Testing"
     ]
+  },
+  {
+    slug: "information-security",
+    path: "/services/information-security",
+    name: "Information Security",
+    navLabel: "Information Security",
+    icon: ScrollText,
+    outcome: "Information governance: knowing what data you hold, who may use it, what the risks are and which policies apply.",
+    seoTitle: "Information Security, Governance, Risk & Data Handling | Silxor",
+    seoDescription: "Information security governance from Silxor: risk assessment, policies and standards, data classification and handling, supplier risk and control mapping for audit readiness.",
+    heroLead: "Govern information before you have to defend it.",
+    intro: "Information Security (InfoSec) is the governance side of protection. It decides what information matters, how it is classified and handled, which risks are accepted and who owns each control. We build the policies, registers and evidence that let leadership answer those questions plainly. Monitoring, detection and incident response sit with our Cybersecurity practice.",
+    blocks: [
+      { id: "governance", title: "Information Security Governance", line: "Roles, ownership and decision rights for information security, from the board to system owners." },
+      { id: "risk", title: "Risk Assessment & Register", line: "Identify, rate and track information risks with clear owners, treatment decisions and review dates." },
+      { id: "policy", title: "Policies & Standards", line: "Acceptable use, access, retention and security policies written in plain language and kept current." },
+      { id: "data-handling", title: "Data Classification & Handling", line: "Classification schemes, handling rules and retention for the information you create, store and share." },
+      { id: "supplier-risk", title: "Third Party & Supplier Risk", line: "Due diligence, contract requirements and periodic review for vendors that handle your information." },
+      { id: "control-mapping", title: "Control Mapping & Audit Readiness", line: "Map existing controls to agreed frameworks and prepare evidence. This describes readiness work, not certification." },
+      { id: "privacy", title: "Privacy & Records Alignment", line: "Align data handling with privacy obligations and records requirements agreed with your counsel." },
+      { id: "awareness", title: "Policy Awareness", line: "Briefings that explain policies and handling rules to the people expected to follow them." }
+    ],
+    capabilities: ["ISO 27001 Control Families", "NIST CSF Govern", "Risk Register", "Policy Lifecycle", "Data Classification", "Retention Schedules", "Supplier Risk", "Audit Evidence", "PCI DSS Readiness"]
   },
   {
     slug: "managed-services",
@@ -326,6 +348,7 @@ var servicePillars = [
   "cloud",
   "managed-services",
   "cybersecurity",
+  "information-security",
   "identity",
   "software-engineering",
   "hardware-engineering"

@@ -10,6 +10,7 @@ import { serviceFaqs } from "@/data/site";
 import ArchitectureDiagram from "@/components/diagrams/ArchitectureDiagram";
 import { diagrams } from "@/data/diagrams";
 import { serviceMedia } from "@/data/serviceMedia";
+import { practiceForService, inquiryHref } from "@/data/practices";
 
 const ServiceDetail = () => {
   const { slug } = useParams();
@@ -18,17 +19,19 @@ const ServiceDetail = () => {
   if (!service) return <NotFound />;
 
   const Icon = service.icon;
-  const relatedSlugs: Record<string, string[]> = { identity: ["cybersecurity", "managed-services", "software-engineering"], cybersecurity: ["identity", "cloud", "managed-services"], cloud: ["managed-services", "cybersecurity", "advisory"], "private-ai": ["software-engineering", "cloud", "identity"], "hardware-engineering": ["software-engineering", "cloud", "cybersecurity"], "software-engineering": ["product-team", "identity", "private-ai"], "product-team": ["software-engineering", "advisory", "talent-acquisition"], advisory: ["cloud", "cybersecurity", "talent-acquisition"], "talent-acquisition": ["advisory", "product-team", "software-engineering"], "managed-services": ["cloud", "cybersecurity", "identity"] };
+  const practice = practiceForService(service.slug);
+  const relatedSlugs: Record<string, string[]> = { identity: ["cybersecurity", "managed-services", "software-engineering"], cybersecurity: ["information-security", "identity", "managed-services"], "information-security": ["cybersecurity", "identity", "advisory"], cloud: ["managed-services", "cybersecurity", "advisory"], "private-ai": ["software-engineering", "cloud", "identity"], "hardware-engineering": ["software-engineering", "cloud", "cybersecurity"], "software-engineering": ["product-team", "identity", "private-ai"], "product-team": ["software-engineering", "advisory", "talent-acquisition"], advisory: ["cloud", "cybersecurity", "talent-acquisition"], "talent-acquisition": ["advisory", "product-team", "software-engineering"], "managed-services": ["cloud", "cybersecurity", "identity"] };
   const related = services.filter(s => relatedSlugs[service.slug]?.includes(s.slug));
 
   return (
     <PageShell title={service.seoTitle} description={service.seoDescription} path={service.path}>
       <PageHero
-        eyebrow={service.flagship ? "Flagship Service" : "Service"}
+        eyebrow={practice ? `${practice.code} · ${practice.name}` : "Service"}
+        primaryCta={practice ? { label: "Book a Consultation", to: inquiryHref(practice.id, service.slug) } : undefined}
         title={service.name}
         lead={service.heroLead}
         media={serviceMedia[service.slug]}
-        crumbs={[{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, { label: service.navLabel }]}
+        crumbs={[{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, ...(practice && practice.path !== service.path ? [{ label: practice.name, to: practice.path }] : []), { label: service.navLabel }]}
       />
 
       <section className="border-b border-border py-8"><div className="container-content"><h2 className="font-display text-2xl font-bold">What is {service.name.toLowerCase()}?</h2><p className="mt-4 max-w-4xl text-base leading-relaxed text-muted-foreground">{service.intro}</p></div></section>
@@ -154,7 +157,7 @@ const ServiceDetail = () => {
 
       {service.slug === "identity" && <section className="r-section"><div className="container-content"><h2 className="r-title">Identity terms</h2><dl className="mt-8 grid gap-6 sm:grid-cols-2">{service.blocks.slice(0,6).map(b => <div key={b.id} className="border-t border-border pt-4"><dt className="font-semibold">{b.title}</dt><dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{b.line}</dd></div>)}</dl></div></section>}
       <section className="r-section"><div className="container-content"><h2 className="r-title">Questions about this service</h2><div className="mt-7"><QuestionList questions={serviceFaqs(service)} /></div><nav aria-label="Related guidance" className="mt-7 flex flex-wrap gap-6 text-sm font-medium"><Link to="/industries" className="underline underline-offset-4">Industry requirements</Link><Link to="/engagement" className="underline underline-offset-4">Engagement models</Link><Link to="/faq" className="underline underline-offset-4">All frequently asked questions</Link></nav></div></section>
-      <CtaBand />
+      <CtaBand to={practice ? inquiryHref(practice.id, service.slug) : "/book"} />
     </PageShell>
   );
 };

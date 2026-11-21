@@ -1,5 +1,6 @@
 import PageShell from "@/components/layout/PageShell";
 import HomeHero from "@/components/home/HomeHero";
+import OfferingTriad from "@/components/home/OfferingTriad";
 import IndustryMatrix from "@/components/home/IndustryMatrix";
 import DeliveryTrack from "@/components/home/DeliveryTrack";
 import TechnologyPlatforms from "@/components/TechnologyPlatforms";
@@ -13,11 +14,12 @@ const Index = () => {
   return (
     <PageShell
       title="Silxor | International Technology & Talent Firm"
-      description="Silxor is an international Technology & Talent firm. We build, secure and operate enterprise systems and recruit the technology teams that run them."
+      description="Silxor is an international Technology & Talent firm. Enterprise technology consulting, international executive search and staffing, and C-level advisory across technology and talent."
       path="/"
     >
       <HomeHero />
       <>
+      <OfferingTriad />
       <AnimatedSection><CapabilityMap /></AnimatedSection>
       <AnimatedSection><ArchitectureDiagram data={diagrams.estate} /></AnimatedSection>
       <AnimatedSection>

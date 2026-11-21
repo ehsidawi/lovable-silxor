@@ -5,6 +5,7 @@ import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import CtaBand from "@/components/CtaBand";
 import TechnologyPlatforms from "@/components/TechnologyPlatforms";
+import OfferingTriad from "@/components/home/OfferingTriad";
 import SolutionsSection from "@/components/SolutionsSection";
 import { services } from "@/data/services";
 import { useWebMCP } from "use-webmcp-tool";
@@ -29,19 +30,21 @@ const ServicesIndex = () => {
     >
       <PageHero
         eyebrow="Services"
-        title="Technology and Talent."
-        lead="Talent Acquisition alongside strategy, infrastructure, security, identity, software and hardware. Design, build and operations scoped to your needs."
+        title="Technology, Talent and C-level advisory."
+        lead="Executive search, recruitment and staffing alongside strategy, infrastructure, security, identity, software and hardware. Design, build and operations scoped to your needs, with board level advisory across both."
         crumbs={[{ label: "Home", to: "/" }, { label: "Services" }]}
       />
 
+      <OfferingTriad />
+
       <section className="r-section">
         <div className="container-content">
-          <span className="r-eyebrow">Technology &amp; Talent</span>
-          <h2 className="r-title" style={{ marginTop: 16 }}>We build. We protect. We staff.</h2>
+          <span className="r-eyebrow">All Services</span>
+          <h2 className="r-title" style={{ marginTop: 16 }}>Technology and Talent, side by side.</h2>
           <div className="mx-pillars" style={{ marginTop: 28 }}>
             {[
               { label: "Technology", lead: "Strategy, infrastructure, security, identity, software and hardware.", items: rest },
-              { label: "Talent", lead: flagship.outcome, items: [flagship] },
+              { label: "Talent", lead: "Executive search, senior recruitment and technology staffing, from the boardroom to the engineering floor.", items: [flagship] },
             ].map((p) => (
               <div key={p.label} className="mx-pillar">
                 <h3 className="font-display" style={{ fontSize: 28 }}>{p.label}</h3>

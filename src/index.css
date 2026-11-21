@@ -548,3 +548,29 @@ a.r-card:hover, .service-tile:hover { transform: none !important; border-color: 
 .mx-pillar-list a:hover, .mx-pillar-list a:focus-visible { color: hsl(var(--primary)); }
 .mx-pillar-list small { color: hsl(var(--muted-foreground)); font-size: 13px; max-width: 60%; text-align: right; }
 .mx-hero-figure, .page-hero-visual, .identity-strip, .capability-link, main a, main figure { border-radius: 2px !important; }
+
+/* Meridian compact: denser rhythm across every band, card and block. */
+.r-section, .tile, .diagram-section, .cta-tile, .technology-explorer { padding-block: clamp(40px, 5vw, 72px) !important; }
+.page-hero { padding-block: clamp(28px, 4vw, 56px) clamp(32px, 4vw, 56px) !important; }
+.mx-hero { padding-block: clamp(36px, 5vw, 72px) clamp(36px, 4vw, 56px) !important; }
+.mx-cta { padding-block: clamp(44px, 5vw, 80px) !important; }
+.mx-footer { padding-block: 48px 24px !important; }
+.r-card, .service-tile, .delivery-step { padding: 18px !important; min-height: 0 !important; }
+.r-panel { padding: clamp(20px, 3vw, 32px) !important; }
+.r-lead { font-size: 16px; line-height: 1.6; }
+.r-title { margin-bottom: 0; }
+main .gap-8 { gap: 1.5rem; } main .lg\:gap-12 { gap: 2rem; }
+.mx-offer-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 32px; margin-bottom: 24px; }
+.mx-offers { display: grid; grid-template-columns: 1fr; border-top: 2px solid hsl(var(--foreground)); }
+@media (min-width: 900px) { .mx-offers { grid-template-columns: repeat(3, 1fr); } .mx-offer + .mx-offer { border-left: 1px solid hsl(var(--border)); } }
+.mx-offer { display: flex; flex-direction: column; gap: 10px; padding: 22px 22px 22px 0; border-bottom: 1px solid hsl(var(--border)); }
+@media (min-width: 900px) { .mx-offer + .mx-offer { padding-left: 22px; } .mx-offer { border-bottom: 0; } }
+.mx-offer-meta { display: flex; gap: 10px; font-family: 'JetBrains Mono Variable', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: hsl(var(--primary)); }
+.mx-offer-meta span { color: hsl(var(--muted-foreground)); }
+.mx-offer h3 { font-size: 24px; line-height: 1.15; }
+.mx-offer-line { font-size: 15px; color: hsl(var(--muted-foreground)); }
+.mx-offer ul { list-style: none; padding: 0; margin: 4px 0 0; border-top: 1px solid hsl(var(--border)); }
+.mx-offer li { padding: 8px 0; border-bottom: 1px solid hsl(var(--border)); font-size: 14px; }
+.mx-offer-link { margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; color: hsl(var(--foreground)); }
+.mx-offer-link:hover, .mx-offer-link:focus-visible { color: hsl(var(--primary)); }
+.mx-pillar { padding-block: 24px !important; } .mx-pillar-list a { padding: 10px 0; }

@@ -11,7 +11,7 @@ export const PrismaHero = () => (
         <div className="mx-hero-copy">
           <span className="mx-label">Silxor · Technology &amp; Talent</span>
           <h1 id="home-title" className="mx-hero-title">We build. We protect. <em>We staff.</em></h1>
-          <p className="mx-hero-lead">We build systems and the teams that run them, from infrastructure and security to the people who operate it.</p>
+          <p className="mx-hero-lead">Enterprise technology consulting, international executive search and staffing, and C-level advisory across both.</p>
           <div className="mt-10 flex flex-wrap items-center gap-6">
             <Button asChild size="lg"><SmartLink to="/book">Book a Consultation <ArrowRight aria-hidden="true" /></SmartLink></Button>
             <a href="#capabilities" className="mx-inline-link">Explore capabilities <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>

@@ -375,6 +375,7 @@ const BookAssessment = () => {
                   {steps[step]}
                 </h2>
                 <form
+                  key={step}
                   ref={form}
                   onSubmit={submit}
                   noValidate

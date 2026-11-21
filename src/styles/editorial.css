@@ -1,3 +1,4 @@
+@import "./hero-baseline.css";
 /* Silxor editorial architecture. This is the only visual system. */
 :root {
   --background: 40 24% 94%;
@@ -405,92 +406,6 @@ main#main {
   display: flex;
   align-items: center;
   font-size: 15px;
-}
-/* Home composition: full width material photograph with unframed type */
-.ed-hero {
-  position: relative;
-  isolation: isolate;
-  min-height: 0;
-  color: hsl(var(--on-ink));
-  --foreground: var(--on-ink);
-  --muted-foreground: var(--on-ink-muted);
-  --primary: var(--on-ink);
-  --primary-foreground: var(--ink);
-  --border: 38 10% 55%;
-  --signal: var(--inverse-primary);
-}
-.ed-hero-grid {
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  padding-block: var(--section-space);
-}
-.ed-hero-copy {
-  z-index: 2;
-  max-width: 790px;
-}
-.ed-hero-title {
-  font-size: clamp(36px, 4rem, 64px);
-  line-height: 1.02;
-  text-wrap: balance;
-  max-width: 15ch;
-}
-.ed-hero-lead {
-  margin-top: 16px;
-  max-width: 52ch;
-  font-size: 16px;
-  color: hsl(var(--on-ink));
-}
-.ed-hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 16px 16px;
-  margin-top: 16px;
-}
-.ed-hero-figure {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-}
-.ed-hero-figure::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    hsl(var(--ink) / 0.9),
-    hsl(var(--ink) / 0.68) 44%,
-    hsl(var(--ink) / 0.08) 100%
-  );
-}
-.ed-hero-figure img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 60% 50%;
-}
-.ed-hero-figure figcaption {
-  position: absolute;
-  bottom: 30px;
-  right: 48px;
-  z-index: 2;
-}
-.ed-layer-key {
-  display: grid;
-  gap: 4px;
-  font-size: 12px;
-}
-.ed-layer-key li {
-  display: flex;
-  gap: 12px;
-}
-.ed-layer-key span {
-  font-family: var(--body);
-  color: hsl(var(--inverse-primary));
-}
-.ed-hero-figure figcaption p {
-  display: none;
 }
 /* Four practice disclosures */
 .ed-rows {
@@ -1379,12 +1294,6 @@ figure > figcaption {
   .mx-menu-btn {
     display: inline-flex;
   }
-  .ed-hero-title {
-    font-size: 56px;
-  }
-  .ed-hero-figure figcaption {
-    display: none;
-  }
   .ed-page-composition h1 {
     font-size: 40px;
   }
@@ -1471,31 +1380,6 @@ figure > figcaption {
   .r-section,
   .section-spacing {
     padding-block: var(--section-space);
-  }
-  .ed-hero,
-  .ed-hero-grid {
-    min-height: 0;
-  }
-  .ed-hero-grid {
-    min-height: 0;
-    padding-block: 32px;
-  }
-  .ed-hero-title {
-    font-size: 40px;
-  }
-  .ed-hero-lead {
-    font-size: 16px;
-  }
-  .ed-hero-figure::after {
-    background: linear-gradient(
-      0deg,
-      hsl(var(--ink) / 0.93),
-      hsl(var(--ink) / 0.7) 55%,
-      hsl(var(--ink) / 0.15)
-    );
-  }
-  .ed-hero-figure img {
-    object-position: 65% 50%;
   }
   .ed-h2,
   .r-title {
@@ -1709,13 +1593,6 @@ figure > figcaption {
   }
 }
 @media (max-width: 359px) {
-  .ed-hero-title {
-    font-size: 36px;
-  }
-  .ed-hero,
-  .ed-hero-grid {
-    min-height: 0;
-  }
   .ed-page-composition h1 {
     font-size: 36px;
   }
@@ -1728,9 +1605,6 @@ figure > figcaption {
   }
   .ed-contact-address {
     font-size: 22px;
-  }
-  .ed-hero-actions {
-    gap: 12px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1750,7 +1624,7 @@ figure > figcaption {
 .font-body, .font-mono, button, input, textarea, select { font-family: var(--body); }
 h1,h2,h3,h4,h5,h6 { font-family: var(--display); font-weight: 600; }
 .ed-row-heading { font-family: var(--display); }
-.ed-hero-lead,.ed-prose p,.ed-page-intro > p { max-width: 65ch; }
+.ed-prose p,.ed-page-intro > p { max-width: 65ch; }
 .ed-book-form input,.ed-book-form select,.ed-directory-controls input { height: 44px; min-height: 44px; font-size: 16px; }
 .ed-book-form textarea { font-size: 16px; min-height: 72px; }
 .ed-mega { max-height: calc(100dvh - var(--header-h)); overflow-y: auto; }
@@ -1761,4 +1635,23 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--display); font-weight: 600; }
  .ed-directory-list li,.ed-scope-briefs summary,.ed-linked-list a,.ed-brief-list > div,.ed-insight-list article { padding-block: 12px; }
  .ed-table th,.ed-table td { padding-block: 10px; }
  .ed-page-opening { padding-block: 12px 28px; }
+}
+/* State changes communicate selection and progress, never simulated activity. */
+@keyframes ed-state-enter { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.ed-row-panel:not([hidden]), .ed-scope-briefs details[open] > :not(summary),
+.mx-mega, .ed-directory-list, .ed-directory .ed-empty,
+.ed-book-form form, .ed-book-success, .ed-book-form [role="alert"] {
+ animation: ed-state-enter 160ms ease-out;
+}
+.ed-scope-briefs summary, .ed-book-progress li, .ed-book-practices a,
+.ed-directory-controls select, .ed-book-form input, .ed-book-form select, .ed-book-form textarea {
+ transition: color 160ms ease-out, border-color 160ms ease-out, background-color 160ms ease-out;
+}
+.ed-scope-briefs summary::after, .mx-nav-link svg, .ed-row-icon {
+ transition: transform 160ms ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+ .ed-row-panel:not([hidden]), .ed-scope-briefs details[open] > :not(summary), .mx-mega,
+ .ed-directory-list, .ed-directory .ed-empty, .ed-book-form form,
+ .ed-book-success, .ed-book-form [role="alert"] { animation: none; }
 }

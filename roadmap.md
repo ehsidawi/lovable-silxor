@@ -9,3 +9,8 @@
 - [x] Replace all inherited visible faces with self-hosted Archivo and IBM Plex Sans.
 - [x] Compact shared styles, controls, menus and every page family without restoring maps or diagrams.
 - [x] Verify font loading, computed dimensions, every public route and consultation email handoff; run tests and check build.
+
+# Baseline hero and restrained transitions
+- [x] Restore the specified hero baseline, changing only the headline and isolating it from global compact styles.
+- [x] Refine shared disclosure, filtering, navigation and booking state transitions with reduced-motion support.
+- [x] Compare baseline styles across themes and widths; verify interactions, email draft, tests and preview.

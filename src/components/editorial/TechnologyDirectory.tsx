@@ -73,7 +73,7 @@ export default function TechnologyDirectory() {
           ? ` in ${technologyGroups.find((g) => g.id === category)?.label}`
           : ""}
       </p>
-      <ul className="ed-directory-list">
+      <ul className="ed-directory-list" key={`${category}:${query}`}>
         {results.map((name) => (
           <li id={technologyAnchor(name)} key={name}>
             <div className="ed-directory-name">

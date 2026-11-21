@@ -7,14 +7,14 @@ import heroSmall from "@/assets/hero-four-layers-768.webp";
 
 /** Editorial opening: oversize plain proposition beside a material study of four interlocking layers. */
 export const PrismaHero = () => (
-  <section className="ed-hero" aria-labelledby="home-title">
+  <section className="ed-hero baseline-hero" aria-labelledby="home-title">
     <div className="container-content ed-hero-grid">
       <div className="ed-hero-copy">
         <p className="ed-kicker">Silxor · We build. We protect. We staff.</p>
-        <h1 id="home-title" className="ed-hero-title">Run. Defend.<br />Govern. Hire.</h1>
-        <p className="ed-hero-lead">Information technology, cybersecurity, information security and recruitment. Four equal practices. Senior accountability.</p>
+        <h1 id="home-title" className="ed-hero-title">We run IT, defend systems, govern information, and recruit talent.</h1>
+        <p className="ed-hero-lead">Four practices with equal weight: information technology, cybersecurity, information security and recruitment. One senior team accountable for how they fit together.</p>
         <div className="ed-hero-actions">
-          <Button asChild size="lg"><SmartLink to="/book">Book a Consultation <ArrowRight aria-hidden="true" /></SmartLink></Button>
+          <Button asChild size="lg" className="min-h-12 px-7 py-3 rounded-lg"><SmartLink to="/book">Book a Consultation <ArrowRight aria-hidden="true" /></SmartLink></Button>
           <a href="#capabilities" className="ed-text-link">See the four practices <ArrowDownRight className="h-4 w-4" aria-hidden="true" /></a>
         </div>
       </div>
@@ -22,7 +22,7 @@ export const PrismaHero = () => (
         <img src={heroImage} srcSet={`${heroSmall} 768w, ${heroImage} 1536w`} sizes="(min-width: 1024px) 52vw, 100vw" width={1536} height={1152} alt="Four interlocking slabs of travertine, blackened steel, frosted glass and oak, stacked in raking afternoon light." fetchPriority="high" />
         <figcaption>
           <ol className="ed-layer-key">
-            {practices.map(p => <li key={p.id}><span>{p.code}</span>{p.name}</li>)}
+            {[...practices].reverse().map(p => <li key={p.id}><span>{p.code}</span>{p.name}</li>)}
           </ol>
           <p>Four layers, keyed into one structure.</p>
         </figcaption>

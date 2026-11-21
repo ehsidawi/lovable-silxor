@@ -3,7 +3,7 @@
 - Serve transformed video media through Lovable asset pointers, not external hotlinks or checked-in video files; this keeps the site self-contained and lightweight.
 - Proxy asset pointers to the public asset endpoint only during local development; Vite otherwise treats those paths as HTML fallback instead of media.
 - Express all page visual roles through the global semantic theme tokens; this keeps the enterprise identity consistent across existing routes.
-- Keep the active visual system in `src/styles/editorial.css`, imported after the Tailwind/font-only `src/index.css`; it is the sole visual system, so never restore legacy override layers.
+- Keep the active visual system in `src/styles/editorial.css`; its scoped hero baseline stylesheet protects the approved hero from compact globals without restoring legacy layouts elsewhere.
 - Give fixed dark surfaces (closing band, footer) and the accent closing tile their own scoped foreground, border and accent tokens in both themes; page surface tokens must not leak onto them.
 - Render navigation as a sticky top masthead with a Services panel and drawer below 1100px, and style sections as full width bands through shared section classes; pages adopt the frame without extra wrappers.
 - Deduplicate React and React DOM in both Vite configurations; theme hooks and renderers must share one React instance.
@@ -34,5 +34,5 @@
 
 - Keep lint exceptions limited to intentional control-character rejection and the generated MCP bundle; these protect validation parity and avoid rewriting generated integration code.
 
-- Load Archivo headings and IBM Plex Sans body/control weights through local Fontsource WOFF2 declarations with swap; one font system prevents inherited display faces across templates.
+- Load Archivo headings and IBM Plex Sans controls through local Fontsource WOFF2 with swap outside the isolated baseline hero; scoped font roles prevent global restyling of the owner's exception.
 - Keep density in the sole editorial stylesheet using section and box spacing tokens, content-driven heights and 44px hit areas; mobile form inputs stay 16px to remain usable without zoom.

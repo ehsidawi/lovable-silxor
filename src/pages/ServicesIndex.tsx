@@ -31,7 +31,7 @@ const ServicesIndex = () => {
       <PageHero
         eyebrow="Services"
         title="Technology, Talent and C-level advisory."
-        lead="We build systems and the teams that run them. Enterprise technology consulting, international recruitment and staffing, and strategic counsel for boards and senior leadership."
+        lead="Enterprise technology consulting, international recruitment and staffing, and independent counsel for boards and senior leadership."
         crumbs={[{ label: "Home", to: "/" }, { label: "Services" }]}
       />
 

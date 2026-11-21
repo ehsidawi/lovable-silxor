@@ -9,14 +9,14 @@ import Team from "@/components/Team";
 
 const posture = [
   { icon: Users, title: "One Accountable Team", line: "Technology, recruitment and executive advisory under an agreed engagement lead." },
-  { icon: ShieldCheck, title: "Security by Design", line: "Identity and controls built in from day one." },
+  { icon: ShieldCheck, title: "Security by Design", line: "Identity and controls considered from the first decision." },
   { icon: FileCheck, title: "Framework Informed", line: "Control frameworks and evidence requirements scoped to the engagement." },
   { icon: GaugeCircle, title: "Scoped per Engagement", line: "SLA tiers and reporting defined at assessment." },
 ];
 
 const staffing = [
   { icon: Layers, title: "Matched to Scope", line: "Executive search, specialist recruitment and contract staffing matched to the responsibilities your team needs." },
-  { icon: Users, title: "Senior by Default", line: "Roles, expertise, reporting and any external contributions are agreed in the engagement scope." },
+  { icon: Users, title: "Senior Judgment", line: "Roles, expertise, reporting and any external contributions are agreed in the engagement scope." },
   { icon: ClipboardCheck, title: "Scoped at Assessment", line: "Seniority, cadence, and reporting are defined in the proposal before work starts." },
 ];
 
@@ -35,8 +35,8 @@ const AboutPage = () => (
   >
     <PageHero
       eyebrow="About"
-      title="Technology and Talent. Coordinated delivery."
-      lead="We build systems and the teams that run them. Silxor Group Holding brings enterprise technology consulting, international recruitment and staffing, and C-level advisory together."
+      title="Technology and leadership, under one standard."
+      lead="Silxor Group Holding advises boards and senior leadership and brings enterprise technology consulting, international recruitment and staffing, and C-level advisory together under senior accountability."
       crumbs={[{ label: "Home", to: "/" }, { label: "About" }]}
     />
 
@@ -46,7 +46,7 @@ const AboutPage = () => (
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,380px)_1fr] gap-8 lg:gap-12">
             <div>
               <span className="r-eyebrow">Who We Are</span>
-              <h2 className="r-title" style={{ marginTop: 16 }}>One Partner. Full Stack.</h2>
+              <h2 className="r-title" style={{ marginTop: 16 }}>One firm. Senior accountability.</h2>
             </div>
             <div className="flex flex-col gap-4">
               <p className="font-body font-[400]" style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", lineHeight: 1.75 }}>

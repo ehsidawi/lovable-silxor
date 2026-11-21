@@ -12,7 +12,7 @@ const steps = [
 ];
 
 const principles = [
-  { title: "One Partner", line: "Advisory, build, and operations under one contract and one owner." },
+  { title: "Single Accountability", line: "Advisory, delivery and operations held by one accountable lead." },
   { title: "Full Stack", line: "Architecture, product, engineering, security and operations coordinated within the agreed scope." },
   { title: "Planned Handover", line: "Delivery, handover and ongoing ownership are planned together." },
 ];

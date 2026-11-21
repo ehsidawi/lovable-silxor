@@ -3,7 +3,7 @@ import SmartLink from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
 type CtaBandProps = { eyebrow?: string; title?: string; lead?: string; };
 /** Closing band shared by every page: serif statement and booking action on the dark field. */
-const CtaBand = ({ eyebrow = "Engage", title = "Start With a Technical Assessment", lead = "No cost. Tell us what you are building and we scope how to deliver it." }: CtaBandProps) => (
+const CtaBand = ({ eyebrow = "Engage", title = "A confidential first conversation", lead = "Outline the decision in front of you. We respond with a considered view of scope, approach and the people required." }: CtaBandProps) => (
   <section className="mx-cta"><div className="container-content mx-cta-grid">
     <div>
       <span className="mx-label">{eyebrow}</span>

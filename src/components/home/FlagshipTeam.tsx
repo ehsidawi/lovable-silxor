@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const flagship = services.find(s => s.flagship) ?? services[0];
 const FlagshipTeam = () => (
   <section className="dark-band py-14 md:py-20"><div className="container-content grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
-    <div><span className="r-eyebrow">02 / Full Product Delivery</span><h2 className="r-title mt-5">Not just developers.<br />Your entire senior product team.</h2><p className="r-lead mt-5">{flagship.outcome}</p>
+    <div><span className="r-eyebrow">02 / Full Product Delivery</span><h2 className="r-title mt-5">A senior product team,<br />accountable end to end.</h2><p className="r-lead mt-5">{flagship.outcome}</p>
       <figure className="mt-7 border-l-2 border-primary pl-5"><blockquote className="text-sm leading-relaxed text-on-ink">“After going through a lot of development vendors, we hired Silxor. We are still working with them today.”</blockquote><figcaption className="mt-3 font-mono text-[10px] uppercase text-on-ink-muted">Founder · Private Client</figcaption></figure>
       <Button asChild className="mt-8 h-12 rounded-sm px-6"><SmartLink to={flagship.path}>See the Full Product Team <ArrowUpRight aria-hidden="true" /></SmartLink></Button>
     </div>

@@ -1,4 +1,3 @@
-@import "@fontsource-variable/fraunces/index.css";
 /* Silxor editorial architecture. This is the only visual system. */
 :root {
   --background: 40 24% 94%;
@@ -32,9 +31,13 @@
   --inverse-primary: 10 88% 64%;
   --inverse-primary-foreground: 25 8% 7%;
   --radius: 6px;
-  --header-h: 80px;
+  --header-h: 64px;
   --container-content: 1360px;
-  --display: "Fraunces Variable", Georgia, serif;
+  --display: "Archivo Variable", Arial, sans-serif;
+  --body: "IBM Plex Sans", Arial, sans-serif;
+  --section-space: 40px;
+  --box-space: 16px;
+  --layout-gap: 16px;
   --shadow-menu: 0 20px 32px -22px hsl(var(--ink) / 0.35);
 }
 .dark {
@@ -63,12 +66,12 @@
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 16px;
 }
 body {
   margin: 0;
-  font-family: "Hanken Grotesk Variable", system-ui, sans-serif;
-  font-size: 17px;
+  font-family: var(--body);
+  font-size: 16px;
   line-height: 1.6;
 }
 h1,
@@ -81,10 +84,14 @@ h6 {
 }
 h1,
 h2,
+h3,
+h4,
+h5,
+h6,
 .ed-h2,
 .ed-row-name {
   font-family: var(--display);
-  font-weight: 450;
+  font-weight: 600;
   font-optical-sizing: auto;
 }
 * {
@@ -134,7 +141,7 @@ main#main {
 .ed-section,
 .r-section,
 .section-spacing {
-  padding-block: 72px;
+  padding-block: var(--section-space);
   border-top: 1px solid hsl(var(--border));
 }
 .ed-kicker,
@@ -142,7 +149,7 @@ main#main {
 .ed-row-code,
 .mx-label,
 .r-eyebrow {
-  font-family: "JetBrains Mono Variable", monospace;
+  font-family: var(--body);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0;
@@ -153,7 +160,7 @@ main#main {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 .ed-kicker::before {
   content: "";
@@ -164,15 +171,15 @@ main#main {
 .ed-h2,
 .r-title {
   font-family: var(--display);
-  font-weight: 450;
-  font-size: 56px;
+  font-weight: 600;
+  font-size: 40px;
   line-height: 1.08;
   text-wrap: balance;
   max-width: 22ch;
 }
 .ed-lead,
 .r-lead {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.65;
   color: hsl(var(--muted-foreground));
   max-width: 58ch;
@@ -181,15 +188,15 @@ main#main {
   font-size: 13px;
   color: hsl(var(--muted-foreground));
   line-height: 1.7;
-  margin-top: 24px;
+  margin-top: 16px;
   max-width: 92ch;
 }
 .ed-section-head {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
-  gap: 12px 60px;
+  gap: 12px 16px;
   align-items: end;
-  margin-bottom: 44px;
+  margin-bottom: 16px;
 }
 .ed-section-head .ed-kicker {
   grid-column: 1 / -1;
@@ -213,7 +220,7 @@ main#main {
 .ed-guidance {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 32px;
+  gap: 8px 16px;
 }
 .ed-guidance a {
   display: inline-flex;
@@ -277,11 +284,11 @@ main#main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
 }
 .mx-brand {
   font-family: var(--display);
-  font-size: 34px;
+  font-size: 28px;
   line-height: 1;
   display: inline-flex;
   align-items: baseline;
@@ -331,10 +338,10 @@ main#main {
 .ed-mega {
   max-width: var(--container-content);
   margin: auto;
-  padding: 32px 48px;
+  padding: 16px 32px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 28px;
+  gap: 16px;
 }
 .ed-mega-col {
   display: flex;
@@ -346,15 +353,13 @@ main#main {
   gap: 10px;
 }
 .ed-mega-head span {
-  font:
-    11px "JetBrains Mono Variable",
-    monospace;
+  font: 11px var(--body);
   color: hsl(var(--accent));
 }
 .ed-mega-head strong {
   font-family: var(--display);
-  font-size: 27px;
-  font-weight: 450;
+  font-size: 22px;
+  font-weight: 600;
   line-height: 1.15;
 }
 .ed-mega-col p {
@@ -379,7 +384,7 @@ main#main {
   color: hsl(var(--accent));
 }
 .ed-drawer-group {
-  padding-block: 18px;
+  padding-block: 16px;
   border-bottom: 1px solid hsl(var(--border));
 }
 .ed-drawer-practice {
@@ -388,13 +393,11 @@ main#main {
   align-items: baseline;
   min-height: 44px;
   font-family: var(--display);
-  font-size: 27px;
+  font-size: 22px;
   line-height: 1.2;
 }
 .ed-drawer-practice span {
-  font:
-    11px "JetBrains Mono Variable",
-    monospace;
+  font: 11px var(--body);
   color: hsl(var(--accent));
 }
 .mx-drawer-link {
@@ -407,7 +410,7 @@ main#main {
 .ed-hero {
   position: relative;
   isolation: isolate;
-  min-height: 680px;
+  min-height: 0;
   color: hsl(var(--on-ink));
   --foreground: var(--on-ink);
   --muted-foreground: var(--on-ink-muted);
@@ -417,33 +420,33 @@ main#main {
   --signal: var(--inverse-primary);
 }
 .ed-hero-grid {
-  min-height: 680px;
+  min-height: 400px;
   display: flex;
-  align-items: flex-end;
-  padding-block: 72px;
+  align-items: center;
+  padding-block: var(--section-space);
 }
 .ed-hero-copy {
   z-index: 2;
   max-width: 790px;
 }
 .ed-hero-title {
-  font-size: 86px;
+  font-size: clamp(36px, 4rem, 64px);
   line-height: 1.02;
   text-wrap: balance;
   max-width: 15ch;
 }
 .ed-hero-lead {
-  margin-top: 24px;
+  margin-top: 16px;
   max-width: 52ch;
-  font-size: 18px;
+  font-size: 16px;
   color: hsl(var(--on-ink));
 }
 .ed-hero-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 20px 28px;
-  margin-top: 30px;
+  gap: 16px 16px;
+  margin-top: 16px;
 }
 .ed-hero-figure {
   position: absolute;
@@ -483,7 +486,7 @@ main#main {
   gap: 12px;
 }
 .ed-layer-key span {
-  font-family: "JetBrains Mono Variable", monospace;
+  font-family: var(--body);
   color: hsl(var(--inverse-primary));
 }
 .ed-hero-figure figcaption p {
@@ -503,15 +506,15 @@ main#main {
   width: 100%;
   display: grid;
   grid-template-columns: 40px 1.15fr 1fr 28px;
-  gap: 24px;
+  gap: 16px;
   text-align: left;
   justify-content: stretch;
-  padding: 30px 0;
+  padding: 16px 0;
   height: auto;
   border-radius: 0;
 }
 .ed-row-name {
-  font-size: 44px;
+  font-size: 32px;
   line-height: 1.1;
 }
 .ed-row-summary {
@@ -532,14 +535,14 @@ main#main {
 .ed-row-panel {
   display: grid;
   grid-template-columns: 1.1fr 1fr 1fr;
-  gap: 36px;
-  padding: 8px 0 32px 64px;
+  gap: 16px;
+  padding: 8px 0 16px 56px;
 }
 .ed-row-panel[hidden] {
   display: none;
 }
 .ed-row-explain {
-  font-size: 18px;
+  font-size: 16px;
 }
 .ed-examples {
   display: grid;
@@ -576,40 +579,41 @@ main#main {
 }
 /* New page openings */
 .ed-page-opening {
-  padding-block: 24px 64px;
+  padding-block: 12px 32px;
   border-bottom: 1px solid hsl(var(--border));
 }
 .ed-page-opening .ed-kicker {
-  margin-top: 24px;
+  margin-top: 16px;
 }
 .ed-page-composition {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
-  gap: 64px;
+  gap: 16px;
   align-items: end;
 }
 .ed-page-composition h1 {
-  font-size: 76px;
+  font-size: clamp(36px, 4rem, 64px);
   line-height: 1.08;
   text-wrap: balance;
 }
 .ed-page-intro {
   display: grid;
-  gap: 24px;
+  gap: 16px;
   justify-items: start;
   padding-bottom: 8px;
 }
 .ed-page-intro > p {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.65;
   color: hsl(var(--muted-foreground));
 }
 .ed-page-photo {
-  margin-top: 40px;
+  margin-top: 16px;
 }
 .ed-page-photo img {
   width: 100%;
-  height: 360px;
+  height: auto;
+  aspect-ratio: 16 / 7;
   object-fit: cover;
 }
 .ed-page-photo figcaption,
@@ -630,45 +634,43 @@ figure > figcaption {
   display: flex;
   align-items: center;
   gap: 10px;
-  min-height: 64px;
+  min-height: 44px;
   padding-block: 12px;
   font-size: 14px;
 }
 .ed-practice-jump a span {
-  font:
-    11px "JetBrains Mono Variable",
-    monospace;
+  font: 11px var(--body);
   color: hsl(var(--accent));
 }
 .ed-practice {
-  scroll-margin-top: 96px;
+  scroll-margin-top: 16px;
 }
 .ed-practice-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
+  gap: 16px;
 }
 .ed-practice-grid header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 22px;
+  gap: 16px;
 }
 .ed-service-list {
-  margin-block: 18px 24px;
+  margin-block: 16px 16px;
   border-top: 1px solid hsl(var(--foreground));
 }
 .ed-service-list a {
   display: grid;
   grid-template-columns: 1fr 20px;
-  gap: 8px 24px;
-  padding-block: 22px;
+  gap: 8px 16px;
+  padding-block: 16px;
   border-bottom: 1px solid hsl(var(--border));
 }
 .ed-service-list strong {
   font-family: var(--display);
-  font-size: 30px;
-  font-weight: 450;
+  font-size: 24px;
+  font-weight: 600;
   line-height: 1.2;
 }
 .ed-service-list span {
@@ -693,14 +695,14 @@ figure > figcaption {
 .ed-scope-layout {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
+  gap: 16px;
 }
 .ed-service-introduction h3 {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   font-weight: 600;
 }
 .ed-capability-list {
-  margin-block: 18px;
+  margin-block: 16px;
 }
 .ed-capability-list li {
   border-bottom: 1px solid hsl(var(--border));
@@ -709,15 +711,15 @@ figure > figcaption {
 }
 .ed-scope-briefs details {
   border-top: 1px solid hsl(var(--border));
-  scroll-margin-top: 100px;
+  scroll-margin-top: 16px;
 }
 .ed-scope-briefs summary {
   display: grid;
   grid-template-columns: 32px 1fr 18px;
-  gap: 18px;
+  gap: 16px;
   align-items: center;
   cursor: pointer;
-  padding: 24px 0;
+  padding: 16px 0;
   list-style: none;
 }
 .ed-scope-briefs summary::-webkit-details-marker {
@@ -725,7 +727,7 @@ figure > figcaption {
 }
 .ed-scope-briefs summary h3 {
   font-family: var(--display);
-  font-size: 26px;
+  font-size: 22px;
   line-height: 1.25;
 }
 .ed-scope-briefs details[open] summary > span:last-child {
@@ -733,7 +735,7 @@ figure > figcaption {
 }
 .ed-scope-briefs details > p {
   color: hsl(var(--muted-foreground));
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.7;
 }
 .ed-scope-briefs .ed-text-link {
@@ -746,10 +748,10 @@ figure > figcaption {
 .ed-reference-layout {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 64px;
+  gap: 16px;
 }
 .ed-reference .ed-lead {
-  margin-top: 24px;
+  margin-top: 16px;
   font-size: 16px;
 }
 .ed-table {
@@ -760,14 +762,12 @@ figure > figcaption {
 }
 .ed-table th,
 .ed-table td {
-  padding: 18px 14px 18px 0;
+  padding: 12px 14px 12px 0;
   border-bottom: 1px solid hsl(var(--border));
   vertical-align: top;
 }
 .ed-table thead th {
-  font:
-    11px "JetBrains Mono Variable",
-    monospace;
+  font: 11px var(--body);
   text-transform: uppercase;
 }
 .ed-table tbody th {
@@ -780,16 +780,16 @@ figure > figcaption {
 .ed-brief-list > div {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 32px;
+  gap: 16px;
   border-top: 1px solid hsl(var(--border));
-  padding: 24px 0;
+  padding: 16px 0;
 }
 .ed-brief-list dt {
   display: flex;
   align-items: baseline;
-  gap: 24px;
+  gap: 16px;
   font-family: var(--display);
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.25;
 }
 .ed-brief-list a {
@@ -803,7 +803,7 @@ figure > figcaption {
 .ed-directory-controls {
   display: flex;
   align-items: end;
-  gap: 24px;
+  gap: 16px;
 }
 .ed-directory-controls > div:first-child {
   flex: 1;
@@ -826,7 +826,7 @@ figure > figcaption {
   color: hsl(var(--muted-foreground));
 }
 .ed-search input {
-  min-height: 48px;
+  min-height: 44px;
   padding-left: 42px;
   background: hsl(var(--background));
   border-radius: 2px;
@@ -834,7 +834,7 @@ figure > figcaption {
 .ed-directory-controls select {
   width: 240px;
   max-width: 100%;
-  min-height: 48px;
+  min-height: 44px;
   border: 1px solid hsl(var(--input));
   padding: 8px 12px;
   background: hsl(var(--background));
@@ -843,21 +843,19 @@ figure > figcaption {
   font-size: 16px;
 }
 .ed-directory-count {
-  font:
-    12px "JetBrains Mono Variable",
-    monospace;
+  font: 12px var(--body);
   color: hsl(var(--muted-foreground));
-  margin-block: 24px 14px;
+  margin-block: 16px 14px;
 }
 .ed-directory-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 44px;
+  gap: 0 16px;
 }
 .ed-directory-list li {
-  padding-block: 20px;
+  padding-block: 16px;
   border-top: 1px solid hsl(var(--border));
-  scroll-margin-top: 100px;
+  scroll-margin-top: 16px;
 }
 .ed-directory-name {
   display: flex;
@@ -866,7 +864,7 @@ figure > figcaption {
 }
 .ed-directory-name h3 {
   font-family: var(--display);
-  font-size: 23px;
+  font-size: 20px;
   line-height: 1.3;
 }
 .ed-vendor-mark {
@@ -877,7 +875,7 @@ figure > figcaption {
 }
 .ed-directory-categories {
   display: flex;
-  gap: 8px 18px;
+  gap: 8px 16px;
   flex-wrap: wrap;
   margin-top: 8px;
 }
@@ -893,21 +891,21 @@ figure > figcaption {
 .ed-sector-composition {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: 16px;
 }
 .ed-sector-composition figure {
   align-self: start;
 }
 .ed-sector-composition img {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4/3;
   object-fit: cover;
 }
 .ed-sector-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: start;
-  gap: 0 24px;
+  gap: 0 16px;
 }
 .ed-sector-list a {
   display: flex;
@@ -915,20 +913,20 @@ figure > figcaption {
   align-items: center;
   justify-content: space-between;
   padding-block: 16px;
-  min-height: 60px;
+  min-height: 44px;
   border-bottom: 1px solid hsl(var(--border));
   font-size: 15px;
 }
 .ed-industry-list > article {
   display: grid;
   grid-template-columns: 40px 0.85fr 1.3fr 0.7fr;
-  gap: 28px;
-  padding-block: 32px;
+  gap: 16px;
+  padding-block: 16px;
   border-top: 1px solid hsl(var(--border));
   align-items: start;
 }
 .ed-industry-list h2 {
-  font-size: 32px;
+  font-size: 26px;
   line-height: 1.2;
 }
 .ed-industry-list p {
@@ -945,30 +943,30 @@ figure > figcaption {
 .ed-client-standards {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
+  gap: 16px;
 }
 .ed-delivery-summary header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
+  gap: 16px;
 }
 .ed-narrative li {
   display: grid;
   grid-template-columns: 60px 1fr;
-  gap: 24px;
-  padding-block: 24px;
+  gap: 16px;
+  padding-block: 16px;
   border-top: 1px solid hsl(var(--border));
 }
 .ed-narrative-number {
   font-family: var(--display);
-  font-size: 44px;
+  font-size: 32px;
   line-height: 1;
   color: hsl(var(--accent));
 }
 .ed-narrative h3 {
   font-family: var(--display);
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.1;
 }
 .ed-narrative p {
@@ -979,77 +977,73 @@ figure > figcaption {
 .ed-narrative small {
   display: block;
   margin-top: 12px;
-  font:
-    11px "JetBrains Mono Variable",
-    monospace;
+  font: 11px var(--body);
   color: hsl(var(--muted-foreground));
 }
 .ed-narrative--large li {
-  padding-block: 36px;
+  padding-block: 16px;
 }
 .ed-narrative--large h2 {
-  font-size: 40px;
+  font-size: 32px;
   line-height: 1.2;
 }
 .ed-principles {
-  margin-top: 32px;
+  margin-top: 16px;
 }
 .ed-principles dt {
-  padding-top: 20px;
+  padding-top: 16px;
   border-top: 1px solid hsl(var(--border));
   font-weight: 600;
 }
 .ed-principles dd {
-  margin-block: 10px 24px;
+  margin-block: 10px 16px;
   color: hsl(var(--muted-foreground));
   font-size: 16px;
 }
 .ed-about-composition {
   display: grid;
   grid-template-columns: 1fr 1.05fr;
-  gap: 64px;
+  gap: 16px;
 }
 .ed-about-composition img {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4/3;
   object-fit: cover;
 }
 .ed-founder h2 {
-  font-size: 56px;
+  font-size: 40px;
   line-height: 1.1;
 }
 .ed-testimony blockquote {
   font-family: var(--display);
-  font-size: 40px;
+  font-size: 32px;
   line-height: 1.35;
-  max-width: 1050px;
+  max-width: 62ch;
 }
 .ed-testimony figcaption,
 .ed-testimony > p.ed-mini {
-  margin-top: 28px;
-  font:
-    12px "JetBrains Mono Variable",
-    monospace;
+  margin-top: 16px;
+  font: 12px var(--body);
   color: hsl(var(--muted-foreground));
 }
 .ed-testimony .ed-text-link {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 .ed-linked-list {
-  margin-top: 32px;
+  margin-top: 16px;
 }
 .ed-linked-list a {
   display: grid;
   grid-template-columns: 1.1fr 1fr 24px;
-  gap: 24px;
-  padding-block: 24px;
+  gap: 16px;
+  padding-block: 16px;
   border-top: 1px solid hsl(var(--border));
   align-items: center;
 }
 .ed-linked-list h2,
 .ed-linked-list h3 {
   font-family: var(--display);
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1.2;
 }
 .ed-linked-list span {
@@ -1064,7 +1058,7 @@ figure > figcaption {
 .ed-document {
   display: grid;
   grid-template-columns: 270px minmax(0, 760px);
-  gap: 80px;
+  gap: 16px;
   justify-content: space-between;
 }
 .ed-document aside {
@@ -1074,7 +1068,7 @@ figure > figcaption {
 }
 .ed-document aside nav {
   display: grid;
-  margin-top: 18px;
+  margin-top: 16px;
 }
 .ed-document aside nav a {
   display: flex;
@@ -1087,45 +1081,43 @@ figure > figcaption {
 }
 .ed-document aside nav span {
   color: hsl(var(--accent));
-  font:
-    11px "JetBrains Mono Variable",
-    monospace;
+  font: 11px var(--body);
 }
 .ed-prose section {
-  padding-block: 30px;
+  padding-block: 16px;
   border-top: 1px solid hsl(var(--border));
-  scroll-margin-top: 100px;
+  scroll-margin-top: 16px;
 }
 .ed-prose section:first-child {
   padding-top: 0;
   border-top: 0;
 }
 .ed-prose h2 {
-  font-size: 36px;
+  font-size: 28px;
   line-height: 1.2;
   margin-top: 14px;
 }
 .ed-prose h3 {
   font-weight: 600;
-  font-size: 21px;
-  margin-top: 28px;
+  font-size: 20px;
+  margin-top: 16px;
 }
 .ed-prose p {
-  margin-top: 20px;
-  font-size: 18px;
-  line-height: 1.85;
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.65;
   color: hsl(var(--muted-foreground));
 }
 .ed-insight-list article {
   display: grid;
   grid-template-columns: 80px 1.1fr 1fr 90px;
-  gap: 32px;
-  padding-block: 32px;
+  gap: 16px;
+  padding-block: 16px;
   border-top: 1px solid hsl(var(--border));
   align-items: start;
 }
 .ed-insight-list h2 {
-  font-size: 32px;
+  font-size: 26px;
   line-height: 1.2;
 }
 .ed-insight-list article > p:not(.ed-mini) {
@@ -1138,70 +1130,70 @@ figure > figcaption {
 .ed-questions-layout {
   display: grid;
   grid-template-columns: 0.8fr 1.3fr;
-  gap: 80px;
+  gap: 16px;
 }
 .ed-empty {
-  padding: 40px 0;
+  padding: 16px 0;
   border-top: 1px solid hsl(var(--border));
 }
 .ed-empty h2,
 .ed-empty h3 {
   font-family: var(--display);
-  font-size: 36px;
+  font-size: 28px;
 }
 .ed-empty p {
   margin-top: 16px;
   color: hsl(var(--muted-foreground));
 }
 .ed-empty .site-button {
-  margin-top: 24px;
+  margin-top: 16px;
 }
 .ed-error {
-  padding-block: 80px;
+  padding-block: 16px;
 }
 .ed-error-number {
   font-family: var(--display);
-  font-size: 140px;
+  font-size: 64px;
   line-height: 1;
   color: hsl(var(--accent));
 }
 .ed-error h1 {
-  font-size: 56px;
+  font-size: 40px;
   line-height: 1.1;
-  margin-top: 28px;
+  margin-top: 16px;
 }
 .ed-loading {
-  padding: 80px 48px;
-  min-height: 70vh;
+  padding: 32px;
+  min-height: 0;
 }
 .ed-loading p {
   font-family: var(--display);
-  font-size: 44px;
+  font-size: 32px;
 }
 /* Contact and consultation */
 .ed-contact {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 16px;
 }
 .ed-contact-address {
   font-family: var(--display);
-  font-size: 38px;
+  font-size: 30px;
   display: inline-flex;
   min-height: 44px;
-  margin-top: 24px;
+  margin-top: 16px;
   overflow-wrap: anywhere;
 }
 .ed-contact .ed-lead {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 .ed-contact .site-button {
-  margin-top: 24px;
+  margin-top: 16px;
 }
 .ed-book-layout {
   display: grid;
   grid-template-columns: 260px minmax(0, 780px);
-  gap: 80px;
+  gap: 16px;
   justify-content: space-between;
 }
 .ed-book-progress {
@@ -1216,7 +1208,7 @@ figure > figcaption {
   display: grid;
   grid-template-columns: 36px 1fr;
   gap: 10px;
-  padding-block: 18px;
+  padding-block: 16px;
   border-top: 1px solid hsl(var(--border));
   font-size: 15px;
 }
@@ -1226,38 +1218,34 @@ figure > figcaption {
   border-color: hsl(var(--accent));
 }
 .ed-book-progress span:first-child {
-  font:
-    12px "JetBrains Mono Variable",
-    monospace;
+  font: 12px var(--body);
 }
 .ed-book-form h2 {
   font-family: var(--display);
-  font-size: 40px;
+  font-size: 32px;
   line-height: 1.1;
 }
 .ed-book-practices {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 .ed-book-practices ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin-top: 12px;
-  gap: 0 24px;
+  gap: 0 16px;
 }
 .ed-book-practices a {
   display: flex;
   align-items: baseline;
   gap: 12px;
-  min-height: 56px;
+  min-height: 44px;
   padding-block: 16px;
   border-bottom: 1px solid hsl(var(--border));
   font-size: 16px;
   line-height: 1.25;
 }
 .ed-book-practices a span {
-  font:
-    11px "JetBrains Mono Variable",
-    monospace;
+  font: 11px var(--body);
   color: hsl(var(--accent));
 }
 .ed-book-practices a[aria-current="true"] {
@@ -1271,16 +1259,16 @@ figure > figcaption {
 }
 .ed-area-groups {
   display: grid;
-  gap: 24px;
+  gap: 16px;
 }
 .ed-area-groups h3 {
-  font-size: 21px;
+  font-size: 20px;
   font-family: var(--display);
   margin-bottom: 8px;
 }
 .ed-area-option {
   display: flex;
-  min-height: 52px;
+  min-height: 44px;
   gap: 14px;
   align-items: center;
   border-bottom: 1px solid hsl(var(--border));
@@ -1296,10 +1284,10 @@ figure > figcaption {
 }
 .ed-book-success {
   border-top: 2px solid hsl(var(--accent));
-  padding-top: 28px;
+  padding-top: 16px;
 }
 .ed-book-success p {
-  margin-top: 24px;
+  margin-top: 16px;
 }
 /* Closing and footer use scoped tokens */
 .mx-cta,
@@ -1318,44 +1306,44 @@ figure > figcaption {
   color: hsl(var(--on-ink));
 }
 .mx-cta {
-  padding-block: 72px;
+  padding-block: var(--section-space);
 }
 .mx-cta-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 80px;
+  gap: 16px;
   align-items: end;
 }
 .mx-cta .r-title {
-  font-size: 62px;
+  font-size: 40px;
 }
 .mx-footer {
-  padding-block: 48px 24px;
+  padding-block: 28px 16px;
   border-top: 1px solid hsl(var(--border));
 }
 .mx-footer-statement {
   font-family: var(--display);
-  font-size: 38px;
+  font-size: 30px;
   line-height: 1.2;
   max-width: 30ch;
 }
 .mx-footer-cols {
-  margin-top: 44px;
-  padding-top: 32px;
+  margin-top: 16px;
+  padding-top: 16px;
   border-top: 1px solid hsl(var(--border));
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 36px;
+  gap: 16px;
 }
 .mx-footer-cols nav:nth-last-child(-n + 2) {
   grid-column: span 2;
-  padding-top: 24px;
+  padding-top: 16px;
   border-top: 1px solid hsl(var(--border));
 }
 .mx-footer-cols nav:nth-last-child(-n + 2) ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0 20px;
+  gap: 0 16px;
 }
 .mx-footer-link {
   display: inline-flex;
@@ -1368,13 +1356,13 @@ figure > figcaption {
   color: hsl(var(--foreground));
 }
 .mx-footer-legal {
-  margin-top: 32px;
-  padding-top: 20px;
+  margin-top: 16px;
+  padding-top: 16px;
   border-top: 1px solid hsl(var(--border));
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
   font-size: 12px;
   color: hsl(var(--muted-foreground));
 }
@@ -1392,13 +1380,13 @@ figure > figcaption {
     display: inline-flex;
   }
   .ed-hero-title {
-    font-size: 70px;
+    font-size: 56px;
   }
   .ed-hero-figure figcaption {
     display: none;
   }
   .ed-page-composition h1 {
-    font-size: 62px;
+    font-size: 40px;
   }
 }
 @media (max-width: 1023px) {
@@ -1407,7 +1395,7 @@ figure > figcaption {
   }
   .ed-h2,
   .r-title {
-    font-size: 44px;
+    font-size: 32px;
   }
   .ed-row-trigger.site-button {
     grid-template-columns: 28px 1fr 24px;
@@ -1422,7 +1410,7 @@ figure > figcaption {
     grid-row: 1;
   }
   .ed-row-name {
-    font-size: 36px;
+    font-size: 28px;
   }
   .ed-row-panel {
     padding-left: 42px;
@@ -1434,7 +1422,7 @@ figure > figcaption {
   .ed-document,
   .ed-book-layout {
     grid-template-columns: 200px minmax(0, 1fr);
-    gap: 40px;
+    gap: 16px;
   }
   .ed-page-composition,
   .ed-section-head,
@@ -1449,7 +1437,7 @@ figure > figcaption {
   .ed-questions-layout,
   .ed-contact,
   .ed-client-standards {
-    gap: 32px;
+    gap: 16px;
   }
   .ed-industry-list > article {
     grid-template-columns: 32px 1fr 1.2fr;
@@ -1459,7 +1447,7 @@ figure > figcaption {
   }
   .ed-insight-list article {
     grid-template-columns: 60px 1fr;
-    gap: 16px 24px;
+    gap: 16px 16px;
   }
   .ed-insight-list article > p:not(.ed-mini),
   .ed-insight-list .ed-text-link {
@@ -1468,28 +1456,32 @@ figure > figcaption {
 }
 @media (max-width: 767px) {
   :root {
-    --header-h: 64px;
+    --header-h: 60px;
+    --section-space: 28px;
+    --box-space: 12px;
+    --layout-gap: 12px;
   }
   .container-content {
-    padding-inline: 20px;
+    padding-inline: 14px;
   }
   .mx-header-inner {
-    padding-inline: 20px;
+    padding-inline: 14px;
   }
   .ed-section,
   .r-section,
   .section-spacing {
-    padding-block: 40px;
+    padding-block: 16px;
   }
   .ed-hero,
   .ed-hero-grid {
-    min-height: 660px;
+    min-height: 0;
   }
   .ed-hero-grid {
-    padding-block: 40px;
+    min-height: 0;
+    padding-block: 32px;
   }
   .ed-hero-title {
-    font-size: 48px;
+    font-size: 40px;
   }
   .ed-hero-lead {
     font-size: 16px;
@@ -1507,7 +1499,7 @@ figure > figcaption {
   }
   .ed-h2,
   .r-title {
-    font-size: 38px;
+    font-size: 30px;
   }
   .ed-section-head,
   .ed-page-composition,
@@ -1526,37 +1518,37 @@ figure > figcaption {
   .ed-book-layout,
   .mx-cta-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 16px;
   }
   .ed-section-head {
-    margin-bottom: 28px;
+    margin-bottom: 16px;
   }
   .ed-section-head .ed-kicker {
     grid-column: 1;
   }
   .ed-page-opening {
-    padding-block: 18px 36px;
+    padding-block: 16px 16px;
   }
   .ed-page-composition h1 {
-    font-size: 46px;
+    font-size: 36px;
   }
   .ed-page-intro > p,
   .ed-prose p {
-    font-size: 17px;
+    font-size: 16px;
   }
   .ed-row-panel {
     padding-left: 0;
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 16px;
   }
   .ed-row-explain {
     grid-column: 1;
   }
   .ed-row-name {
-    font-size: 32px;
+    font-size: 26px;
   }
   .ed-row-trigger.site-button {
-    padding-block: 24px;
+    padding-block: 16px;
   }
   .ed-row-summary {
     font-size: 15px;
@@ -1567,7 +1559,7 @@ figure > figcaption {
   }
   .ed-practice-jump a {
     font-size: 13px;
-    min-height: 54px;
+    min-height: 44px;
   }
   .ed-directory-controls {
     flex-wrap: wrap;
@@ -1601,7 +1593,7 @@ figure > figcaption {
     gap: 16px;
   }
   .ed-brief-list dt {
-    font-size: 26px;
+    font-size: 22px;
     gap: 16px;
   }
   .ed-document aside,
@@ -1624,7 +1616,7 @@ figure > figcaption {
     font-size: 12px;
   }
   .ed-book-form h2 {
-    font-size: 32px;
+    font-size: 26px;
   }
   .ed-book-practices a {
     font-size: 14px;
@@ -1638,26 +1630,26 @@ figure > figcaption {
   }
   .ed-narrative li {
     grid-template-columns: 40px 1fr;
-    gap: 18px;
+    gap: 16px;
   }
   .ed-narrative-number {
-    font-size: 36px;
+    font-size: 28px;
   }
   .ed-narrative--large h2 {
-    font-size: 32px;
+    font-size: 26px;
   }
   .ed-testimony blockquote {
-    font-size: 29px;
+    font-size: 24px;
   }
   .ed-founder h2 {
-    font-size: 38px;
+    font-size: 30px;
   }
   .ed-industry-list > article {
     grid-template-columns: 24px 1fr;
     gap: 16px;
   }
   .ed-industry-list h2 {
-    font-size: 28px;
+    font-size: 24px;
   }
   .ed-industry-list p,
   .ed-industry-list ul {
@@ -1682,60 +1674,60 @@ figure > figcaption {
     grid-column: 1;
   }
   .ed-insight-list h2 {
-    font-size: 30px;
+    font-size: 24px;
   }
   .ed-prose h2 {
-    font-size: 30px;
+    font-size: 24px;
   }
   .ed-contact-address {
-    font-size: 30px;
+    font-size: 24px;
   }
   .mx-cta {
-    padding-block: 40px;
+    padding-block: 16px;
   }
   .mx-cta .r-title {
-    font-size: 42px;
+    font-size: 36px;
   }
   .mx-footer {
-    padding-top: 36px;
+    padding-top: 16px;
   }
   .mx-footer-statement {
-    font-size: 30px;
+    font-size: 24px;
   }
   .mx-footer-cols {
     grid-template-columns: 1fr 1fr;
-    gap: 28px 20px;
+    gap: 16px 16px;
   }
   .mx-footer-cols nav:nth-last-child(-n + 2) {
     grid-column: 1/-1;
   }
   .ed-error-number {
-    font-size: 100px;
+    font-size: 56px;
   }
   .ed-error h1 {
-    font-size: 40px;
+    font-size: 32px;
   }
 }
 @media (max-width: 359px) {
   .ed-hero-title {
-    font-size: 40px;
+    font-size: 32px;
   }
   .ed-hero,
   .ed-hero-grid {
-    min-height: 700px;
+    min-height: 0;
   }
   .ed-page-composition h1 {
-    font-size: 38px;
+    font-size: 30px;
   }
   .ed-row-name {
-    font-size: 28px;
+    font-size: 24px;
   }
   .ed-h2,
   .r-title {
-    font-size: 32px;
+    font-size: 26px;
   }
   .ed-contact-address {
-    font-size: 26px;
+    font-size: 22px;
   }
   .ed-hero-actions {
     gap: 12px;
@@ -1751,4 +1743,22 @@ figure > figcaption {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Shared compact typography roles and form metrics. */
+.font-display { font-family: var(--display); }
+.font-body, .font-mono, button, input, textarea, select { font-family: var(--body); }
+h1,h2,h3,h4,h5,h6 { font-family: var(--display); font-weight: 600; }
+.ed-row-heading { font-family: var(--display); }
+.ed-hero-lead,.ed-prose p,.ed-page-intro > p { max-width: 65ch; }
+.ed-book-form input,.ed-book-form select,.ed-directory-controls input { height: 44px; min-height: 44px; font-size: 16px; }
+.ed-book-form textarea { font-size: 16px; min-height: 72px; }
+.ed-mega { max-height: calc(100dvh - var(--header-h)); overflow-y: auto; }
+.ed-loading { padding: var(--section-space) var(--box-space); }
+@media (max-width: 767px) {
+ .ed-row-trigger.site-button { padding-block: 12px; }
+ .ed-row-panel { padding-bottom: 12px; }
+ .ed-directory-list li,.ed-scope-briefs summary,.ed-linked-list a,.ed-brief-list > div,.ed-insight-list article { padding-block: 12px; }
+ .ed-table th,.ed-table td { padding-block: 10px; }
+ .ed-page-opening { padding-block: 12px 28px; }
 }

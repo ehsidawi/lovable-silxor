@@ -11,7 +11,7 @@ const CtaBand = ({ eyebrow = "Engage", title = "A confidential first conversatio
     </div>
     <div>
       <p className="r-lead">{lead}</p>
-      <div className="mt-8 flex flex-wrap items-center gap-6"><Button asChild><SmartLink to={to}>Book a Consultation <ArrowRight aria-hidden="true" /></SmartLink></Button><a href="mailto:hello@silxor.com" className="mx-inline-link">hello@silxor.com</a></div>
+      <div className="mt-4 flex flex-wrap items-center gap-4"><Button asChild><SmartLink to={to}>Book a Consultation <ArrowRight aria-hidden="true" /></SmartLink></Button><a href="mailto:hello@silxor.com" className="mx-inline-link">hello@silxor.com</a></div>
     </div>
   </div></section>
 );

@@ -58,7 +58,7 @@ const Navbar = () => {
               <SheetContent className="w-full overflow-y-auto sm:max-w-md">
                 <SheetTitle className="mx-brand">Silxor<i aria-hidden="true" /></SheetTitle>
                 <SheetDescription className="sr-only">Primary navigation</SheetDescription>
-                <nav aria-label="Mobile" className="mt-8 flex flex-col">
+                <nav aria-label="Mobile" className="mt-4 flex flex-col">
                   {practices.map(p => (
                     <div key={p.id} className="ed-drawer-group">
                       <SmartLink to={p.path} className="ed-drawer-practice"><span>{p.code}</span>{p.name}</SmartLink>
@@ -66,11 +66,11 @@ const Navbar = () => {
                     </div>
                   ))}
                   <SmartLink to="/services" className="mx-drawer-link font-semibold">All services</SmartLink>
-                  <span className="mx-label mt-6">Company</span>
+                  <span className="mx-label mt-4">Company</span>
                   {links.map(l => <SmartLink key={l.to} to={l.to} className="mx-drawer-link">{l.label}</SmartLink>)}
-                  <span className="mx-label mt-6">Resources</span>
+                  <span className="mx-label mt-4">Resources</span>
                   <div className="grid grid-cols-2">{resourceLinks.map(l => <SmartLink key={l.to} to={l.to} className="flex min-h-11 items-center text-sm text-muted-foreground">{l.label}</SmartLink>)}</div>
-                  <Button asChild className="mt-8 w-full"><SmartLink to="/book">Book a Consultation <ArrowRight aria-hidden="true" /></SmartLink></Button>
+                  <Button asChild className="mt-4 w-full"><SmartLink to="/book">Book a Consultation <ArrowRight aria-hidden="true" /></SmartLink></Button>
                 </nav>
               </SheetContent>
             </Sheet>

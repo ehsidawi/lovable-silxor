@@ -33,3 +33,6 @@
 - Use editorial document layouts for resources/policies, disclosure briefs for service scope, vertical narratives for delivery and linked article lists for insights; distinct page families prevent restyled legacy card grids.
 
 - Keep lint exceptions limited to intentional control-character rejection and the generated MCP bundle; these protect validation parity and avoid rewriting generated integration code.
+
+- Load Archivo headings and IBM Plex Sans body/control weights through local Fontsource WOFF2 declarations with swap; one font system prevents inherited display faces across templates.
+- Keep density in the sole editorial stylesheet using section and box spacing tokens, content-driven heights and 44px hit areas; mobile form inputs stay 16px to remain usable without zoom.

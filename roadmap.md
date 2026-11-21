@@ -4,3 +4,8 @@
 - [x] Unify navigation, themes, footer, page families, form states and editorial photography.
 - [x] Run existing tests and lint; inspect all routes and representative pages in both themes and sizes.
 - [x] Verify keyboard interactions, anchor destinations and controlled email handoff; audit mounted legacy visuals.
+
+# Compact typography and density
+- [ ] Replace all inherited visible faces with self-hosted Archivo and IBM Plex Sans.
+- [ ] Compact shared styles, controls, menus and every page family without restoring maps or diagrams.
+- [ ] Verify font loading, computed dimensions, every public route and consultation email handoff; run tests and check build.

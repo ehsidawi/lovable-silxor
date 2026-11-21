@@ -142,7 +142,7 @@ const BookAssessment = () => {
           onChange={(e) => update(key, e.target.value)}
           aria-invalid={Boolean(errors[key])}
           aria-describedby={errors[key] ? `${key}-error` : undefined}
-          className="h-12 w-full rounded-sm border border-input bg-background px-3 text-base text-foreground"
+          className="h-11 w-full rounded-sm border border-input bg-background px-3 text-base text-foreground"
         >
           <option value="">Select an option</option>
           {options.map((o) => (
@@ -167,7 +167,7 @@ const BookAssessment = () => {
           type={type}
           value={values[key]}
           maxLength={max}
-          className="h-12 rounded-sm"
+          className="h-11 rounded-sm"
           autoComplete={
             key === "name"
               ? "name"
@@ -298,7 +298,7 @@ const BookAssessment = () => {
             {saved ? (
               <div role="status" className="ed-book-success">
                 <CheckCircle2
-                  className="mb-6 h-12 w-12 text-forest"
+                  className="mb-4 h-12 w-12 text-forest"
                   aria-hidden="true"
                 />
                 <h2
@@ -315,13 +315,13 @@ const BookAssessment = () => {
                   sent this request.
                 </p>
                 {mailto && (
-                  <Button asChild className="mt-7 mr-3">
+                  <Button asChild className="mt-4 mr-3">
                     <a href={mailto}>
                       Open the email again <Send aria-hidden="true" />
                     </a>
                   </Button>
                 )}
-                <Button asChild variant="outline" className="mt-7">
+                <Button asChild variant="outline" className="mt-4">
                   <SmartLink to="/services">
                     Explore our services <ArrowRight aria-hidden="true" />
                   </SmartLink>
@@ -378,7 +378,7 @@ const BookAssessment = () => {
                   ref={form}
                   onSubmit={submit}
                   noValidate
-                  className="mt-6"
+                  className="mt-4"
                   aria-busy={pending}
                 >
                   <div hidden aria-hidden="true">
@@ -394,7 +394,7 @@ const BookAssessment = () => {
                     />
                   </div>
                   {step === 0 && (
-                    <div className="mb-6 max-w-md">
+                    <div className="mb-4 max-w-md">
                       {field(
                         "engagement_type",
                         "What do you need?",
@@ -495,7 +495,7 @@ const BookAssessment = () => {
                   )}
 
                   {step === 1 && (
-                    <div className="grid gap-5 sm:grid-cols-2">
+                    <div className="grid gap-3 sm:grid-cols-2">
                       {field("company", "Company", undefined, 160)}
                       {field("role", "Your role", undefined, 100)}
                       {field("company_size", "Company size", companySizes)}
@@ -511,7 +511,7 @@ const BookAssessment = () => {
                   )}
                   {step === 2 && (
                     <>
-                      <div className="grid gap-5 sm:grid-cols-2">
+                      <div className="grid gap-3 sm:grid-cols-2">
                         {field("name", "Your name")}
                         {field(
                           "work_email",
@@ -534,7 +534,7 @@ const BookAssessment = () => {
                         )}
                         {field("time_zone", "Time zone", undefined, 100)}
                       </div>
-                      <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+                      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                         We will reply by email first, including when you prefer
                         a phone conversation. Your details are used to review
                         and respond to this request.{" "}
@@ -552,7 +552,7 @@ const BookAssessment = () => {
                       {failure}
                     </p>
                   )}
-                  <div className="mt-8 flex items-center justify-between gap-3 border-t border-border pt-6">
+                  <div className="mt-4 flex items-center justify-between gap-3 border-t border-border pt-4">
                     {step > 0 ? (
                       <Button
                         type="button"
@@ -588,7 +588,7 @@ const BookAssessment = () => {
                 </form>
               </>
             )}
-            <div className="mt-9 border-t border-border pt-6 text-sm">
+            <div className="mt-4 border-t border-border pt-4 text-sm">
               <a
                 href="mailto:hello@silxor.com"
                 className="font-semibold underline underline-offset-4"

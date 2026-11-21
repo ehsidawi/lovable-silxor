@@ -19,9 +19,9 @@ const buttonVariants = cva(
         minimal: "button-outline border border-border hover:border-primary hover:bg-muted",
       },
       size: {
-        default: "h-11 px-5 py-2",
+        default: "min-h-11 h-auto px-4 py-2",
         sm: "min-h-11 px-4 py-2",
-        lg: "min-h-12 px-7 py-3",
+        lg: "min-h-11 px-4 py-2",
         icon: "h-11 w-11 shrink-0 p-0",
       },
     },

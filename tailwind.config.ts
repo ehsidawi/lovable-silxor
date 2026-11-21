@@ -15,13 +15,13 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Bricolage Grotesque Variable', 'system-ui', 'sans-serif'],
-        body: ['Hanken Grotesk Variable', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono Variable', 'monospace'],
+        display: ['Archivo Variable', 'Arial', 'sans-serif'],
+        body: ['IBM Plex Sans', 'Arial', 'sans-serif'],
+        mono: ['IBM Plex Sans', 'Arial', 'sans-serif'],
       },
       fontSize: {
-        'display-xl': ['72px', { lineHeight: '1.05', letterSpacing: '-0.02em', fontWeight: '800' }],
-        'display-lg': ['42px', { lineHeight: '1.15', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'display-xl': ['64px', { lineHeight: '1.1', letterSpacing: '0', fontWeight: '600' }],
+        'display-lg': ['36px', { lineHeight: '1.15', letterSpacing: '0', fontWeight: '600' }],
       },
       colors: {
         paper: { DEFAULT: 'hsl(var(--paper))', foreground: 'hsl(var(--paper-foreground))', accent: 'hsl(var(--paper-accent))' },

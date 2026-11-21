@@ -10,7 +10,7 @@ import { resourceLinks } from "@/data/site";
 import { caseStudies } from "@/data/caseStudies";
 
 const links = [
-  { label: "Industries", to: "/industries" }, { label: "Process", to: "/process" },
+  { label: "Industries", to: "/industries" }, { label: "Delivery", to: "/delivery" },
   { label: "About", to: "/about" }, { label: "Insights", to: "/insights" },
   ...(caseStudies.length ? [{ label: "Case studies", to: "/case-studies" }] : []),
   { label: "Contact", to: "/contact" },

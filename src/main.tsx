@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import "./index.css";
+import "./styles/precision.css";
 import { ThemeProvider } from "next-themes";
 import { DEFAULT_THEME } from "@/lib/appearance";
 

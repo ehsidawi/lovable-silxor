@@ -19,7 +19,7 @@ export default function ArchitectureDiagram({data}:{data:DiagramData}) {
   return <section className="r-section diagram-section" aria-labelledby={`${id}-heading`}>
     <div className="container-content">
       <div className="diagram-heading">
-        <span className="r-eyebrow">Architecture view</span>
+        <span className="px-mono">§ 03 · Architecture view · Select a node</span>
         <h2 id={`${id}-heading`} className="r-title">{data.title}</h2>
       </div>
       <figure className={`diagram-explorer diagram-explorer--${data.id}`}>
@@ -41,9 +41,10 @@ export default function ArchitectureDiagram({data}:{data:DiagramData}) {
               const point = positions.get(node.id);
               if (!point) return null;
               const active = node.id === selected.id;
-              return <g key={node.id} className={`explorer-point ${active ? "is-active" : ""}`}>
+              return <g key={node.id} className={`explorer-point ${active ? "is-active" : ""}`} onClick={() => setSelectedId(node.id)}>
                 <circle cx={point.x} cy={point.y} r="25" />
                 <text x={point.x} y={point.y + 5} textAnchor="middle">{String(index + 1).padStart(2, "0")}</text>
+                <text x={point.x} y={point.y + 42} textAnchor="middle" className="explorer-caption">{node.label.split(" ").slice(0, 2).join(" ")}</text>
               </g>;
             })}
           </svg>

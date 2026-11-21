@@ -3,7 +3,7 @@
 - Serve transformed video media through Lovable asset pointers, not external hotlinks or checked-in video files; this keeps the site self-contained and lightweight.
 - Proxy asset pointers to the public asset endpoint only during local development; Vite otherwise treats those paths as HTML fallback instead of media.
 - Express all page visual roles through the global semantic theme tokens; this keeps the enterprise identity consistent across existing routes.
-- Keep the active visual system in the final block of `src/index.css`; later blocks override legacy rules, so new visual changes belong there.
+- Keep the active visual system in `src/styles/precision.css`, imported after `src/index.css`; it supersedes legacy rules, so new visual changes belong there.
 - Give fixed dark surfaces (closing band, footer) and the accent closing tile their own scoped foreground, border and accent tokens in both themes; page surface tokens must not leak onto them.
 - Render navigation as a sticky top masthead with a Services panel and drawer below 1100px, and style sections as full width bands through shared section classes; pages adopt the frame without extra wrappers.
 - Deduplicate React and React DOM in both Vite configurations; theme hooks and renderers must share one React instance.

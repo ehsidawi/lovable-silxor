@@ -1,12 +1,33 @@
 import { ArrowUpRight } from "lucide-react";
 import SmartLink from "@/components/SmartLink";
-import { Button } from "@/components/ui/button";
-const steps=[{title:"Assess",line:"Technical evaluation and feasibility."},{title:"Architect",line:"Design and security review."},{title:"Build",line:"Engineer, integrate, assure quality."},{title:"Deploy",line:"Production on monitored infrastructure."},{title:"Manage",line:"Operate, secure, and improve."}];
-/** Horizontal five stage stepper. */
+
+const steps = [
+  { title: "Assess", line: "Technical evaluation and feasibility.", owner: "Engagement lead" },
+  { title: "Architect", line: "Design and security review.", owner: "Lead architect" },
+  { title: "Build", line: "Engineer, integrate, assure quality.", owner: "Delivery lead" },
+  { title: "Deploy", line: "Production on monitored infrastructure.", owner: "Platform lead" },
+  { title: "Manage", line: "Operate, secure, and improve.", owner: "Service owner" },
+];
+
+/** Engineering lifecycle: five stages on a continuous rail with a named owner per stage. */
 const DeliveryTrack = () => (
-  <section className="r-section delivery-board"><div className="container-content">
-    <div className="tile-head"><span className="r-eyebrow">How we work</span><h2 className="r-title">Assessment through operation.<br /><span className="text-primary">One line of accountability.</span></h2><div className="justify-self-start md:justify-self-end"><Button asChild variant="outline"><SmartLink to="/delivery">Delivery model <ArrowUpRight aria-hidden="true" /></SmartLink></Button></div></div>
-    <ol className="stepper">{steps.map((s,i) => <li key={s.title}><span className="stepper-dot">0{i+1}</span><h3>{s.title}</h3><p>{s.line}</p></li>)}</ol>
-  </div></section>
+  <section className="px-section px-lifecycle" aria-labelledby="lifecycle-title">
+    <div className="container-content">
+      <header className="px-section-head px-section-head--row">
+        <div><p className="px-mono">§ 05 · Delivery lifecycle</p><h2 id="lifecycle-title" className="px-h2">Assessment through operation. One line of accountability.</h2></div>
+        <SmartLink to="/delivery" className="px-arrow-link">Delivery model <ArrowUpRight aria-hidden="true" className="h-4 w-4" /></SmartLink>
+      </header>
+      <ol className="px-rail">
+        {steps.map((s, i) => (
+          <li key={s.title}>
+            <span className="px-rail-node" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+            <h3>{s.title}</h3>
+            <p>{s.line}</p>
+            <p className="px-mono">Owner · {s.owner}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
 );
 export default DeliveryTrack;

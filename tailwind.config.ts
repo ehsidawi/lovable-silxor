@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Fraunces Variable', 'Georgia', 'serif'],
+        display: ['Bricolage Grotesque Variable', 'system-ui', 'sans-serif'],
         body: ['Hanken Grotesk Variable', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono Variable', 'monospace'],
       },

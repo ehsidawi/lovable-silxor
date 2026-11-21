@@ -1,21 +1,49 @@
 import SmartLink from "@/components/SmartLink";
-import { services, getService } from "@/data/services";
+import { getService, type Service } from "@/data/services";
 import { ArrowUpRight } from "lucide-react";
-import { serviceMedia } from "@/data/serviceMedia";
-/** Bento service directory: one feature tile with imagery, the rest as compact tiles. */
+
+const taxonomy = [
+  { code: "A", title: "Advise", note: "Direction and decisions", slugs: ["advisory", "product-team"] },
+  { code: "B", title: "Build", note: "Systems engineered", slugs: ["software-engineering", "private-ai", "hardware-engineering"] },
+  { code: "C", title: "Protect & run", note: "Continuity and control", slugs: ["cloud", "cybersecurity", "identity", "managed-services"] },
+  { code: "D", title: "Staff", note: "Leadership and teams", slugs: ["talent-acquisition"] },
+];
+
+/** Capability taxonomy: four lanes of services plus the identity discipline schematic. */
 export default function CapabilityMap() {
- const identity = getService("identity");
- return <section id="capabilities" className="r-section capability-gallery scroll-mt-24" aria-labelledby="capability-map-title"><div className="container-content">
-  <div className="tile-head"><span className="r-eyebrow">The expertise</span><h2 id="capability-map-title" className="r-title">Big ideas.<br /><span className="text-primary">Built for the real world.</span></h2><p className="r-lead">From the systems people see to the infrastructure, security and people behind them.</p></div>
-  <nav aria-label="Service capability map" className="service-bento">{services.map((s, i) => {
-   const media = serviceMedia[s.slug]; const Icon = s.icon; const feature = i === 0 && media;
-   return <SmartLink key={s.slug} to={s.path} className={`capability-link service-tile ${feature ? "service-tile--feature" : ""}`}>
-    {feature && <img src={media.src} srcSet={`${media.small} 768w, ${media.src} 1536w`} sizes="(min-width: 1024px) 50vw, 100vw" alt={media.alt} width={1536} height={1024} loading="lazy" decoding="async" />}
-    <div className="service-tile-top"><span className="service-tile-num">{String(i + 1).padStart(2, "0")}</span><span className="service-tile-arrow"><ArrowUpRight className="h-4 w-4" aria-hidden="true" /></span></div>
-    {!feature && <Icon className="h-8 w-8 text-primary" strokeWidth={1.4} aria-hidden="true" />}
-    <h3>{s.navLabel}</h3><p>{s.outcome}</p>
-   </SmartLink>;
-  })}</nav>
-  <div className="identity-strip"><h3 className="font-display text-2xl font-semibold">Identity, at every layer.</h3><nav aria-label="Identity disciplines" className="pill-cloud mt-5">{identity?.blocks.map(b => <SmartLink key={b.id} to={`${identity.path}#${b.id}`} className="capability-link" style={{ fontSize: 15, minHeight: 44 }}>{b.title}<ArrowUpRight className="h-4 w-4" aria-hidden="true" /></SmartLink>)}</nav></div>
- </div></section>;
+  const identity = getService("identity");
+  return (
+    <section id="capabilities" className="px-section px-capabilities" aria-labelledby="capability-map-title">
+      <div className="container-content">
+        <header className="px-section-head">
+          <p className="px-mono">§ 02 · Capabilities</p>
+          <h2 id="capability-map-title" className="px-h2">From counsel to operation, under one line of accountability.</h2>
+          <p className="px-lead">Ten practices organised by the work they do: advise, build, protect and run, staff.</p>
+        </header>
+        <nav aria-label="Service capability map" className="px-lanes">
+          {taxonomy.map(lane => (
+            <div key={lane.code} className="px-lane">
+              <div className="px-lane-head"><span className="px-lane-code">{lane.code}</span><div><h3>{lane.title}</h3><p className="px-mono">{lane.note}</p></div></div>
+              <ul>
+                {lane.slugs.map(slug => getService(slug)).filter((s): s is Service => Boolean(s)).map(s => {
+                  const Icon = s.icon;
+                  return <li key={s.slug}><SmartLink to={s.path} className="px-cap capability-link">
+                    <Icon className="px-cap-icon" strokeWidth={1.4} aria-hidden="true" />
+                    <span><strong>{s.navLabel}</strong><span>{s.outcome}</span></span>
+                    <ArrowUpRight className="px-cap-arrow" aria-hidden="true" />
+                  </SmartLink></li>;
+                })}
+              </ul>
+            </div>
+          ))}
+        </nav>
+        {identity && <div className="px-identity">
+          <div><p className="px-mono">Identity discipline</p><h3>Identity, at every layer.</h3></div>
+          <nav aria-label="Identity disciplines" className="px-identity-grid">
+            {identity.blocks.map((b, i) => <SmartLink key={b.id} to={`${identity.path}#${b.id}`} className="px-identity-node capability-link"><span className="px-mono">{String(i + 1).padStart(2, "0")}</span>{b.title}</SmartLink>)}
+          </nav>
+        </div>}
+      </div>
+    </section>
+  );
 }

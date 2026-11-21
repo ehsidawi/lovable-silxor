@@ -549,18 +549,26 @@ a.r-card:hover, .service-tile:hover { transform: none !important; border-color: 
 .mx-pillar-list small { color: hsl(var(--muted-foreground)); font-size: 13px; max-width: 60%; text-align: right; }
 .mx-hero-figure, .page-hero-visual, .identity-strip, .capability-link, main a, main figure { border-radius: 2px !important; }
 
-/* Meridian compact: denser rhythm across every band, card and block. */
-.r-section, .tile, .diagram-section, .cta-tile, .technology-explorer { padding-block: clamp(40px, 5vw, 72px) !important; }
-.page-hero { padding-block: clamp(28px, 4vw, 56px) clamp(32px, 4vw, 56px) !important; }
-.mx-hero { padding-block: clamp(36px, 5vw, 72px) clamp(36px, 4vw, 56px) !important; }
-.mx-cta { padding-block: clamp(44px, 5vw, 80px) !important; }
-.mx-footer { padding-block: 48px 24px !important; }
-.r-card, .service-tile, .delivery-step { padding: 18px !important; min-height: 0 !important; }
-.r-panel { padding: clamp(20px, 3vw, 32px) !important; }
+/* Meridian refinement: one compact rhythm shared by every page. */
+:root { --type-section: 42px; --type-page: 60px; --tile-radius: 2px; }
+body { font-size: 16px; }
+h1,h2,h3,h4,h5,h6, .r-title, .page-hero h1, .mx-brand, .mx-hero-title,
+.mx-footer-statement, .r-eyebrow, .section-eyebrow, .mx-label, .site-button,
+.r-cta, .r-cta-ghost, .mx-offer-meta { letter-spacing: 0 !important; }
+.r-section, .tile, .diagram-section, .cta-tile, .section-spacing { padding-block: 48px !important; }
+.page-hero { padding-block: 28px 36px !important; }
+.mx-hero { padding-block: 36px 40px !important; }
+.mx-cta { padding-block: 48px !important; }
+.mx-footer { padding-block: 36px 24px !important; }
+.r-card, .service-tile, .delivery-step { padding: 16px !important; min-height: 0 !important; }
+.r-panel { padding: 0 !important; }
 .r-lead { font-size: 16px; line-height: 1.6; }
 .r-title { margin-bottom: 0; }
-main .gap-8 { gap: 1.5rem; } main .lg\:gap-12 { gap: 2rem; }
-.mx-offer-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 32px; margin-bottom: 24px; }
+main .gap-8, main .gap-10 { gap: 24px; }
+main .mt-8, main .mt-9, main .mt-10 { margin-top: 24px; }
+.mx-offer-head { display: grid; grid-template-columns: minmax(0, .6fr) minmax(0, 1.4fr); align-items: start; gap: 16px 32px; margin-bottom: 20px; }
+.mx-offer-head .r-eyebrow { margin-top: 8px; }
+.mx-offer-head .r-title { font-size: 36px; max-width: 30ch; }
 .mx-offers { display: grid; grid-template-columns: 1fr; border-top: 2px solid hsl(var(--foreground)); }
 @media (min-width: 900px) { .mx-offers { grid-template-columns: repeat(3, 1fr); } .mx-offer + .mx-offer { border-left: 1px solid hsl(var(--border)); } }
 .mx-offer { display: flex; flex-direction: column; gap: 10px; padding: 22px 22px 22px 0; border-bottom: 1px solid hsl(var(--border)); }
@@ -574,3 +582,57 @@ main .gap-8 { gap: 1.5rem; } main .lg\:gap-12 { gap: 2rem; }
 .mx-offer-link { margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 14px; color: hsl(var(--foreground)); }
 .mx-offer-link:hover, .mx-offer-link:focus-visible { color: hsl(var(--primary)); }
 .mx-pillar { padding-block: 24px !important; } .mx-pillar-list a { padding: 10px 0; }
+.mx-talent-practices { list-style: none; padding: 0; margin: 0; }
+.mx-talent-practices a { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 44px; padding-block: 10px; border-bottom: 1px solid hsl(var(--border)); font-size: 14px; }
+.mx-talent-practices a:hover { color: hsl(var(--primary)); }
+.mx-talent-practices svg { flex-shrink: 0; color: hsl(var(--primary)); }
+.mx-hero-grid { gap: 40px; }
+.mx-hero-title { margin-top: 20px; font-size: 76px; }
+.mx-hero-lead { margin-top: 20px; font-size: 20px; }
+.mx-hero-figure { aspect-ratio: 5 / 4; }
+.mx-ledger { margin-top: 32px; }
+.mx-ledger-item, .mx-ledger-item + .mx-ledger-item { padding-top: 20px; padding-bottom: 8px; gap: 8px; }
+.mx-ledger-item strong { font-size: 26px; }
+.page-hero-grid { gap: 28px; margin-top: 20px; }
+.mx-cta-grid { gap: 28px; }
+.mx-footer-statement { font-size: 40px; }
+.mx-footer-cols { margin-top: 28px; padding-top: 24px; gap: 24px; }
+.mx-footer-legal { margin-top: 24px; padding-top: 18px; }
+.mx-footer-link { min-height: 40px; }
+.mx-mega-inner { padding-block: 24px; gap: 32px; }
+.mx-mega-feature { padding: 18px; }
+/* The technology browser is content inside a band, not a second padded band. */
+.technology-explorer { padding-block: 0 !important; border: 0 !important; background: transparent !important; }
+.technology-workbench { padding-block: 48px !important; }
+.diagram-heading { gap: 12px; }
+.diagram-explorer { gap: 20px; margin-top: 20px; }
+.technology-browser { gap: 20px; }
+.r-section .r-section { padding-block: 0 !important; border: 0 !important; }
+@media (min-width: 1024px) { main .lg\:gap-12 { gap: 32px; } }
+@media (max-width: 900px) {
+  :root { --type-section: 36px; --type-page: 48px; }
+  .mx-hero-title { font-size: 64px; }
+  .mx-hero-grid { gap: 24px; }
+  .mx-hero-figure { aspect-ratio: 16 / 9; }
+  .mx-ledger-item, .mx-ledger-item + .mx-ledger-item { padding: 16px 0; }
+}
+@media (max-width: 767px) {
+  :root { --type-section: 30px; --type-page: 38px; }
+  .r-section, .tile, .diagram-section, .cta-tile, .technology-workbench, .section-spacing { padding-block: 32px !important; }
+  .page-hero { padding-block: 20px 28px !important; }
+  .mx-hero { padding-block: 24px 28px !important; }
+  .mx-cta { padding-block: 32px !important; }
+  .mx-footer { padding-block: 28px 20px !important; }
+  .mx-hero-title { font-size: 48px; }
+  .mx-hero-lead { font-size: 18px; }
+  .mx-offer-head { grid-template-columns: 1fr; gap: 12px; }
+  .mx-offer-head .r-title { font-size: 30px; }
+  .mx-offer { padding: 18px 0; }
+  .mx-pillar { padding: 20px 0 !important; }
+  .mx-pillar + .mx-pillar { border-top: 1px solid hsl(var(--border)); }
+  .mx-pillar-list small { max-width: 45%; }
+  .mx-footer-statement { font-size: 32px; }
+  .mx-cta-grid, .page-hero-grid { gap: 20px; }
+  .diagram-heading .r-title, .technology-workbench .r-title { font-size: 28px; }
+}
+@media (max-width: 359px) { .mx-hero-title { font-size: 42px; } }

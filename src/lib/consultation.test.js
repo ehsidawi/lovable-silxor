@@ -7,6 +7,12 @@ import { structuredData } from './structuredData.ts';
 const valid = {engagement_type:'Both',service_areas:['cybersecurity','iam'],company:'Test Company',role:'IT lead',company_size:'51 to 200',environment:'Hybrid',timeline:'1 to 3 months',description:'Review access management for our enterprise.',name:'Test Person',work_email:'consultation-test@example.com',phone:'',preferred_contact:'Email',meeting_windows:'Tuesday 09:00 to 12:00',time_zone:'UTC',website:''};
 describe('consultation input and privacy rules',()=>{
  it('accepts a complete request with optional phone omitted',()=>expect(consultationSchema.safeParse(valid).success).toBe(true));
+ it('keeps Technology Consulting, Talent Acquisition and Both available',()=>{
+  for(const engagement_type of ['Technology Consulting','Talent Acquisition','Both']) {
+   expect(needSchema.safeParse({engagement_type,service_areas:['talent-acquisition','advisory']}).success).toBe(true);
+  }
+  expect(needSchema.safeParse({engagement_type:'Unlisted',service_areas:['advisory']}).success).toBe(false);
+ });
  it('requires at least one selected service',()=>expect(needSchema.safeParse({service_areas:[]}).success).toBe(false));
  it('matches all services and nine identity disciplines',()=>expect([...serviceAreaIds]).toEqual([...services.map(s=>s.slug),...services.find(s=>s.slug==='identity').blocks.map(b=>b.id)]));
  it('rejects unknown service interests',()=>expect(needSchema.safeParse({service_areas:['unknown']}).success).toBe(false));

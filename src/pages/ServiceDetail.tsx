@@ -18,7 +18,7 @@ const ServiceDetail = () => {
   if (!service) return <NotFound />;
 
   const Icon = service.icon;
-  const relatedSlugs: Record<string, string[]> = { identity: ["cybersecurity", "managed-services", "software-engineering"], cybersecurity: ["identity", "cloud", "managed-services"], cloud: ["managed-services", "cybersecurity", "advisory"], "private-ai": ["software-engineering", "cloud", "identity"], "hardware-engineering": ["software-engineering", "cloud", "cybersecurity"], "software-engineering": ["product-team", "identity", "private-ai"], "product-team": ["software-engineering", "advisory", "cloud"], advisory: ["cloud", "cybersecurity", "identity"], "managed-services": ["cloud", "cybersecurity", "identity"] };
+  const relatedSlugs: Record<string, string[]> = { identity: ["cybersecurity", "managed-services", "software-engineering"], cybersecurity: ["identity", "cloud", "managed-services"], cloud: ["managed-services", "cybersecurity", "advisory"], "private-ai": ["software-engineering", "cloud", "identity"], "hardware-engineering": ["software-engineering", "cloud", "cybersecurity"], "software-engineering": ["product-team", "identity", "private-ai"], "product-team": ["software-engineering", "advisory", "talent-acquisition"], advisory: ["cloud", "cybersecurity", "talent-acquisition"], "talent-acquisition": ["advisory", "product-team", "software-engineering"], "managed-services": ["cloud", "cybersecurity", "identity"] };
   const related = services.filter(s => relatedSlugs[service.slug]?.includes(s.slug));
 
   return (

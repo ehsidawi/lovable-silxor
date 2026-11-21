@@ -25,13 +25,13 @@ const ServicesIndex = () => {
   return (
     <PageShell
       title="Services | Silxor"
-      description="Talent Acquisition and enterprise IT strategy, infrastructure, networking, cybersecurity, identity, managed IT, custom software, private AI, hardware and product delivery from Silxor."
+      description="Enterprise technology consulting, international recruitment and staffing, and C-level advisory across technology and talent from Silxor."
       path="/services"
     >
       <PageHero
         eyebrow="Services"
         title="Technology, Talent and C-level advisory."
-        lead="Executive search, recruitment and staffing alongside strategy, infrastructure, security, identity, software and hardware. Design, build and operations scoped to your needs, with board level advisory across both."
+        lead="We build systems and the teams that run them. Enterprise technology consulting, international recruitment and staffing, and strategic counsel for boards and senior leadership."
         crumbs={[{ label: "Home", to: "/" }, { label: "Services" }]}
       />
 
@@ -54,6 +54,7 @@ const ServicesIndex = () => {
                     <li key={s.slug}><Link to={s.path}><span>{s.name}</span><small>{p.items.length > 1 ? <ArrowRight aria-hidden style={{ width: 14, height: 14 }} /> : s.blocks.slice(0, 3).map((b) => b.title).join(", ")}</small></Link></li>
                   ))}
                 </ul>
+                {p.items.length === 1 && <ul className="mx-talent-practices" aria-label="Talent practices">{flagship.blocks.map(b => <li key={b.id}><Link to={`${flagship.path}#${b.id}`}><span>{b.title}</span><ArrowRight size={14} aria-hidden="true" /></Link></li>)}</ul>}
                 {p.items.length === 1 && (
                   <div className="flex flex-wrap gap-3" style={{ marginTop: 20 }}>
                     <Link to={flagship.path} className="r-cta">Explore the Service</Link>

@@ -9,7 +9,7 @@
 - Deduplicate React and React DOM in both Vite configurations; theme hooks and renderers must share one React instance.
 - Keep the homepage media lightweight and static in the critical path; this avoids autoplay failures and GPU-heavy first loads.
 
-- Keep service content and the primary navigation pillar taxonomy in shared service data; this preserves legacy detail routes while expanding enterprise IT coverage.
+- Keep service content, stable practice anchors and the primary navigation pillar taxonomy in shared service data; this preserves detail routes and lets the Talent directory link directly to the same practice descriptions.
 - Reuse the shared technology list, categories and official monochrome icon paths across home, services and the existing platforms route, with text fallback and trademark disclaimer; this prevents inconsistent vendor relationship claims.
 - Render technology exploration from shared categories with selectable platforms and a collapsible complete directory; this keeps the website compact without losing public vendor content.
 - Keep public guidance and FAQs in shared data and render new informational routes through a common resource page; this prevents duplicated policy facts and engagement descriptions.

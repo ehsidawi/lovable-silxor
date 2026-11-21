@@ -18,4 +18,9 @@ describe("enterprise service destinations", () => {
       expect(blocks.filter(b => b.id === id).length).toBe(1);
     }
   });
+  it("resolves the recruitment directory to unique talent practice destinations", () => {
+    const blocks = getService("talent-acquisition")?.blocks ?? [];
+    expect(blocks.map(b => b.id)).toEqual(["executive-search", "leadership-advisory", "specialist-recruitment", "contract-staffing", "team-building", "assessment", "role-definition", "onboarding"]);
+    expect(new Set(blocks.map(b => b.id)).size).toBe(8);
+  });
 });

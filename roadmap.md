@@ -4,3 +4,7 @@
 - [x] Check diagram selection, keyboard access, mobile layouts and both themes; run existing tests.
 - [x] Compact the technology map, platform directory, closing section and footer with accessible interactions.
 - [x] Verify category and platform selection, footer links, mobile layouts and both themes.
+
+- [x] Refine Meridian spacing and page organization throughout the website.
+- [x] Strengthen recruitment, contract staffing and executive advisory across key pages and public discovery.
+- [x] Verify every route in both themes on desktop and mobile, plus consultation email flow and existing tests.

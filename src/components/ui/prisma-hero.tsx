@@ -11,8 +11,9 @@ export const PrismaHero = () => (
         <div className="mx-hero-copy">
           <span className="mx-label">Silxor · Technology &amp; Talent</span>
           <h1 id="home-title" className="mx-hero-title">We build. We protect. <em>We staff.</em></h1>
-          <p className="mx-hero-lead">Enterprise technology consulting, international executive search and staffing, and C-level advisory across both.</p>
-          <div className="mt-10 flex flex-wrap items-center gap-6">
+          <p className="mx-hero-lead">We build systems and the teams that run them.</p>
+          <p className="mt-3 max-w-xl text-base text-muted-foreground">Enterprise technology consulting, international recruitment and staffing, and C-level advisory across both.</p>
+          <div className="mt-6 flex flex-wrap items-center gap-4">
             <Button asChild size="lg"><SmartLink to="/book">Book a Consultation <ArrowRight aria-hidden="true" /></SmartLink></Button>
             <a href="#capabilities" className="mx-inline-link">Explore capabilities <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
           </div>
@@ -31,7 +32,7 @@ export const PrismaHero = () => (
         <SmartLink to="/services/talent-acquisition" className="mx-ledger-item">
           <span className="mx-label">Talent</span>
           <strong>The teams that run them.</strong>
-          <span className="text-sm text-muted-foreground">International technology, cybersecurity, cloud, identity and engineering roles.</span>
+          <span className="text-sm text-muted-foreground">Executive search, leadership hiring, specialist recruitment and contract staffing, from engineering to the boardroom.</span>
           <span className="mx-inline-link">Talent Acquisition <ArrowRight className="h-4 w-4" aria-hidden="true" /></span>
         </SmartLink>
       </div>

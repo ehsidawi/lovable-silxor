@@ -3,8 +3,8 @@ import { ArrowRight } from "lucide-react";
 
 const offers = [
   { n: "01", label: "Technology", title: "Enterprise Technology Consulting", line: "Strategy, infrastructure, cybersecurity, identity, software, private AI and hardware. Designed, built, secured and operated.", points: ["Architecture & cloud strategy", "Cybersecurity & identity", "Managed IT & operations"], to: "/services", cta: "Technology services" },
-  { n: "02", label: "Talent", title: "International Recruitment & Staffing", line: "Executive search, senior and specialist recruitment, and technology staffing, assessed by people who understand the work.", points: ["C-level & executive search", "Senior specialist recruitment", "Contract staffing & team building"], to: "/services/talent-acquisition", cta: "Talent Acquisition" },
-  { n: "03", label: "Technology + Talent", title: "C-Level Advisory", line: "Board and executive counsel spanning both sides: technology strategy, risk and investment alongside leadership structure and strategic hires.", points: ["Board & CEO technology counsel", "CIO, CTO & CISO advisory", "Leadership hiring strategy"], to: "/services/advisory", cta: "Advisory" },
+  { n: "02", label: "Talent", title: "International Recruitment & Staffing", line: "Executive search, leadership hiring and specialist recruitment from the engineering floor to the boardroom. Permanent roles, contract staffing and complete teams.", points: ["CIO, CTO, CISO & CDO search", "Senior specialist recruitment", "Contract staffing & team building"], to: "/services/talent-acquisition", cta: "Talent Acquisition" },
+  { n: "03", label: "Technology + Talent", title: "C-Level Advisory", line: "Strategic counsel for boards, CEOs and senior leadership. Technology investment, risk and operating models considered alongside talent strategy and leadership succession.", points: ["Board & executive counsel", "Technology & talent strategy", "Leadership structure & succession"], to: "/services/advisory", cta: "Advisory" },
 ];
 
 const OfferingTriad = () => (
@@ -12,7 +12,7 @@ const OfferingTriad = () => (
     <div className="container-content">
       <div className="mx-offer-head">
         <span className="r-eyebrow">What We Offer</span>
-        <h2 id="offer-title" className="r-title">We build. We protect. We staff.</h2>
+        <h2 id="offer-title" className="r-title">We build systems and the teams that run them.</h2>
       </div>
       <div className="mx-offers">
         {offers.map((o) => (

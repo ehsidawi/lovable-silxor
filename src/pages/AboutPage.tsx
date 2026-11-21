@@ -8,14 +8,14 @@ import Team from "@/components/Team";
 
 
 const posture = [
-  { icon: Users, title: "One Accountable Team", line: "Advisory, build, and operations under one owner." },
+  { icon: Users, title: "One Accountable Team", line: "Technology, recruitment and executive advisory under an agreed engagement lead." },
   { icon: ShieldCheck, title: "Security by Design", line: "Identity and controls built in from day one." },
   { icon: FileCheck, title: "Framework Informed", line: "Control frameworks and evidence requirements scoped to the engagement." },
   { icon: GaugeCircle, title: "Scoped per Engagement", line: "SLA tiers and reporting defined at assessment." },
 ];
 
 const staffing = [
-  { icon: Layers, title: "Matched to Scope", line: "Engineers matched to the practices your program actually involves." },
+  { icon: Layers, title: "Matched to Scope", line: "Executive search, specialist recruitment and contract staffing matched to the responsibilities your team needs." },
   { icon: Users, title: "Senior by Default", line: "Roles, expertise, reporting and any external contributions are agreed in the engagement scope." },
   { icon: ClipboardCheck, title: "Scoped at Assessment", line: "Seniority, cadence, and reporting are defined in the proposal before work starts." },
 ];
@@ -29,14 +29,14 @@ const serves = [
 
 const AboutPage = () => (
   <PageShell
-    title="About Silxor | Enterprise Technology Consultancy"
-    description="Silxor Group Holding is an enterprise technology consultancy covering IT strategy, infrastructure, cybersecurity, identity, software, hardware and managed operations."
+    title="About Silxor | Technology & Talent"
+    description="Silxor Group Holding brings together enterprise technology consulting, international recruitment and staffing, and C-level advisory across technology and talent."
     path="/about"
   >
     <PageHero
       eyebrow="About"
       title="Technology and Talent. Coordinated delivery."
-      lead="Silxor Group Holding is an international Technology & Talent firm covering your entire IT estate and the people who run it. The people who design your systems also build, secure and operate them."
+      lead="We build systems and the teams that run them. Silxor Group Holding brings enterprise technology consulting, international recruitment and staffing, and C-level advisory together."
       crumbs={[{ label: "Home", to: "/" }, { label: "About" }]}
     />
 
@@ -56,8 +56,7 @@ const AboutPage = () => (
                 of accountability across on premises, hybrid and cloud environments.
               </p>
               <p className="font-body font-[400]" style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", lineHeight: 1.75 }}>
-                That structure helps clarify responsibility when work spans a strategy firm,
-                a development shop, a security vendor, and a managed provider, with an agreed engagement lead coordinating the outcome.
+                We also support executive search, leadership hiring, specialist recruitment, contract staffing and team building, from engineering roles to CIO, CTO, CISO, CDO and other C-level positions. Board and executive advisory connects technology investment and risk with talent strategy, leadership structure and succession. Each engagement defines its scope and accountable lead.
               </p>
             </div>
           </div>

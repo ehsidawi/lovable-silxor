@@ -2,7 +2,7 @@ export const SITE = "https://silxor.com";
 export const business = { name: "Silxor Group Holding", email: "hello@silxor.com", telephone: "+1 979 500 3390", url: `${SITE}/`, sameAs: ["https://www.linkedin.com/company/silxorllc/"] };
 export type Question = { q: string; a: string };
 export const faqs: Question[] = [
-  { q: "What does Silxor help with?", a: "Silxor helps organizations plan, build, secure and operate enterprise technology. Scope can include IT strategy, infrastructure, networking, managed IT, cybersecurity, identity, custom software, private AI and hardware engineering." },
+  { q: "What does Silxor help with?", a: "Silxor brings together enterprise technology consulting, international recruitment and staffing, and C-level advisory spanning technology and talent. We build systems and the teams that run them. Technology scope includes strategy, infrastructure, networking, managed IT, cybersecurity, identity, software, private AI and hardware engineering." },
   { q: "How do we start?", a: "Use Book a Consultation to share your service interests, company context and contact preferences. We review your request and reply by email. Meeting details and next steps are confirmed separately." },
   { q: "Can you work with our existing IT team?", a: "Yes. An engagement can complement your team through a scoped project, staff augmentation, advisory retainer or managed service. Responsibilities and access are agreed in writing." },
   { q: "Where is project data hosted?", a: "Data location, access and hosting requirements are defined during assessment and recorded in the agreement. On premises, hybrid and private environments can be included in scope. Private AI is designed to keep sensitive data away from third party model providers." },
@@ -14,9 +14,9 @@ export const faqs: Question[] = [
 export const engagements = [
   { id: "assessment", title: "Assessment", body: "Understand the current environment, goals and risks before selecting a solution.", details: "Agree the review boundary, gather relevant information and discuss priorities. The next engagement and any deliverables are scoped together." },
   { id: "project", title: "Project delivery", body: "A defined outcome with an agreed scope, milestones and acceptance criteria.", details: "Specify dependencies, responsibilities, testing, change control and handover in a statement of work. Review progress at agreed milestones." },
-  { id: "augmentation", title: "Staff augmentation", body: "Add specific expertise to your existing team for an agreed period.", details: "Agree the skills needed, reporting line, access, capacity and working cadence. Your team retains its defined decision and delivery responsibilities." },
+  { id: "augmentation", title: "Staff augmentation", body: "Contract staffing and team building for specific expertise and an agreed period.", details: "Agree the skills needed, reporting line, access, capacity and working cadence. Your team retains its defined decision and delivery responsibilities." },
   { id: "managed", title: "Managed service", body: "Ongoing operation and support for a clearly defined environment.", details: "Document the service boundary, coverage, escalation paths, maintenance windows, reporting and recovery requirements before transition." },
-  { id: "retainer", title: "Advisory retainer", body: "Recurring access to technology guidance and reviews.", details: "Agree the advisory areas, availability, review cadence and outputs. Delivery and operational work are scoped separately when needed." },
+  { id: "retainer", title: "Advisory retainer", body: "Recurring strategic counsel across technology and talent.", details: "Agree the board and executive advisory areas, talent strategy priorities, availability, review cadence and outputs. Recruitment, delivery and operational work are scoped separately when needed." },
 ];
 export const methodology = [
   { id: "discover", title: "Discover", body: "Understand goals, people, systems and constraints.", details: "Review the current estate and identify dependencies, data handling needs and risks. Agree the problem to solve and how progress will be measured." },

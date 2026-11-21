@@ -525,3 +525,12 @@ a.r-card:hover, .service-tile:hover { transform: none !important; border-color: 
 }
 @media (max-width: 560px) { .mx-footer-cols { grid-template-columns: 1fr; } :root { --header-h: 64px; } }
 @media (prefers-reduced-motion: reduce) { .mx-mega { animation: none; } .mx-inline-link, .site-button svg { transition: none !important; } }
+
+/* Meridian refinements for inner pages: outlined icon marks, serif card titles, flat chips. */
+.r-node { background: transparent !important; color: hsl(var(--primary)) !important; border: 1px solid hsl(var(--border)) !important; border-radius: 4px !important; }
+.r-card h3, .r-card h4, .service-tile h3, .delivery-step h3 { font-family: 'Fraunces Variable', Georgia, serif !important; font-weight: 450 !important; letter-spacing: -0.01em; }
+.r-card, .service-tile, .delivery-step { border-top: 2px solid hsl(var(--border)) !important; transition: border-color .2s !important; }
+.r-card:hover, .service-tile:hover { border-top-color: hsl(var(--accent)) !important; }
+.pill-cloud .r-pill svg, .r-pill > svg:first-child { color: hsl(var(--primary)); }
+.r-node svg { color: hsl(var(--primary)) !important; stroke: currentColor; }
+.mx-footer ~ * button svg, button[aria-label="Back to top"] { color: hsl(var(--foreground)) !important; } button[aria-label="Back to top"] { background: hsl(var(--background)) !important; }

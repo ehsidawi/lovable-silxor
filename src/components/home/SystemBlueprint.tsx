@@ -59,3 +59,30 @@ const SystemBlueprint = () => (
   </svg>
 );
 export default SystemBlueprint;
+
+/** Compact schematic for narrow screens: same model, fewer and larger labels. */
+export const SystemBlueprintCompact = () => (
+  <svg className="px-blueprint px-blueprint--compact" viewBox="0 0 320 210" role="img" aria-labelledby="bpc-title">
+    <title id="bpc-title">Silxor operating model: advisory above one accountable core, technology and talent beside it</title>
+    <rect x="80" y="8" width="160" height="38" className="bp-node bp-node--accent" />
+    <text x="160" y="32" textAnchor="middle" className="bp-small">C-level advisory</text>
+    <path d="M160 46V74" className="bp-flow" markerEnd="url(#bpc-arrow)" />
+    <defs><marker id="bpc-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" className="bp-arrowhead" /></marker></defs>
+    <rect x="95" y="78" width="130" height="54" className="bp-core" />
+    <text x="160" y="101" textAnchor="middle" className="bp-small">Senior</text>
+    <text x="160" y="119" textAnchor="middle" className="bp-small">accountability</text>
+    {["Technology", "Security", "Operations"].map((t, i) => <g key={t}>
+      <rect x="4" y={70 + i * 26} width="78" height="22" className="bp-node" />
+      <text x="43" y={85 + i * 26} textAnchor="middle" className="bp-tiny">{t}</text>
+      <path d={`M82 ${81 + i * 26}H95`} className="bp-link" />
+    </g>)}
+    {["Search", "Assessment", "Teams"].map((t, i) => <g key={t}>
+      <rect x="238" y={70 + i * 26} width="78" height="22" className="bp-node" />
+      <text x="277" y={85 + i * 26} textAnchor="middle" className="bp-tiny">{t}</text>
+      <path d={`M238 ${81 + i * 26}H225`} className="bp-link" />
+    </g>)}
+    <path d="M160 132V160" className="bp-flow" markerEnd="url(#bpc-arrow)" />
+    <rect x="95" y="164" width="130" height="34" className="bp-node" />
+    <text x="160" y="186" textAnchor="middle" className="bp-small">Outcomes owned</text>
+  </svg>
+);

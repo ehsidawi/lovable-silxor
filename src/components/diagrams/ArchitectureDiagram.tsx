@@ -24,7 +24,7 @@ export default function ArchitectureDiagram({data}:{data:DiagramData}) {
       </div>
       <figure className={`diagram-explorer diagram-explorer--${data.id}`}>
         <div className="diagram-canvas">
-          <svg viewBox="0 0 600 330" role="img" aria-labelledby={`${id}-title ${id}-desc`}>
+          <svg viewBox="0 0 600 330" role="group" aria-labelledby={`${id}-title ${id}-desc`}>
             <title id={`${id}-title`}>{data.title}</title>
             <desc id={`${id}-desc`}>{data.description}</desc>
             <defs><marker id={`${id}-arrow`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" className="explorer-arrow" /></marker></defs>
@@ -41,10 +41,10 @@ export default function ArchitectureDiagram({data}:{data:DiagramData}) {
               const point = positions.get(node.id);
               if (!point) return null;
               const active = node.id === selected.id;
-              return <g key={node.id} className={`explorer-point ${active ? "is-active" : ""}`} onClick={() => setSelectedId(node.id)}>
+              return <g key={node.id} className={`explorer-point ${active ? "is-active" : ""}`} role="button" tabIndex={0} aria-label={`Select ${node.label}`} aria-pressed={active} aria-controls={`${id}-selection`} onClick={() => setSelectedId(node.id)} onKeyDown={e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedId(node.id); } }}>
                 <circle cx={point.x} cy={point.y} r="25" />
-                <text x={point.x} y={point.y + 5} textAnchor="middle">{String(index + 1).padStart(2, "0")}</text>
-                <text x={point.x} y={point.y + 42} textAnchor="middle" className="explorer-caption">{node.label.split(" ").slice(0, 2).join(" ")}</text>
+                <text x={point.x} y={point.y + 5} textAnchor="middle" aria-hidden="true">{String(index + 1).padStart(2, "0")}</text>
+                <text x={point.x} y={point.y + 42} textAnchor="middle" className="explorer-caption" aria-hidden="true">{node.label.split(" ").slice(0, 2).join(" ")}</text>
               </g>;
             })}
           </svg>

@@ -1,7 +1,7 @@
 import { ArrowRight, ArrowDownRight } from "lucide-react";
 import SmartLink from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
-import SystemBlueprint from "@/components/home/SystemBlueprint";
+import SystemBlueprint, { SystemBlueprintCompact } from "@/components/home/SystemBlueprint";
 
 const offers = [
   { code: "01", label: "Technology", title: "Enterprise Technology Consulting", to: "/services" },
@@ -25,6 +25,7 @@ export const PrismaHero = () => (
       </div>
       <figure className="px-hero-figure">
         <SystemBlueprint />
+        <SystemBlueprintCompact />
         <figcaption><span>FIG. 01</span>Advisory, technology and talent under one accountable lead</figcaption>
       </figure>
     </div>

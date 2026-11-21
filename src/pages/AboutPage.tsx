@@ -35,8 +35,8 @@ const AboutPage = () => (
   >
     <PageHero
       eyebrow="About"
-      title="Enterprise technology. Coordinated delivery."
-      lead="Silxor Group Holding is an enterprise technology consultancy covering your entire IT estate. The people who design your systems also build, secure and operate them."
+      title="Technology and Talent. Coordinated delivery."
+      lead="Silxor Group Holding is an international Technology & Talent firm covering your entire IT estate and the people who run it. The people who design your systems also build, secure and operate them."
       crumbs={[{ label: "Home", to: "/" }, { label: "About" }]}
     />
 

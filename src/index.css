@@ -534,3 +534,17 @@ a.r-card:hover, .service-tile:hover { transform: none !important; border-color: 
 .pill-cloud .r-pill svg, .r-pill > svg:first-child { color: hsl(var(--primary)); }
 .r-node svg { color: hsl(var(--primary)) !important; stroke: currentColor; }
 .mx-footer ~ * button svg, button[aria-label="Back to top"] { color: hsl(var(--foreground)) !important; } button[aria-label="Back to top"] { background: hsl(var(--background)) !important; }
+
+/* Meridian completion: remove every leftover rounded tile, pill and chip shape. */
+.r-section, .tile, .r-panel, .r-card, .surface-elevated, .service-tile, .delivery-step, .r-pill, .badge-pill,
+.r-eyebrow, .section-eyebrow, .bento-hero > *, main img, main .rounded-md, main .rounded-lg, main .rounded-xl, main .rounded-2xl { border-radius: 2px !important; }
+.r-eyebrow, .section-eyebrow { border: 0 !important; background: transparent !important; padding-inline: 0 !important; color: hsl(var(--primary)) !important; }
+.r-eyebrow::before, .section-eyebrow::before { border-radius: 0 !important; width: 18px !important; height: 1px !important; background: currentColor !important; }
+.mx-pillars { display: grid; grid-template-columns: 1fr; border-top: 1px solid hsl(var(--border)); }
+@media (min-width: 900px) { .mx-pillars { grid-template-columns: 1fr 1fr; } .mx-pillars > * + * { border-left: 1px solid hsl(var(--border)); } }
+.mx-pillar { padding: 32px 0; } @media (min-width: 900px) { .mx-pillar { padding: 40px 40px 40px 0; } .mx-pillar + .mx-pillar { padding-left: 40px; } }
+.mx-pillar-list { list-style: none; margin: 20px 0 0; padding: 0; border-top: 1px solid hsl(var(--border)); }
+.mx-pillar-list a { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid hsl(var(--border)); color: hsl(var(--foreground)); }
+.mx-pillar-list a:hover, .mx-pillar-list a:focus-visible { color: hsl(var(--primary)); }
+.mx-pillar-list small { color: hsl(var(--muted-foreground)); font-size: 13px; max-width: 60%; text-align: right; }
+.mx-hero-figure, .page-hero-visual, .identity-strip, .capability-link, main a, main figure { border-radius: 2px !important; }

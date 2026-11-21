@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Bricolage Grotesque Variable', 'sans-serif'],
-        body: ['Manrope Variable', 'sans-serif'],
+        display: ['Fraunces Variable', 'Georgia', 'serif'],
+        body: ['Hanken Grotesk Variable', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono Variable', 'monospace'],
       },
       fontSize: {

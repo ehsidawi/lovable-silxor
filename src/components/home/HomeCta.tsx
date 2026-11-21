@@ -1,3 +1,3 @@
 import CtaBand from "@/components/CtaBand";
-const HomeCta = () => <CtaBand eyebrow="06 / Your next move" title="Let's build the whole thing." lead="Tell us what you are building. We scope how to architect, build, secure, and operate it, with one accountable team." />;
+const HomeCta = () => <CtaBand eyebrow="Your next move" title="Technology, talent, or both." lead="Tell us what you are building and who you need to run it. We scope the systems, the team, or both, with one accountable partner." />;
 export default HomeCta;

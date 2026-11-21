@@ -1,33 +1,40 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import SmartLink from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
 import engineeringField from "@/assets/hardware-software-hero.webp";
-import { servicePillars } from "@/data/services";
 
-/** Bento opening: headline tile, image tile, booking tile and four service chips. */
+/** Executive opening: serif headline, dual Technology and Talent ledger, framed illustration. */
 export const PrismaHero = () => (
-  <section className="bento-hero" aria-labelledby="home-title">
-    <div className="bento-hero-main">
-      <div className="flex flex-wrap items-center justify-between gap-3"><span className="r-eyebrow">Technology & Talent</span><span className="font-mono text-[11px] uppercase text-muted-foreground">Engineer + Defend + Staff</span></div>
-      <h1 id="home-title" className="bento-hero-title"><small>Silxor</small>We build. We protect.<em>We staff.</em></h1>
-      <div className="bento-hero-foot">
-        <p>We build systems and the teams that run them, from infrastructure and security to the people who operate it.</p>
-        <Button asChild variant="outline"><a href="#capabilities">Explore capabilities <ArrowUpRight aria-hidden="true" /></a></Button>
+  <section className="mx-hero" aria-labelledby="home-title">
+    <div className="container-content">
+      <div className="mx-hero-grid">
+        <div className="mx-hero-copy">
+          <span className="mx-label">Silxor · Technology &amp; Talent</span>
+          <h1 id="home-title" className="mx-hero-title">We build. We protect. <em>We staff.</em></h1>
+          <p className="mx-hero-lead">We build systems and the teams that run them, from infrastructure and security to the people who operate it.</p>
+          <div className="mt-10 flex flex-wrap items-center gap-6">
+            <Button asChild size="lg"><SmartLink to="/book">Book a Consultation <ArrowRight aria-hidden="true" /></SmartLink></Button>
+            <a href="#capabilities" className="mx-inline-link">Explore capabilities <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
+          </div>
+        </div>
+        <figure className="mx-hero-figure">
+          <img src={engineeringField} alt="Illustrative enterprise hardware components alongside software code and dashboards" width={1536} height={1024} fetchPriority="high" />
+        </figure>
+      </div>
+      <div className="mx-ledger">
+        <SmartLink to="/services" className="mx-ledger-item">
+          <span className="mx-label">Technology</span>
+          <strong>Systems engineered, secured and operated.</strong>
+          <span className="text-sm text-muted-foreground">Infrastructure, cloud, cybersecurity, identity, software, private AI and hardware.</span>
+          <span className="mx-inline-link">Technology services <ArrowRight className="h-4 w-4" aria-hidden="true" /></span>
+        </SmartLink>
+        <SmartLink to="/services/talent-acquisition" className="mx-ledger-item">
+          <span className="mx-label">Talent</span>
+          <strong>The teams that run them.</strong>
+          <span className="text-sm text-muted-foreground">International technology, cybersecurity, cloud, identity and engineering roles.</span>
+          <span className="mx-inline-link">Talent Acquisition <ArrowRight className="h-4 w-4" aria-hidden="true" /></span>
+        </SmartLink>
       </div>
     </div>
-    <figure className="bento-hero-media">
-      <img src={engineeringField} alt="Illustrative enterprise hardware components alongside software code and dashboards" width={1536} height={1024} fetchPriority="high" />
-      <figcaption><span>Build</span><span>Protect</span><span>Staff</span></figcaption>
-    </figure>
-    <SmartLink to="/book" className="bento-hero-book">
-      <span className="flex items-start justify-between gap-4"><span className="font-mono text-[11px] uppercase">Let’s talk</span><span className="book-arrow" aria-hidden="true"><ArrowUpRight className="h-7 w-7" /></span></span>
-      <strong>Book a Consultation</strong>
-    </SmartLink>
-    {servicePillars.slice(0, 4).map((s, i) => (
-      <SmartLink key={s.slug} to={s.path} className="bento-hero-chip">
-        <span><span>{String(i + 1).padStart(2, "0")}</span><ArrowUpRight className="h-4 w-4" aria-hidden="true" /></span>
-        <strong>{s.navLabel}</strong>
-      </SmartLink>
-    ))}
   </section>
 );

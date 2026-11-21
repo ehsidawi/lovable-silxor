@@ -12,8 +12,8 @@ import { diagrams } from "@/data/diagrams";
 const Index = () => {
   return (
     <PageShell
-      title="Silxor | Enterprise Technology Consultancy"
-      description="Silxor Group Holding plans, builds, secures and operates enterprise IT, infrastructure, cybersecurity, identity, software, private AI and hardware."
+      title="Silxor | International Technology & Talent Firm"
+      description="Silxor is an international Technology & Talent firm. We build, secure and operate enterprise systems and recruit the technology teams that run them."
       path="/"
     >
       <HomeHero />

@@ -1,90 +1,98 @@
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Menu, Plus, Minus } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import SmartLink, { SmartNavLink } from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetDescription, SheetTrigger } from "@/components/ui/sheet";
-import { services, servicePillars } from "@/data/services";
+import { servicePillars } from "@/data/services";
 import ThemeToggle from "@/components/ThemeToggle";
 import { resourceLinks } from "@/data/site";
 import { caseStudies } from "@/data/caseStudies";
 
 const links = [
-  { label: "Industries", to: "/industries" }, { label: "Delivery", to: "/delivery" },
-  { label: "Clients", to: "/clients" }, { label: "About", to: "/about" },
-  { label: "Insights", to: "/insights" },
+  { label: "Industries", to: "/industries" }, { label: "Process", to: "/process" },
+  { label: "About", to: "/about" }, { label: "Insights", to: "/insights" },
   ...(caseStudies.length ? [{ label: "Case studies", to: "/case-studies" }] : []),
   { label: "Contact", to: "/contact" },
 ];
-const serviceLinks = [
-  ...servicePillars.map(s => ({ label: s.navLabel, to: s.path })),
-  ...services.filter(s => s.flagship || s.slug === "private-ai").map(s => ({ label: s.navLabel, to: s.path })),
-];
-const num = (i: number) => String(i).padStart(2, "0");
+const talent = servicePillars.find(s => s.slug === "talent-acquisition");
+const tech = servicePillars.filter(s => s.slug !== "talent-acquisition");
 
-const Brand = () => <SmartLink to="/" aria-label="Silxor home" className="brand-mark">silxor<i aria-hidden="true" /></SmartLink>;
+const Brand = () => <SmartLink to="/" aria-label="Silxor home" className="mx-brand">Silxor<i aria-hidden="true" /></SmartLink>;
 
-/** Fixed index rail on desktop, rounded top bar with a drawer below 1024px. */
+/** Executive masthead: sticky top bar with a two column Services panel and a drawer on small screens. */
 const Navbar = () => {
   const location = useLocation();
-  const inServices = location.pathname.startsWith("/services");
-  const [servicesOpen, setServicesOpen] = useState(inServices);
+  const [open, setOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  useEffect(() => { setMobileOpen(false); if (inServices) setServicesOpen(true); }, [location.pathname, inServices]);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => { setOpen(false); setMobileOpen(false); }, [location.pathname]);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    window.addEventListener("keydown", onKey); return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
 
   return (
     <>
       <a href="#main" className="skip-link">Skip to content</a>
-      <header className="site-rail">
-        <div className="site-rail-inner">
-          <div className="flex items-center justify-between px-2.5"><Brand /><ThemeToggle /></div>
-          <p className="rail-label mt-2">Technology & Talent partner</p>
-          <nav aria-label="Primary" className="mt-8 flex flex-col gap-1">
-            <span className="rail-label mb-2">Index</span>
-            <button type="button" className="rail-link w-full text-left" aria-expanded={servicesOpen} aria-controls="rail-services" onClick={() => setServicesOpen(!servicesOpen)}>
-              <span className="rail-num">01</span>Services
-              {servicesOpen ? <Minus className="ml-auto h-4 w-4" aria-hidden="true" /> : <Plus className="ml-auto h-4 w-4" aria-hidden="true" />}
-            </button>
-            {servicesOpen && <div id="rail-services" className="flex flex-col gap-0.5 pb-2">
-              <SmartNavLink to="/services" end className="rail-sub font-semibold">All services</SmartNavLink>
-              {serviceLinks.map(l => <SmartNavLink key={l.to} to={l.to} className="rail-sub">{l.label}</SmartNavLink>)}
-            </div>}
-            {links.map((l, i) => <SmartNavLink key={l.to} to={l.to} className="rail-link"><span className="rail-num">{num(i + 2)}</span>{l.label}</SmartNavLink>)}
-          </nav>
-          <div className="rail-foot">
-            <Button asChild><SmartLink to="/book">Book a Consultation <ArrowUpRight aria-hidden="true" /></SmartLink></Button>
-            <a href="mailto:hello@silxor.com" className="rail-link justify-center text-xs">hello@silxor.com</a>
-          </div>
-        </div>
-      </header>
-
-      <header className="site-topbar">
-        <div className="site-topbar-inner">
+      <header className={`mx-header ${scrolled ? "is-scrolled" : ""}`}>
+        <div className="mx-header-inner">
           <Brand />
-          <div className="flex items-center gap-1">
+          <nav aria-label="Primary" className="mx-nav">
+            <button type="button" className="mx-nav-link" aria-expanded={open} aria-controls="mx-services" onClick={() => setOpen(!open)}>
+              Services <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" />
+            </button>
+            {links.map(l => <SmartNavLink key={l.to} to={l.to} className="mx-nav-link">{l.label}</SmartNavLink>)}
+          </nav>
+          <div className="flex items-center gap-2">
             <ThemeToggle />
+            <Button asChild className="mx-header-cta"><SmartLink to="/book">Book a Consultation <ArrowRight aria-hidden="true" /></SmartLink></Button>
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-              <SheetTrigger asChild><Button variant="outline" size="icon" aria-label="Open menu" className="h-11 w-11 border-0 bg-transparent text-on-ink hover:bg-muted"><Menu aria-hidden="true" /></Button></SheetTrigger>
+              <SheetTrigger asChild><Button variant="ghost" size="icon" aria-label="Open menu" className="mx-menu-btn h-11 w-11"><Menu aria-hidden="true" /></Button></SheetTrigger>
               <SheetContent className="w-full overflow-y-auto sm:max-w-md">
-                <SheetTitle className="brand-mark">silxor<i aria-hidden="true" /></SheetTitle>
+                <SheetTitle className="mx-brand">Silxor<i aria-hidden="true" /></SheetTitle>
                 <SheetDescription className="sr-only">Primary navigation</SheetDescription>
                 <nav aria-label="Mobile" className="mt-8 flex flex-col">
-                  <span className="font-mono text-[11px] uppercase text-muted-foreground">01 Services</span>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    <SmartLink to="/services" className="r-pill min-h-11">All services</SmartLink>
-                    {serviceLinks.map(l => <SmartLink key={l.to} to={l.to} className="r-pill min-h-11">{l.label}</SmartLink>)}
-                  </div>
-                  <div className="mt-6 flex flex-col border-t border-border">
-                    {links.map((l, i) => <SmartLink key={l.to} to={l.to} className="flex min-h-14 items-center gap-4 border-b border-border font-display text-2xl font-semibold"><span className="font-mono text-[11px] text-muted-foreground">{num(i + 2)}</span>{l.label}</SmartLink>)}
-                  </div>
-                  <span className="mt-6 font-mono text-[11px] uppercase text-muted-foreground">Resources</span>
-                  <div className="mt-2 grid grid-cols-2">{resourceLinks.map(l => <SmartLink key={l.to} to={l.to} className="flex min-h-11 items-center text-sm">{l.label}</SmartLink>)}</div>
-                  <Button asChild className="mt-6 w-full justify-between"><SmartLink to="/book">Book a Consultation <ArrowUpRight aria-hidden="true" /></SmartLink></Button>
+                  <span className="mx-label">Talent</span>
+                  {talent && <SmartLink to={talent.path} className="mx-drawer-link">{talent.navLabel}</SmartLink>}
+                  <span className="mx-label mt-6">Technology</span>
+                  {tech.map(s => <SmartLink key={s.slug} to={s.path} className="mx-drawer-link">{s.navLabel}</SmartLink>)}
+                  <SmartLink to="/services" className="mx-drawer-link font-semibold">All services</SmartLink>
+                  <span className="mx-label mt-6">Company</span>
+                  {links.map(l => <SmartLink key={l.to} to={l.to} className="mx-drawer-link">{l.label}</SmartLink>)}
+                  <span className="mx-label mt-6">Resources</span>
+                  <div className="grid grid-cols-2">{resourceLinks.map(l => <SmartLink key={l.to} to={l.to} className="flex min-h-11 items-center text-sm text-muted-foreground">{l.label}</SmartLink>)}</div>
+                  <Button asChild className="mt-8 w-full"><SmartLink to="/book">Book a Consultation <ArrowRight aria-hidden="true" /></SmartLink></Button>
                 </nav>
               </SheetContent>
             </Sheet>
           </div>
         </div>
+        {open && (
+          <div id="mx-services" className="mx-mega">
+            <div className="mx-mega-inner">
+              {talent && <SmartLink to={talent.path} className="mx-mega-feature">
+                <span className="mx-label">Talent</span>
+                <strong>{talent.navLabel}</strong>
+                <span className="text-sm text-muted-foreground">{talent.outcome}</span>
+                <span className="mx-inline-link">Explore Talent <ArrowRight className="h-4 w-4" aria-hidden="true" /></span>
+              </SmartLink>}
+              <div>
+                <span className="mx-label">Technology</span>
+                <div className="mx-mega-grid">
+                  {tech.map(s => <SmartLink key={s.slug} to={s.path} className="mx-mega-link">{s.navLabel}<ArrowRight className="h-4 w-4" aria-hidden="true" /></SmartLink>)}
+                </div>
+                <SmartLink to="/services" className="mx-inline-link mt-5">All services <ArrowRight className="h-4 w-4" aria-hidden="true" /></SmartLink>
+              </div>
+            </div>
+          </div>
+        )}
       </header>
     </>
   );

@@ -6,7 +6,7 @@ import DeliveryTrack from "@/components/home/DeliveryTrack";
 import TechnologyPlatforms from "@/components/TechnologyPlatforms";
 import HomeCta from "@/components/home/HomeCta";
 import AnimatedSection from "@/components/AnimatedSection";
-import ArchitectureDiagram from "@/components/diagrams/ArchitectureDiagram";
+import ReferenceBrief from "@/components/editorial/ReferenceBrief";
 import { diagrams } from "@/data/diagrams";
 
 const Index = () => {
@@ -19,7 +19,7 @@ const Index = () => {
       <HomeHero />
       <>
       <CapabilityIndex />
-      <AnimatedSection><ArchitectureDiagram data={diagrams.estate} /></AnimatedSection>
+      <AnimatedSection><ReferenceBrief data={diagrams.estate} /></AnimatedSection>
       <AnimatedSection>
         <IndustryMatrix />
       </AnimatedSection>

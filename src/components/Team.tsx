@@ -1,41 +1,20 @@
-import { User } from "lucide-react";
 import { founderBio } from "@/data/leadership";
-
-const Team = () => {
+export default function Team() {
   return (
-    <section id="about" className="r-section">
-      <div className="container-content">
-        <div className="flex flex-col items-start gap-4" style={{ marginBottom: 32 }}>
-          <span className="r-eyebrow">Leadership</span>
-          <h2 className="r-title">Founder</h2>
-        </div>
-
-        <div
-          className="r-card flex items-center gap-4"
-          style={{ padding: 20, borderRadius: 4, marginTop: 16, maxWidth: 420 }}
+    <section className="ed-section">
+      <div className="container-content ed-founder">
+        <p className="ed-kicker">Founder</p>
+        <a
+          href="https://www.linkedin.com/in/ehsidawi"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <div className="r-node" style={{ width: 52, height: 52 }}>
-            <User style={{ width: 22, height: 22, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
-          </div>
-          <div>
-            <div className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--muted-foreground))" }}>
-              Founder
-            </div>
-            <a
-              href="https://www.linkedin.com/in/ehsidawi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-body font-[500] transition-colors duration-200 hover:text-forest"
-              style={{ fontSize: 16, color: "hsl(var(--foreground))" }}
-            >
-              Ehsan Nidawi
-            </a>
-            {founderBio.trim() && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{founderBio}</p>}
-          </div>
-        </div>
+          <h2>
+            Ehsan Nidawi <span aria-hidden="true">↗</span>
+          </h2>
+        </a>
+        {founderBio.trim() && <p className="ed-lead">{founderBio}</p>}
       </div>
     </section>
   );
-};
-
-export default Team;
+}

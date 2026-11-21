@@ -45,9 +45,9 @@ const Navbar = () => {
         <div className="mx-header-inner">
           <Brand />
           <nav aria-label="Primary" className="mx-nav">
-            <button type="button" className="mx-nav-link" aria-expanded={open} aria-controls="mx-services" onClick={() => setOpen(!open)}>
+            <Button variant="ghost" type="button" className="mx-nav-link" aria-expanded={open} aria-controls="mx-services" onClick={() => setOpen(!open)}>
               Practices <ChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} aria-hidden="true" />
-            </button>
+            </Button>
             {links.map(l => <SmartNavLink key={l.to} to={l.to} className="mx-nav-link">{l.label}</SmartNavLink>)}
           </nav>
           <div className="flex items-center gap-2">

@@ -1,59 +1,49 @@
+import SectionHeading from "@/components/editorial/SectionHeading";
+import SmartLink from "@/components/SmartLink";
 const patterns = [
   {
-    tag: "Infrastructure",
     title: "Cloud Migration & Modernization",
     line: "Phased moves of regulated workloads with minimal downtime.",
     sector: "Financial Services",
+    to: "/services/cloud",
   },
   {
-    tag: "Identity",
     title: "Enterprise Identity Program",
     line: "SSO, privileged access vaulting, and identity governance.",
     sector: "Public Sector",
+    to: "/services/identity",
   },
   {
-    tag: "Software + AI",
     title: "Private AI Operations",
     line: "Self hosted models with data kept inside your environment.",
     sector: "Energy",
+    to: "/services/private-ai",
   },
 ];
-
-const SelectedWork = () => {
+export default function SelectedWork() {
   return (
-    <section id="work" className="r-section">
+    <section id="work" className="ed-section">
       <div className="container-content">
-        <div className="flex flex-col items-start gap-4" style={{ marginBottom: 32 }}>
-          <span className="r-eyebrow">Solution Patterns</span>
-          <h2 className="r-title">How We Approach Problems</h2>
-          <p className="r-lead" style={{ maxWidth: 560 }}>
-            Illustrative patterns, not specific client work.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <SectionHeading
+          label="Solution patterns"
+          title="How we approach problems."
+        >
+          Illustrative patterns, not specific client work.
+        </SectionHeading>
+        <dl className="ed-brief-list">
           {patterns.map((p) => (
-            <article key={p.title} className="r-card" style={{ padding: 24, borderRadius: 4 }}>
-              <div className="flex flex-wrap items-center gap-2" style={{ marginBottom: 14 }}>
-                <span className="r-pill" style={{ fontSize: 10, letterSpacing: 0, textTransform: "uppercase" }}>
-                  {p.tag}
-                </span>
-                <span className="r-pill" style={{ fontSize: 10, letterSpacing: 0, textTransform: "uppercase" }}>
-                  {p.sector}
-                </span>
-              </div>
-              <h3 className="font-display font-[600]" style={{ fontSize: 17, color: "hsl(var(--foreground))", marginBottom: 8 }}>
-                {p.title}
-              </h3>
-              <p className="font-body font-[400]" style={{ fontSize: 13.5, color: "hsl(var(--muted-foreground))", lineHeight: 1.65 }}>
-                {p.line}
-              </p>
-            </article>
+            <div key={p.title}>
+              <dt>
+                <SmartLink to={p.to}>{p.title} ↗</SmartLink>
+              </dt>
+              <dd>
+                <span className="ed-mini">{p.sector}</span>
+                <p>{p.line}</p>
+              </dd>
+            </div>
           ))}
-        </div>
+        </dl>
       </div>
     </section>
   );
-};
-
-export default SelectedWork;
+}

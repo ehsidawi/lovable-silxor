@@ -1,7 +1,5 @@
 import PageShell from "@/components/layout/PageShell";
 import PageHero from "@/components/PageHero";
-import { Card } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const rows = [
   {
@@ -132,102 +130,71 @@ const rows = [
   },
 ];
 
-const SLADoc = () => {
-  const headers = [
-    { en: "Metric", ar: "المقياس", ku: "پێوانە" },
-    { en: "Starter tier", ar: "المستوى الأساسي", ku: "ئاستی سەرەتایی" },
-    { en: "Business tier", ar: "مستوى الأعمال", ku: "ئاستی بازرگانی" },
-    { en: "Enterprise tier", ar: "مستوى المؤسسات", ku: "ئاستی گەورە" },
-  ];
-  return (
-    <PageShell title="Service Level Agreement | Silxor" description="Silxor service level framework: availability targets, priority response tiers, and coverage defined per contract." path="/sla">
-      <PageHero eyebrow="SERVICE LEVEL FRAMEWORK" title="Service Level Commitment Framework" lead="This page describes the structure of service level commitments we offer across support tiers. It is a template, not a record of an executed agreement. Exact figures, response times, and recovery objectives are negotiated and confirmed in the master service agreement for each engagement." crumbs={[{label:"Home",to:"/"},{label:"Service Level Commitment Framework"}]} />
-      <section className="section-spacing">
-        <div className="container-content" style={{ maxWidth: 900, margin: "0 auto" }}>
-
-          <Card
-            className="hidden rounded-[4px] border-0 shadow-none text-inherit md:block"
-            style={{ backgroundColor: "hsl(var(--muted))", border: "1px solid hsl(var(--border))", borderRadius: 4, overflow: "hidden" }}
-          >
-            <Table style={{ width: "100%", borderCollapse: "collapse" }}>
-              <TableHeader>
-                <TableRow style={{ backgroundColor: "hsl(var(--muted))" }} className="border-0 hover:bg-transparent">
-                  {headers.map((h) => (
-                    <TableHead
-                      key={h.en}
-                      className="font-mono font-[400] uppercase h-auto align-top"
-                      style={{
-                        fontSize: 11,
-                        letterSpacing: 0,
-                        color: "hsl(var(--foreground))",
-                        padding: "14px 20px",
-                        borderBottom: "1px solid hsl(var(--border))",
-                        textAlign: "start",
-                      }}
-                    >
-                      {h.en}
-                    </TableHead>
-                  ))}
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {rows.map((row, i) => (
-                  <TableRow
-                    key={i}
-                    className="border-0 hover:bg-secondary"
-                  >
-                    <TableCell
-                      className="font-body font-[400] align-top"
-                      style={{ fontSize: 14, color: "hsl(var(--foreground))", padding: "12px 20px", borderBottom: "1px solid hsl(var(--border))", textAlign: "start" }}
-                    >
-                      {row.metric}
-                    </TableCell>
-                    <TableCell
-                      className="font-body font-[400] align-top"
-                      style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", padding: "12px 20px", borderBottom: "1px solid hsl(var(--border))", textAlign: "start" }}
-                    >
-                      {row.starter}
-                    </TableCell>
-                    <TableCell
-                      className="font-body font-[400] align-top"
-                      style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", padding: "12px 20px", borderBottom: "1px solid hsl(var(--border))", textAlign: "start" }}
-                    >
-                      {row.business}
-                    </TableCell>
-                    <TableCell
-                      className="font-body font-[400] align-top"
-                      style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", padding: "12px 20px", borderBottom: "1px solid hsl(var(--border))", textAlign: "start" }}
-                    >
-                      {row.enterprise}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </Card>
-
-          <div className="space-y-5 md:hidden">
-            {(["starter", "business", "enterprise"] as const).map((tier, index) => (
-              <section key={tier} className="border border-border bg-card p-5">
-                <h2 className="mb-5 font-display text-xl font-bold">{headers[index + 1].en}</h2>
-                <dl>{rows.map(row => <div key={row.metric} className="grid grid-cols-2 gap-4 border-t border-border py-3 text-sm">
-                  <dt className="font-medium">{row.metric}</dt><dd className="text-muted-foreground">{row[tier]}</dd>
-                </div>)}</dl>
-              </section>
-            ))}
-          </div>
-
-          <p
-            className="font-body font-[400] text-center"
-            style={{ fontSize: 13, color: "hsl(var(--muted-foreground))", fontStyle: "italic", marginTop: 48 }}
-          >
-            {"All figures above are illustrative starting points and are subject to change based on scope, infrastructure, and regulatory requirements. Final service levels, credit terms, and measurement methodology are set out in the signed agreement. Questions: "}
-            <bdi>hello@silxor.com</bdi>
-          </p>
+const SLADoc = () => (
+  <PageShell
+    title="Service Level Agreement | Silxor"
+    description="Silxor service level framework: availability targets, priority response tiers, and coverage defined per contract."
+    path="/sla"
+  >
+    <PageHero
+      eyebrow="Service level framework"
+      title="Commitments belong in the agreement."
+      lead="Illustrative support tiers, not an executed agreement. Response times and recovery objectives are negotiated and confirmed in the master service agreement."
+      crumbs={[
+        { label: "Home", to: "/" },
+        { label: "Service level framework" },
+      ]}
+    />
+    <section className="ed-section">
+      <div className="container-content">
+        <div className="hidden md:block">
+          <table className="ed-table">
+            <caption className="sr-only">
+              Illustrative service level comparison
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Metric</th>
+                <th scope="col">Starter tier</th>
+                <th scope="col">Business tier</th>
+                <th scope="col">Enterprise tier</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r) => (
+                <tr key={r.metric}>
+                  <th scope="row">{r.metric}</th>
+                  <td>{r.starter}</td>
+                  <td>{r.business}</td>
+                  <td>{r.enterprise}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      </section>
-    </PageShell>
-  );
-};
-
+        <dl className="md:hidden ed-sla-mobile">
+          {rows.map((r) => (
+            <div className="border-t border-border py-5" key={r.metric}>
+              <dt className="font-semibold">{r.metric}</dt>
+              <dd className="mt-3 grid gap-3 text-sm">
+                {(["starter", "business", "enterprise"] as const).map((t) => (
+                  <div key={t} className="grid grid-cols-2 gap-4">
+                    <span className="capitalize">{t} tier</span>
+                    <span className="text-muted-foreground">{r[t]}</span>
+                  </div>
+                ))}
+              </dd>
+            </div>
+          ))}
+        </dl>
+        <p className="ed-note">
+          All figures above are illustrative starting points and are subject to
+          change based on scope, infrastructure, and regulatory requirements.
+          Final service levels, credit terms, and measurement methodology are
+          set out in the signed agreement. Questions: hello@silxor.com
+        </p>
+      </div>
+    </section>
+  </PageShell>
+);
 export default SLADoc;

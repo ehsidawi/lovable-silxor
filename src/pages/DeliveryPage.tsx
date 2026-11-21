@@ -1,84 +1,89 @@
-import { ClipboardList, PencilRuler, Code2, Rocket, RefreshCw } from "lucide-react";
 import PageShell from "@/components/layout/PageShell";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
-
+import SmartLink from "@/components/SmartLink";
 const steps = [
-  { icon: ClipboardList, title: "Assess", line: "Review the environment, objectives, constraints and risks. Scope and commercial terms are agreed before the assessment begins." },
-  { icon: PencilRuler, title: "Architect & Design", line: "Target architecture, security model, product requirements, and user experience designed and reviewed before build starts." },
-  { icon: Code2, title: "Engineer & Build", line: "Senior engineers build in reviewed increments, with testing, quality gates, and demos on a fixed cadence." },
-  { icon: Rocket, title: "Deploy & Host", line: "Production release on monitored infrastructure, in the hosting model and jurisdiction agreed at assessment." },
-  { icon: RefreshCw, title: "Manage & Iterate", line: "Ongoing operations, patching, security, optimization, and a shared improvement backlog under agreed SLA tiers." },
+  {
+    title: "Assess",
+    line: "Review the environment, objectives, constraints and risks. Scope and commercial terms are agreed before the assessment begins.",
+  },
+  {
+    title: "Architect & Design",
+    line: "Target architecture, security model, product requirements, and user experience designed and reviewed before build starts.",
+  },
+  {
+    title: "Engineer & Build",
+    line: "Senior engineers build in reviewed increments, with testing, quality gates, and demos on a fixed cadence.",
+  },
+  {
+    title: "Deploy & Host",
+    line: "Production release on monitored infrastructure, in the hosting model and jurisdiction agreed at assessment.",
+  },
+  {
+    title: "Manage & Iterate",
+    line: "Ongoing operations, patching, security, optimization, and a shared improvement backlog under agreed SLA tiers.",
+  },
 ];
-
-const principles = [
-  { title: "Single Accountability", line: "Advisory, delivery and operations held by one accountable lead." },
-  { title: "Full Stack", line: "Architecture, product, engineering, security and operations coordinated within the agreed scope." },
-  { title: "Planned Handover", line: "Delivery, handover and ongoing ownership are planned together." },
-];
-
-const DeliveryPage = () => (
-  <PageShell
-    title="Delivery Model | Silxor"
-    description="Silxor coordinates assessment, architecture, engineering, deployment and operations with scope, responsibilities and handover agreed for each engagement."
-    path="/delivery"
-  >
-    <PageHero
-      eyebrow="Delivery Model"
-      title="From assessment to operations."
-      lead="Five stages with responsibilities, review points and handover defined for your engagement."
-      crumbs={[{ label: "Home", to: "/" }, { label: "Delivery" }]}
-    />
-
-    <section className="r-section">
-      <div className="container-content">
-        <ol className="flex flex-col gap-4" style={{ listStyle: "none", margin: 0, padding: 0 }}>
-          {steps.map((s, i) => {
-            const Icon = s.icon;
-            return (
-              <li key={s.title} className="r-card" style={{ padding: "24px 22px", borderRadius: 4 }}>
-                <div className="grid grid-cols-1 sm:grid-cols-[auto_minmax(0,1fr)] gap-4 sm:gap-6 items-start">
-                  <div className="flex items-center gap-3">
-                    <span
-                      className="font-mono font-[700]"
-                      style={{ fontSize: 44, color: "hsl(var(--forest))", lineHeight: 1 }}
-                    >
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="r-node" style={{ width: 46, height: 46 }}>
-                      <Icon style={{ width: 19, height: 19, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
-                    </span>
-                  </div>
-                  <div>
-                    <h2 className="font-display font-[600]" style={{ fontSize: 19, color: "hsl(var(--foreground))" }}>{s.title}</h2>
-                    <p className="font-body font-[400]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", lineHeight: 1.7, marginTop: 8, maxWidth: 720 }}>
-                      {s.line}
-                    </p>
-                  </div>
+export default function DeliveryPage() {
+  return (
+    <PageShell
+      title="Delivery Model | Silxor"
+      description="Silxor coordinates assessment, architecture, engineering, deployment and operations with scope, responsibilities and handover agreed for each engagement."
+      path="/delivery"
+    >
+      <PageHero
+        eyebrow="Delivery model"
+        title="From assessment to operations."
+        lead="Five stages with responsibilities, review points and handover defined for your engagement."
+        crumbs={[{ label: "Home", to: "/" }, { label: "Delivery" }]}
+      />
+      <section className="ed-section">
+        <div className="container-content ed-delivery-full">
+          <aside>
+            <p className="ed-kicker">Senior accountability</p>
+            <h2 className="ed-h2">Ownership at every stage.</h2>
+            <dl className="ed-principles">
+              <dt>Single Accountability</dt>
+              <dd>
+                Advisory, delivery and operations held by one accountable lead.
+              </dd>
+              <dt>Full Stack</dt>
+              <dd>
+                Architecture, product, engineering, security and operations
+                coordinated within the agreed scope.
+              </dd>
+              <dt>Planned Handover</dt>
+              <dd>
+                Delivery, handover and ongoing ownership are planned together.
+              </dd>
+            </dl>
+          </aside>
+          <ol className="ed-narrative ed-narrative--large">
+            {steps.map((s, i) => (
+              <li key={s.title}>
+                <span className="ed-narrative-number">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h2>{s.title}</h2>
+                  <p>{s.line}</p>
                 </div>
               </li>
-            );
-          })}
-        </ol>
-
-        <div className="r-panel" style={{ borderRadius: 4, marginTop: 20 }}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {principles.map((p) => (
-              <div key={p.title}>
-                <h3 className="font-display font-[600]" style={{ fontSize: 17, color: "hsl(var(--foreground))" }}>{p.title}</h3>
-                <p className="font-body font-[400]" style={{ fontSize: 13.5, color: "hsl(var(--muted-foreground))", lineHeight: 1.65, marginTop: 8 }}>
-                  {p.line}
-                </p>
-              </div>
             ))}
-          </div>
+          </ol>
         </div>
-      </div>
-    </section>
-
-    <section className="r-section"><nav aria-label="Delivery guidance" className="container-content flex flex-wrap gap-6"><a href="/engagement" className="font-medium underline underline-offset-4">Compare engagement models</a><a href="/process" className="font-medium underline underline-offset-4">Review our methodology</a><a href="/faq" className="font-medium underline underline-offset-4">Frequently asked questions</a></nav></section>
-    <CtaBand />
-  </PageShell>
-);
-
-export default DeliveryPage;
+      </section>
+      <section className="ed-section">
+        <nav
+          className="container-content ed-guidance"
+          aria-label="Delivery guidance"
+        >
+          <SmartLink to="/engagement">Compare engagement models</SmartLink>
+          <SmartLink to="/process">Review our methodology</SmartLink>
+          <SmartLink to="/faq">Frequently asked questions</SmartLink>
+        </nav>
+      </section>
+      <CtaBand />
+    </PageShell>
+  );
+}

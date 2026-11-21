@@ -45,14 +45,7 @@ const RouteEffects = () => {
   return null;
 };
 
-const RouteFallback = () => (
-  <div
-    role="status"
-    aria-live="polite"
-    aria-label="Loading page"
-    style={{ minHeight: "70vh" }}
-  />
-);
+const RouteFallback = () => <main id="main" className="ed-loading" role="status" aria-live="polite"><span className="ed-kicker">Silxor</span><p>Opening the page…</p></main>;
 
 const App = () => (
     <TooltipProvider>

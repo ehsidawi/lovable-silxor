@@ -1,165 +1,166 @@
-import { useParams, Link } from "react-router-dom";
-import { Check, Quote } from "lucide-react";
+import { useParams } from "react-router-dom";
 import PageShell from "@/components/layout/PageShell";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import { getService, services } from "@/data/services";
-import NotFound from "./NotFound";
-import QuestionList from "@/components/QuestionList";
-import { serviceFaqs } from "@/data/site";
-import ArchitectureDiagram from "@/components/diagrams/ArchitectureDiagram";
-import { diagrams } from "@/data/diagrams";
-import { serviceMedia } from "@/data/serviceMedia";
 import { practiceForService, inquiryHref } from "@/data/practices";
-
-const ServiceDetail = () => {
+import { serviceFaqs } from "@/data/site";
+import { diagrams } from "@/data/diagrams";
+import ReferenceBrief from "@/components/editorial/ReferenceBrief";
+import SectionHeading from "@/components/editorial/SectionHeading";
+import SmartLink from "@/components/SmartLink";
+import QuestionList from "@/components/QuestionList";
+import NotFound from "./NotFound";
+export default function ServiceDetail() {
   const { slug } = useParams();
   const service = getService(slug);
-
   if (!service) return <NotFound />;
-
-  const Icon = service.icon;
   const practice = practiceForService(service.slug);
-  const relatedSlugs: Record<string, string[]> = { identity: ["cybersecurity", "managed-services", "software-engineering"], cybersecurity: ["information-security", "identity", "managed-services"], "information-security": ["cybersecurity", "identity", "advisory"], cloud: ["managed-services", "cybersecurity", "advisory"], "private-ai": ["software-engineering", "cloud", "identity"], "hardware-engineering": ["software-engineering", "cloud", "cybersecurity"], "software-engineering": ["product-team", "identity", "private-ai"], "product-team": ["software-engineering", "advisory", "talent-acquisition"], advisory: ["cloud", "cybersecurity", "talent-acquisition"], "talent-acquisition": ["advisory", "product-team", "software-engineering"], "managed-services": ["cloud", "cybersecurity", "identity"] };
-  const related = services.filter(s => relatedSlugs[service.slug]?.includes(s.slug));
-
+  const to = practice ? inquiryHref(practice.id, service.slug) : "/book";
+  const related = services
+    .filter(
+      (s) =>
+        s.slug !== service.slug &&
+        (practice?.services.includes(s.slug) ||
+          ["advisory", "identity", "talent-acquisition"].includes(s.slug)),
+    )
+    .slice(0, 4);
   return (
-    <PageShell title={service.seoTitle} description={service.seoDescription} path={service.path}>
+    <PageShell
+      title={service.seoTitle}
+      description={service.seoDescription}
+      path={service.path}
+    >
       <PageHero
         eyebrow={practice ? `${practice.code} · ${practice.name}` : "Service"}
-        primaryCta={practice ? { label: "Book a Consultation", to: inquiryHref(practice.id, service.slug) } : undefined}
         title={service.name}
         lead={service.heroLead}
-        media={serviceMedia[service.slug]}
-        crumbs={[{ label: "Home", to: "/" }, { label: "Services", to: "/services" }, ...(practice && practice.path !== service.path ? [{ label: practice.name, to: practice.path }] : []), { label: service.navLabel }]}
+        primaryCta={{ label: "Book a Consultation", to }}
+        crumbs={[
+          { label: "Home", to: "/" },
+          { label: "Services", to: "/services" },
+          { label: service.navLabel },
+        ]}
       />
-
-      <section className="border-b border-border py-8"><div className="container-content"><h2 className="font-display text-2xl font-bold">What is {service.name.toLowerCase()}?</h2><p className="mt-4 max-w-4xl text-base leading-relaxed text-muted-foreground">{service.intro}</p></div></section>
-      {diagrams[service.slug] && <ArchitectureDiagram data={diagrams[service.slug]} />}
-      {/* Outcome + capabilities */}
-      <section className="r-section">
+      <section className="ed-section">
+        <div className="container-content ed-service-introduction">
+          <div>
+            <p className="ed-kicker">The mandate</p>
+            <h2 className="ed-h2">{service.outcome}</h2>
+          </div>
+          <div>
+            <h3>What is {service.name.toLowerCase()}?</h3>
+            <p className="ed-lead">{service.intro}</p>
+            <p className="ed-note">
+              Deliverables, responsibilities, access requirements and acceptance
+              criteria are agreed during assessment. Work is scoped around your
+              environment, not a fixed package.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="ed-section">
         <div className="container-content">
-          <div className="r-panel" style={{ borderRadius: 4 }}>
-            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] gap-8 lg:gap-12">
-              <div>
-                <div className="r-node" style={{ width: 52, height: 52 }}>
-                  <Icon style={{ width: 21, height: 21, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
-                </div>
-                <h2 className="r-title" style={{ marginTop: 18, maxWidth: 620 }}>{service.outcome}</h2>
-                <p
-                  className="font-body font-[400]"
-                  style={{ fontSize: 15, color: "hsl(var(--muted-foreground))", lineHeight: 1.75, marginTop: 16, maxWidth: 620 }}
-                >
-                  Deliverables, responsibilities, access requirements and acceptance criteria are agreed during assessment. Work is scoped around your environment, not a fixed package.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--foreground))", marginBottom: 14 }}>
-                  Capabilities
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {service.capabilities.map((c) => (
-                    <span key={c} className="r-pill" style={{ padding: "9px 15px 9px 9px", fontSize: 11.5 }}>
-                      <span className="r-node" style={{ width: 20, height: 20, background: "hsl(var(--primary))", border: "none" }}>
-                        <Check style={{ width: 11, height: 11, color: "hsl(var(--primary-foreground))" }} strokeWidth={3} />
-                      </span>
-                      {c}
+          <SectionHeading
+            label="Scope of work"
+            title={
+              service.flagship
+                ? "The team you get."
+                : "Responsibilities, made clear."
+            }
+          >
+            Choose a discipline to read its scope. Acceptance criteria and
+            ownership are established in the engagement.
+          </SectionHeading>
+          <div className="ed-scope-layout">
+            <aside>
+              <h3 className="ed-mini">Capabilities</h3>
+              <ul className="ed-capability-list">
+                {service.capabilities.map((c) => (
+                  <li key={c}>{c}</li>
+                ))}
+              </ul>
+              {service.slug === "talent-acquisition" && (
+                <SmartLink to="/careers" className="ed-text-link">
+                  For candidates: careers ↗
+                </SmartLink>
+              )}
+            </aside>
+            <div className="ed-scope-briefs">
+              {service.blocks.map((b, i) => (
+                <details id={b.id} key={b.title} open={i === 0}>
+                  <summary>
+                    <span className="ed-mini">
+                      {String(i + 1).padStart(2, "0")}
                     </span>
-                  ))}
-                </div>
-              </div>
+                    <h3>{b.title}</h3>
+                    <span aria-hidden="true">+</span>
+                  </summary>
+                  <p>{b.line}</p>
+                  <SmartLink to={to} className="ed-text-link">
+                    Book a Consultation
+                    <span className="sr-only"> about {b.title}</span> ↗
+                  </SmartLink>
+                </details>
+              ))}
             </div>
           </div>
         </div>
       </section>
-
-      {service.slug === "identity" && (
-        <section className="border-y border-border bg-secondary py-5">
-          <nav aria-label="Identity disciplines" className="container-content flex flex-wrap gap-3">
-            {service.blocks.map(block => <a key={block.id} href={`#${block.id}`} className="inline-flex min-h-11 items-center rounded-sm border border-border bg-card px-4 text-sm font-medium hover:border-forest">{block.title.split(" / ")[0]}</a>)}
-          </nav>
-        </section>
+      {diagrams[service.slug] && (
+        <ReferenceBrief data={diagrams[service.slug]} />
       )}
-
-      {/* What we cover */}
-      <section className="r-section" style={{ paddingTop: 0 }}>
-        <div className="container-content">
-          <div className="flex flex-col items-start gap-4" style={{ marginBottom: 24 }}>
-            <span className="r-eyebrow">What We Cover</span>
-            <h2 className="r-title">{service.flagship ? "The Team You Get" : "Scope of Work"}</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
-            {service.blocks.map((b, i) => (
-              <section id={b.id} key={b.title} className="r-card scroll-mt-28" style={{ padding: 24, borderRadius: 4 }}>
-                <span className="font-mono" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--muted-foreground))" }}>
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="font-display font-[600]" style={{ fontSize: 16.5, color: "hsl(var(--foreground))", marginTop: 6 }}>
-                  {b.title}
-                </h3>
-                <p className="font-body font-[400]" style={{ fontSize: 13.5, color: "hsl(var(--muted-foreground))", lineHeight: 1.65, marginTop: 8 }}>
-                  {b.line}
-                </p>
-              </section>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Flagship testimonial */}
       {service.flagship && (
-        <section className="r-section" style={{ paddingTop: 0 }}>
-          <div className="container-content">
-            <div className="r-panel" style={{ borderRadius: 4 }}>
-              <div className="r-node" style={{ width: 46, height: 46 }}>
-                <Quote style={{ width: 19, height: 19, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
-              </div>
-              <blockquote
-                className="font-display font-[500]"
-                style={{ fontSize: 26, color: "hsl(var(--foreground))", lineHeight: 1.45, marginTop: 18, maxWidth: 820 }}
-              >
-                After going through a lot of development vendors, we hired Silxor, and this is exactly what they are
-                about. We are still working with them today. They are built to support non technical founders and give
-                you a full team of experts without you having to find, vet, and hire them.
-              </blockquote>
-              <figcaption
-                className="font-mono"
-                style={{ fontSize: 11, letterSpacing: 0, textTransform: "uppercase", color: "hsl(var(--muted-foreground))", marginTop: 20 }}
-              >
-                Founder · Private Client · Identity withheld by agreement
-              </figcaption>
-              <Link to="/clients" className="r-cta-ghost" style={{ marginTop: 22 }}>
-                See Client Proof
-              </Link>
-            </div>
+        <section className="ed-section">
+          <div className="container-content ed-testimony">
+            <p className="ed-kicker">Private client perspective</p>
+            <blockquote>
+              After going through a lot of development vendors, we hired Silxor,
+              and this is exactly what they are about. We are still working with
+              them today. They are built to support non technical founders and
+              give you a full team of experts without you having to find, vet,
+              and hire them.
+            </blockquote>
+            <p className="ed-mini">
+              Founder · Private Client · Identity withheld by agreement
+            </p>
+            <SmartLink to="/clients" className="ed-text-link">
+              Client perspective ↗
+            </SmartLink>
           </div>
         </section>
       )}
-
-      {/* Related services */}
-      <section className="r-section" style={{ paddingTop: 0 }}>
-        <div className="container-content">
-          <h2 className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: 0, color: "hsl(var(--foreground))", marginBottom: 14 }}>
-            Related Services
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {related.map((r) => (
-              <Link key={r.slug} to={r.path} className="r-card" style={{ padding: 20, borderRadius: 4 }}>
-                <h3 className="font-display font-[600]" style={{ fontSize: 15, color: "hsl(var(--foreground))" }}>{r.name}</h3>
-                <p className="font-body font-[400]" style={{ fontSize: 13, color: "hsl(var(--muted-foreground))", lineHeight: 1.6, marginTop: 6 }}>
-                  {r.outcome}
-                </p>
-              </Link>
-            ))}
+      <section className="ed-section">
+        <div className="container-content ed-questions-layout">
+          <div>
+            <p className="ed-kicker">Before you decide</p>
+            <h2 className="ed-h2">Questions about this service.</h2>
           </div>
+          <QuestionList questions={serviceFaqs(service)} />
         </div>
       </section>
-
-      {service.slug === "identity" && <section className="r-section"><div className="container-content"><h2 className="r-title">Identity terms</h2><dl className="mt-8 grid gap-6 sm:grid-cols-2">{service.blocks.slice(0,6).map(b => <div key={b.id} className="border-t border-border pt-4"><dt className="font-semibold">{b.title}</dt><dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{b.line}</dd></div>)}</dl></div></section>}
-      <section className="r-section"><div className="container-content"><h2 className="r-title">Questions about this service</h2><div className="mt-7"><QuestionList questions={serviceFaqs(service)} /></div><nav aria-label="Related guidance" className="mt-7 flex flex-wrap gap-6 text-sm font-medium"><Link to="/industries" className="underline underline-offset-4">Industry requirements</Link><Link to="/engagement" className="underline underline-offset-4">Engagement models</Link><Link to="/faq" className="underline underline-offset-4">All frequently asked questions</Link></nav></div></section>
-      <CtaBand to={practice ? inquiryHref(practice.id, service.slug) : "/book"} />
+      <section className="ed-section">
+        <div className="container-content">
+          <p className="ed-kicker">Connected disciplines</p>
+          <ul className="ed-linked-list">
+            {related.map((s) => (
+              <li key={s.slug}>
+                <SmartLink to={s.path}>
+                  <h2>{s.name}</h2>
+                  <span>{s.outcome}</span>
+                  <b aria-hidden="true">↗</b>
+                </SmartLink>
+              </li>
+            ))}
+          </ul>
+          <nav className="ed-guidance" aria-label="Related guidance">
+            <SmartLink to="/industries">Industry requirements</SmartLink>
+            <SmartLink to="/engagement">Engagement models</SmartLink>
+            <SmartLink to="/faq">All frequently asked questions</SmartLink>
+          </nav>
+        </div>
+      </section>
+      <CtaBand to={to} />
     </PageShell>
   );
-};
-
-export default ServiceDetail;
+}

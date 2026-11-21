@@ -3,4 +3,37 @@ import { Helmet } from "react-helmet-async";
 import PageShell from "@/components/layout/PageShell";
 import SmartLink from "@/components/SmartLink";
 import { Button } from "@/components/ui/button";
-export default function NotFound() { const {pathname}=useLocation(); return <PageShell title="Page Not Found | Silxor" description="This Silxor page is unavailable. Explore enterprise technology services, read frequently asked questions or contact our team." path={pathname}><Helmet><meta name="robots" content="noindex, follow" /></Helmet><section className="r-section"><div className="container-content max-w-4xl"><span className="r-eyebrow">404</span><h1 className="r-title mt-6">This page is not available</h1><p className="r-lead mt-5 max-w-2xl">The address may have changed or the page may not exist. You can continue from our homepage or find the service you need.</p><Button asChild className="mt-8 h-12"><SmartLink to="/">Back to Home</SmartLink></Button><nav aria-label="Helpful destinations" className="mt-8 flex flex-wrap gap-6"><SmartLink to="/services" className="underline underline-offset-4">Explore enterprise services</SmartLink><SmartLink to="/faq" className="underline underline-offset-4">Read frequently asked questions</SmartLink><SmartLink to="/contact" className="underline underline-offset-4">Contact Silxor</SmartLink></nav></div></section></PageShell>; }
+export default function NotFound() {
+  const { pathname } = useLocation();
+  return (
+    <PageShell
+      title="Page Not Found | Silxor"
+      description="This Silxor page is unavailable. Explore our services, read frequently asked questions or contact our team."
+      path={pathname}
+    >
+      <Helmet>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
+      <section className="ed-error">
+        <div className="container-content">
+          <p className="ed-error-number" aria-hidden="true">
+            404
+          </p>
+          <h1>This page is not available.</h1>
+          <p className="ed-lead mt-6">
+            The address may have changed or the page may not exist. Continue
+            from our homepage or find the service you need.
+          </p>
+          <Button asChild className="mt-8">
+            <SmartLink to="/">Back to Home ↗</SmartLink>
+          </Button>
+          <nav aria-label="Helpful destinations" className="ed-guidance mt-8">
+            <SmartLink to="/services">Explore our services</SmartLink>
+            <SmartLink to="/faq">Frequently asked questions</SmartLink>
+            <SmartLink to="/contact">Contact Silxor</SmartLink>
+          </nav>
+        </div>
+      </section>
+    </PageShell>
+  );
+}

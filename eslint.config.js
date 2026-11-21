@@ -23,4 +23,14 @@ export default tseslint.config(
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
+  {
+    // These expressions intentionally reject ASCII control characters in both runtimes.
+    files: ["src/lib/consultation.ts", "supabase/functions/submit-consultation/schema.ts"],
+    rules: { "no-control-regex": "off" },
+  },
+  {
+    // The MCP deployment bundle is generated SDK code; do not rewrite its declarations.
+    files: ["supabase/functions/mcp/index.ts"],
+    rules: { "no-var": "off" },
+  },
 );

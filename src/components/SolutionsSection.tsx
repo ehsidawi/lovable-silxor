@@ -1,53 +1,65 @@
-import { Smartphone, Landmark, ShieldCheck, Cpu, Server, Fingerprint } from "lucide-react";
-
-const cards = [
-  { icon: Smartphone, title: "Digital Banking", tags: ["Core Banking", "Fraud", "Identity"] },
-  { icon: Landmark, title: "Government", tags: ["Citizen ID", "Zero Trust", "FedRAMP"] },
-  { icon: ShieldCheck, title: "Financial Compliance", tags: ["PCI DSS", "GLBA", "SOX"] },
-  { icon: Cpu, title: "AI Platform", tags: ["Private AI", "Governance", "Agentic"] },
-  { icon: Server, title: "Infrastructure", tags: ["Hybrid Cloud", "Networking", "DR"] },
-  { icon: Fingerprint, title: "Identity", tags: ["IAM", "PAM", "Passwordless"] },
+import SmartLink from "@/components/SmartLink";
+import SectionHeading from "@/components/editorial/SectionHeading";
+const briefs = [
+  {
+    title: "Digital Banking",
+    terms: "Core banking, fraud and identity",
+    to: "/industries",
+  },
+  {
+    title: "Government",
+    terms: "Citizen identity, Zero Trust and FedRAMP requirements",
+    to: "/industries",
+  },
+  {
+    title: "Financial Compliance",
+    terms: "PCI DSS, GLBA and SOX requirements",
+    to: "/services/information-security",
+  },
+  {
+    title: "AI Platform",
+    terms: "Private AI, governance and agent systems",
+    to: "/services/private-ai",
+  },
+  {
+    title: "Infrastructure",
+    terms: "Hybrid cloud, networking and disaster recovery",
+    to: "/services/cloud",
+  },
+  {
+    title: "Identity",
+    terms: "IAM, PAM and passwordless access",
+    to: "/services/identity",
+  },
 ];
-
-const SolutionsSection = () => {
+export default function SolutionsSection() {
   return (
-    <section className="r-section">
+    <section className="ed-section">
       <div className="container-content">
-        <div className="flex flex-col items-start gap-4" style={{ marginBottom: 32 }}>
-          <span className="r-eyebrow">Solutions</span>
-          <h2 className="r-title" style={{ maxWidth: 780 }}>
-            Secure Platforms for Banking and Government
-          </h2>
-          <p className="r-lead" style={{ maxWidth: 560 }}>
-            Illustrative capability areas, not completed client projects or compliance guarantees. Controls and technology choices are agreed for each engagement.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {cards.map((c) => {
-            const Icon = c.icon;
-            return (
-              <div key={c.title} className="r-card" style={{ padding: 22 }}>
-                <div className="flex items-center gap-3" style={{ marginBottom: 14 }}>
-                  <div className="r-node" style={{ width: 42, height: 42 }}>
-                    <Icon style={{ width: 18, height: 18, color: "hsl(var(--foreground))" }} strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-display font-[600]" style={{ fontSize: 16, color: "hsl(var(--foreground))" }}>
-                    {c.title}
-                  </h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {c.tags.map((t) => (
-                    <span key={t} className="r-pill">{t}</span>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <SectionHeading
+          label="Applied capabilities"
+          title="Requirements in context."
+        >
+          Illustrative capability areas, not completed client projects or
+          compliance guarantees. Controls and technology choices are agreed for
+          each engagement.
+        </SectionHeading>
+        <dl className="ed-brief-list">
+          {briefs.map((b, i) => (
+            <div key={b.title}>
+              <dt>
+                <span className="ed-mini">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <SmartLink to={b.to}>
+                  {b.title} <span aria-hidden="true">↗</span>
+                </SmartLink>
+              </dt>
+              <dd>{b.terms}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );
-};
-
-export default SolutionsSection;
+}

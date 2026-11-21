@@ -3,7 +3,7 @@
 - Serve transformed video media through Lovable asset pointers, not external hotlinks or checked-in video files; this keeps the site self-contained and lightweight.
 - Proxy asset pointers to the public asset endpoint only during local development; Vite otherwise treats those paths as HTML fallback instead of media.
 - Express all page visual roles through the global semantic theme tokens; this keeps the enterprise identity consistent across existing routes.
-- Keep the active visual system in `src/styles/editorial.css`, imported after `src/index.css` and `src/styles/precision.css`; it supersedes earlier layers, so new visual changes belong there.
+- Keep the active visual system in `src/styles/editorial.css`, imported after the Tailwind/font-only `src/index.css`; it is the sole visual system, so never restore legacy override layers.
 - Give fixed dark surfaces (closing band, footer) and the accent closing tile their own scoped foreground, border and accent tokens in both themes; page surface tokens must not leak onto them.
 - Render navigation as a sticky top masthead with a Services panel and drawer below 1100px, and style sections as full width bands through shared section classes; pages adopt the frame without extra wrappers.
 - Deduplicate React and React DOM in both Vite configurations; theme hooks and renderers must share one React instance.
@@ -11,14 +11,14 @@
 
 - Keep service content, stable practice anchors and the primary navigation pillar taxonomy in shared service data; this preserves detail routes and lets the Talent directory link directly to the same practice descriptions.
 - Reuse the shared technology list, categories and official monochrome icon paths across home, services and the existing platforms route, with text fallback and trademark disclaimer; this prevents inconsistent vendor relationship claims.
-- Render technology exploration from shared categories with selectable platforms and a collapsible complete directory; this keeps the website compact without losing public vendor content.
+- Render technology exploration as a searchable editorial directory with combined category filtering and service links; this preserves public vendor data without maps or selection dashboards.
 - Keep public guidance and FAQs in shared data and render new informational routes through a common resource page; this prevents duplicated policy facts and engagement descriptions.
 - Generate full route HTML, head metadata and machine-readable discovery files with the build-only Vite prerender plugin, capped at 100 pages; this makes public content readable without JavaScript while preserving the SPA experience.
 - Keep sitemap lastmod values only when backed by significant page-specific edits recorded in content data; omit them otherwise rather than using build or generation time.
 - Use next-themes with the silxor-theme preference key and global semantic light/dark tokens; this keeps appearance accessible and persistent without a tracking identifier.
 - Share the default appearance between browser and prerender through the appearance module; this prevents inconsistent first visits.
 - Keep responsive illustrative technology images in shared service media data; this matches service content without implying real company facilities or staff.
-- Keep architecture diagrams data driven with distinct compact SVG layouts, an HTML button directory for selection and connection traversal, unique title/description IDs and expandable text summaries; this preserves keyboard access and readable mobile views without rendering libraries.
+- Render reference content as semantic briefs and responsibilities tables, never graph/node/link diagrams, blueprint grids or map panels; this preserves useful public data in readable, keyboard-accessible page families.
 
 - Deliver consultation requests as a prefilled mailto draft to the owner inbox built from validated form values; the owner chose email delivery without server storage or domain setup.
 - Keep consultation option identifiers shared between browser and server, with matching schema parity tests; this keeps accepted fields and length rules consistent across runtimes.
@@ -29,3 +29,7 @@
 - Reserve consultation limits atomically in a service-only RPC using keyed hashes, fixed hourly windows and a global safety bucket; forwarding IP metadata is supplementary because managed ingress sanitation is not documented.
 
 - Keep the four equal practices, their service membership, examples and preselected booking links in `src/data/practices.ts`; navigation, the capability index, service pages, footer and /book all read from it so billing stays equal.
+
+- Use editorial document layouts for resources/policies, disclosure briefs for service scope, vertical narratives for delivery and linked article lists for insights; distinct page families prevent restyled legacy card grids.
+
+- Keep lint exceptions limited to intentional control-character rejection and the generated MCP bundle; these protect validation parity and avoid rewriting generated integration code.
